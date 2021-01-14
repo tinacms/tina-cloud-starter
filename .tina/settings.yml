@@ -1,0 +1,21 @@
+---
+new_page_extension: md
+auto_deploy: false
+sections:
+  - type: directory
+    path: content/posts
+    label: Posts
+    create: documents
+    match: "**/*.md"
+    templates:
+      - post
+upload_dir: public/uploads
+public_path: /uploads
+use_front_matter_path: false
+file_template: ":filename:"
+build:
+  install_dependencies_command: npm install
+  preview_docker_image: "node:10"
+  mount_path: /srv
+  working_dir: /srv
+  instant_preview_command: "npm run forestry:preview"
