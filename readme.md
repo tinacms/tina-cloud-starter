@@ -1,5 +1,9 @@
 ## Getting started
 
+Check out the walkthrough for where things are at currently
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0c8c463ee83749d6af5ff58615b5bdc4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### Fork this project
 
 Fork this project and clone it to your local system, the forked project will be what you use to connect to Tina Cloud.
