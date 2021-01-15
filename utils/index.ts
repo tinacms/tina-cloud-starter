@@ -5,30 +5,35 @@ import {
 
 export const createCloudClient = () => {
   return new Client({
-    realm: process.env.REALM_NAME,
-    clientId: process.env.SITE_CLIENT_ID,
-    // redirectURI: process.env.REDIRECT_URI,
-    redirectURI: "http://localhost:3000/admin",
+    realm: process.env.NEXT_PUBLIC_REALM_NAME,
+    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+    redirectURI: process.env.NEXT_PUBLIC_REDIRECT_URI,
+    branch: "main",
     tokenStorage: "LOCAL_STORAGE",
-    // customAPI: `http://localhost:3003/github/${process.env.REALM_NAME}/${process.env.SITE_CLIENT_ID}`,
-    // Still use local in dev mode
-    // customAPI:
-    //   process.env.NODE_ENV === "development"
-    //     ? DEFAULT_LOCAL_TINA_GQL_SERVER_URL
-    //     : null,
   });
 };
 
 export const createLocalClient = () => {
   return new Client({
     realm: "",
+    branch: "",
     clientId: "",
     redirectURI: "",
     customAPI: DEFAULT_LOCAL_TINA_GQL_SERVER_URL,
   });
 };
 
-export const variablesFromPath = (path: string, fallback) => {
+/**
+ *
+ * Takes a path (ex. /posts/my-page) and uses the first item
+ * as the section and the remaining peices for the relativePath
+ * arguments
+ *
+ */
+export const variablesFromPath = (
+  path: string,
+  fallback: { relativePath: string; section: string }
+) => {
   const arr = path.split("/");
   const section = arr[0];
   // FIXME: assumes `.md` as extension, should work with other extensions
