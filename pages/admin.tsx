@@ -19,12 +19,12 @@ export default function AdminPage() {
 
   return (
     <TinaCloudAuthWall cms={cms}>
-      <Editor />
+      <Editor client={client} />
     </TinaCloudAuthWall>
   );
 }
 
-const Editor = () => {
+export const Editor = ({ client }: { client }) => {
   let slug = useUrlHash();
   if (!slug) {
     slug = "/";
