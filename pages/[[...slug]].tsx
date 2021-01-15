@@ -3,8 +3,12 @@ import { createLocalClient } from "../utils";
 import type * as Tina from "../.tina/types";
 import { JSONDump } from "../components/json-dump";
 
-export default function Page(props: { getDocument: Tina.Posts_Document }) {
-  return <Content {...props.getDocument.data} />;
+export default function Page(props: {
+  payload: { getDocument: Tina.Posts_Document };
+  variables: { section: string; relativePath: string };
+}) {
+  const payload = props.payload;
+  return <Content {...payload.getDocument.data} />;
 }
 
 export const Content = (props: Tina.Post_Doc_Data) => {
@@ -44,11 +48,22 @@ export const request = async (
 };
 
 export const getStaticProps = async ({ params, ...rest }): Promise<any> => {
-  const content = await request(client, {
-    section: params.slug[0],
-    relativePath: `${params.slug.slice(1).join("/")}.md`,
-  });
-  return { props: content };
+  let variables;
+  if (params?.slug?.length > 0) {
+    variables = {
+      section: params.slug[0],
+      relativePath: `${params.slug.slice(1).join("/")}.md`,
+    };
+  } else {
+    // render something by default
+    variables = {
+      section: "posts",
+      relativePath: "hello-world.md",
+    };
+  }
+
+  const payload = await request(client, variables);
+  return { props: { payload, variables } };
 };
 
 export const getStaticPaths = async (): Promise<any> => {
@@ -69,7 +84,13 @@ export const getStaticPaths = async (): Promise<any> => {
       variables: {},
     }
   );
-  const paths = [];
+  const paths = [
+    {
+      params: {
+        slug: [],
+      },
+    },
+  ];
   content.getSections.forEach((section) => {
     section.documents.forEach((document) => {
       paths.push({
