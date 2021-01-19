@@ -54,8 +54,13 @@ export const request = async (
           ... on Posts_Document {
             data {
               __typename
-              ... on Post_Doc_Data {
+              ... on PostArticle_Doc_Data {
                 title
+                description
+              }
+              ... on PostEssay_Doc_Data {
+                title
+                excerpt
               }
             }
           }

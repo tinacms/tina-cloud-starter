@@ -22,7 +22,8 @@ sections:
     create: documents
     match: "**/*.md"
     templates:
-      - post
+      - post-article
+      - post-essay
 upload_dir: public/uploads
 public_path: /uploads
 use_front_matter_path: false

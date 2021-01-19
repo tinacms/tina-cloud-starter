@@ -354,15 +354,16 @@ export type Author_Doc_Input = {
   _body?: Maybe<Body_LongTextInput>;
 };
 
-export type Posts_Data = Post_Doc_Data;
+export type Posts_Data = PostArticle_Doc_Data | PostEssay_Doc_Data;
 
 export type Posts_Input = {
-  post?: Maybe<Post_Doc_Input>;
+  postArticle?: Maybe<PostArticle_Doc_Input>;
+  postEssay?: Maybe<PostEssay_Doc_Input>;
 };
 
-export type Posts_Values = Post_Doc_Values;
+export type Posts_Values = PostArticle_Doc_Values | PostEssay_Doc_Values;
 
-export type Posts_Form = Post_Doc_Form;
+export type Posts_Form = PostArticle_Doc_Form | PostEssay_Doc_Form;
 
 export type Posts_Document = Node & Document & {
   __typename?: 'Posts_Document';
@@ -373,30 +374,63 @@ export type Posts_Document = Node & Document & {
   form?: Maybe<Posts_Form>;
 };
 
-export type Post_Doc_Data = {
-  __typename?: 'Post_Doc_Data';
+export type PostArticle_Doc_Data = {
+  __typename?: 'PostArticle_Doc_Data';
   title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   _body?: Maybe<LongTextValue>;
 };
 
-export type Post_Doc_Values = {
-  __typename?: 'Post_Doc_Values';
+export type PostArticle_Doc_Values = {
+  __typename?: 'PostArticle_Doc_Values';
   title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   _body?: Maybe<LongTextInitialValue>;
   _template?: Maybe<Scalars['String']>;
 };
 
-export type Post_Doc_FormFieldsUnion = TextField | TextareaField;
+export type PostArticle_Doc_FormFieldsUnion = TextField | TextareaField;
 
-export type Post_Doc_Form = {
-  __typename?: 'Post_Doc_Form';
+export type PostArticle_Doc_Form = {
+  __typename?: 'PostArticle_Doc_Form';
   label?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<Post_Doc_FormFieldsUnion>>>;
+  fields?: Maybe<Array<Maybe<PostArticle_Doc_FormFieldsUnion>>>;
 };
 
-export type Post_Doc_Input = {
+export type PostArticle_Doc_Input = {
   title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  _body?: Maybe<Body_LongTextInput>;
+};
+
+export type PostEssay_Doc_Data = {
+  __typename?: 'PostEssay_Doc_Data';
+  title?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+  _body?: Maybe<LongTextValue>;
+};
+
+export type PostEssay_Doc_Values = {
+  __typename?: 'PostEssay_Doc_Values';
+  title?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+  _body?: Maybe<LongTextInitialValue>;
+  _template?: Maybe<Scalars['String']>;
+};
+
+export type PostEssay_Doc_FormFieldsUnion = TextField | TextareaField;
+
+export type PostEssay_Doc_Form = {
+  __typename?: 'PostEssay_Doc_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<PostEssay_Doc_FormFieldsUnion>>>;
+};
+
+export type PostEssay_Doc_Input = {
+  title?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
   _body?: Maybe<Body_LongTextInput>;
 };
 

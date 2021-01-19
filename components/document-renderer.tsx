@@ -20,7 +20,7 @@ export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
       return <NoData />;
   }
 };
-const PostRenderer = (page: Tina.Post_Doc_Data) => {
+const PostRenderer = (page: Tina.Posts_Data) => {
   return <JSONDump {...page} />;
 };
 const AuthorRenderer = (page: Tina.Author_Doc_Data) => {
