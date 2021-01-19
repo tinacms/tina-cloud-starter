@@ -177,17 +177,17 @@ export type Pages_Document = Node & Document & {
   form?: Maybe<Pages_Form>;
 };
 
-export type Post_Data = {
-  __typename?: 'Post_Data';
-  title?: Maybe<Scalars['String']>;
+export type BlockCta_Data = {
+  __typename?: 'BlockCta_Data';
+  header?: Maybe<Scalars['String']>;
 };
 
-export type Author_Data = {
-  __typename?: 'Author_Data';
-  name?: Maybe<Scalars['String']>;
+export type BlockHero_Data = {
+  __typename?: 'BlockHero_Data';
+  message?: Maybe<Scalars['String']>;
 };
 
-export type Page_Blocks_Data = Post_Data | Author_Data;
+export type Page_Blocks_Data = BlockCta_Data | BlockHero_Data;
 
 export type LongTextValue = {
   __typename?: 'LongTextValue';
@@ -203,19 +203,19 @@ export type Page_Doc_Data = {
   _body?: Maybe<LongTextValue>;
 };
 
-export type Post_Values = {
-  __typename?: 'Post_Values';
-  title?: Maybe<Scalars['String']>;
+export type BlockCta_Values = {
+  __typename?: 'BlockCta_Values';
+  header?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
 
-export type Author_Values = {
-  __typename?: 'Author_Values';
-  name?: Maybe<Scalars['String']>;
+export type BlockHero_Values = {
+  __typename?: 'BlockHero_Values';
+  message?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
 
-export type Page_Blocks_Values = Post_Values | Author_Values;
+export type Page_Blocks_Values = BlockCta_Values | BlockHero_Values;
 
 export type LongTextInitialValue = {
   __typename?: 'LongTextInitialValue';
@@ -237,28 +237,28 @@ export type TextField = FormField & {
   component?: Maybe<Scalars['String']>;
 };
 
-export type Post_FormFieldsUnion = TextField;
+export type BlockCta_FormFieldsUnion = TextField;
 
-export type Post_Form = {
-  __typename?: 'Post_Form';
+export type BlockCta_Form = {
+  __typename?: 'BlockCta_Form';
   label?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<Post_FormFieldsUnion>>>;
+  fields?: Maybe<Array<Maybe<BlockCta_FormFieldsUnion>>>;
 };
 
-export type Author_FormFieldsUnion = TextField;
+export type BlockHero_FormFieldsUnion = TextField;
 
-export type Author_Form = {
-  __typename?: 'Author_Form';
+export type BlockHero_Form = {
+  __typename?: 'BlockHero_Form';
   label?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<Author_FormFieldsUnion>>>;
+  fields?: Maybe<Array<Maybe<BlockHero_FormFieldsUnion>>>;
 };
 
 export type Page_Blocks_BlocksFieldTemplates = {
   __typename?: 'Page_Blocks_BlocksFieldTemplates';
-  post?: Maybe<Post_Form>;
-  author?: Maybe<Author_Form>;
+  blockCta?: Maybe<BlockCta_Form>;
+  blockHero?: Maybe<BlockHero_Form>;
 };
 
 export type Page_Blocks_BlocksField = FormField & {
@@ -285,17 +285,17 @@ export type Page_Doc_Form = {
   fields?: Maybe<Array<Maybe<Page_Doc_FormFieldsUnion>>>;
 };
 
-export type Post_Input = {
-  title?: Maybe<Scalars['String']>;
+export type BlockCta_Input = {
+  header?: Maybe<Scalars['String']>;
 };
 
-export type Author_Input = {
-  name?: Maybe<Scalars['String']>;
+export type BlockHero_Input = {
+  message?: Maybe<Scalars['String']>;
 };
 
 export type Blocks_Input = {
-  post?: Maybe<Post_Input>;
-  author?: Maybe<Author_Input>;
+  blockCta?: Maybe<BlockCta_Input>;
+  blockHero?: Maybe<BlockHero_Input>;
 };
 
 export type Body_LongTextInput = {

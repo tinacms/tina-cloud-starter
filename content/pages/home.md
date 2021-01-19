@@ -1,7 +1,9 @@
 ---
 title: Home
 blocks:
-  - template: post
-    title: This is a test
+  - template: block-hero
+    message: Welcome to my website!
+  - template: block-cta
+    header: 'Hello, world'
 ---
 

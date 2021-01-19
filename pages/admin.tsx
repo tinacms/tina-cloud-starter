@@ -3,7 +3,7 @@ import type * as Tina from "../.tina/types";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
 import { createCloudClient, variablesFromPath } from "../utils";
-import { request } from "./[[...slug]]";
+import { request, DEFAULT_VARIABLES } from "./[[...slug]]";
 import { DocumentRenderer } from "../components/document-renderer";
 import { useUrlHash } from "../hooks/use-url-hash";
 
@@ -37,10 +37,7 @@ export const Editor = ({ client }: { client }) => {
     const run = async () => {
       const response = await request(
         client,
-        variablesFromPath(slug, {
-          section: "posts",
-          relativePath: "hello-world.md",
-        })
+        variablesFromPath(slug, DEFAULT_VARIABLES)
       );
 
       setData(response);
