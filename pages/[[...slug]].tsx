@@ -3,6 +3,11 @@ import { createLocalClient } from "../utils";
 import type * as Tina from "../.tina/types";
 import { DocumentRenderer } from "../components/document-renderer";
 
+export const DEFAULT_VARIABLES = {
+  section: "pages",
+  relativePath: "home.md",
+};
+
 export default function Page(props: {
   payload: { getDocument: Tina.SectionDocumentUnion };
   variables: { section: string; relativePath: string };
@@ -36,8 +41,11 @@ export const request = async (
                 title
                 blocks {
                   __typename
-                  ... on Post_Data {
-                    title
+                  ... on BlockCta_Data {
+                    header
+                  }
+                  ... on BlockHero_Data {
+                    message
                   }
                 }
               }
@@ -71,10 +79,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
     };
   } else {
     // render something by default
-    variables = {
-      section: "posts",
-      relativePath: "hello-world.md",
-    };
+    variables = DEFAULT_VARIABLES;
   }
 
   const payload = await request(client, variables);

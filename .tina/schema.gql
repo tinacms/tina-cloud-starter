@@ -94,15 +94,15 @@ type Pages_Document implements Node & Document {
   form: Pages_Form
 }
 
-type Post_Data {
-  title: String
+type BlockCta_Data {
+  header: String
 }
 
-type Author_Data {
-  name: String
+type BlockHero_Data {
+  message: String
 }
 
-union Page_Blocks_Data = Post_Data | Author_Data
+union Page_Blocks_Data = BlockCta_Data | BlockHero_Data
 
 type LongTextValue {
   raw: String
@@ -116,17 +116,17 @@ type Page_Doc_Data {
   _body: LongTextValue
 }
 
-type Post_Values {
-  title: String
+type BlockCta_Values {
+  header: String
   _template: String
 }
 
-type Author_Values {
-  name: String
+type BlockHero_Values {
+  message: String
   _template: String
 }
 
-union Page_Blocks_Values = Post_Values | Author_Values
+union Page_Blocks_Values = BlockCta_Values | BlockHero_Values
 
 type LongTextInitialValue {
   raw: String
@@ -145,25 +145,25 @@ type TextField implements FormField {
   component: String
 }
 
-union Post_FormFieldsUnion = TextField
+union BlockCta_FormFieldsUnion = TextField
 
-type Post_Form {
+type BlockCta_Form {
   label: String
   name: String
-  fields: [Post_FormFieldsUnion]
+  fields: [BlockCta_FormFieldsUnion]
 }
 
-union Author_FormFieldsUnion = TextField
+union BlockHero_FormFieldsUnion = TextField
 
-type Author_Form {
+type BlockHero_Form {
   label: String
   name: String
-  fields: [Author_FormFieldsUnion]
+  fields: [BlockHero_FormFieldsUnion]
 }
 
 type Page_Blocks_BlocksFieldTemplates {
-  post: Post_Form
-  author: Author_Form
+  blockCta: BlockCta_Form
+  blockHero: BlockHero_Form
 }
 
 type Page_Blocks_BlocksField implements FormField {
@@ -187,17 +187,17 @@ type Page_Doc_Form {
   fields: [Page_Doc_FormFieldsUnion]
 }
 
-input Post_Input {
-  title: String
+input BlockCta_Input {
+  header: String
 }
 
-input Author_Input {
-  name: String
+input BlockHero_Input {
+  message: String
 }
 
 input Blocks_Input {
-  post: Post_Input
-  author: Author_Input
+  blockCta: BlockCta_Input
+  blockHero: BlockHero_Input
 }
 
 input Body_LongTextInput {
