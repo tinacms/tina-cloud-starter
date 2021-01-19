@@ -1,4 +1,4 @@
-## Getting started
+# Getting started
 
 Check out the walkthrough for where things are at currently
 
@@ -34,23 +34,7 @@ You should see a statically generated home page. Read on to see how edits can be
 
 If you're using VS Code you can have GraphQL syntax highlighting in your queries, add the [GraphQL VS Code extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
 
-## Editing content
-
-For demonstration purposes, we have 2 admin editing routes. One is hooked up to Tina Cloud, the other points to your local filesystem.
-
-### Local filesystem
-
-Local file editing can be done at `/admin-local`. This is great for times when you'll be editing your content models and doing some development along with content management
-
-It's useful for local development to be able to see changes immediately, and for your content server to be able to serve changes to your schemas on-the-fly.
-
-### Tina Cloud
-
-The cloud editor is located at `/admin`
-
-Cloud editing is the workflow you'll use when your website is hosted on a server. Note that changes to content from this endpoint will only be reflected once your host has updated your website.
-
-## Folder structure
+# Folder structure
 
 As this is a Next.js app, you'll find the file-based routing in the `pages` directory.
 
@@ -63,7 +47,6 @@ This is the only public route for your website, any path you visit will be passe
 If I have a `.tina/settings.yml` config list so:
 
 ```yml
----
 ---
 sections:
   - type: directory
@@ -89,8 +72,14 @@ For example, to edit `https://my-app.com/posts/hello-world`, you'd need to visit
 
 ### `pages/admin-local.tsx`
 
-Admin local is for demonstration and development purposes, since `admin.tsx` will write changes to the **content API** service (which will be persisted to Github), you won't see those changes in the `[[...slug]].tsx` route. The `[[..slug]].tsx` route is using your local filesystem as the data source, so changes in Github aren't reflected here unless you pulled them down. The `admin-local` route will write to your local filesystem instead, this is the ideal workflow for developers. You'll be able to make changes to your content schema and see them reflected immediately without needing to talk to an external service. However, it makes no sense to support this on a proper web host, any changes requested to the filesystem would either be blocked by the server or blown away on the next deploy. That's why this endpoint is disabled for production environments.
+Admin local is for demonstration and development purposes, since `admin.tsx` will write changes to the **content API** service (which will be persisted to Github), you won't see those changes in the `[[...slug]].tsx` route. The `[[..slug]].tsx` route is using your local filesystem as the data source, so changes in Github aren't reflected here unless you pulled them down.
+
+The `admin-local` route will write to your local filesystem instead, this is the ideal workflow for developers. You'll be able to make changes to your content schema and see them reflected immediately without needing to talk to an external service.
+
+However, it makes no sense to support this on a proper web host, any changes requested to the filesystem would either be blocked by the server or blown away on the next deploy. That's why this endpoint is disabled for production environments.
 
 ### `components/document-renderer.tsx`
 
-The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI. The `<DocumentRenderer>` shows how you can use the provided types to step through the data. This a great hand-off point to your design system. It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. Enjoy!
+The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI. The `<DocumentRenderer>` shows how you can use the provided types to step through the data. This a great hand-off point to your design system.
+
+It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. Enjoy!
