@@ -3,6 +3,20 @@ new_page_extension: md
 auto_deploy: false
 sections:
   - type: directory
+    path: content/pages
+    label: Pages
+    create: documents
+    match: "**/*.md"
+    templates:
+      - page
+  - type: directory
+    path: content/authors
+    label: Authors
+    create: documents
+    match: "**/*.md"
+    templates:
+      - author
+  - type: directory
     path: content/posts
     label: Posts
     create: documents

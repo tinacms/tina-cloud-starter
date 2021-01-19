@@ -46,15 +46,19 @@ type Section {
   documents: [Document]
 }
 
-union SectionDocumentUnion = Posts_Document
+union SectionDocumentUnion = Pages_Document | Authors_Document | Posts_Document
 
 input SectionParams {
+  pages: Pages_Input
+  authors: Authors_Input
   posts: Posts_Input
 }
 
 type Mutation {
   addPendingDocument(relativePath: String, section: String, template: String): Node
   updateDocument(relativePath: String, params: SectionParams): SectionDocumentUnion
+  updatePagesDocument(relativePath: String, params: Pages_Input): Pages_Document
+  updateAuthorsDocument(relativePath: String, params: Authors_Input): Authors_Document
   updatePostsDocument(relativePath: String, params: Posts_Input): Posts_Document
 }
 
@@ -64,8 +68,188 @@ type Query {
   getDocument(section: String, relativePath: String): SectionDocumentUnion
   getSections: [Section]
   getSection(section: String): Section
+  getPagesDocument(relativePath: String): Pages_Document
+  getPagesList: [Pages_Document]
+  getAuthorsDocument(relativePath: String): Authors_Document
+  getAuthorsList: [Authors_Document]
   getPostsDocument(relativePath: String): Posts_Document
   getPostsList: [Posts_Document]
+}
+
+union Pages_Data = Page_Doc_Data
+
+input Pages_Input {
+  page: Page_Doc_Input
+}
+
+union Pages_Values = Page_Doc_Values
+
+union Pages_Form = Page_Doc_Form
+
+type Pages_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: Pages_Data
+  values: Pages_Values
+  form: Pages_Form
+}
+
+type Post_Data {
+  title: String
+}
+
+type Author_Data {
+  name: String
+}
+
+union Page_Blocks_Data = Post_Data | Author_Data
+
+type LongTextValue {
+  raw: String
+  markdownAst: JSONObject
+  html: String
+}
+
+type Page_Doc_Data {
+  title: String
+  blocks: [Page_Blocks_Data]
+  _body: LongTextValue
+}
+
+type Post_Values {
+  title: String
+  _template: String
+}
+
+type Author_Values {
+  name: String
+  _template: String
+}
+
+union Page_Blocks_Values = Post_Values | Author_Values
+
+type LongTextInitialValue {
+  raw: String
+}
+
+type Page_Doc_Values {
+  title: String
+  blocks: [Page_Blocks_Values]
+  _body: LongTextInitialValue
+  _template: String
+}
+
+type TextField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+union Post_FormFieldsUnion = TextField
+
+type Post_Form {
+  label: String
+  name: String
+  fields: [Post_FormFieldsUnion]
+}
+
+union Author_FormFieldsUnion = TextField
+
+type Author_Form {
+  label: String
+  name: String
+  fields: [Author_FormFieldsUnion]
+}
+
+type Page_Blocks_BlocksFieldTemplates {
+  post: Post_Form
+  author: Author_Form
+}
+
+type Page_Blocks_BlocksField implements FormField {
+  name: String
+  label: String
+  component: String
+  templates: Page_Blocks_BlocksFieldTemplates
+}
+
+type TextareaField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+union Page_Doc_FormFieldsUnion = TextField | Page_Blocks_BlocksField | TextareaField
+
+type Page_Doc_Form {
+  label: String
+  name: String
+  fields: [Page_Doc_FormFieldsUnion]
+}
+
+input Post_Input {
+  title: String
+}
+
+input Author_Input {
+  name: String
+}
+
+input Blocks_Input {
+  post: Post_Input
+  author: Author_Input
+}
+
+input Body_LongTextInput {
+  raw: String
+}
+
+input Page_Doc_Input {
+  title: String
+  blocks: [Blocks_Input]
+  _body: Body_LongTextInput
+}
+
+union Authors_Data = Author_Doc_Data
+
+input Authors_Input {
+  author: Author_Doc_Input
+}
+
+union Authors_Values = Author_Doc_Values
+
+union Authors_Form = Author_Doc_Form
+
+type Authors_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: Authors_Data
+  values: Authors_Values
+  form: Authors_Form
+}
+
+type Author_Doc_Data {
+  name: String
+  _body: LongTextValue
+}
+
+type Author_Doc_Values {
+  name: String
+  _body: LongTextInitialValue
+  _template: String
+}
+
+union Author_Doc_FormFieldsUnion = TextField | TextareaField
+
+type Author_Doc_Form {
+  label: String
+  name: String
+  fields: [Author_Doc_FormFieldsUnion]
+}
+
+input Author_Doc_Input {
+  name: String
+  _body: Body_LongTextInput
 }
 
 union Posts_Data = Post_Doc_Data
@@ -86,19 +270,9 @@ type Posts_Document implements Node & Document {
   form: Posts_Form
 }
 
-type LongTextValue {
-  raw: String
-  markdownAst: JSONObject
-  html: String
-}
-
 type Post_Doc_Data {
   title: String
   _body: LongTextValue
-}
-
-type LongTextInitialValue {
-  raw: String
 }
 
 type Post_Doc_Values {
@@ -107,28 +281,12 @@ type Post_Doc_Values {
   _template: String
 }
 
-type TextField implements FormField {
-  name: String
-  label: String
-  component: String
-}
-
-type TextareaField implements FormField {
-  name: String
-  label: String
-  component: String
-}
-
 union Post_Doc_FormFieldsUnion = TextField | TextareaField
 
 type Post_Doc_Form {
   label: String
   name: String
   fields: [Post_Doc_FormFieldsUnion]
-}
-
-input Body_LongTextInput {
-  raw: String
 }
 
 input Post_Doc_Input {

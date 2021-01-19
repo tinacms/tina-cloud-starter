@@ -3,7 +3,8 @@ import type * as Tina from "../.tina/types";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
 import { createCloudClient, variablesFromPath } from "../utils";
-import { request, Content } from "./[[...slug]]";
+import { request } from "./[[...slug]]";
+import { DocumentRenderer } from "../components/document-renderer";
 import { useUrlHash } from "../hooks/use-url-hash";
 
 const client = createCloudClient();
@@ -53,7 +54,7 @@ export const Editor = ({ client }: { client }) => {
   }>({ payload: data });
 
   return payload.getDocument ? (
-    <Content {...payload.getDocument.data} />
+    <DocumentRenderer {...payload.getDocument} />
   ) : (
     <p>Loading...</p>
   );

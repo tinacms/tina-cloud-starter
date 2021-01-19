@@ -1,18 +1,14 @@
 import { Client } from "tina-graphql-gateway";
 import { createLocalClient } from "../utils";
 import type * as Tina from "../.tina/types";
-import { JSONDump } from "../components/json-dump";
+import { DocumentRenderer } from "../components/document-renderer";
 
 export default function Page(props: {
-  payload: { getDocument: Tina.Posts_Document };
+  payload: { getDocument: Tina.SectionDocumentUnion };
   variables: { section: string; relativePath: string };
 }) {
-  return <Content {...props.payload.getDocument.data} />;
+  return <DocumentRenderer {...props.payload.getDocument} />;
 }
-
-export const Content = (props: Tina.Post_Doc_Data) => {
-  return <JSONDump {...props} />;
-};
 
 const client = createLocalClient();
 
@@ -24,9 +20,32 @@ export const request = async (
     (gql) => gql`
       query ContentQuery($section: String!, $relativePath: String!) {
         getDocument(section: $section, relativePath: $relativePath) {
-          ... on Posts_Document {
-            id
+          __typename
+          ... on Authors_Document {
             data {
+              __typename
+              ... on Author_Doc_Data {
+                name
+              }
+            }
+          }
+          ... on Pages_Document {
+            data {
+              __typename
+              ... on Page_Doc_Data {
+                title
+                blocks {
+                  __typename
+                  ... on Post_Data {
+                    title
+                  }
+                }
+              }
+            }
+          }
+          ... on Posts_Document {
+            data {
+              __typename
               ... on Post_Doc_Data {
                 title
               }
