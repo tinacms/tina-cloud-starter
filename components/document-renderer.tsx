@@ -20,10 +20,10 @@ export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
       return <NoData />;
   }
 };
-const PostRenderer = (page: Tina.Post_Data | Tina.Post_Doc_Data) => {
+const PostRenderer = (page: Tina.Post_Doc_Data) => {
   return <JSONDump {...page} />;
 };
-const AuthorRenderer = (page: Tina.Author_Data | Tina.Author_Doc_Data) => {
+const AuthorRenderer = (page: Tina.Author_Doc_Data) => {
   return <JSONDump {...page} />;
 };
 const PageRenderer = (page: Tina.Page_Doc_Data) => {
@@ -53,16 +53,16 @@ const PageRenderer = (page: Tina.Page_Doc_Data) => {
  *   type: blocks
  *   label: Blocks
  *   template_types:
- *     - "post"
- *     - "author"
+ *     - "block-cta"
+ *     - "block-hero"
  * ```
  */
 const PageBlockRenderer = (props: Tina.Page_Blocks_Data) => {
   switch (props.__typename) {
-    case "Post_Data":
-      return <PostRenderer {...props} />;
-    case "Author_Data":
-      return <AuthorRenderer {...props} />;
+    case "BlockCta_Data":
+      return <JSONDump {...props} />;
+    case "BlockHero_Data":
+      return <JSONDump {...props} />;
     default:
       return <NoData />;
   }

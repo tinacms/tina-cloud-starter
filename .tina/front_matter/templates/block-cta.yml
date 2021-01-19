@@ -1,0 +1,7 @@
+---
+label: CTA
+hide_body: false
+fields:
+  - name: header
+    type: text
+    label: Header

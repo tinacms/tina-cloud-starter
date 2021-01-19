@@ -1,5 +1,5 @@
 ---
-title: 'Hello, World! Thisll work!'
+title: Hello, World!
 ---
 
-This is a test.
+This is my first blog post.

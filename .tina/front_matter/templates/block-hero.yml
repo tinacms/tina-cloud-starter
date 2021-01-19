@@ -1,0 +1,7 @@
+---
+label: Hero
+hide_body: false
+fields:
+  - name: message
+    type: text
+    label: Message
