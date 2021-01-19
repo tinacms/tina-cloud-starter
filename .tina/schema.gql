@@ -252,15 +252,16 @@ input Author_Doc_Input {
   _body: Body_LongTextInput
 }
 
-union Posts_Data = Post_Doc_Data
+union Posts_Data = PostArticle_Doc_Data | PostEssay_Doc_Data
 
 input Posts_Input {
-  post: Post_Doc_Input
+  postArticle: PostArticle_Doc_Input
+  postEssay: PostEssay_Doc_Input
 }
 
-union Posts_Values = Post_Doc_Values
+union Posts_Values = PostArticle_Doc_Values | PostEssay_Doc_Values
 
-union Posts_Form = Post_Doc_Form
+union Posts_Form = PostArticle_Doc_Form | PostEssay_Doc_Form
 
 type Posts_Document implements Node & Document {
   id: ID!
@@ -270,27 +271,57 @@ type Posts_Document implements Node & Document {
   form: Posts_Form
 }
 
-type Post_Doc_Data {
+type PostArticle_Doc_Data {
   title: String
+  description: String
   _body: LongTextValue
 }
 
-type Post_Doc_Values {
+type PostArticle_Doc_Values {
   title: String
+  description: String
   _body: LongTextInitialValue
   _template: String
 }
 
-union Post_Doc_FormFieldsUnion = TextField | TextareaField
+union PostArticle_Doc_FormFieldsUnion = TextField | TextareaField
 
-type Post_Doc_Form {
+type PostArticle_Doc_Form {
   label: String
   name: String
-  fields: [Post_Doc_FormFieldsUnion]
+  fields: [PostArticle_Doc_FormFieldsUnion]
 }
 
-input Post_Doc_Input {
+input PostArticle_Doc_Input {
   title: String
+  description: String
+  _body: Body_LongTextInput
+}
+
+type PostEssay_Doc_Data {
+  title: String
+  excerpt: String
+  _body: LongTextValue
+}
+
+type PostEssay_Doc_Values {
+  title: String
+  excerpt: String
+  _body: LongTextInitialValue
+  _template: String
+}
+
+union PostEssay_Doc_FormFieldsUnion = TextField | TextareaField
+
+type PostEssay_Doc_Form {
+  label: String
+  name: String
+  fields: [PostEssay_Doc_FormFieldsUnion]
+}
+
+input PostEssay_Doc_Input {
+  title: String
+  excerpt: String
   _body: Body_LongTextInput
 }
 

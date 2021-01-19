@@ -6,6 +6,8 @@ fields:
   - name: title
     type: text
     label: Title
+  - name: excerpt
+    type: text
+    label: Excerpt
 pages:
-  - content/posts/hello-world.md
   - content/posts/hi.md
