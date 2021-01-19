@@ -64,13 +64,13 @@ And I have a document located at `content/posts/hello-world.md`, you'll find tha
 
 > By default the index route (`https:/my-app.com/`) will show the `home.md` document from your `content/pages` directory
 
-### `pages/admin.tsx`
+### `pages/admin/[[...slug]].tsx`
 
-This is the route where you'll be able to edit your content. It's protected by an authentication layer, so be sure you've set up an account in the **Getting Started** steps above. It uses a hash-router to determine which document to edit, so it matches the routing pattern seen in `[[...slug]].tsx`.
+This is the route where you'll be able to edit your content. It's protected by an authentication layer, so be sure you've set up an account in the **Getting Started** steps above. It matches the routing pattern seen in `[[...slug]].tsx`.
 
-For example, to edit `https://my-app.com/posts/hello-world`, you'd need to visit `https://my-app.com/admin#posts/hello-world`.
+For example, to edit `https://my-app.com/posts/hello-world`, you'd need to visit `https://my-app.com/admin/posts/hello-world`.
 
-### `pages/admin-local.tsx`
+### `pages/admin-local/[[...slug]].tsx`
 
 Admin local is for demonstration and development purposes, since `admin.tsx` will write changes to the **content API** service (which will be persisted to Github), you won't see those changes in the `[[...slug]].tsx` route. The `[[..slug]].tsx` route is using your local filesystem as the data source, so changes in Github aren't reflected here unless you pulled them down.
 

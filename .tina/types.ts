@@ -74,7 +74,7 @@ export type SectionParams = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addPendingDocument?: Maybe<Node>;
+  addPendingDocument?: Maybe<Document>;
   updateDocument?: Maybe<SectionDocumentUnion>;
   updatePagesDocument?: Maybe<Pages_Document>;
   updateAuthorsDocument?: Maybe<Authors_Document>;
