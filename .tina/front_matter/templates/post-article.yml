@@ -1,0 +1,13 @@
+---
+label: Article
+hide_body: false
+display_field: title
+fields:
+  - name: title
+    type: text
+    label: Title
+  - name: description
+    type: text
+    label: Description
+pages:
+  - content/posts/hello-world.md
