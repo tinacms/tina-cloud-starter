@@ -11,3 +11,4 @@ fields:
     label: Description
 pages:
   - content/posts/hello-world.md
+  - content/posts/my-post.md
