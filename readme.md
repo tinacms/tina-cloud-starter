@@ -83,3 +83,9 @@ However, it makes no sense to support this on a proper web host, any changes req
 The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI. The `<DocumentRenderer>` shows how you can use the provided types to step through the data. This a great hand-off point to your design system.
 
 It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. Enjoy!
+
+# Content Models
+
+Inside the `.tina` folder you'll find several files related to content modeling. First, the `settings.yml` has a `sections` key which controls how content is persisted to the filesystem. As you'll see, sections can be comprised of multiple templates, making it easy to store content which is semantically similar, but might differ in shape, in the same folder. As an example we've created a `posts` section which can be either an `article` or an `essay` template. Read more about sections [here](https://forestry.io/docs/settings/content-sections/).
+
+The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file.
