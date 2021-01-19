@@ -1,7 +1,7 @@
 import React from "react";
 import { TinaCMS, TinaProvider } from "tinacms";
-import { createLocalClient } from "../utils";
-import { Editor } from "./admin";
+import { createLocalClient } from "../../utils";
+import { Editor } from "../admin/[[...slug]]";
 
 const client = createLocalClient();
 
@@ -20,7 +20,7 @@ export default function AdminPage() {
   return (
     <TinaProvider cms={cms}>
       {/* <Editor /> should only be run client-side */}
-      {isComponentMounted && <Editor client={client} />}
+      {isComponentMounted && <Editor prefix="/admin-local" client={client} />}
     </TinaProvider>
   );
 }
