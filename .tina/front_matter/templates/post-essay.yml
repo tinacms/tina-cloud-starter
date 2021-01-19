@@ -11,3 +11,4 @@ fields:
     label: Excerpt
 pages:
   - content/posts/hi.md
+  - content/posts/my-essay.md
