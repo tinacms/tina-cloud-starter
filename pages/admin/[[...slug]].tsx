@@ -1,11 +1,10 @@
 import React from "react";
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../../.tina/types";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
-import { createCloudClient, variablesFromPath } from "../utils";
-import { request, DEFAULT_VARIABLES } from "./[[...slug]]";
-import { DocumentRenderer } from "../components/document-renderer";
-import { useUrlHash } from "../hooks/use-url-hash";
+import { createCloudClient, variablesFromPath } from "../../utils";
+import { request, DEFAULT_VARIABLES } from "../[[...slug]]";
+import { DocumentRenderer } from "../../components/document-renderer";
 
 const client = createCloudClient();
 
@@ -20,16 +19,20 @@ export default function AdminPage() {
 
   return (
     <TinaCloudAuthWall cms={cms}>
-      <Editor client={client} />
+      <Editor prefix="/admin" client={client} />
     </TinaCloudAuthWall>
   );
 }
 
-export const Editor = ({ client }: { client }) => {
-  let slug = useUrlHash();
-  if (!slug) {
-    slug = "/";
-  }
+export const Editor = ({
+  prefix,
+  client,
+}: {
+  /** The portion of your URL which does not reflect the non-admin route */
+  prefix: string;
+  client;
+}) => {
+  let slug = window.location.pathname.replace(prefix, "").slice(1);
 
   const [data, setData] = React.useState({});
 
@@ -44,11 +47,20 @@ export const Editor = ({ client }: { client }) => {
     };
 
     run();
-  }, []);
+  }, [slug]);
 
   const payload = useForm<{
     getDocument: Tina.SectionDocumentUnion;
-  }>({ payload: data });
+  }>({
+    payload: data,
+    onNewDocument: (args) => {
+      const redirect = `${window.location.origin}${window.location.pathname}#${
+        args.section.slug
+      }/${args.breadcrumbs.join("/")}`;
+
+      window.location.assign(redirect);
+    },
+  });
 
   return payload.getDocument ? (
     <DocumentRenderer {...payload.getDocument} />
