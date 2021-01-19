@@ -7,8 +7,7 @@ export default function Page(props: {
   payload: { getDocument: Tina.Posts_Document };
   variables: { section: string; relativePath: string };
 }) {
-  const payload = props.payload;
-  return <Content {...payload.getDocument.data} />;
+  return <Content {...props.payload.getDocument.data} />;
 }
 
 export const Content = (props: Tina.Post_Doc_Data) => {
@@ -37,17 +36,14 @@ export const request = async (
       }
     `,
     {
-      variables: {
-        section: variables.section,
-        relativePath: variables.relativePath,
-      },
+      variables,
     }
   );
 
   return content;
 };
 
-export const getStaticProps = async ({ params, ...rest }): Promise<any> => {
+export const getStaticProps = async ({ params }): Promise<any> => {
   let variables;
   if (params?.slug?.length > 0) {
     variables = {
