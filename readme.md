@@ -49,3 +49,48 @@ It's useful for local development to be able to see changes immediately, and for
 The cloud editor is located at `/admin`
 
 Cloud editing is the workflow you'll use when your website is hosted on a server. Note that changes to content from this endpoint will only be reflected once your host has updated your website.
+
+## Folder structure
+
+As this is a Next.js app, you'll find the file-based routing in the `pages` directory.
+
+### `pages/[[...slug]].tsx`
+
+This is the only public route for your website, any path you visit will be passed in as arguments to the content API, with first value from the path being used as the `section` slug, and everything after that representing the document's path _relative_ to the configured section path.
+
+#### Example
+
+If I have a `.tina/settings.yml` config list so:
+
+```yml
+---
+---
+sections:
+  - type: directory
+    path: content/posts
+    label: Posts
+    create: documents
+    match: "**/*.md"
+    templates:
+      - post
+```
+
+And I have a document located at `content/posts/hello-world.md`, you'll find that document at `https://my-app.com/posts/hello-world`.
+
+> Notice that `hello-world` is considered the **relative** path here, we don't need to specify `content/posts/hello-world` because that's been configured in our `settings.yml`.
+
+> By default the index route (`https:/my-app.com/`) will show the `home.md` document from your `content/pages` directory
+
+### `pages/admin.tsx`
+
+This is the route where you'll be able to edit your content. It's protected by an authentication layer, so be sure you've set up an account in the **Getting Started** steps above. It uses a hash-router to determine which document to edit, so it matches the routing pattern seen in `[[...slug]].tsx`.
+
+For example, to edit `https://my-app.com/posts/hello-world`, you'd need to visit `https://my-app.com/admin#posts/hello-world`.
+
+### `pages/admin-local.tsx`
+
+Admin local is for demonstration and development purposes, since `admin.tsx` will write changes to the **content API** service (which will be persisted to Github), you won't see those changes in the `[[...slug]].tsx` route. The `[[..slug]].tsx` route is using your local filesystem as the data source, so changes in Github aren't reflected here unless you pulled them down. The `admin-local` route will write to your local filesystem instead, this is the ideal workflow for developers. You'll be able to make changes to your content schema and see them reflected immediately without needing to talk to an external service. However, it makes no sense to support this on a proper web host, any changes requested to the filesystem would either be blocked by the server or blown away on the next deploy. That's why this endpoint is disabled for production environments.
+
+### `components/document-renderer.tsx`
+
+The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI. The `<DocumentRenderer>` shows how you can use the provided types to step through the data. This a great hand-off point to your design system. It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. Enjoy!

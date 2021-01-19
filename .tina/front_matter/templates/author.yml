@@ -1,0 +1,10 @@
+---
+label: Author
+hide_body: false
+fields:
+  - name: name
+    type: text
+    label: name
+pages:
+  - content/authors/homer.md
+  - content/authors/marge.md
