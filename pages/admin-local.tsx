@@ -1,12 +1,14 @@
 import React from "react";
-import type * as Tina from "../.tina/types";
 import { TinaCMS, TinaProvider } from "tinacms";
-import { createLocalClient, variablesFromPath } from "../utils";
+import { createLocalClient } from "../utils";
 import { Editor } from "./admin";
 
 const client = createLocalClient();
 
 export default function AdminPage() {
+  const [isComponentMounted, setIsComponentMounted] = React.useState(false);
+  React.useEffect(() => setIsComponentMounted(true), []);
+
   const cms = new TinaCMS({
     apis: {
       tina: client,
@@ -17,7 +19,8 @@ export default function AdminPage() {
 
   return (
     <TinaProvider cms={cms}>
-      <Editor client={client} />
+      {/* <Editor /> should only be run client-side */}
+      {isComponentMounted && <Editor client={client} />}
     </TinaProvider>
   );
 }

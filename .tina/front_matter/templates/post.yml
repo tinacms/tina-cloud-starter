@@ -8,3 +8,4 @@ fields:
     label: Title
 pages:
   - content/posts/hello-world.md
+  - content/posts/hi.md
