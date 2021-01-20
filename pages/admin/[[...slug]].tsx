@@ -14,7 +14,7 @@ export default function AdminPage() {
       tina: client,
     },
     sidebar: true,
-    enabled: false,
+    enabled: true,
   });
 
   return (
@@ -54,7 +54,7 @@ export const Editor = ({
   }>({
     payload: data,
     onNewDocument: (args) => {
-      const redirect = `${window.location.origin}${window.location.pathname}#${
+      const redirect = `${window.location.origin}${prefix}/${
         args.section.slug
       }/${args.breadcrumbs.join("/")}`;
 
