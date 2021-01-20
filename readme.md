@@ -89,3 +89,28 @@ It's at this layer where the data-fetching and routing logic has already been ha
 Inside the `.tina` folder you'll find several files related to content modeling. First, the `settings.yml` has a `sections` key which controls how content is persisted to the filesystem. As you'll see, sections can be comprised of multiple templates, making it easy to store content which is semantically similar, but might differ in shape, in the same folder. As an example we've created a `posts` section which can be either an `article` or an `essay` template. Read more about sections [here](https://forestry.io/docs/settings/content-sections/).
 
 The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file.
+
+# Hosting the project
+
+## Hosting on Vercel
+
+This app can quickly be deployed to [Vercel](https://vercel.com/new).
+During the deployment steps, be sure to set the following environment variables through the Vercel UI:
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+```
+
+Once your project is being deployed, you can take the deployment URL and use it within the app's Callback URL field.
+Go to the dashboard, click into your new app, and change its Callback URL to:
+> \[your deployment URL \]/admin
+
+You can test that everything is configured correctly by navigating to **\[your deployment URL \]/admin**, and trying to login.
+
+## Hosting on Netlify
+
+The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
+In addition to the environment variables mentioned above, you will also need to set:
+```
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
+```
