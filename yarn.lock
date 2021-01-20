@@ -1096,57 +1096,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/cli@^0.2.28":
-  version "0.2.28"
-  resolved "https://registry.yarnpkg.com/@forestryio/cli/-/cli-0.2.28.tgz#b01c47210e275886e8c62e0111d640fae43a9b34"
-  integrity sha512-v5K4bYwfhToNUqyvniBs6id4fCYrXZqikDzIZOUSXilRWYcXOQc2PMlkcab+uVJ4tMpLKUMAK9rl6jfSneZ14g==
-  dependencies:
-    "@forestryio/gql" "0.0.38"
-    "@forestryio/graphql-helpers" "0.0.16"
-    "@graphql-codegen/core" "^1.17.0"
-    "@graphql-codegen/typescript" "^1.17.0"
-    "@graphql-codegen/typescript-operations" "^1.17.0"
-    "@types/lodash" "^4.14.157"
-    "@types/lodash.get" "^4.4.6"
-    ajv "^6.12.3"
-    axios "0.19.0"
-    body-parser "^1.19.0"
-    chalk "^2.4.2"
-    clear "^0.1.0"
-    commander "5.1.0"
-    cookie-parser "^1.4.4"
-    cors "^2.8.5"
-    crypto "^1.0.1"
-    esm "3.2.25"
-    express "^4.17.1"
-    express-graphql "^0.11.0"
-    fast-glob "^3.2.4"
-    figlet "^1.2.3"
-    fs-extra "^9.0.1"
-    generator-code "^1.2.19"
-    graphql "^15.1.0"
-    http-proxy "^1.18.0"
-    inquirer "^6.5.1"
-    isomorphic-unfetch "^3.0.0"
-    js-yaml "^3.14.0"
-    jsonwebtoken "^8.5.1"
-    jwks-rsa "^1.6.0"
-    listr "0.14.3"
-    lodash "^4.17.19"
-    lodash.get "^4.4.2"
-    ms "^2.1.2"
-    open "^6.4.0"
-    ora "^4.0.2"
-    path "^0.12.7"
-    simple-git "1.124.0"
-    tsup "^3.7.0"
-    yaml "^1.10.0"
-    yo "^3.1.1"
-
-"@forestryio/gql@0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.38.tgz#1c0e169ffde8c925fcb23cd8f7922ade53d37c7b"
-  integrity sha512-YrGkzSYMYeEgRw/XDiiLIY/XJ0G9bPq+1fIvw4GnSZnRubr48lUcqWGtMSeJqEWuoFib/AdcQkVgdBNDdR8DBQ==
+"@forestryio/gql@workspace:packages/gql":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.40.tgz#c84aa66fa36c88c9e791e6b3fdd0893db493ddd5"
+  integrity sha512-nhjnrVU2XG44Muz7Apgpv7cIEtd5iK4dYwkRiu+c73mGJ003u6bgfwJICzbviMvmD/RGPL58MPuXSgtpY7qLMg==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.16"
     "@octokit/auth-app" "^2.6.0"
@@ -1179,7 +1132,7 @@
     ws "^7.3.1"
     yup "^0.29.3"
 
-"@forestryio/graphql-helpers@0.0.16":
+"@forestryio/graphql-helpers@0.0.16", "@forestryio/graphql-helpers@workspace:packages/graphql-helpers":
   version "0.0.16"
   resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.16.tgz#87f31f084f0eaad623cbffd6903b01c3edeb1acb"
   integrity sha512-St4t8aRsvdruGXvBJaZHaPBzhmSci/16ytKbcFmeuda9Fpcb+5wBw+vKf6TvFgv1g7pd0rOP6nZ5cY4ZVNU1GA==
@@ -12297,6 +12250,54 @@ tina-graphql-gateway@^0.1.43:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.43.tgz#2f077a0348437c2c964edfa7ade14186dd82db0a"
   integrity sha512-x7NIJ0UGp+JWsx/c7TdL11W4LyJcsoqwxr5zFotRDYnaQV0CiQE9kkjQ5KGiR7LWFfObpgF6NcPhWOz30G82vQ==
+
+tina-graphql-gateway-cli@^0.2.27:
+  version "0.2.27"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.27.tgz#eb7c440c048faa4ba56a337505e886cd4a5b61fd"
+  integrity sha512-bJD6XWg3RD4GWHj2qbBgzuiktM6Szb0/cuAmxOyoYeDOw/wKiXeu6w2EEvi/0ZYZhtEbh1Pih2ybObzZUo9h3Q==
+  dependencies:
+    "@forestryio/gql" "workspace:packages/gql"
+    "@forestryio/graphql-helpers" "workspace:packages/graphql-helpers"
+    "@graphql-codegen/core" "^1.17.0"
+    "@graphql-codegen/typescript" "^1.17.0"
+    "@graphql-codegen/typescript-operations" "^1.17.0"
+    "@types/lodash" "^4.14.157"
+    "@types/lodash.get" "^4.4.6"
+    ajv "^6.12.3"
+    axios "0.19.0"
+    body-parser "^1.19.0"
+    chalk "^2.4.2"
+    clear "^0.1.0"
+    commander "5.1.0"
+    cookie-parser "^1.4.4"
+    cors "^2.8.5"
+    crypto "^1.0.1"
+    esm "3.2.25"
+    express "^4.17.1"
+    express-graphql "^0.11.0"
+    fast-glob "^3.2.4"
+    figlet "^1.2.3"
+    fs-extra "^9.0.1"
+    generator-code "^1.2.19"
+    graphql "^15.1.0"
+    http-proxy "^1.18.0"
+    inquirer "^6.5.1"
+    isomorphic-unfetch "^3.0.0"
+    js-yaml "^3.14.0"
+    jsonwebtoken "^8.5.1"
+    jwks-rsa "^1.6.0"
+    listr "0.14.3"
+    lodash "^4.17.19"
+    lodash.get "^4.4.2"
+    ms "^2.1.2"
+    open "^6.4.0"
+    ora "^4.0.2"
+    path "^0.12.7"
+    simple-git "1.124.0"
+    tsup "^3.7.0"
+    yaml "^1.10.0"
+    yo "^3.1.1"
+
   dependencies:
     "@forestryio/graphql-helpers" "0.0.16"
     "@graphql-codegen/core" "^1.15.4"
