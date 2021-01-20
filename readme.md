@@ -103,7 +103,7 @@ NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
 Once your project is being deployed, you can take the deployment URL and use it within the app's Callback URL field.
 Go to the dashboard, click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
 
-You can test that everything is configured correctly by navigating to `[your deployment URL \]/admin`, and trying to login.
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
 
 ## Hosting on Netlify
 
