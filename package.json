@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "watch": "bash -c \"yarn watch:types & yarn dev\"",
-    "dev": "yarn tina-gql server:start -c \"yarn next dev\"",
+    "dev": "yarn tina-gql server:start -c \"next dev\"",
     "watch:types": "yarn nodemon --watch \"./.tina\" -e yml --exec \"yarn tina-gql schema:types\"",
-    "build": "next build",
-    "next-start": "next start",
-    "start": "yarn tina-gql server:start -c \"yarn next-start\""
+    "build": "yarn tina-gql server:start -c \"next build\"",
+    "start": "yarn tina-gql server:start -c \"next start\""
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",
