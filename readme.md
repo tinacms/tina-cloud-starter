@@ -92,13 +92,12 @@ The templates you'll see in the section definitions can be found in `.tina/front
 
 # Hosting the project
 
-## Hosting on Vercel
-
-This app can quickly be deployed to [Vercel](https://vercel.com/new).
+This app can quickly be deployed to [Vercel](https://vercel.com/new). 
 During the deployment steps, be sure to set the following environment variables through the Vercel UI:
 ```
 NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
 ```
 
 Once your project is being deployed, you can take the deployment URL and use it within the app's Callback URL field.
@@ -109,7 +108,3 @@ You can test that everything is configured correctly by navigating to `[your dep
 ## Hosting on Netlify
 
 The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
-In addition to the environment variables mentioned above, you will also need to set:
-```
-NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
-```
