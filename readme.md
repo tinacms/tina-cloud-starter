@@ -108,3 +108,16 @@ You can test that everything is configured correctly by navigating to `[your dep
 ## Hosting on Netlify
 
 The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
+
+For the **build command**, use `yarn build`, and `.next/` as the **publish directory**.
+
+Once the Netlify app has been created, be sure to add the following environment variables:
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
+```
+
+You will also want to install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/). This allows you to take advantage of server-side rendering and other Next features.
+
+Trigger a redploy, and navigate to `[your deployment URL]/admin` to login and make changes.
