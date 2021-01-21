@@ -104,7 +104,7 @@ NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
 NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
 ```
 
-*You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect*
+*You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect*
 
 Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
 Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
@@ -119,14 +119,14 @@ For the **build command**, use `yarn build`, and `.next/` as the **publish direc
 
 You will also want to install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/). This allows you to take advantage of server-side rendering and other Next features.
 
-Once the Vercel app has been created, be sure to add the following environment variables:
+Once the Netlify app has been created, be sure to add the following environment variables:
 ```
 NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
 NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
 ```
 
-*You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect*
+*You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect*
 
 Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
 Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
