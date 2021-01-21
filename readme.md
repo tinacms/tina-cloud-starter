@@ -136,6 +136,6 @@ Likewise, if you're using VS Code we generate your GraphQL schema automatically 
 
 The [Forestry extension](https://marketplace.visualstudio.com/items?itemName=jeffsee55.forestry-schema) will provide linting errors if you've configured your content models incorrectly.
 
-### Bonus
+### Explore the GraphQL API
 
-If you're using VS Code you can have GraphQL syntax highlighting in your queries, add the [GraphQL VS Code extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
+If you're using VS Code you can have GraphQL syntax highlighting in your queries, add the [GraphQL VS Code extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) and can direct it to `http://localhost:4001/graphql`.
