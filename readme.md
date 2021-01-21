@@ -1,12 +1,12 @@
-# Getting started
+# Tina Cloud Starter
 
 Check out the walkthrough for where things are at currently
 
-[Jan 21 Development walkthrough](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8)
-
 ## Getting started locally
 
-One of the most interesting aspects of the Tina Cloud content API is that it doesn't actually require a anything from the cloud to work locally. Since this is a git-backed CMS, everything can be run from your local filesystem via our CLI. This is ideal for development workflows and the API is identical to the one used in the cloud, so once you're ready to deploy your app you won't face any challenges there.
+One of the most interesting aspects of the Tina Cloud content API is that it doesn't actually require anything from the cloud to work locally. Since this is a git-backed CMS, everything can be run from your local filesystem via the CLI. This is ideal for development workflows and the API is identical to the one used in the cloud, so once you're ready to deploy your app you won't face any challenges there.
+
+[Jan 21 Development walkthrough](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8)
 
 ### Fork this project
 
@@ -14,29 +14,31 @@ Fork this project and clone it to your local system.
 
 ### Run `yarn install`
 
+For this project we're using `yarn`, if you'd like to use `npm` instead just beware that there isn't a `package-lock.json` so we can't guarantee the dependencies are the same for you.
+
 ### Run `yarn watch`
 
 This will start the GraphQL server as well as the Next.js app in dev mode. It'll also regenerate your schema types for Typescript and GraphQL so changes to your `.tina` config are reflected immediately.
 
 ### Visit the home page at `http://localhost:3000`
 
-You should see a statically generated home page. Read on to see how edits can be made.
+You should see a statically generated home page that dumps out your data as JSON, it's pretty underwhelming! But the idea is to let you run with it from here, one of the goals of this project is to stay out of your way as much as possible, so it's up to you to make it pretty ;)
 
 ### Editing local content
 
-Visit `http://localhost:3000/admin`, you should see the same content only this time there will be a Tina sidebar with fields you can edit and see live on the page. Saving a form here will result in changes to your local file.
+Visit `http://localhost:3000/admin`, you should see the same content only this time there will be a Tina sidebar with fields you can edit and see live on the page. Saving a form here will result in changes to your local filesystem.
 
-Read [folder structure](#folder-structure) section below to learn more about how this site's routing works.
+Read the [folder structure](#folder-structure) section below to learn more about how this site's routing works.
 
 ### Continuing local development
 
-While this is a very quick process, there's a lot more to show on how you can work locally, read our Tina Starter guides for more.
+While it's pretty quick to get started, there's a lot more to show on how you can work locally, read our Tina Starter guides for more and check out the [development walkthrough](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8) video.
 
 ## Connecting to Tina Cloud
 
 While the fully-local development workflow is the recommended way for developers to work, you'll obviously want other editors and collaborators to be able to make changes on a hosted website with authentication. In general it's a good idea to avoid working locally while communicating with the Tina Cloud API, but it's something you'll want to test to ensure it works as expected.
 
-> Note that changes to cloud content will only be shown in the `/admin` route. This is because the repo is designed to source content from your filesystem and build it statically during deployments. Read the [data flow] section below for more information on how this works.
+> Note that changes to cloud content will only be shown in the `/admin` route. This is because the repo is designed to source content from your filesystem and build it statically during deployments.
 
 ### Register your local app with Tina Cloud
 
@@ -118,24 +120,22 @@ Inside the `.tina` folder you'll find several files related to content modeling.
 
 The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file, making maintenance much more manageable.
 
-# Guides
-
-## Local development workflow tips
+# Local development workflow tips
 
 To get the most out of the starter you'll want to leverage some of the tooling that might not be immediately obvious when you first get set up. Watch the [walkthrough video](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8) for a deeper understanding of you can use these tools to help you.
 
-### Using Typescript
+## Using Typescript
 
 A good way to ensure your components match the shape of your data is to leverage the auto-generated typescript types. These are rebuilt when your `.tina` config changes.
 
-### Using VS Code's GraphQL extension
+## Using VS Code's GraphQL extension
 
 Likewise, if you're using VS Code we generate your GraphQL schema automatically for use by the [GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
 
-### Using the Forestry extension
+## Using the Forestry extension
 
 The [Forestry extension](https://marketplace.visualstudio.com/items?itemName=jeffsee55.forestry-schema) will provide linting errors if you've configured your content models incorrectly.
 
-### Explore the GraphQL API
+## Explore the GraphQL API
 
 If you're using VS Code you can have GraphQL syntax highlighting in your queries, add the [GraphQL VS Code extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) and can direct it to `http://localhost:4001/graphql`.
