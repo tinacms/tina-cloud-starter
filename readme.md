@@ -114,9 +114,9 @@ It's at this layer where the data-fetching and routing logic has already been ha
 
 # Content Models
 
-Inside the `.tina` folder you'll find several files related to content modeling. First, the `settings.yml` has a `sections` key which controls how content is persisted to the filesystem. As you'll see, sections can be comprised of multiple templates, making it easy to store content which is semantically similar, but might differ in shape, in the same folder. As an example we've created a `posts` section which can be either an `article` or an `essay` template. Read more about sections [here](https://forestry.io/docs/settings/content-sections/).
+Inside the `.tina` folder you'll find several files related to content modeling. First, the `settings.yml` has a `sections` key which controls how content is persisted to the filesystem.
 
-The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file.
+The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file, making maintenance much more manageable.
 
 # Guides
 
