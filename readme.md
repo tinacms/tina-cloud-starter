@@ -2,7 +2,7 @@
 
 Check out the walkthrough for where things are at currently
 
-[Jan 14 WALKTHROUGH](https://www.loom.com/share/0c8c463ee83749d6af5ff58615b5bdc4)
+[Jan 21 Development walkthrough](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8)
 
 ## Getting started locally
 
@@ -122,7 +122,7 @@ The templates you'll see in the section definitions can be found in `.tina/front
 
 ## Local development workflow tips
 
-To get the most out of the starter you'll want to leverage some of the tooling that might not be immediately obvious when you first get set up. Watch the video below for a walkthrough.
+To get the most out of the starter you'll want to leverage some of the tooling that might not be immediately obvious when you first get set up. Watch the [walkthrough video](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8) for a deeper understanding of you can use these tools to help you.
 
 ### Using Typescript
 
