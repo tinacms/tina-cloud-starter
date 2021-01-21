@@ -1,5 +1,4 @@
 import type * as Tina from "../.tina/types";
-import { JSONDump } from "./json-dump";
 
 /**
  *
@@ -20,43 +19,17 @@ export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
       return <NoData />;
   }
 };
-const PostRenderer = (page: Tina.Posts_Data) => {
-  return <JSONDump {...page} />;
+const PostRenderer = (props: Tina.Article_Doc_Data) => {
+  return <JSONDump {...props} />;
 };
-const AuthorRenderer = (page: Tina.Author_Doc_Data) => {
-  return <JSONDump {...page} />;
+const AuthorRenderer = (props: Tina.Author_Doc_Data) => {
+  return <JSONDump {...props} />;
 };
-const PageRenderer = (page: Tina.Page_Doc_Data) => {
-  switch (page.__typename) {
-    case "Page_Doc_Data":
-      return (
-        <>
-          {page.blocks?.map((block, index) => (
-            <PageBlockRenderer key={index} {...block} />
-          ))}
-        </>
-      );
-    default:
-      return <NoData />;
-  }
+const PageRenderer = (props: Tina.Page_Doc_Data) => {
+  // TIP: try stepping through the `blocks` and rendering them with `PageBlockRenderer`
+  return <JSONDump {...props} />;
 };
-/**
- *
- * Switch on the `__typename` to render the appropriate component
- *
- * Each of these cases map to a `template_type` found in the `.tina/page.yml` block field
- *
- * ```yml
- * fields:
- * ...
- * - name: blocks
- *   type: blocks
- *   label: Blocks
- *   template_types:
- *     - "block-cta"
- *     - "block-hero"
- * ```
- */
+
 const PageBlockRenderer = (props: Tina.Page_Blocks_Data) => {
   switch (props.__typename) {
     case "BlockCta_Data":
@@ -71,4 +44,12 @@ const PageBlockRenderer = (props: Tina.Page_Blocks_Data) => {
 const NoData = () => {
   console.error("Woops, this shouldn't be rendered!");
   return <pre>No data</pre>;
+};
+
+const JSONDump = (props: object) => {
+  return (
+    <pre>
+      <code>{JSON.stringify(props, null, 2)}</code>
+    </pre>
+  );
 };

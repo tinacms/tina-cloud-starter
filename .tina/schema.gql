@@ -252,16 +252,15 @@ input Author_Doc_Input {
   _body: Body_LongTextInput
 }
 
-union Posts_Data = PostArticle_Doc_Data | PostEssay_Doc_Data
+union Posts_Data = Article_Doc_Data
 
 input Posts_Input {
-  postArticle: PostArticle_Doc_Input
-  postEssay: PostEssay_Doc_Input
+  article: Article_Doc_Input
 }
 
-union Posts_Values = PostArticle_Doc_Values | PostEssay_Doc_Values
+union Posts_Values = Article_Doc_Values
 
-union Posts_Form = PostArticle_Doc_Form | PostEssay_Doc_Form
+union Posts_Form = Article_Doc_Form
 
 type Posts_Document implements Node & Document {
   id: ID!
@@ -271,57 +270,40 @@ type Posts_Document implements Node & Document {
   form: Posts_Form
 }
 
-type PostArticle_Doc_Data {
+type Article_Doc_Data {
   title: String
   description: String
+  author: Authors_Document
   _body: LongTextValue
 }
 
-type PostArticle_Doc_Values {
+type Article_Doc_Values {
   title: String
   description: String
+  author: Reference
   _body: LongTextInitialValue
   _template: String
 }
 
-union PostArticle_Doc_FormFieldsUnion = TextField | TextareaField
-
-type PostArticle_Doc_Form {
-  label: String
+type SelectField implements FormField {
   name: String
-  fields: [PostArticle_Doc_FormFieldsUnion]
+  label: String
+  component: String
+  options: [String]
 }
 
-input PostArticle_Doc_Input {
+union Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField
+
+type Article_Doc_Form {
+  label: String
+  name: String
+  fields: [Article_Doc_FormFieldsUnion]
+}
+
+input Article_Doc_Input {
   title: String
   description: String
-  _body: Body_LongTextInput
-}
-
-type PostEssay_Doc_Data {
-  title: String
-  excerpt: String
-  _body: LongTextValue
-}
-
-type PostEssay_Doc_Values {
-  title: String
-  excerpt: String
-  _body: LongTextInitialValue
-  _template: String
-}
-
-union PostEssay_Doc_FormFieldsUnion = TextField | TextareaField
-
-type PostEssay_Doc_Form {
-  label: String
-  name: String
-  fields: [PostEssay_Doc_FormFieldsUnion]
-}
-
-input PostEssay_Doc_Input {
-  title: String
-  excerpt: String
+  author: String
   _body: Body_LongTextInput
 }
 

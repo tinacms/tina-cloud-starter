@@ -9,8 +9,13 @@ fields:
   - name: description
     type: text
     label: Description
+  - name: author
+    label: Author
+    type: select
+    config:
+      source:
+        type: pages
+        section: authors
+
 pages:
   - content/posts/hello-world.md
-  - content/posts/my-post.md
-  - content/posts/my-post2.md
-  - content/posts/testing.md
