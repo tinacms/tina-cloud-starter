@@ -137,5 +137,48 @@ Likewise, if you're using VS Code we generate your GraphQL schema automatically 
 The [Forestry extension](https://marketplace.visualstudio.com/items?itemName=jeffsee55.forestry-schema) will provide linting errors if you've configured your content models incorrectly.
 
 ## Explore the GraphQL API
+If you have a GraphQL client like [Altair](https://altair.sirmuel.design/) you can direct it to `http://localhost:4001/graphql` to learn more about the API.
 
-If you're using VS Code you can have GraphQL syntax highlighting in your queries, add the [GraphQL VS Code extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) and can direct it to `http://localhost:4001/graphql`.
+# Hosting the project
+
+## Hosting on Vercel
+
+This app can quickly be deployed to [Vercel](https://vercel.com/new). 
+
+Once the Vercel app has been created, be sure to add the following environment variables:
+
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
+```
+
+*You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect*
+
+Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
+Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
+
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
+
+## Hosting on Netlify
+
+The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
+
+For the **build command**, use `yarn build`, and `.next/` as the **publish directory**.
+
+You will also want to install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/). This allows you to take advantage of server-side rendering and other Next features.
+
+Once the Netlify app has been created, be sure to add the following environment variables:
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
+```
+
+*You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect*
+
+Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
+Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
+
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
+
