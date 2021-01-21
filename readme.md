@@ -92,6 +92,8 @@ The templates you'll see in the section definitions can be found in `.tina/front
 
 # Hosting the project
 
+## Hosting on Vercel
+
 This app can quickly be deployed to [Vercel](https://vercel.com/new). 
 During the deployment steps, be sure to set the following environment variables through the Vercel UI:
 ```
