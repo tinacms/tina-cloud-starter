@@ -31,6 +31,9 @@ export const request = async (
               __typename
               ... on Author_Doc_Data {
                 name
+                _body {
+                  raw
+                }
               }
             }
           }
@@ -48,6 +51,9 @@ export const request = async (
                     message
                   }
                 }
+                _body {
+                  raw
+                }
               }
             }
           }
@@ -63,6 +69,9 @@ export const request = async (
                       name
                     }
                   }
+                }
+                _body {
+                  raw
                 }
               }
             }
