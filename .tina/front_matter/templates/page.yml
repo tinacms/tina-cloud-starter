@@ -10,7 +10,8 @@ fields:
     type: blocks
     label: Blocks
     template_types:
-      - "block-cta"
-      - "block-hero"
+      - block-cta
+      - block-hero
 pages:
   - content/pages/home.md
+  - content/pages/about.md
