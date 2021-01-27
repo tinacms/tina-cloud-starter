@@ -44,7 +44,7 @@ While the fully-local development workflow is the recommended way for developers
 
 ### Register your local app with Tina Cloud
 
-Visit [auth.tinajs.dev](https://auth.tinajs.dev/), create a realm, and sign in.
+Visit [auth.tinajs.dev](https://auth.tinajs.dev/register), create a realm, and sign in.
 
 From there, create an app which connects to the Github repo you've just forked. Set the redirect URL to `http://localhost:3000/admin`.
 
