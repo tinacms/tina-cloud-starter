@@ -62,7 +62,7 @@ Once you've created your app, make a note of the client ID as well as your realm
 
 Set `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
 
-Substite the other placeholder values for the realm name and client ID you just created. `NEXT_PUBLIC_REDIRECT_URI` can remain untouched.
+Substite the other placeholder values for the realm name and client ID you just created.
 
 > Note: any time you change values `.env.local` you'll need to restart your server.
 
@@ -93,7 +93,6 @@ Once the Vercel app has been created, be sure to add the following environment v
 ```
 NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
-NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
 ```
 
 _You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect_
@@ -116,7 +115,6 @@ Once the Netlify app has been created, be sure to add the following environment 
 ```
 NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
-NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
 ```
 
 _You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect_
