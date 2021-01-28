@@ -3,6 +3,12 @@ import {
   DEFAULT_LOCAL_TINA_GQL_SERVER_URL,
 } from "tina-graphql-gateway";
 
+export const createClient = () => {
+  return process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT === "1"
+    ? createLocalClient()
+    : createCloudClient();
+};
+
 export const createCloudClient = () => {
   return new Client({
     realm: process.env.NEXT_PUBLIC_REALM_NAME,
@@ -44,4 +50,30 @@ export const variablesFromPath = (
   } else {
     return fallback;
   }
+};
+
+// FIXME: infer args from useForm
+export const redirectToNewDocument = (
+  args: {
+    section: {
+      slug: string;
+    };
+    relativePath: string;
+    breadcrumbs: string[];
+    path: string;
+  },
+  prefix: string
+) => {
+  const redirect = `${window.location.origin}${prefix}/${
+    args.section.slug
+  }/${args.breadcrumbs.join("/")}`;
+
+  window.location.assign(redirect);
+};
+
+export const typesafeHasOwnProperty = <X extends {}, Y extends PropertyKey>(
+  obj: X,
+  prop: Y
+): obj is X & Record<Y, unknown> => {
+  return obj.hasOwnProperty(prop);
 };

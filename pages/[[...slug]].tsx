@@ -1,7 +1,8 @@
 import { Client } from "tina-graphql-gateway";
 import { createLocalClient } from "../utils";
-import type * as Tina from "../.tina/types";
 import { DocumentRenderer } from "../components/document-renderer";
+
+import type * as Tina from "../.tina/types";
 
 export const DEFAULT_VARIABLES = {
   section: "pages",
@@ -15,8 +16,9 @@ export default function Page(props: {
   return <DocumentRenderer {...props.payload.getDocument} />;
 }
 
-const client = createLocalClient();
-
+/**
+ * This request is used in the /admin/[[...slug]].tsx as well
+ */
 export const request = async (
   client: Client,
   variables: { section: string; relativePath: string }
@@ -78,6 +80,8 @@ export const request = async (
   return content;
 };
 
+const client = createLocalClient();
+
 export const getStaticProps = async ({ params }): Promise<any> => {
   let variables;
   if (params?.slug?.length > 0) {
@@ -86,7 +90,6 @@ export const getStaticProps = async ({ params }): Promise<any> => {
       relativePath: `${params.slug.slice(1).join("/")}.md`,
     };
   } else {
-    // render something by default
     variables = DEFAULT_VARIABLES;
   }
 
@@ -95,7 +98,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
 };
 
 export const getStaticPaths = async (): Promise<any> => {
-  const content = await client.requestWithForm(
+  const sectionsQuery = await client.requestWithForm(
     (gql) => gql`
       query SectionsQuery {
         getSections {
@@ -112,6 +115,7 @@ export const getStaticPaths = async (): Promise<any> => {
       variables: {},
     }
   );
+
   const paths = [
     {
       params: {
@@ -119,7 +123,8 @@ export const getStaticPaths = async (): Promise<any> => {
       },
     },
   ];
-  content.getSections.forEach((section) => {
+
+  sectionsQuery.getSections.forEach((section) => {
     section.documents.forEach((document) => {
       paths.push({
         params: {

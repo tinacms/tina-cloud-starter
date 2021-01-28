@@ -1,66 +1,64 @@
 import React from "react";
-import type * as Tina from "../../.tina/types";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
-import { createCloudClient, variablesFromPath } from "../../utils";
+import * as util from "../../utils";
 import { request, DEFAULT_VARIABLES } from "../[[...slug]]";
 import { DocumentRenderer } from "../../components/document-renderer";
 
-const client = createCloudClient();
+import type * as Tina from "../../.tina/types";
+
+const client = util.createClient();
 
 export default function AdminPage() {
-  const cms = new TinaCMS({
-    apis: {
-      tina: client,
-    },
-    sidebar: true,
-    enabled: true,
-  });
+  const cms = React.useMemo(() => {
+    return new TinaCMS({
+      apis: {
+        tina: client,
+      },
+      sidebar: true,
+      enabled: true,
+    });
+  }, []);
 
   return (
     <TinaCloudAuthWall cms={cms}>
-      <Editor prefix="/admin" client={client} />
+      <Editor client={client} />
     </TinaCloudAuthWall>
   );
 }
 
-export const Editor = ({
-  prefix,
-  client,
-}: {
-  /** The portion of your URL which does not reflect the non-admin route */
-  prefix: string;
-  client;
-}) => {
+export const Editor = ({ client }: { client }) => {
+  const prefix = "/admin";
   let slug = window.location.pathname.replace(prefix, "").slice(1);
 
   const [data, setData] = React.useState({});
 
   React.useEffect(() => {
-    const run = async () => {
-      const response = await request(
-        client,
-        variablesFromPath(slug, DEFAULT_VARIABLES)
-      );
-
-      setData(response);
-    };
-
-    run();
+    request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
+      setData
+    );
   }, [slug]);
 
   const payload = useForm<{
     getDocument: Tina.SectionDocumentUnion;
   }>({
     payload: data,
-    onNewDocument: (args) => {
-      const redirect = `${window.location.origin}${prefix}/${
-        args.section.slug
-      }/${args.breadcrumbs.join("/")}`;
-
-      window.location.assign(redirect);
-    },
+    onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
   });
+
+  if (
+    util.typesafeHasOwnProperty(data, "errors") &&
+    Array.isArray(data.errors)
+  ) {
+    data;
+    return (
+      <>
+        {data.errors.map((e) => (
+          <div>{e.message}</div>
+        ))}
+      </>
+    );
+  }
 
   return payload.getDocument ? (
     <DocumentRenderer {...payload.getDocument} />
