@@ -26,7 +26,15 @@ You should see a statically generated home page that dumps out your data as JSON
 
 ### Editing local content
 
-Visit `http://localhost:3000/admin-local`, you should see the same content only this time there will be a Tina sidebar with fields you can edit and see live on the page. Saving a form here will result in changes to your local filesystem.
+Copy `.env.local.sample` to `.env.local`:
+
+```
+cp .env.local.sample .env.local
+```
+
+Make sure `NEXT_PUBLIC_USE_LOCAL_CLIENT` is set to `1`, other values can be ignored for now.
+
+Restart your server and visit `http://localhost:3000/admin`, you should see the same content only this time there will be a Tina sidebar with fields you can edit and see live on the page. Saving a form here will result in changes to your local filesystem.
 
 Read the [folder structure](#folder-structure) section below to learn more about how this site's routing works.
 
@@ -50,9 +58,11 @@ From there, create an app which connects to the Github repo you've just forked. 
 
 Once you've created your app, make a note of the client ID as well as your realm name.
 
-### Copy `.env.local.sample` to `.env.local`
+### Ensure you've copied `.env.local.sample` to `.env.local`
 
-Substite the placeholder values for the realm name and client ID you just created. `NEXT_PUBLIC_REDIRECT_URI` can remain untouched.
+Set `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
+
+Substite the other placeholder values for the realm name and client ID you just created. `NEXT_PUBLIC_REDIRECT_URI` can remain untouched.
 
 > Note: any time you change values `.env.local` you'll need to restart your server.
 
@@ -62,13 +72,65 @@ This will do the same thing as when you had run it previously, but this time we'
 
 ### Visit `http://localhost:3000/admin`
 
-You'll be asked to sign in to your Tina Cloud account, and upon success your edits will be sent to the cloud server (and subesquently to Github).
-
-> BUG - once you log in you'll need to refresh the page to see content.
+This time you'll be asked to sign in to your Tina Cloud account, and upon success your edits will be sent to the cloud server (and subesquently to Github).
 
 > Note that this is different from `/admin-local`, where your changes are persisted to your local filesystem.
 
-# Folder structure
+#### Edit & Save your form
+
+These changes will be persisted to Github. Note that you won't see them when you visit a non-admin route when working locally.
+
+# Hosting the project
+
+At this point you have Tina Cloud editing enabled, deploy it to the cloud so others can make edits too:
+
+## Hosting on Vercel
+
+This app can quickly be deployed to [Vercel](https://vercel.com/new).
+
+Once the Vercel app has been created, be sure to add the following environment variables:
+
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
+```
+
+_You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect_
+
+Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
+Go to the [dashboard](https://auth.tinajs.dev/register), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
+
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
+
+## Hosting on Netlify
+
+The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
+
+For the **build command**, use `yarn build`, and `.next/` as the **publish directory**.
+
+You will also want to install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/). This allows you to take advantage of server-side rendering and other Next features.
+
+Once the Netlify app has been created, be sure to add the following environment variables:
+
+```
+NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
+NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
+```
+
+_You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect_
+
+Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
+Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
+
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
+
+---
+
+# Further reading
+
+## Folder structure
 
 As this is a Next.js app, you'll find the file-based routing in the `pages` directory.
 
@@ -118,72 +180,28 @@ The document renderer component demonstrates the rich development experience gai
 
 It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. Enjoy!
 
-# Content Models
+## Content Models
 
 Inside the `.tina` folder you'll find several files related to content modeling. First, the `settings.yml` has a `sections` key which controls how content is persisted to the filesystem.
 
 The templates you'll see in the section definitions can be found in `.tina/front_matter/templates`. As you can see, some of them don't belong to a corresponding "section" (eg. `block-cta`). This is because template definitions can also be used as blocks, if you look in `.tina/front_matter/templates/page.yml` you'll see the `blocks` field using `blocks-cta` and `blocks-hero` templates. This is a really powerful pattern, instead of creating an entirely separate record for each "block" element, Tina is able to keep your content in a single file, making maintenance much more manageable.
 
-# Local development workflow tips
+## Local development workflow tips
 
 To get the most out of the starter you'll want to leverage some of the tooling that might not be immediately obvious when you first get set up. Watch the [walkthrough video](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8) for a deeper understanding of you can use these tools to help you.
 
-## Using Typescript
+### Using Typescript
 
 A good way to ensure your components match the shape of your data is to leverage the auto-generated typescript types. These are rebuilt when your `.tina` config changes.
 
-## Using VS Code's GraphQL extension
+### Using VS Code's GraphQL extension
 
 Likewise, if you're using VS Code we generate your GraphQL schema automatically for use by the [GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
 
-## Using the Forestry extension
+### Using the Forestry extension
 
 The [Forestry extension](https://marketplace.visualstudio.com/items?itemName=jeffsee55.forestry-schema) will provide linting errors if you've configured your content models incorrectly.
 
-## Explore the GraphQL API
+### Explore the GraphQL API
 
 If you have a GraphQL client like [Altair](https://altair.sirmuel.design/) you can direct it to `http://localhost:4001/graphql` to learn more about the API.
-
-# Hosting the project
-
-## Hosting on Vercel
-
-This app can quickly be deployed to [Vercel](https://vercel.com/new).
-
-Once the Vercel app has been created, be sure to add the following environment variables:
-
-```
-NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
-NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
-NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Vercel deployment>/admin
-```
-
-_You will need to trigger a redeploy from Vercel's UI for these environment variables to take effect_
-
-Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
-Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
-
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
-
-## Hosting on Netlify
-
-The app can be [deployed to Netlify](https://app.netlify.com/start) with similar steps to the Vercel deployment.
-
-For the **build command**, use `yarn build`, and `.next/` as the **publish directory**.
-
-You will also want to install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/). This allows you to take advantage of server-side rendering and other Next features.
-
-Once the Netlify app has been created, be sure to add the following environment variables:
-
-```
-NEXT_PUBLIC_REALM_NAME=<get this from the realm you create at auth.tinajs.dev>
-NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the app you create at auth.tinajs.dev>
-NEXT_PUBLIC_REDIRECT_URI=<This will be the URL of this Netlify deployment>/admin
-```
-
-_You will need to trigger a redeploy from Netlify's UI for these environment variables to take effect_
-
-Now that we have a live site, we can take the deployment URL and use it within our Tina Cloud app's `Callback URL` field.
-Go to the [dashboard](https://auth.tinajs.dev), click into your new app, and change its `Callback URL` to `[your deployment URL]/admin`
-
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, and trying to login.
