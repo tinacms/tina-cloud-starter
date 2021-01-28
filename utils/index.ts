@@ -1,7 +1,4 @@
-import {
-  Client,
-  DEFAULT_LOCAL_TINA_GQL_SERVER_URL,
-} from "tina-graphql-gateway";
+import { Client, LocalClient } from "tina-graphql-gateway";
 
 export const createClient = () => {
   return process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT === "1"
@@ -13,20 +10,13 @@ export const createCloudClient = () => {
   return new Client({
     realm: process.env.NEXT_PUBLIC_REALM_NAME,
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-    redirectURI: process.env.NEXT_PUBLIC_REDIRECT_URI,
     branch: "main",
     tokenStorage: "LOCAL_STORAGE",
   });
 };
 
 export const createLocalClient = () => {
-  return new Client({
-    realm: "",
-    branch: "",
-    clientId: "",
-    redirectURI: "",
-    customAPI: DEFAULT_LOCAL_TINA_GQL_SERVER_URL,
-  });
+  return new LocalClient();
 };
 
 /**
