@@ -16,7 +16,7 @@ Fork this project and clone it to your local system.
 
 > For this project we're using `yarn`, if you'd like to use `npm` instead just beware that there isn't a `package-lock.json` so we can't guarantee the dependencies are the same for you.
 
-### Run `yarn watch`
+### Run `yarn dev`
 
 This will start the GraphQL server as well as the Next.js app in dev mode. It'll also regenerate your schema types for Typescript and GraphQL so changes to your `.tina` config are reflected immediately.
 
@@ -66,7 +66,7 @@ Substite the other placeholder values for the realm name and client ID you just 
 
 > Note: any time you change values `.env.local` you'll need to restart your server.
 
-### Run `yarn watch`
+### Run `yarn dev`
 
 This will do the same thing as when you had run it previously, but this time we'll be making changes directly on the cloud server.
 
