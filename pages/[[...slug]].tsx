@@ -28,7 +28,7 @@ export const request = async (
       query ContentQuery($section: String!, $relativePath: String!) {
         getDocument(section: $section, relativePath: $relativePath) {
           # __typename is an auto-generated field which can be used to determine which
-          # component gets rendered. Chekc out the switch statement in /components/document-renderer.tsx
+          # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
           __typename
           # Authors_Document comes from the .tina/settings.yml section with the label: Authors
           ... on Authors_Document {
