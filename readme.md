@@ -10,7 +10,7 @@ Fork this project and clone it to your local system.
 
 ### Run `yarn install`
 
-> For this project we're using `yarn`, if you'd like to use `npm` instead just beware that there isn't a `package-lock.json` so we can't guarantee the dependencies are the same for you.
+> For this project we're using `yarn`, if you'd like to use `npm` instead just beware that there isn't a `package-lock.json` so we can't guarantee the dependencies are the same for you. You will also want to change the `scripts` in the `package.json` file to use `npm run ...` instead of `yarn ...`
 
 ### Run `yarn dev`
 
