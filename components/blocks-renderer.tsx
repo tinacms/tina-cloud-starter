@@ -5,9 +5,9 @@ export const BlocksRenderer = ({ blocks }) => {
   return blocks.map(function (block, i) {
     switch (block.__typename) {
       case "BlockHero_Data":
-        return <Hero data={block} />;
+        return <Hero {...block} />;
       case "BlockCta_Data":
-        return <Cta data={block} />;
+        return <Cta {...block} />;
       default:
         return null;
     }
