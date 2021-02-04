@@ -2,8 +2,8 @@
 title: Home
 blocks:
   - template: block-hero
-    message: Welcome to my website!
+    heading: Welcome to my website!
+    message: This is some quality content right here.
   - template: block-cta
-    header: 'Hello, world'
+    text: "Hello, world"
 ---
-
