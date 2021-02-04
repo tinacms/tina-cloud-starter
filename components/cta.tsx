@@ -1,6 +1,4 @@
-export const Cta = (data) => {
-  const { __typename, text } = data;
-
+export const Cta = ({ text }) => {
   return (
     <>
       <div className="buttonGroup">

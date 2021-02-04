@@ -1,6 +1,4 @@
-export const Hero = (data) => {
-  const { __typename, heading, message } = data;
-
+export const Hero = ({ heading, message }) => {
   return (
     <>
       <div className="hero">
