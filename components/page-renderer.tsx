@@ -4,8 +4,6 @@ import { BlocksRenderer } from "./blocks-renderer";
 export const PageRenderer = (props: Tina.Page_Doc_Data) => {
   const { title, blocks, _body } = props;
 
-  console.log(_body);
-
   return (
     <>
       <div className="page">
