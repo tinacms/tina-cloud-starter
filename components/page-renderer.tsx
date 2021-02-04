@@ -59,13 +59,13 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
         .header,
         .content {
           display: grid;
-          grid-template-columns: minmax(200px, 1200px);
+          grid-template-columns: minmax(200px, 1000px);
           justify-content: center;
         }
 
         .header {
           flex: 0 0 auto;
-          padding: 1rem 3rem 1rem 3rem;
+          padding: 1rem 1.5rem;
           background: var(--white);
         }
 
@@ -79,7 +79,7 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
 
         .content {
           flex: 1 0 auto;
-          padding: 1.5rem 3rem 4rem 3rem;
+          padding: 1.5rem;
           background: var(--mint-light);
           color: var(--blue);
         }
