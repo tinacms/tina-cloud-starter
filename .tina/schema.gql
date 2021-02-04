@@ -95,10 +95,11 @@ type Pages_Document implements Node & Document {
 }
 
 type BlockCta_Data {
-  header: String
+  text: String
 }
 
 type BlockHero_Data {
+  heading: String
   message: String
 }
 
@@ -117,11 +118,12 @@ type Page_Doc_Data {
 }
 
 type BlockCta_Values {
-  header: String
+  text: String
   _template: String
 }
 
 type BlockHero_Values {
+  heading: String
   message: String
   _template: String
 }
@@ -188,10 +190,11 @@ type Page_Doc_Form {
 }
 
 input BlockCta_Input {
-  header: String
+  text: String
 }
 
 input BlockHero_Input {
+  heading: String
   message: String
 }
 
