@@ -2,6 +2,6 @@
 label: CTA
 hide_body: false
 fields:
-  - name: header
+  - name: text
     type: text
-    label: Header
+    label: Text
