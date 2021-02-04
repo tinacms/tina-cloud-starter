@@ -18,13 +18,14 @@ export const Cta = ({ text }) => {
           border-radius: 2rem;
           background: var(--orange);
           font-size: 1em;
-          padding: 1rem 2rem;
+          padding: 0.75rem 1.5rem;
           margin: 0.5rem 0.75rem;
           cursor: pointer;
           transition: all 150ms ease-out;
         }
 
-        .button:hover {
+        .button:hover,
+        .button:focus {
           background: var(--orange-light);
           box-shadow: 0 0 0 2px var(--orange-light);
         }
