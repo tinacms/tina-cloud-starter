@@ -1,10 +1,9 @@
 ---
 label: Author
-hide_body: false
 fields:
   - name: name
     type: text
-    label: name
+    label: Name
 pages:
   - content/authors/homer.md
   - content/authors/marge.md
