@@ -47,9 +47,10 @@ export const request = async (
                 blocks {
                   __typename
                   ... on BlockCta_Data {
-                    header
+                    text
                   }
                   ... on BlockHero_Data {
+                    heading
                     message
                   }
                 }
