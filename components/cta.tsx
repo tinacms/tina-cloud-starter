@@ -2,7 +2,14 @@ export const Cta = ({ text }) => {
   return (
     <>
       <div className="buttonGroup">
-        <button className="button">{text}</button>
+        <button
+          onClick={() => {
+            alert("Well clicked.");
+          }}
+          className="button"
+        >
+          {text}
+        </button>
       </div>
       <style jsx>{`
         .buttonGroup {
