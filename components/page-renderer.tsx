@@ -2,7 +2,9 @@ import type * as Tina from "../.tina/types";
 import { BlocksRenderer } from "./blocks-renderer";
 
 export const PageRenderer = (props: Tina.Page_Doc_Data) => {
-  const { title, blocks } = props;
+  const { title, blocks, _body } = props;
+
+  console.log(_body);
 
   return (
     <>
@@ -12,6 +14,7 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
         </div>
         <div className="content">
           <BlocksRenderer blocks={blocks} />
+          {_body?.raw && <p>{_body?.raw}</p>}
         </div>
       </div>
       <style global jsx>{`
@@ -41,11 +44,16 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
           align-items: stretch;
           justify-content: flex-start;
 
+          --white: #fff;
+
           --blue: #241748;
           --blue-light: #2e3258;
 
           --mint: #b4f4e0;
           --mint-light: #e6faf8;
+
+          --orange: #ec4815;
+          --orange-light: #eb6337;
         }
 
         .header,
@@ -57,17 +65,16 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
 
         .header {
           flex: 0 0 auto;
-          padding: 4rem 3rem 1.5rem 3rem;
-          background: linear-gradient(
-            to bottom,
-            var(--blue),
-            var(--blue-light)
-          );
+          padding: 1rem 3rem 1rem 3rem;
+          background: var(--white);
         }
 
         .title {
-          color: #b4f4e0;
-          font-size: 2.5rem;
+          color: var(--orange);
+          font-size: 1.25rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin: 0;
         }
 
         .content {
