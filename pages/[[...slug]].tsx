@@ -4,6 +4,8 @@ import { DocumentRenderer } from "../components/document-renderer";
 
 import type * as Tina from "../.tina/types";
 
+import Link from 'next/link';
+
 export const DEFAULT_VARIABLES = {
   section: "pages",
   relativePath: "home.md",
@@ -13,7 +15,13 @@ export default function Page(props: {
   payload: { getDocument: Tina.SectionDocumentUnion };
   variables: { section: string; relativePath: string };
 }) {
-  return <DocumentRenderer {...props.payload.getDocument} />;
+  let editLink = `/admin/${props.variables.slug.join('/')}`;
+  return (
+      <>
+        <DocumentRenderer {...props.payload.getDocument} />
+        <Link href={editLink}><a>Edit this content</a></Link>
+      </>
+  );
 }
 
 /**
@@ -97,6 +105,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
     variables = {
       section: params.slug[0],
       relativePath: `${params.slug.slice(1).join("/")}.md`,
+      slug: params.slug
     };
   } else {
     variables = DEFAULT_VARIABLES;
