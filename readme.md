@@ -1,7 +1,5 @@
 # Tina Cloud Starter
 
-> Check out the [Jan 21 Development walkthrough](https://www.loom.com/share/e62776f138ec485d81d71c68364857a8) for where things are at currently
-
 ## Getting started locally
 
 One of the most interesting aspects of the Tina Cloud content API is that it doesn't actually require anything from the cloud to work locally. Since this is a git-backed CMS, everything can be run from your local filesystem via the CLI. This is ideal for development workflows and the API is identical to the one used in the cloud, so once you're ready to deploy your app you won't face any challenges there.
