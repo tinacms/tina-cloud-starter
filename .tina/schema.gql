@@ -46,20 +46,16 @@ type Section {
   documents: [Document]
 }
 
-union SectionDocumentUnion = Pages_Document | Authors_Document | Posts_Document
+union SectionDocumentUnion = Pages_Document
 
 input SectionParams {
   pages: Pages_Input
-  authors: Authors_Input
-  posts: Posts_Input
 }
 
 type Mutation {
   addPendingDocument(relativePath: String, section: String, template: String): Document
   updateDocument(relativePath: String, params: SectionParams): SectionDocumentUnion
   updatePagesDocument(relativePath: String, params: Pages_Input): Pages_Document
-  updateAuthorsDocument(relativePath: String, params: Authors_Input): Authors_Document
-  updatePostsDocument(relativePath: String, params: Posts_Input): Posts_Document
 }
 
 type Query {
@@ -70,10 +66,6 @@ type Query {
   getSection(section: String): Section
   getPagesDocument(relativePath: String): Pages_Document
   getPagesList: [Pages_Document]
-  getAuthorsDocument(relativePath: String): Authors_Document
-  getAuthorsList: [Authors_Document]
-  getPostsDocument(relativePath: String): Posts_Document
-  getPostsList: [Posts_Document]
 }
 
 union Pages_Data = Page_Doc_Data
@@ -207,103 +199,6 @@ input Body_LongTextInput {
 input Page_Doc_Input {
   title: String
   blocks: [Blocks_Input]
-  _body: Body_LongTextInput
-}
-
-union Authors_Data = Author_Doc_Data
-
-input Authors_Input {
-  author: Author_Doc_Input
-}
-
-union Authors_Values = Author_Doc_Values
-
-union Authors_Form = Author_Doc_Form
-
-type Authors_Document implements Node & Document {
-  id: ID!
-  sys: SystemInfo
-  data: Authors_Data
-  values: Authors_Values
-  form: Authors_Form
-}
-
-type Author_Doc_Data {
-  name: String
-  _body: LongTextValue
-}
-
-type Author_Doc_Values {
-  name: String
-  _body: LongTextInitialValue
-  _template: String
-}
-
-union Author_Doc_FormFieldsUnion = TextField | TextareaField
-
-type Author_Doc_Form {
-  label: String
-  name: String
-  fields: [Author_Doc_FormFieldsUnion]
-}
-
-input Author_Doc_Input {
-  name: String
-  _body: Body_LongTextInput
-}
-
-union Posts_Data = Article_Doc_Data
-
-input Posts_Input {
-  article: Article_Doc_Input
-}
-
-union Posts_Values = Article_Doc_Values
-
-union Posts_Form = Article_Doc_Form
-
-type Posts_Document implements Node & Document {
-  id: ID!
-  sys: SystemInfo
-  data: Posts_Data
-  values: Posts_Values
-  form: Posts_Form
-}
-
-type Article_Doc_Data {
-  title: String
-  description: String
-  author: Authors_Document
-  _body: LongTextValue
-}
-
-type Article_Doc_Values {
-  title: String
-  description: String
-  author: Reference
-  _body: LongTextInitialValue
-  _template: String
-}
-
-type SelectField implements FormField {
-  name: String
-  label: String
-  component: String
-  options: [String]
-}
-
-union Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField
-
-type Article_Doc_Form {
-  label: String
-  name: String
-  fields: [Article_Doc_FormFieldsUnion]
-}
-
-input Article_Doc_Input {
-  title: String
-  description: String
-  author: String
   _body: Body_LongTextInput
 }
 
