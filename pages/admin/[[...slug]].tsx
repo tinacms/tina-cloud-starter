@@ -45,8 +45,7 @@ export const Editor = ({ client }: { client }) => {
     payload: data,
     onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
   });
-
-
+  
   if (
     util.typesafeHasOwnProperty(data, "errors") &&
     Array.isArray(data.errors)
