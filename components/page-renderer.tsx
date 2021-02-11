@@ -9,20 +9,18 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
 
   return (
     <>
-      <div className="page">
-        <div className="header">
-          <div className="container">
-            <h1 className="title">{title}</h1>
-          </div>
+      <div className="header">
+        <div className="container">
+          <h1 className="title">{title}</h1>
         </div>
-        <div className="content">
-          <div className="container">
-            <div className="card">
-              <BlocksRenderer blocks={blocks} />
-              {_body?.raw && <p>{_body?.raw}</p>}
-            </div>
-            <RawRenderer data={props} />
+      </div>
+      <div className="content">
+        <div className="container">
+          <div className="card">
+            <BlocksRenderer blocks={blocks} />
+            {_body?.raw && <p>{_body?.raw}</p>}
           </div>
+          <RawRenderer data={props} />
         </div>
       </div>
       <style global jsx>
@@ -66,15 +64,6 @@ const GlobalStyles = css.global`
 `;
 
 const PageStyles = css`
-  .page {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: ;
-    justify-content: flex-start;
-  }
-
   .container {
     display: block;
     max-width: 960px;
