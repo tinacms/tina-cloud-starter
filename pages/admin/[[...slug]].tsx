@@ -44,7 +44,6 @@ export const Editor = ({ client }: { client }) => {
   }>({
     payload: data,
     onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
-    //onSubmit: () => console.log('hello')
   });
 
 
