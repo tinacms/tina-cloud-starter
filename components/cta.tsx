@@ -20,6 +20,7 @@ export const Cta = ({ text, message = "Hello World" }) => {
           padding: 0.75rem 1.5rem;
           cursor: pointer;
           transition: all 150ms ease-out;
+          margin: 0.25rem 0;
         }
 
         .button:hover,
