@@ -17,8 +17,14 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
       <div className="content">
         <div className="container">
           <div className="card">
-            <BlocksRenderer blocks={blocks} />
-            {_body?.raw && <p>{_body?.raw}</p>}
+            <div className="cardBody">
+              <BlocksRenderer blocks={blocks} />
+            </div>
+            {_body?.raw && (
+              <div className="cardFooter">
+                <p>{_body?.raw}</p>
+              </div>
+            )}
           </div>
           <RawRenderer data={props} />
         </div>
@@ -34,6 +40,7 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
 const GlobalStyles = css.global`
   :root {
     --white: #fff;
+    --gray: #f9f9fb;
 
     --blue: #241748;
     --blue-light: #2e3258;
@@ -91,8 +98,21 @@ const PageStyles = css`
 
   .card {
     background: var(--white);
-    padding: 2rem;
     border-radius: 0.5rem;
+    border: 1px solid var(--mint);
+    box-shadow: 0 6px 24px rgba(36, 23, 72, 0.03),
+      0 2px 4px rgba(36, 23, 72, 0.03);
     margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .cardBody {
+    background: var(--white);
+    padding: 2rem;
+  }
+
+  .cardFooter {
+    background: var(--gray);
+    padding: 1rem 2rem;
   }
 `;
