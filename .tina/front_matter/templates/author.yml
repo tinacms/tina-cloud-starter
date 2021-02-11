@@ -1,9 +1,0 @@
----
-label: Author
-fields:
-  - name: name
-    type: text
-    label: Name
-pages:
-  - content/authors/homer.md
-  - content/authors/marge.md

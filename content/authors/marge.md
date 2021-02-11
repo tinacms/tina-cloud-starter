@@ -1,3 +1,0 @@
----
-name: Marge Simpson
----
