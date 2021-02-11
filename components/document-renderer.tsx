@@ -9,22 +9,13 @@ import type * as Tina from "../.tina/types";
  */
 export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
   switch (props.__typename) {
-    case "Authors_Document":
-      return <AuthorRenderer {...props.data} />;
     case "Pages_Document":
       return <PageRenderer {...props.data} />;
-    case "Posts_Document":
-      return <PostRenderer {...props.data} />;
     default:
       return <NoData />;
   }
 };
-const PostRenderer = (props: Tina.Article_Doc_Data) => {
-  return <JSONDump {...props} />;
-};
-const AuthorRenderer = (props: Tina.Author_Doc_Data) => {
-  return <JSONDump {...props} />;
-};
+
 const PageRenderer = (props: Tina.Page_Doc_Data) => {
   // TIP: try stepping through the `blocks` and rendering them with `PageBlockRenderer`
   return <JSONDump {...props} />;
