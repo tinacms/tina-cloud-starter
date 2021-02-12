@@ -1,6 +1,6 @@
 ---
 label: CTA
 fields:
-  - name: header
+  - name: text
     type: text
-    label: Header
+    label: Text

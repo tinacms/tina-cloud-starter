@@ -1,6 +1,9 @@
 ---
 label: Hero
 fields:
+  - name: heading
+    type: text
+    label: Heading
   - name: message
     type: text
     label: Message

@@ -1,4 +1,5 @@
 import type * as Tina from "../.tina/types";
+import { PageRenderer } from "./page-renderer";
 
 /**
  *
@@ -16,31 +17,7 @@ export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
   }
 };
 
-const PageRenderer = (props: Tina.Page_Doc_Data) => {
-  // TIP: try stepping through the `blocks` and rendering them with `PageBlockRenderer`
-  return <JSONDump {...props} />;
-};
-
-const PageBlockRenderer = (props: Tina.Page_Blocks_Data) => {
-  switch (props.__typename) {
-    case "BlockCta_Data":
-      return <JSONDump {...props} />;
-    case "BlockHero_Data":
-      return <JSONDump {...props} />;
-    default:
-      return <NoData />;
-  }
-};
-
 const NoData = () => {
   console.error("Woops, this shouldn't be rendered!");
   return <pre>No data</pre>;
-};
-
-const JSONDump = (props: object) => {
-  return (
-    <pre>
-      <code>{JSON.stringify(props, null, 2)}</code>
-    </pre>
-  );
 };

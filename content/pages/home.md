@@ -1,9 +1,9 @@
 ---
-title: Home
+title: Page Title
 blocks:
   - template: block-hero
-    message: Welcome to my website!
+    heading: Welcome to my website!
+    message: This is some quality content right here. Here's another bit of text.
   - template: block-cta
-    header: 'Hello, world'
+    text: "Click Me"
 ---
-
