@@ -4,16 +4,25 @@ import { DocumentRenderer } from "../components/document-renderer";
 
 import type * as Tina from "../.tina/types";
 
+import Link from 'next/link';
+
 export const DEFAULT_VARIABLES = {
   section: "pages",
   relativePath: "home.md",
+  slug: ["/"]
 };
 
 export default function Page(props: {
   payload: { getDocument: Tina.SectionDocumentUnion };
-  variables: { section: string; relativePath: string };
+  variables: { section: string; relativePath: string; slug: string[] };
 }) {
-  return <DocumentRenderer {...props.payload.getDocument} />;
+  let editLink = `/admin/${props.variables.slug.join('/')}`;
+  return (
+      <>
+        <DocumentRenderer {...props.payload.getDocument} />
+        <Link href={editLink}><a>Edit this content</a></Link>
+      </>
+  );
 }
 
 /**
@@ -30,19 +39,7 @@ export const request = async (
           # __typename is an auto-generated field which can be used to determine which
           # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
           __typename
-          # Authors_Document comes from the .tina/settings.yml section with the label: Authors
-          ... on Authors_Document {
-            data {
-              __typename
-              ... on Author_Doc_Data {
-                name
-                # _body is a special field, it's supplied automatically for markdown files
-                _body {
-                  raw
-                }
-              }
-            }
-          }
+          
           # Pages_Document comes from the .tina/settings.yml section with the label: Pages
           ... on Pages_Document {
             data {
@@ -58,28 +55,6 @@ export const request = async (
                   ... on BlockHero_Data {
                     heading
                     message
-                  }
-                }
-                _body {
-                  raw
-                }
-              }
-            }
-          }
-          # Posts_Document comes from the .tina/settings.yml section with the label: Posts
-          ... on Posts_Document {
-            data {
-              __typename
-              # Article_Doc_Data is from the "page" template. It's fields are defined in .tina/front_matter/templates/article.yml
-              ... on Article_Doc_Data {
-                title
-                description
-                author {
-                  data {
-                    # This is a relationship, an article has an author.
-                    ... on Author_Doc_Data {
-                      name
-                    }
                   }
                 }
                 _body {
@@ -107,6 +82,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
     variables = {
       section: params.slug[0],
       relativePath: `${params.slug.slice(1).join("/")}.md`,
+      slug: params.slug
     };
   } else {
     variables = DEFAULT_VARIABLES;
