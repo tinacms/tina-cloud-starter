@@ -149,11 +149,12 @@ export type Pages_Document = Node & Document & {
 
 export type BlockCta_Data = {
   __typename?: 'BlockCta_Data';
-  header?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
 };
 
 export type BlockHero_Data = {
   __typename?: 'BlockHero_Data';
+  heading?: Maybe<Scalars['String']>;
   message?: Maybe<Scalars['String']>;
 };
 
@@ -175,12 +176,13 @@ export type Page_Doc_Data = {
 
 export type BlockCta_Values = {
   __typename?: 'BlockCta_Values';
-  header?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
 
 export type BlockHero_Values = {
   __typename?: 'BlockHero_Values';
+  heading?: Maybe<Scalars['String']>;
   message?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
@@ -256,10 +258,11 @@ export type Page_Doc_Form = {
 };
 
 export type BlockCta_Input = {
-  header?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
 };
 
 export type BlockHero_Input = {
+  heading?: Maybe<Scalars['String']>;
   message?: Maybe<Scalars['String']>;
 };
 
