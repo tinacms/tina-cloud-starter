@@ -4,24 +4,41 @@ import { DocumentRenderer } from "../components/document-renderer";
 
 import type * as Tina from "../.tina/types";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 export const DEFAULT_VARIABLES = {
   section: "pages",
   relativePath: "home.md",
-  slug: ["/"]
+  slug: ["/"],
 };
 
 export default function Page(props: {
   payload: { getDocument: Tina.SectionDocumentUnion };
   variables: { section: string; relativePath: string; slug: string[] };
 }) {
-  let editLink = `/admin/${props.variables.slug.join('/')}`;
+  let editLink = `/admin/${props.variables.slug.join("/")}`;
   return (
-      <>
-        <DocumentRenderer {...props.payload.getDocument} />
-        <Link href={editLink}><a>Edit this content</a></Link>
-      </>
+    <>
+      <DocumentRenderer {...props.payload.getDocument} />
+      <Link href={editLink}>
+        <a className="editLink">Edit Site</a>
+      </Link>
+      <style jsx>{`
+        .editLink {
+          position: fixed;
+          top: 0;
+          right: 0;
+          background: var(--orange);
+          color: var(--white);
+          padding: 0.5rem 0.75rem;
+          font-weight: bold;
+          text-decoration: none;
+          display: inline-block;
+          border-bottom-left-radius: 0.5rem;
+          cursor: pointer;
+        }
+      `}</style>
+    </>
   );
 }
 
@@ -39,7 +56,7 @@ export const request = async (
           # __typename is an auto-generated field which can be used to determine which
           # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
           __typename
-          
+
           # Pages_Document comes from the .tina/settings.yml section with the label: Pages
           ... on Pages_Document {
             data {
@@ -50,9 +67,10 @@ export const request = async (
                 blocks {
                   __typename
                   ... on BlockCta_Data {
-                    header
+                    text
                   }
                   ... on BlockHero_Data {
+                    heading
                     message
                   }
                 }
@@ -81,7 +99,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
     variables = {
       section: params.slug[0],
       relativePath: `${params.slug.slice(1).join("/")}.md`,
-      slug: params.slug
+      slug: params.slug,
     };
   } else {
     variables = DEFAULT_VARIABLES;
