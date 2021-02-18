@@ -37,7 +37,7 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
   );
 };
 
-const GlobalStyles = css.global`
+export const GlobalStyles = css.global`
   :root {
     --white: #fff;
     --gray: #f9f9fb;
@@ -70,7 +70,7 @@ const GlobalStyles = css.global`
   }
 `;
 
-const PageStyles = css`
+export const PageStyles = css`
   .container {
     display: block;
     max-width: 960px;
