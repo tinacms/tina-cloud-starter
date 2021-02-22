@@ -182,7 +182,8 @@ in order to take advantage of server-side rendering and Next.js preview features
 
 Trigger a new deploy for changes to take effect.
 
-Test that everything is configured correctly by navigating to `[your deployment URL]/admin`, login, and doing some edits.
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, 
+logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ---
 
