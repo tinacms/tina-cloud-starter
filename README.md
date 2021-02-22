@@ -157,7 +157,7 @@ NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 🎉 Congratulations, your site is now live!
 
 You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, 
-logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository."
+logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ### Netlify
 
