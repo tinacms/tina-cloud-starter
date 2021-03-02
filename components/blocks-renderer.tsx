@@ -1,6 +1,6 @@
 import { Hero } from "./hero";
 import { Cta } from "./cta";
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../.tina/__generated__/types";
 
 export const BlocksRenderer = ({
   blocks,
