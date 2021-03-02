@@ -1,5 +1,5 @@
 import React from "react";
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../.tina/__generated__/types";
 import css from "styled-jsx/css";
 import { BlocksRenderer } from "./blocks-renderer";
 import { RawRenderer } from "./raw-renderer";
