@@ -140,7 +140,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
  *
  */
 export const getStaticPaths = async (): Promise<any> => {
-  const sectionsQuery = await client.requestWithForm(
+  const sectionsQuery = (await client.requestWithForm(
     (gql) => gql`
       query SectionsQuery {
         getSections {
@@ -156,7 +156,7 @@ export const getStaticPaths = async (): Promise<any> => {
     {
       variables: {},
     }
-  );
+  )) as { getSections: Tina.Section[] };
 
   const paths = [
     {

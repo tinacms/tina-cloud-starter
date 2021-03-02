@@ -31,7 +31,9 @@ export const Editor = ({ client }: { client }) => {
   const prefix = "/admin";
   let slug = window.location.pathname.replace(prefix, "").slice(1);
 
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState<{
+    getDocument: Tina.SectionDocumentUnion;
+  }>();
 
   React.useEffect(() => {
     request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
@@ -39,18 +41,15 @@ export const Editor = ({ client }: { client }) => {
     );
   }, [slug]);
 
-  const payload = useForm<{
-    getDocument: Tina.SectionDocumentUnion;
-  }>({
+  const [payload] = useForm<{ getDocument: Tina.SectionDocumentUnion }>({
     payload: data,
     onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
   });
-  
+
   if (
     util.typesafeHasOwnProperty(data, "errors") &&
     Array.isArray(data.errors)
   ) {
-    data;
     return (
       <>
         {data.errors.map((e) => (
