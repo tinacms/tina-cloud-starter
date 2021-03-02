@@ -1,4 +1,10 @@
-export const Hero = ({ heading, message }) => {
+export const Hero = ({
+  heading,
+  message,
+}: {
+  heading?: string;
+  message?: string;
+}) => {
   return (
     <>
       <div className="hero">
