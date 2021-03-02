@@ -1,9 +1,17 @@
-export const Cta = ({ text, link, message = "Hello World" }) => {
+export const Cta = ({
+  text,
+  link,
+  message = "Hello World",
+}: {
+  text?: string;
+  link?: string;
+  message?: string;
+}) => {
   return (
     <>
       <button
         onClick={() => {
-          link ? (window.location = link) : alert(message);
+          link ? window.location.assign(link) : alert(message);
         }}
         className="button"
       >

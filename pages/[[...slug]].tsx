@@ -2,7 +2,7 @@ import { Client } from "tina-graphql-gateway";
 import { createLocalClient } from "../utils";
 import { DocumentRenderer } from "../components/document-renderer";
 
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../.tina/__generated__/types";
 
 import Link from "next/link";
 
@@ -140,7 +140,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
  *
  */
 export const getStaticPaths = async (): Promise<any> => {
-  const sectionsQuery = await client.requestWithForm(
+  const sectionsQuery = (await client.requestWithForm(
     (gql) => gql`
       query SectionsQuery {
         getSections {
@@ -156,7 +156,7 @@ export const getStaticPaths = async (): Promise<any> => {
     {
       variables: {},
     }
-  );
+  )) as { getSections: Tina.Section[] };
 
   const paths = [
     {

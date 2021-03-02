@@ -1,4 +1,4 @@
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../.tina/__generated__/types";
 import { PageRenderer } from "./page-renderer";
 
 /**
