@@ -1,7 +1,7 @@
 module.exports = {
   projects: {
     app: {
-      schema: [".tina/schema.gql"],
+      schema: [".tina/__generated__/schema.gql"],
       documents: "pages/**/*.{graphql,js,ts,jsx,tsx}",
     },
   },
