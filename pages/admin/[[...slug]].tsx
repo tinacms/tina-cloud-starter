@@ -5,7 +5,7 @@ import * as util from "../../utils";
 import { request, DEFAULT_VARIABLES } from "../[[...slug]]";
 import { DocumentRenderer } from "../../components/document-renderer";
 
-import type * as Tina from "../../.tina/types";
+import type * as Tina from "../../.tina/__generated__/types";
 
 const client = util.createClient();
 
@@ -31,17 +31,21 @@ export const Editor = ({ client }: { client }) => {
   const prefix = "/admin";
   let slug = window.location.pathname.replace(prefix, "").slice(1);
 
-  const [data, setData] = React.useState<{
-    getDocument: Tina.SectionDocumentUnion;
-  }>();
+  const [data, setData] = React.useState<
+    | {
+        getDocument: Tina.SectionDocumentUnion;
+      }
+    | {}
+  >({});
 
+  console.log("ohhi", data);
   React.useEffect(() => {
     request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
       setData
     );
   }, [slug]);
 
-  const [payload] = useForm<{ getDocument: Tina.SectionDocumentUnion }>({
+  const [payload] = useForm<{} | { getDocument: Tina.SectionDocumentUnion }>({
     payload: data,
     onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
   });
@@ -59,7 +63,7 @@ export const Editor = ({ client }: { client }) => {
     );
   }
 
-  return payload.getDocument ? (
+  return util.typesafeHasOwnProperty(payload, "getDocument") ? (
     <DocumentRenderer {...payload.getDocument} />
   ) : (
     <p>Loading...</p>

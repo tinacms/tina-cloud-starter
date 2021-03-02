@@ -2,7 +2,7 @@ import { Client } from "tina-graphql-gateway";
 import { createLocalClient } from "../utils";
 import { DocumentRenderer } from "../components/document-renderer";
 
-import type * as Tina from "../.tina/types";
+import type * as Tina from "../.tina/__generated__/types";
 
 import Link from "next/link";
 
