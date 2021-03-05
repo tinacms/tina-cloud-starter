@@ -1,0 +1,7 @@
+---
+name: block-cta
+label: CTA
+fields:
+  - type: text
+    label: Text
+    name: text

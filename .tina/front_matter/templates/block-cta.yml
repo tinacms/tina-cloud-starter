@@ -1,6 +1,0 @@
----
-label: CTA
-fields:
-  - name: text
-    type: text
-    label: Text
