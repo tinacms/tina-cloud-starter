@@ -1,9 +1,0 @@
----
-sections:
-  - type: directory
-    path: content/pages
-    label: Pages
-    create: documents
-    match: "**/*.md"
-    templates:
-      - page
