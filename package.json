@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bash -c \"yarn watch:types & yarn watch\"",
-    "watch": "yarn tina-gql server:start -c \"next dev\"",
-    "watch:types": "yarn nodemon --watch \"./.tina\" -e yml --exec \"yarn tina-gql schema:types\"",
+    "dev": "yarn tina-gql server:start -c \"next dev\"",
     "build": "yarn tina-gql server:start -c \"next build\"",
     "start": "yarn tina-gql server:start -c \"next start\""
   },
