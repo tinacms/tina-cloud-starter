@@ -1,14 +1,13 @@
 ---
 label: Page
+name: page
 fields:
-  - name: title
-    type: text
+  - type: text
     label: Title
-  - name: blocks
-    type: blocks
+    name: title
+  - type: blocks
+    name: blocks
     label: Blocks
     template_types:
       - block-cta
       - block-hero
-pages:
-  - content/pages/home.md
