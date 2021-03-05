@@ -56,12 +56,9 @@ export const request = async (
           # __typename is an auto-generated field which can be used to determine which
           # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
           __typename
-
-          # Pages_Document comes from the .tina/settings.yml section with the label: Pages
           ... on Pages_Document {
             data {
               __typename
-              # Page_Doc_Data is from the "page" template. It's fields are defined in .tina/front_matter/templates/page.yml
               ... on Page_Doc_Data {
                 title
                 blocks {
