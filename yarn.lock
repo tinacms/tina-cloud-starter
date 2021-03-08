@@ -1096,10 +1096,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/gql@0.0.42-canary-1":
-  version "0.0.42-canary-1"
-  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.42-canary-1.tgz#7f5183503fa9772331be944bd49d0a741a4267cf"
-  integrity sha512-/jOYNdxHWdEyeUu8E2TI8ezReW6sw0glIqAKjGSe/9RXBRHNlTHVMfTpNy7uAcv/TMQrRh8RdT0X5SjLt/7f0g==
+"@forestryio/gql@0.0.42-canary-2":
+  version "0.0.42-canary-2"
+  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.42-canary-2.tgz#6411a927022a3b1900c364376acf04c1910d92e8"
+  integrity sha512-gNK5Du3rdt+ICDQPUvlCZJMlOI+UWr+cgZi5uTMNGJ1El+To6P1i9EETuzFcV1ozf4TuPFaUM8bxQQW45xWZng==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.17"
     "@octokit/auth-app" "^2.6.0"
@@ -12398,12 +12398,12 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@0.2.32-canary-2:
-  version "0.2.32-canary-2"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.32-canary-2.tgz#90ae44ffa8f84f9af8b7ea91d66ae3cef79aafc0"
-  integrity sha512-tQX1vZ9zUYjPXJeqqoQHcWrWpysh+CwH+vXGpc7hQ/DH4FOXB16tTxoP54IIqJGcIm3BYrgokny8oEJ7XfFSmQ==
+tina-graphql-gateway-cli@0.2.32-canary-3:
+  version "0.2.32-canary-3"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.32-canary-3.tgz#a30284514c4c7bc0426346c162519186e2a02450"
+  integrity sha512-n01eUrhM/OrEw3h0tOkOIBsOF4nKX9+9h4JzubFiw/GAqr29WnA4g0jXkaFmIoU0mGz9eA8AT/S8V9aW5iNsLg==
   dependencies:
-    "@forestryio/gql" "0.0.42-canary-1"
+    "@forestryio/gql" "0.0.42-canary-2"
     "@forestryio/graphql-helpers" "0.0.17"
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
