@@ -9,7 +9,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - Run this project locally using local content within this repository.
 - Connect to Tina Cloud to benefit from its GraphQL Content API.
 - Deploy the site to visually edit your site.
-- Invite collaborators 🔜. 
+- Invite collaborators 🔜.
 
 ## Table of contents
 
@@ -18,14 +18,16 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - 🌎 [Run the project locally](#run-the-project-locally)
 - 📝 [Edit content locally](#edit-content-locally)
 - 🦙 [Connect to Tina Cloud](#connect-to-tina-cloud)
-    - ☁️ [Register your local application with Tina Cloud](#register-your-local-application-with-tina-cloud)
-    - 🔌 [Connect your local project with Tina Cloud](#connect-your-local-project-with-tina-cloud)
-    - 📝 [Edit content](#edit-content)
+  - ☁️ [Register your local application with Tina Cloud](#register-your-local-application-with-tina-cloud)
+  - 🔌 [Connect your local project with Tina Cloud](#connect-your-local-project-with-tina-cloud)
+  - 📝 [Edit content](#edit-content)
 - ⬆️ [Deploy](#deploy)
-    - ▲ [Vercel](#vercel)
-    - [Netlify](#netlify)
+  - ▲ [Vercel](#vercel)
+  - [Netlify](#netlify)
 - 🗂 [Starter structure](#starter-structure)
+  - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+
 ## Fork and clone this repository
 
 First fork and clone this repository on your computer.
@@ -93,10 +95,10 @@ cp .env.local.sample .env.local
 
 `NEXT_PUBLIC_USE_LOCAL_CLIENT` should be set to `1`, other values can be ignored for now.
 
-Restart your server and visit [`http://localhost:3000/admin`](http://localhost:3000/admin`), 
+Restart your server and visit [`http://localhost:3000/admin`](http://localhost:3000/admin`),
 the same page is displayed but you can notice a pencil icon at the bottom left corner.
 
-Click to open Tina's sidebar which displays a form with fields you can edit and see update live on the page. 
+Click to open Tina's sidebar which displays a form with fields you can edit and see update live on the page.
 Since we're working locally, saving results in changes to your local filesystem.
 
 > 🐛 issue: when adding a block and populating its content, that data on your page updates to the wrong block.
@@ -106,7 +108,7 @@ Read the [folder structure](#folder-structure) section below to learn more about
 
 ## Connect to Tina Cloud
 
-While the fully-local development workflow is the recommended way for developers to work, 
+While the fully-local development workflow is the recommended way for developers to work,
 you'll obviously want other editors and collaborators to be able to make changes on a hosted website with authentication.
 
 > ℹ️ Changes from the `/admin` route show up on your home page after your site finishes a rebuild.
@@ -156,7 +158,7 @@ NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 
 🎉 Congratulations, your site is now live!
 
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, 
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`,
 logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ### Netlify
@@ -177,12 +179,12 @@ Set the **publish directory**. To `.next/` .
 
 Once you're done, click "Deploy site".
 
-Install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/) 
+Install the ["Next on Netlify" plugin](https://www.netlify.com/blog/2020/12/07/announcing-one-click-install-next.js-build-plugin-on-netlify/)
 in order to take advantage of server-side rendering and Next.js preview features.
 
 Trigger a new deploy for changes to take effect.
 
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`, 
+You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`,
 logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ---
@@ -193,50 +195,69 @@ Tina Cloud Starter is a [Next.js](https://nextjs.org) application. The file-base
 
 ### `pages/[[...slug]].tsx`
 
-This is the only public route for the website, any path you visit will be passed in as arguments to the Content API, 
+This is the only public route for the website, any path you visit will be passed in as arguments to the Content API,
 with first value from the path being used as the `section` slug, and everything after that representing the document's path _relative_ to the configured section path. When deploying to a server, these paths are statically generated at build time.
-
-### Content Modeling
-
-Tina supports [Forestry YAML-based content section config](https://forestry.io/docs/settings/content-sections/).
-
-Let's say we have a content section declared in `.tina/settings.yml`:
-
-```yml
----
-sections:
-  - type: directory
-    path: content/posts
-    label: Posts
-    create: documents
-    match: "**/*.md"
-    templates:
-      - post
-```
-
-A document stored in `content/posts/hello-world.md` is available from `http://localhost:3000/posts/hello-world`.
-
-Here `hello-world` is the **relative** path, as the base path is provided in the `settings.yml` file.
-
-By default the index route (`http://localhost:3000`) will show the `home.md` document from your `content/pages` directory
 
 ### `pages/admin/[[...slug]].tsx`
 
-This is the route where you are able to edit your content. 
-It's protected by an authentication layer, so be sure you've set up an account in the **Getting Started** steps above. 
+This is the route where you are able to edit your content.
+It's protected by an authentication layer, so be sure you've set up an account in the **Getting Started** steps above.
 It matches the routing pattern seen in `[[...slug]].tsx`.
 
 For example, to edit `http://localhost:3000/posts/hello-world`, visit `http://localhost:3000/admin/posts/hello-world`.
 
 ### `components/document-renderer.tsx`
 
-The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI. 
-The `<DocumentRenderer>` shows how you can use the provided types to step through the data. 
+The document renderer component demonstrates the rich development experience gained by using auto-generated types from the Tina CLI.
+The `<DocumentRenderer>` shows how you can use the provided types to step through the data.
 This a great hand-off point to your design system.
 
-It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website. 
-We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system. 
+It's at this layer where the data-fetching and routing logic has already been handled, and you can focus on the look and feel of your website.
+We've provided a few components to get you started, but the idea is to let you run with it yourself, or plug in your favorite design system.
 Enjoy!
+
+## Content Modeling
+
+With Tina Cloud there's no need to build forms manually like you would with TinaCMS. Instead, you're required to define a schema which acts as the single source of truth for the shape and structure of your content. This is set up for you in `./.tina/schema.ts`, let's break down what this function is doing:
+
+```ts
+import { defineSchema } from "tina-graphql-gateway-cli";
+
+export default defineSchema({
+  sections: [
+    {
+      label: "Pages",
+      name: "pages",
+      path: "content/pages",
+      templates: [
+        {
+          label: "Page",
+          name: "page",
+          fields: [
+            {
+              type: "text",
+              label: "Title",
+              name: "title",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+});
+```
+
+### `defineSchema`
+
+Be sure this is your default export from this file, we'll validate the schema and build out the GraphQL API with it.
+
+### `sections`
+
+The top-level key in the schema is an array of sections, a `section` informs the API about _where_ to save content. You can see from the example that a `pages` document would be stored in `content/pages`, and it can be the shape of any `template` from the `templates` key.
+
+### `templates`
+
+Templates are responsible for defining the shape of your content, you'll see in the schema for this starter that we use `templates` for `sections` as well as `blocks`.
 
 ## Local development workflow tips
 
@@ -246,7 +267,7 @@ Watch our [walkthrough video](https://www.loom.com/share/e62776f138ec485d81d71c6
 
 ### Typescript
 
-A good way to ensure your components match the shape of your data is to leverage the auto-generated TypeScript types. 
+A good way to ensure your components match the shape of your data is to leverage the auto-generated TypeScript types.
 These are rebuilt when your `.tina` config changes.
 
 ### Visual Studio Code
