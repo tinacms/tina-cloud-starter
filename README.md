@@ -25,7 +25,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
   - ▲ [Vercel](#vercel)
   - [Netlify](#netlify)
 - 🗂 [Starter structure](#starter-structure)
-  - 📐 [Content Modeling](#content-modeling)
+- 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
 
 ## Fork and clone this repository
