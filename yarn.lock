@@ -1096,10 +1096,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/gql@0.0.42-canary-2":
-  version "0.0.42-canary-2"
-  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.42-canary-2.tgz#6411a927022a3b1900c364376acf04c1910d92e8"
-  integrity sha512-gNK5Du3rdt+ICDQPUvlCZJMlOI+UWr+cgZi5uTMNGJ1El+To6P1i9EETuzFcV1ozf4TuPFaUM8bxQQW45xWZng==
+"@forestryio/gql@0.0.43":
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.43.tgz#2badb9e6946d5d7850b04027d397a62c8bc9a88c"
+  integrity sha512-jtMepT7xa+PsfI/eGrTMG1WsaO29+JIzn6WX+tXpVB0U8AEofHKB6KJGR6WpVAY1dSOB1oBbTf4uEclQ9MqsRQ==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.17"
     "@octokit/auth-app" "^2.6.0"
@@ -12398,12 +12398,12 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@0.2.32-canary-3:
-  version "0.2.32-canary-3"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.32-canary-3.tgz#a30284514c4c7bc0426346c162519186e2a02450"
-  integrity sha512-n01eUrhM/OrEw3h0tOkOIBsOF4nKX9+9h4JzubFiw/GAqr29WnA4g0jXkaFmIoU0mGz9eA8AT/S8V9aW5iNsLg==
+tina-graphql-gateway-cli@0.2.33:
+  version "0.2.33"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.33.tgz#d15372cee1742d22a64070e163a2501e407f2719"
+  integrity sha512-791BX/Lqe+2pEInw/40P5uth8YIT9sYN8Un2RKClJ+d8JSqMOjIor1liUhHAZYp6zEcdmoxiA6Ye7OpSUe61aA==
   dependencies:
-    "@forestryio/gql" "0.0.42-canary-2"
+    "@forestryio/gql" "0.0.43"
     "@forestryio/graphql-helpers" "0.0.17"
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
@@ -12450,10 +12450,10 @@ tina-graphql-gateway-cli@0.2.32-canary-3:
     yo "^3.1.1"
     yup "^0.32.9"
 
-tina-graphql-gateway@^0.1.53:
-  version "0.1.53"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.53.tgz#247bf0d72ae7aa2a059d0f24eb913baf1343bee3"
-  integrity sha512-4D8G57HsXIxybNpy9M494TP6iau67i41mC9RvOH5/g9J417RTzF29AI3twgWvoOmzuTh9K7ZBccaMSkfew2tJQ==
+tina-graphql-gateway@^0.1.54:
+  version "0.1.54"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.54.tgz#830f24a2d8f65aafe92bf87443ac5c5b9ca8d12c"
+  integrity sha512-1OSU9nGy50MmDCzJ1sLM8sqU1utVU8mB/1OPMkORRWFNhvgY65GKULX8DYe9cW/vK//kmDO11jWeaZOLlbyycg==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.17"
     "@graphql-codegen/core" "^1.15.4"
