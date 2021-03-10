@@ -11718,10 +11718,10 @@ tina-graphql-gateway-cli@0.2.33:
     yo "^3.1.1"
     yup "^0.32.9"
 
-tina-graphql-gateway@^0.1.55:
-  version "0.1.55"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.55.tgz#d5eaf892657aea0e15d5118541cdfbf402171aef"
-  integrity sha512-t9NpYZGqVR5oNDtngqTy9zgcwM9BOqrek4giIRgxn8JeYB5ta/7eRapkadtxpKQ5AlIWzBmKOUmVSKSsH4IKLA==
+tina-graphql-gateway@^0.1.56:
+  version "0.1.56"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.56.tgz#2cb8ce864d72d1c45d0fb487d5551fe48f85297f"
+  integrity sha512-c/JbDU+EZnY5YKF9FNBvHM7HCD8TK30lsZ/5g/djQi+1hA9GIyOVDt1P/fo2JQfxciOOS4W8/h5bCcU7K+qn9g==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.17"
     "@graphql-codegen/core" "^1.15.4"
