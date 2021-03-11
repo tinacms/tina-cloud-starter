@@ -9,7 +9,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - Run this project locally using local content within this repository.
 - Connect to Tina Cloud to benefit from its GraphQL Content API.
 - Deploy the site to visually edit your site.
-- Invite collaborators 🔜.
+- Invite collaborators.
 
 ## Table of contents
 
@@ -28,9 +28,9 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
 
-## Fork and clone this repository
+## Fork this repository
 
-First fork and clone this repository on your computer.
+Start by **forking** the repositorty and then pull it down to your computer.
 
 ## Install
 
@@ -115,8 +115,8 @@ you'll obviously want other editors and collaborators to be able to make changes
 
 ## Register your local application with Tina Cloud
 
-1. Visit [auth.tinajs.dev](https://auth.tinajs.dev/register), create a realm, and sign in. Make a note of your realm name.
-2. Create an app which connects to the GitHub repository you've just forked. Once your app is created, make a note of the client ID.
+1. Visit [auth.tinajs.dev](https://auth.tinajs.dev/register), create an organization, and sign in. Make a note of your orgnization name.
+2. Create an app which connects to the GitHub repository you've just forked. Once your app is created, open settings and copy the client ID.
 
 ## Connect your local project with Tina Cloud
 
