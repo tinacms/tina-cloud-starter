@@ -38,7 +38,6 @@ export const Editor = ({ client }: { client }) => {
     | {}
   >({});
 
-  console.log("ohhi", data);
   React.useEffect(() => {
     request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
       setData
