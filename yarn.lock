@@ -1096,12 +1096,12 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/gql@0.0.43":
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.43.tgz#2badb9e6946d5d7850b04027d397a62c8bc9a88c"
-  integrity sha512-jtMepT7xa+PsfI/eGrTMG1WsaO29+JIzn6WX+tXpVB0U8AEofHKB6KJGR6WpVAY1dSOB1oBbTf4uEclQ9MqsRQ==
+"@forestryio/gql@0.0.45":
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.45.tgz#40797677dc8ccf8c4e7b54353908ac668fa49c48"
+  integrity sha512-GpnuE1mJDDxi4Fp4mcA6vXYjVww+eTC8Csx0I74fUjQhYUyoLiztuV464QbR+jNI6HUChyPVjKI8odXs+GqxCQ==
   dependencies:
-    "@forestryio/graphql-helpers" "0.0.17"
+    "@forestryio/graphql-helpers" "0.0.18"
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
     "@octokit/rest" "^18.0.6"
@@ -1133,10 +1133,10 @@
     ws "^7.3.1"
     yup "^0.29.3"
 
-"@forestryio/graphql-helpers@0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.17.tgz#fe82d7fc85d8e164c63aa805f6b0cd9299ef34b8"
-  integrity sha512-Eq45K5tO+K9gk4SPg9jz80H7FbDPUXSURmmAIf5+4LNkJ/kyrZv3t1TliYrhSiPjFzoNeIcvv2OWkawZphwzJw==
+"@forestryio/graphql-helpers@0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.18.tgz#8fdf23d9f98b61c792f650637eeec653a892b257"
+  integrity sha512-sncb6MNLt5cKt5j6uZsCE/wZXuzY3nDB6xtRWn8mrnHY75rp4ipmV0qBX+Mx60z9P7BnsaDLvMYKeH77ZsDiJQ==
   dependencies:
     "@types/lodash.get" "^4.4.6"
     "@types/lodash.kebabcase" "^4.1.6"
@@ -1153,6 +1153,7 @@
     prettier "^2.2.1"
     tslib "^1.11.1"
     tsup "^3.7.0"
+    typescript "^4.2.3"
 
 "@graphql-codegen/core@^1.15.4", "@graphql-codegen/core@^1.17.0":
   version "1.17.9"
@@ -11666,13 +11667,13 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@0.2.33:
-  version "0.2.33"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.33.tgz#d15372cee1742d22a64070e163a2501e407f2719"
-  integrity sha512-791BX/Lqe+2pEInw/40P5uth8YIT9sYN8Un2RKClJ+d8JSqMOjIor1liUhHAZYp6zEcdmoxiA6Ye7OpSUe61aA==
+tina-graphql-gateway-cli@0.2.34:
+  version "0.2.34"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.34.tgz#fb69bf60a44696b3417127ca9fa3f445f92903ce"
+  integrity sha512-ImUptKFGz9g2GgUJ8HhyU9NL5YuIfzU1rPdk+LmvCjtgfQVnAm6LupJAgsRLWJl1y0UbavtYmcHWpXPRHXinTQ==
   dependencies:
-    "@forestryio/gql" "0.0.43"
-    "@forestryio/graphql-helpers" "0.0.17"
+    "@forestryio/gql" "0.0.45"
+    "@forestryio/graphql-helpers" "0.0.18"
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
@@ -11718,12 +11719,12 @@ tina-graphql-gateway-cli@0.2.33:
     yo "^3.1.1"
     yup "^0.32.9"
 
-tina-graphql-gateway@^0.1.56:
-  version "0.1.56"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.56.tgz#2cb8ce864d72d1c45d0fb487d5551fe48f85297f"
-  integrity sha512-c/JbDU+EZnY5YKF9FNBvHM7HCD8TK30lsZ/5g/djQi+1hA9GIyOVDt1P/fo2JQfxciOOS4W8/h5bCcU7K+qn9g==
+tina-graphql-gateway@0.1.59:
+  version "0.1.59"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.59.tgz#7bb23f1f91534196c98ac2e0243ea2f0ad517d0f"
+  integrity sha512-qPCLSv7hkUW2C1bm8vHHRRSuabpCLTiVZlDQ+GsP2EjMskLHLw6gQD1y+BnrI1r05LwOmKBtB+0d3TAgwoN3sA==
   dependencies:
-    "@forestryio/graphql-helpers" "0.0.17"
+    "@forestryio/graphql-helpers" "0.0.18"
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
@@ -12053,7 +12054,7 @@ typescript@^3.8.3, typescript@^3.9.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
-typescript@^4.2.2:
+typescript@^4.2.2, typescript@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
   integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==

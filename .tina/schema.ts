@@ -1,7 +1,7 @@
 import { defineSchema } from "tina-graphql-gateway-cli";
 
 export default defineSchema({
-  sections: [
+  collections: [
     {
       label: "Pages",
       name: "pages",
