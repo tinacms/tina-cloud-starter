@@ -8,4 +8,3 @@ blocks:
     text: Click Me
 _template: page
 ---
-

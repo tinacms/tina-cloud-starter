@@ -3,12 +3,17 @@ import type * as Tina from "../.tina/__generated__/types";
 import css from "styled-jsx/css";
 import { BlocksRenderer } from "./blocks-renderer";
 import { RawRenderer } from "./raw-renderer";
+import Head from "next/head";
 
 export const PageRenderer = (props: Tina.Page_Doc_Data) => {
   const { title, blocks, _body } = props;
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content="Some description" />
+      </Head>
       <div className="header">
         <div className="container">
           <h1 className="title">{title}</h1>
