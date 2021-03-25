@@ -1,19 +1,19 @@
-import { Client } from "tina-graphql-gateway";
+import Link from "next/link";
 import { createLocalClient } from "../utils";
 import { DocumentRenderer } from "../components/document-renderer";
 
 import type * as Tina from "../.tina/__generated__/types";
-
-import Link from "next/link";
+import type { Client } from "tina-graphql-gateway";
 
 export const DEFAULT_VARIABLES = {
   section: "pages",
   relativePath: "home.md",
   slug: ["/"],
 };
+export type QueryResponseType = { getDocument: Tina.SectionDocumentUnion };
 
 export default function Page(props: {
-  payload: { getDocument: Tina.SectionDocumentUnion };
+  payload: QueryResponseType;
   variables: { section: string; relativePath: string; slug: string[] };
 }) {
   let editLink = `/admin/${props.variables.slug.join("/")}`;
@@ -42,48 +42,44 @@ export default function Page(props: {
   );
 }
 
-/**
- * This request is used in the /admin/[[...slug]].tsx as well
- */
-export const request = async (
-  client: Client,
-  variables: { section: string; relativePath: string }
-) => {
-  const content = await client.requestWithForm(
-    (gql) => gql`
-      query ContentQuery($section: String!, $relativePath: String!) {
-        getDocument(section: $section, relativePath: $relativePath) {
-          # __typename is an auto-generated field which can be used to determine which
-          # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
+export const query = (gql) => gql`
+  query ContentQuery($section: String!, $relativePath: String!) {
+    getDocument(section: $section, relativePath: $relativePath) {
+      # __typename is an auto-generated field which can be used to determine which
+      # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
+      __typename
+      ... on Pages_Document {
+        data {
           __typename
-          ... on Pages_Document {
-            data {
+          ... on Page_Doc_Data {
+            title
+            blocks {
               __typename
-              ... on Page_Doc_Data {
-                title
-                blocks {
-                  __typename
-                  ... on BlockCta_Data {
-                    text
-                  }
-                  ... on BlockHero_Data {
-                    heading
-                    message
-                  }
-                }
-                _body {
-                  raw
-                }
+              ... on BlockCta_Data {
+                text
               }
+              ... on BlockHero_Data {
+                heading
+                message
+              }
+            }
+            _body {
+              raw
             }
           }
         }
       }
-    `,
-    {
-      variables,
     }
-  );
+  }
+`;
+
+export const request = async (
+  client: Client,
+  variables: { section: string; relativePath: string }
+) => {
+  const content = await client.requestWithForm(query, {
+    variables,
+  });
 
   return content;
 };
