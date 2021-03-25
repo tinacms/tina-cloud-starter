@@ -1,19 +1,17 @@
 import React from "react";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
-import * as util from "../../utils";
-import { request, DEFAULT_VARIABLES } from "../[[...slug]]";
+import { query, DEFAULT_VARIABLES } from "../[[...slug]]";
+import { createClient, variablesFromPath } from "../../utils";
 import { DocumentRenderer } from "../../components/document-renderer";
 
-import type * as Tina from "../../.tina/__generated__/types";
-
-const client = util.createClient();
+import type { QueryResponseType } from "../[[...slug]]";
 
 export default function AdminPage() {
   const cms = React.useMemo(() => {
     return new TinaCMS({
       apis: {
-        tina: client,
+        tina: createClient(),
       },
       sidebar: true,
       enabled: true,
@@ -22,50 +20,22 @@ export default function AdminPage() {
 
   return (
     <TinaCloudAuthWall cms={cms}>
-      <Editor client={client} />
+      <Editor />
     </TinaCloudAuthWall>
   );
 }
 
-export const Editor = ({ client }: { client }) => {
-  const prefix = "/admin";
-  let slug = window.location.pathname.replace(prefix, "").slice(1);
+export const Editor = () => {
+  let slug = window.location.pathname.replace("/admin", "").slice(1);
 
-  const [data, setData] = React.useState<
-    | {
-        getDocument: Tina.SectionDocumentUnion;
-      }
-    | {}
-  >({});
-
-  console.log("ohhi", data);
-  React.useEffect(() => {
-    request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
-      setData
-    );
-  }, [slug]);
-
-  const [payload] = useForm<{} | { getDocument: Tina.SectionDocumentUnion }>({
-    payload: data,
-    onNewDocument: (args) => util.redirectToNewDocument(args, prefix),
+  const [payload, isLoading] = useForm<QueryResponseType>({
+    query,
+    variables: variablesFromPath(slug, DEFAULT_VARIABLES),
   });
 
-  if (
-    util.typesafeHasOwnProperty(data, "errors") &&
-    Array.isArray(data.errors)
-  ) {
-    return (
-      <>
-        {data.errors.map((e) => (
-          <div>{e.message}</div>
-        ))}
-      </>
-    );
-  }
-
-  return util.typesafeHasOwnProperty(payload, "getDocument") ? (
-    <DocumentRenderer {...payload.getDocument} />
-  ) : (
+  return isLoading ? (
     <p>Loading...</p>
+  ) : (
+    <DocumentRenderer {...payload.getDocument} />
   );
 };
