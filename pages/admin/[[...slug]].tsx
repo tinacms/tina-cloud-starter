@@ -1,6 +1,6 @@
 import React from "react";
 import { TinaCMS } from "tinacms";
-import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
+import { TinaCloudAuthWall, useGraphqlForms } from "tina-graphql-gateway";
 import { query, DEFAULT_VARIABLES } from "../[[...slug]]";
 import { createClient, variablesFromPath } from "../../utils";
 import { DocumentRenderer } from "../../components/document-renderer";
@@ -28,7 +28,7 @@ export default function AdminPage() {
 export const Editor = () => {
   let slug = window.location.pathname.replace("/admin", "").slice(1);
 
-  const [payload, isLoading] = useForm<QueryResponseType>({
+  const [payload, isLoading] = useGraphqlForms<QueryResponseType>({
     query,
     variables: variablesFromPath(slug, DEFAULT_VARIABLES),
   });

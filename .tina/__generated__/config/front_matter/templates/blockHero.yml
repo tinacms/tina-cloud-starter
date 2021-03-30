@@ -1,0 +1,10 @@
+---
+name: blockHero
+label: Hero
+fields:
+  - type: text
+    label: Heading
+    name: heading
+  - type: text
+    label: Message
+    name: message
