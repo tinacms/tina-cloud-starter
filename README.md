@@ -123,7 +123,7 @@ you'll obviously want other editors and collaborators to be able to make changes
 In the `env.local` file set:
 
 - `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
-- `NEXT_PUBLIC_REALM_NAME` to your Tina Cloud realm name
+- `NEXT_PUBLIC_ORGANIZATION_NAME` to your Tina Cloud organization name
 - `NEXT_PUBLIC_TINA_CLIENT_ID` to the Client ID displayed in your Tina Cloud App.
 
 Restart your server and run `yarn dev` again.
@@ -150,7 +150,7 @@ Now that Tina Cloud editing is working correctly, we can deploy the site so that
 Connect to your GitHub repository and set the same environment variables as the ones in your `env.local` file:
 
 ```
-NEXT_PUBLIC_REALM_NAME= <YOUR_REALM>
+NEXT_PUBLIC_ORGANIZATION_NAME= <YOUR_ORGANIZATION>
 NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 ```
 
@@ -170,7 +170,7 @@ Connect to your GitHub repository, click on **advanced** to set the same environ
 ![](public/uploads/netlify-build-settings.png)
 
 ```
-NEXT_PUBLIC_REALM_NAME= <YOUR_REALM>
+NEXT_PUBLIC_ORGANIZATION_NAME= <YOUR_ORGANIZATION>
 NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 ```
 
