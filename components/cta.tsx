@@ -9,18 +9,20 @@ export const Cta = ({
 }) => {
   return (
     <>
-      <button
+      <a
+        href={link}
         onClick={() => {
-          link ? window.location.assign(link) : alert(message);
+          !link && alert(message);
         }}
         className="button"
       >
         {text}
-      </button>
+      </a>
       <style jsx>{`
         .button {
           border: none;
           outline: none;
+          text-decoration: none;
           color: white;
           border-radius: 2rem;
           background: var(--orange);
@@ -28,6 +30,7 @@ export const Cta = ({
           padding: 0.75rem 1.5rem;
           cursor: pointer;
           transition: all 150ms ease-out;
+          display: inline-block;
           margin: 0.25rem 0;
         }
 

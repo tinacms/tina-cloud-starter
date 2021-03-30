@@ -1096,12 +1096,12 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/gql@0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.45.tgz#40797677dc8ccf8c4e7b54353908ac668fa49c48"
-  integrity sha512-GpnuE1mJDDxi4Fp4mcA6vXYjVww+eTC8Csx0I74fUjQhYUyoLiztuV464QbR+jNI6HUChyPVjKI8odXs+GqxCQ==
+"@forestryio/gql@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.1.1.tgz#b3bd1633b16effb1e6154b0c00f9625180de8468"
+  integrity sha512-7utwZalJTq4Y5X+gcOuQi3rcjAl1EO++XGv5Hz6xdLJmg3zGbfzgRJRbkkiwaOcSvp264Q35e5bI8gf0QuWRsA==
   dependencies:
-    "@forestryio/graphql-helpers" "0.0.18"
+    "@forestryio/graphql-helpers" "0.0.19"
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
     "@octokit/rest" "^18.0.6"
@@ -1133,10 +1133,10 @@
     ws "^7.3.1"
     yup "^0.29.3"
 
-"@forestryio/graphql-helpers@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.18.tgz#8fdf23d9f98b61c792f650637eeec653a892b257"
-  integrity sha512-sncb6MNLt5cKt5j6uZsCE/wZXuzY3nDB6xtRWn8mrnHY75rp4ipmV0qBX+Mx60z9P7BnsaDLvMYKeH77ZsDiJQ==
+"@forestryio/graphql-helpers@0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.19.tgz#a46bd98fd80528eeac542f32aa7987e1d93f4842"
+  integrity sha512-Xj0LnN/5capg9VV0nq9pnd6eKLfVrxxJmJkYBCFxR+6EPwlqivPPUU56gRg2jjsb8LA52LBOlxUnTf9LZ5FMeQ==
   dependencies:
     "@types/lodash.get" "^4.4.6"
     "@types/lodash.kebabcase" "^4.1.6"
@@ -11667,13 +11667,13 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@0.2.34:
-  version "0.2.34"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.34.tgz#fb69bf60a44696b3417127ca9fa3f445f92903ce"
-  integrity sha512-ImUptKFGz9g2GgUJ8HhyU9NL5YuIfzU1rPdk+LmvCjtgfQVnAm6LupJAgsRLWJl1y0UbavtYmcHWpXPRHXinTQ==
+tina-graphql-gateway-cli@0.2.36:
+  version "0.2.36"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.36.tgz#65c836c3684c9298b19cca061d48bb86ced44bb0"
+  integrity sha512-Rmtqk1tqbOycWX3HeE7D2k9u9ALCpNiYklmDJ9uxHprZG4sbL1ulJ6WxftSDI4jS8BskKxIJf5D2IZptL+fsnA==
   dependencies:
-    "@forestryio/gql" "0.0.45"
-    "@forestryio/graphql-helpers" "0.0.18"
+    "@forestryio/gql" "0.1.1"
+    "@forestryio/graphql-helpers" "0.0.19"
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
@@ -11719,12 +11719,12 @@ tina-graphql-gateway-cli@0.2.34:
     yo "^3.1.1"
     yup "^0.32.9"
 
-tina-graphql-gateway@0.1.59:
-  version "0.1.59"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.1.59.tgz#7bb23f1f91534196c98ac2e0243ea2f0ad517d0f"
-  integrity sha512-qPCLSv7hkUW2C1bm8vHHRRSuabpCLTiVZlDQ+GsP2EjMskLHLw6gQD1y+BnrI1r05LwOmKBtB+0d3TAgwoN3sA==
+tina-graphql-gateway@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.2.1.tgz#8be414dc74380df40c4d3cfe86394c6823f94320"
+  integrity sha512-CQ2WGmvVXX8KjWll1Hb5UTIPfpJyrChLcfev2qGmWZ2ZphWkD53ci8uelHYe37VTa3yS4wJk5CqTfM9lWBqFSQ==
   dependencies:
-    "@forestryio/graphql-helpers" "0.0.18"
+    "@forestryio/graphql-helpers" "0.0.19"
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"

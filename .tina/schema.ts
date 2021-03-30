@@ -3,13 +3,13 @@ import { defineSchema } from "tina-graphql-gateway-cli";
 export default defineSchema({
   collections: [
     {
-      label: "Pages",
-      name: "pages",
-      path: "content/pages",
+      label: "Marketing Pages",
+      name: "marketingPages",
+      path: "content/marketing-pages",
       templates: [
         {
-          label: "Page",
-          name: "page",
+          label: "Landing Page",
+          name: "landingPage",
           fields: [
             {
               type: "text",
@@ -22,7 +22,7 @@ export default defineSchema({
               label: "Blocks",
               templates: [
                 {
-                  name: "block-cta",
+                  name: "blockCta",
                   label: "CTA",
                   fields: [
                     {
@@ -30,10 +30,15 @@ export default defineSchema({
                       label: "Text",
                       name: "text",
                     },
+                    {
+                      type: "text",
+                      label: "Link",
+                      name: "link",
+                    },
                   ],
                 },
                 {
-                  name: "block-hero",
+                  name: "blockHero",
                   label: "Hero",
                   fields: [
                     {
@@ -42,7 +47,7 @@ export default defineSchema({
                       name: "heading",
                     },
                     {
-                      type: "text",
+                      type: "textarea",
                       label: "Message",
                       name: "message",
                     },
