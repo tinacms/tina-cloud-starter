@@ -24,6 +24,7 @@ export const Hero = ({
         }
 
         .message {
+          white-space: pre-line;
           font-size: 1.25rem;
           line-height: 1.6;
           margin-top: 0;

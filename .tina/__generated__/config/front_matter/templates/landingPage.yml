@@ -1,6 +1,6 @@
 ---
-label: Page
-name: page
+label: Landing Page
+name: landingPage
 fields:
   - type: text
     label: Title
