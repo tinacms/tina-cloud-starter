@@ -22,7 +22,7 @@ export default defineSchema({
               label: "Blocks",
               templates: [
                 {
-                  name: "block-cta",
+                  name: "blockCta",
                   label: "CTA",
                   fields: [
                     {
@@ -33,7 +33,7 @@ export default defineSchema({
                   ],
                 },
                 {
-                  name: "block-hero",
+                  name: "blockHero",
                   label: "Hero",
                   fields: [
                     {

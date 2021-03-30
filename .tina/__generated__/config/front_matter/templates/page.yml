@@ -9,5 +9,5 @@ fields:
     label: Blocks
     type: blocks
     template_types:
-      - block-cta
-      - block-hero
+      - blockCta
+      - blockHero
