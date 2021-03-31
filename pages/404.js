@@ -1,6 +1,4 @@
-import Link from "next/link";
-import css from "styled-jsx/css";
-import { GlobalStyles, PageStyles } from "../components/page-renderer";
+import { GlobalStyles, PageStyles } from "../components/document-renderer";
 import { Cta } from "../components/cta";
 
 export default function FourOhFour() {

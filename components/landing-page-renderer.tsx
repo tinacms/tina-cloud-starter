@@ -5,7 +5,7 @@ import { BlocksRenderer } from "./blocks-renderer";
 import { RawRenderer } from "./raw-renderer";
 import Head from "next/head";
 
-export const PageRenderer = (props: Tina.Page_Doc_Data) => {
+export const LandingPageRenderer = (props: Tina.LandingPage_Doc_Data) => {
   const { title, blocks, _body } = props;
 
   return (
@@ -25,11 +25,15 @@ export const PageRenderer = (props: Tina.Page_Doc_Data) => {
             <div className="cardBody">
               <BlocksRenderer blocks={blocks} />
             </div>
-            {_body?.raw && (
-              <div className="cardFooter">
-                <p>{_body?.raw}</p>
-              </div>
-            )}
+            <div className="cardFooter">
+              <p>{_body}</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="cardBody">Site Map</div>
+            <div className="cardFooter">
+              <p>Check out the other pages</p>
+            </div>
           </div>
           <RawRenderer data={props} />
         </div>
@@ -117,6 +121,7 @@ export const PageStyles = css`
   }
 
   .cardFooter {
+    white-space: pre-line;
     background: var(--gray);
     padding: 1rem 2rem;
   }

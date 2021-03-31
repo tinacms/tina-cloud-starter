@@ -7,25 +7,24 @@ export const createClient = () => {
 };
 
 export const createCloudClient = () => {
-  
-  const realm = process.env.NEXT_PUBLIC_REALM_NAME
-  const clientId = process.env.NEXT_PUBLIC_TINA_CLIENT_ID
+  const organization = process.env.NEXT_PUBLIC_ORGANIZATION_NAME;
+  const clientId = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 
-  const missingEnv : string[] = []
-  if(!realm) {
-    missingEnv.push('NEXT_PUBLIC_REALM_NAME')
+  const missingEnv: string[] = [];
+  if (!organization) {
+    missingEnv.push("NEXT_PUBLIC_ORGANIZATION_NAME");
   }
-  if(!clientId) {
-    missingEnv.push('NEXT_PUBLIC_TINA_CLIENT_ID')
+  if (!clientId) {
+    missingEnv.push("NEXT_PUBLIC_TINA_CLIENT_ID");
   }
 
-  if(missingEnv.length) {
-    throw new Error(`The following environment variables are required when using the Tina Cloud Client: 
-     ${missingEnv.join(', ')}`)
+  if (missingEnv.length) {
+    throw new Error(`The following environment variables are required when using the Tina Cloud Client:
+     ${missingEnv.join(", ")}`);
   }
 
   return new Client({
-    realm,
+    realm: organization,
     clientId,
     branch: "main",
     tokenStorage: "LOCAL_STORAGE",
