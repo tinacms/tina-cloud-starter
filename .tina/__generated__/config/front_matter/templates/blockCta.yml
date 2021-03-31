@@ -5,3 +5,6 @@ fields:
   - type: text
     label: Text
     name: text
+  - type: text
+    label: Link
+    name: link

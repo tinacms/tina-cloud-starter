@@ -5,6 +5,6 @@ fields:
   - type: text
     label: Heading
     name: heading
-  - type: text
+  - type: textarea
     label: Message
     name: message
