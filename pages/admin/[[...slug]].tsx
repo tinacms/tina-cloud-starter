@@ -2,7 +2,7 @@ import React from "react";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall, useForm } from "tina-graphql-gateway";
 import * as util from "../../utils";
-import { request, DEFAULT_VARIABLES } from "../[[...slug]]";
+import { DEFAULT_VARIABLES, request } from "../../utils/query";
 import { DocumentRenderer } from "../../components/document-renderer";
 
 import type * as Tina from "../../.tina/__generated__/types";
@@ -31,6 +31,7 @@ export const Editor = ({ client }: { client }) => {
   const prefix = "/admin";
   let slug = window.location.pathname.replace(prefix, "").slice(1);
 
+  const variables = util.variablesFromPath(slug, DEFAULT_VARIABLES);
   const [data, setData] = React.useState<
     | {
         getDocument: Tina.SectionDocumentUnion;
@@ -40,9 +41,7 @@ export const Editor = ({ client }: { client }) => {
 
   console.log("ohhi", data);
   React.useEffect(() => {
-    request(client, util.variablesFromPath(slug, DEFAULT_VARIABLES)).then(
-      setData
-    );
+    request(client, variables).then(setData);
   }, [slug]);
 
   const [payload] = useForm<{} | { getDocument: Tina.SectionDocumentUnion }>({
@@ -64,7 +63,10 @@ export const Editor = ({ client }: { client }) => {
   }
 
   return util.typesafeHasOwnProperty(payload, "getDocument") ? (
-    <DocumentRenderer {...payload.getDocument} />
+    <DocumentRenderer
+      section={variables.section}
+      document={payload.getDocument}
+    />
   ) : (
     <p>Loading...</p>
   );

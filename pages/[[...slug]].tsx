@@ -1,16 +1,10 @@
-import { Client } from "tina-graphql-gateway";
 import { createLocalClient } from "../utils";
+import { DEFAULT_VARIABLES, request } from "../utils/query";
 import { DocumentRenderer } from "../components/document-renderer";
 
 import type * as Tina from "../.tina/__generated__/types";
 
 import Link from "next/link";
-
-export const DEFAULT_VARIABLES = {
-  section: "pages",
-  relativePath: "home.md",
-  slug: ["/"],
-};
 
 export default function Page(props: {
   payload: { getDocument: Tina.SectionDocumentUnion };
@@ -19,7 +13,10 @@ export default function Page(props: {
   let editLink = `/admin/${props.variables.slug.join("/")}`;
   return (
     <>
-      <DocumentRenderer {...props.payload.getDocument} />
+      <DocumentRenderer
+        section={props.variables.section}
+        document={props.payload.getDocument}
+      />
       <Link href={editLink}>
         <a className="editLink">Edit Site</a>
       </Link>
@@ -41,52 +38,6 @@ export default function Page(props: {
     </>
   );
 }
-
-/**
- * This request is used in the /admin/[[...slug]].tsx as well
- */
-export const request = async (
-  client: Client,
-  variables: { section: string; relativePath: string }
-) => {
-  const content = await client.requestWithForm(
-    (gql) => gql`
-      query ContentQuery($section: String!, $relativePath: String!) {
-        getDocument(section: $section, relativePath: $relativePath) {
-          # __typename is an auto-generated field which can be used to determine which
-          # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
-          __typename
-          ... on Pages_Document {
-            data {
-              __typename
-              ... on Page_Doc_Data {
-                title
-                blocks {
-                  __typename
-                  ... on BlockCta_Data {
-                    text
-                  }
-                  ... on BlockHero_Data {
-                    heading
-                    message
-                  }
-                }
-                _body {
-                  raw
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-    {
-      variables,
-    }
-  );
-
-  return content;
-};
 
 const client = createLocalClient();
 

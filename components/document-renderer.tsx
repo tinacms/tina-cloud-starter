@@ -1,5 +1,6 @@
 import type * as Tina from "../.tina/__generated__/types";
-import { PageRenderer } from "./page-renderer";
+import ShelvesRenderer from "../components/ShelvesRenderer";
+import ItemsRenderer from "../components/ItemsRenderer";
 
 /**
  *
@@ -8,16 +9,30 @@ import { PageRenderer } from "./page-renderer";
  * Each of these cases map to a `section` found in the `.tina/settings.yml`
  *
  */
-export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
-  switch (props.__typename) {
-    case "Pages_Document":
-      return <PageRenderer {...props.data} />;
+
+export const DocumentRenderer = ({
+  section,
+  document,
+}: {
+  section: String;
+  document: Tina.SectionDocumentUnion;
+}) => {
+  switch (section) {
+    case "shelves":
+      return <ShelvesRenderer {...document.data} />;
+    case "items":
+      return <ItemsRenderer {...document.data} />;
     default:
-      return <NoData />;
+      return <NoData section={section} />;
   }
 };
 
-const NoData = () => {
-  console.error("Woops, this shouldn't be rendered!");
-  return <pre>No data</pre>;
+const NoData = ({ section }: { section: String }) => {
+  return (
+    <pre>
+      [Error] Renderer for section:"{section}" is missing. Consider adding a{" "}
+      {section[0].toUpperCase() + section.slice(1)}Renderer Component to
+      DocumentRenderer?
+    </pre>
+  );
 };
