@@ -1,10 +1,10 @@
 ---
 sections:
-  - label: Pages
-    name: pages
-    path: content/pages
+  - label: Marketing Pages
+    name: marketingPages
+    path: content/marketing-pages
     templates:
-      - page
+      - landingPage
     type: directory
     create: documents
     match: '**/*.md'

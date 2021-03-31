@@ -6,8 +6,8 @@ import type * as Tina from "../.tina/__generated__/types";
 import type { Client } from "tina-graphql-gateway";
 
 export const DEFAULT_VARIABLES = {
-  section: "pages",
-  relativePath: "home.md",
+  section: "marketingPages",
+  relativePath: "index.md",
   slug: ["/"],
 };
 export type QueryResponseType = { getDocument: Tina.SectionDocumentUnion };
@@ -21,7 +21,7 @@ export default function Page(props: {
     <>
       <DocumentRenderer {...props.payload.getDocument} />
       <Link href={editLink}>
-        <a className="editLink">Edit Site</a>
+        <a className="editLink">Edit Page</a>
       </Link>
       <style jsx>{`
         .editLink {
@@ -48,24 +48,12 @@ export const query = (gql) => gql`
       # __typename is an auto-generated field which can be used to determine which
       # component gets rendered. Check out the switch statement in /components/document-renderer.tsx
       __typename
-      ... on Pages_Document {
+      ... on MarketingPages_Document {
         data {
           __typename
-          ... on Page_Doc_Data {
+          ... on LandingPage_Doc_Data {
             title
-            blocks {
-              __typename
-              ... on BlockCta_Data {
-                text
-              }
-              ... on BlockHero_Data {
-                heading
-                message
-              }
-            }
-            _body {
-              raw
-            }
+            _body
           }
         }
       }
@@ -77,7 +65,7 @@ export const request = async (
   client: Client,
   variables: { section: string; relativePath: string }
 ) => {
-  const content = await client.requestWithForm(query, {
+  const content = await client.request(query, {
     variables,
   });
 
@@ -133,7 +121,7 @@ export const getStaticProps = async ({ params }): Promise<any> => {
  *
  */
 export const getStaticPaths = async (): Promise<any> => {
-  const sectionsQuery = (await client.requestWithForm(
+  const sectionsQuery = (await client.request(
     (gql) => gql`
       query SectionsQuery {
         getSections {
