@@ -1,13 +1,14 @@
+import React from "react";
 import css from "styled-jsx/css";
-import Link from "next/link";
 
-/**
- * For demonstration purposes
- */
 export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
   return (
     <>
-      <div className="header"></div>
+      <div className="header">
+        <div className="container">
+          <Nav />
+        </div>
+      </div>
       <div className="content">
         <div className="container">
           <div className="card">{props.children}</div>
@@ -18,24 +19,6 @@ export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
         {GlobalStyles}
       </style>
       <style jsx>{PageStyles}</style>
-      <Link href="/admin">
-        <a className="editLink">Edit Page</a>
-      </Link>
-      <style jsx>{`
-        .editLink {
-          position: fixed;
-          top: 0;
-          right: 0;
-          background: var(--orange);
-          color: var(--white);
-          padding: 0.5rem 0.75rem;
-          font-weight: bold;
-          text-decoration: none;
-          display: inline-block;
-          border-bottom-left-radius: 0.5rem;
-          cursor: pointer;
-        }
-      `}</style>
     </>
   );
 };
@@ -163,5 +146,60 @@ export const RawRenderer = ({ data }) => {
         }
       `}</style>
     </>
+  );
+};
+
+const Nav = () => {
+  // If we're on an admin path, other links should also link to their admin paths
+  const [prefix, setPrefix] = React.useState("");
+
+  React.useEffect(() => {
+    if (window.location.pathname.startsWith("/admin")) {
+      setPrefix("/admin");
+    }
+  });
+
+  return (
+    <div className="nav">
+      <h4>
+        <a href="/">Tina Cloud Starter</a>
+      </h4>
+      <ul className="menu">
+        <li>
+          <a href={`${prefix}/`}>Home</a>
+        </li>
+        <li>
+          <a className="summary" href={`${prefix}/posts/vote-for-pedro`}>
+            Vote for Pedro
+          </a>
+        </li>
+      </ul>
+      <style jsx>{`
+        .nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        .menu {
+          display: flex;
+        }
+        ul {
+          padding-left: 0;
+        }
+        li {
+          list-style-type: none;
+        }
+        .menu > li {
+          margin-left: 20px;
+        }
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          color: var(--orange);
+        }
+        a:hover {
+          color: var(--orange-light);
+        }
+      `}</style>
+    </div>
   );
 };

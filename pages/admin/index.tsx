@@ -10,7 +10,10 @@ import HomePage, { request, HomeQueryResponseType } from "..";
  * automatically, so you can edit everything right there on your page.
  */
 export default function AdminPage() {
-  const [payload, isLoading] = useGraphqlForms<HomeQueryResponseType>(request);
+  const [payload, isLoading] = useGraphqlForms<HomeQueryResponseType>({
+    query: request.query,
+    variables: request.variables,
+  });
 
   return isLoading ? <p>Loading...</p> : <HomePage {...payload} />;
 }
