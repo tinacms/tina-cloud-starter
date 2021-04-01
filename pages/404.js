@@ -1,5 +1,4 @@
 import { GlobalStyles, PageStyles } from "../components/document-renderer";
-import { Cta } from "../components/cta";
 
 export default function FourOhFour() {
   return (
@@ -14,7 +13,7 @@ export default function FourOhFour() {
           <div className="card">
             <div className="cardBody">
               <h2>OOPS, NOTHING TO SEE HERE...</h2>
-              <Cta text="Go back home" link="/" />
+              <a href="/">Go back home</a>
             </div>
           </div>
         </div>
