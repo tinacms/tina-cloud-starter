@@ -51,8 +51,23 @@ export const query = (gql) => gql`
       ... on MarketingPages_Document {
         data {
           __typename
+          ... on SimplePage_Doc_Data {
+            title
+            _body
+          }
           ... on LandingPage_Doc_Data {
             title
+            blocks {
+              __typename
+              ... on BlockHero_Data {
+                heading
+                message
+              }
+              ... on BlockCta_Data {
+                text
+                link
+              }
+            }
             _body
           }
         }
