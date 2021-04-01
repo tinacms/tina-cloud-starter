@@ -1,0 +1,7 @@
+---
+label: Simple Page
+name: simplePage
+fields:
+  - type: text
+    label: Title
+    name: title
