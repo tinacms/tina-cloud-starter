@@ -7,9 +7,7 @@ import { createLocalClient } from "../utils";
  * This page will be built statically at build time, so the data we return here
  * won't change even after we make edits to our content
  */
-export const getStaticProps = async (): Promise<{
-  props: HomeQueryResponseType;
-}> => {
+export const getStaticProps = async () => {
   const client = createLocalClient();
   return {
     props: await client.request(request.query, {
@@ -21,9 +19,10 @@ export const getStaticProps = async (): Promise<{
 /**
  * The `Page` component here is used by Next.js to render your webpage, but what's
  * interesting is that we're also using this component in our "admin" equivalent
- * route. You can see that at /pages/admin/home.tsx on line 6
+ * route. You can see that at we're importing this component for use at
+ * "pages/admin/index.tsx"
  */
-export default function Page(props: HomeQueryResponseType) {
+export default function HomePage(props: HomeQueryResponseType) {
   return (
     <>
       <Wrapper data={props.getMarketingPagesDocument.data}>
