@@ -8,6 +8,17 @@ export default defineSchema({
       path: "content/marketing-pages",
       templates: [
         {
+          label: "Simple Page",
+          name: "simplePage",
+          fields: [
+            {
+              type: "text",
+              label: "Title",
+              name: "title",
+            },
+          ],
+        },
+        {
           label: "Landing Page",
           name: "landingPage",
           fields: [
