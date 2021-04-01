@@ -31,6 +31,13 @@ export const createCloudClient = () => {
   });
 };
 
+/**
+ * This is a GraphQL client that only talks to your local filesystem server,
+ * as a result it's a great tool for static page building or local development.
+ *
+ * In this starter app you'll see it being used as both, with the
+ * option to "switch on" the non-local client via environment variables.
+ */
 export const createLocalClient = () => {
   return new LocalClient();
 };
