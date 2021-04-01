@@ -1,48 +1,43 @@
-import type * as Tina from "../.tina/__generated__/types";
-import { LandingPageRenderer } from "./landing-page-renderer";
 import css from "styled-jsx/css";
+import Link from "next/link";
+
 /**
- *
- * Switch on the `__typename` to render the appropriate component
- *
- * Each of these cases map to a `section` found in the `.tina/settings.yml`
- *
+ * For demonstration purposes
  */
-export const DocumentRenderer = (props: Tina.SectionDocumentUnion) => {
+export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
   return (
     <>
-      <div className="header">
-        <div className="container">
-          <h1 className="title">{props.data.title}</h1>
-        </div>
-      </div>
+      <div className="header"></div>
       <div className="content">
         <div className="container">
-          <div className="card">
-            <SwitchRenderer {...props} />
-          </div>
-          <RawRenderer data={props} />
+          <div className="card">{props.children}</div>
+          <RawRenderer data={props.data} />
         </div>
       </div>
       <style global jsx>
         {GlobalStyles}
       </style>
       <style jsx>{PageStyles}</style>
+      <Link href="/admin">
+        <a className="editLink">Edit Page</a>
+      </Link>
+      <style jsx>{`
+        .editLink {
+          position: fixed;
+          top: 0;
+          right: 0;
+          background: var(--orange);
+          color: var(--white);
+          padding: 0.5rem 0.75rem;
+          font-weight: bold;
+          text-decoration: none;
+          display: inline-block;
+          border-bottom-left-radius: 0.5rem;
+          cursor: pointer;
+        }
+      `}</style>
     </>
   );
-};
-export const SwitchRenderer = (props: Tina.SectionDocumentUnion) => {
-  switch (props.__typename) {
-    case "MarketingPages_Document":
-      return <LandingPageRenderer {...props.data} />;
-    default:
-      return <NoData />;
-  }
-};
-
-const NoData = () => {
-  console.error("Woops, this shouldn't be rendered!");
-  return <pre>No data</pre>;
 };
 
 export const GlobalStyles = css.global`

@@ -1,128 +1,113 @@
 import React from "react";
 import type * as Tina from "../.tina/__generated__/types";
-import css from "styled-jsx/css";
-import { BlocksRenderer } from "./blocks-renderer";
-import { RawRenderer } from "./raw-renderer";
-import Head from "next/head";
+import Markdown from "react-markdown";
 
-export const LandingPageRenderer = (props: Tina.LandingPage_Doc_Data) => {
-  const { title, blocks, _body } = props;
+export const LandingPageRenderer = (props: Tina.MarketingPages_Data) => {
+  switch (props.__typename) {
+    case "SimplePage_Doc_Data":
+      return (
+        <>
+          <h2>{props.title}</h2>
+          <Markdown>{props._body}</Markdown>
+        </>
+      );
+    case "LandingPage_Doc_Data":
+      <>
+        {props.blocks
+          ? props.blocks.map(function (block, i) {
+              switch (block.__typename) {
+                case "BlockHero_Data":
+                  return <Hero key={block.heading} {...block} />;
+                case "BlockCta_Data":
+                  return <Cta key={block.text} {...block} />;
+                default:
+                  return null;
+              }
+            })
+          : null}
+      </>;
+  }
+};
 
+export const Cta = ({
+  text,
+  link,
+  message = "Hello World",
+}: {
+  text?: string;
+  link?: string;
+  message?: string;
+}) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content="Some description" />
-      </Head>
-      <div className="header">
-        <div className="container">
-          <h1 className="title">{title}</h1>
-        </div>
-      </div>
-      <div className="content">
-        <div className="container">
-          <div className="card">
-            <div className="cardBody">
-              <BlocksRenderer blocks={blocks} />
-            </div>
-            <div className="cardFooter">
-              <p>{_body}</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="cardBody">Site Map</div>
-            <div className="cardFooter">
-              <p>Check out the other pages</p>
-            </div>
-          </div>
-          <RawRenderer data={props} />
-        </div>
-      </div>
-      <style global jsx>
-        {GlobalStyles}
-      </style>
-      <style jsx>{PageStyles}</style>
+      <a
+        href={link}
+        onClick={() => {
+          !link && alert(message);
+        }}
+        className="button"
+      >
+        {text}
+      </a>
+      <style jsx>{`
+        .button {
+          border: none;
+          outline: none;
+          text-decoration: none;
+          color: white;
+          border-radius: 2rem;
+          background: var(--orange);
+          font-size: 1em;
+          padding: 0.75rem 1.5rem;
+          cursor: pointer;
+          transition: all 150ms ease-out;
+          display: inline-block;
+          margin: 0.25rem 0;
+        }
+
+        .button:hover,
+        .button:focus {
+          background: var(--orange-light);
+          box-shadow: 0 0 0 2px var(--orange-light);
+        }
+      `}</style>
     </>
   );
 };
 
-export const GlobalStyles = css.global`
-  :root {
-    --white: #fff;
-    --gray: #f9f9fb;
+export const Hero = ({
+  heading,
+  message,
+}: {
+  heading?: string;
+  message?: string;
+}) => {
+  return (
+    <>
+      <div className="hero">
+        <h2 className="heading">{heading}</h2>
+        <p className="message">{message}</p>
+      </div>
+      <style jsx>{`
+        .hero {
+          display: block;
+        }
 
-    --blue: #241748;
-    --blue-light: #2e3258;
+        .heading {
+          font-size: 2rem;
+          line-height: 1.4;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
 
-    --mint: #b4f4e0;
-    --mint-light: #e6faf8;
-
-    --orange: #ec4815;
-    --orange-light: #eb6337;
-  }
-
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    box-sizing: border-box;
-    font-size: 100%;
-  }
-
-  * {
-    box-sizing: inherit;
-    font-family: inherit;
-  }
-
-  body {
-    margin: 0;
-    background: var(--mint-light);
-  }
-`;
-
-export const PageStyles = css`
-  .container {
-    display: block;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .header {
-    flex: 0 0 auto;
-    padding: 1.5rem;
-  }
-
-  .title {
-    color: var(--orange);
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-  }
-
-  .content {
-    flex: 1 0 auto;
-    padding: 0 1.5rem 2rem 1.5rem;
-    color: var(--blue);
-  }
-
-  .card {
-    background: var(--white);
-    border-radius: 0.5rem;
-    border: 1px solid var(--mint);
-    box-shadow: 0 6px 24px rgba(36, 23, 72, 0.03),
-      0 2px 4px rgba(36, 23, 72, 0.03);
-    margin-bottom: 2rem;
-    overflow: hidden;
-  }
-
-  .cardBody {
-    background: var(--white);
-    padding: 2rem;
-  }
-
-  .cardFooter {
-    white-space: pre-line;
-    background: var(--gray);
-    padding: 1rem 2rem;
-  }
-`;
+        .message {
+          white-space: pre-line;
+          font-size: 1.25rem;
+          line-height: 1.6;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+      `}</style>
+    </>
+  );
+};

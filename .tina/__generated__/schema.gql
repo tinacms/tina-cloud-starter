@@ -67,15 +67,16 @@ type Query {
   getMarketingPagesList: [MarketingPages_Document]
 }
 
-union MarketingPages_Data = LandingPage_Doc_Data
+union MarketingPages_Data = SimplePage_Doc_Data | LandingPage_Doc_Data
 
 input MarketingPages_Input {
+  simplePage: SimplePage_Doc_Input
   landingPage: LandingPage_Doc_Input
 }
 
-union MarketingPages_Values = LandingPage_Doc_Values
+union MarketingPages_Values = SimplePage_Doc_Values | LandingPage_Doc_Values
 
-union MarketingPages_Form = LandingPage_Doc_Form
+union MarketingPages_Form = SimplePage_Doc_Form | LandingPage_Doc_Form
 
 type MarketingPages_Document implements Node & Document {
   id: ID!
@@ -83,6 +84,42 @@ type MarketingPages_Document implements Node & Document {
   data: MarketingPages_Data
   values: MarketingPages_Values
   form: MarketingPages_Form
+}
+
+type SimplePage_Doc_Data {
+  title: String
+  _body: String
+}
+
+type SimplePage_Doc_Values {
+  title: String
+  _body: String
+  _template: String
+}
+
+type TextField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+type TextareaField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+union SimplePage_Doc_FormFieldsUnion = TextField | TextareaField
+
+type SimplePage_Doc_Form {
+  label: String
+  name: String
+  fields: [SimplePage_Doc_FormFieldsUnion]
+}
+
+input SimplePage_Doc_Input {
+  title: String
+  _body: String
 }
 
 type BlockCta_Data {
@@ -124,24 +161,12 @@ type LandingPage_Doc_Values {
   _template: String
 }
 
-type TextField implements FormField {
-  name: String
-  label: String
-  component: String
-}
-
 union BlockCta_FormFieldsUnion = TextField
 
 type BlockCta_Form {
   label: String
   name: String
   fields: [BlockCta_FormFieldsUnion]
-}
-
-type TextareaField implements FormField {
-  name: String
-  label: String
-  component: String
 }
 
 union BlockHero_FormFieldsUnion = TextField | TextareaField
