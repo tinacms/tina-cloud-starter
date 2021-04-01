@@ -46,15 +46,19 @@ type Section {
   documents: [Document]
 }
 
-union SectionDocumentUnion = MarketingPages_Document
+union SectionDocumentUnion = Posts_Document | Authors_Document | MarketingPages_Document
 
 input SectionParams {
+  posts: Posts_Input
+  authors: Authors_Input
   marketingPages: MarketingPages_Input
 }
 
 type Mutation {
   addPendingDocument(relativePath: String, section: String, template: String): Document
   updateDocument(relativePath: String, params: SectionParams): SectionDocumentUnion
+  updatePostsDocument(relativePath: String, params: Posts_Input): Posts_Document
+  updateAuthorsDocument(relativePath: String, params: Authors_Input): Authors_Document
   updateMarketingPagesDocument(relativePath: String, params: MarketingPages_Input): MarketingPages_Document
 }
 
@@ -63,8 +67,121 @@ type Query {
   getDocument(section: String, relativePath: String): SectionDocumentUnion
   getSections: [Section]
   getSection(section: String): Section
+  getPostsDocument(relativePath: String): Posts_Document
+  getPostsList: [Posts_Document]
+  getAuthorsDocument(relativePath: String): Authors_Document
+  getAuthorsList: [Authors_Document]
   getMarketingPagesDocument(relativePath: String): MarketingPages_Document
   getMarketingPagesList: [MarketingPages_Document]
+}
+
+union Posts_Data = Article_Doc_Data
+
+input Posts_Input {
+  article: Article_Doc_Input
+}
+
+union Posts_Values = Article_Doc_Values
+
+union Posts_Form = Article_Doc_Form
+
+type Posts_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: Posts_Data
+  values: Posts_Values
+  form: Posts_Form
+}
+
+type Article_Doc_Data {
+  title: String
+  author: Authors_Document
+  _body: String
+}
+
+type Article_Doc_Values {
+  title: String
+  author: Reference
+  _body: String
+  _template: String
+}
+
+type TextField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+type SelectField implements FormField {
+  name: String
+  label: String
+  component: String
+  options: [String]
+}
+
+type TextareaField implements FormField {
+  name: String
+  label: String
+  component: String
+}
+
+union Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField
+
+type Article_Doc_Form {
+  label: String
+  name: String
+  fields: [Article_Doc_FormFieldsUnion]
+}
+
+input Article_Doc_Input {
+  title: String
+  author: String
+  _body: String
+}
+
+union Authors_Data = Author_Doc_Data
+
+input Authors_Input {
+  author: Author_Doc_Input
+}
+
+union Authors_Values = Author_Doc_Values
+
+union Authors_Form = Author_Doc_Form
+
+type Authors_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: Authors_Data
+  values: Authors_Values
+  form: Authors_Form
+}
+
+type Author_Doc_Data {
+  name: String
+  avatar: String
+  _body: String
+}
+
+type Author_Doc_Values {
+  name: String
+  avatar: String
+  _body: String
+  _template: String
+}
+
+union Author_Doc_FormFieldsUnion = TextField | TextareaField
+
+type Author_Doc_Form {
+  label: String
+  name: String
+  fields: [Author_Doc_FormFieldsUnion]
+}
+
+input Author_Doc_Input {
+  name: String
+  avatar: String
+  _body: String
 }
 
 union MarketingPages_Data = SimplePage_Doc_Data | LandingPage_Doc_Data
@@ -95,18 +212,6 @@ type SimplePage_Doc_Values {
   title: String
   _body: String
   _template: String
-}
-
-type TextField implements FormField {
-  name: String
-  label: String
-  component: String
-}
-
-type TextareaField implements FormField {
-  name: String
-  label: String
-  component: String
 }
 
 union SimplePage_Doc_FormFieldsUnion = TextField | TextareaField

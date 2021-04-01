@@ -41,8 +41,8 @@ export const request = {
     relativePath: "index.md",
   },
   query: (gql) => gql`
-    query ContentQuery {
-      getMarketingPagesDocument(relativePath: "home.md") {
+    query ContentQuery($relativePath: String!) {
+      getMarketingPagesDocument(relativePath: $relativePath) {
         data {
           __typename
           ... on SimplePage_Doc_Data {
