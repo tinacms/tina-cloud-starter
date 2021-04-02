@@ -184,16 +184,15 @@ input Author_Doc_Input {
   _body: String
 }
 
-union MarketingPages_Data = SimplePage_Doc_Data | LandingPage_Doc_Data
+union MarketingPages_Data = LandingPage_Doc_Data
 
 input MarketingPages_Input {
-  simplePage: SimplePage_Doc_Input
   landingPage: LandingPage_Doc_Input
 }
 
-union MarketingPages_Values = SimplePage_Doc_Values | LandingPage_Doc_Values
+union MarketingPages_Values = LandingPage_Doc_Values
 
-union MarketingPages_Form = SimplePage_Doc_Form | LandingPage_Doc_Form
+union MarketingPages_Form = LandingPage_Doc_Form
 
 type MarketingPages_Document implements Node & Document {
   id: ID!
@@ -203,88 +202,64 @@ type MarketingPages_Document implements Node & Document {
   form: MarketingPages_Form
 }
 
-type SimplePage_Doc_Data {
-  title: String
-  _body: String
+type Message_Data {
+  messageHeader: String
+  messageBody: String
 }
 
-type SimplePage_Doc_Values {
-  title: String
-  _body: String
-  _template: String
+type Diagram_Data {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
 }
 
-union SimplePage_Doc_FormFieldsUnion = TextField | TextareaField
-
-type SimplePage_Doc_Form {
-  label: String
-  name: String
-  fields: [SimplePage_Doc_FormFieldsUnion]
-}
-
-input SimplePage_Doc_Input {
-  title: String
-  _body: String
-}
-
-type BlockCta_Data {
-  text: String
-  link: String
-}
-
-type BlockHero_Data {
-  heading: String
-  message: String
-}
-
-union LandingPage_Blocks_Data = BlockCta_Data | BlockHero_Data
+union LandingPage_Blocks_Data = Message_Data | Diagram_Data
 
 type LandingPage_Doc_Data {
-  title: String
   blocks: [LandingPage_Blocks_Data]
   _body: String
 }
 
-type BlockCta_Values {
-  text: String
-  link: String
+type Message_Values {
+  messageHeader: String
+  messageBody: String
   _template: String
 }
 
-type BlockHero_Values {
-  heading: String
-  message: String
+type Diagram_Values {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
   _template: String
 }
 
-union LandingPage_Blocks_Values = BlockCta_Values | BlockHero_Values
+union LandingPage_Blocks_Values = Message_Values | Diagram_Values
 
 type LandingPage_Doc_Values {
-  title: String
   blocks: [LandingPage_Blocks_Values]
   _body: String
   _template: String
 }
 
-union BlockCta_FormFieldsUnion = TextField
+union Message_FormFieldsUnion = TextField | TextareaField
 
-type BlockCta_Form {
+type Message_Form {
   label: String
   name: String
-  fields: [BlockCta_FormFieldsUnion]
+  fields: [Message_FormFieldsUnion]
 }
 
-union BlockHero_FormFieldsUnion = TextField | TextareaField
+union Diagram_FormFieldsUnion = TextField | TextareaField
 
-type BlockHero_Form {
+type Diagram_Form {
   label: String
   name: String
-  fields: [BlockHero_FormFieldsUnion]
+  fields: [Diagram_FormFieldsUnion]
 }
 
 type LandingPage_Blocks_BlocksFieldTemplates {
-  blockCta: BlockCta_Form
-  blockHero: BlockHero_Form
+  message: Message_Form
+  diagram: Diagram_Form
 }
 
 type LandingPage_Blocks_BlocksField implements FormField {
@@ -294,7 +269,7 @@ type LandingPage_Blocks_BlocksField implements FormField {
   templates: LandingPage_Blocks_BlocksFieldTemplates
 }
 
-union LandingPage_Doc_FormFieldsUnion = TextField | LandingPage_Blocks_BlocksField | TextareaField
+union LandingPage_Doc_FormFieldsUnion = LandingPage_Blocks_BlocksField | TextareaField
 
 type LandingPage_Doc_Form {
   label: String
@@ -302,23 +277,23 @@ type LandingPage_Doc_Form {
   fields: [LandingPage_Doc_FormFieldsUnion]
 }
 
-input BlockCta_Input {
-  text: String
-  link: String
+input Message_Input {
+  messageHeader: String
+  messageBody: String
 }
 
-input BlockHero_Input {
-  heading: String
-  message: String
+input Diagram_Input {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
 }
 
 input Blocks_Input {
-  blockCta: BlockCta_Input
-  blockHero: BlockHero_Input
+  message: Message_Input
+  diagram: Diagram_Input
 }
 
 input LandingPage_Doc_Input {
-  title: String
   blocks: [Blocks_Input]
   _body: String
 }

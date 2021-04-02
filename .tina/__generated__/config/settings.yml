@@ -22,7 +22,6 @@ sections:
     name: marketingPages
     path: content/marketing-pages
     templates:
-      - simplePage
       - landingPage
     type: directory
     create: documents

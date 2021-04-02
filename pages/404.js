@@ -1,4 +1,4 @@
-import { Wrapper } from "../components/wrapper";
+import { Wrapper } from "../components/helper-components";
 
 export default function FourOhFour() {
   return (
