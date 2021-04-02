@@ -55,59 +55,48 @@ export default defineSchema({
       path: "content/marketing-pages",
       templates: [
         {
-          label: "Simple Page",
-          name: "simplePage",
-          fields: [
-            {
-              type: "text",
-              label: "Title",
-              name: "title",
-            },
-          ],
-        },
-        {
           label: "Landing Page",
           name: "landingPage",
           fields: [
-            {
-              type: "text",
-              label: "Title",
-              name: "title",
-            },
             {
               type: "blocks",
               name: "blocks",
               label: "Blocks",
               templates: [
                 {
-                  name: "blockCta",
-                  label: "CTA",
+                  name: "message",
+                  label: "Message",
                   fields: [
                     {
                       type: "text",
-                      label: "Text",
-                      name: "text",
+                      label: "Message Header",
+                      name: "messageHeader",
                     },
                     {
-                      type: "text",
-                      label: "Link",
-                      name: "link",
+                      type: "textarea",
+                      label: "Message Body",
+                      name: "messageBody",
                     },
                   ],
                 },
                 {
-                  name: "blockHero",
-                  label: "Hero",
+                  name: "diagram",
+                  label: "Diagram",
                   fields: [
                     {
                       type: "text",
-                      label: "Heading",
-                      name: "heading",
+                      label: "Diagram Heading",
+                      name: "diagramHeading",
                     },
                     {
                       type: "textarea",
-                      label: "Message",
-                      name: "message",
+                      label: "Diagram Description",
+                      name: "diagramDescription",
+                    },
+                    {
+                      type: "text",
+                      label: "Diagram ID",
+                      name: "diagramID",
                     },
                   ],
                 },

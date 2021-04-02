@@ -9,11 +9,8 @@ import BlogPostPage, {
 } from "../../posts/[filename]";
 
 /**
- * HEADS UP: notice how we're importing `HomePage` from another Next.js route file?
- *
- * We're doing this so we can render the same content that you'd typically expect
- * from `getStaticProps`, except we've "hydrated" your content with Tina forms
- * automatically, so you can edit everything right there on your page.
+ * This admin page works in a similar manner to the one found at "pages/admin/index.tsx"
+ * The only difference is here we're using a dynamic route variable to fetch the correct file.
  */
 export default function AdminPage(props) {
   const [payload, isLoading] = useGraphqlForms<PostQueryResponseType>({
