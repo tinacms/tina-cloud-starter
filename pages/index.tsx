@@ -1,23 +1,19 @@
-import { Wrapper } from "../components/wrapper";
+import { Wrapper } from "../components/helper-components";
 import type { MarketingPages_Document } from "../.tina/__generated__/types";
-import { LandingPageRenderer } from "../components/landing-page-renderer";
+import { LandingPage } from "../components/landing-page";
 import { createLocalClient } from "../utils";
 
-/**
- * This page will be built statically at build time, so the data we return here
- * won't change even after we make edits to our content
- */
 export const getStaticProps = async () => {
   const client = createLocalClient();
   return {
-    props: await client.request(request.query, {
-      variables: request.variables,
+    props: await client.request(query, {
+      variables: {},
     }),
   };
 };
 
 /**
- * The `Page` component here is used by Next.js to render your webpage, but what's
+ * The `HomePage` component here is used by Next.js to render your webpage, but what's
  * interesting is that we're also using this component in our "admin" equivalent
  * route. You can see that at we're importing this component for use at
  * "pages/admin/index.tsx"
@@ -26,34 +22,37 @@ export default function HomePage(props: HomeQueryResponseType) {
   return (
     <>
       <Wrapper data={props.getMarketingPagesDocument.data}>
-        <LandingPageRenderer {...props.getMarketingPagesDocument.data} />
+        <LandingPage {...props.getMarketingPagesDocument.data} />
       </Wrapper>
     </>
   );
 }
 
-/**
- * This request is used in the non-admin route, too
- */
-export const request = {
-  variables: {
-    section: "marketingPages",
-    relativePath: "index.md",
-  },
-  query: (gql) => gql`
-    query ContentQuery($relativePath: String!) {
-      getMarketingPagesDocument(relativePath: $relativePath) {
-        data {
-          __typename
-          ... on SimplePage_Doc_Data {
-            title
-            _body
+export const query = (gql) => gql`
+  query ContentQuery {
+    # "index.md" is _relative_ to the "Marketing Pages" path property in your schema definition
+    # you can inspect this file at "content/marketing-pages/index.md"
+    getMarketingPagesDocument(relativePath: "index.md") {
+      data {
+        __typename
+        ... on LandingPage_Doc_Data {
+          blocks {
+            __typename
+            ... on Message_Data {
+              messageHeader
+              messageBody
+            }
+            ... on Diagram_Data {
+              diagramHeading
+              diagramDescription
+              diagramID
+            }
           }
         }
       }
     }
-  `,
-};
+  }
+`;
 
 export type HomeQueryResponseType = {
   getMarketingPagesDocument: MarketingPages_Document;

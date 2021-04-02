@@ -2,12 +2,9 @@
 label: Landing Page
 name: landingPage
 fields:
-  - type: text
-    label: Title
-    name: title
   - name: blocks
     label: Blocks
     type: blocks
     template_types:
-      - blockCta
-      - blockHero
+      - message
+      - diagram
