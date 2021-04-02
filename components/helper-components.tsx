@@ -1,6 +1,11 @@
 import React from "react";
 import css from "styled-jsx/css";
 
+/**
+ * For demonstration purposes, feel free to delete or modify
+ * any of these components, no magic going on here!
+ */
+
 export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
   return (
     <>
