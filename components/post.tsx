@@ -1,7 +1,10 @@
 import ReactMarkdown from "react-markdown";
-import { Posts_Data, Authors_Document } from "../.tina/__generated__/types";
+import type {
+  Authors_Document,
+  Article_Doc_Data,
+} from "../.tina/__generated__/types";
 
-export const BlogPost = (props: Posts_Data) => {
+export const BlogPost = (props: Article_Doc_Data) => {
   return (
     <>
       <h1>{props.title}</h1>
