@@ -13,6 +13,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ## Table of contents
 
+- 🍴 [What is this?](#what-is-this)
 - 🍴 [Fork and Clone](#fork-and-clone-this-repository)
 - ⬇️ [Install](#install)
 - 🌎 [Run the project locally](#run-the-project-locally)
@@ -27,6 +28,10 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - 🗂 [Starter structure](#starter-structure)
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+
+## What is this?
+
+This is a [TinaCMS](https://tinacms.org)-enabled Next.js app, so you can edit your content on a live page. If you've seen a TinaCMS project before, this one might look a little bit different. On this project we're using the Tina file-based CMS via GraphQL. It's powered by a schema that you define, and with that it not only serves content from markdown files in your repo, but it also generates TinaCMS forms for you automatically. You can read more about why we built this [here](), otherwise, let's get started...
 
 ## Fork this repository
 
@@ -218,13 +223,15 @@ Enjoy!
 
 ## Content Modeling
 
-With Tina Cloud there's no need to build forms manually like you would with TinaCMS. Instead, you're required to define a schema which acts as the single source of truth for the shape and structure of your content. This is set up for you in `./.tina/schema.ts`, let's break down what this function is doing:
+With Tina Cloud there's no need to build forms manually like you would with TinaCMS. Instead, you're required to define a schema which acts as the single source of truth for the shape and structure of your content.
+
+This is set up for you in `./.tina/schema.ts`, let's break down what this function is doing:
 
 ```ts
 import { defineSchema } from "tina-graphql-gateway-cli";
 
 export default defineSchema({
-  sections: [
+  collections: [
     {
       label: "Pages",
       name: "pages",
@@ -251,9 +258,9 @@ export default defineSchema({
 
 Be sure this is your default export from this file, we'll validate the schema and build out the GraphQL API with it.
 
-### `sections`
+### `collections`
 
-The top-level key in the schema is an array of sections, a `section` informs the API about _where_ to save content. You can see from the example that a `pages` document would be stored in `content/pages`, and it can be the shape of any `template` from the `templates` key.
+The top-level key in the schema is an array of _collections_, a `collection` informs the API about _where_ to save content. You can see from the example that a `pages` document would be stored in `content/pages`, and it can be the shape of any `template` from the `templates` key.
 
 ### `templates`
 
