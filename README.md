@@ -31,7 +31,9 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ## What is this?
 
-This is a [TinaCMS](https://tinacms.org)-enabled Next.js app, so you can edit your content on a live page. If you've seen a TinaCMS project before, this one might look a little bit different. On this project we're using the Tina file-based CMS via GraphQL. It's powered by a schema that you define, and with that it not only serves content from markdown files in your repo, but it also generates TinaCMS forms for you automatically. You can read more about why we built this [here](), otherwise, let's get started...
+This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your content on a live page. In this project the Tina file-based CMS is used via GraphQL: it's powered by a schema that _you_ define.  It not only serves content from Markdown files in your repository, but it also generates TinaCMS forms for you automatically ✨.
+
+ Feel free to read more about [why we built this](). Now, let's get started!
 
 ## Fork this repository
 
