@@ -1,0 +1,14 @@
+---
+label: Article
+name: article
+fields:
+  - type: text
+    label: Title
+    name: title
+  - name: author
+    label: Author
+    type: select
+    config:
+      source:
+        type: pages
+        section: authors

@@ -1,15 +1,15 @@
 import { defineSchema } from "tina-graphql-gateway-cli";
 
 export default defineSchema({
-  sections: [
+  collections: [
     {
-      label: "Pages",
-      name: "pages",
-      path: "content/pages",
+      label: "Blog Posts",
+      name: "posts",
+      path: "content/posts",
       templates: [
         {
-          label: "Page",
-          name: "page",
+          label: "Article",
+          name: "article",
           fields: [
             {
               type: "text",
@@ -17,34 +17,86 @@ export default defineSchema({
               name: "title",
             },
             {
+              type: "reference",
+              label: "Author",
+              name: "author",
+              collection: "authors",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Authors",
+      name: "authors",
+      path: "content/authors",
+      templates: [
+        {
+          label: "Author",
+          name: "author",
+          fields: [
+            {
+              type: "text",
+              label: "Name",
+              name: "name",
+            },
+            {
+              type: "text",
+              label: "Avatar",
+              name: "avatar",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Marketing Pages",
+      name: "marketingPages",
+      path: "content/marketing-pages",
+      templates: [
+        {
+          label: "Landing Page",
+          name: "landingPage",
+          fields: [
+            {
               type: "blocks",
               name: "blocks",
               label: "Blocks",
               templates: [
                 {
-                  name: "block-cta",
-                  label: "CTA",
+                  name: "message",
+                  label: "Message",
                   fields: [
                     {
                       type: "text",
-                      label: "Text",
-                      name: "text",
+                      label: "Message Header",
+                      name: "messageHeader",
+                    },
+                    {
+                      type: "textarea",
+                      label: "Message Body",
+                      name: "messageBody",
                     },
                   ],
                 },
                 {
-                  name: "block-hero",
-                  label: "Hero",
+                  name: "diagram",
+                  label: "Diagram",
                   fields: [
                     {
                       type: "text",
-                      label: "Heading",
-                      name: "heading",
+                      label: "Diagram Heading",
+                      name: "diagramHeading",
+                    },
+                    {
+                      type: "textarea",
+                      label: "Diagram Description",
+                      name: "diagramDescription",
                     },
                     {
                       type: "text",
-                      label: "Message",
-                      name: "message",
+                      label: "Diagram ID",
+                      name: "diagramID",
                     },
                   ],
                 },

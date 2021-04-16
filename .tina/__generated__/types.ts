@@ -64,17 +64,21 @@ export type Section = {
   documents?: Maybe<Array<Maybe<Document>>>;
 };
 
-export type SectionDocumentUnion = Pages_Document;
+export type SectionDocumentUnion = Posts_Document | Authors_Document | MarketingPages_Document;
 
 export type SectionParams = {
-  pages?: Maybe<Pages_Input>;
+  posts?: Maybe<Posts_Input>;
+  authors?: Maybe<Authors_Input>;
+  marketingPages?: Maybe<MarketingPages_Input>;
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument?: Maybe<Document>;
   updateDocument?: Maybe<SectionDocumentUnion>;
-  updatePagesDocument?: Maybe<Pages_Document>;
+  updatePostsDocument?: Maybe<Posts_Document>;
+  updateAuthorsDocument?: Maybe<Authors_Document>;
+  updateMarketingPagesDocument?: Maybe<MarketingPages_Document>;
 };
 
 
@@ -91,20 +95,35 @@ export type MutationUpdateDocumentArgs = {
 };
 
 
-export type MutationUpdatePagesDocumentArgs = {
+export type MutationUpdatePostsDocumentArgs = {
   relativePath?: Maybe<Scalars['String']>;
-  params?: Maybe<Pages_Input>;
+  params?: Maybe<Posts_Input>;
+};
+
+
+export type MutationUpdateAuthorsDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+  params?: Maybe<Authors_Input>;
+};
+
+
+export type MutationUpdateMarketingPagesDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+  params?: Maybe<MarketingPages_Input>;
 };
 
 export type Query = {
   __typename?: 'Query';
-  _queryString?: Maybe<Scalars['String']>;
   node?: Maybe<Node>;
   getDocument?: Maybe<SectionDocumentUnion>;
   getSections?: Maybe<Array<Maybe<Section>>>;
   getSection?: Maybe<Section>;
-  getPagesDocument?: Maybe<Pages_Document>;
-  getPagesList?: Maybe<Array<Maybe<Pages_Document>>>;
+  getPostsDocument?: Maybe<Posts_Document>;
+  getPostsList?: Maybe<Array<Maybe<Posts_Document>>>;
+  getAuthorsDocument?: Maybe<Authors_Document>;
+  getAuthorsList?: Maybe<Array<Maybe<Authors_Document>>>;
+  getMarketingPagesDocument?: Maybe<MarketingPages_Document>;
+  getMarketingPagesList?: Maybe<Array<Maybe<MarketingPages_Document>>>;
 };
 
 
@@ -124,81 +143,51 @@ export type QueryGetSectionArgs = {
 };
 
 
-export type QueryGetPagesDocumentArgs = {
+export type QueryGetPostsDocumentArgs = {
   relativePath?: Maybe<Scalars['String']>;
 };
 
-export type Pages_Data = Page_Doc_Data;
 
-export type Pages_Input = {
-  page?: Maybe<Page_Doc_Input>;
+export type QueryGetAuthorsDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
 };
 
-export type Pages_Values = Page_Doc_Values;
 
-export type Pages_Form = Page_Doc_Form;
+export type QueryGetMarketingPagesDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
 
-export type Pages_Document = Node & Document & {
-  __typename?: 'Pages_Document';
+export type Posts_Data = Article_Doc_Data;
+
+export type Posts_Input = {
+  article?: Maybe<Article_Doc_Input>;
+};
+
+export type Posts_Values = Article_Doc_Values;
+
+export type Posts_Form = Article_Doc_Form;
+
+export type Posts_Document = Node & Document & {
+  __typename?: 'Posts_Document';
   id: Scalars['ID'];
   sys?: Maybe<SystemInfo>;
-  data?: Maybe<Pages_Data>;
-  values?: Maybe<Pages_Values>;
-  form?: Maybe<Pages_Form>;
+  data?: Maybe<Posts_Data>;
+  values?: Maybe<Posts_Values>;
+  form?: Maybe<Posts_Form>;
 };
 
-export type BlockCta_Data = {
-  __typename?: 'BlockCta_Data';
-  text?: Maybe<Scalars['String']>;
-};
-
-export type BlockHero_Data = {
-  __typename?: 'BlockHero_Data';
-  heading?: Maybe<Scalars['String']>;
-  message?: Maybe<Scalars['String']>;
-};
-
-export type Page_Blocks_Data = BlockCta_Data | BlockHero_Data;
-
-export type LongTextValue = {
-  __typename?: 'LongTextValue';
-  raw?: Maybe<Scalars['String']>;
-  markdownAst?: Maybe<Scalars['JSONObject']>;
-  html?: Maybe<Scalars['String']>;
-};
-
-export type Page_Doc_Data = {
-  __typename?: 'Page_Doc_Data';
+export type Article_Doc_Data = {
+  __typename?: 'Article_Doc_Data';
   title?: Maybe<Scalars['String']>;
-  blocks?: Maybe<Array<Maybe<Page_Blocks_Data>>>;
-  _body?: Maybe<LongTextValue>;
+  author?: Maybe<Authors_Document>;
+  _body?: Maybe<Scalars['String']>;
 };
 
-export type BlockCta_Values = {
-  __typename?: 'BlockCta_Values';
-  text?: Maybe<Scalars['String']>;
-  _template?: Maybe<Scalars['String']>;
-};
-
-export type BlockHero_Values = {
-  __typename?: 'BlockHero_Values';
-  heading?: Maybe<Scalars['String']>;
-  message?: Maybe<Scalars['String']>;
-  _template?: Maybe<Scalars['String']>;
-};
-
-export type Page_Blocks_Values = BlockCta_Values | BlockHero_Values;
-
-export type LongTextInitialValue = {
-  __typename?: 'LongTextInitialValue';
-  raw?: Maybe<Scalars['String']>;
-};
-
-export type Page_Doc_Values = {
-  __typename?: 'Page_Doc_Values';
+export type Article_Doc_Values = {
+  __typename?: 'Article_Doc_Values';
   title?: Maybe<Scalars['String']>;
-  blocks?: Maybe<Array<Maybe<Page_Blocks_Values>>>;
-  _body?: Maybe<LongTextInitialValue>;
+  author?: Maybe<Scalars['Reference']>;
+  _body?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
 
@@ -209,36 +198,12 @@ export type TextField = FormField & {
   component?: Maybe<Scalars['String']>;
 };
 
-export type BlockCta_FormFieldsUnion = TextField;
-
-export type BlockCta_Form = {
-  __typename?: 'BlockCta_Form';
-  label?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<BlockCta_FormFieldsUnion>>>;
-};
-
-export type BlockHero_FormFieldsUnion = TextField;
-
-export type BlockHero_Form = {
-  __typename?: 'BlockHero_Form';
-  label?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<BlockHero_FormFieldsUnion>>>;
-};
-
-export type Page_Blocks_BlocksFieldTemplates = {
-  __typename?: 'Page_Blocks_BlocksFieldTemplates';
-  blockCta?: Maybe<BlockCta_Form>;
-  blockHero?: Maybe<BlockHero_Form>;
-};
-
-export type Page_Blocks_BlocksField = FormField & {
-  __typename?: 'Page_Blocks_BlocksField';
+export type SelectField = FormField & {
+  __typename?: 'SelectField';
   name?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
-  templates?: Maybe<Page_Blocks_BlocksFieldTemplates>;
+  options?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type TextareaField = FormField & {
@@ -248,36 +213,193 @@ export type TextareaField = FormField & {
   component?: Maybe<Scalars['String']>;
 };
 
-export type Page_Doc_FormFieldsUnion = TextField | Page_Blocks_BlocksField | TextareaField;
+export type Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField;
 
-export type Page_Doc_Form = {
-  __typename?: 'Page_Doc_Form';
+export type Article_Doc_Form = {
+  __typename?: 'Article_Doc_Form';
   label?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<Page_Doc_FormFieldsUnion>>>;
+  fields?: Maybe<Array<Maybe<Article_Doc_FormFieldsUnion>>>;
 };
 
-export type BlockCta_Input = {
-  text?: Maybe<Scalars['String']>;
+export type Article_Doc_Input = {
+  title?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
 };
 
-export type BlockHero_Input = {
-  heading?: Maybe<Scalars['String']>;
-  message?: Maybe<Scalars['String']>;
+export type Authors_Data = Author_Doc_Data;
+
+export type Authors_Input = {
+  author?: Maybe<Author_Doc_Input>;
+};
+
+export type Authors_Values = Author_Doc_Values;
+
+export type Authors_Form = Author_Doc_Form;
+
+export type Authors_Document = Node & Document & {
+  __typename?: 'Authors_Document';
+  id: Scalars['ID'];
+  sys?: Maybe<SystemInfo>;
+  data?: Maybe<Authors_Data>;
+  values?: Maybe<Authors_Values>;
+  form?: Maybe<Authors_Form>;
+};
+
+export type Author_Doc_Data = {
+  __typename?: 'Author_Doc_Data';
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
+};
+
+export type Author_Doc_Values = {
+  __typename?: 'Author_Doc_Values';
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
+};
+
+export type Author_Doc_FormFieldsUnion = TextField | TextareaField;
+
+export type Author_Doc_Form = {
+  __typename?: 'Author_Doc_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<Author_Doc_FormFieldsUnion>>>;
+};
+
+export type Author_Doc_Input = {
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
+};
+
+export type MarketingPages_Data = LandingPage_Doc_Data;
+
+export type MarketingPages_Input = {
+  landingPage?: Maybe<LandingPage_Doc_Input>;
+};
+
+export type MarketingPages_Values = LandingPage_Doc_Values;
+
+export type MarketingPages_Form = LandingPage_Doc_Form;
+
+export type MarketingPages_Document = Node & Document & {
+  __typename?: 'MarketingPages_Document';
+  id: Scalars['ID'];
+  sys?: Maybe<SystemInfo>;
+  data?: Maybe<MarketingPages_Data>;
+  values?: Maybe<MarketingPages_Values>;
+  form?: Maybe<MarketingPages_Form>;
+};
+
+export type Message_Data = {
+  __typename?: 'Message_Data';
+  messageHeader?: Maybe<Scalars['String']>;
+  messageBody?: Maybe<Scalars['String']>;
+};
+
+export type Diagram_Data = {
+  __typename?: 'Diagram_Data';
+  diagramHeading?: Maybe<Scalars['String']>;
+  diagramDescription?: Maybe<Scalars['String']>;
+  diagramID?: Maybe<Scalars['String']>;
+};
+
+export type LandingPage_Blocks_Data = Message_Data | Diagram_Data;
+
+export type LandingPage_Doc_Data = {
+  __typename?: 'LandingPage_Doc_Data';
+  blocks?: Maybe<Array<Maybe<LandingPage_Blocks_Data>>>;
+  _body?: Maybe<Scalars['String']>;
+};
+
+export type Message_Values = {
+  __typename?: 'Message_Values';
+  messageHeader?: Maybe<Scalars['String']>;
+  messageBody?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
+};
+
+export type Diagram_Values = {
+  __typename?: 'Diagram_Values';
+  diagramHeading?: Maybe<Scalars['String']>;
+  diagramDescription?: Maybe<Scalars['String']>;
+  diagramID?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
+};
+
+export type LandingPage_Blocks_Values = Message_Values | Diagram_Values;
+
+export type LandingPage_Doc_Values = {
+  __typename?: 'LandingPage_Doc_Values';
+  blocks?: Maybe<Array<Maybe<LandingPage_Blocks_Values>>>;
+  _body?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
+};
+
+export type Message_FormFieldsUnion = TextField | TextareaField;
+
+export type Message_Form = {
+  __typename?: 'Message_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<Message_FormFieldsUnion>>>;
+};
+
+export type Diagram_FormFieldsUnion = TextField | TextareaField;
+
+export type Diagram_Form = {
+  __typename?: 'Diagram_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<Diagram_FormFieldsUnion>>>;
+};
+
+export type LandingPage_Blocks_BlocksFieldTemplates = {
+  __typename?: 'LandingPage_Blocks_BlocksFieldTemplates';
+  message?: Maybe<Message_Form>;
+  diagram?: Maybe<Diagram_Form>;
+};
+
+export type LandingPage_Blocks_BlocksField = FormField & {
+  __typename?: 'LandingPage_Blocks_BlocksField';
+  name?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  component?: Maybe<Scalars['String']>;
+  templates?: Maybe<LandingPage_Blocks_BlocksFieldTemplates>;
+};
+
+export type LandingPage_Doc_FormFieldsUnion = LandingPage_Blocks_BlocksField | TextareaField;
+
+export type LandingPage_Doc_Form = {
+  __typename?: 'LandingPage_Doc_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<LandingPage_Doc_FormFieldsUnion>>>;
+};
+
+export type Message_Input = {
+  messageHeader?: Maybe<Scalars['String']>;
+  messageBody?: Maybe<Scalars['String']>;
+};
+
+export type Diagram_Input = {
+  diagramHeading?: Maybe<Scalars['String']>;
+  diagramDescription?: Maybe<Scalars['String']>;
+  diagramID?: Maybe<Scalars['String']>;
 };
 
 export type Blocks_Input = {
-  blockCta?: Maybe<BlockCta_Input>;
-  blockHero?: Maybe<BlockHero_Input>;
+  message?: Maybe<Message_Input>;
+  diagram?: Maybe<Diagram_Input>;
 };
 
-export type Body_LongTextInput = {
-  raw?: Maybe<Scalars['String']>;
-};
-
-export type Page_Doc_Input = {
-  title?: Maybe<Scalars['String']>;
+export type LandingPage_Doc_Input = {
   blocks?: Maybe<Array<Maybe<Blocks_Input>>>;
-  _body?: Maybe<Body_LongTextInput>;
+  _body?: Maybe<Scalars['String']>;
 };
 

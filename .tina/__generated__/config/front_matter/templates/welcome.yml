@@ -1,6 +1,6 @@
 ---
-label: Page
-name: page
+label: Welcome
+name: welcome
 fields:
   - type: text
     label: Title
