@@ -13,6 +13,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ## Table of contents
 
+- 🍴 [What is this?](#what-is-this)
 - 🍴 [Fork and Clone](#fork-and-clone-this-repository)
 - ⬇️ [Install](#install)
 - 🌎 [Run the project locally](#run-the-project-locally)
@@ -27,6 +28,12 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - 🗂 [Starter structure](#starter-structure)
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+
+## What is this?
+
+This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your content on a live page. In this project the Tina file-based CMS is used via GraphQL: it's powered by a schema that _you_ define.  It not only serves content from Markdown files in your repository, but it also generates TinaCMS forms for you automatically ✨.
+
+ Feel free to read more about [why we built this](). Now, let's get started!
 
 ## Fork this repository
 
@@ -123,7 +130,7 @@ you'll obviously want other editors and collaborators to be able to make changes
 In the `env.local` file set:
 
 - `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
-- `NEXT_PUBLIC_REALM_NAME` to your Tina Cloud realm name
+- `NEXT_PUBLIC_ORGANIZATION_NAME` to your Tina Cloud organization name
 - `NEXT_PUBLIC_TINA_CLIENT_ID` to the Client ID displayed in your Tina Cloud App.
 
 Restart your server and run `yarn dev` again.
@@ -150,7 +157,7 @@ Now that Tina Cloud editing is working correctly, we can deploy the site so that
 Connect to your GitHub repository and set the same environment variables as the ones in your `env.local` file:
 
 ```
-NEXT_PUBLIC_REALM_NAME= <YOUR_REALM>
+NEXT_PUBLIC_ORGANIZATION_NAME= <YOUR_ORGANIZATION>
 NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 ```
 
@@ -170,7 +177,7 @@ Connect to your GitHub repository, click on **advanced** to set the same environ
 ![](public/uploads/netlify-build-settings.png)
 
 ```
-NEXT_PUBLIC_REALM_NAME= <YOUR_REALM>
+NEXT_PUBLIC_ORGANIZATION_NAME= <YOUR_ORGANIZATION>
 NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 ```
 
@@ -218,13 +225,15 @@ Enjoy!
 
 ## Content Modeling
 
-With Tina Cloud there's no need to build forms manually like you would with TinaCMS. Instead, you're required to define a schema which acts as the single source of truth for the shape and structure of your content. This is set up for you in `./.tina/schema.ts`, let's break down what this function is doing:
+With Tina Cloud there's no need to build forms manually like you would with TinaCMS. Instead, you're required to define a schema which acts as the single source of truth for the shape and structure of your content.
+
+This is set up for you in `./.tina/schema.ts`, let's break down what this function is doing:
 
 ```ts
 import { defineSchema } from "tina-graphql-gateway-cli";
 
 export default defineSchema({
-  sections: [
+  collections: [
     {
       label: "Pages",
       name: "pages",
@@ -251,9 +260,9 @@ export default defineSchema({
 
 Be sure this is your default export from this file, we'll validate the schema and build out the GraphQL API with it.
 
-### `sections`
+### `collections`
 
-The top-level key in the schema is an array of sections, a `section` informs the API about _where_ to save content. You can see from the example that a `pages` document would be stored in `content/pages`, and it can be the shape of any `template` from the `templates` key.
+The top-level key in the schema is an array of _collections_, a `collection` informs the API about _where_ to save content. You can see from the example that a `pages` document would be stored in `content/pages`, and it can be the shape of any `template` from the `templates` key.
 
 ### `templates`
 
