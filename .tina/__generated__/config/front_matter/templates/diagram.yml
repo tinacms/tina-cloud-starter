@@ -1,0 +1,13 @@
+---
+name: diagram
+label: Diagram
+fields:
+  - type: text
+    label: Diagram Heading
+    name: diagramHeading
+  - type: textarea
+    label: Diagram Description
+    name: diagramDescription
+  - type: text
+    label: Diagram ID
+    name: diagramID

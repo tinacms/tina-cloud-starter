@@ -46,90 +46,63 @@ type Section {
   documents: [Document]
 }
 
-union SectionDocumentUnion = Pages_Document
+union SectionDocumentUnion = Posts_Document | Authors_Document | MarketingPages_Document
 
 input SectionParams {
-  pages: Pages_Input
+  posts: Posts_Input
+  authors: Authors_Input
+  marketingPages: MarketingPages_Input
 }
 
 type Mutation {
   addPendingDocument(relativePath: String, section: String, template: String): Document
   updateDocument(relativePath: String, params: SectionParams): SectionDocumentUnion
-  updatePagesDocument(relativePath: String, params: Pages_Input): Pages_Document
+  updatePostsDocument(relativePath: String, params: Posts_Input): Posts_Document
+  updateAuthorsDocument(relativePath: String, params: Authors_Input): Authors_Document
+  updateMarketingPagesDocument(relativePath: String, params: MarketingPages_Input): MarketingPages_Document
 }
 
 type Query {
-  _queryString: String
   node(id: ID!): Node
   getDocument(section: String, relativePath: String): SectionDocumentUnion
   getSections: [Section]
   getSection(section: String): Section
-  getPagesDocument(relativePath: String): Pages_Document
-  getPagesList: [Pages_Document]
+  getPostsDocument(relativePath: String): Posts_Document
+  getPostsList: [Posts_Document]
+  getAuthorsDocument(relativePath: String): Authors_Document
+  getAuthorsList: [Authors_Document]
+  getMarketingPagesDocument(relativePath: String): MarketingPages_Document
+  getMarketingPagesList: [MarketingPages_Document]
 }
 
-union Pages_Data = Page_Doc_Data
+union Posts_Data = Article_Doc_Data
 
-input Pages_Input {
-  page: Page_Doc_Input
+input Posts_Input {
+  article: Article_Doc_Input
 }
 
-union Pages_Values = Page_Doc_Values
+union Posts_Values = Article_Doc_Values
 
-union Pages_Form = Page_Doc_Form
+union Posts_Form = Article_Doc_Form
 
-type Pages_Document implements Node & Document {
+type Posts_Document implements Node & Document {
   id: ID!
   sys: SystemInfo
-  data: Pages_Data
-  values: Pages_Values
-  form: Pages_Form
+  data: Posts_Data
+  values: Posts_Values
+  form: Posts_Form
 }
 
-type BlockCta_Data {
-  text: String
-}
-
-type BlockHero_Data {
-  heading: String
-  message: String
-}
-
-union Page_Blocks_Data = BlockCta_Data | BlockHero_Data
-
-type LongTextValue {
-  raw: String
-  markdownAst: JSONObject
-  html: String
-}
-
-type Page_Doc_Data {
+type Article_Doc_Data {
   title: String
-  blocks: [Page_Blocks_Data]
-  _body: LongTextValue
+  author: Authors_Document
+  _body: String
 }
 
-type BlockCta_Values {
-  text: String
-  _template: String
-}
-
-type BlockHero_Values {
-  heading: String
-  message: String
-  _template: String
-}
-
-union Page_Blocks_Values = BlockCta_Values | BlockHero_Values
-
-type LongTextInitialValue {
-  raw: String
-}
-
-type Page_Doc_Values {
+type Article_Doc_Values {
   title: String
-  blocks: [Page_Blocks_Values]
-  _body: LongTextInitialValue
+  author: Reference
+  _body: String
   _template: String
 }
 
@@ -139,32 +112,11 @@ type TextField implements FormField {
   component: String
 }
 
-union BlockCta_FormFieldsUnion = TextField
-
-type BlockCta_Form {
-  label: String
-  name: String
-  fields: [BlockCta_FormFieldsUnion]
-}
-
-union BlockHero_FormFieldsUnion = TextField
-
-type BlockHero_Form {
-  label: String
-  name: String
-  fields: [BlockHero_FormFieldsUnion]
-}
-
-type Page_Blocks_BlocksFieldTemplates {
-  blockCta: BlockCta_Form
-  blockHero: BlockHero_Form
-}
-
-type Page_Blocks_BlocksField implements FormField {
+type SelectField implements FormField {
   name: String
   label: String
   component: String
-  templates: Page_Blocks_BlocksFieldTemplates
+  options: [String]
 }
 
 type TextareaField implements FormField {
@@ -173,36 +125,177 @@ type TextareaField implements FormField {
   component: String
 }
 
-union Page_Doc_FormFieldsUnion = TextField | Page_Blocks_BlocksField | TextareaField
+union Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField
 
-type Page_Doc_Form {
+type Article_Doc_Form {
   label: String
   name: String
-  fields: [Page_Doc_FormFieldsUnion]
+  fields: [Article_Doc_FormFieldsUnion]
 }
 
-input BlockCta_Input {
-  text: String
+input Article_Doc_Input {
+  title: String
+  author: String
+  _body: String
 }
 
-input BlockHero_Input {
-  heading: String
-  message: String
+union Authors_Data = Author_Doc_Data
+
+input Authors_Input {
+  author: Author_Doc_Input
+}
+
+union Authors_Values = Author_Doc_Values
+
+union Authors_Form = Author_Doc_Form
+
+type Authors_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: Authors_Data
+  values: Authors_Values
+  form: Authors_Form
+}
+
+type Author_Doc_Data {
+  name: String
+  avatar: String
+  _body: String
+}
+
+type Author_Doc_Values {
+  name: String
+  avatar: String
+  _body: String
+  _template: String
+}
+
+union Author_Doc_FormFieldsUnion = TextField | TextareaField
+
+type Author_Doc_Form {
+  label: String
+  name: String
+  fields: [Author_Doc_FormFieldsUnion]
+}
+
+input Author_Doc_Input {
+  name: String
+  avatar: String
+  _body: String
+}
+
+union MarketingPages_Data = LandingPage_Doc_Data
+
+input MarketingPages_Input {
+  landingPage: LandingPage_Doc_Input
+}
+
+union MarketingPages_Values = LandingPage_Doc_Values
+
+union MarketingPages_Form = LandingPage_Doc_Form
+
+type MarketingPages_Document implements Node & Document {
+  id: ID!
+  sys: SystemInfo
+  data: MarketingPages_Data
+  values: MarketingPages_Values
+  form: MarketingPages_Form
+}
+
+type Message_Data {
+  messageHeader: String
+  messageBody: String
+}
+
+type Diagram_Data {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
+}
+
+union LandingPage_Blocks_Data = Message_Data | Diagram_Data
+
+type LandingPage_Doc_Data {
+  blocks: [LandingPage_Blocks_Data]
+  _body: String
+}
+
+type Message_Values {
+  messageHeader: String
+  messageBody: String
+  _template: String
+}
+
+type Diagram_Values {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
+  _template: String
+}
+
+union LandingPage_Blocks_Values = Message_Values | Diagram_Values
+
+type LandingPage_Doc_Values {
+  blocks: [LandingPage_Blocks_Values]
+  _body: String
+  _template: String
+}
+
+union Message_FormFieldsUnion = TextField | TextareaField
+
+type Message_Form {
+  label: String
+  name: String
+  fields: [Message_FormFieldsUnion]
+}
+
+union Diagram_FormFieldsUnion = TextField | TextareaField
+
+type Diagram_Form {
+  label: String
+  name: String
+  fields: [Diagram_FormFieldsUnion]
+}
+
+type LandingPage_Blocks_BlocksFieldTemplates {
+  message: Message_Form
+  diagram: Diagram_Form
+}
+
+type LandingPage_Blocks_BlocksField implements FormField {
+  name: String
+  label: String
+  component: String
+  templates: LandingPage_Blocks_BlocksFieldTemplates
+}
+
+union LandingPage_Doc_FormFieldsUnion = LandingPage_Blocks_BlocksField | TextareaField
+
+type LandingPage_Doc_Form {
+  label: String
+  name: String
+  fields: [LandingPage_Doc_FormFieldsUnion]
+}
+
+input Message_Input {
+  messageHeader: String
+  messageBody: String
+}
+
+input Diagram_Input {
+  diagramHeading: String
+  diagramDescription: String
+  diagramID: String
 }
 
 input Blocks_Input {
-  blockCta: BlockCta_Input
-  blockHero: BlockHero_Input
+  message: Message_Input
+  diagram: Diagram_Input
 }
 
-input Body_LongTextInput {
-  raw: String
-}
-
-input Page_Doc_Input {
-  title: String
+input LandingPage_Doc_Input {
   blocks: [Blocks_Input]
-  _body: Body_LongTextInput
+  _body: String
 }
 
   
