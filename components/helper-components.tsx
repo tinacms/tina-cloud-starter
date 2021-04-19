@@ -1,5 +1,5 @@
 import React from "react";
-import css from "styled-jsx/css";
+import { css } from "styled-jsx/css";
 
 /**
  * For demonstration purposes, feel free to delete or modify
