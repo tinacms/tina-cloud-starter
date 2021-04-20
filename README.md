@@ -83,7 +83,10 @@ the same page is displayed but you can notice a pencil icon at the bottom left c
 Click to open Tina's sidebar which displays a form with fields you can edit and see update live on the page.
 Since we're working locally, saving results in changes to your local filesystem.
 
-Read the [folder structure](#folder-structure) section below to learn more about how this site's routing works.
+From here, you're ready to start building your own project, to read a little bit about how this project is structured, and how to modify it to make it your own,
+read the [folder structure](#starter-structure) section below.
+
+When you're ready to deploy your site, read on about how you can connect to Tina Cloud and make authenticated changes via our Cloud API.
 
 ## Connect to Tina Cloud
 
