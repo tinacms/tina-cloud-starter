@@ -123,6 +123,8 @@ Changes are saved in your GitHub repository.
 
 Now that Tina Cloud editing is working correctly, we can deploy the site so that other team members can make edits too.
 
+> ℹ️ Gotcha: since your changes are being synced directly to Github, you'll notice that your non-"admin" routes still receive the unedited data from your local filesystem. This is mostly fine since editing with Tina Cloud is designed for hosted environments. But beware that changes to your schema may result in a mismatch between the Tina Cloud API and your local client.
+
 ## Deploy
 
 ### Vercel
