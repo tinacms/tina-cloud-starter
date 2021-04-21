@@ -69,7 +69,7 @@ Open [`http://localhost:3000`](http://localhost:3000) in your browser to see you
 
 We need to define some local environment variables in order to edit content with Tina.
 
-Copy `.env.local.sample` to `.env.local`:
+Create a new file at the project root called `.env.local` and then copy `.env.local.sample` to `.env.local`:
 
 ```
 cp .env.local.sample .env.local
