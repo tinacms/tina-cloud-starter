@@ -39,7 +39,7 @@ This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your c
 
 Start by **forking** the repositorty and then pull it down to your computer.
 
-![](public/uploads/vercel-congratulations.png)
+![](public/uploads/fork-image.png)
 
 ## Install
 
