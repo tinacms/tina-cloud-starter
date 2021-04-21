@@ -185,7 +185,7 @@ You'll find this pattern in other areas too, wherever you have a "public" page, 
 
 ### `pages/posts/[filename].tsx`
 
-Posts come from the `content/posts` directory in this repo, and their routes are built with `getStaticPaths` dynamically at build time. Again, editing them with Tina can be done by visiting the "admin" version of their URL, so to edit `http://localhost:3000/posts/vote-for-pedro`, visit `http://localhost:3000/admin/posts/vote-for-pedro`.
+Posts come from the `content/posts` directory in this repo, and their routes are built with `getStaticPaths` dynamically at build time. Again, editing them with Tina can be done by visiting the "admin" version of their URL, so to edit `http://localhost:3000/posts/voteForPedro`, visit `http://localhost:3000/admin/posts/voteForPedro`.
 
 ### `components`
 
