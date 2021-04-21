@@ -45,21 +45,21 @@ export const createLocalClient = () => {
 /**
  *
  * Takes a path (ex. /posts/my-page) and uses the first item
- * as the section and the remaining peices for the relativePath
+ * as the `collection` and the remaining peices for the relativePath
  * arguments
  *
  */
 export const variablesFromPath = (
   path: string,
-  fallback: { relativePath: string; section: string }
+  fallback: { relativePath: string; collection: string }
 ) => {
   const arr = path.split("/");
-  const section = arr[0];
+  const collection = arr[0];
   // FIXME: assumes `.md` as extension, should work with other extensions
   const relativePath = `${arr.slice(1).join("/")}.md`;
 
-  if (section && relativePath) {
-    return { section, relativePath };
+  if (collection && relativePath) {
+    return { collection, relativePath };
   } else {
     return fallback;
   }
@@ -68,7 +68,7 @@ export const variablesFromPath = (
 // FIXME: infer args from useForm
 export const redirectToNewDocument = (
   args: {
-    section: {
+    collection: {
       slug: string;
     };
     relativePath: string;
@@ -78,7 +78,7 @@ export const redirectToNewDocument = (
   prefix: string
 ) => {
   const redirect = `${window.location.origin}${prefix}/${
-    args.section.slug
+    args.collection.slug
   }/${args.breadcrumbs.join("/")}`;
 
   window.location.assign(redirect);

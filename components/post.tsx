@@ -17,12 +17,16 @@ export const BlogPost = (props: Article_Doc_Data) => {
 const AuthorSnippet = (props: { author: Authors_Document }) => {
   return (
     <div className="snippet">
-      <img
-        className="avatar"
-        title={props.author.data.name}
-        src={props.author.data.avatar}
-      />
-      <h3>By {props.author.data.name}</h3>
+      {props.author && (
+        <>
+          <img
+            className="avatar"
+            title={props.author.data.name}
+            src={props.author.data.avatar}
+          />
+          <h3>By {props.author.data.name}</h3>
+        </>
+      )}
       <style jsx>{`
         .snippet {
           display: flex;
