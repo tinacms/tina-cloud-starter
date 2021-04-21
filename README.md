@@ -74,8 +74,6 @@ Copy `.env.local.sample` to `.env.local`:
 cp .env.local.sample .env.local
 
 ```
-cp .env.local.sample .env.local
-```
 
 `NEXT_PUBLIC_USE_LOCAL_CLIENT` should be set to `1`, other values can be ignored for now.
 
