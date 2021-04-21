@@ -97,7 +97,7 @@ you'll obviously want other editors and collaborators to be able to make changes
 
 ## Register your local application with Tina Cloud
 
-1. Visit [auth.tinajs.dev](https://auth.tinajs.dev/register), create an organization, and sign in. Make a note of your orgnization name.
+1. Visit [auth.tina.io](https://auth.tina.io/register), create an organization, and sign in. Make a note of your orgnization name.
 2. Create an app which connects to the GitHub repository you've just forked. Once your app is created, open settings and copy the client ID.
 
 ## Connect your local project with Tina Cloud
