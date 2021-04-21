@@ -174,7 +174,7 @@ const Nav = () => {
           <a href={`${prefix}/`}>Home</a>
         </li>
         <li>
-          <a className="summary" href={`${prefix}/posts/vote-for-pedro`}>
+          <a className="summary" href={`${prefix}/posts/voteForPedro`}>
             Vote for Pedro
           </a>
         </li>
