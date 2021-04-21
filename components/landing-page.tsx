@@ -10,14 +10,14 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
             switch (block.__typename) {
               case "Message_Data":
                 return (
-                  <>
+                  <React.Fragment key={`block-${block.messageHeader}`}>
                     <h3>{block.messageHeader}</h3>
                     <Markdown>{block.messageBody}</Markdown>
-                  </>
+                  </React.Fragment>
                 );
               case "Diagram_Data":
                 return (
-                  <>
+                  <React.Fragment key={`diagram-${block.diagramID}`}>
                     <h3>{block.diagramHeading}</h3>
                     <Markdown>{block.diagramDescription}</Markdown>
                     <iframe
@@ -26,7 +26,7 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                       height="450"
                       src={`https://whimsical.com/embed/${block.diagramID}`}
                     ></iframe>
-                  </>
+                  </React.Fragment>
                 );
               default:
                 return null;

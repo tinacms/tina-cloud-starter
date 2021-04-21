@@ -31,7 +31,7 @@ type SystemInfo {
   relativePath: String
   extension: String
   template: String
-  section: Section
+  collection: Section
 }
 
 type Section {
@@ -55,7 +55,7 @@ input SectionParams {
 }
 
 type Mutation {
-  addPendingDocument(relativePath: String, section: String, template: String): Document
+  addPendingDocument(relativePath: String, collection: String, template: String): Document
   updateDocument(relativePath: String, params: SectionParams): SectionDocumentUnion
   updatePostsDocument(relativePath: String, params: Posts_Input): Posts_Document
   updateAuthorsDocument(relativePath: String, params: Authors_Input): Authors_Document
@@ -64,9 +64,9 @@ type Mutation {
 
 type Query {
   node(id: ID!): Node
-  getDocument(section: String, relativePath: String): SectionDocumentUnion
-  getSections: [Section]
-  getSection(section: String): Section
+  getDocument(collection: String, relativePath: String): SectionDocumentUnion
+  getCollections: [Section]
+  getCollection(collection: String): Section
   getPostsDocument(relativePath: String): Posts_Document
   getPostsList: [Posts_Document]
   getAuthorsDocument(relativePath: String): Authors_Document
