@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "styled-jsx/css";
-
+import Link from 'next/link'
 /**
  * For demonstration purposes, feel free to delete or modify
  * any of these components, no magic going on here!
@@ -167,16 +167,22 @@ const Nav = () => {
   return (
     <div className="nav">
       <h4>
-        <a href="/">Tina Cloud Starter</a>
+        <Link href="/">
+        <a>Tina Cloud Starter</a>
+        </Link>
       </h4>
       <ul className="menu">
         <li>
-          <a href={`${prefix}/`}>Home</a>
+          <Link href={`${prefix}/`}>
+           <a>Home</a>
+          </Link>
         </li>
         <li>
-          <a className="summary" href={`${prefix}/posts/voteForPedro`}>
-            Vote for Pedro
-          </a>
+          <Link  href={`${prefix}/posts/voteForPedro`}>
+            <a className="summary">
+              Vote for Pedro
+            </a>
+          </Link>
         </li>
       </ul>
       <style jsx>{`
