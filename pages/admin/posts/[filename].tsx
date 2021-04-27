@@ -17,7 +17,15 @@ export default function AdminPage(props) {
     query,
     variables: { relativePath: `${props.filename}.md` },
   });
-  useDocumentCreatorPlugin((res) => console.log("Created new doc", res));
+  useDocumentCreatorPlugin(
+    (res) => console.log("Created new doc", res),
+    /**
+     * Filter `collections` to only allow for new `posts` to be added
+     */
+    (collectionOptions) => {
+      return collectionOptions.filter(({ label }) => label === "Blog Posts");
+    }
+  );
 
   return isLoading ? <p>Loading...</p> : <BlogPostPage {...payload} />;
 }
