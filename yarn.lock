@@ -5241,7 +5241,7 @@ final-form-arrays@^3.0.1, final-form-arrays@^3.0.2:
   resolved "https://registry.yarnpkg.com/final-form-arrays/-/final-form-arrays-3.0.2.tgz#9f3bef778dec61432357744eb6f3abef7e7f3847"
   integrity sha512-TfO8aZNz3RrsZCDx8GHMQcyztDNpGxSSi9w4wpSNKlmv2PfFWVVM8P7Yj5tj4n0OWax+x5YwTLhT5BnqSlCi+w==
 
-final-form@4.20.1, final-form@^4.18.2, final-form@^4.20.1:
+final-form@4.20.1, final-form@^4.18.2:
   version "4.20.1"
   resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.1.tgz#525a7f7f27f55c28d8994b157b24d6104fc560e9"
   integrity sha512-IIsOK3JRxJrN72OBj7vFWZxtGt3xc1bYwJVPchjVWmDol9DlzMSAOPB+vwe75TUYsw1JaH0fTQnIgwSQZQ9Acg==
@@ -11878,10 +11878,10 @@ tina-graphql-gateway-cli@0.2.38:
     yo "^3.1.1"
     yup "^0.32.9"
 
-tina-graphql-gateway@0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.2.5.tgz#94f5b6444a2e82ddde3a280fdabd25f41e73a139"
-  integrity sha512-rGkxTGzSjZdO5RuRt9qmt3vVzotmoo8Ua6KIoy0itDfshG3pOsa24sj9qF472LPsSW9jtGPqSF1051YIK5kcMQ==
+tina-graphql-gateway@0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.2.6.tgz#01ecbcd82ee7e807a32e6a5cfe6188c9b2cbd63a"
+  integrity sha512-obwTEHguhEIui5Yr3NcNePCS4VEEEATrIq5XH0+GNuWVEYQdXIcFn4FE1A12KqGCvAhwCQTbLmtE7Z2/jJHe3w==
   dependencies:
     "@forestryio/graphql-helpers" "0.0.20"
     "@graphql-codegen/core" "^1.15.4"
@@ -11894,7 +11894,7 @@ tina-graphql-gateway@0.2.5:
     codemirror "^5.55.0"
     cors "^2.8.5"
     crypto-js "^4.0.0"
-    final-form "^4.20.1"
+    final-form "4.20.1"
     final-form-arrays "^3.0.2"
     graphql "^15.1.0"
     graphql-tag "^2.11.0"
