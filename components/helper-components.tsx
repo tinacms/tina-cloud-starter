@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "styled-jsx/css";
 import Link from 'next/link'
+import Head from 'next/head'
 /**
  * For demonstration purposes, feel free to delete or modify
  * any of these components, no magic going on here!
@@ -9,6 +10,10 @@ import Link from 'next/link'
 export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
   return (
     <>
+      <Head>
+        <title>Tina</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="header">
         <div className="container">
           <Nav />
