@@ -1,49 +1,21 @@
+import { LandingPage } from "../components/landing-page";
 import { Wrapper } from "../components/helper-components";
 import type { MarketingPages_Document } from "../.tina/__generated__/types";
-import { LandingPage } from "../components/landing-page";
-import { createLocalClient } from "../utils";
-import dynamic from "next/dynamic";
+import { createLocalClient, AsyncReturnType } from "../utils";
 
-export const getStaticProps = async (props) => {
-  const client = createLocalClient();
-  return {
-    props: {
-      data: await client.request(query, {
-        variables: {},
-      }),
-      preview: !!props.preview,
-    },
-  };
-};
-
-/**
- * The `HomePage` component here is used by Next.js to render your webpage, but what's
- * interesting is that we're also using this component in our "admin" equivalent
- * route. You can see that at we're importing this component for use at
- * "pages/admin/index.tsx"
- */
-export default function HomePage(props: {
-  data: HomeQueryResponseType;
-  preview: boolean;
-}) {
-  if (props.preview) {
-    const TinaWrapper = dynamic(() => import("./admin/index"));
-    // @ts-ignore
-    return <TinaWrapper {...props.data} />;
-  }
-  return <HomePageInner {...props.data} />;
-}
-export function HomePageInner(props: HomeQueryResponseType) {
+export default function HomePage(
+  props: AsyncReturnType<typeof getStaticProps>["props"]
+) {
   return (
     <>
-      <Wrapper data={props.getMarketingPagesDocument.data}>
-        <LandingPage {...props.getMarketingPagesDocument.data} />
+      <Wrapper data={props.data.getMarketingPagesDocument.data}>
+        <LandingPage {...props.data.getMarketingPagesDocument.data} />
       </Wrapper>
     </>
   );
 }
 
-export const query = (gql) => gql`
+export const query = `#graphql
   query ContentQuery {
     # "index.md" is _relative_ to the "Marketing Pages" path property in your schema definition
     # you can inspect this file at "content/marketing-pages/index.md"
@@ -69,6 +41,18 @@ export const query = (gql) => gql`
   }
 `;
 
-export type HomeQueryResponseType = {
-  getMarketingPagesDocument: MarketingPages_Document;
+export const getStaticProps = async (props) => {
+  const client = createLocalClient();
+  return {
+    props: {
+      data: await client.request<{
+        getMarketingPagesDocument: MarketingPages_Document;
+      }>(query, {
+        variables: {},
+      }),
+      preview: !!props.preview,
+      query: query,
+      variables: {},
+    },
+  };
 };

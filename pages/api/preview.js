@@ -1,4 +1,10 @@
 export default function handler(req, res) {
-  res.setPreviewData({});
-  res.end("Preview mode enabled");
+  const isPreview = req.preview;
+
+  if (isPreview) {
+    res.clearPreviewData();
+  } else {
+    res.setPreviewData({});
+  }
+  res.redirect("/");
 }
