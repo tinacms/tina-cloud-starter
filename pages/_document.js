@@ -1,6 +1,9 @@
-import Document from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from "styled-components";
 
+
+const description =
+  'A demo application that demos editing a site with Tina and Tina Cloud';
 // This is necessary for styled-components to handle SSR properly
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -27,5 +30,24 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <meta name="description" content={description} />
+          <meta property="og:title" content="Tina Cloud" />
+          <meta property="og:description" content={description} />
+          <meta
+            property="og:image"
+            content="https://tina.io/img/tina-twitter-share.png"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
