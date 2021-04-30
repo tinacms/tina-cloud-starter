@@ -21,6 +21,7 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                     <h3>{block.diagramHeading}</h3>
                     <Markdown>{block.diagramDescription}</Markdown>
                     <iframe
+                      title={block.diagramHeading}
                       style={{ border: "none" }}
                       width="800"
                       height="450"
