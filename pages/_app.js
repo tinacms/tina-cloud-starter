@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
    * with Tina, meaning your non-admin routes won't contain any Tina code
    * in their bundles.
    */
-  if (route.startsWith("/admin")) {
+  if (route.startsWith("/admin") || pageProps.preview) {
     return (
       <TinaWrapper>
         <Component {...pageProps} />
