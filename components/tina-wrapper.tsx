@@ -9,7 +9,7 @@ import { useGraphqlForms } from "tina-graphql-gateway";
  * This gets loaded dynamically in "pages/_app.js"
  * if you're on a route that starts with "/admin"
  */
-const TinaWrapper = ({ query, variables, children }) => {
+const TinaWrapper = (props) => {
   const cms = React.useMemo(() => {
     return new TinaCMS({
       apis: {
@@ -24,9 +24,7 @@ const TinaWrapper = ({ query, variables, children }) => {
 
   return (
     <TinaCloudAuthWall cms={cms}>
-      <Inner query={query} variables={variables}>
-        {children}
-      </Inner>
+      <Inner {...props} />
     </TinaCloudAuthWall>
   );
 };
@@ -37,7 +35,20 @@ const Inner = (props) => {
     variables: props.variables || {},
   });
   return (
-    <>{isLoading ? <div>loading...</div> : props.children({ data: payload })}</>
+    <>
+      {isLoading ? (
+        <div
+          style={{
+            opacity: 0.2,
+            pointerEvents: "none",
+          }}
+        >
+          {props.children(props)}
+        </div>
+      ) : (
+        props.children({ ...props, data: payload })
+      )}
+    </>
   );
 };
 
