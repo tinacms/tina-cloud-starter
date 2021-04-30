@@ -2,13 +2,17 @@ import { Wrapper } from "../components/helper-components";
 import type { MarketingPages_Document } from "../.tina/__generated__/types";
 import { LandingPage } from "../components/landing-page";
 import { createLocalClient } from "../utils";
+import dynamic from "next/dynamic";
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (props) => {
   const client = createLocalClient();
   return {
-    props: await client.request(query, {
-      variables: {},
-    }),
+    props: {
+      data: await client.request(query, {
+        variables: {},
+      }),
+      preview: !!props.preview,
+    },
   };
 };
 
@@ -18,7 +22,18 @@ export const getStaticProps = async () => {
  * route. You can see that at we're importing this component for use at
  * "pages/admin/index.tsx"
  */
-export default function HomePage(props: HomeQueryResponseType) {
+export default function HomePage(props: {
+  data: HomeQueryResponseType;
+  preview: boolean;
+}) {
+  if (props.preview) {
+    const TinaWrapper = dynamic(() => import("./admin/index"));
+    // @ts-ignore
+    return <TinaWrapper {...props.data} />;
+  }
+  return <HomePageInner {...props.data} />;
+}
+export function HomePageInner(props: HomeQueryResponseType) {
   return (
     <>
       <Wrapper data={props.getMarketingPagesDocument.data}>

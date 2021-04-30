@@ -1,6 +1,6 @@
 import React from "react";
 import { useGraphqlForms } from "tina-graphql-gateway";
-import HomePage, { query, HomeQueryResponseType } from "..";
+import { query, HomePageInner, HomeQueryResponseType } from "..";
 
 /**
  * HEADS UP: notice how we're importing `HomePage` from another Next.js route file?
@@ -14,5 +14,5 @@ export default function AdminPage() {
     variables: {},
   });
 
-  return isLoading ? <p>Loading...</p> : <HomePage {...payload} />;
+  return isLoading ? <p>Loading...</p> : <HomePageInner {...payload} />;
 }
