@@ -41,7 +41,7 @@ export const query = `#graphql
   }
 `;
 
-export const getStaticProps = async (props) => {
+export const getStaticProps = async () => {
   const client = createLocalClient();
   return {
     props: {
@@ -50,7 +50,6 @@ export const getStaticProps = async (props) => {
       }>(query, {
         variables: {},
       }),
-      preview: !!props.preview,
       query: query,
       variables: {},
     },
