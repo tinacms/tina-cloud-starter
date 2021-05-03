@@ -240,7 +240,7 @@ The top-level key in the schema is an array of _collections_, a `collection` inf
 
 ### `templates`
 
-Templates are responsible for defining the shape of your content, you'll see in the schema for this starter that we use `templates` for `sections` as well as `blocks`. If you look at the `landingPage` template, you'll notice that it has a set of `blocks`, which are also templates.
+Templates are responsible for defining the shape of your content, you'll see in the schema for this starter that we use `templates` for `collections` as well as `blocks`. If you look at the `landingPage` template, you'll notice that it has a set of `blocks`, which are also templates.
 
 ## Local development workflow tips
 
