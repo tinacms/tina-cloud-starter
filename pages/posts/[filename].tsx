@@ -39,7 +39,7 @@ export const query = `#graphql
 
 const client = createLocalClient();
 
-export const getStaticProps = async ({ params, preview }) => {
+export const getStaticProps = async ({ params }) => {
   const variables = { relativePath: `${params.filename}.md` };
   return {
     props: {
@@ -48,7 +48,6 @@ export const getStaticProps = async ({ params, preview }) => {
       }),
       variables,
       query,
-      preview: !!preview,
     },
   };
 };
