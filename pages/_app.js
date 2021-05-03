@@ -1,8 +1,11 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-function MyApp({ Component, pageProps }) {
-  if (pageProps.preview) {
+import {EditProvider, setEditing, useEditState} from '../utils/editState'
+
+function InnerApp({ Component, pageProps }) {
+  const {edit} = useEditState()
+  if (edit) {
     const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
     return (
       <>
@@ -21,16 +24,18 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
 
 const EditToggle = (isInEditMode) => {
+  const {edit,setEdit} = useEditState()
   return (
     <>
-      <Link href={`/api/preview`}>
+      <button onClick={()=>{
+        setEdit(!edit)
+      }}>
         <a className="editLink">
-          {isInEditMode ? "Exit edit mode" : "Enter edit mode"}
+          {edit ? "Exit edit mode" : "Enter edit mode"}
         </a>
-      </Link>
+      </button>
       <style jsx>{`
         .editLink {
           position: fixed;
@@ -49,3 +54,12 @@ const EditToggle = (isInEditMode) => {
     </>
   );
 };
+
+
+function App(props) {
+  return (<EditProvider>
+    <InnerApp {...props}/>
+  </EditProvider>)
+}
+
+export default App
