@@ -188,7 +188,7 @@ What makes this possible is `getStaticProps`: you can notice that every editable
 
 ### `pages/posts/[filename].tsx`
 
-Posts come from the `content/posts` directory in this repo, and their routes are built with `getStaticPaths` dynamically at build time. Editing the site happens by clicking the "edit this site" button. This we re-render your site by by warping it when a `TinaProvider` this only happens while in edit mode so nothing from Tina will add to your production bundle
+The posts are stored in the `content/posts` directory of this repository, and their routes are built with `getStaticPaths` dynamically at build time. To go in edit mode, click the "edit this site" button. This  re-renders your site  by wrapping it when a `TinaProvider` component, this only happens in edit mode to make sure Tina is not added to your production bundle.
 
 ### `components`
 
