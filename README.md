@@ -182,7 +182,9 @@ Tina Cloud Starter is a [Next.js](https://nextjs.org) application. The file-base
 This page can be seen at `http://localhost:3000/`, it loads the content from a markdown file which can be found in this repository at `/content/marketing-pages/index.md`. You can edit this page at by clicking the "enter edit mode" button in the top right hand corner
 
 
-To achieve this edit mode we have wrapped our site in a simple and small `EditProvider` all this does is store whether or not we are in edit mode in React state and local storage. When we are in edit mode it will trigger authentication (if needed), and then one it edit mode. What makes this possible is `getStaticProps` you will notice that every editable page exports a `query` prop and a data prop from `getStaticProps`. When we are not in `editMode` we use the data to render the site. When we are in edit mode we use the query to fetch the latest data from Tina Cloud and make our forms for the sidebar. 
+We wrap the site in a small `EditProvider` component, that stores whether or not we are in edit mode in React state and localstorage. When we are in edit mode it triggers authentication when needed, and then one is in edit mode. 
+
+What makes this possible is `getStaticProps`: you can notice that every editable page exports a `query` prop and a data prop from `getStaticProps`. When we are not in `editMode` we use the data prop to render the site. When we are in edit mode we use the query to fetch the latest data from Tina Cloud and create the sidebar form.
 
 ### `pages/posts/[filename].tsx`
 
