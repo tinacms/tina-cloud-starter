@@ -3,6 +3,7 @@ import type { Posts_Document } from "../../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../../utils";
 import { Wrapper } from "../../components/helper-components";
 
+// Use the props returned by get static props
 export default function BlogPostPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {

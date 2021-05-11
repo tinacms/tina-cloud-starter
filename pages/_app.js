@@ -1,11 +1,14 @@
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
 import {EditProvider, setEditing, useEditState} from '../utils/editState'
 
+
+// InnerApp that handles rendering edit mode or not
 function InnerApp({ Component, pageProps }) {
   const {edit} = useEditState()
   if (edit) {
+    // Dynamically load tina ONLY when in edit mode so it does not effect the bundle
+    // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
     const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
     return (
       <>
@@ -56,6 +59,7 @@ const EditToggle = (isInEditMode) => {
 };
 
 
+// Return the app wrapped in the edit provider
 function App(props) {
   return (<EditProvider>
     <InnerApp {...props}/>

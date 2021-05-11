@@ -1,3 +1,5 @@
+// This file handles whether or not a user is in edit mode
+
 import React, { useContext, useState } from 'react';
 const LOCALSTORAGEKEY = 'tinaisadmin'
 
@@ -27,11 +29,11 @@ const EditContext = React.createContext({
 });
 
 /* 
-We will wrap our app in this so we will always be able to get the editmode state with `useEditMode`
+  We will wrap our app in this so we will always be able to get the editmode state with `useEditMode`
 */
 export const EditProvider: React.FC = ({ children }) => {
   const [edit, setEditState] = useState(
-    // use the correct prefix as initial state
+    // grabs the correct initial edit state from localstorage
     isEditing()
   );
   const setEdit = (edit: boolean)=>{
