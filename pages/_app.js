@@ -59,7 +59,7 @@ const EditToggle = (isInEditMode) => {
 };
 
 
-// Return the app wrapped in the edit provider
+// Our app is wrapped with edit provider
 function App(props) {
   return (<EditProvider>
     <InnerApp {...props}/>
