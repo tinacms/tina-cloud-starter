@@ -4,6 +4,7 @@ import { TinaCloudAuthWall } from "tina-graphql-gateway";
 import { SidebarPlaceholder } from "./helper-components";
 import { createClient } from "../utils";
 import { useGraphqlForms } from "tina-graphql-gateway";
+import { LoadingPage } from "./Spinner";
 
 /**
  * This gets loaded dynamically in "pages/_app.js"
@@ -37,15 +38,18 @@ const Inner = (props) => {
   return (
     <>
       {isLoading ? (
-        <div
-          style={{
-            opacity: 0.2,
-            pointerEvents: "none",
-          }}
-        >
-          {props.children(props)}
-        </div>
+        <>
+          <LoadingPage />
+          <div
+            style={{
+              pointerEvents: "none",
+            }}
+          >
+            {props.children(props)}
+          </div>
+        </>
       ) : (
+        // pass the new edit state data to the child
         props.children({ ...props, data: payload })
       )}
     </>
