@@ -24,7 +24,7 @@ export const createCloudClient = () => {
   }
 
   return new Client({
-    realm: organization,
+    organizationId: organization,
     clientId,
     branch: "main",
     tokenStorage: "LOCAL_STORAGE",
