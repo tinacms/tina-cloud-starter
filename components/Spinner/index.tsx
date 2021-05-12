@@ -12,7 +12,7 @@ export const Spinner: React.FC = () => {
 };
 
 export const LoadingPage: React.FC<{ text?: string }> = ({
-  text = "Wait a bit, Tina is loading data from GitHub",
+  text = "Wait a bit, Tina is loading data...",
 }) => (
   <div
     style={{
