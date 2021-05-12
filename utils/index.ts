@@ -24,7 +24,7 @@ export const createCloudClient = () => {
   }
 
   return new Client({
-    realm: organization,
+    organizationId: organization,
     clientId,
     branch: "main",
     tokenStorage: "LOCAL_STORAGE",
@@ -84,9 +84,6 @@ export const redirectToNewDocument = (
   window.location.assign(redirect);
 };
 
-export const typesafeHasOwnProperty = <X extends {}, Y extends PropertyKey>(
-  obj: X,
-  prop: Y
-): obj is X & Record<Y, unknown> => {
-  return obj.hasOwnProperty(prop);
-};
+export type AsyncReturnType<
+  T extends (...args: any) => Promise<any>
+> = T extends (...args: any) => Promise<infer R> ? R : any;
