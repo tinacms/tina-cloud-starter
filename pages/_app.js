@@ -1,30 +1,44 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
-const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
+import {EditProvider, setEditing, useEditState} from '../utils/editState'
 
-function MyApp({ Component, pageProps }) {
-  const { route, asPath } = useRouter();
 
-  /**
-   * If the route starts with /admin, we'll wrap the entire component tree
-   * with Tina, meaning your non-admin routes won't contain any Tina code
-   * in their bundles.
-   */
-  if (route.startsWith("/admin")) {
+// InnerApp that handles rendering edit mode or not
+function InnerApp({ Component, pageProps }) {
+  const {edit} = useEditState()
+  if (edit) {
+    // Dynamically load Tina only when in edit mode so it does not affect production
+    // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
+    const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
     return (
-      <TinaWrapper>
-        <Component {...pageProps} />
-      </TinaWrapper>
+      <>
+        <TinaWrapper {...pageProps}>
+          {(props) => <Component {...props} />}
+        </TinaWrapper>
+        <EditToggle isInEditMode={true} />
+      </>
     );
   }
   return (
     <>
       <Component {...pageProps} />
-      <Link href={`/admin${asPath}`}>
-        <a className="editLink">Edit Page</a>
-      </Link>
+      <EditToggle isInEditMode={true} />
+    </>
+  );
+}
+
+
+const EditToggle = (isInEditMode) => {
+  const {edit,setEdit} = useEditState()
+  return (
+    <>
+      <button onClick={()=>{
+        setEdit(!edit)
+      }}>
+        <a className="editLink">
+          {edit ? "Exit edit mode" : "Enter edit mode"}
+        </a>
+      </button>
       <style jsx>{`
         .editLink {
           position: fixed;
@@ -42,6 +56,14 @@ function MyApp({ Component, pageProps }) {
       `}</style>
     </>
   );
+};
+
+
+// Our app is wrapped with edit provider
+function App(props) {
+  return (<EditProvider>
+    <InnerApp {...props}/>
+  </EditProvider>)
 }
 
-export default MyApp;
+export default App
