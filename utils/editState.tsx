@@ -1,7 +1,7 @@
 // This file handles whether or not a user is in edit mode
 
 import React, { useContext, useState } from 'react';
-const LOCALSTORAGEKEY = 'tinaisadmin'
+const LOCALSTORAGEKEY = 'tina.isEditing'
 
 // need this to see if our site is being rendered on the server
 const isSSR = typeof window === 'undefined'
@@ -17,8 +17,6 @@ export const isEditing = (): boolean =>{
 
 export const setEditing = (isEditing: boolean) => {
     if(!isSSR){
-        console.log('setting edit local storage')
-        console.log(isEditing?  'true': 'false')
         window.localStorage.setItem(LOCALSTORAGEKEY, isEditing?  'true': 'false')
     }
 }
