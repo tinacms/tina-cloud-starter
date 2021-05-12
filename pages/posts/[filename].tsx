@@ -1,19 +1,22 @@
-import { Wrapper } from "../../components/helper-components";
 import { BlogPost } from "../../components/post";
 import type { Posts_Document } from "../../.tina/__generated__/types";
-import { createLocalClient } from "../../utils";
+import { createLocalClient, AsyncReturnType } from "../../utils";
+import { Wrapper } from "../../components/helper-components";
 
-export default function BlogPostPage(props: PostQueryResponseType) {
+// Use the props returned by get static props
+export default function BlogPostPage(
+  props: AsyncReturnType<typeof getStaticProps>["props"]
+) {
   return (
     <>
-      <Wrapper data={props.getPostsDocument.data}>
-        <BlogPost {...props.getPostsDocument.data} />
+      <Wrapper data={props.data.getPostsDocument.data}>
+        <BlogPost {...props.data.getPostsDocument.data} />
       </Wrapper>
     </>
   );
 }
 
-export const query = (gql) => gql`
+export const query = `#graphql
   query BlogPostQuery($relativePath: String!) {
     getPostsDocument(relativePath: $relativePath) {
       data {
@@ -35,17 +38,18 @@ export const query = (gql) => gql`
   }
 `;
 
-export type PostQueryResponseType = {
-  getPostsDocument: Posts_Document;
-};
-
 const client = createLocalClient();
 
 export const getStaticProps = async ({ params }) => {
+  const variables = { relativePath: `${params.filename}.md` };
   return {
-    props: await client.request(query, {
-      variables: { relativePath: `${params.filename}.md` },
-    }),
+    props: {
+      data: await client.request<{ getPostsDocument: Posts_Document }>(query, {
+        variables,
+      }),
+      variables,
+      query,
+    },
   };
 };
 
