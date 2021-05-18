@@ -39,6 +39,7 @@ export const EditProvider: React.FC = ({ children }) => {
     setEditState(edit)
     setEditing(edit)
 if(process.env.NODE_ENV === 'development'){
+      // Force Next.js to fetch fresh data from the file system when in dev mode
       window.location.reload();
 }
   }
