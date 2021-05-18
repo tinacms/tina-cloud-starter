@@ -38,7 +38,9 @@ export const EditProvider: React.FC = ({ children }) => {
     // set React state and localstorage
     setEditState(edit)
     setEditing(edit)
-    window.location.reload();
+if(process.env.NODE_ENV === 'development'){
+      window.location.reload();
+}
   }
   return (
     <EditContext.Provider value={{ edit, setEdit }}>
