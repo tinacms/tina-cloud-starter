@@ -172,18 +172,18 @@ const Nav = () => {
   return (
     <div className="nav">
       <h4>
-        <Link href="/">
+        <Link href="/" passHref>
           <a>Tina Cloud Starter</a>
         </Link>
       </h4>
       <ul className="menu">
         <li>
-          <Link href={`${prefix}/`}>
+          <Link href={`${prefix}/`} passHref>
             <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link href={`${prefix}/posts/voteForPedro`}>
+          <Link href={`${prefix}/posts/voteForPedro`} passHref>
             <a className="summary">Vote for Pedro</a>
           </Link>
         </li>
