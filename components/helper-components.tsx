@@ -151,7 +151,7 @@ export const RawRenderer = ({ data }) => {
           color: var(--orange);
         }
 
-        .summary::-webkit-details-marker {
+        .summary::marker {
           display: none;
         }
       `}</style>
