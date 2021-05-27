@@ -32,15 +32,15 @@ blocks:
 
       We've built a few pages for you to get started, take a look around and see
       if you can figure out how to build your own pages and templates.
-  - template: diagram
-    diagramHeading: Whimsical Diagram
-    diagramDescription: >-
+  - template: image
+    heading: Whimsical Diagram
+    imgDescription: >-
       Here is the architecture for this Next.js app. When deployed, your admin
       routes will be protected by the Tina wrapper, which requires you to
       authenticate with Tina Cloud. Otherwise, the non-admin page and the admin
       page should be identical, using the same query and rendering the same
       components.
-    diagramID: Eyqu4zN7ftWZLzgBBuXE6H
+    src: /uploads/Diagram.png
 _template: landingPage
 ---
 
