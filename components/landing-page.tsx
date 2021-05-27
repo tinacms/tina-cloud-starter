@@ -1,5 +1,6 @@
 import React from "react";
 import Markdown from "react-markdown";
+import dynamic from "next/dynamic";
 import type { LandingPage_Doc_Data } from "../.tina/__generated__/types";
 
 export const LandingPage = (props: LandingPage_Doc_Data) => {
@@ -20,13 +21,16 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                   <React.Fragment key={`diagram-${block.diagramID}`}>
                     <h3>{block.diagramHeading}</h3>
                     <Markdown>{block.diagramDescription}</Markdown>
-                    <iframe
+                    {block.diagramID}
+                    {/* <iframe
+                      loading="lazy"
+                      allowTransparency
                       title={block.diagramHeading}
                       style={{ border: "none" }}
                       width="800"
                       height="450"
                       src={`https://whimsical.com/embed/${block.diagramID}`}
-                    ></iframe>
+                    ></iframe> */}
                   </React.Fragment>
                 );
               default:
