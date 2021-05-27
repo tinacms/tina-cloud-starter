@@ -22,10 +22,12 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                     <h3>{block.heading}</h3>
                     <Markdown>{block.imgDescription}</Markdown>
                     <Image
+                      loading="lazy"
                       src={block.src || "/asdf"}
                       title={block.heading}
-                      width="800"
-                      height="450"
+                      layout="responsive"
+                      width="1070x"
+                      height="1220px"
                     />
                   </React.Fragment>
                 );
