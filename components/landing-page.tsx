@@ -27,15 +27,6 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                       width="800"
                       height="450"
                     />
-                    {/* <iframe
-                      loading="lazy"
-                      allowTransparency
-                      title={block.diagramHeading}
-                      style={{ border: "none" }}
-                      width="800"
-                      height="450"
-                      src={`https://whimsical.com/embed/${block.diagramID}`}
-                    ></iframe> */}
                   </React.Fragment>
                 );
               default:
