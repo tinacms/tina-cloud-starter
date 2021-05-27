@@ -155,17 +155,23 @@ log in to Tina Cloud, and making some edits. Your changes should be saved to you
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/)
 
-Connect to your GitHub repository, click on **advanced** to set the same environment variables as the ones in your `env.local` file:
+Connect to your GitHub repository, then:
+
+- set the **build command** to `yarn build`,
+- set the **publish directory**. To `.next/` .
 
 ![](public/uploads/netlify-build-settings.png)
+
+Click on **advanced** to add the same environment variables as the ones in your `env.local` file:
 
 ```
 NEXT_PUBLIC_ORGANIZATION_NAME= <YOUR_ORGANIZATION>
 NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 ```
 
-Set the **build command** to `yarn build`,
-Set the **publish directory**. To `.next/` .
+![](public/uploads/netlify-advanced-build-settings.png)
+
+Copy-paste your Organization ID and Client ID.
 
 Once you're done, click "Deploy site".
 
