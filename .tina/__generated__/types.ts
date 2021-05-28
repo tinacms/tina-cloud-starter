@@ -302,14 +302,14 @@ export type Message_Data = {
   messageBody?: Maybe<Scalars['String']>;
 };
 
-export type Diagram_Data = {
-  __typename?: 'Diagram_Data';
-  diagramHeading?: Maybe<Scalars['String']>;
-  diagramDescription?: Maybe<Scalars['String']>;
-  diagramID?: Maybe<Scalars['String']>;
+export type Image_Data = {
+  __typename?: 'Image_Data';
+  heading?: Maybe<Scalars['String']>;
+  imgDescription?: Maybe<Scalars['String']>;
+  src?: Maybe<Scalars['String']>;
 };
 
-export type LandingPage_Blocks_Data = Message_Data | Diagram_Data;
+export type LandingPage_Blocks_Data = Message_Data | Image_Data;
 
 export type LandingPage_Doc_Data = {
   __typename?: 'LandingPage_Doc_Data';
@@ -324,15 +324,15 @@ export type Message_Values = {
   _template?: Maybe<Scalars['String']>;
 };
 
-export type Diagram_Values = {
-  __typename?: 'Diagram_Values';
-  diagramHeading?: Maybe<Scalars['String']>;
-  diagramDescription?: Maybe<Scalars['String']>;
-  diagramID?: Maybe<Scalars['String']>;
+export type Image_Values = {
+  __typename?: 'Image_Values';
+  heading?: Maybe<Scalars['String']>;
+  imgDescription?: Maybe<Scalars['String']>;
+  src?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
 };
 
-export type LandingPage_Blocks_Values = Message_Values | Diagram_Values;
+export type LandingPage_Blocks_Values = Message_Values | Image_Values;
 
 export type LandingPage_Doc_Values = {
   __typename?: 'LandingPage_Doc_Values';
@@ -350,19 +350,19 @@ export type Message_Form = {
   fields?: Maybe<Array<Maybe<Message_FormFieldsUnion>>>;
 };
 
-export type Diagram_FormFieldsUnion = TextField | TextareaField;
+export type Image_FormFieldsUnion = TextField | TextareaField;
 
-export type Diagram_Form = {
-  __typename?: 'Diagram_Form';
+export type Image_Form = {
+  __typename?: 'Image_Form';
   label?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<Array<Maybe<Diagram_FormFieldsUnion>>>;
+  fields?: Maybe<Array<Maybe<Image_FormFieldsUnion>>>;
 };
 
 export type LandingPage_Blocks_BlocksFieldTemplates = {
   __typename?: 'LandingPage_Blocks_BlocksFieldTemplates';
   message?: Maybe<Message_Form>;
-  diagram?: Maybe<Diagram_Form>;
+  image?: Maybe<Image_Form>;
 };
 
 export type LandingPage_Blocks_BlocksField = FormField & {
@@ -387,15 +387,15 @@ export type Message_Input = {
   messageBody?: Maybe<Scalars['String']>;
 };
 
-export type Diagram_Input = {
-  diagramHeading?: Maybe<Scalars['String']>;
-  diagramDescription?: Maybe<Scalars['String']>;
-  diagramID?: Maybe<Scalars['String']>;
+export type Image_Input = {
+  heading?: Maybe<Scalars['String']>;
+  imgDescription?: Maybe<Scalars['String']>;
+  src?: Maybe<Scalars['String']>;
 };
 
 export type Blocks_Input = {
   message?: Maybe<Message_Input>;
-  diagram?: Maybe<Diagram_Input>;
+  image?: Maybe<Image_Input>;
 };
 
 export type LandingPage_Doc_Input = {
