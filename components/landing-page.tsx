@@ -1,5 +1,6 @@
 import React from "react";
 import Markdown from "react-markdown";
+import Image from "next/image";
 import type { LandingPage_Doc_Data } from "../.tina/__generated__/types";
 
 export const LandingPage = (props: LandingPage_Doc_Data) => {
@@ -15,18 +16,19 @@ export const LandingPage = (props: LandingPage_Doc_Data) => {
                     <Markdown>{block.messageBody}</Markdown>
                   </React.Fragment>
                 );
-              case "Diagram_Data":
+              case "Image_Data":
                 return (
-                  <React.Fragment key={`diagram-${block.diagramID}`}>
-                    <h3>{block.diagramHeading}</h3>
-                    <Markdown>{block.diagramDescription}</Markdown>
-                    <iframe
-                      title={block.diagramHeading}
-                      style={{ border: "none" }}
-                      width="800"
-                      height="450"
-                      src={`https://whimsical.com/embed/${block.diagramID}`}
-                    ></iframe>
+                  <React.Fragment key={`diagram-${i}`}>
+                    <h3>{block.heading}</h3>
+                    <Markdown>{block.imgDescription}</Markdown>
+                    <Image
+                      loading="lazy"
+                      src={block.src || "/asdf"}
+                      title={block.heading}
+                      layout="responsive"
+                      width="1070x"
+                      height="1220px"
+                    />
                   </React.Fragment>
                 );
               default:
