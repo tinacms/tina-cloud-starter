@@ -29,10 +29,10 @@ export const query = `#graphql
               messageHeader
               messageBody
             }
-            ... on Diagram_Data {
-              diagramHeading
-              diagramDescription
-              diagramID
+            ... on Image_Data {
+              heading
+              imgDescription
+              src
             }
           }
         }

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "yarn tina-gql server:start -c \"next dev\"",
     "build": "yarn tina-gql server:start -c \"next build\"",
-    "start": "yarn tina-gql server:start -c \"next start\""
+    "start": "yarn tina-gql server:start -c \"next start\"",
+    "export": "yarn build && next export"
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",

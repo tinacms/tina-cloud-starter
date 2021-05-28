@@ -80,23 +80,23 @@ export default defineSchema({
                   ],
                 },
                 {
-                  name: "diagram",
-                  label: "Diagram",
+                  name: "image",
+                  label: "Image",
                   fields: [
                     {
                       type: "text",
-                      label: "Diagram Heading",
-                      name: "diagramHeading",
+                      label: "Heading",
+                      name: "heading",
                     },
                     {
                       type: "textarea",
-                      label: "Diagram Description",
-                      name: "diagramDescription",
+                      label: "Image Description",
+                      name: "imgDescription",
                     },
                     {
                       type: "text",
-                      label: "Diagram ID",
-                      name: "diagramID",
+                      label: "Image src",
+                      name: "src",
                     },
                   ],
                 },
