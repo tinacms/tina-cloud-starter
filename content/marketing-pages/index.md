@@ -1,10 +1,7 @@
 ---
 blocks:
   - template: message
-    messageHeader: This is a test
-    messageBody: How are you today?
-  - template: message
-    messageHeader: Welcome to the Tina Cloud Starter
+    messageHeader: Welcome to the Tina Cloud Starter test
     messageBody: >
       The Tina Cloud project is an opinionated approach to working with the
       TinaCMS system that enables you to focus on building sites the way you're

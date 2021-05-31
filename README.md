@@ -14,7 +14,7 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 ## Table of contents
 
 - ❓ [What is this?](#what-is-this)
-- 🍴 [Fork and Clone](#fork-and-clone-this-repository)
+- 🍴 [Fork and Clone](#fork-this-repository)   
 - ⬇️ [Install](#install)
 - 🌎 [Run the project locally](#run-the-project-locally)
 - 📝 [Edit content locally](#edit-content-locally)
@@ -33,9 +33,15 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your content on a live page. In this project the Tina file-based CMS is used via GraphQL: it's powered by a schema that _you_ define. It not only serves content from Markdown files in your repository, but it also generates TinaCMS forms for you automatically ✨.
 
-## ⚠️ **Fork this repository** ⚠️
+## Requirements
 
-Start by **forking** the repositorty and then pull it down to your computer.
+- Git
+- [Node.js Active LTS](https://nodejs.org/en/about/releases/)
+- Yarn
+
+## Fork this repository
+
+ ⚠️⚠️ Start by **forking** the repositorty and then pull it down to your computer. ⚠️⚠️
 
 ## Install
 
@@ -59,7 +65,7 @@ yarn dev
 
 This command starts the GraphQL server and the Next.js application in development mode. It also regenerates your schema types for TypeScript and GraphQL so changes to your `.tina` config are reflected immediately.
 
-One of the most interesting aspects of the Tina Cloud Content API is that it doesn't actually require anything from the Cloud to work locally. Since Tina is by default a Git-backed CMS, everything can be run from your local filesystem via the CLI.
+One of the most interesting aspects of the Tina Cloud Content API is that it doesn't actually require anything from the Cloud to work locally. Since Tina is by default a Git-backed CMS, everything can be run from your local filesystem via the CLI. :sunglasses:
 
 This is ideal for development workflows and the API is identical to the one used in the cloud, so once you're ready to deploy your application you won't face any challenges there.
 
@@ -77,7 +83,7 @@ cp .env.local.sample .env.local
 
 `NEXT_PUBLIC_USE_LOCAL_CLIENT` should be set to `1`, other values can be ignored for now.
 
-Restart your server and visit [`http://localhost:3000/admin`](http://localhost:3000/admin`),
+Restart your server and visit [`http://localhost:3000/`](http://localhost:3000/`), and click "enter edit mode" in the top right hand corner,
 the same page is displayed but you can notice a pencil icon at the bottom left corner.
 
 Click to open Tina's sidebar which displays a form with fields you can edit and see update live on the page.
@@ -93,12 +99,12 @@ When you're ready to deploy your site, read on about how you can connect to Tina
 While the fully-local development workflow is the recommended way for developers to work,
 you'll obviously want other editors and collaborators to be able to make changes on a hosted website with authentication.
 
-> ℹ️ Changes from the `/admin` route show up on your home page after your site finishes a rebuild.
+> ℹ️ Changes in edit mode show up on your home page after your site finishes a rebuild.
 
 ## Register your local application with Tina Cloud
 
 1. Visit [auth.tina.io](https://auth.tina.io/register), create an organization, and sign in. Make a note of your orgnization name.
-2. Create an app which connects to the GitHub repository you've just forked. Once your app is created, open settings and copy the client ID.
+2. Create a Tina Cloud app which connects to the GitHub repository you've just forked. Once your app is created, click on the app to get to the app settings and copy the client ID.
 
 ## Connect your local project with Tina Cloud
 
@@ -110,7 +116,7 @@ In the `env.local` file set:
 
 Restart your server and run `yarn dev` again.
 
-Open [`http://localhost:3000/admin`](http://localhost:3000/admin`)
+Open [`http://localhost:3000/`](http://localhost:3000/`) and click "enter edit mode"
 
 ![](public/uploads/tina-cloud-authorization.png)
 
@@ -123,7 +129,7 @@ Changes are saved in your GitHub repository.
 
 Now that Tina Cloud editing is working correctly, we can deploy the site so that other team members can make edits too.
 
-> ℹ️ Gotcha: since your changes are being synced directly to Github, you'll notice that your non-"admin" routes still receive the unedited data from your local filesystem. This is mostly fine since editing with Tina Cloud is designed for hosted environments. But beware that changes to your schema may result in a mismatch between the Tina Cloud API and your local client.
+> ℹ️ Gotcha: since your changes are being synced directly to Github, you'll notice that when your in non-"edit" mode your page still receive the unedited data from your local filesystem. This is mostly fine since editing with Tina Cloud is designed for hosted environments. But beware that changes to your schema may result in a mismatch between the Tina Cloud API and your local client.
 
 ## Deploy
 
@@ -142,8 +148,8 @@ NEXT_PUBLIC_TINA_CLIENT_ID= <YOUR_CLIENT_ID>
 
 🎉 Congratulations, your site is now live!
 
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`,
-logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
+You can test that everything is configured correctly by navigating to `[your deployment URL]/`, click "edit this site",
+log in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ### Netlify
 
@@ -168,24 +174,27 @@ in order to take advantage of server-side rendering and Next.js preview features
 
 Trigger a new deploy for changes to take effect.
 
-You can test that everything is configured correctly by navigating to `[your deployment URL]/admin`,
-logging in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
+You can test that everything is configured correctly by navigating to `[your deployment URL]/`, click "edit this site",
+log in to Tina Cloud, and making some edits. Your changes should be saved to your GitHub repository.
 
 ---
 
 ## Starter structure
 
-Tina Cloud Starter is a [Next.js](https://nextjs.org) application. The file-based routing happens through the `pages` directory.
+Tina Cloud Starter is a [Next.js](https://nextjs.org) application. The file-based routing happens through the `pages` directory. To edit this site click the "edit this site" button. This will causes you to go into edit mode where Tina is loaded. Tina is only loaded in edit mode so it will not effect the production bundle size.
 
 ### `pages/index.tsx`
 
-This page can be seen at `http://localhost:3000/`, it loads the content from a markdown file which can be found in this repository at `/content/marketing-pages/index.md`. You can edit this page at `http://localhost:3000/admin`
+This page can be seen at `http://localhost:3000/`, it loads the content from a markdown file which can be found in this repository at `/content/marketing-pages/index.md`. You can edit this page at by clicking the "enter edit mode" button in the top right hand corner
 
-You'll find this pattern in other areas too, wherever you have a "public" page, we've created a equal "admin" version, which wraps your page in Tina. This way your public pages don't load any unnecessary Tina code.
+
+We wrap the site in a small `EditProvider` component, that stores whether or not we are in edit mode in React state and localstorage. When we are in edit mode it triggers authentication when needed, and then one is in edit mode. 
+
+What makes this possible is `getStaticProps`: you can notice that every editable page exports a `query` prop and a data prop from `getStaticProps`. When we are not in `editMode` we use the data prop to render the site. When we are in edit mode we use the query to fetch the latest data from Tina Cloud and create the sidebar form.
 
 ### `pages/posts/[filename].tsx`
 
-Posts come from the `content/posts` directory in this repo, and their routes are built with `getStaticPaths` dynamically at build time. Again, editing them with Tina can be done by visiting the "admin" version of their URL, so to edit `http://localhost:3000/posts/voteForPedro`, visit `http://localhost:3000/admin/posts/voteForPedro`.
+The posts are stored in the `content/posts` directory of this repository, and their routes are built with `getStaticPaths` dynamically at build time. To go in edit mode, click the "edit this site" button. This  re-renders your site  by wrapping it when a `TinaProvider` component, this only happens in edit mode to make sure Tina is not added to your production bundle.
 
 ### `components`
 
@@ -240,7 +249,7 @@ The top-level key in the schema is an array of _collections_, a `collection` inf
 
 ### `templates`
 
-Templates are responsible for defining the shape of your content, you'll see in the schema for this starter that we use `templates` for `sections` as well as `blocks`. If you look at the `landingPage` template, you'll notice that it has a set of `blocks`, which are also templates.
+Templates are responsible for defining the shape of your content, you'll see in the schema for this starter that we use `templates` for `collections` as well as `blocks`. If you look at the `landingPage` template, you'll notice that it has a set of `blocks`, which are also templates.
 
 ## Local development workflow tips
 
