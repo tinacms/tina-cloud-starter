@@ -52,6 +52,7 @@ const EditToggle = (isInEditMode) => {
           display: inline-block;
           border-bottom-left-radius: 0.5rem;
           cursor: pointer;
+          font-size: 20px;
         }
       `}</style>
     </>
