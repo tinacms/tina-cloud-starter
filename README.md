@@ -11,6 +11,12 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 - Deploy the site to visually edit your site.
 - Invite collaborators.
 
+## Lighthouse Scores
+
+With TinaCMS + Next.js you can make blazing fast websites! Don't believe us checkout the lighthouse scores of this starter :point_down:
+
+![](/public/uploads/scores.png)
+
 ## Table of contents
 
 - ❓ [What is this?](#what-is-this)
