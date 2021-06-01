@@ -7,4 +7,4 @@ fields:
     type: blocks
     template_types:
       - message
-      - diagram
+      - image

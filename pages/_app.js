@@ -1,11 +1,10 @@
 import dynamic from "next/dynamic";
 
-import {EditProvider, setEditing, useEditState} from '../utils/editState'
-
+import { EditProvider, setEditing, useEditState } from "../utils/editState";
 
 // InnerApp that handles rendering edit mode or not
 function InnerApp({ Component, pageProps }) {
-  const {edit} = useEditState()
+  const { edit } = useEditState();
   if (edit) {
     // Dynamically load Tina only when in edit mode so it does not affect production
     // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
@@ -27,20 +26,21 @@ function InnerApp({ Component, pageProps }) {
   );
 }
 
-
 const EditToggle = (isInEditMode) => {
-  const {edit,setEdit} = useEditState()
+  const { edit, setEdit } = useEditState();
   return (
     <>
-      <button onClick={()=>{
-        setEdit(!edit)
-      }}>
-        <a className="editLink">
-          {edit ? "Exit edit mode" : "Enter edit mode"}
-        </a>
+      <button
+        onClick={() => {
+          setEdit(!edit);
+        }}
+        className="editLink"
+      >
+        {edit ? "Exit edit mode" : "Enter edit mode"}
       </button>
       <style jsx>{`
         .editLink {
+          border: none;
           position: fixed;
           top: 0;
           right: 0;
@@ -52,18 +52,20 @@ const EditToggle = (isInEditMode) => {
           display: inline-block;
           border-bottom-left-radius: 0.5rem;
           cursor: pointer;
+          font-size: 20px;
         }
       `}</style>
     </>
   );
 };
 
-
 // Our app is wrapped with edit provider
 function App(props) {
-  return (<EditProvider>
-    <InnerApp {...props}/>
-  </EditProvider>)
+  return (
+    <EditProvider>
+      <InnerApp {...props} />
+    </EditProvider>
+  );
 }
 
-export default App
+export default App;
