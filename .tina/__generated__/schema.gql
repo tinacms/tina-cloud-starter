@@ -207,13 +207,13 @@ type Message_Data {
   messageBody: String
 }
 
-type Diagram_Data {
-  diagramHeading: String
-  diagramDescription: String
-  diagramID: String
+type Image_Data {
+  heading: String
+  imgDescription: String
+  src: String
 }
 
-union LandingPage_Blocks_Data = Message_Data | Diagram_Data
+union LandingPage_Blocks_Data = Message_Data | Image_Data
 
 type LandingPage_Doc_Data {
   blocks: [LandingPage_Blocks_Data]
@@ -226,14 +226,14 @@ type Message_Values {
   _template: String
 }
 
-type Diagram_Values {
-  diagramHeading: String
-  diagramDescription: String
-  diagramID: String
+type Image_Values {
+  heading: String
+  imgDescription: String
+  src: String
   _template: String
 }
 
-union LandingPage_Blocks_Values = Message_Values | Diagram_Values
+union LandingPage_Blocks_Values = Message_Values | Image_Values
 
 type LandingPage_Doc_Values {
   blocks: [LandingPage_Blocks_Values]
@@ -249,17 +249,17 @@ type Message_Form {
   fields: [Message_FormFieldsUnion]
 }
 
-union Diagram_FormFieldsUnion = TextField | TextareaField
+union Image_FormFieldsUnion = TextField | TextareaField
 
-type Diagram_Form {
+type Image_Form {
   label: String
   name: String
-  fields: [Diagram_FormFieldsUnion]
+  fields: [Image_FormFieldsUnion]
 }
 
 type LandingPage_Blocks_BlocksFieldTemplates {
   message: Message_Form
-  diagram: Diagram_Form
+  image: Image_Form
 }
 
 type LandingPage_Blocks_BlocksField implements FormField {
@@ -282,15 +282,15 @@ input Message_Input {
   messageBody: String
 }
 
-input Diagram_Input {
-  diagramHeading: String
-  diagramDescription: String
-  diagramID: String
+input Image_Input {
+  heading: String
+  imgDescription: String
+  src: String
 }
 
 input Blocks_Input {
   message: Message_Input
-  diagram: Diagram_Input
+  image: Image_Input
 }
 
 input LandingPage_Doc_Input {

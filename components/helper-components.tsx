@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "styled-jsx/css";
-import Link from 'next/link'
-import Head from 'next/head'
+import Link from "next/link";
+import Head from "next/head";
 /**
  * For demonstration purposes, feel free to delete or modify
  * any of these components, no magic going on here!
@@ -151,7 +151,7 @@ export const RawRenderer = ({ data }) => {
           color: var(--orange);
         }
 
-        .summary::-webkit-details-marker {
+        .summary::marker {
           display: none;
         }
       `}</style>
@@ -172,21 +172,19 @@ const Nav = () => {
   return (
     <div className="nav">
       <h4>
-        <Link href="/">
-        <a>Tina Cloud Starter</a>
+        <Link href="/" passHref>
+          <a>Tina Cloud Starter</a>
         </Link>
       </h4>
       <ul className="menu">
         <li>
-          <Link href={`${prefix}/`}>
-           <a>Home</a>
+          <Link href={`${prefix}/`} passHref>
+            <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link  href={`${prefix}/posts/voteForPedro`}>
-            <a className="summary">
-              Vote for Pedro
-            </a>
+          <Link href={`${prefix}/posts/voteForPedro`} passHref>
+            <a className="summary">Vote for Pedro</a>
           </Link>
         </li>
       </ul>
@@ -194,6 +192,7 @@ const Nav = () => {
         .nav {
           display: flex;
           justify-content: space-between;
+          font-size: 20px;
         }
         .menu {
           display: flex;
@@ -242,48 +241,48 @@ export const SidebarPlaceholder = () => (
       </a>
     </p>
     <style jsx>{`
-    .sidebar-placeholder {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: var(--tina-padding-big) var(--tina-padding-big) 64px
-        var(--tina-padding-big);
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-    }
+      .sidebar-placeholder {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: var(--tina-padding-big) var(--tina-padding-big) 64px
+          var(--tina-padding-big);
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+      }
 
-    .sidebar-placeholder > .emoji {
-      display: block;
-    }
+      .sidebar-placeholder > .emoji {
+        display: block;
+      }
 
-    .sidebar-placeholder > *:first-child {
-      margin: 0 0 var(--tina-padding-big) 0;
-    }
+      .sidebar-placeholder > *:first-child {
+        margin: 0 0 var(--tina-padding-big) 0;
+      }
 
-    .sidebar-placeholder h3 {
-      font-size: var(--tina-font-size-5);
-      font-weight: normal;
-      color: inherit;
-      display: block;
-      margin: 0 0 var(--tina-padding-big) 0;
-    }
+      .sidebar-placeholder h3 {
+        font-size: var(--tina-font-size-5);
+        font-weight: normal;
+        color: inherit;
+        display: block;
+        margin: 0 0 var(--tina-padding-big) 0;
+      }
 
-    .sidebar-placeholder p {
-      display: block;
-      margin: 0 0 var(--tina-padding-big) 0;
-    }
+      .sidebar-placeholder p {
+        display: block;
+        margin: 0 0 var(--tina-padding-big) 0;
+      }
 
-    .sidebar-placeholder .emoji {
-      font-size: 40px;
-      line-height: 1;
-      display: inline-block;
-    }
+      .sidebar-placeholder .emoji {
+        font-size: 40px;
+        line-height: 1;
+        display: inline-block;
+      }
 
-    .sidebar-placeholder a {
+      .sidebar-placeholder a {
         text-align: center;
         border: 0;
         border-radius: var(--tina-radius-big);
@@ -299,21 +298,21 @@ export const SidebarPlaceholder = () => (
         position: relative;
         text-decoration: none;
         display: inline-block;
-    }
+      }
 
-    .sidebar-placeholder a .emoji {
-      font-size: 24px;
-      position: absolute;
-      left: var(--tina-padding-big);
-      top: 50%;
-      transform-origin: 50% 50%;
-      transform: translate3d(0, -50%, 0);
-      transition: all var(--tina-timing-short) ease-out;
-    }
+      .sidebar-placeholder a .emoji {
+        font-size: 24px;
+        position: absolute;
+        left: var(--tina-padding-big);
+        top: 50%;
+        transform-origin: 50% 50%;
+        transform: translate3d(0, -50%, 0);
+        transition: all var(--tina-timing-short) ease-out;
+      }
 
-    .sidebar-placeholder a:hover {
-      color: var(--tina-color-primary);
-    }
+      .sidebar-placeholder a:hover {
+        color: var(--tina-color-primary);
+      }
     `}</style>
   </div>
 );
