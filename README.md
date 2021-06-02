@@ -4,18 +4,19 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ![Starter Homepage Preview](public/uploads/tina-cloud-starter-preview.png)
 
-## Project scope:
+## Video Tour
 
-- Run this project locally using local content within this repository.
-- Connect to Tina Cloud to benefit from its GraphQL Content API.
-- Deploy the site to visually edit your site.
-- Invite collaborators.
+Watch our video guide to get started in less than 10 minutes.
+
+[![Getting Started with Tina Cloud](http://img.youtube.com/vi/Y-fG7qzoHKw/0.jpg)](http://www.youtube.com/watch?v=Y-fG7qzoHKw "Getting Started with Tina Cloud")
 
 ## Lighthouse Scores
 
-With TinaCMS + Next.js you can make blazing fast websites! Don't believe us [checkout the lighthouse scores of this starter](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Ftina-cloud-starter-orcin.vercel.app%2F) :point_down:
+![Performance: 100%](assets/img/scores/lighthouse_performance.svg) ![Accessibility: 100%](assets/img/scores/lighthouse_accessibility.svg) ![Best Pratices: 100%](assets/img/scores/lighthouse_best-practices.svg) ![SEO: 100%](assets/img/scores/lighthouse_seo.svg)
 
-![](/public/uploads/scores.png)
+Tina doesn't impact your website performance. This starter comes with default perfect [Lighthouse scores](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Ftina-cloud-starter-orcin.vercel.app%2F) 🚀
+
+
 
 ## Table of contents
 
@@ -38,6 +39,13 @@ With TinaCMS + Next.js you can make blazing fast websites! Don't believe us [che
 ## What is this?
 
 This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your content on a live page. In this project the Tina file-based CMS is used via GraphQL: it's powered by a schema that _you_ define. It not only serves content from Markdown files in your repository, but it also generates TinaCMS forms for you automatically ✨.
+
+### Scope
+
+- Run this project locally using local content within this repository.
+- Connect to Tina Cloud to benefit from its GraphQL Content API.
+- Deploy the site to visually edit your site.
+- Invite collaborators.
 
 ## Requirements
 
