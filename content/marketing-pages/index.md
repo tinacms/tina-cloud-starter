@@ -1,5 +1,9 @@
 ---
 blocks:
+  - template: image
+    heading: Flying Tina
+    imgDescription: Frank hates this...
+    src: /Media/Samples/Food/flying-tina_f5d8g7
   - template: message
     messageHeader: Hey this has been changed!
     messageBody: >
