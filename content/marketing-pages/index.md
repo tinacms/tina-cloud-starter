@@ -1,7 +1,7 @@
 ---
 blocks:
   - template: message
-    messageHeader: Hey this has been changed!
+    messageHeader: Should see this on Github
     messageBody: >
       The Tina Cloud project is an opinionated approach to working with the
       TinaCMS system that enables you to focus on building sites the way you're
