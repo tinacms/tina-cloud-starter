@@ -1,5 +1,10 @@
 ---
 blocks:
+  - template: image
+    heading: Flying Tina
+    imgDescription: asdfasdf
+    src: >-
+      https://res.cloudinary.com/dkqhijwya/image/upload/v1622667469/samples/food/flying-tina_f5d8g7.png
   - template: message
     messageHeader: Hey this has been changed!
     messageBody: >
