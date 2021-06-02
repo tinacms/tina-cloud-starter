@@ -4,12 +4,11 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ![Starter Homepage Preview](public/uploads/tina-cloud-starter-preview.png)
 
-## Project scope:
+## Video Tour
 
-- Run this project locally using local content within this repository.
-- Connect to Tina Cloud to benefit from its GraphQL Content API.
-- Deploy the site to visually edit your site.
-- Invite collaborators.
+Get started in 10 minutes
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y-fG7qzoHKw" title="Getting started with Tina Cloud in 10 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Lighthouse Scores
 
@@ -40,6 +39,13 @@ Tina doesn't impact your website performance. This starter comes with default pe
 ## What is this?
 
 This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your content on a live page. In this project the Tina file-based CMS is used via GraphQL: it's powered by a schema that _you_ define. It not only serves content from Markdown files in your repository, but it also generates TinaCMS forms for you automatically ✨.
+
+### Scope
+
+- Run this project locally using local content within this repository.
+- Connect to Tina Cloud to benefit from its GraphQL Content API.
+- Deploy the site to visually edit your site.
+- Invite collaborators.
 
 ## Requirements
 
