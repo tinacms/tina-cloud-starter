@@ -36,7 +36,7 @@ blocks:
     heading: Flying Tina
     imgDescription: asdfasdf
     src: >-
-      https://res.cloudinary.com/dkqhijwya/image/upload/v1622667469/samples/food/flying-tina_f5d8g7.png
+      https://res.cloudinary.com/dkqhijwya/image/upload/c_fill,g_auto,h_56,w_56/v1/samples/people/jazz
 _template: landingPage
 ---
 
