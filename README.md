@@ -6,9 +6,9 @@ Basic TinaCMS starter based on [Next.js](https://nextjs.org) and [TinaCMS](https
 
 ## Video Tour
 
-Get started in 10 minutes
+Watch our video guide to get started in less than 10 minutes.
 
-Prefer a video explanation? [Watch a getting started video](https://youtu.be/Y-fG7qzoHKw)
+[![Getting Started with Tina Cloud](http://img.youtube.com/vi/Y-fG7qzoHKw/0.jpg)](http://www.youtube.com/watch?v=Y-fG7qzoHKw "Getting Started with Tina Cloud")
 
 ## Lighthouse Scores
 
