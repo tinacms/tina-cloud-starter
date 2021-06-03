@@ -1,7 +1,5 @@
 ---
 blocks:
-  - template: image
-    src: /Media/Samples/Food/flying-tina_f5d8g7
   - template: message
     messageHeader: Should see this on Github
     messageBody: >
@@ -34,6 +32,9 @@ blocks:
 
       We've built a few pages for you to get started, take a look around and see
       if you can figure out how to build your own pages and templates.
+  - template: image
+    src: >-
+      https://res.cloudinary.com/dkqhijwya/image/upload/v1622667469/samples/food/flying-tina_f5d8g7.png
 _template: landingPage
 ---
 
