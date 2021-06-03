@@ -1,5 +1,7 @@
 ---
 blocks:
+  - template: image
+    src: /Media/Samples/Food/flying-tina_f5d8g7
   - template: message
     messageHeader: Should see this on Github
     messageBody: >
