@@ -35,6 +35,7 @@ Tina doesn't impact your website performance. This starter comes with default pe
 - 🗂 [Starter structure](#starter-structure)
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+- 🆘 [Getting Help](#getting-help)
 
 ## What is this?
 
@@ -295,3 +296,18 @@ Tina Cloud generates your GraphQL schema automatically. 🪄
 ### Explore the GraphQL API
 
 If you have a GraphQL client like [Altair](https://altair.sirmuel.design/) go to `http://localhost:4001/graphql` to learn more about our GraphQL API.
+
+## Getting Help
+
+Tina Cloud is in public alpha, you might face issues, to provide feedback or get help with any challenges you may have:
+
+-   Read the [Tina Cloud documentation](https://tina.io/docs/tina-cloud/).
+-   [Join our Discord](https://discord.gg/zumN63Ybpf).
+-   Visit the [community forum](https://community.tinacms.org/) to ask questions.
+-   Reach out to us on Twitter at [@tina_cms](https://twitter.com/tina_cms).
+-   [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
+-   Get support through the chat widget on the Tina Cloud Dashboard
+
+## LICENSE
+
+Licensed under the [Aoache 2.0 license](./LICENSE).
