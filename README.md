@@ -35,6 +35,7 @@ Tina doesn't impact your website performance. This starter comes with default pe
 - 🗂 [Starter structure](#starter-structure)
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+- 🆘 [Getting Help](#getting-help)
 
 ## What is this?
 
