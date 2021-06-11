@@ -13,7 +13,7 @@
     "@types/node": "^13.13.1",
     "@types/react": "^16.9.43",
     "@types/styled-components": "^5.1.3",
-    "tina-graphql-gateway-cli": "^0.2.46"
+    "tina-graphql-gateway-cli": "^0.2.45"
   },
   "dependencies": {
     "next": "10.0.5",
