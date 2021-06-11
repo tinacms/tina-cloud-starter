@@ -11807,7 +11807,7 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@^0.2.46:
+tina-graphql-gateway-cli@^0.2.45:
   version "0.2.45"
   resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.2.45.tgz#34cb5ce450791e1577481a4b4d63e4f94225cb88"
   integrity sha512-nCHr73z8j6S9N8hcQwjjDboL2E/GTPIIyovvggqbNtF3wErS0xQEo1MBYw9CFJnf0v6v41dF4CNQHpKkDzVnKA==
