@@ -55,6 +55,7 @@ export type Section = {
   __typename?: 'Section';
   type?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
+  format?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   create?: Maybe<Scalars['String']>;
   match?: Maybe<Scalars['String']>;
@@ -196,6 +197,7 @@ export type TextField = FormField & {
   name?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
 };
 
 export type SelectField = FormField & {
@@ -203,6 +205,7 @@ export type SelectField = FormField & {
   name?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   options?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
@@ -211,6 +214,7 @@ export type TextareaField = FormField & {
   name?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
 };
 
 export type Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField;
@@ -370,6 +374,7 @@ export type LandingPage_Blocks_BlocksField = FormField & {
   name?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   templates?: Maybe<LandingPage_Blocks_BlocksFieldTemplates>;
 };
 
