@@ -310,4 +310,4 @@ Tina Cloud is in public alpha, you might face issues, to provide feedback or get
 
 ## LICENSE
 
-Licensed under the [Aoache 2.0 license](./LICENSE).
+Licensed under the [Apache 2.0 license](./LICENSE).
