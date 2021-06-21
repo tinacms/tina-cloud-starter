@@ -23,6 +23,11 @@ scalar JSON
 """"""
 scalar JSONObject
 
+type SelectOption {
+  label: String
+  value: String
+}
+
 type SystemInfo {
   filename: String
   basename: String
@@ -119,7 +124,7 @@ type SelectField implements FormField {
   label: String
   component: String
   description: String
-  options: [String]
+  options: [SelectOption]
 }
 
 type TextareaField implements FormField {
