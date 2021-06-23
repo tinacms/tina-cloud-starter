@@ -34,6 +34,12 @@ export type FormField = {
 
 
 
+export type SelectOption = {
+  __typename?: 'SelectOption';
+  label?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+};
+
 export type SystemInfo = {
   __typename?: 'SystemInfo';
   filename?: Maybe<Scalars['String']>;
@@ -206,7 +212,7 @@ export type SelectField = FormField & {
   label?: Maybe<Scalars['String']>;
   component?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  options?: Maybe<Array<Maybe<Scalars['String']>>>;
+  options?: Maybe<Array<Maybe<SelectOption>>>;
 };
 
 export type TextareaField = FormField & {
