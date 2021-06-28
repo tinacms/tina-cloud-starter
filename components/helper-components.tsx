@@ -234,7 +234,7 @@ export const SidebarPlaceholder = () => (
     </p>
     <p>
       <a
-        href="https://tinacms-site-next-git-tina-cloud-docs-tinacms.vercel.app/docs/tina-cloud/client/"
+        href="https://tina.io/docs/tina-cloud/client/"
         target="_blank"
       >
         <span className="emoji">📖</span> Client Setup Guide
