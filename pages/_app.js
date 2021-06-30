@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
+import "tailwindcss/tailwind.css";
 import { EditProvider, setEditing, useEditState } from "../utils/editState";
 
 // InnerApp that handles rendering edit mode or not
