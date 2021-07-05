@@ -1,7 +1,10 @@
 import { LandingPage } from "../components/landing-page";
 import { Wrapper } from "../components/helper-components";
 import type { MarketingPages_Document } from "../.tina/__generated__/types";
-import { createLocalClient, AsyncReturnType } from "../utils";
+import { LocalClient } from "tina-graphql-gateway";
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
+  T extends (...args: any) => Promise<infer R> ? R : any;
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -42,7 +45,7 @@ export const query = `#graphql
 `;
 
 export const getStaticProps = async () => {
-  const client = createLocalClient();
+  const client = new LocalClient();
   return {
     props: {
       data: await client.request<{

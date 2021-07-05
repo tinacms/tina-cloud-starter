@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
-import { EditProvider, setEditing, useEditState } from "../utils/editState";
+import { EditProvider, useEditState } from "tina-graphql-gateway";
 
 // InnerApp that handles rendering edit mode or not
 function InnerApp({ Component, pageProps }) {
