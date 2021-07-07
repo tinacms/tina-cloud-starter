@@ -1,7 +1,8 @@
 import { BlogPost } from "../../components/post";
 import type { Posts_Document } from "../../.tina/__generated__/types";
-import { createLocalClient, AsyncReturnType } from "../../utils";
 import { Wrapper } from "../../components/helper-components";
+import { AsyncReturnType } from "..";
+import { LocalClient } from "tina-graphql-gateway";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -38,7 +39,7 @@ export const query = `#graphql
   }
 `;
 
-const client = createLocalClient();
+const client = new LocalClient();
 
 export const getStaticProps = async ({ params }) => {
   const variables = { relativePath: `${params.filename}.md` };
