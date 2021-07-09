@@ -15,19 +15,19 @@ function InnerApp({ Component, pageProps }) {
         <TinaWrapper {...pageProps}>
           {(props) => <Component {...props} />}
         </TinaWrapper>
-        <EditToggle isInEditMode={true} />
+        <EditToggle />
       </>
     );
   }
   return (
     <>
       <Component {...pageProps} />
-      <EditToggle isInEditMode={true} />
+      <EditToggle />
     </>
   );
 }
 
-const EditToggle = (isInEditMode) => {
+const EditToggle = () => {
   const { edit, setEdit } = useEditState();
   return (
     <>
@@ -37,27 +37,10 @@ const EditToggle = (isInEditMode) => {
             onClick={() => {
               setEdit(!edit);
             }}
-            className="editLink"
+            className=""
           >
             {edit ? "Exit edit mode" : "Enter edit mode"}
           </button>
-          <style jsx>{`
-            .editLink {
-              border: none;
-              position: fixed;
-              top: 0;
-              right: 0;
-              background: var(--orange);
-              color: var(--white);
-              padding: 0.5rem 0.75rem;
-              font-weight: bold;
-              text-decoration: none;
-              display: inline-block;
-              border-bottom-left-radius: 0.5rem;
-              cursor: pointer;
-              font-size: 20px;
-            }
-          `}</style>
         </>
       )}
     </>
