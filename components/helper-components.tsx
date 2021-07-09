@@ -14,14 +14,14 @@ export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
         <title>Tina</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="header">
-        <div className="container">
+      <div className="">
+        <div className="">
           <Nav />
         </div>
       </div>
-      <div className="content">
-        <div className="container">
-          <div className="card">{props.children}</div>
+      <div className="">
+        <div className="">
+          <div className="">{props.children}</div>
           <RawRenderer data={props.data} />
         </div>
       </div>
