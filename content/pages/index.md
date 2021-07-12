@@ -1,8 +1,7 @@
 ---
 blocks:
-  - template: message
-    messageHeader: Welcome to the Tina Cloud Starter
-    messageBody: >
+  - template: content
+    body: >
       The Tina Cloud project is an opinionated approach to working with the
       TinaCMS system that enables you to focus on building sites the way you're
       already used to. To that end, we've developed a GraphL API which allows
@@ -32,5 +31,5 @@ blocks:
 
       We've built a few pages for you to get started, take a look around and see
       if you can figure out how to build your own pages and templates.
-_template: landingPage
+_template: page
 ---
