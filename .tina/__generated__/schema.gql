@@ -217,6 +217,7 @@ type Raw_Data {
 
 type Content_Data {
   body: String
+  color: String
 }
 
 type Image_Data {
@@ -239,6 +240,7 @@ type Raw_Values {
 
 type Content_Values {
   body: String
+  color: Reference
   _template: String
 }
 
@@ -265,7 +267,7 @@ type Raw_Form {
   fields: [Raw_FormFieldsUnion]
 }
 
-union Content_FormFieldsUnion = TextareaField
+union Content_FormFieldsUnion = TextareaField | SelectField
 
 type Content_Form {
   label: String
@@ -309,6 +311,7 @@ input Raw_Input {
 
 input Content_Input {
   body: String
+  color: String
 }
 
 input Image_Input {
