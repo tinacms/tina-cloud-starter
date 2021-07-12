@@ -1,21 +1,17 @@
 import React from "react";
 import Markdown from "react-markdown";
 import Image from "next/image";
-import type { LandingPage_Doc_Data } from "../.tina/__generated__/types";
+import type { Page_Doc_Data } from "../.tina/__generated__/types";
+import { Content } from "./blocks/content";
 
-export const LandingPage = (props: LandingPage_Doc_Data) => {
+export const Page = (props: Page_Doc_Data) => {
   return (
     <>
       {props.blocks
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
-              case "Message_Data":
-                return (
-                  <React.Fragment key={`block-${block.messageHeader}`}>
-                    <h3>{block.messageHeader}</h3>
-                    <Markdown>{block.messageBody}</Markdown>
-                  </React.Fragment>
-                );
+              case "Content_Data":
+                return <Content data={block} index={i} />;
               case "Image_Data":
                 return (
                   <React.Fragment key={`diagram-${i}`}>

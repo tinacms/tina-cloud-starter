@@ -1,0 +1,7 @@
+---
+name: content
+label: Content
+fields:
+  - type: textarea
+    label: Body
+    name: body

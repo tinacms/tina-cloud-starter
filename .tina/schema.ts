@@ -50,13 +50,13 @@ export default defineSchema({
       ],
     },
     {
-      label: "Marketing Pages",
-      name: "marketingPages",
+      label: "Pages",
+      name: "pages",
       path: "content/pages",
       templates: [
         {
-          label: "Landing Page",
-          name: "landingPage",
+          label: "Page",
+          name: "page",
           fields: [
             {
               type: "blocks",
@@ -64,18 +64,13 @@ export default defineSchema({
               label: "Blocks",
               templates: [
                 {
-                  name: "message",
-                  label: "Message",
+                  name: "content",
+                  label: "Content",
                   fields: [
                     {
-                      type: "text",
-                      label: "Message Header",
-                      name: "messageHeader",
-                    },
-                    {
                       type: "textarea",
-                      label: "Message Body",
-                      name: "messageBody",
+                      label: "Body",
+                      name: "body",
                     },
                   ],
                 },
