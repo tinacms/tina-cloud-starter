@@ -7,7 +7,7 @@ export const Content = ({ data, index }) => {
     <Container
       key={`block-${index}`}
       className="prose prose-lg"
-      color="tint"
+      color={data.color}
       size="large"
     >
       <Markdown>{data.body}</Markdown>
