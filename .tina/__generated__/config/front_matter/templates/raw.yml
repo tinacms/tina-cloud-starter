@@ -1,7 +1,0 @@
----
-name: raw
-label: Raw Data
-fields:
-  - type: text
-    label: Description
-    name: description

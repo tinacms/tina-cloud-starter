@@ -1,0 +1,196 @@
+{
+  "collections": [
+    {
+      "label": "Blog Posts",
+      "name": "posts",
+      "path": "content/posts",
+      "fields": [
+        {
+          "type": "string",
+          "label": "Title",
+          "name": "title",
+          "namespace": [
+            "posts",
+            "title"
+          ]
+        },
+        {
+          "type": "reference",
+          "label": "Author",
+          "name": "author",
+          "collections": [
+            "authors"
+          ],
+          "namespace": [
+            "posts",
+            "author"
+          ]
+        }
+      ],
+      "namespace": [
+        "posts"
+      ]
+    },
+    {
+      "label": "Authors",
+      "name": "authors",
+      "path": "content/authors",
+      "fields": [
+        {
+          "type": "string",
+          "label": "Name",
+          "name": "name",
+          "namespace": [
+            "authors",
+            "name"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Avatar",
+          "name": "avatar",
+          "namespace": [
+            "authors",
+            "avatar"
+          ]
+        }
+      ],
+      "namespace": [
+        "authors"
+      ]
+    },
+    {
+      "label": "Pages",
+      "name": "pages",
+      "path": "content/pages",
+      "fields": [
+        {
+          "type": "object",
+          "list": true,
+          "name": "blocks",
+          "label": "Sections",
+          "templates": [
+            {
+              "name": "raw",
+              "label": "Raw Data",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Description",
+                  "name": "description",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "raw",
+                    "description"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "raw"
+              ]
+            },
+            {
+              "name": "content",
+              "label": "Content",
+              "fields": [
+                {
+                  "type": "string",
+                  "ui": {
+                    "component": "textarea"
+                  },
+                  "label": "Body",
+                  "name": "body",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "content",
+                    "body"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    "default",
+                    "tint",
+                    "primary"
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "content",
+                    "color"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "content"
+              ]
+            },
+            {
+              "name": "image",
+              "label": "Image",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Heading",
+                  "name": "heading",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "image",
+                    "heading"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "ui": {
+                    "component": "textarea"
+                  },
+                  "label": "Image Description",
+                  "name": "imgDescription",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "image",
+                    "imgDescription"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Image src",
+                  "name": "src",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "image",
+                    "src"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "image"
+              ]
+            }
+          ],
+          "namespace": [
+            "pages",
+            "blocks"
+          ]
+        }
+      ],
+      "namespace": [
+        "pages"
+      ]
+    }
+  ],
+  "namespace": []
+}

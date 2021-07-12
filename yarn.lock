@@ -4531,11 +4531,6 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-fn-name@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-3.0.0.tgz#0596707f635929634d791f452309ab41558e3c5c"
-  integrity sha512-eNMNr5exLoavuAMhIUVsOKF79SWd/zG104ef6sxBTSw+cZc6BXdQXDvYcGvp0VbxVVSp1XDUNoz7mg1xMtSznA==
-
 follow-redirects@1.5.10:
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
@@ -5118,6 +5113,11 @@ ignore@^5.1.4:
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
+
+immer@^9.0.3:
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.5.tgz#a7154f34fe7064f15f00554cc94c66cc0bf453ec"
+  integrity sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ==
 
 immutable@~3.7.6:
   version "3.7.6"
@@ -5831,7 +5831,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@^4.17.11, lodash-es@^4.17.15:
+lodash-es@^4.17.15:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
@@ -7646,7 +7646,7 @@ prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.2, 
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-property-expr@^2.0.2, property-expr@^2.0.4:
+property-expr@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/property-expr/-/property-expr-2.0.4.tgz#37b925478e58965031bb612ec5b3260f8241e910"
   integrity sha512-sFPkHQjVKheDNnPvotjQmm3KD3uk1fWKUN7CrpdbwmUx3CrG3QiM8QpTSimvig5vTXmTvjz7+TDvXOI9+4rkcg==
@@ -9221,11 +9221,6 @@ symbol-observable@^1.2.0:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
-synchronous-promise@^2.0.13:
-  version "2.0.15"
-  resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
-  integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
-
 tailwindcss@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.2.4.tgz#6a2e259b1e26125aeaa7cdc479963fd217c308b0"
@@ -9365,10 +9360,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.3.1.tgz#509196b1735aea58d701ebbd0d5d572ffb5a25d3"
-  integrity sha512-pWBcVyjLDj1GcKk10NyoDzksQr5Dkeac3WaOqz7xdaFh2w9pmYAi8MElPjDGx6VyFgrVHYX3qnCeywYsF6GBkg==
+tina-graphql-gateway-cli@^0.0.0-20216921113:
+  version "0.0.0-20216921113"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.0.0-20216921113.tgz#1a06fe66765ccde8bc017f3c460e6b00ac066e33"
+  integrity sha512-oI3eu8VtOC7D0bgRwq0OEWgVYN6N3BJ87J+yBP1XPQToz2zrc6Chd4MJjWPgNgn1TFs+OChLEMg/cOr4uLIaKQ==
   dependencies:
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
@@ -9393,15 +9388,15 @@ tina-graphql-gateway-cli@^0.3.1:
     normalize-path "^3.0.0"
     progress "^2.0.3"
     prompts "^2.4.1"
-    tina-graphql "0.1.25"
-    tina-graphql-helpers "0.1.1"
+    tina-graphql "0.0.0-20216921113"
+    tina-graphql-helpers "0.0.0-20216921113"
     typescript "^4.2.2"
     yup "^0.32.9"
 
-tina-graphql-gateway@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.3.0.tgz#2ff045dd26dfd6628d50732d93b1d1dfe88f2424"
-  integrity sha512-5MrKZu/sZGSjwu+6CpnRe0Z58J9uMKKc1o8UhBYg179VuSI5d1OZIPssYtgCfFUPYyyFx2UKOaOaLGMb576lcA==
+tina-graphql-gateway@^0.0.0-20216921113:
+  version "0.0.0-20216921113"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.0.0-20216921113.tgz#4d161809fa0b3fc9e40db59b0030149d9d616f07"
+  integrity sha512-RMMuYrJBACDZxa2FYiGbiS6fgzuSkuRQs1aLhiG2CjtckzQObG8rNgsyeidCKdbMzWAKJsffO4KXF4UZEx1v6Q==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
@@ -9418,6 +9413,7 @@ tina-graphql-gateway@^0.3.0:
     final-form-arrays "^3.0.2"
     graphql "^15.1.0"
     graphql-tag "^2.11.0"
+    immer "^9.0.3"
     isomorphic-unfetch "^3.0.0"
     lodash.get "^4.4.2"
     lodash.has "^4.5.2"
@@ -9426,16 +9422,16 @@ tina-graphql-gateway@^0.3.0:
     next "9.4.2"
     node-fetch "^2.6.0"
     prop-types "15.7.2"
-    tina-graphql-helpers "0.1.1"
+    tina-graphql-helpers "0.0.0-20216921113"
     tsup "^3.7.0"
     typescript "^3.9.5"
     xstate "^4.15.1"
     yup "^0.32.0"
 
-tina-graphql-helpers@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/tina-graphql-helpers/-/tina-graphql-helpers-0.1.1.tgz#159a5e549f38bf9ea237ed16e642e78d67dc3f0f"
-  integrity sha512-/BT+ppRSfwEdO4HD7rLdkCrxfddZu5Tvdp/RGf19WCAHK/aaLykEKUmZH10psQAP65ulTJ7Fj24qNc3ZZMcogw==
+tina-graphql-helpers@0.0.0-20216921113:
+  version "0.0.0-20216921113"
+  resolved "https://registry.yarnpkg.com/tina-graphql-helpers/-/tina-graphql-helpers-0.0.0-20216921113.tgz#f1933c9c8ecba044af5ba9044afc4c1d3717f702"
+  integrity sha512-Yy8DOGGR/fx+oLpXG7f1eBfclNqjOZaIATcazT38Fy3GLcNm5HmH2i1VJmhbgHvAqAWTfJcTs/jZaGKo+/ImsA==
   dependencies:
     "@types/lodash.get" "^4.4.6"
     "@types/lodash.kebabcase" "^4.1.6"
@@ -9454,10 +9450,10 @@ tina-graphql-helpers@0.1.1:
     tsup "^3.7.0"
     typescript "^4.2.3"
 
-tina-graphql@0.1.25:
-  version "0.1.25"
-  resolved "https://registry.yarnpkg.com/tina-graphql/-/tina-graphql-0.1.25.tgz#53fe7bb86d1cb57b4cbb5e379c22d293750743de"
-  integrity sha512-VNxgdZv3fwHzUJMNNvveGuVV3r256NC7uePgoJVBYpWQjxlkPgia9Ku4bvIg3W0N1NabPwfIadZ9/0mpX7PV9Q==
+tina-graphql@0.0.0-20216921113:
+  version "0.0.0-20216921113"
+  resolved "https://registry.yarnpkg.com/tina-graphql/-/tina-graphql-0.0.0-20216921113.tgz#d9383da32860744dda71675af48f0bff381207ed"
+  integrity sha512-5WAoXQN/sN4eqAsVZaqMG3SunWiJPDfMCNKPA0s/P2QtvYoZXIF98vAKC2GjkN2Kb3EPqBRXKToDCr+FIJLEDA==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -9484,13 +9480,13 @@ tina-graphql@0.1.25:
     remark-parse "^8.0.2"
     remark-rehype "^8.0.0"
     remark-stringify "^8.1.1"
-    tina-graphql-helpers "0.1.1"
+    tina-graphql-helpers "0.0.0-20216921113"
     tslib "^1.11.1"
     unified "^9.2.0"
     unist-util-remove-position "^3.0.0"
     vfile "^4.2.0"
     ws "^7.3.1"
-    yup "^0.29.3"
+    yup "^0.32.9"
 
 tinacms@0.41.0:
   version "0.41.0"
@@ -10337,19 +10333,6 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-
-yup@^0.29.3:
-  version "0.29.3"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.29.3.tgz#69a30fd3f1c19f5d9e31b1cf1c2b851ce8045fea"
-  integrity sha512-RNUGiZ/sQ37CkhzKFoedkeMfJM0vNQyaz+wRZJzxdKE7VfDeVKH8bb4rr7XhRLbHJz5hSjoDNwMEIaKhuMZ8gQ==
-  dependencies:
-    "@babel/runtime" "^7.10.5"
-    fn-name "~3.0.0"
-    lodash "^4.17.15"
-    lodash-es "^4.17.11"
-    property-expr "^2.0.2"
-    synchronous-promise "^2.0.13"
-    toposort "^2.0.2"
 
 yup@^0.32.0, yup@^0.32.9:
   version "0.32.9"
