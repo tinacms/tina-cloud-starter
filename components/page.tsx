@@ -1,19 +1,19 @@
 import React from "react";
 import Markdown from "react-markdown";
 import Image from "next/image";
-import type { Page_Doc_Data } from "../.tina/__generated__/types";
+import type { Pages } from "../.tina/__generated__/types";
 import { Content } from "./blocks/content";
 import { RawRenderer } from "./blocks/rawRenderer";
 
-export const Page = (props: Page_Doc_Data) => {
+export const Page = (props: Pages) => {
   return (
     <>
       {props.blocks
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
-              case "Content_Data":
+              case "PagesBlocksContent":
                 return <Content data={block} index={i} />;
-              case "Image_Data":
+              case "PagesBlocksImage":
                 return (
                   <React.Fragment key={`diagram-${i}`}>
                     <h3>{block.heading}</h3>
@@ -28,7 +28,7 @@ export const Page = (props: Page_Doc_Data) => {
                     />
                   </React.Fragment>
                 );
-              case "Raw_Data":
+              case "PagesBlocksRaw":
                 return <RawRenderer rawData={props} data={block} index={i} />;
               default:
                 return null;

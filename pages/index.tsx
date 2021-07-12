@@ -1,6 +1,6 @@
 import { Page } from "../components/page";
 import { Wrapper } from "../components/helper-components";
-import type { Pages_Document } from "../.tina/__generated__/types";
+import type { PagesDocument } from "../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../utils";
 
 export default function HomePage(
@@ -22,21 +22,19 @@ export const query = `#graphql
     getPagesDocument(relativePath: "index.md") {
       data {
         __typename
-        ... on Page_Doc_Data {
-          blocks {
-            __typename
-            ... on Content_Data {
-              body
-              color
-            }
-            ... on Image_Data {
-              heading
-              imgDescription
-              src
-            }
-            ... on Raw_Data {
-              description
-            }
+      	blocks {
+					__typename
+          ... on PagesBlocksRaw {
+            description
+          }
+          ... on PagesBlocksContent {
+						body
+            color
+          }
+          ... on PagesBlocksImage {
+						heading
+            imgDescription
+            src
           }
         }
       }
@@ -49,7 +47,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       data: await client.request<{
-        getPagesDocument: Pages_Document;
+        getPagesDocument: PagesDocument;
       }>(query, {
         variables: {},
       }),
