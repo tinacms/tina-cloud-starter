@@ -3,8 +3,9 @@ label: Page
 name: page
 fields:
   - name: blocks
-    label: Blocks
+    label: Sections
     type: blocks
     template_types:
+      - raw
       - content
       - image

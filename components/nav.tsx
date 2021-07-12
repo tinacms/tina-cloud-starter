@@ -24,13 +24,13 @@ export const Nav = () => {
   ];
 
   return (
-    <Container className="py-2 flex justify-between">
+    <Container className="flex justify-between" size="small">
       <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold">
         <Link href="/" passHref>
           <a>Tina Cloud Starter</a>
         </Link>
       </h4>
-      <ul className="flex gap-4">
+      <ul className="flex gap-8">
         {navLinks.map((item) => {
           return (
             <li>

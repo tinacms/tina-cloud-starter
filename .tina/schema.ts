@@ -61,8 +61,19 @@ export default defineSchema({
             {
               type: "blocks",
               name: "blocks",
-              label: "Blocks",
+              label: "Sections",
               templates: [
+                {
+                  name: "raw",
+                  label: "Raw Data",
+                  fields: [
+                    {
+                      type: "text",
+                      label: "Description",
+                      name: "description",
+                    },
+                  ],
+                },
                 {
                   name: "content",
                   label: "Content",

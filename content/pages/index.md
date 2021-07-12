@@ -31,5 +31,8 @@ blocks:
 
       We've built a few pages for you to get started, take a look around and see
       if you can figure out how to build your own pages and templates.
+  - template: raw
+    description: This is what the raw data looks like.
 _template: page
 ---
+
