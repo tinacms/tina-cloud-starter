@@ -27,6 +27,7 @@ export const query = `#graphql
             __typename
             ... on Content_Data {
               body
+              color
             }
             ... on Image_Data {
               heading

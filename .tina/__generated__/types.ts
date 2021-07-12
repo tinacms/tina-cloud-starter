@@ -314,6 +314,7 @@ export type Raw_Data = {
 export type Content_Data = {
   __typename?: 'Content_Data';
   body?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type Image_Data = {
@@ -340,6 +341,7 @@ export type Raw_Values = {
 export type Content_Values = {
   __typename?: 'Content_Values';
   body?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['Reference']>;
   _template?: Maybe<Scalars['String']>;
 };
 
@@ -369,7 +371,7 @@ export type Raw_Form = {
   fields?: Maybe<Array<Maybe<Raw_FormFieldsUnion>>>;
 };
 
-export type Content_FormFieldsUnion = TextareaField;
+export type Content_FormFieldsUnion = TextareaField | SelectField;
 
 export type Content_Form = {
   __typename?: 'Content_Form';
@@ -418,6 +420,7 @@ export type Raw_Input = {
 
 export type Content_Input = {
   body?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type Image_Input = {
