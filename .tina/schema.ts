@@ -83,6 +83,12 @@ export default defineSchema({
                       label: "Body",
                       name: "body",
                     },
+                    {
+                      type: "select",
+                      label: "Color",
+                      name: "color",
+                      options: ["default", "tint", "primary"],
+                    },
                   ],
                 },
                 {
