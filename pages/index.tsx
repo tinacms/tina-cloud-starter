@@ -33,6 +33,9 @@ export const query = `#graphql
               imgDescription
               src
             }
+            ... on Raw_Data {
+              description
+            }
           }
         }
       }

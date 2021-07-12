@@ -1,8 +1,7 @@
 import React from "react";
-import Markdown from "react-markdown";
 import { Container } from "../container";
 
-export const Content = ({ data, index }) => {
+export const RawRenderer = ({ rawData, data, index }) => {
   return (
     <Container
       key={`block-${index}`}
@@ -10,7 +9,10 @@ export const Content = ({ data, index }) => {
       color="tint"
       size="large"
     >
-      <Markdown>{data.body}</Markdown>
+      {data.description && <p>{data.description}</p>}
+      <pre>
+        <code>{JSON.stringify(rawData, null, 2)}</code>
+      </pre>
     </Container>
   );
 };

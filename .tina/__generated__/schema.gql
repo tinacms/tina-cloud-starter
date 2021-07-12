@@ -211,6 +211,10 @@ type Pages_Document implements Node & Document {
   form: Pages_Form
 }
 
+type Raw_Data {
+  description: String
+}
+
 type Content_Data {
   body: String
 }
@@ -221,11 +225,16 @@ type Image_Data {
   src: String
 }
 
-union Page_Blocks_Data = Content_Data | Image_Data
+union Page_Blocks_Data = Raw_Data | Content_Data | Image_Data
 
 type Page_Doc_Data {
   blocks: [Page_Blocks_Data]
   _body: String
+}
+
+type Raw_Values {
+  description: String
+  _template: String
 }
 
 type Content_Values {
@@ -240,12 +249,20 @@ type Image_Values {
   _template: String
 }
 
-union Page_Blocks_Values = Content_Values | Image_Values
+union Page_Blocks_Values = Raw_Values | Content_Values | Image_Values
 
 type Page_Doc_Values {
   blocks: [Page_Blocks_Values]
   _body: String
   _template: String
+}
+
+union Raw_FormFieldsUnion = TextField
+
+type Raw_Form {
+  label: String
+  name: String
+  fields: [Raw_FormFieldsUnion]
 }
 
 union Content_FormFieldsUnion = TextareaField
@@ -265,6 +282,7 @@ type Image_Form {
 }
 
 type Page_Blocks_BlocksFieldTemplates {
+  raw: Raw_Form
   content: Content_Form
   image: Image_Form
 }
@@ -285,6 +303,10 @@ type Page_Doc_Form {
   fields: [Page_Doc_FormFieldsUnion]
 }
 
+input Raw_Input {
+  description: String
+}
+
 input Content_Input {
   body: String
 }
@@ -296,6 +318,7 @@ input Image_Input {
 }
 
 input Blocks_Input {
+  raw: Raw_Input
   content: Content_Input
   image: Image_Input
 }
