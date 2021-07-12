@@ -12,7 +12,7 @@ Watch our video guide to get started in less than 10 minutes.
 
 ## Lighthouse Scores
 
-![Performance: 100%](assets/img/scores/lighthouse_performance.svg) ![Accessibility: 100%](assets/img/scores/lighthouse_accessibility.svg) ![Best Pratices: 100%](assets/img/scores/lighthouse_best-practices.svg) ![SEO: 100%](assets/img/scores/lighthouse_seo.svg)
+![Performance: 100%](assets/img/scores/lighthouse_performance.svg) ![Accessibility: 100%](assets/img/scores/lighthouse_accessibility.svg) ![Best Practices: 100%](assets/img/scores/lighthouse_best-practices.svg) ![SEO: 100%](assets/img/scores/lighthouse_seo.svg)
 
 Tina doesn't impact your website performance. This starter comes with default perfect [Lighthouse scores](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Ftina-cloud-starter-orcin.vercel.app%2F) 🚀
 
@@ -35,6 +35,7 @@ Tina doesn't impact your website performance. This starter comes with default pe
 - 🗂 [Starter structure](#starter-structure)
 - 📐 [Content Modeling](#content-modeling)
 - 💡 [Local development workflow tips](#local-development-workflow-tips)
+- 🆘 [Getting Help](#getting-help)
 
 ## What is this?
 
@@ -55,7 +56,7 @@ This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your c
 
 ## Fork this repository
 
- ⚠️⚠️ Start by **forking** the repositorty and then pull it down to your computer. ⚠️⚠️
+ ⚠️⚠️ Start by **forking** the repository and then pull it down to your computer. ⚠️⚠️
 
 ## Install
 
@@ -97,8 +98,7 @@ cp .env.local.sample .env.local
 
 `NEXT_PUBLIC_USE_LOCAL_CLIENT` should be set to `1`, other values can be ignored for now.
 
-Restart your server and visit [`http://localhost:3000/`](http://localhost:3000/`), and click "enter edit mode" in the top right hand corner,
-the same page is displayed but you can notice a pencil icon at the bottom left corner.
+Restart your server and visit [`http://localhost:3000/`](http://localhost:3000/`), and click "enter edit mode" in the top right hand corner, the same page is displayed but you can notice a pencil icon at the bottom left corner.
 
 Click to open Tina's sidebar which displays a form with fields you can edit and see update live on the page.
 Since we're working locally, saving results in changes to your local filesystem.
@@ -107,6 +107,8 @@ From here, you're ready to start building your own project, to read a little bit
 read the [folder structure](#starter-structure) section below.
 
 When you're ready to deploy your site, read on about how you can connect to Tina Cloud and make authenticated changes via our Cloud API.
+
+> **NOTE:** In this project there are two way to enter edit mode. You can click the "enter edit mode button" or visit [`/admin`](http://localhost/admin). You can also disable the edit button by setting `NEXT_PUBLIC_SHOW_EDIT_BTN=0` in `.env.local`
 
 ## Connect to Tina Cloud
 
@@ -117,7 +119,7 @@ you'll obviously want other editors and collaborators to be able to make changes
 
 ## Register your local application with Tina Cloud
 
-1. Visit [auth.tina.io](https://auth.tina.io/register), create an organization, and sign in. Make a note of your orgnization name.
+1. Visit [auth.tina.io](https://auth.tina.io/register), create an organization, and sign in. Make a note of your organization name.
 2. Create a Tina Cloud app which connects to the GitHub repository you've just forked. Once your app is created, click on the app to get to the app settings and copy the client ID.
 
 ## Connect your local project with Tina Cloud
@@ -127,6 +129,7 @@ In the `env.local` file set:
 - `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
 - `NEXT_PUBLIC_ORGANIZATION_NAME` to your Tina Cloud organization name
 - `NEXT_PUBLIC_TINA_CLIENT_ID` to the Client ID displayed in your Tina Cloud App.
+- `NEXT_PUBLIC_SHOW_EDIT_BTN` to `0` or `1`, `0` means there is no "enter edit mode" and you will have to visit [`/admin`](http://localhost/admin)  to enter edit mode.
 
 Restart your server and run `yarn dev` again.
 
@@ -293,3 +296,18 @@ Tina Cloud generates your GraphQL schema automatically. 🪄
 ### Explore the GraphQL API
 
 If you have a GraphQL client like [Altair](https://altair.sirmuel.design/) go to `http://localhost:4001/graphql` to learn more about our GraphQL API.
+
+## Getting Help
+
+Tina Cloud is in public alpha, you might face issues, to provide feedback or get help with any challenges you may have:
+
+-   Read the [Tina Cloud documentation](https://tina.io/docs/tina-cloud/).
+-   [Join our Discord](https://discord.gg/zumN63Ybpf).
+-   Visit the [community forum](https://community.tinacms.org/) to ask questions.
+-   Reach out to us on Twitter at [@tina_cms](https://twitter.com/tina_cms).
+-   [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
+-   Get support through the chat widget on the Tina Cloud Dashboard
+
+## LICENSE
+
+Licensed under the [Apache 2.0 license](./LICENSE).
