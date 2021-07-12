@@ -1,7 +1,6 @@
 ---
 blocks:
-  - template: content
-    body: >
+  - body: >
       The Tina Cloud project is an opinionated approach to working with the
       TinaCMS system that enables you to focus on building sites the way you're
       already used to. To that end, we've developed a GraphL API which allows
@@ -30,9 +29,9 @@ blocks:
 
 
       We've built a few pages for you to get started, take a look around and see
-      if you can figure out how to build your own pages and templates.
-  - template: raw
-    description: This is what the raw data looks like.
-_template: page
+      if you can figure out how to build your own pages and templates. 
+    _template: content
+  - description: This is what the raw data looks like.
+    _template: raw
 ---
 

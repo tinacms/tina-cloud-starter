@@ -1,28 +1,22 @@
-import { defineSchema } from "tina-graphql-gateway-cli";
+import { unstable_defineSchema } from "tina-graphql-gateway-cli";
 
-export default defineSchema({
+export default unstable_defineSchema({
   collections: [
     {
       label: "Blog Posts",
       name: "posts",
       path: "content/posts",
-      templates: [
+      fields: [
         {
-          label: "Article",
-          name: "article",
-          fields: [
-            {
-              type: "text",
-              label: "Title",
-              name: "title",
-            },
-            {
-              type: "reference",
-              label: "Author",
-              name: "author",
-              collection: "authors",
-            },
-          ],
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "reference",
+          label: "Author",
+          name: "author",
+          collections: ["authors"],
         },
       ],
     },
@@ -30,22 +24,16 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
-      templates: [
+      fields: [
         {
-          label: "Author",
-          name: "author",
-          fields: [
-            {
-              type: "text",
-              label: "Name",
-              name: "name",
-            },
-            {
-              type: "text",
-              label: "Avatar",
-              name: "avatar",
-            },
-          ],
+          type: "string",
+          label: "Name",
+          name: "name",
+        },
+        {
+          type: "string",
+          label: "Avatar",
+          name: "avatar",
         },
       ],
     },
@@ -53,64 +41,65 @@ export default defineSchema({
       label: "Pages",
       name: "pages",
       path: "content/pages",
-      templates: [
+      fields: [
         {
-          label: "Page",
-          name: "page",
-          fields: [
+          type: "object",
+          list: true,
+          name: "blocks",
+          label: "Sections",
+          templates: [
             {
-              type: "blocks",
-              name: "blocks",
-              label: "Sections",
-              templates: [
+              name: "raw",
+              label: "Raw Data",
+              fields: [
                 {
-                  name: "raw",
-                  label: "Raw Data",
-                  fields: [
-                    {
-                      type: "text",
-                      label: "Description",
-                      name: "description",
-                    },
-                  ],
+                  type: "string",
+                  label: "Description",
+                  name: "description",
+                },
+              ],
+            },
+            {
+              name: "content",
+              label: "Content",
+              fields: [
+                {
+                  type: "string",
+                  ui: {
+                    component: "textarea",
+                  },
+                  label: "Body",
+                  name: "body",
                 },
                 {
-                  name: "content",
-                  label: "Content",
-                  fields: [
-                    {
-                      type: "textarea",
-                      label: "Body",
-                      name: "body",
-                    },
-                    {
-                      type: "select",
-                      label: "Color",
-                      name: "color",
-                      options: ["default", "tint", "primary"],
-                    },
-                  ],
+                  type: "string",
+                  label: "Color",
+                  name: "color",
+                  options: ["default", "tint", "primary"],
+                },
+              ],
+            },
+            {
+              name: "image",
+              label: "Image",
+              fields: [
+                {
+                  type: "string",
+                  label: "Heading",
+                  name: "heading",
                 },
                 {
-                  name: "image",
-                  label: "Image",
-                  fields: [
-                    {
-                      type: "text",
-                      label: "Heading",
-                      name: "heading",
-                    },
-                    {
-                      type: "textarea",
-                      label: "Image Description",
-                      name: "imgDescription",
-                    },
-                    {
-                      type: "text",
-                      label: "Image src",
-                      name: "src",
-                    },
-                  ],
+                  type: "string",
+                  ui: {
+                    component: "textarea",
+                  },
+                  label: "Image Description",
+                  name: "imgDescription",
+                },
+                {
+                  type: "string",
+                  label: "Image src",
+                  name: "src",
                 },
               ],
             },

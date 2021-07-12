@@ -3,7 +3,7 @@ import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall } from "tina-graphql-gateway";
 import { SidebarPlaceholder } from "./helper-components";
 import { createClient } from "../utils";
-import { useGraphqlForms } from "tina-graphql-gateway";
+import { unstable_useGraphQLForms } from "tina-graphql-gateway";
 import { LoadingPage } from "./Spinner";
 
 /**
@@ -38,7 +38,7 @@ const TinaWrapper = (props) => {
 };
 
 const Inner = (props) => {
-  const [payload, isLoading] = useGraphqlForms({
+  const [payload, isLoading] = unstable_useGraphQLForms({
     query: (gql) => gql(props.query),
     variables: props.variables || {},
   });
