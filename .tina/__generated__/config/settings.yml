@@ -20,7 +20,7 @@ sections:
     new_doc_ext: md
   - label: Marketing Pages
     name: marketingPages
-    path: content/marketing-pages
+    path: content/pages
     templates:
       - landingPage
     type: directory
