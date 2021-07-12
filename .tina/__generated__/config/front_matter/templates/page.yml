@@ -1,10 +1,10 @@
 ---
-label: Landing Page
-name: landingPage
+label: Page
+name: page
 fields:
   - name: blocks
     label: Blocks
     type: blocks
     template_types:
-      - message
+      - content
       - image
