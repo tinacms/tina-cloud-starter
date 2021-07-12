@@ -21,7 +21,7 @@ blocks:
 
 
       You're looking at the main landing page, it's a markdown file which you
-      can find at "content/marketing-pages/index.md".
+      can find at "content/pages/index.md".
 
 
       This page is admittedly pretty boring, but what's neat about it is that
@@ -34,4 +34,3 @@ blocks:
       if you can figure out how to build your own pages and templates.
 _template: landingPage
 ---
-
