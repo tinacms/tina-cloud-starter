@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import Image from "next/image";
 import type { Page_Doc_Data } from "../.tina/__generated__/types";
 import { Content } from "./blocks/content";
+import { RawRenderer } from "./blocks/rawRenderer";
 
 export const Page = (props: Page_Doc_Data) => {
   return (
@@ -27,6 +28,8 @@ export const Page = (props: Page_Doc_Data) => {
                     />
                   </React.Fragment>
                 );
+              case "Raw_Data":
+                return <RawRenderer rawData={props} data={block} index={i} />;
               default:
                 return null;
             }

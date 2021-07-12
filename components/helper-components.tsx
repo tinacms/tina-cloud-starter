@@ -15,19 +15,7 @@ export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
       </Head>
       <Nav />
       {props.children}
-      <RawRenderer data={props.data} />
     </>
-  );
-};
-
-export const RawRenderer = ({ data }) => {
-  return (
-    <details>
-      <summary>Raw JSON</summary>
-      <pre>
-        <code>{JSON.stringify(data, null, 2)}</code>
-      </pre>
-    </details>
   );
 };
 

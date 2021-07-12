@@ -306,6 +306,11 @@ export type Pages_Document = Node & Document & {
   form?: Maybe<Pages_Form>;
 };
 
+export type Raw_Data = {
+  __typename?: 'Raw_Data';
+  description?: Maybe<Scalars['String']>;
+};
+
 export type Content_Data = {
   __typename?: 'Content_Data';
   body?: Maybe<Scalars['String']>;
@@ -318,12 +323,18 @@ export type Image_Data = {
   src?: Maybe<Scalars['String']>;
 };
 
-export type Page_Blocks_Data = Content_Data | Image_Data;
+export type Page_Blocks_Data = Raw_Data | Content_Data | Image_Data;
 
 export type Page_Doc_Data = {
   __typename?: 'Page_Doc_Data';
   blocks?: Maybe<Array<Maybe<Page_Blocks_Data>>>;
   _body?: Maybe<Scalars['String']>;
+};
+
+export type Raw_Values = {
+  __typename?: 'Raw_Values';
+  description?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
 };
 
 export type Content_Values = {
@@ -340,13 +351,22 @@ export type Image_Values = {
   _template?: Maybe<Scalars['String']>;
 };
 
-export type Page_Blocks_Values = Content_Values | Image_Values;
+export type Page_Blocks_Values = Raw_Values | Content_Values | Image_Values;
 
 export type Page_Doc_Values = {
   __typename?: 'Page_Doc_Values';
   blocks?: Maybe<Array<Maybe<Page_Blocks_Values>>>;
   _body?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
+};
+
+export type Raw_FormFieldsUnion = TextField;
+
+export type Raw_Form = {
+  __typename?: 'Raw_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<Raw_FormFieldsUnion>>>;
 };
 
 export type Content_FormFieldsUnion = TextareaField;
@@ -369,6 +389,7 @@ export type Image_Form = {
 
 export type Page_Blocks_BlocksFieldTemplates = {
   __typename?: 'Page_Blocks_BlocksFieldTemplates';
+  raw?: Maybe<Raw_Form>;
   content?: Maybe<Content_Form>;
   image?: Maybe<Image_Form>;
 };
@@ -391,6 +412,10 @@ export type Page_Doc_Form = {
   fields?: Maybe<Array<Maybe<Page_Doc_FormFieldsUnion>>>;
 };
 
+export type Raw_Input = {
+  description?: Maybe<Scalars['String']>;
+};
+
 export type Content_Input = {
   body?: Maybe<Scalars['String']>;
 };
@@ -402,6 +427,7 @@ export type Image_Input = {
 };
 
 export type Blocks_Input = {
+  raw?: Maybe<Raw_Input>;
   content?: Maybe<Content_Input>;
   image?: Maybe<Image_Input>;
 };
