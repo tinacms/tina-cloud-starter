@@ -52,7 +52,7 @@ export default defineSchema({
     {
       label: "Marketing Pages",
       name: "marketingPages",
-      path: "content/marketing-pages",
+      path: "content/pages",
       templates: [
         {
           label: "Landing Page",

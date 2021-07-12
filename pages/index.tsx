@@ -18,7 +18,7 @@ export default function HomePage(
 export const query = `#graphql
   query ContentQuery {
     # "index.md" is _relative_ to the "Marketing Pages" path property in your schema definition
-    # you can inspect this file at "content/marketing-pages/index.md"
+    # you can inspect this file at "content/pages/index.md"
     getMarketingPagesDocument(relativePath: "index.md") {
       data {
         __typename
