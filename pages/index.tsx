@@ -1,5 +1,5 @@
-import { Page } from "../components/page";
-import { Wrapper } from "../components/helper-components";
+import { Blocks } from "../components/blocks";
+import { Wrapper } from "../components/wrapper";
 import type { PagesDocument } from "../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../utils";
 
@@ -7,11 +7,9 @@ export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
   return (
-    <>
-      <Wrapper data={props.data.getPagesDocument.data}>
-        <Page {...props.data.getPagesDocument.data} />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Blocks {...props.data.getPagesDocument.data} />
+    </Wrapper>
   );
 }
 
@@ -30,11 +28,6 @@ export const query = `#graphql
           ... on PagesBlocksContent {
 						body
             color
-          }
-          ... on PagesBlocksImage {
-						heading
-            imgDescription
-            src
           }
         }
       }

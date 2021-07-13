@@ -132,53 +132,6 @@
                 "blocks",
                 "content"
               ]
-            },
-            {
-              "name": "image",
-              "label": "Image",
-              "fields": [
-                {
-                  "type": "string",
-                  "label": "Heading",
-                  "name": "heading",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "image",
-                    "heading"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "ui": {
-                    "component": "textarea"
-                  },
-                  "label": "Image Description",
-                  "name": "imgDescription",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "image",
-                    "imgDescription"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "Image src",
-                  "name": "src",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "image",
-                    "src"
-                  ]
-                }
-              ],
-              "namespace": [
-                "pages",
-                "blocks",
-                "image"
-              ]
             }
           ],
           "namespace": [
