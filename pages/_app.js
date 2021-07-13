@@ -14,37 +14,15 @@ function InnerApp({ Component, pageProps }) {
         <TinaWrapper {...pageProps}>
           {(props) => <Component {...props} />}
         </TinaWrapper>
-        <EditToggle />
       </>
     );
   }
   return (
     <>
       <Component {...pageProps} />
-      <EditToggle />
     </>
   );
 }
-
-const EditToggle = () => {
-  const { edit, setEdit } = useEditState();
-  return (
-    <>
-      {(Number(process.env.NEXT_PUBLIC_SHOW_EDIT_BTN) || edit) && (
-        <>
-          <button
-            onClick={() => {
-              setEdit(!edit);
-            }}
-            className=""
-          >
-            {edit ? "Exit edit mode" : "Enter edit mode"}
-          </button>
-        </>
-      )}
-    </>
-  );
-};
 
 // Our app is wrapped with edit provider
 function App(props) {
