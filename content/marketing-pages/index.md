@@ -32,11 +32,6 @@ blocks:
 
       We've built a few pages for you to get started, take a look around and see
       if you can figure out how to build your own pages and templates.
-  - template: image
-    heading: Tina Flies!
-    imgDescription: 'She may be a fat lard, but this fat lard can fly!'
-    src: >-
-      http://res.cloudinary.com/dcpinxzoo/image/upload/v1624397660/flying-tina_tot1a8.png
 _template: landingPage
 ---
 
