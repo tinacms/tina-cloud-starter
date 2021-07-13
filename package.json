@@ -23,6 +23,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "next": "10.0.5",
+    "next-svgr": "^0.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^17.0.2",

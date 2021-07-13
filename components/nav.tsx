@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "./container";
+import TinaIconSvg from "../public/tina.svg";
 
 export const Nav = () => {
   // If we're on an admin path, other links should also link to their admin paths
@@ -24,10 +25,13 @@ export const Nav = () => {
   ];
 
   return (
-    <Container className="flex justify-between" size="small">
-      <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold">
+    <Container className="flex items-center justify-between" size="small">
+      <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
         <Link href="/" passHref>
-          <a>Tina Cloud Starter</a>
+          <a className="flex items-center">
+            <TinaIconSvg className="inline-block mr-2 h-9 w-auto text-orange-500" />{" "}
+            Tina Starter
+          </a>
         </Link>
       </h4>
       <ul className="flex gap-8">
@@ -35,7 +39,7 @@ export const Nav = () => {
           return (
             <li>
               <Link href={`${prefix}/${item.href}`} passHref>
-                <a className="text-base tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-200">
+                <a className="text-base tracking-wide font-regular transition duration-150 ease-out text-gray-600">
                   {item.name}
                 </a>
               </Link>
