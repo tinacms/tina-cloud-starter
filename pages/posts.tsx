@@ -13,7 +13,6 @@ export default function HomePage(
       <Container size="large">
         {posts.map((item) => {
           const post = item.node;
-          console.log(post);
           return (
             <a
               key={post.id}
