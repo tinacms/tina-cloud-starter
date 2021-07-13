@@ -5,6 +5,9 @@ fields:
   - type: text
     label: Title
     name: title
+  - name: hero
+    type: file
+    label: Hero
   - name: author
     label: Author
     type: select

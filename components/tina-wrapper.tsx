@@ -11,10 +11,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { TinaCloudProvider } from "tina-graphql-gateway";
-import React from "react";
-import { useGraphqlForms } from "tina-graphql-gateway";
-import { LoadingPage } from "./Spinner";
+import { TinaCloudProvider } from 'tina-graphql-gateway'
+import React from 'react'
+import { useGraphqlForms } from 'tina-graphql-gateway'
+import { LoadingPage } from './Spinner'
+import { TinaCloudCloudinaryMediaStore } from 'next-tinacms-cloudinary'
 
 /**
  * This gets loaded dynamically in "pages/_app.js"
@@ -27,17 +28,18 @@ const TinaWrapper = (props) => {
       branch="main"
       isLocalClient={Boolean(Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT))}
       organization={process.env.NEXT_PUBLIC_ORGANIZATION_NAME}
+      mediaStore={TinaCloudCloudinaryMediaStore}
     >
-      {props.query ? <Inner {...props} /> : props.children(props)}
+      <Inner {...props} />
     </TinaCloudProvider>
-  );
-};
+  )
+}
 
 const Inner = (props) => {
   const [payload, isLoading] = useGraphqlForms({
     query: (gql) => gql(props.query),
     variables: props.variables || {},
-  });
+  })
   return (
     <>
       {isLoading ? (
@@ -47,7 +49,7 @@ const Inner = (props) => {
         props.children({ ...props, data: payload })
       )}
     </>
-  );
-};
+  )
+}
 
-export default TinaWrapper;
+export default TinaWrapper
