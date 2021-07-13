@@ -8,6 +8,6 @@ fields:
   - type: textarea
     label: Image Description
     name: imgDescription
-  - type: text
+  - type: file
     label: Image src
     name: src

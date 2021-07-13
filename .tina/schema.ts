@@ -17,6 +17,11 @@ export default defineSchema({
               name: "title",
             },
             {
+              name: 'hero',
+              type: 'image',
+              label: 'Hero',
+            },
+            {
               type: "reference",
               label: "Author",
               name: "author",
@@ -94,7 +99,7 @@ export default defineSchema({
                       name: "imgDescription",
                     },
                     {
-                      type: "text",
+                      type: "image",
                       label: "Image src",
                       name: "src",
                     },

@@ -101,18 +101,27 @@ type Posts_Document implements Node & Document {
 
 type Article_Doc_Data {
   title: String
+  hero: String
   author: Authors_Document
   _body: String
 }
 
 type Article_Doc_Values {
   title: String
+  hero: String
   author: Reference
   _body: String
   _template: String
 }
 
 type TextField implements FormField {
+  name: String
+  label: String
+  component: String
+  description: String
+}
+
+type FileField implements FormField {
   name: String
   label: String
   component: String
@@ -134,7 +143,7 @@ type TextareaField implements FormField {
   description: String
 }
 
-union Article_Doc_FormFieldsUnion = TextField | SelectField | TextareaField
+union Article_Doc_FormFieldsUnion = TextField | FileField | SelectField | TextareaField
 
 type Article_Doc_Form {
   label: String
@@ -144,6 +153,7 @@ type Article_Doc_Form {
 
 input Article_Doc_Input {
   title: String
+  hero: String
   author: String
   _body: String
 }
@@ -258,7 +268,7 @@ type Message_Form {
   fields: [Message_FormFieldsUnion]
 }
 
-union Image_FormFieldsUnion = TextField | TextareaField
+union Image_FormFieldsUnion = TextField | TextareaField | FileField
 
 type Image_Form {
   label: String
