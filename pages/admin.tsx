@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-
-import { Wrapper } from "../components/helper-components";
+import { Container } from "../components/container";
+import { Wrapper } from "../components/wrapper";
 import { useEditState } from "../utils/editState";
 
 const GoToEditPage: React.FC = () => {
@@ -12,8 +12,10 @@ const GoToEditPage: React.FC = () => {
     router.back();
   }, []);
   return (
-    <Wrapper data={{}}>
-      <div>Going into edit mode...</div>
+    <Wrapper>
+      <Container size="large prose prose-xl">
+        <h2>Going into edit mode...</h2>
+      </Container>
     </Wrapper>
   );
 };
