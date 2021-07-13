@@ -53,6 +53,7 @@ This is a [TinaCMS](https://tina.io)-enabled Next.js app, so you can edit your c
 - Git
 - [Node.js Active LTS](https://nodejs.org/en/about/releases/)
 - Yarn
+- [Cloudinary](https://cloudinary.com) account for media support
 
 ## Fork this repository
 
@@ -129,7 +130,13 @@ In the `env.local` file set:
 - `NEXT_PUBLIC_USE_LOCAL_CLIENT` to `0`.
 - `NEXT_PUBLIC_ORGANIZATION_NAME` to your Tina Cloud organization name
 - `NEXT_PUBLIC_TINA_CLIENT_ID` to the Client ID displayed in your Tina Cloud App.
-- `NEXT_PUBLIC_SHOW_EDIT_BTN` to `0` or `1`, `0` means there is no "enter edit mode" and you will have to visit [`/admin`](http://localhost/admin)  to enter edit mode.
+- `NEXT_PUBLIC_SHOW_EDIT_BTN` to `0` or `1`, `0` means there is no "enter edit 
+- `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` to your Cloudinary cloud name
+- `NEXT_PUBLIC_CLOUDINARY_API_KEY` to your Cloudinary API key
+- `CLOUDINARY_API_SECRET` to your Cloudinary API secret
+mode" and you will have to visit [`/admin`](http://localhost/admin)  to enter edit mode.
+
+> **NOTE:** You can read more about the `next-tinacms-cloudinary` package in our[blog](https://tina.io/blog/manage-your-media-with-cloudinary/) and [docs](https://tina.io/packages/next-tinacms-cloudinary/
 
 Restart your server and run `yarn dev` again.
 
