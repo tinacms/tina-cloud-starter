@@ -56,6 +56,13 @@ module.exports = {
       xl: "1500px",
       "2xl": "1800px",
     },
+    borderWidth: {
+      DEFAULT: "3px",
+      0: "0",
+      2: "2px",
+      3: "3px",
+      4: "4px",
+    },
     extend: {
       spacing: {
         128: "32rem",
