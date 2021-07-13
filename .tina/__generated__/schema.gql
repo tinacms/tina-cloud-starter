@@ -138,13 +138,7 @@ type PagesBlocksContent {
   color: String
 }
 
-type PagesBlocksImage {
-  heading: String
-  imgDescription: String
-  src: String
-}
-
-union PagesBlocks = PagesBlocksRaw | PagesBlocksContent | PagesBlocksImage
+union PagesBlocks = PagesBlocksRaw | PagesBlocksContent
 
 type Pages {
   blocks: [PagesBlocks]
@@ -203,16 +197,9 @@ input PagesBlocksContentMutation {
   color: String
 }
 
-input PagesBlocksImageMutation {
-  heading: String
-  imgDescription: String
-  src: String
-}
-
 input PagesBlocksMutation {
   raw: PagesBlocksRawMutation
   content: PagesBlocksContentMutation
-  image: PagesBlocksImageMutation
 }
 
 input PagesMutation {

@@ -79,30 +79,6 @@ export default unstable_defineSchema({
                 },
               ],
             },
-            {
-              name: "image",
-              label: "Image",
-              fields: [
-                {
-                  type: "string",
-                  label: "Heading",
-                  name: "heading",
-                },
-                {
-                  type: "string",
-                  ui: {
-                    component: "textarea",
-                  },
-                  label: "Image Description",
-                  name: "imgDescription",
-                },
-                {
-                  type: "string",
-                  label: "Image src",
-                  name: "src",
-                },
-              ],
-            },
           ],
         },
       ],
