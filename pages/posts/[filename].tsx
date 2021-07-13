@@ -1,5 +1,5 @@
 import { BlogPost } from "../../components/post";
-import type { Posts_Document } from "../../.tina/__generated__/types";
+import type { PostsDocument } from "../../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../../utils";
 import { Wrapper } from "../../components/wrapper";
 
@@ -42,7 +42,7 @@ export const getStaticProps = async ({ params }) => {
   const variables = { relativePath: `${params.filename}.md` };
   return {
     props: {
-      data: await client.request<{ getPostsDocument: Posts_Document }>(query, {
+      data: await client.request<{ getPostsDocument: PostsDocument }>(query, {
         variables,
       }),
       variables,
@@ -60,7 +60,7 @@ export const getStaticProps = async ({ params }) => {
  */
 export const getStaticPaths = async () => {
   const postsListData = await client.request<{
-    getPostsList: Posts_Document[];
+    getPostsList: PostsDocument[];
   }>(
     (gql) => gql`
       {
