@@ -25,28 +25,30 @@ export const Nav = () => {
   ];
 
   return (
-    <Container className="flex items-center justify-between" size="small">
-      <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
-        <Link href="/" passHref>
-          <a className="flex items-center">
-            <TinaIconSvg className="inline-block mr-2 h-9 w-auto text-orange-500" />{" "}
-            Tina Starter
-          </a>
-        </Link>
-      </h4>
-      <ul className="flex gap-8">
-        {navLinks.map((item) => {
-          return (
-            <li>
-              <Link href={`${prefix}/${item.href}`} passHref>
-                <a className="text-base tracking-wide font-regular transition duration-150 ease-out text-gray-600">
-                  {item.name}
-                </a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+    <Container className="" size="small">
+      <div className="flex items-center justify-between border-b-2 border-gray-100 pb-6 -mb-6">
+        <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
+          <Link href="/" passHref>
+            <a className="flex items-center">
+              <TinaIconSvg className="inline-block mr-2 h-9 w-auto text-orange-500" />{" "}
+              Tina Starter
+            </a>
+          </Link>
+        </h4>
+        <ul className="flex gap-8">
+          {navLinks.map((item) => {
+            return (
+              <li>
+                <Link href={`${prefix}/${item.href}`} passHref>
+                  <a className="text-base tracking-wide font-regular transition duration-150 ease-out text-gray-600 opacity-70 hover:opacity-100">
+                    {item.name}
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </Container>
   );
 };
