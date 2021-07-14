@@ -42,10 +42,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "String"
+              }
             }
           }
         },
@@ -57,10 +60,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "String"
+              }
             }
           }
         },
@@ -87,7 +93,31 @@
             }
           ],
           "type": {
-            "kind": "ListType",
+            "kind": "NonNullType",
+            "type": {
+              "kind": "ListType",
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "String"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "path"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
             "type": {
               "kind": "NamedType",
               "name": {
@@ -101,29 +131,17 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "path"
-          },
-          "arguments": [],
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
-            }
-          }
-        },
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
             "value": "relativePath"
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "String"
+              }
             }
           }
         },
@@ -135,10 +153,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "String"
+              }
             }
           }
         },
@@ -150,10 +171,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "String"
+              }
             }
           }
         },
@@ -165,10 +189,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "Collection"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "Collection"
+              }
             }
           }
         }
@@ -294,39 +321,6 @@
       "kind": "InterfaceTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": ""
-      },
-      "name": {
-        "kind": "Name",
-        "value": "Document"
-      },
-      "interfaces": [],
-      "directives": [],
-      "fields": [
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
-            "value": "id"
-          },
-          "arguments": [],
-          "type": {
-            "kind": "NonNullType",
-            "type": {
-              "kind": "NamedType",
-              "name": {
-                "kind": "Name",
-                "value": "ID"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "kind": "InterfaceTypeDefinition",
-      "description": {
-        "kind": "StringValue",
         "value": "A relay-compliant pagination connection"
       },
       "name": {
@@ -406,14 +400,17 @@
           },
           "arguments": [],
           "type": {
-            "kind": "ListType",
+            "kind": "NonNullType",
             "type": {
-              "kind": "NonNullType",
+              "kind": "ListType",
               "type": {
-                "kind": "NamedType",
-                "name": {
-                  "kind": "Name",
-                  "value": "Collection"
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "Collection"
+                  }
                 }
               }
             }
@@ -1367,10 +1364,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "SystemInfo"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "SystemInfo"
+              }
             }
           }
         },
@@ -1643,10 +1643,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "SystemInfo"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "SystemInfo"
+              }
             }
           }
         },
@@ -2206,10 +2209,13 @@
           },
           "arguments": [],
           "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "SystemInfo"
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "SystemInfo"
+              }
             }
           }
         },
