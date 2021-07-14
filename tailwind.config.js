@@ -16,6 +16,7 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
+      gray: colors.gray,
       blue: {
         50: "#DCEEFF",
         100: "#B4DBFF",
@@ -28,20 +29,6 @@ module.exports = {
         800: "#144696",
         900: "#1D2C6C",
         1000: "#241748",
-      },
-      gray: {
-        50: "#F6F6F9",
-        100: "#EDECF3",
-        200: "#E1DDEC",
-        250: "#C9C5D5",
-        300: "#b2adbe",
-        400: "#918c9e",
-        500: "#716c7f",
-        600: "#565165",
-        700: "#433e52",
-        800: "#363145",
-        900: "#252336",
-        1000: "#1c1b2e",
       },
       orange: {
         400: "#EB6337",
