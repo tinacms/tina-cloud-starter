@@ -79,6 +79,18 @@ module.exports = {
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
             },
+            code: {
+              backgroundColor: theme("colors.gray.100"),
+              padding: "0.25rem",
+              borderRadius: "3px",
+              margin: "-0.25rem 1px",
+            },
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
           },
         },
         tint: {
@@ -114,7 +126,10 @@ module.exports = {
             h2: { color: theme("colors.gray.100") },
             h3: { color: theme("colors.gray.100") },
             h4: { color: theme("colors.gray.100") },
-            code: { color: theme("colors.gray.100") },
+            code: {
+              color: theme("colors.gray.100"),
+              backgroundColor: theme("colors.gray.1000"),
+            },
             "a code": { color: theme("colors.gray.100") },
             pre: {
               color: theme("colors.gray.200"),
