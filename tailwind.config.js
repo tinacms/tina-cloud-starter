@@ -16,7 +16,21 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
-      gray: colors.gray,
+      gray: {
+        50: "#F6F6F9",
+        100: "#EDECF3",
+        150: "#E6E3EF",
+        200: "#E1DDEC",
+        250: "#C9C5D5",
+        300: "#b2adbe",
+        400: "#918c9e",
+        500: "#716c7f",
+        600: "#565165",
+        700: "#433e52",
+        800: "#363145",
+        900: "#252336",
+        1000: "#1c1b2e",
+      },
       blue: {
         50: "#DCEEFF",
         100: "#B4DBFF",
@@ -57,10 +71,67 @@ module.exports = {
       zIndex: {
         "-1": "-1",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              color: theme("colors.gray.700"),
+              backgroundColor: theme("colors.gray.100"),
+              lineHeight: 1.5,
+            },
+          },
+        },
+        tint: {
+          css: {
+            pre: {
+              color: theme("colors.gray.800"),
+              backgroundColor: theme("colors.gray.150"),
+            },
+          },
+        },
+        lg: {
+          css: [
+            {
+              pre: {
+                lineHeight: 1.5,
+              },
+            },
+          ],
+        },
+        dark: {
+          css: {
+            color: theme("colors.gray.300"),
+            '[class~="lead"]': { color: theme("colors.gray.400") },
+            a: { color: theme("colors.gray.100") },
+            strong: { color: theme("colors.gray.100") },
+            "ul > li::before": { backgroundColor: theme("colors.gray.700") },
+            hr: { borderColor: theme("colors.gray.800") },
+            blockquote: {
+              color: theme("colors.gray.100"),
+              borderLeftColor: theme("colors.gray.800"),
+            },
+            h1: { color: theme("colors.gray.100") },
+            h2: { color: theme("colors.gray.100") },
+            h3: { color: theme("colors.gray.100") },
+            h4: { color: theme("colors.gray.100") },
+            code: { color: theme("colors.gray.100") },
+            "a code": { color: theme("colors.gray.100") },
+            pre: {
+              color: theme("colors.gray.200"),
+              backgroundColor: theme("colors.gray.800"),
+            },
+            thead: {
+              color: theme("colors.gray.100"),
+              borderBottomColor: theme("colors.gray.700"),
+            },
+            "tbody tr": { borderBottomColor: theme("colors.gray.800") },
+          },
+        },
+      }),
     },
   },
   variants: {
-    extend: {},
+    extend: { typography: ["tint", "dark"] },
   },
   plugins: [require("@tailwindcss/typography")],
 };
