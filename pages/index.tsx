@@ -3,6 +3,8 @@ import { Wrapper } from "../components/helper-components";
 import type { MarketingPages_Document } from "../.tina/__generated__/types";
 import { LocalClient } from "tina-graphql-gateway";
 
+import { EnvVarForm } from "../components/variables";
+
 export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
   T extends (...args: any) => Promise<infer R> ? R : any;
 
@@ -13,6 +15,7 @@ export default function HomePage(
     <>
       <Wrapper data={props.data.getMarketingPagesDocument.data}>
         <LandingPage {...props.data.getMarketingPagesDocument.data} />
+        <EnvVarForm />
       </Wrapper>
     </>
   );

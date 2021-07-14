@@ -21,12 +21,17 @@ import { LoadingPage } from "./Spinner";
  * if you're on a route that starts with "/admin"
  */
 const TinaWrapper = (props) => {
+
+  // TODO: handle when localStorage is missing
+  const clientID = localStorage.getItem('tinaClientID') ? localStorage.getItem('tinaClientID') : process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
+  const organization = localStorage.getItem('tinaOrganization') ? localStorage.getItem('tinaOrganization') : process.env.NEXT_PUBLIC_ORGANIZATION_NAME;
+  
   return (
     <TinaCloudProvider
-      clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+      clientId={clientID}
       branch="main"
       isLocalClient={Boolean(Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT))}
-      organization={process.env.NEXT_PUBLIC_ORGANIZATION_NAME}
+      organization={organization}
     >
       {props.query ? <Inner {...props} /> : props.children(props)}
     </TinaCloudProvider>
