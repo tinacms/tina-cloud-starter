@@ -2,7 +2,7 @@ import * as React from "react";
 import { Actions } from "../actions";
 import { Section } from "../section";
 
-export const Hero = (data) => {
+export const Hero = ({ data }) => {
   return (
     <Section color={data.color}>
       <div className="w-full pt-20 lg:py-56 lg:text-left">

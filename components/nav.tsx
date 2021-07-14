@@ -45,7 +45,7 @@ export const Nav = () => {
             </Link>
           </h4>
           <ul className="flex gap-8">
-            {navLinks.map((item) => {
+            {navLinks.map((item, i) => {
               const activeItem =
                 item.href === ""
                   ? windowUrl.slice(-1).includes("/")
@@ -54,7 +54,7 @@ export const Nav = () => {
                 ? "border-b-3 border-blue-200"
                 : "";
               return (
-                <li className={listItemClasses}>
+                <li key={item.name} className={listItemClasses}>
                   <Link href={`${prefix}/${item.href}`} passHref>
                     <a className="text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 opacity-70 hover:opacity-100 py-8">
                       {item.name}
