@@ -234,13 +234,36 @@ export type PagesBlocksRaw = {
   description?: Maybe<Scalars['String']>;
 };
 
+export type PagesBlocksHeroActions = {
+  __typename?: 'PagesBlocksHeroActions';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['Boolean']>;
+};
+
+export type PagesBlocksHeroImage = {
+  __typename?: 'PagesBlocksHeroImage';
+  src?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksHero = {
+  __typename?: 'PagesBlocksHero';
+  tagline?: Maybe<Scalars['String']>;
+  headline?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  actions?: Maybe<Array<Maybe<PagesBlocksHeroActions>>>;
+  color?: Maybe<Scalars['String']>;
+  image?: Maybe<PagesBlocksHeroImage>;
+};
+
 export type PagesBlocksContent = {
   __typename?: 'PagesBlocksContent';
   body?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksRaw | PagesBlocksContent;
+export type PagesBlocks = PagesBlocksRaw | PagesBlocksHero | PagesBlocksContent;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -331,6 +354,26 @@ export type PagesBlocksRawMutation = {
   description?: Maybe<Scalars['String']>;
 };
 
+export type PagesBlocksHeroActionsMutation = {
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['Boolean']>;
+};
+
+export type PagesBlocksHeroImageMutation = {
+  src?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksHeroMutation = {
+  tagline?: Maybe<Scalars['String']>;
+  headline?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  actions?: Maybe<Array<Maybe<PagesBlocksHeroActionsMutation>>>;
+  color?: Maybe<Scalars['String']>;
+  image?: Maybe<PagesBlocksHeroImageMutation>;
+};
+
 export type PagesBlocksContentMutation = {
   body?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
@@ -338,6 +381,7 @@ export type PagesBlocksContentMutation = {
 
 export type PagesBlocksMutation = {
   raw?: Maybe<PagesBlocksRawMutation>;
+  hero?: Maybe<PagesBlocksHeroMutation>;
   content?: Maybe<PagesBlocksContentMutation>;
 };
 
