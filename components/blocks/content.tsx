@@ -3,10 +3,10 @@ import Markdown from "react-markdown";
 import { Container } from "../container";
 import { Section } from "../section";
 
-export const Content = ({ data, index }) => {
+export const Content = ({ data }) => {
   return (
     <Section color={data.color}>
-      <Container key={`block-${index}`} className="prose prose-lg" size="large">
+      <Container className="prose prose-lg" size="large">
         <Markdown>{data.body}</Markdown>
       </Container>
     </Section>
