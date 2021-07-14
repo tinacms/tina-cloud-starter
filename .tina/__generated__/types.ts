@@ -19,14 +19,14 @@ export type Scalars = {
 
 export type SystemInfo = {
   __typename?: 'SystemInfo';
-  filename?: Maybe<Scalars['String']>;
-  basename?: Maybe<Scalars['String']>;
-  breadcrumbs?: Maybe<Array<Maybe<Scalars['String']>>>;
-  path?: Maybe<Scalars['String']>;
-  relativePath?: Maybe<Scalars['String']>;
-  extension?: Maybe<Scalars['String']>;
-  template?: Maybe<Scalars['String']>;
-  collection?: Maybe<Collection>;
+  filename: Scalars['String'];
+  basename: Scalars['String'];
+  breadcrumbs: Array<Scalars['String']>;
+  path: Scalars['String'];
+  relativePath: Scalars['String'];
+  extension: Scalars['String'];
+  template: Scalars['String'];
+  collection: Collection;
 };
 
 
@@ -46,10 +46,6 @@ export type Node = {
   id: Scalars['ID'];
 };
 
-export type Document = {
-  id: Scalars['ID'];
-};
-
 /** A relay-compliant pagination connection */
 export type Connection = {
   totalCount: Scalars['Int'];
@@ -58,7 +54,7 @@ export type Connection = {
 export type Query = {
   __typename?: 'Query';
   getCollection: Collection;
-  getCollections?: Maybe<Array<Collection>>;
+  getCollections: Array<Collection>;
   node: Node;
   getDocument: DocumentNode;
   getDocumentList: DocumentConnection;
@@ -180,7 +176,7 @@ export type Posts = {
 export type PostsDocument = Node & {
   __typename?: 'PostsDocument';
   id: Scalars['ID'];
-  sys?: Maybe<SystemInfo>;
+  sys: SystemInfo;
   data: Posts;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
@@ -209,7 +205,7 @@ export type Authors = {
 export type AuthorsDocument = Node & {
   __typename?: 'AuthorsDocument';
   id: Scalars['ID'];
-  sys?: Maybe<SystemInfo>;
+  sys: SystemInfo;
   data: Authors;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
@@ -273,7 +269,7 @@ export type Pages = {
 export type PagesDocument = Node & {
   __typename?: 'PagesDocument';
   id: Scalars['ID'];
-  sys?: Maybe<SystemInfo>;
+  sys: SystemInfo;
   data: Pages;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
