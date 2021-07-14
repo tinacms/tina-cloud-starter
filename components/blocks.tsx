@@ -11,11 +11,23 @@ export const Blocks = (props: Pages) => {
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
               case "PagesBlocksContent":
-                return <Content data={block} index={i} />;
+                return (
+                  <React.Fragment key={i + block.__typename}>
+                    <Content data={block} />
+                  </React.Fragment>
+                );
               case "PagesBlocksHero":
-                return <Hero data={block} index={i} />;
+                return (
+                  <React.Fragment key={i + block.__typename}>
+                    <Hero data={block} />
+                  </React.Fragment>
+                );
               case "PagesBlocksRaw":
-                return <RawRenderer rawData={props} data={block} index={i} />;
+                return (
+                  <React.Fragment key={i + block.__typename}>
+                    <RawRenderer rawData={props} data={block} />
+                  </React.Fragment>
+                );
               default:
                 return null;
             }
