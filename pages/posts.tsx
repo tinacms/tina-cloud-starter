@@ -43,7 +43,9 @@ export default function HomePage(
                   <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
                     Author Name
                   </p>
-                  <span className="font-bold text-gray-200 mx-2">—</span>
+                  <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
+                    —
+                  </span>
                   <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
                     <time dateTime="2020-03-16">Mar 16, 2020</time>
                   </p>

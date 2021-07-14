@@ -65,7 +65,7 @@ export const Nav = () => {
             })}
           </ul>
         </div>
-        <div className="absolute border-b-3 border-gray-50 dark:border-gray-700 w-full bottom-0 left-0 -z-1"></div>
+        <div className="absolute border-b-3 border-gray-50 dark:border-gray-700 bottom-0 left-4 right-4 -z-1"></div>
       </Container>
     </div>
   );
