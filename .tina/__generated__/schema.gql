@@ -6,14 +6,14 @@ scalar Reference
 scalar JSON
 
 type SystemInfo {
-  filename: String
-  basename: String
-  breadcrumbs(excludeExtension: Boolean): [String]
-  path: String
-  relativePath: String
-  extension: String
-  template: String
-  collection: Collection
+  filename: String!
+  basename: String!
+  breadcrumbs(excludeExtension: Boolean): [String!]!
+  path: String!
+  relativePath: String!
+  extension: String!
+  template: String!
+  collection: Collection!
 }
 
 type PageInfo {
@@ -28,11 +28,6 @@ interface Node {
   id: ID!
 }
 
-""""""
-interface Document {
-  id: ID!
-}
-
 """A relay-compliant pagination connection"""
 interface Connection {
   totalCount: Int!
@@ -40,7 +35,7 @@ interface Connection {
 
 type Query {
   getCollection(collection: String): Collection!
-  getCollections: [Collection!]
+  getCollections: [Collection!]!
   node(id: String): Node!
   getDocument(collection: String, relativePath: String): DocumentNode!
   getDocumentList(before: String, after: String, first: Int, last: Int): DocumentConnection!
@@ -86,7 +81,7 @@ type Posts {
 
 type PostsDocument implements Node {
   id: ID!
-  sys: SystemInfo
+  sys: SystemInfo!
   data: Posts!
   form: JSON!
   values: JSON!
@@ -111,7 +106,7 @@ type Authors {
 
 type AuthorsDocument implements Node {
   id: ID!
-  sys: SystemInfo
+  sys: SystemInfo!
   data: Authors!
   form: JSON!
   values: JSON!
@@ -166,7 +161,7 @@ type Pages {
 
 type PagesDocument implements Node {
   id: ID!
-  sys: SystemInfo
+  sys: SystemInfo!
   data: Pages!
   form: JSON!
   values: JSON!
@@ -247,4 +242,8 @@ input PagesMutation {
   blocks: [PagesBlocksMutation]
 }
 
+schema {
+  query: Query
+  mutation: Mutation
+}
   
