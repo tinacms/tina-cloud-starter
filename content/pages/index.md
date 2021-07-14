@@ -9,7 +9,10 @@ blocks:
       `components/page`, and puts them all together in `pages/index.tsx`, all
       based on a schema defined in `.tina/schema.ts`.
     _template: content
-  - description: ""
-    _template: raw
+  - description: >-
+      When you update page data you'll be able to see updates in real time in
+      the raw data below.
     color: tint
+    _template: raw
 ---
+
