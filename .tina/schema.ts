@@ -57,6 +57,12 @@ export default unstable_defineSchema({
                   label: "Description",
                   name: "description",
                 },
+                {
+                  type: "string",
+                  label: "Color",
+                  name: "color",
+                  options: ["default", "tint", "primary"],
+                },
               ],
             },
             {
