@@ -7,7 +7,9 @@ export const Content = ({ data }) => {
   return (
     <Section color={data.color}>
       <Container
-        className={`prose prose-lg ${data.color === "primary" && `prose-dark`}`}
+        className={`prose prose-lg dark:prose-dark ${
+          data.color === "primary" && `prose-dark`
+        }`}
         size="large"
       >
         <Markdown>{data.body}</Markdown>

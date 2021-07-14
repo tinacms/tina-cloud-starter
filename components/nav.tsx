@@ -33,10 +33,10 @@ export const Nav = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white">
+    <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-700 dark:to-gray-800">
       <Container className="py-0 relative z-10">
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
+          <h4 className="text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
             <Link href="/" passHref>
               <a className="flex items-center">
                 <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
@@ -56,7 +56,7 @@ export const Nav = () => {
               return (
                 <li key={item.name} className={listItemClasses}>
                   <Link href={`${prefix}/${item.href}`} passHref>
-                    <a className="text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 opacity-70 hover:opacity-100 py-8">
+                    <a className="text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-100 opacity-70 hover:opacity-100 py-8">
                       {item.name}
                     </a>
                   </Link>
@@ -65,7 +65,7 @@ export const Nav = () => {
             })}
           </ul>
         </div>
-        <div className="absolute border-b-3 border-gray-50 w-full bottom-0 left-0 -z-1"></div>
+        <div className="absolute border-b-3 border-gray-50 dark:border-gray-700 w-full bottom-0 left-0 -z-1"></div>
       </Container>
     </div>
   );

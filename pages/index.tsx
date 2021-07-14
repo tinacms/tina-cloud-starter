@@ -24,6 +24,7 @@ export const query = `#graphql
 					__typename
           ... on PagesBlocksRaw {
             description
+            color
           }
           ... on PagesBlocksContent {
 						body

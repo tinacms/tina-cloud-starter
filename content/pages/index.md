@@ -11,4 +11,5 @@ blocks:
     _template: content
   - description: ""
     _template: raw
+    color: tint
 ---

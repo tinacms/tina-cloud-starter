@@ -126,6 +126,7 @@ type AuthorsConnection implements Connection {
 
 type PagesBlocksRaw {
   description: String
+  color: String
 }
 
 type PagesBlocksHeroActions {
@@ -205,6 +206,7 @@ input AuthorsMutation {
 
 input PagesBlocksRawMutation {
   description: String
+  color: String
 }
 
 input PagesBlocksHeroActionsMutation {
