@@ -56,6 +56,16 @@
                   "type": "string",
                   "label": "Description",
                   "name": "description"
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    "default",
+                    "tint",
+                    "primary"
+                  ]
                 }
               ]
             },
