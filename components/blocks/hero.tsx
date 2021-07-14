@@ -9,7 +9,7 @@ export const Hero = ({ data }) => {
       <Container size="large" className="grid grid-cols-3">
         <div className="">
           {data.tagline && (
-            <h2 className="w-full	mb-5 text-md font-bold tracking-wide title-font">
+            <h2 className="w-full	mb-5 text-md font-bold tracking-wide title-font dark:text-gray-50">
               {data.tagline}
             </h2>
           )}
@@ -29,7 +29,7 @@ export const Hero = ({ data }) => {
             </h3>
           )}
           {data.text && (
-            <p className="w-full max-w-xl mb-8 opacity-80 transition duration-150 ease-out text-left text-lg leading-relaxed lg:text-xl lg:leading-relaxed">
+            <p className="w-full max-w-xl mb-8 opacity-80 transition duration-150 ease-out text-left text-lg leading-relaxed lg:text-xl lg:leading-relaxed dark:text-gray-50">
               {data.text}
             </p>
           )}
