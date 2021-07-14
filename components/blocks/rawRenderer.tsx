@@ -6,9 +6,9 @@ export const RawRenderer = ({ rawData, data }) => {
   return (
     <Section color={data.color}>
       <Container
-        className={`prose prose-lg ${
-          data.color === "tint" && `prose-tint`
-        } dark:prose-dark`}
+        className={`prose prose-lg ${data.color === "tint" && `prose-tint`} ${
+          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
+        }`}
         size="large"
       >
         {data.description && <p>{data.description}</p>}
