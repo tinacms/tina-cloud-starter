@@ -9,8 +9,10 @@ export const Wrapper = (props: { children: React.ReactNode }) => {
         <title>Tina</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Nav />
-      {props.children}
+      <div className="min-h-screen flex flex-col">
+        <Nav />
+        {props.children}
+      </div>
     </>
   );
 };

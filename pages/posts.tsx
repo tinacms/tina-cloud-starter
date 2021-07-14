@@ -11,7 +11,7 @@ export default function HomePage(
 
   return (
     <Wrapper>
-      <Section>
+      <Section className="flex-1">
         <Container size="large">
           {posts.map((item) => {
             const post = item.node;
