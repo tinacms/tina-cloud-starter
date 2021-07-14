@@ -84,6 +84,22 @@
                     "raw",
                     "description"
                   ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    "default",
+                    "tint",
+                    "primary"
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "raw",
+                    "color"
+                  ]
                 }
               ],
               "namespace": [

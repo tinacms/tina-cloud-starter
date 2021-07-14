@@ -228,6 +228,7 @@ export type AuthorsConnection = Connection & {
 export type PagesBlocksRaw = {
   __typename?: 'PagesBlocksRaw';
   description?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActions = {
@@ -348,6 +349,7 @@ export type AuthorsMutation = {
 
 export type PagesBlocksRawMutation = {
   description?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActionsMutation = {
