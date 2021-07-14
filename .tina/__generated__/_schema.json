@@ -93,6 +93,163 @@
               ]
             },
             {
+              "name": "hero",
+              "label": "Hero",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Tagline",
+                  "name": "tagline",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "tagline"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Headline",
+                  "name": "headline",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "headline"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Text",
+                  "name": "text",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "text"
+                  ]
+                },
+                {
+                  "label": "Actions",
+                  "name": "actions",
+                  "type": "object",
+                  "list": true,
+                  "fields": [
+                    {
+                      "label": "Label",
+                      "name": "label",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "actions",
+                        "label"
+                      ]
+                    },
+                    {
+                      "label": "Type",
+                      "name": "type",
+                      "type": "string",
+                      "options": [
+                        {
+                          "label": "Button",
+                          "value": "button"
+                        },
+                        {
+                          "label": "Link",
+                          "value": "link"
+                        }
+                      ],
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "actions",
+                        "type"
+                      ]
+                    },
+                    {
+                      "label": "Icon",
+                      "name": "icon",
+                      "type": "boolean",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "actions",
+                        "icon"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "actions"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    "default",
+                    "tint",
+                    "primary"
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "color"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "label": "Image",
+                  "name": "image",
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Image Source",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "image",
+                        "src"
+                      ]
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Alt Text",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "image",
+                        "alt"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "hero",
+                    "image"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "hero"
+              ]
+            },
+            {
               "name": "content",
               "label": "Content",
               "fields": [

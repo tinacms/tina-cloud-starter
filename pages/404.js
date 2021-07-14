@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wrapper } from "../components/helper-components";
+import { Wrapper } from "../components/wrapper";
 
 export default function FourOhFour() {
   return (
