@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 
-export const Actions = ({ actions }) => {
+export const Actions = ({ color = "default", actions }) => {
   return (
     <div className="w-full">
       <div className="flex flex-wrap items-center -mx-3 -my-2">
@@ -28,7 +28,11 @@ export const Actions = ({ actions }) => {
                 <a
                   key={index}
                   href="#"
-                  className={`inline-flex items-center font-semibold mx-3 my-2 text-lg transition duration-150 ease-out text-blue-600 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-500`}
+                  className={`group inline-flex items-center font-semibold mx-3 my-2 text-lg transition duration-150 ease-out ${
+                    color === "primary"
+                      ? `text-white  hover:text-blue-100`
+                      : `text-blue-600  hover:text-blue-400`
+                  }`}
                   style={{
                     textShadow: `0 3px 7px rgba(var(--color-rgb-blue-400),0.2)`,
                   }}
@@ -36,7 +40,11 @@ export const Actions = ({ actions }) => {
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={`ml-0 mr-0 w-6 h-6 text-blue-500`}
+                      className={`ml-0 mr-0 w-6 h-6 ${
+                        color === "primary"
+                          ? `text-blue-100  group-hover:text-blue-200`
+                          : `text-blue-500  group-hover:text-blue-300`
+                      }`}
                     />
                   )}
                 </a>
