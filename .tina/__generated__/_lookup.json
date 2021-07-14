@@ -89,6 +89,7 @@
     "resolveType": "unionData",
     "typeMap": {
       "raw": "PagesBlocksRaw",
+      "hero": "PagesBlocksHero",
       "content": "PagesBlocksContent"
     }
   }

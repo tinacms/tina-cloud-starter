@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "./container";
+// @ts-ignore
 import TinaIconSvg from "../public/tina.svg";
 
 export const Nav = () => {
@@ -35,10 +36,10 @@ export const Nav = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white">
       <Container className="py-0 relative z-10">
         <div className="flex items-center justify-between">
-          <h4 className="font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
+          <h4 className="text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800">
             <Link href="/" passHref>
               <a className="flex items-center">
-                <TinaIconSvg className="inline-block mr-2 h-9 w-auto text-orange-500" />{" "}
+                <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
                 Tina Starter
               </a>
             </Link>
@@ -64,7 +65,7 @@ export const Nav = () => {
             })}
           </ul>
         </div>
-        <div className="absolute border-b-3 border-gray-100 w-full bottom-0 left-0 -z-1"></div>
+        <div className="absolute border-b-3 border-gray-50 w-full bottom-0 left-0 -z-1"></div>
       </Container>
     </div>
   );

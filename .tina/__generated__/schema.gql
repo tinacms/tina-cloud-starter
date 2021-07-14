@@ -133,12 +133,32 @@ type PagesBlocksRaw {
   description: String
 }
 
+type PagesBlocksHeroActions {
+  label: String
+  type: String
+  icon: Boolean
+}
+
+type PagesBlocksHeroImage {
+  src: String
+  alt: String
+}
+
+type PagesBlocksHero {
+  tagline: String
+  headline: String
+  text: String
+  actions: [PagesBlocksHeroActions]
+  color: String
+  image: PagesBlocksHeroImage
+}
+
 type PagesBlocksContent {
   body: String
   color: String
 }
 
-union PagesBlocks = PagesBlocksRaw | PagesBlocksContent
+union PagesBlocks = PagesBlocksRaw | PagesBlocksHero | PagesBlocksContent
 
 type Pages {
   blocks: [PagesBlocks]
@@ -192,6 +212,26 @@ input PagesBlocksRawMutation {
   description: String
 }
 
+input PagesBlocksHeroActionsMutation {
+  label: String
+  type: String
+  icon: Boolean
+}
+
+input PagesBlocksHeroImageMutation {
+  src: String
+  alt: String
+}
+
+input PagesBlocksHeroMutation {
+  tagline: String
+  headline: String
+  text: String
+  actions: [PagesBlocksHeroActionsMutation]
+  color: String
+  image: PagesBlocksHeroImageMutation
+}
+
 input PagesBlocksContentMutation {
   body: String
   color: String
@@ -199,6 +239,7 @@ input PagesBlocksContentMutation {
 
 input PagesBlocksMutation {
   raw: PagesBlocksRawMutation
+  hero: PagesBlocksHeroMutation
   content: PagesBlocksContentMutation
 }
 
