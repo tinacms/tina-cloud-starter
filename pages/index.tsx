@@ -30,6 +30,20 @@ export const query = `#graphql
 						body
             color
           }
+          ... on PagesBlocksHero {
+            tagline
+            headline
+            text
+            actions {
+							label
+              type
+            }
+            color 
+            image {
+							src
+              alt
+            }
+          }
         }
       }
     }
