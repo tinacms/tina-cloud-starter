@@ -239,6 +239,7 @@ export type PagesBlocksHeroActions = {
   label?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['Boolean']>;
+  link?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroImage = {
@@ -362,6 +363,7 @@ export type PagesBlocksHeroActionsMutation = {
   label?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['Boolean']>;
+  link?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroImageMutation = {

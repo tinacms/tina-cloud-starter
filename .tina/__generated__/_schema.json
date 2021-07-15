@@ -235,6 +235,18 @@
                         "actions",
                         "icon"
                       ]
+                    },
+                    {
+                      "label": "Link",
+                      "name": "link",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "hero",
+                        "actions",
+                        "link"
+                      ]
                     }
                   ],
                   "namespace": [

@@ -1,6 +1,6 @@
 ---
 blocks:
-  - tagline: ''
+  - tagline: ""
     headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -12,9 +12,11 @@ blocks:
       - label: Get Started
         type: button
         icon: true
+        link: /posts
       - label: Read Blog
         type: link
         icon: false
+        link: /posts
     color: default
     image:
       src: tina-illustration.png
@@ -26,4 +28,3 @@ blocks:
     color: tint
     _template: raw
 ---
-
