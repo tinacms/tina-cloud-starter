@@ -1,6 +1,7 @@
 ---
 blocks:
-  - headline: Welcome to the Tina Starter.
+  - tagline: ''
+    headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
@@ -14,8 +15,10 @@ blocks:
       - label: Read Blog
         type: link
         icon: false
+    color: default
     image:
       src: tina-illustration.png
+      alt: Tina
     _template: hero
   - description: >-
       When you update page data you'll be able to see updates in real time in
