@@ -11,7 +11,7 @@ export const Actions = ({ color = "default", className = "", actions }) => {
             element = (
               <button
                 key={index}
-                className={`z-10 relative flex items-center px-7 py-3 mx-3 my-2 font-semibold text-lg transition duration-150 ease-out text-white rounded transform bg-blue-500 hover:bg-blue-600 bg-gradient-to-r from-blue-400 to-blue-600 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap`}
+                className={`z-10 relative flex items-center px-7 py-3 mx-3 my-2 font-semibold text-lg transition duration-150 ease-out text-white rounded transform bg-blue-500 hover:bg-blue-600 bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-400 hover:to-blue-500 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap`}
               >
                 {action.label}
                 {action.icon && (
