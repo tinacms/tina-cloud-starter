@@ -7,16 +7,19 @@ import { Section } from "../section";
 export const Hero = ({ data }) => {
   return (
     <Section color={data.color}>
-      <Container size="large" className="grid grid-cols-3 items-center">
-        <div className="col-start-1 col-end-3">
+      <Container
+        size="large"
+        className="grid lg:grid-cols-3 gap-8 items-center justify-center"
+      >
+        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-center lg:text-left">
           {data.tagline && (
-            <h2 className="w-full	mb-7 text-md font-bold tracking-wide title-font dark:text-gray-50">
+            <h2 className="w-full	mb-6 text-md font-bold tracking-wide title-font dark:text-gray-50">
               {data.tagline}
             </h2>
           )}
           {data.headline && (
             <h3
-              className={`w-full relative	mb-8 text-5xl font-extrabold tracking-normal text-left title-font`}
+              className={`w-full relative	mb-8 text-5xl font-extrabold tracking-normal title-font`}
             >
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
@@ -39,12 +42,20 @@ export const Hero = ({ data }) => {
             </div>
           )}
           {data.actions && (
-            <Actions color={data.color} actions={data.actions} />
+            <Actions
+              className="justify-center lg:justify-start"
+              color={data.color}
+              actions={data.actions}
+            />
           )}
         </div>
         {data.image && (
-          <div className="-my-6">
-            <img className="" alt={data.image.alt} src={data.image.src} />
+          <div className="row-start-1 lg:-my-6 flex justify-center">
+            <img
+              className="max-w-xs lg:max-w-none h-auto"
+              alt={data.image.alt}
+              src={data.image.src}
+            />
           </div>
         )}
       </Container>
