@@ -9876,10 +9876,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tina-graphql-gateway-cli@^0.0.0-202161323137:
-  version "0.0.0-202161323137"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.0.0-202161323137.tgz#ed2c43bc1a9dcc54defe07af0fcaf267779b481c"
-  integrity sha512-UiDJh8U/iU+P6l3+d5qhbfI4iWBF25lFf181QdWVzP8i4uiJ5AkepSZfX/bnmIFPN9R0JW5bnD0Jz2t1t+cWSA==
+tina-graphql-gateway-cli@^0.0.0-2021615164135:
+  version "0.0.0-2021615164135"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway-cli/-/tina-graphql-gateway-cli-0.0.0-2021615164135.tgz#403e737c9b866a40451989216d8df08bd54ae4eb"
+  integrity sha512-hPduNaHS7/9csY4OIZ1VzNPRiaD2CVEgqGcyVrWAxm9ceUODOWav0B5cXSbSm5VIm3VrzFEqFx5Q8gzRZoa/JQ==
   dependencies:
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
@@ -9904,15 +9904,15 @@ tina-graphql-gateway-cli@^0.0.0-202161323137:
     normalize-path "^3.0.0"
     progress "^2.0.3"
     prompts "^2.4.1"
-    tina-graphql "0.0.0-202161323137"
-    tina-graphql-helpers "0.0.0-202161323137"
+    tina-graphql "0.0.0-2021615164135"
+    tina-graphql-helpers "0.0.0-2021615164135"
     typescript "^4.2.2"
     yup "^0.32.9"
 
-tina-graphql-gateway@^0.0.0-202161323137:
-  version "0.0.0-202161323137"
-  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.0.0-202161323137.tgz#3d7720a9a915dd361e5fc1e7b98b79fb65496fc1"
-  integrity sha512-rhj/q9jWtEYPB2EZYUF6ZDb+SzBqvmfSfRwvsSW6k2S6nj1rg+SqdZXjkXoFH89PYQD33jEkhp7hhUL+5gx82w==
+tina-graphql-gateway@^0.0.0-2021615164135:
+  version "0.0.0-2021615164135"
+  resolved "https://registry.yarnpkg.com/tina-graphql-gateway/-/tina-graphql-gateway-0.0.0-2021615164135.tgz#d0d59558c56e8c038c2f0b651458f42b316c4cef"
+  integrity sha512-YB4S4pu5ILje53lKM9cioy1O3Wbs9FzY5cB/I9j/rtSd39tzdyGlPEJx+mZTynT1OWyhPOGw8hdKPdw21x95ZQ==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
@@ -9938,16 +9938,16 @@ tina-graphql-gateway@^0.0.0-202161323137:
     next "9.4.2"
     node-fetch "^2.6.0"
     prop-types "15.7.2"
-    tina-graphql-helpers "0.0.0-202161323137"
+    tina-graphql-helpers "0.0.0-2021615164135"
     tsup "^3.7.0"
     typescript "^3.9.5"
     xstate "^4.15.1"
     yup "^0.32.0"
 
-tina-graphql-helpers@0.0.0-202161323137:
-  version "0.0.0-202161323137"
-  resolved "https://registry.yarnpkg.com/tina-graphql-helpers/-/tina-graphql-helpers-0.0.0-202161323137.tgz#0c29be4accd9c7ec0e9caefbab0ddf18b24a7462"
-  integrity sha512-v/1JMF+nUMxRoNZSnyvJG0acYO2bMmKjVe5P+uffs4XsvKK51Fbby63l43Gdk2tNW5B1H/5P6a8euen6psLG3w==
+tina-graphql-helpers@0.0.0-2021615164135:
+  version "0.0.0-2021615164135"
+  resolved "https://registry.yarnpkg.com/tina-graphql-helpers/-/tina-graphql-helpers-0.0.0-2021615164135.tgz#fa5aead31675a263a1c0764b10cf7c534722c863"
+  integrity sha512-UZh658RdF4k33BomQkE7VOn5lJZ9k7HsfzDpEQFzDp6gPt91lsL1ulRNHuW60RsUe345MU4L0BY/KMiYpD+G6Q==
   dependencies:
     "@types/lodash.get" "^4.4.6"
     "@types/lodash.kebabcase" "^4.1.6"
@@ -9966,10 +9966,10 @@ tina-graphql-helpers@0.0.0-202161323137:
     tsup "^3.7.0"
     typescript "^4.2.3"
 
-tina-graphql@0.0.0-202161323137:
-  version "0.0.0-202161323137"
-  resolved "https://registry.yarnpkg.com/tina-graphql/-/tina-graphql-0.0.0-202161323137.tgz#01ae7659054974b1fd8800a9d392c28858bd65fa"
-  integrity sha512-5vxBT8VvJSBW/EWcKni+OPEGJzaQBBN7rOV/19Z5qSxNJr9ltACTAM3ENNY7n78B4jzvzmFy9uG7pdljKbfEKg==
+tina-graphql@0.0.0-2021615164135:
+  version "0.0.0-2021615164135"
+  resolved "https://registry.yarnpkg.com/tina-graphql/-/tina-graphql-0.0.0-2021615164135.tgz#9aa7f686ec80120fdb0e4ea7a88f9175beb9971a"
+  integrity sha512-Jfn0V/9tj15RoiT364QRY1zRzk7b2ByAa/j6zQPB90vcqkCk3oN9RHzMqfTkQZ2kGTQ4uqS3ndXS35yeU87y/g==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -9996,7 +9996,7 @@ tina-graphql@0.0.0-202161323137:
     remark-parse "^8.0.2"
     remark-rehype "^8.0.0"
     remark-stringify "^8.1.1"
-    tina-graphql-helpers "0.0.0-202161323137"
+    tina-graphql-helpers "0.0.0-2021615164135"
     tslib "^1.11.1"
     unified "^9.2.0"
     unist-util-remove-position "^3.0.0"

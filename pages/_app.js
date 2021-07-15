@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import "../styles.css";
+import { Wrapper } from "../components/wrapper";
 import { EditProvider, setEditing, useEditState } from "../utils/editState";
 
 // InnerApp that handles rendering edit mode or not
@@ -12,15 +13,19 @@ function InnerApp({ Component, pageProps }) {
     return (
       <>
         <TinaWrapper {...pageProps}>
-          {(props) => <Component {...props} />}
+          {(props) => (
+            <Wrapper>
+              <Component {...props} />
+            </Wrapper>
+          )}
         </TinaWrapper>
       </>
     );
   }
   return (
-    <>
+    <Wrapper>
       <Component {...pageProps} />
-    </>
+    </Wrapper>
   );
 }
 
