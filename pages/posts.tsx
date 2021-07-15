@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Wrapper } from "../components/wrapper";
-import { DateFormatter } from "../components/date-formatter";
 import Markdown from "react-markdown";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
@@ -18,7 +16,11 @@ export default function HomePage(
         {posts.map((item) => {
           const post = item.node;
           return (
-            <Link href={`/posts/` + post.sys.filename} passHref>
+            <Link
+              key={post.sys.filename}
+              href={`/posts/` + post.sys.filename}
+              passHref
+            >
               <a
                 key={post.id}
                 className="group block px-8 py-10 mb-8 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"
@@ -44,7 +46,7 @@ export default function HomePage(
                     —
                   </span>
                   <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                    <DateFormatter dateString={post.values.date} />
+                    {post.values.date}
                   </p>
                 </div>
               </a>
