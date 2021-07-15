@@ -1,6 +1,7 @@
 import React from "react";
 import Markdown from "react-markdown";
 import { Container } from "./container";
+import { DateFormatter } from "./date-formatter";
 import { Section } from "./section";
 
 export const Post = ({ data }) => {
@@ -36,7 +37,7 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            <time dateTime="2020-03-16">{data.values.date}</time>
+            <DateFormatter dateString={data.values.date} />
           </p>
         </div>
 
