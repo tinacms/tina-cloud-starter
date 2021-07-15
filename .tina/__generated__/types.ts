@@ -171,6 +171,9 @@ export type Posts = {
   __typename?: 'Posts';
   title?: Maybe<Scalars['String']>;
   author?: Maybe<PostsAuthorDocument>;
+  date?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
 };
 
 export type PostsDocument = Node & {
@@ -340,6 +343,9 @@ export type DocumentMutation = {
 export type PostsMutation = {
   title?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+  _body?: Maybe<Scalars['String']>;
 };
 
 export type AuthorsMutation = {
