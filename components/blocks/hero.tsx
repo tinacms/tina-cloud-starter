@@ -52,7 +52,7 @@ export const Hero = ({ data }) => {
         {data.image && (
           <div className="row-start-1 lg:-my-6 flex justify-center">
             <img
-              className="max-w-xs lg:max-w-none h-auto"
+              className="w-full max-w-xs lg:max-w-none h-auto"
               alt={data.image.alt}
               src={data.image.src}
             />
