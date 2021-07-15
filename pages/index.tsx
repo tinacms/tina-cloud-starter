@@ -34,6 +34,7 @@ export const query = `#graphql
 							label
               type
               icon
+              link
             }
             color 
             image {

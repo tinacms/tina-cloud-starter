@@ -136,6 +136,11 @@ export default unstable_defineSchema({
                       name: "icon",
                       type: "boolean",
                     },
+                    {
+                      label: "Link",
+                      name: "link",
+                      type: "string",
+                    },
                   ],
                 },
                 {
