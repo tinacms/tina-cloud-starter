@@ -1,7 +1,7 @@
 import React from "react";
 import { TinaCMS } from "tinacms";
 import { TinaCloudAuthWall } from "tina-graphql-gateway";
-import { SidebarPlaceholder } from "./helper-components";
+import { Placeholder } from "./placeholder";
 import { createClient } from "../utils";
 import { unstable_useGraphQLForms } from "tina-graphql-gateway";
 import { Loading } from "./loading";
@@ -17,7 +17,7 @@ const TinaWrapper = (props) => {
         tina: createClient(),
       },
       sidebar: {
-        placeholder: SidebarPlaceholder,
+        placeholder: Placeholder,
       },
       enabled: true,
     });
