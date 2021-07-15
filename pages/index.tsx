@@ -33,6 +33,7 @@ export const query = `#graphql
             actions {
 							label
               type
+              icon
             }
             color 
             image {
