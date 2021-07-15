@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SidebarPlaceholder = () => (
+export const Placeholder = () => (
   <div>
     <span>👋</span>
     <h3>
