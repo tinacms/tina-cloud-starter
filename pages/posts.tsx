@@ -1,4 +1,5 @@
 import { Wrapper } from "../components/wrapper";
+import { DateFormatter } from "../components/date-formatter";
 import Markdown from "react-markdown";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
@@ -42,7 +43,7 @@ export default function HomePage(
                   —
                 </span>
                 <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                  {post.values.date}
+                  <DateFormatter dateString={post.values.date} />
                 </p>
               </div>
             </a>
