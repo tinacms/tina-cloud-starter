@@ -22,7 +22,7 @@ export default unstable_defineSchema({
           type: "datetime",
           label: "Posted Date",
           name: "date",
-          dateFormat: "M DD YYYY",
+          dateFormat: "MMMM DD YYYY",
           timeFormat: "",
           ui: {
             dateFormat: "MMMM DD YYYY",
