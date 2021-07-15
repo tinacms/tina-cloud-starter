@@ -1,4 +1,5 @@
 import { Wrapper } from "../components/wrapper";
+import Markdown from "react-markdown";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
 import type { PostsConnection } from "../.tina/__generated__/types";
@@ -10,53 +11,45 @@ export default function HomePage(
   const posts = props.data.getPostsList.edges;
 
   return (
-    <Wrapper>
-      <Section className="flex-1">
-        <Container size="large">
-          {posts.map((item) => {
-            const post = item.node;
-            console.log(post);
-            return (
-              <a
-                key={post.id}
-                href={`/posts/` + post.sys.filename}
-                className="group block px-8 py-10 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm mb-6 transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"
-              >
-                <h3 className="text-gray-900 dark:text-white text-3xl font-semibold title-font mb-5 transition-all duration-150 ease-out group-hover:text-blue-600 dark:group-hover:text-blue-300">
-                  {post.values.title}
-                </h3>
-                <p className="mb-6 text-gray-700 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                  Vivamus odio erat, lacinia in mauris ut, finibus blandit
-                  augue. Aliquam ac ante quis diam gravida luctus. Etiam sit
-                  amet mauris diam. Mauris ut eleifend erat. Donec aliquam, orci
-                  at tempor ornare, leo neque porta turpis, ac mattis neque
-                  sapien vitae sapien. Donec faucibus laoreet lectus ut
-                  consequat.
-                </p>
-                <div className="flex items-center -mb-2">
-                  <div className="flex-shrink-0 mr-2">
-                    <img
-                      className="h-10 w-10 rounded-full shadow-sm"
-                      src={post.data.author.data.avatar}
-                      alt={post.data.author.data.name}
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                    {post.data.author.data.name}
-                  </p>
-                  <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
-                    —
-                  </span>
-                  <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                    <time dateTime="2020-03-16">Mar 16, 2020</time>
-                  </p>
+    <Section className="flex-1">
+      <Container size="large">
+        {posts.map((item) => {
+          const post = item.node;
+          return (
+            <a
+              key={post.id}
+              href={`/posts/` + post.sys.filename}
+              className="group block px-8 py-10 mb-8 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"
+            >
+              <h3 className="text-gray-900 dark:text-white text-3xl font-semibold title-font mb-5 transition-all duration-150 ease-out group-hover:text-blue-600 dark:group-hover:text-blue-300">
+                {post.values.title}
+              </h3>
+              <div className="prose dark:prose-dark prose-lg w-full max-w-none mb-5">
+                <Markdown>{post.values.excerpt}</Markdown>
+              </div>
+              <div className="flex items-center -mb-2">
+                <div className="flex-shrink-0 mr-2">
+                  <img
+                    className="h-10 w-10 rounded-full shadow-sm"
+                    src={post.data.author.data.avatar}
+                    alt={post.data.author.data.name}
+                  />
                 </div>
-              </a>
-            );
-          })}
-        </Container>
-      </Section>
-    </Wrapper>
+                <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
+                  {post.data.author.data.name}
+                </p>
+                <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
+                  —
+                </span>
+                <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
+                  {post.values.date}
+                </p>
+              </div>
+            </a>
+          );
+        })}
+      </Container>
+    </Section>
   );
 }
 

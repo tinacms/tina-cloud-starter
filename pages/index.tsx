@@ -6,11 +6,7 @@ import { createLocalClient, AsyncReturnType } from "../utils";
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  return (
-    <Wrapper>
-      <Blocks {...props.data.getPagesDocument.data} />
-    </Wrapper>
-  );
+  return <Blocks {...props.data.getPagesDocument.data} />;
 }
 
 export const query = `#graphql

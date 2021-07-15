@@ -18,6 +18,33 @@ export default unstable_defineSchema({
           name: "author",
           collections: ["authors"],
         },
+        {
+          type: "datetime",
+          label: "Posted Date",
+          name: "date",
+          dateFormat: "M DD YYYY",
+          timeFormat: "",
+          ui: {
+            dateFormat: "MMMM DD YYYY",
+            timeFormat: false,
+          },
+        },
+        {
+          type: "string",
+          label: "Excerpt",
+          ui: {
+            component: "textarea",
+          },
+          name: "excerpt",
+        },
+        {
+          type: "string",
+          label: "Body",
+          ui: {
+            component: "textarea",
+          },
+          name: "_body",
+        },
       ],
     },
     {

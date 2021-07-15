@@ -77,6 +77,9 @@ union PostsAuthorDocument = AuthorsDocument
 type Posts {
   title: String
   author: PostsAuthorDocument
+  date: String
+  excerpt: String
+  _body: String
 }
 
 type PostsDocument implements Node {
@@ -197,6 +200,9 @@ input DocumentMutation {
 input PostsMutation {
   title: String
   author: String
+  date: String
+  excerpt: String
+  _body: String
 }
 
 input AuthorsMutation {
