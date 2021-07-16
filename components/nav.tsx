@@ -34,7 +34,7 @@ export const Nav = () => {
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-700 dark:to-gray-800">
-      <Container className="py-0 relative z-10">
+      <Container className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between">
           <h4 className="select-none text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
             <Link href="/" passHref>
