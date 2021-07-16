@@ -113,6 +113,13 @@
             {
               "name": "hero",
               "label": "Hero",
+              "ui": {
+                "defaultItem": {
+                  "tagline": "Here's some text above the other text",
+                  "headline": "This Big Text is Totally Awesome",
+                  "text": "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo."
+                }
+              },
               "fields": [
                 {
                   "type": "string",
@@ -134,6 +141,14 @@
                   "name": "actions",
                   "type": "object",
                   "list": true,
+                  "ui": {
+                    "defaultItem": {
+                      "label": "Action Label",
+                      "type": "button",
+                      "icon": true,
+                      "link": "/"
+                    }
+                  },
                   "fields": [
                     {
                       "label": "Label",
