@@ -24,7 +24,7 @@ export const Features = ({ data }) => {
   return (
     <Section color={data.color}>
       <Container
-        className={`flex flex-wrap gap-x-8 gap-y-0 text-left`}
+        className={`flex flex-wrap gap-x-8 gap-y-8 text-left`}
         size="large"
       >
         {data.items &&
