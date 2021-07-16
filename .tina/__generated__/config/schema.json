@@ -171,9 +171,18 @@
                   "label": "Color",
                   "name": "color",
                   "options": [
-                    "default",
-                    "tint",
-                    "primary"
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
                   ]
                 },
                 {
@@ -212,9 +221,18 @@
                   "label": "Color",
                   "name": "color",
                   "options": [
-                    "default",
-                    "tint",
-                    "primary"
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
                   ]
                 }
               ]
