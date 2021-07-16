@@ -13,7 +13,7 @@ export const Post = ({ data }) => {
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500`}
           >
-            {data.values.title}
+            {data.data.title}
           </span>
         </h2>
 
@@ -36,12 +36,12 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            {data.values.date}
+            {data.data.date}
           </p>
         </div>
 
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data.values._body}</Markdown>
+          <Markdown>{data.data._body}</Markdown>
         </div>
       </Container>
     </Section>

@@ -181,9 +181,15 @@ type PagesBlocksHero {
   image: PagesBlocksHeroImage
 }
 
+type PagesBlocksFeaturesItemsIcon {
+  color: String
+  icon: String
+}
+
 type PagesBlocksFeaturesItems {
   title: String
   text: String
+  icon: PagesBlocksFeaturesItemsIcon
 }
 
 type PagesBlocksFeatures {
@@ -283,9 +289,15 @@ input PagesBlocksHeroMutation {
   image: PagesBlocksHeroImageMutation
 }
 
+input PagesBlocksFeaturesItemsIconMutation {
+  color: String
+  icon: String
+}
+
 input PagesBlocksFeaturesItemsMutation {
   title: String
   text: String
+  icon: PagesBlocksFeaturesItemsIconMutation
 }
 
 input PagesBlocksFeaturesMutation {
