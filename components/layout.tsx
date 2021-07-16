@@ -13,7 +13,7 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Nav />
-        <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
+        <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 flex flex-col">
           {children}
         </div>
         <Footer rawData={rawData} data={data?.footer} />
