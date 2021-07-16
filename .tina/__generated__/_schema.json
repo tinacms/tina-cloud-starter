@@ -349,6 +349,80 @@
               ]
             },
             {
+              "name": "features",
+              "label": "Features",
+              "fields": [
+                {
+                  "type": "object",
+                  "label": "Feature Items",
+                  "name": "items",
+                  "list": true,
+                  "fields": [
+                    {
+                      "type": "string",
+                      "label": "Title",
+                      "name": "title",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "features",
+                        "items",
+                        "title"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "label": "Text",
+                      "name": "text",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "features",
+                        "items",
+                        "text"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "features",
+                    "items"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "features",
+                    "color"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "features"
+              ]
+            },
+            {
               "name": "content",
               "label": "Content",
               "fields": [

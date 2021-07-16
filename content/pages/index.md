@@ -22,4 +22,18 @@ blocks:
       src: tina-illustration.png
       alt: Tina
     _template: hero
+  - items:
+      - title: Amazing Feature
+        text: >-
+          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
+          Praesent ac faucibus risus, eu lacinia enim.
+      - title: This Is a Feature
+        text: >-
+          Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices.
+      - title: Check Out This Text
+        text: >-
+          Eleifend ipsum in, condimentum nibh. Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices.
+    _template: features
 ---
