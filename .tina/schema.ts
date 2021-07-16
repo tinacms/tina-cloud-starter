@@ -44,6 +44,7 @@ export default unstable_defineSchema({
             component: "textarea",
           },
           name: "_body",
+          isBody: true,
         },
       ],
     },
@@ -208,6 +209,143 @@ export default unstable_defineSchema({
                       type: "string",
                       label: "Text",
                       name: "text",
+                    },
+                    {
+                      type: "object",
+                      label: "Icon",
+                      name: "icon",
+                      fields: [
+                        {
+                          type: "string",
+                          label: "Color",
+                          name: "color",
+                          options: [
+                            {
+                              label: "Primary (Theme)",
+                              value: "primary",
+                            },
+                            {
+                              label: "Blue",
+                              value: "blue",
+                            },
+                            {
+                              label: "Teal",
+                              value: "teal",
+                            },
+                            {
+                              label: "Green",
+                              value: "green",
+                            },
+                            {
+                              label: "Red",
+                              value: "red",
+                            },
+                            {
+                              label: "Pink",
+                              value: "pink",
+                            },
+                            {
+                              label: "Purple",
+                              value: "purple",
+                            },
+                            {
+                              label: "Orange",
+                              value: "orange",
+                            },
+                            {
+                              label: "Yellow",
+                              value: "yellow",
+                            },
+                          ],
+                        },
+                        {
+                          type: "string",
+                          label: "Icon",
+                          name: "icon",
+                          options: [
+                            {
+                              label: "Random",
+                              value: "",
+                            },
+                            {
+                              label: "Aperture",
+                              value: "FiAperture",
+                            },
+                            {
+                              label: "Code Block",
+                              value: "BiCodeBlock",
+                            },
+                            {
+                              label: "Like",
+                              value: "BiLike",
+                            },
+                            {
+                              label: "Map",
+                              value: "BiMapAlt",
+                            },
+                            {
+                              label: "Palette",
+                              value: "BiPalette",
+                            },
+                            {
+                              label: "Pie Chart",
+                              value: "BiPieChartAlt2",
+                            },
+                            {
+                              label: "Pin",
+                              value: "BiPin",
+                            },
+                            {
+                              label: "Shield",
+                              value: "BiShield",
+                            },
+                            {
+                              label: "Setting Sliders",
+                              value: "BiSlider",
+                            },
+                            {
+                              label: "Store",
+                              value: "BiStore",
+                            },
+                            {
+                              label: "Tennis Ball",
+                              value: "BiTennisBall",
+                            },
+                            {
+                              label: "Test Tube",
+                              value: "BiTestTube",
+                            },
+                            {
+                              label: "Trophy",
+                              value: "BiTrophy",
+                            },
+                            {
+                              label: "User",
+                              value: "BiUserCircle",
+                            },
+                            {
+                              label: "Beer",
+                              value: "BiBeer",
+                            },
+                            {
+                              label: "Chat",
+                              value: "BiChat",
+                            },
+                            {
+                              label: "Cloud",
+                              value: "BiCloud",
+                            },
+                            {
+                              label: "Coffee",
+                              value: "BiCoffeeTogo",
+                            },
+                            {
+                              label: "World",
+                              value: "BiWorld",
+                            },
+                          ],
+                        },
+                      ],
                     },
                   ],
                 },
