@@ -9,19 +9,21 @@ export default function BlogPostPage(
   return <Post data={props.data.getPostsDocument} />;
 }
 
-export const query = `#graphql
+export const query = `
   query BlogPostQuery($relativePath: String!) {
     getPostsDocument(relativePath: $relativePath) {
-      values
       data {
-				author {
+        title
+        date
+        author {
           ... on AuthorsDocument {
             data {
-							name
+              name
               avatar
             }
           }
         }
+        _body
       }
     }
   }
