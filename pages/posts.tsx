@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Markdown from "react-markdown";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
 import { Posts } from "../components/posts";
