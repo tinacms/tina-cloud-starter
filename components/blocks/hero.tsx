@@ -43,7 +43,7 @@ export const Hero = ({ data }) => {
           )}
           {data.actions && (
             <Actions
-              className="justify-center lg:justify-start"
+              className="justify-center lg:justify-start py-1"
               color={data.color}
               actions={data.actions}
             />

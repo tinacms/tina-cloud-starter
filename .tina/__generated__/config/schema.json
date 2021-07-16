@@ -48,6 +48,40 @@
       ]
     },
     {
+      "label": "Global",
+      "name": "global",
+      "path": "content/global",
+      "fields": [
+        {
+          "type": "object",
+          "label": "Footer",
+          "name": "footer",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Facebook",
+              "name": "facebook"
+            },
+            {
+              "type": "string",
+              "label": "Twitter",
+              "name": "twitter"
+            },
+            {
+              "type": "string",
+              "label": "Instagram",
+              "name": "instagram"
+            },
+            {
+              "type": "string",
+              "label": "Github",
+              "name": "github"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "label": "Authors",
       "name": "authors",
       "path": "content/authors",
@@ -75,27 +109,6 @@
           "name": "blocks",
           "label": "Sections",
           "templates": [
-            {
-              "name": "raw",
-              "label": "Raw Data",
-              "fields": [
-                {
-                  "type": "string",
-                  "label": "Description",
-                  "name": "description"
-                },
-                {
-                  "type": "string",
-                  "label": "Color",
-                  "name": "color",
-                  "options": [
-                    "default",
-                    "tint",
-                    "primary"
-                  ]
-                }
-              ]
-            },
             {
               "name": "hero",
               "label": "Hero",

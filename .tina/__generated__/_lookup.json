@@ -4,6 +4,7 @@
     "resolveType": "multiCollectionDocumentList",
     "collections": [
       "posts",
+      "global",
       "authors",
       "pages"
     ]
@@ -88,9 +89,18 @@
     "type": "PagesBlocks",
     "resolveType": "unionData",
     "typeMap": {
-      "raw": "PagesBlocksRaw",
       "hero": "PagesBlocksHero",
       "content": "PagesBlocksContent"
     }
+  },
+  "GlobalDocument": {
+    "type": "GlobalDocument",
+    "resolveType": "collectionDocument",
+    "collection": "global"
+  },
+  "GlobalConnection": {
+    "type": "GlobalConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "global"
   }
 }

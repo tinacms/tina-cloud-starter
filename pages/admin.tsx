@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
-import { Wrapper } from "../components/wrapper";
+import { Layout } from "../components/layout";
 import { useEditState } from "../utils/editState";
 
 const GoToEditPage: React.FC = () => {
@@ -13,13 +13,13 @@ const GoToEditPage: React.FC = () => {
     router.back();
   }, []);
   return (
-    <Wrapper>
+    <Layout>
       <Section className="flex-1">
         <Container size="large prose prose-xl">
           <h2>Going into edit mode...</h2>
         </Container>
       </Section>
-    </Wrapper>
+    </Layout>
   );
 };
 
