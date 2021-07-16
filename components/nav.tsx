@@ -36,7 +36,7 @@ export const Nav = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-700 dark:to-gray-800">
       <Container className="py-0 relative z-10">
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
+          <h4 className="select-none text-lg font-bold tracking-tight transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
             <Link href="/" passHref>
               <a className="flex items-center">
                 <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
@@ -51,12 +51,12 @@ export const Nav = () => {
                   ? windowUrl.slice(-1).includes("/")
                   : windowUrl.includes(item.href);
               const listItemClasses = activeItem
-                ? "border-b-3 border-blue-200"
+                ? "border-b-3 border-blue-200 dark:border-blue-700"
                 : "";
               return (
                 <li key={item.name} className={listItemClasses}>
                   <Link href={`${prefix}/${item.href}`} passHref>
-                    <a className="text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-100 opacity-70 hover:opacity-100 py-8">
+                    <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-100 opacity-70 hover:opacity-100 py-8">
                       {item.name}
                     </a>
                   </Link>
@@ -65,7 +65,7 @@ export const Nav = () => {
             })}
           </ul>
         </div>
-        <div className="absolute border-b-3 border-gray-50 dark:border-gray-700 bottom-0 left-4 right-4 -z-1"></div>
+        <div className="absolute h-1 bg-gradient-to-r from-transparent via-gray-50 dark:via-gray-700 to-transparent bottom-0 left-4 right-4 -z-1"></div>
       </Container>
     </div>
   );
