@@ -41,6 +41,8 @@ type Query {
   getDocumentList(before: String, after: String, first: Int, last: Int): DocumentConnection!
   getPostsDocument(relativePath: String): PostsDocument!
   getPostsList(before: String, after: String, first: Int, last: Int): PostsConnection!
+  getGlobalDocument(relativePath: String): GlobalDocument!
+  getGlobalList(before: String, after: String, first: Int, last: Int): GlobalConnection!
   getAuthorsDocument(relativePath: String): AuthorsDocument!
   getAuthorsList(before: String, after: String, first: Int, last: Int): AuthorsConnection!
   getPagesDocument(relativePath: String): PagesDocument!
@@ -70,7 +72,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument | AuthorsDocument | PagesDocument
+union DocumentNode = PostsDocument | GlobalDocument | AuthorsDocument | PagesDocument
 
 union PostsAuthorDocument = AuthorsDocument
 
@@ -102,6 +104,37 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
+type GlobalFooter {
+  facebook: String
+  twitter: String
+  instagram: String
+  github: String
+}
+
+type Global {
+  footer: GlobalFooter
+}
+
+type GlobalDocument implements Node {
+  id: ID!
+  sys: SystemInfo!
+  data: Global!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type GlobalConnectionEdges {
+  cursor: String
+  node: GlobalDocument
+}
+
+type GlobalConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [GlobalConnectionEdges]
+}
+
 type Authors {
   name: String
   avatar: String
@@ -125,11 +158,6 @@ type AuthorsConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Int!
   edges: [AuthorsConnectionEdges]
-}
-
-type PagesBlocksRaw {
-  description: String
-  color: String
 }
 
 type PagesBlocksHeroActions {
@@ -158,7 +186,7 @@ type PagesBlocksContent {
   color: String
 }
 
-union PagesBlocks = PagesBlocksRaw | PagesBlocksHero | PagesBlocksContent
+union PagesBlocks = PagesBlocksHero | PagesBlocksContent
 
 type Pages {
   blocks: [PagesBlocks]
@@ -188,12 +216,14 @@ type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String!, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
+  updateGlobalDocument(relativePath: String!, params: GlobalMutation!): GlobalDocument!
   updateAuthorsDocument(relativePath: String!, params: AuthorsMutation!): AuthorsDocument!
   updatePagesDocument(relativePath: String!, params: PagesMutation!): PagesDocument!
 }
 
 input DocumentMutation {
   posts: PostsMutation
+  global: GlobalMutation
   authors: AuthorsMutation
   pages: PagesMutation
 }
@@ -206,14 +236,20 @@ input PostsMutation {
   _body: String
 }
 
+input GlobalFooterMutation {
+  facebook: String
+  twitter: String
+  instagram: String
+  github: String
+}
+
+input GlobalMutation {
+  footer: GlobalFooterMutation
+}
+
 input AuthorsMutation {
   name: String
   avatar: String
-}
-
-input PagesBlocksRawMutation {
-  description: String
-  color: String
 }
 
 input PagesBlocksHeroActionsMutation {
@@ -243,7 +279,6 @@ input PagesBlocksContentMutation {
 }
 
 input PagesBlocksMutation {
-  raw: PagesBlocksRawMutation
   hero: PagesBlocksHeroMutation
   content: PagesBlocksContentMutation
 }
