@@ -303,13 +303,25 @@ export type PagesBlocksHero = {
   image?: Maybe<PagesBlocksHeroImage>;
 };
 
+export type PagesBlocksFeaturesItems = {
+  __typename?: 'PagesBlocksFeaturesItems';
+  title?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksFeatures = {
+  __typename?: 'PagesBlocksFeatures';
+  items?: Maybe<Array<Maybe<PagesBlocksFeaturesItems>>>;
+  color?: Maybe<Scalars['String']>;
+};
+
 export type PagesBlocksContent = {
   __typename?: 'PagesBlocksContent';
   body?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksHero | PagesBlocksContent;
+export type PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -439,6 +451,16 @@ export type PagesBlocksHeroMutation = {
   image?: Maybe<PagesBlocksHeroImageMutation>;
 };
 
+export type PagesBlocksFeaturesItemsMutation = {
+  title?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksFeaturesMutation = {
+  items?: Maybe<Array<Maybe<PagesBlocksFeaturesItemsMutation>>>;
+  color?: Maybe<Scalars['String']>;
+};
+
 export type PagesBlocksContentMutation = {
   body?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
@@ -446,6 +468,7 @@ export type PagesBlocksContentMutation = {
 
 export type PagesBlocksMutation = {
   hero?: Maybe<PagesBlocksHeroMutation>;
+  features?: Maybe<PagesBlocksFeaturesMutation>;
   content?: Maybe<PagesBlocksContentMutation>;
 };
 
