@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import "../styles.css";
-import { Wrapper } from "../components/wrapper";
+import { Layout } from "../components/layout";
 import { EditProvider, setEditing, useEditState } from "../utils/editState";
 
 // InnerApp that handles rendering edit mode or not
@@ -10,22 +10,24 @@ function InnerApp({ Component, pageProps }) {
     // Dynamically load Tina only when in edit mode so it does not affect production
     // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
     const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
+    const layoutData = pageProps.data?.getGlobalDocument?.data;
+
     return (
       <>
         <TinaWrapper {...pageProps}>
           {(props) => (
-            <Wrapper>
+            <Layout rawData={pageProps} data={layoutData}>
               <Component {...props} />
-            </Wrapper>
+            </Layout>
           )}
         </TinaWrapper>
       </>
     );
   }
   return (
-    <Wrapper>
+    <Layout>
       <Component {...pageProps} />
-    </Wrapper>
+    </Layout>
   );
 }
 

@@ -60,6 +60,8 @@ export type Query = {
   getDocumentList: DocumentConnection;
   getPostsDocument: PostsDocument;
   getPostsList: PostsConnection;
+  getGlobalDocument: GlobalDocument;
+  getGlobalList: GlobalConnection;
   getAuthorsDocument: AuthorsDocument;
   getAuthorsList: AuthorsConnection;
   getPagesDocument: PagesDocument;
@@ -97,6 +99,19 @@ export type QueryGetPostsDocumentArgs = {
 
 
 export type QueryGetPostsListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGetGlobalDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetGlobalListArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
@@ -163,7 +178,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument | AuthorsDocument | PagesDocument;
+export type DocumentNode = PostsDocument | GlobalDocument | AuthorsDocument | PagesDocument;
 
 export type PostsAuthorDocument = AuthorsDocument;
 
@@ -199,6 +214,42 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
+export type GlobalFooter = {
+  __typename?: 'GlobalFooter';
+  facebook?: Maybe<Scalars['String']>;
+  twitter?: Maybe<Scalars['String']>;
+  instagram?: Maybe<Scalars['String']>;
+  github?: Maybe<Scalars['String']>;
+};
+
+export type Global = {
+  __typename?: 'Global';
+  footer?: Maybe<GlobalFooter>;
+};
+
+export type GlobalDocument = Node & {
+  __typename?: 'GlobalDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Global;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type GlobalConnectionEdges = {
+  __typename?: 'GlobalConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<GlobalDocument>;
+};
+
+export type GlobalConnection = Connection & {
+  __typename?: 'GlobalConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<GlobalConnectionEdges>>>;
+};
+
 export type Authors = {
   __typename?: 'Authors';
   name?: Maybe<Scalars['String']>;
@@ -226,12 +277,6 @@ export type AuthorsConnection = Connection & {
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<AuthorsConnectionEdges>>>;
-};
-
-export type PagesBlocksRaw = {
-  __typename?: 'PagesBlocksRaw';
-  description?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActions = {
@@ -264,7 +309,7 @@ export type PagesBlocksContent = {
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksRaw | PagesBlocksHero | PagesBlocksContent;
+export type PagesBlocks = PagesBlocksHero | PagesBlocksContent;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -299,6 +344,7 @@ export type Mutation = {
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   updatePostsDocument: PostsDocument;
+  updateGlobalDocument: GlobalDocument;
   updateAuthorsDocument: AuthorsDocument;
   updatePagesDocument: PagesDocument;
 };
@@ -324,6 +370,12 @@ export type MutationUpdatePostsDocumentArgs = {
 };
 
 
+export type MutationUpdateGlobalDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: GlobalMutation;
+};
+
+
 export type MutationUpdateAuthorsDocumentArgs = {
   relativePath: Scalars['String'];
   params: AuthorsMutation;
@@ -337,6 +389,7 @@ export type MutationUpdatePagesDocumentArgs = {
 
 export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
+  global?: Maybe<GlobalMutation>;
   authors?: Maybe<AuthorsMutation>;
   pages?: Maybe<PagesMutation>;
 };
@@ -349,14 +402,20 @@ export type PostsMutation = {
   _body?: Maybe<Scalars['String']>;
 };
 
+export type GlobalFooterMutation = {
+  facebook?: Maybe<Scalars['String']>;
+  twitter?: Maybe<Scalars['String']>;
+  instagram?: Maybe<Scalars['String']>;
+  github?: Maybe<Scalars['String']>;
+};
+
+export type GlobalMutation = {
+  footer?: Maybe<GlobalFooterMutation>;
+};
+
 export type AuthorsMutation = {
   name?: Maybe<Scalars['String']>;
   avatar?: Maybe<Scalars['String']>;
-};
-
-export type PagesBlocksRawMutation = {
-  description?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActionsMutation = {
@@ -386,7 +445,6 @@ export type PagesBlocksContentMutation = {
 };
 
 export type PagesBlocksMutation = {
-  raw?: Maybe<PagesBlocksRawMutation>;
   hero?: Maybe<PagesBlocksHeroMutation>;
   content?: Maybe<PagesBlocksContentMutation>;
 };

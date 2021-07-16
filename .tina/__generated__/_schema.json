@@ -71,6 +71,67 @@
       ]
     },
     {
+      "label": "Global",
+      "name": "global",
+      "path": "content/global",
+      "fields": [
+        {
+          "type": "object",
+          "label": "Footer",
+          "name": "footer",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Facebook",
+              "name": "facebook",
+              "namespace": [
+                "global",
+                "footer",
+                "facebook"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Twitter",
+              "name": "twitter",
+              "namespace": [
+                "global",
+                "footer",
+                "twitter"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Instagram",
+              "name": "instagram",
+              "namespace": [
+                "global",
+                "footer",
+                "instagram"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Github",
+              "name": "github",
+              "namespace": [
+                "global",
+                "footer",
+                "github"
+              ]
+            }
+          ],
+          "namespace": [
+            "global",
+            "footer"
+          ]
+        }
+      ],
+      "namespace": [
+        "global"
+      ]
+    },
+    {
       "label": "Authors",
       "name": "authors",
       "path": "content/authors",
@@ -109,44 +170,6 @@
           "name": "blocks",
           "label": "Sections",
           "templates": [
-            {
-              "name": "raw",
-              "label": "Raw Data",
-              "fields": [
-                {
-                  "type": "string",
-                  "label": "Description",
-                  "name": "description",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "raw",
-                    "description"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "Color",
-                  "name": "color",
-                  "options": [
-                    "default",
-                    "tint",
-                    "primary"
-                  ],
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "raw",
-                    "color"
-                  ]
-                }
-              ],
-              "namespace": [
-                "pages",
-                "blocks",
-                "raw"
-              ]
-            },
             {
               "name": "hero",
               "label": "Hero",

@@ -22,9 +22,4 @@ blocks:
       src: tina-illustration.png
       alt: Tina
     _template: hero
-  - description: >-
-      When you update page data you'll be able to see updates in real time in
-      the raw data below.
-    color: tint
-    _template: raw
 ---
