@@ -19,6 +19,13 @@ export const query = `#graphql
         __typename
       	blocks {
 					__typename
+          ... on PagesBlocksFeatures {
+            color
+            items {
+              title
+              text
+            }
+          }
           ... on PagesBlocksContent {
 						body
             color

@@ -205,6 +205,49 @@
               ]
             },
             {
+              "name": "features",
+              "label": "Features",
+              "fields": [
+                {
+                  "type": "object",
+                  "label": "Feature Items",
+                  "name": "items",
+                  "list": true,
+                  "fields": [
+                    {
+                      "type": "string",
+                      "label": "Title",
+                      "name": "title"
+                    },
+                    {
+                      "type": "string",
+                      "label": "Text",
+                      "name": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "content",
               "label": "Content",
               "fields": [
