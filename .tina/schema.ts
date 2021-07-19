@@ -1,5 +1,329 @@
 import { unstable_defineSchema } from "tina-graphql-gateway-cli";
 
+const defaultFeature = {
+  title: "Here's Another Feature",
+  text: "This is where you might talk about the feature, if this wasn't just filler text.",
+  icon: {
+    color: "blue",
+    style: "float",
+    name: "",
+  },
+};
+
+const featureBlockShema = {
+  name: "features",
+  label: "Features",
+  ui: {
+    defaultItem: {
+      items: [defaultFeature, defaultFeature, defaultFeature],
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      label: "Feature Items",
+      name: "items",
+      list: true,
+      ui: {
+        defaultItem: {
+          ...defaultFeature,
+        },
+      },
+      fields: [
+        {
+          type: "object",
+          label: "Icon",
+          name: "icon",
+          fields: [
+            {
+              type: "string",
+              label: "Color",
+              name: "color",
+              options: [
+                {
+                  label: "Blue",
+                  value: "blue",
+                },
+                {
+                  label: "Teal",
+                  value: "teal",
+                },
+                {
+                  label: "Green",
+                  value: "green",
+                },
+                {
+                  label: "Red",
+                  value: "red",
+                },
+                {
+                  label: "Pink",
+                  value: "pink",
+                },
+                {
+                  label: "Purple",
+                  value: "purple",
+                },
+                {
+                  label: "Orange",
+                  value: "orange",
+                },
+                {
+                  label: "Yellow",
+                  value: "yellow",
+                },
+              ],
+            },
+            {
+              name: "style",
+              label: "Style",
+              type: "string",
+              options: [
+                {
+                  label: "Circle",
+                  value: "circle",
+                },
+                {
+                  label: "Float",
+                  value: "float",
+                },
+              ],
+            },
+            {
+              type: "string",
+              label: "Icon",
+              name: "name",
+              options: [
+                {
+                  label: "Random",
+                  value: "",
+                },
+                {
+                  label: "Aperture",
+                  value: "aperture",
+                },
+                {
+                  label: "Code Block",
+                  value: "code",
+                },
+                {
+                  label: "Like",
+                  value: "like",
+                },
+                {
+                  label: "Map",
+                  value: "map",
+                },
+                {
+                  label: "Palette",
+                  value: "palette",
+                },
+                {
+                  label: "Pie Chart",
+                  value: "chart",
+                },
+                {
+                  label: "Pin",
+                  value: "pin",
+                },
+                {
+                  label: "Shield",
+                  value: "shield",
+                },
+                {
+                  label: "Setting Sliders",
+                  value: "settings",
+                },
+                {
+                  label: "Store",
+                  value: "store",
+                },
+                {
+                  label: "Tennis Ball",
+                  value: "ball",
+                },
+                {
+                  label: "Test Tube",
+                  value: "tube",
+                },
+                {
+                  label: "Trophy",
+                  value: "trophy",
+                },
+                {
+                  label: "User",
+                  value: "user",
+                },
+                {
+                  label: "Beer",
+                  value: "beer",
+                },
+                {
+                  label: "Chat",
+                  value: "chat",
+                },
+                {
+                  label: "Cloud",
+                  value: "cloud",
+                },
+                {
+                  label: "Coffee",
+                  value: "coffee",
+                },
+                {
+                  label: "World",
+                  value: "world",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+  ],
+};
+
+const contentBlockSchema = {
+  name: "content",
+  label: "Content",
+  fields: [
+    {
+      type: "string",
+      ui: {
+        component: "textarea",
+      },
+      label: "Body",
+      name: "body",
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+  ],
+};
+
+const heroBlockSchema = {
+  name: "hero",
+  label: "Hero",
+  ui: {
+    defaultItem: {
+      tagline: "Here's some text above the other text",
+      headline: "This Big Text is Totally Awesome",
+      text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.",
+    },
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Tagline",
+      name: "tagline",
+    },
+    {
+      type: "string",
+      label: "Headline",
+      name: "headline",
+    },
+    {
+      type: "string",
+      label: "Text",
+      name: "text",
+    },
+    {
+      label: "Actions",
+      name: "actions",
+      type: "object",
+      list: true,
+      ui: {
+        defaultItem: {
+          label: "Action Label",
+          type: "button",
+          icon: true,
+          link: "/",
+        },
+      },
+      fields: [
+        {
+          label: "Label",
+          name: "label",
+          type: "string",
+        },
+        {
+          label: "Type",
+          name: "type",
+          type: "string",
+          options: [
+            { label: "Button", value: "button" },
+            { label: "Link", value: "link" },
+          ],
+        },
+        {
+          label: "Icon",
+          name: "icon",
+          type: "boolean",
+        },
+        {
+          label: "Link",
+          name: "link",
+          type: "string",
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+    {
+      type: "object",
+      label: "Image",
+      name: "image",
+      fields: [
+        {
+          name: "src",
+          label: "Image Source",
+          type: "string",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+      ],
+    },
+  ],
+};
+
 export default unstable_defineSchema({
   collections: [
     {
@@ -109,320 +433,7 @@ export default unstable_defineSchema({
           list: true,
           name: "blocks",
           label: "Sections",
-          templates: [
-            {
-              name: "hero",
-              label: "Hero",
-              ui: {
-                defaultItem: {
-                  tagline: "Here's some text above the other text",
-                  headline: "This Big Text is Totally Awesome",
-                  text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.",
-                },
-              },
-              fields: [
-                {
-                  type: "string",
-                  label: "Tagline",
-                  name: "tagline",
-                },
-                {
-                  type: "string",
-                  label: "Headline",
-                  name: "headline",
-                },
-                {
-                  type: "string",
-                  label: "Text",
-                  name: "text",
-                },
-                {
-                  label: "Actions",
-                  name: "actions",
-                  type: "object",
-                  list: true,
-                  ui: {
-                    defaultItem: {
-                      label: "Action Label",
-                      type: "button",
-                      icon: true,
-                      link: "/",
-                    },
-                  },
-                  fields: [
-                    {
-                      label: "Label",
-                      name: "label",
-                      type: "string",
-                    },
-                    {
-                      label: "Type",
-                      name: "type",
-                      type: "string",
-                      options: [
-                        { label: "Button", value: "button" },
-                        { label: "Link", value: "link" },
-                      ],
-                    },
-                    {
-                      label: "Icon",
-                      name: "icon",
-                      type: "boolean",
-                    },
-                    {
-                      label: "Link",
-                      name: "link",
-                      type: "string",
-                    },
-                  ],
-                },
-                {
-                  type: "string",
-                  label: "Color",
-                  name: "color",
-                  options: [
-                    { label: "Default", value: "default" },
-                    { label: "Tint", value: "tint" },
-                    { label: "Primary", value: "primary" },
-                  ],
-                },
-                {
-                  type: "object",
-                  label: "Image",
-                  name: "image",
-                  fields: [
-                    {
-                      name: "src",
-                      label: "Image Source",
-                      type: "string",
-                    },
-                    {
-                      name: "alt",
-                      label: "Alt Text",
-                      type: "string",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "features",
-              label: "Features",
-              fields: [
-                {
-                  type: "object",
-                  label: "Feature Items",
-                  name: "items",
-                  list: true,
-                  ui: {
-                    defaultItem: {
-                      title: "Here's Another Feature",
-                      text: "This is where you might talk about the feature, if this wasn't just filler text.",
-                      icon: {
-                        color: "blue",
-                        style: "float",
-                        name: "",
-                      },
-                    },
-                  },
-                  fields: [
-                    {
-                      type: "object",
-                      label: "Icon",
-                      name: "icon",
-                      fields: [
-                        {
-                          type: "string",
-                          label: "Color",
-                          name: "color",
-                          options: [
-                            {
-                              label: "Blue",
-                              value: "blue",
-                            },
-                            {
-                              label: "Teal",
-                              value: "teal",
-                            },
-                            {
-                              label: "Green",
-                              value: "green",
-                            },
-                            {
-                              label: "Red",
-                              value: "red",
-                            },
-                            {
-                              label: "Pink",
-                              value: "pink",
-                            },
-                            {
-                              label: "Purple",
-                              value: "purple",
-                            },
-                            {
-                              label: "Orange",
-                              value: "orange",
-                            },
-                            {
-                              label: "Yellow",
-                              value: "yellow",
-                            },
-                          ],
-                        },
-                        {
-                          name: "style",
-                          label: "Style",
-                          type: "string",
-                          options: [
-                            {
-                              label: "Circle",
-                              value: "circle",
-                            },
-                            {
-                              label: "Float",
-                              value: "float",
-                            },
-                          ],
-                        },
-                        {
-                          type: "string",
-                          label: "Icon",
-                          name: "name",
-                          options: [
-                            {
-                              label: "Random",
-                              value: "",
-                            },
-                            {
-                              label: "Aperture",
-                              value: "aperture",
-                            },
-                            {
-                              label: "Code Block",
-                              value: "code",
-                            },
-                            {
-                              label: "Like",
-                              value: "like",
-                            },
-                            {
-                              label: "Map",
-                              value: "map",
-                            },
-                            {
-                              label: "Palette",
-                              value: "palette",
-                            },
-                            {
-                              label: "Pie Chart",
-                              value: "chart",
-                            },
-                            {
-                              label: "Pin",
-                              value: "pin",
-                            },
-                            {
-                              label: "Shield",
-                              value: "shield",
-                            },
-                            {
-                              label: "Setting Sliders",
-                              value: "settings",
-                            },
-                            {
-                              label: "Store",
-                              value: "store",
-                            },
-                            {
-                              label: "Tennis Ball",
-                              value: "ball",
-                            },
-                            {
-                              label: "Test Tube",
-                              value: "tube",
-                            },
-                            {
-                              label: "Trophy",
-                              value: "trophy",
-                            },
-                            {
-                              label: "User",
-                              value: "user",
-                            },
-                            {
-                              label: "Beer",
-                              value: "beer",
-                            },
-                            {
-                              label: "Chat",
-                              value: "chat",
-                            },
-                            {
-                              label: "Cloud",
-                              value: "cloud",
-                            },
-                            {
-                              label: "Coffee",
-                              value: "coffee",
-                            },
-                            {
-                              label: "World",
-                              value: "world",
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      type: "string",
-                      label: "Title",
-                      name: "title",
-                    },
-                    {
-                      type: "string",
-                      label: "Text",
-                      name: "text",
-                    },
-                  ],
-                },
-                {
-                  type: "string",
-                  label: "Color",
-                  name: "color",
-                  options: [
-                    { label: "Default", value: "default" },
-                    { label: "Tint", value: "tint" },
-                    { label: "Primary", value: "primary" },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "content",
-              label: "Content",
-              fields: [
-                {
-                  type: "string",
-                  ui: {
-                    component: "textarea",
-                  },
-                  label: "Body",
-                  name: "body",
-                },
-                {
-                  type: "string",
-                  label: "Color",
-                  name: "color",
-                  options: [
-                    { label: "Default", value: "default" },
-                    { label: "Tint", value: "tint" },
-                    { label: "Primary", value: "primary" },
-                  ],
-                },
-              ],
-            },
-          ],
+          templates: [heroBlockSchema, featureBlockShema, contentBlockSchema],
         },
       ],
     },
