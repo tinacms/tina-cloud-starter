@@ -22,6 +22,11 @@ export const query = `#graphql
           ... on PagesBlocksFeatures {
             color
             items {
+              icon {
+                name
+                color
+                style
+              }
               title
               text
             }

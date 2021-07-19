@@ -216,16 +216,6 @@ export default unstable_defineSchema({
                   list: true,
                   fields: [
                     {
-                      type: "string",
-                      label: "Title",
-                      name: "title",
-                    },
-                    {
-                      type: "string",
-                      label: "Text",
-                      name: "text",
-                    },
-                    {
                       type: "object",
                       label: "Icon",
                       name: "icon",
@@ -235,10 +225,6 @@ export default unstable_defineSchema({
                           label: "Color",
                           name: "color",
                           options: [
-                            {
-                              label: "Primary (Theme)",
-                              value: "primary",
-                            },
                             {
                               label: "Blue",
                               value: "blue",
@@ -274,9 +260,24 @@ export default unstable_defineSchema({
                           ],
                         },
                         {
+                          name: "style",
+                          label: "Style",
+                          type: "string",
+                          options: [
+                            {
+                              label: "Circle",
+                              value: "circle",
+                            },
+                            {
+                              label: "Float",
+                              value: "float",
+                            },
+                          ],
+                        },
+                        {
                           type: "string",
                           label: "Icon",
-                          name: "icon",
+                          name: "name",
                           options: [
                             {
                               label: "Random",
@@ -284,83 +285,93 @@ export default unstable_defineSchema({
                             },
                             {
                               label: "Aperture",
-                              value: "FiAperture",
+                              value: "aperture",
                             },
                             {
                               label: "Code Block",
-                              value: "BiCodeBlock",
+                              value: "code",
                             },
                             {
                               label: "Like",
-                              value: "BiLike",
+                              value: "like",
                             },
                             {
                               label: "Map",
-                              value: "BiMapAlt",
+                              value: "map",
                             },
                             {
                               label: "Palette",
-                              value: "BiPalette",
+                              value: "palette",
                             },
                             {
                               label: "Pie Chart",
-                              value: "BiPieChartAlt2",
+                              value: "chart",
                             },
                             {
                               label: "Pin",
-                              value: "BiPin",
+                              value: "pin",
                             },
                             {
                               label: "Shield",
-                              value: "BiShield",
+                              value: "shield",
                             },
                             {
                               label: "Setting Sliders",
-                              value: "BiSlider",
+                              value: "settings",
                             },
                             {
                               label: "Store",
-                              value: "BiStore",
+                              value: "store",
                             },
                             {
                               label: "Tennis Ball",
-                              value: "BiTennisBall",
+                              value: "ball",
                             },
                             {
                               label: "Test Tube",
-                              value: "BiTestTube",
+                              value: "tube",
                             },
                             {
                               label: "Trophy",
-                              value: "BiTrophy",
+                              value: "trophy",
                             },
                             {
                               label: "User",
-                              value: "BiUserCircle",
+                              value: "user",
                             },
                             {
                               label: "Beer",
-                              value: "BiBeer",
+                              value: "beer",
                             },
                             {
                               label: "Chat",
-                              value: "BiChat",
+                              value: "chat",
                             },
                             {
                               label: "Cloud",
-                              value: "BiCloud",
+                              value: "cloud",
                             },
                             {
                               label: "Coffee",
-                              value: "BiCoffeeTogo",
+                              value: "coffee",
                             },
                             {
                               label: "World",
-                              value: "BiWorld",
+                              value: "world",
                             },
                           ],
                         },
                       ],
+                    },
+                    {
+                      type: "string",
+                      label: "Title",
+                      name: "title",
+                    },
+                    {
+                      type: "string",
+                      label: "Text",
+                      name: "text",
                     },
                   ],
                 },
