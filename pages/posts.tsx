@@ -4,6 +4,7 @@ import { Posts } from "../components/posts";
 import type { PostsConnection } from "../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../utils";
 import { footerQueryFragment } from "../components/footer";
+import { navQueryFragment } from "../components/nav";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -21,6 +22,7 @@ export default function HomePage(
 
 export const query = `#graphql
   query PageQuery {
+    ${navQueryFragment}
     ${footerQueryFragment}
     getPostsList {
       edges {

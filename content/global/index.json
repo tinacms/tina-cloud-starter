@@ -1,4 +1,14 @@
 {
+  "nav": [
+    {
+      "label": "Home",
+      "href": "home"
+    },
+    {
+      "label": "Blog",
+      "href": "posts"
+    }
+  ],
   "footer": {
     "facebook": "/",
     "twitter": "/",
