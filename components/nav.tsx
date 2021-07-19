@@ -44,7 +44,7 @@ export const Nav = () => {
               </a>
             </Link>
           </h4>
-          <ul className="flex gap-8">
+          <ul className="flex gap-6 sm:gap-8 lg:gap-10">
             {navLinks.map((item, i) => {
               const activeItem =
                 item.href === ""

@@ -45,6 +45,7 @@ blocks:
         text: >-
           Eleifend ipsum in, condimentum nibh. Vestibulum ante ipsum primis in
           faucibus orci luctus et ultrices.
+    color: tint
     _template: features
 ---
 

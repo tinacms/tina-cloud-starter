@@ -9,9 +9,9 @@ export const Hero = ({ data }) => {
     <Section color={data.color}>
       <Container
         size="large"
-        className="grid lg:grid-cols-3 gap-8 items-center justify-center"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center"
       >
-        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-center lg:text-left">
+        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-left">
           {data.tagline && (
             <h2 className="w-full	mb-6 text-md font-bold tracking-wide title-font dark:text-gray-50">
               {data.tagline}
@@ -43,14 +43,14 @@ export const Hero = ({ data }) => {
           )}
           {data.actions && (
             <Actions
-              className="justify-center lg:justify-start py-1"
+              className="justify-start py-1"
               color={data.color}
               actions={data.actions}
             />
           )}
         </div>
         {data.image && (
-          <div className="row-start-1 lg:-my-6 flex justify-center">
+          <div className="row-start-1 flex lg:justify-center">
             <img
               className="w-full max-w-xs lg:max-w-none h-auto"
               alt={data.image.alt}
