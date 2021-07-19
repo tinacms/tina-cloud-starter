@@ -15,11 +15,8 @@ export const Footer = ({ data, rawData }) => {
       <Container className="max-w-6xl relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>
-            <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-500 dark:text-gray-300 opacity-80 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
-              <TinaIconSvg className="inline-block mr-2 h-8 w-auto text-orange-500" />
-              <span className="opacity-40 group-hover:opacity-100 transition duration-150 ease-out">
-                Tina Starter
-              </span>
+            <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-30 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
+              <TinaIconSvg className="inline-block mr-2 h-8 w-auto group-hover:text-orange-500" />
             </a>
           </Link>
           <div className="flex gap-3">
