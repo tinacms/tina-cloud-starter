@@ -25,7 +25,7 @@ export const Hero = ({ data }) => {
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
                     ? `from-white to-gray-100`
-                    : `from-blue-400 to-blue-600`
+                    : `from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500`
                 }`}
               >
                 {data.headline}
