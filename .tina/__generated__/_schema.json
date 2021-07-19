@@ -42,6 +42,18 @@
           ]
         },
         {
+          "type": "image",
+          "name": "heroImg",
+          "label": "Hero Image",
+          "ui": {
+            "component": "image"
+          },
+          "namespace": [
+            "posts",
+            "heroImg"
+          ]
+        },
+        {
           "type": "string",
           "label": "Excerpt",
           "ui": {
