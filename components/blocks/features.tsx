@@ -1,10 +1,12 @@
 import { Actions } from "../actions";
 import { Section } from "../section";
 import { Container } from "../container";
+import { Icon } from "../icon";
 
 export const Feature = ({ data }) => {
   return (
     <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "22rem" }}>
+      {data.icon && <Icon icon={data.icon} />}
       {data.title && (
         <h3 className="transition duration-150 ease-out text-2xl font-semibold title-font">
           {data.title}

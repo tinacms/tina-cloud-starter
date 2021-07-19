@@ -1,6 +1,6 @@
 ---
 blocks:
-  - tagline: ""
+  - tagline: ''
     headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -23,17 +23,28 @@ blocks:
       alt: Tina
     _template: hero
   - items:
-      - title: Amazing Feature
+      - icon:
+          color: pink
+          style: float
+          name: code
+        title: Amazing Feature
         text: >-
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
-      - title: This Is a Feature
+      - icon:
+          color: blue
+          style: float
+          name: like
+        title: This Is a Feature
+        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+      - icon:
+          color: green
+          style: float
+          name: palette
+        title: Check Out This Text
         text: >-
-          Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices.
-      - title: Check Out This Text
-        text: >-
-          Eleifend ipsum in, condimentum nibh. Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices.
+          Eleifend ipsum in, condimentum nibh. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices.
     _template: features
 ---
+
