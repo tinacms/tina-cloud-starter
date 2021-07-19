@@ -80,6 +80,7 @@ type Posts {
   title: String
   author: PostsAuthorDocument
   date: String
+  heroImg: String
   excerpt: String
   _body: String
 }
@@ -249,6 +250,7 @@ input PostsMutation {
   title: String
   author: String
   date: String
+  heroImg: String
   excerpt: String
   _body: String
 }
