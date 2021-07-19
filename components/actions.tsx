@@ -35,7 +35,7 @@ export const Actions = ({ color = "default", className = "", actions }) => {
                   className={`group inline-flex items-center font-semibold mx-3 my-2 text-lg transition duration-150 ease-out ${
                     color === "primary"
                       ? `text-white  hover:text-blue-100`
-                      : `text-blue-600  hover:text-blue-400`
+                      : `text-blue-600 dark:text-blue-400 hover:text-blue-400 dark:hover:text-blue-200`
                   }`}
                   style={{
                     textShadow: `0 3px 7px rgba(var(--color-rgb-blue-400),0.2)`,
@@ -47,7 +47,7 @@ export const Actions = ({ color = "default", className = "", actions }) => {
                       className={`ml-0 mr-0 w-6 h-6 ${
                         color === "primary"
                           ? `text-blue-100  group-hover:text-blue-200`
-                          : `text-blue-500  group-hover:text-blue-300`
+                          : `text-blue-500 dark:text-blue-300 hover:text-blue-300 dark:hover:text-blue-200`
                       }`}
                     />
                   )}
