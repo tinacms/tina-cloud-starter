@@ -5,7 +5,7 @@ import { Icon } from "../icon";
 
 export const Feature = ({ data }) => {
   return (
-    <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "22rem" }}>
+    <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "14rem" }}>
       {data.icon && <Icon icon={data.icon} />}
       {data.title && (
         <h3 className="text-2xl font-semibold title-font">{data.title}</h3>
