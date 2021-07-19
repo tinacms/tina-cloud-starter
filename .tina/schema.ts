@@ -354,6 +354,14 @@ export default unstable_defineSchema({
           },
         },
         {
+          type: "image",
+          name: "heroImg",
+          label: "Hero Image",
+          ui: {
+            component: 'image'
+          }
+        },
+        {
           type: "string",
           label: "Excerpt",
           ui: {
