@@ -10,11 +10,11 @@ export default function HomePage(
 }
 
 export const query = `#graphql
-  query ContentQuery {
+  query ContentQuery($relativePath: String!) {
     # "index.md" is _relative_ to the "Pages" path property in your schema definition
     # you can inspect this file at "content/pages/index.md"
     ${footerQueryFragment}
-    getPagesDocument(relativePath: "index.md") {
+    getPagesDocument(relativePath: $relativePath) {
       data {
         __typename
       	blocks {
@@ -57,17 +57,44 @@ export const query = `#graphql
   }
 `;
 
-export const getStaticProps = async () => {
-  const client = createLocalClient();
+export const getStaticProps = async ({ params }) => {
+  const variables = { relativePath: `${params.filename}.md` };
   return {
     props: {
-      data: await client.request<{
-        getPagesDocument: PagesDocument;
-      }>(query, {
-        variables: {},
+      data: await client.request<{ getPagesDocument: PagesDocument }>(query, {
+        variables,
       }),
-      query: query,
-      variables: {},
+      variables,
+      query,
     },
+  };
+};
+
+const client = createLocalClient();
+
+export const getStaticPaths = async () => {
+  const pagesListData = await client.request<{
+    getPagesList: any;
+  }>(
+    (gql) => gql`
+      {
+        getPagesList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+            }
+          }
+        }
+      }
+    `,
+    { variables: {} }
+  );
+  return {
+    paths: pagesListData.getPagesList.edges.map((page) => ({
+      params: { filename: page.node.sys.filename },
+    })),
+    fallback: false,
   };
 };
