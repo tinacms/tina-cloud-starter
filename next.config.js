@@ -5,7 +5,7 @@ module.exports = withSvgr({
     return [
       {
         source: "/",
-        destination: "/index",
+        destination: "/home",
       },
     ];
   },

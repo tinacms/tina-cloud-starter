@@ -214,6 +214,12 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
+export type GlobalNav = {
+  __typename?: 'GlobalNav';
+  href?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+};
+
 export type GlobalFooter = {
   __typename?: 'GlobalFooter';
   facebook?: Maybe<Scalars['String']>;
@@ -224,6 +230,7 @@ export type GlobalFooter = {
 
 export type Global = {
   __typename?: 'Global';
+  nav?: Maybe<Array<Maybe<GlobalNav>>>;
   footer?: Maybe<GlobalFooter>;
 };
 
@@ -422,6 +429,11 @@ export type PostsMutation = {
   _body?: Maybe<Scalars['String']>;
 };
 
+export type GlobalNavMutation = {
+  href?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+};
+
 export type GlobalFooterMutation = {
   facebook?: Maybe<Scalars['String']>;
   twitter?: Maybe<Scalars['String']>;
@@ -430,6 +442,7 @@ export type GlobalFooterMutation = {
 };
 
 export type GlobalMutation = {
+  nav?: Maybe<Array<Maybe<GlobalNavMutation>>>;
   footer?: Maybe<GlobalFooterMutation>;
 };
 

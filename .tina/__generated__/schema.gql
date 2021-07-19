@@ -104,6 +104,11 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
+type GlobalNav {
+  href: String
+  label: String
+}
+
 type GlobalFooter {
   facebook: String
   twitter: String
@@ -112,6 +117,7 @@ type GlobalFooter {
 }
 
 type Global {
+  nav: [GlobalNav]
   footer: GlobalFooter
 }
 
@@ -253,6 +259,11 @@ input PostsMutation {
   _body: String
 }
 
+input GlobalNavMutation {
+  href: String
+  label: String
+}
+
 input GlobalFooterMutation {
   facebook: String
   twitter: String
@@ -261,6 +272,7 @@ input GlobalFooterMutation {
 }
 
 input GlobalMutation {
+  nav: [GlobalNavMutation]
   footer: GlobalFooterMutation
 }
 
