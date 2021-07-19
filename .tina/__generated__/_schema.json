@@ -375,30 +375,6 @@
                   "list": true,
                   "fields": [
                     {
-                      "type": "string",
-                      "label": "Title",
-                      "name": "title",
-                      "namespace": [
-                        "pages",
-                        "blocks",
-                        "features",
-                        "items",
-                        "title"
-                      ]
-                    },
-                    {
-                      "type": "string",
-                      "label": "Text",
-                      "name": "text",
-                      "namespace": [
-                        "pages",
-                        "blocks",
-                        "features",
-                        "items",
-                        "text"
-                      ]
-                    },
-                    {
                       "type": "object",
                       "label": "Icon",
                       "name": "icon",
@@ -408,10 +384,6 @@
                           "label": "Color",
                           "name": "color",
                           "options": [
-                            {
-                              "label": "Primary (Theme)",
-                              "value": "primary"
-                            },
                             {
                               "label": "Blue",
                               "value": "blue"
@@ -455,89 +427,17 @@
                           ]
                         },
                         {
+                          "name": "style",
+                          "label": "Style",
                           "type": "string",
-                          "label": "Icon",
-                          "name": "icon",
                           "options": [
                             {
-                              "label": "Random",
-                              "value": ""
+                              "label": "Circle",
+                              "value": "circle"
                             },
                             {
-                              "label": "Aperture",
-                              "value": "FiAperture"
-                            },
-                            {
-                              "label": "Code Block",
-                              "value": "BiCodeBlock"
-                            },
-                            {
-                              "label": "Like",
-                              "value": "BiLike"
-                            },
-                            {
-                              "label": "Map",
-                              "value": "BiMapAlt"
-                            },
-                            {
-                              "label": "Palette",
-                              "value": "BiPalette"
-                            },
-                            {
-                              "label": "Pie Chart",
-                              "value": "BiPieChartAlt2"
-                            },
-                            {
-                              "label": "Pin",
-                              "value": "BiPin"
-                            },
-                            {
-                              "label": "Shield",
-                              "value": "BiShield"
-                            },
-                            {
-                              "label": "Setting Sliders",
-                              "value": "BiSlider"
-                            },
-                            {
-                              "label": "Store",
-                              "value": "BiStore"
-                            },
-                            {
-                              "label": "Tennis Ball",
-                              "value": "BiTennisBall"
-                            },
-                            {
-                              "label": "Test Tube",
-                              "value": "BiTestTube"
-                            },
-                            {
-                              "label": "Trophy",
-                              "value": "BiTrophy"
-                            },
-                            {
-                              "label": "User",
-                              "value": "BiUserCircle"
-                            },
-                            {
-                              "label": "Beer",
-                              "value": "BiBeer"
-                            },
-                            {
-                              "label": "Chat",
-                              "value": "BiChat"
-                            },
-                            {
-                              "label": "Cloud",
-                              "value": "BiCloud"
-                            },
-                            {
-                              "label": "Coffee",
-                              "value": "BiCoffeeTogo"
-                            },
-                            {
-                              "label": "World",
-                              "value": "BiWorld"
+                              "label": "Float",
+                              "value": "float"
                             }
                           ],
                           "namespace": [
@@ -546,7 +446,102 @@
                             "features",
                             "items",
                             "icon",
-                            "icon"
+                            "style"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "label": "Icon",
+                          "name": "name",
+                          "options": [
+                            {
+                              "label": "Random",
+                              "value": ""
+                            },
+                            {
+                              "label": "Aperture",
+                              "value": "aperture"
+                            },
+                            {
+                              "label": "Code Block",
+                              "value": "code"
+                            },
+                            {
+                              "label": "Like",
+                              "value": "like"
+                            },
+                            {
+                              "label": "Map",
+                              "value": "map"
+                            },
+                            {
+                              "label": "Palette",
+                              "value": "palette"
+                            },
+                            {
+                              "label": "Pie Chart",
+                              "value": "chart"
+                            },
+                            {
+                              "label": "Pin",
+                              "value": "pin"
+                            },
+                            {
+                              "label": "Shield",
+                              "value": "shield"
+                            },
+                            {
+                              "label": "Setting Sliders",
+                              "value": "settings"
+                            },
+                            {
+                              "label": "Store",
+                              "value": "store"
+                            },
+                            {
+                              "label": "Tennis Ball",
+                              "value": "ball"
+                            },
+                            {
+                              "label": "Test Tube",
+                              "value": "tube"
+                            },
+                            {
+                              "label": "Trophy",
+                              "value": "trophy"
+                            },
+                            {
+                              "label": "User",
+                              "value": "user"
+                            },
+                            {
+                              "label": "Beer",
+                              "value": "beer"
+                            },
+                            {
+                              "label": "Chat",
+                              "value": "chat"
+                            },
+                            {
+                              "label": "Cloud",
+                              "value": "cloud"
+                            },
+                            {
+                              "label": "Coffee",
+                              "value": "coffee"
+                            },
+                            {
+                              "label": "World",
+                              "value": "world"
+                            }
+                          ],
+                          "namespace": [
+                            "pages",
+                            "blocks",
+                            "features",
+                            "items",
+                            "icon",
+                            "name"
                           ]
                         }
                       ],
@@ -556,6 +551,30 @@
                         "features",
                         "items",
                         "icon"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "label": "Title",
+                      "name": "title",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "features",
+                        "items",
+                        "title"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "label": "Text",
+                      "name": "text",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "features",
+                        "items",
+                        "text"
                       ]
                     }
                   ],
