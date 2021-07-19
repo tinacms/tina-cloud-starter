@@ -8,14 +8,10 @@ export const Feature = ({ data }) => {
     <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "22rem" }}>
       {data.icon && <Icon icon={data.icon} />}
       {data.title && (
-        <h3 className="transition duration-150 ease-out text-2xl font-semibold title-font">
-          {data.title}
-        </h3>
+        <h3 className="text-2xl font-semibold title-font">{data.title}</h3>
       )}
       {data.text && (
-        <p className="transition duration-150 ease-out text-base opacity-80 leading-relaxed">
-          {data.text}
-        </p>
+        <p className="text-base opacity-80 leading-relaxed">{data.text}</p>
       )}
       {data.actions && <Actions actions={data.actions} />}
     </div>
