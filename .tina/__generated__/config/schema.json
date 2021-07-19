@@ -55,6 +55,30 @@
       "fields": [
         {
           "type": "object",
+          "label": "Nav Links",
+          "name": "nav",
+          "list": true,
+          "ui": {
+            "defaultItem": {
+              "href": "home",
+              "label": "Home"
+            }
+          },
+          "fields": [
+            {
+              "type": "string",
+              "label": "Link",
+              "name": "href"
+            },
+            {
+              "type": "string",
+              "label": "Label",
+              "name": "label"
+            }
+          ]
+        },
+        {
+          "type": "object",
           "label": "Footer",
           "name": "footer",
           "fields": [

@@ -2,6 +2,7 @@ import { Blocks } from "../components/blocks";
 import type { PagesDocument } from "../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../utils";
 import { footerQueryFragment } from "../components/footer";
+import { navQueryFragment } from "../components/nav";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -13,6 +14,7 @@ export const query = `#graphql
   query ContentQuery($relativePath: String!) {
     # "index.md" is _relative_ to the "Pages" path property in your schema definition
     # you can inspect this file at "content/pages/index.md"
+    ${navQueryFragment}
     ${footerQueryFragment}
     getPagesDocument(relativePath: $relativePath) {
       data {
