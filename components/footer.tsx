@@ -12,7 +12,7 @@ export const Footer = ({ data, rawData }) => {
 
   return (
     <footer className="text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000">
-      <Container className="max-w-6xl relative" size="small">
+      <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>
             <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-30 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
