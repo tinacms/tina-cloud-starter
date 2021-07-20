@@ -10,13 +10,15 @@ function InnerApp({ Component, pageProps }) {
     // Dynamically load Tina only when in edit mode so it does not affect production
     // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
     const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
-    const layoutData = pageProps.data?.getGlobalDocument?.data;
 
     return (
       <>
         <TinaWrapper {...pageProps}>
           {(props) => (
-            <Layout rawData={pageProps} data={layoutData}>
+            <Layout
+              rawData={pageProps}
+              data={props.data?.getGlobalDocument?.data}
+            >
               <Component {...props} />
             </Layout>
           )}

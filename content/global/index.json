@@ -1,17 +1,20 @@
 {
   "nav": [
     {
-      "label": "Home",
-      "href": "home"
+      "href": "home",
+      "label": "Home"
     },
     {
-      "label": "Blog",
-      "href": "posts"
+      "href": "posts",
+      "label": "Blog"
     }
   ],
   "footer": {
     "facebook": "/",
     "twitter": "/",
     "instagram": "/"
+  },
+  "theme": {
+    "color": "blue"
   }
 }

@@ -1,6 +1,7 @@
 import { Post } from "../../components/post";
 import type { PostsDocument } from "../../.tina/__generated__/types";
 import { createLocalClient, AsyncReturnType } from "../../utils";
+import { layoutQueryFragment } from "../../components/layout";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -11,6 +12,7 @@ export default function BlogPostPage(
 
 export const query = `
   query BlogPostQuery($relativePath: String!) {
+    ${layoutQueryFragment}
     getPostsDocument(relativePath: $relativePath) {
       data {
         title
