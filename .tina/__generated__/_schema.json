@@ -45,9 +45,6 @@
           "type": "image",
           "name": "heroImg",
           "label": "Hero Image",
-          "ui": {
-            "component": "image"
-          },
           "namespace": [
             "posts",
             "heroImg"
@@ -379,9 +376,6 @@
                       "name": "src",
                       "label": "Image Source",
                       "type": "image",
-                      "ui": {
-                        "component": "image"
-                      },
                       "namespace": [
                         "pages",
                         "blocks",
