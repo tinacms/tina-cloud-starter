@@ -37,6 +37,11 @@ export const query = `#graphql
 						body
             color
           }
+          ... on PagesBlocksTestimonial {
+            quote
+            author
+            color
+          }
           ... on PagesBlocksHero {
             tagline
             headline

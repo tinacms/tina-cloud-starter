@@ -65,6 +65,9 @@ module.exports = {
       4: "4px",
     },
     extend: {
+      opacity: {
+        15: ".15",
+      },
       maxWidth: {
         "8xl": "86rem",
       },
