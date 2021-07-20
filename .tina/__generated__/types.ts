@@ -229,10 +229,16 @@ export type GlobalFooter = {
   github?: Maybe<Scalars['String']>;
 };
 
+export type GlobalTheme = {
+  __typename?: 'GlobalTheme';
+  color?: Maybe<Scalars['String']>;
+};
+
 export type Global = {
   __typename?: 'Global';
   nav?: Maybe<Array<Maybe<GlobalNav>>>;
   footer?: Maybe<GlobalFooter>;
+  theme?: Maybe<GlobalTheme>;
 };
 
 export type GlobalDocument = Node & {
@@ -450,9 +456,14 @@ export type GlobalFooterMutation = {
   github?: Maybe<Scalars['String']>;
 };
 
+export type GlobalThemeMutation = {
+  color?: Maybe<Scalars['String']>;
+};
+
 export type GlobalMutation = {
   nav?: Maybe<Array<Maybe<GlobalNavMutation>>>;
   footer?: Maybe<GlobalFooterMutation>;
+  theme?: Maybe<GlobalThemeMutation>;
 };
 
 export type AuthorsMutation = {

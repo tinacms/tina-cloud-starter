@@ -43,7 +43,7 @@ const iconOptions = {
   aperture: FiAperture,
 };
 
-export const Icon = ({ icon }) => {
+export const Icon = ({ icon, parentColor = "" }) => {
   const IconSVG = React.useMemo(() => {
     if (!icon.name || icon.name === "" || !iconOptions[icon.name]) {
       return randomProperty(iconOptions);
@@ -69,14 +69,15 @@ export const Icon = ({ icon }) => {
   };
 
   const iconColorClass = {
-    blue: "text-blue-400 dark:text-blue-500",
-    teal: "text-teal-400 dark:text-teal-500",
-    green: "text-green-400 dark:text-green-500",
-    red: "text-red-400 dark:text-red-500",
-    pink: "text-pink-400 dark:text-pink-500",
-    purple: "text-purple-400 dark:text-purple-500",
-    orange: "text-orange-400 dark:text-orange-500",
-    yellow: "text-yellow-400 dark:text-yellow-500",
+    blue: "text-blue-400",
+    teal: "text-teal-400",
+    green: "text-green-400",
+    red: "text-red-400",
+    pink: "text-pink-400",
+    purple: "text-purple-400",
+    orange: "text-orange-400",
+    yellow: "text-yellow-400",
+    white: "text-gray-100",
   };
 
   const iconSizeClass = {
@@ -100,11 +101,17 @@ export const Icon = ({ icon }) => {
     } else {
       return (
         <IconSVG
-          className={`${iconSizeClass[iconSize]} ${iconColorClass[icon.color]}`}
+          className={`${iconSizeClass[iconSize]} ${
+            iconColorClass[
+              parentColor === "primary" && icon.color === "blue"
+                ? "white"
+                : icon.color
+            ]
+          }`}
         />
       );
     }
-  }, [icon.style, icon.size, icon.color, icon.name, IconSVG]);
+  }, [parentColor, icon.style, icon.size, icon.color, icon.name, IconSVG]);
 
   return Component;
 };
