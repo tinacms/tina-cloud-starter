@@ -312,7 +312,10 @@ const heroBlockSchema = {
         {
           name: "src",
           label: "Image Source",
-          type: "string",
+          type: "image",
+          ui: {
+            component: "image",
+          },
         },
         {
           name: "alt",
@@ -358,8 +361,8 @@ export default unstable_defineSchema({
           name: "heroImg",
           label: "Hero Image",
           ui: {
-            component: 'image'
-          }
+            component: "image",
+          },
         },
         {
           type: "string",
