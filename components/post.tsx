@@ -39,7 +39,9 @@ export const Post = ({ data }) => {
             {data.data.date}
           </p>
         </div>
-
+        <div className="prose dark:prose-dark  w-full max-w-none">
+          <img src={data.data.heroImg} />
+        </div>
         <div className="prose dark:prose-dark  w-full max-w-none">
           <Markdown>{data.data._body}</Markdown>
         </div>
