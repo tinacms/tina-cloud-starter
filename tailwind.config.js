@@ -170,12 +170,12 @@ module.exports = {
             h4: { color: theme("colors.gray.100") },
             code: {
               color: theme("colors.gray.100"),
-              backgroundColor: theme("colors.blue.700"),
+              backgroundColor: "rgba(0,0,0,0.15)",
             },
             "a code": { color: theme("colors.gray.100") },
             pre: {
               color: theme("colors.gray.200"),
-              backgroundColor: theme("colors.blue.700"),
+              backgroundColor: "rgba(0,0,0,0.15)",
             },
             thead: {
               color: theme("colors.gray.100"),
