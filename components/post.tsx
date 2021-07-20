@@ -6,7 +6,7 @@ import { Section } from "./section";
 export const Post = ({ data }) => {
   return (
     <Section className="flex-1">
-      <Container className={`flex-1 max-w-4xl`} size="large">
+      <Container className={`flex-1 max-w-4xl pb-2`} size="large">
         <h2
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
         >
@@ -39,9 +39,16 @@ export const Post = ({ data }) => {
             {data.data.date}
           </p>
         </div>
-        <div className="prose dark:prose-dark  w-full max-w-none">
-          <img src={data.data.heroImg} />
+      </Container>
+      {data.data.heroImg && (
+        <div className="">
+          <img
+            src={data.data.heroImg}
+            className="mb-14 w-full h-auto max-w-4xl lg:max-w-6xl mx-auto"
+          />
         </div>
+      )}
+      <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
           <Markdown>{data.data._body}</Markdown>
         </div>

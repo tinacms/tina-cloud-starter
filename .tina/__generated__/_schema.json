@@ -378,7 +378,10 @@
                     {
                       "name": "src",
                       "label": "Image Source",
-                      "type": "string",
+                      "type": "image",
+                      "ui": {
+                        "component": "image"
+                      },
                       "namespace": [
                         "pages",
                         "blocks",
