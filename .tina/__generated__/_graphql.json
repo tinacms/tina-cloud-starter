@@ -1453,6 +1453,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "heroImg"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "excerpt"
           },
           "arguments": [],
@@ -3568,6 +3583,20 @@
           "name": {
             "kind": "Name",
             "value": "date"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "heroImg"
           },
           "type": {
             "kind": "NamedType",
