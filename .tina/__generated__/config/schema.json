@@ -32,10 +32,7 @@
         {
           "type": "image",
           "name": "heroImg",
-          "label": "Hero Image",
-          "ui": {
-            "component": "image"
-          }
+          "label": "Hero Image"
         },
         {
           "type": "string",
@@ -241,10 +238,7 @@
                     {
                       "name": "src",
                       "label": "Image Source",
-                      "type": "image",
-                      "ui": {
-                        "component": "image"
-                      }
+                      "type": "image"
                     },
                     {
                       "name": "alt",

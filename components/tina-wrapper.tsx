@@ -1,8 +1,8 @@
-import { TinaCloudProvider } from 'tina-graphql-gateway'
-import React from 'react'
-import { useGraphqlForms } from 'tina-graphql-gateway'
-import { Loading } from './loading'
-import { TinaCloudCloudinaryMediaStore } from 'next-tinacms-cloudinary'
+import { TinaCloudProvider } from "tina-graphql-gateway";
+import React from "react";
+import { unstable_useGraphQLForms } from "tina-graphql-gateway";
+import { Loading } from "./loading";
+import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
 /**
  * This gets loaded dynamically in "pages/_app.js"
@@ -19,14 +19,14 @@ const TinaWrapper = (props) => {
     >
       <Inner {...props} />
     </TinaCloudProvider>
-  )
-}
+  );
+};
 
 const Inner = (props) => {
-  const [payload, isLoading] = useGraphqlForms({
+  const [payload, isLoading] = unstable_useGraphQLForms({
     query: (gql) => gql(props.query),
     variables: props.variables || {},
-  })
+  });
   return (
     <>
       {isLoading ? (
@@ -36,7 +36,7 @@ const Inner = (props) => {
         props.children({ ...props, data: payload })
       )}
     </>
-  )
-}
+  );
+};
 
-export default TinaWrapper
+export default TinaWrapper;
