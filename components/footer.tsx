@@ -48,16 +48,3 @@ export const Footer = ({ data, rawData }) => {
     </footer>
   );
 };
-
-export const footerQueryFragment = `
-  getGlobalDocument(relativePath: "index.json") {
-    data {
-      footer {
-        facebook
-        twitter
-        instagram
-        github
-      }  
-    }
-  }
-`;

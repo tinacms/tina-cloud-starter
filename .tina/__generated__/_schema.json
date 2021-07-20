@@ -173,6 +173,61 @@
             "global",
             "footer"
           ]
+        },
+        {
+          "type": "object",
+          "label": "Theme",
+          "name": "theme",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Primary Color",
+              "name": "color",
+              "options": [
+                {
+                  "label": "Blue",
+                  "value": "blue"
+                },
+                {
+                  "label": "Teal",
+                  "value": "teal"
+                },
+                {
+                  "label": "Green",
+                  "value": "green"
+                },
+                {
+                  "label": "Red",
+                  "value": "red"
+                },
+                {
+                  "label": "Pink",
+                  "value": "pink"
+                },
+                {
+                  "label": "Purple",
+                  "value": "purple"
+                },
+                {
+                  "label": "Orange",
+                  "value": "orange"
+                },
+                {
+                  "label": "Yellow",
+                  "value": "yellow"
+                }
+              ],
+              "namespace": [
+                "global",
+                "theme",
+                "color"
+              ]
+            }
+          ],
+          "namespace": [
+            "global",
+            "theme"
+          ]
         }
       ],
       "namespace": [
