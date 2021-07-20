@@ -210,7 +210,13 @@ type PagesBlocksContent {
   color: String
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent
+type PagesBlocksTestimonial {
+  quote: String
+  author: String
+  color: String
+}
+
+union PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
 
 type Pages {
   blocks: [PagesBlocks]
@@ -326,10 +332,17 @@ input PagesBlocksContentMutation {
   color: String
 }
 
+input PagesBlocksTestimonialMutation {
+  quote: String
+  author: String
+  color: String
+}
+
 input PagesBlocksMutation {
   hero: PagesBlocksHeroMutation
   features: PagesBlocksFeaturesMutation
   content: PagesBlocksContentMutation
+  testimonial: PagesBlocksTestimonialMutation
 }
 
 input PagesMutation {
