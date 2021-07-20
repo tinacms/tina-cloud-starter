@@ -57,14 +57,3 @@ export const Nav = ({ data }) => {
     </div>
   );
 };
-
-export const navQueryFragment = `
-  getGlobalDocument(relativePath: "index.json") {
-    data {
-      nav {
-        href
-        label
-      }
-    }
-  }
-`;

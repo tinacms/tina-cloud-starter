@@ -3,10 +3,10 @@ import { Section } from "../section";
 import { Container } from "../container";
 import { Icon } from "../icon";
 
-export const Feature = ({ data }) => {
+export const Feature = ({ featuresColor, data }) => {
   return (
     <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "14rem" }}>
-      {data.icon && <Icon icon={data.icon} />}
+      {data.icon && <Icon parentColor={featuresColor} icon={data.icon} />}
       {data.title && (
         <h3 className="text-2xl font-semibold title-font">{data.title}</h3>
       )}
@@ -27,7 +27,7 @@ export const Features = ({ data }) => {
       >
         {data.items &&
           data.items.map(function (block, i) {
-            return <Feature key={i} data={block} />;
+            return <Feature featuresColor={data.color} key={i} data={block} />;
           })}
       </Container>
     </Section>
