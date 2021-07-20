@@ -44,7 +44,7 @@ export const Post = ({ data }) => {
         <div className="">
           <img
             src={data.data.heroImg}
-            className="mb-14 w-full h-auto max-w-4xl lg:max-w-6xl mx-auto"
+            className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
           />
         </div>
       )}
