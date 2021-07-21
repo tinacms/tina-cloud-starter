@@ -5,10 +5,21 @@ import TinaIconSvg from "../public/tina.svg";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Container } from "./container";
 import { RawRenderer } from "./rawRenderer";
+import { ThemeContext } from "./theme";
 
 export const Footer = ({ data, rawData }) => {
-  const socialIconClasses =
-    "h-6 w-auto text-blue-500 dark:text-blue-400 hover:text-blue-300";
+  const theme = React.useContext(ThemeContext);
+  const socialIconClasses = "h-6 w-auto";
+  const socialIconColorClasses = {
+    blue: "text-blue-500 dark:text-blue-400 hover:text-blue-300",
+    teal: "text-teal-500 dark:text-teal-400 hover:text-teal-300",
+    green: "text-green-500 dark:text-green-400 hover:text-green-300",
+    red: "text-red-500 dark:text-red-400 hover:text-red-300",
+    pink: "text-pink-500 dark:text-pink-400 hover:text-pink-300",
+    purple: "text-purple-500 dark:text-purple-400 hover:text-purple-300",
+    orange: "text-orange-500 dark:text-orange-400 hover:text-orange-300",
+    yellow: "text-yellow-500 dark:text-yellow-400 hover:text-yellow-300",
+  };
 
   return (
     <footer className="text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000">
@@ -22,22 +33,38 @@ export const Footer = ({ data, rawData }) => {
           <div className="flex gap-3">
             {data && data.facebook && (
               <a href={data.facebook} target="_blank">
-                <FaFacebookF className={socialIconClasses} />
+                <FaFacebookF
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[theme.color]
+                  }`}
+                />
               </a>
             )}
             {data && data.twitter && (
               <a href={data.twitter} target="_blank">
-                <FaTwitter className={socialIconClasses} />
+                <FaTwitter
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[theme.color]
+                  }`}
+                />
               </a>
             )}
             {data && data.instagram && (
               <a href={data.instagram} target="_blank">
-                <FaInstagram className={socialIconClasses} />
+                <FaInstagram
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[theme.color]
+                  }`}
+                />
               </a>
             )}
             {data && data.github && (
               <a href={data.github} target="_blank">
-                <FaGithub className={socialIconClasses} />
+                <FaGithub
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[theme.color]
+                  }`}
+                />
               </a>
             )}
           </div>
