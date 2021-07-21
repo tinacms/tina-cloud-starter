@@ -13,7 +13,11 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme data={data?.theme}>
-        <div className="min-h-screen flex flex-col">
+        <div
+          className={`min-h-screen flex flex-col ${
+            data.theme.font === "geometric" ? "font-geometric" : "font-sans"
+          }`}
+        >
           <Nav data={data?.nav} />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 flex flex-col">
             {children}
