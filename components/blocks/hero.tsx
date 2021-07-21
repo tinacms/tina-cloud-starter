@@ -26,13 +26,13 @@ export const Hero = ({ data }) => {
       >
         <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-left">
           {data.tagline && (
-            <h2 className="w-full	mb-6 text-md font-bold tracking-wide title-font dark:text-gray-50">
+            <h2 className="w-full	mb-8 text-md font-bold tracking-wide title-font dark:text-gray-50">
               {data.tagline}
             </h2>
           )}
           {data.headline && (
             <h3
-              className={`w-full relative	mb-8 text-5xl font-extrabold tracking-normal title-font`}
+              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal title-font`}
             >
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
@@ -47,7 +47,7 @@ export const Hero = ({ data }) => {
           )}
           {data.text && (
             <div
-              className={`prose prose-lg mb-8 ${
+              className={`prose prose-lg mb-10 ${
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >

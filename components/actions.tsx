@@ -55,7 +55,7 @@ export const Actions = ({
   };
 
   return (
-    <div className={`flex flex-wrap items-center -mx-3 -my-2 ${className}`}>
+    <div className={`flex flex-wrap items-center gap-y-4 gap-x-6 ${className}`}>
       {actions &&
         actions.map(function (action, index) {
           let element = null;
@@ -63,7 +63,7 @@ export const Actions = ({
             element = (
               <Link key={index} href={action.link ? action.link : "/"}>
                 <button
-                  className={`z-10 relative flex items-center px-7 py-3 mx-3 my-2 font-semibold text-lg transition duration-150 ease-out  rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
                       ? invertedButtonColorClasses[theme.color]
                       : buttonColorClasses[theme.color]
@@ -83,7 +83,7 @@ export const Actions = ({
             element = (
               <Link key={index} href={action.link ? action.link : "/"} passHref>
                 <a
-                  className={`group inline-flex items-center font-semibold mx-3 my-2 text-lg transition duration-150 ease-out ${
+                  className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
                     parentColor === "primary"
                       ? `text-white  hover:text-gray-50`
                       : linkButtonColorClasses[theme.color]
