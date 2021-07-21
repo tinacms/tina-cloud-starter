@@ -2,14 +2,15 @@ import React from "react";
 import Link from "next/link";
 // @ts-ignore
 import TinaIconSvg from "../public/tina.svg";
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "./container";
 import { RawRenderer } from "./rawRenderer";
 import { ThemeContext } from "./theme";
 
 export const Footer = ({ data, rawData }) => {
   const theme = React.useContext(ThemeContext);
-  const socialIconClasses = "h-6 w-auto";
+  const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
     blue: "text-blue-500 dark:text-blue-400 hover:text-blue-300",
     teal: "text-teal-500 dark:text-teal-400 hover:text-teal-300",
@@ -48,10 +49,10 @@ export const Footer = ({ data, rawData }) => {
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>
             <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-30 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
-              <TinaIconSvg className="inline-block mr-2 h-8 w-auto group-hover:text-orange-500" />
+              <TinaIconSvg className="inline-block mr-2 h-10 w-auto group-hover:text-orange-500" />
             </a>
           </Link>
-          <div className="flex gap-3">
+          <div className="flex gap-4">
             {data.social && data.social.facebook && (
               <a href={data.facebook} target="_blank">
                 <FaFacebookF
@@ -76,7 +77,7 @@ export const Footer = ({ data, rawData }) => {
             )}
             {data.social && data.social.instagram && (
               <a href={data.instagram} target="_blank">
-                <FaInstagram
+                <AiFillInstagram
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
                       data.color === "primary" ? "primary" : theme.color

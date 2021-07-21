@@ -22,7 +22,7 @@ export const Hero = ({ data }) => {
     <Section color={data.color}>
       <Container
         size="large"
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8 items-center justify-center"
       >
         <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-left">
           {data.tagline && (
@@ -56,7 +56,7 @@ export const Hero = ({ data }) => {
           )}
           {data.actions && (
             <Actions
-              className="justify-start py-1"
+              className="justify-start py-2"
               parentColor={data.color}
               actions={data.actions}
             />

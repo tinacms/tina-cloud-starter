@@ -5,7 +5,7 @@ import { Icon } from "../icon";
 
 export const Feature = ({ featuresColor, data }) => {
   return (
-    <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "14rem" }}>
+    <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "16rem" }}>
       {data.icon && <Icon parentColor={featuresColor} icon={data.icon} />}
       {data.title && (
         <h3 className="text-2xl font-semibold title-font">{data.title}</h3>
@@ -22,7 +22,7 @@ export const Features = ({ data }) => {
   return (
     <Section color={data.color}>
       <Container
-        className={`flex flex-wrap gap-x-8 gap-y-8 text-left`}
+        className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
         size="large"
       >
         {data.items &&
