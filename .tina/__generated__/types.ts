@@ -215,18 +215,30 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
-export type GlobalNav = {
-  __typename?: 'GlobalNav';
+export type GlobalHeaderNav = {
+  __typename?: 'GlobalHeaderNav';
   href?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
 };
 
-export type GlobalFooter = {
-  __typename?: 'GlobalFooter';
+export type GlobalHeader = {
+  __typename?: 'GlobalHeader';
+  color?: Maybe<Scalars['String']>;
+  nav?: Maybe<Array<Maybe<GlobalHeaderNav>>>;
+};
+
+export type GlobalFooterSocial = {
+  __typename?: 'GlobalFooterSocial';
   facebook?: Maybe<Scalars['String']>;
   twitter?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
+};
+
+export type GlobalFooter = {
+  __typename?: 'GlobalFooter';
+  color?: Maybe<Scalars['String']>;
+  social?: Maybe<GlobalFooterSocial>;
 };
 
 export type GlobalTheme = {
@@ -234,11 +246,12 @@ export type GlobalTheme = {
   color?: Maybe<Scalars['String']>;
   font?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
+  darkMode?: Maybe<Scalars['String']>;
 };
 
 export type Global = {
   __typename?: 'Global';
-  nav?: Maybe<Array<Maybe<GlobalNav>>>;
+  header?: Maybe<GlobalHeader>;
   footer?: Maybe<GlobalFooter>;
   theme?: Maybe<GlobalTheme>;
 };
@@ -446,26 +459,37 @@ export type PostsMutation = {
   _body?: Maybe<Scalars['String']>;
 };
 
-export type GlobalNavMutation = {
+export type GlobalHeaderNavMutation = {
   href?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
 };
 
-export type GlobalFooterMutation = {
+export type GlobalHeaderMutation = {
+  color?: Maybe<Scalars['String']>;
+  nav?: Maybe<Array<Maybe<GlobalHeaderNavMutation>>>;
+};
+
+export type GlobalFooterSocialMutation = {
   facebook?: Maybe<Scalars['String']>;
   twitter?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
 };
 
+export type GlobalFooterMutation = {
+  color?: Maybe<Scalars['String']>;
+  social?: Maybe<GlobalFooterSocialMutation>;
+};
+
 export type GlobalThemeMutation = {
   color?: Maybe<Scalars['String']>;
   font?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
+  darkMode?: Maybe<Scalars['String']>;
 };
 
 export type GlobalMutation = {
-  nav?: Maybe<Array<Maybe<GlobalNavMutation>>>;
+  header?: Maybe<GlobalHeaderMutation>;
   footer?: Maybe<GlobalFooterMutation>;
   theme?: Maybe<GlobalThemeMutation>;
 };

@@ -5,8 +5,29 @@ import { Container } from "./container";
 import TinaIconSvg from "../public/tina.svg";
 import { ThemeContext } from "./theme";
 
-export const Nav = ({ data }) => {
+export const Header = ({ data }) => {
   const theme = React.useContext(ThemeContext);
+
+  const headerColor = {
+    default:
+      "text-black dark:text-white from-gray-50 to-white dark:from-gray-700 dark:to-gray-800",
+    primary: {
+      blue: "text-white from-blue-300 to-blue-500",
+      teal: "text-white from-teal-400 to-teal-500",
+      green: "text-white from-green-400 to-green-500",
+      red: "text-white from-red-400 to-red-500",
+      pink: "text-white from-pink-400 to-pink-500",
+      purple: "text-white from-purple-400 to-purple-500",
+      orange: "text-white from-orange-400 to-orange-500",
+      yellow: "text-white from-yellow-400 to-yellow-500",
+    },
+  };
+
+  const headerColorCss =
+    data.color === "primary"
+      ? headerColor.primary[theme.color]
+      : headerColor.default;
+
   const activeItemClasses = {
     blue: "border-b-3 border-blue-200 dark:border-blue-700",
     teal: "border-b-3 border-teal-200 dark:border-teal-700",
@@ -35,10 +56,10 @@ export const Nav = ({ data }) => {
   });
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-700 dark:to-gray-800">
+    <div className={`bg-gradient-to-b ${headerColorCss}`}>
       <Container className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between">
-          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
+          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
               <a className="flex items-center">
                 <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
@@ -47,8 +68,8 @@ export const Nav = ({ data }) => {
             </Link>
           </h4>
           <ul className="flex gap-6 sm:gap-8 lg:gap-10">
-            {data &&
-              data.map((item, i) => {
+            {data.nav &&
+              data.nav.map((item, i) => {
                 const activeItem =
                   item.href === ""
                     ? typeof location !== "undefined" &&
@@ -60,7 +81,7 @@ export const Nav = ({ data }) => {
                     className={activeItem ? activeItemClasses[theme.color] : ""}
                   >
                     <Link href={`${prefix}/${item.href}`} passHref>
-                      <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-100 opacity-70 hover:opacity-100 py-8">
+                      <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-8">
                         {item.label}
                       </a>
                     </Link>
@@ -69,7 +90,11 @@ export const Nav = ({ data }) => {
               })}
           </ul>
         </div>
-        <div className="absolute h-1 bg-gradient-to-r from-transparent via-gray-50 dark:via-gray-700 to-transparent bottom-0 left-4 right-4 -z-1"></div>
+        <div
+          className={`absolute h-1 bg-gradient-to-r from-transparent ${
+            data.color === "primary" ? `via-white` : `via-black dark:via-white`
+          } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
+        ></div>
       </Container>
     </div>
   );
