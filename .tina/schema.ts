@@ -557,8 +557,12 @@ export default unstable_defineSchema({
                   value: "sans",
                 },
                 {
-                  label: "System Geometric",
-                  value: "geometric",
+                  label: "Nunito",
+                  value: "nunito",
+                },
+                {
+                  label: "Lato",
+                  value: "lato",
                 },
               ],
             },
