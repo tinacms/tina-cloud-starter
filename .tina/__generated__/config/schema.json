@@ -306,7 +306,10 @@
                 {
                   "type": "string",
                   "label": "Text",
-                  "name": "text"
+                  "name": "text",
+                  "ui": {
+                    "component": "textarea"
+                  }
                 },
                 {
                   "label": "Actions",
