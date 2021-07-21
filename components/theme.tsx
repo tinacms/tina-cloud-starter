@@ -53,7 +53,13 @@ export const Theme = ({ data, children }) => {
   } = data;
 
   React.useEffect(() => {
-    updateRenderColorMode(darkMode === "system" ? systemDarkMode : darkMode);
+    updateRenderColorMode(
+      darkMode === "system"
+        ? systemDarkMode
+        : darkMode !== ""
+        ? darkMode
+        : "light"
+    );
   }, [systemDarkMode, darkMode]);
 
   return (
