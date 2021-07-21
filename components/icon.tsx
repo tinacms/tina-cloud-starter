@@ -20,6 +20,7 @@ import {
   BiWorld,
 } from "react-icons/bi";
 import { FiAperture } from "react-icons/fi";
+import { Theme, ThemeContext } from "./theme";
 
 const iconOptions = {
   code: BiCodeBlock,
@@ -44,6 +45,7 @@ const iconOptions = {
 };
 
 export const Icon = ({ icon, parentColor = "" }) => {
+  const theme = React.useContext(ThemeContext);
   const IconSVG = React.useMemo(() => {
     if (!icon.name || icon.name === "" || !iconOptions[icon.name]) {
       return randomProperty(iconOptions);
@@ -86,14 +88,14 @@ export const Icon = ({ icon, parentColor = "" }) => {
     large: "w-14 h-14",
   };
 
+  const iconColor = icon.color ? icon.color : theme.color;
+
   const Component = React.useMemo(() => {
     if (!IconSVG) return null;
     if (icon.style == "circle") {
       return (
         <div
-          className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${
-            iconSizeClass[iconSize]
-          } rounded-full ${iconCircleColorClass[icon.color]}`}
+          className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClass[iconSize]} rounded-full ${iconCircleColorClass[iconColor]}`}
         >
           <IconSVG className="w-2/3 h-2/3" />
         </div>
@@ -103,15 +105,23 @@ export const Icon = ({ icon, parentColor = "" }) => {
         <IconSVG
           className={`${iconSizeClass[iconSize]} ${
             iconColorClass[
-              parentColor === "primary" && icon.color === "blue"
+              parentColor === "primary" && icon.color === theme.color
                 ? "white"
-                : icon.color
+                : iconColor
             ]
           }`}
         />
       );
     }
-  }, [parentColor, icon.style, icon.size, icon.color, icon.name, IconSVG]);
+  }, [
+    parentColor,
+    icon.style,
+    icon.size,
+    icon.color,
+    icon.name,
+    IconSVG,
+    iconColor,
+  ]);
 
   return Component;
 };
