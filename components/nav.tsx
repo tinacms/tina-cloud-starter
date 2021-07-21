@@ -39,7 +39,7 @@ export const Nav = ({ data }) => {
       <Container className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform text-gray-800 dark:text-gray-50">
-            <Link href="/home" passHref>
+            <Link href="/" passHref>
               <a className="flex items-center">
                 <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
                 Tina Starter
@@ -49,7 +49,11 @@ export const Nav = ({ data }) => {
           <ul className="flex gap-6 sm:gap-8 lg:gap-10">
             {data &&
               data.map((item, i) => {
-                const activeItem = windowUrl.includes(item.href);
+                const activeItem =
+                  item.href === ""
+                    ? typeof location !== "undefined" &&
+                      location.pathname == "/"
+                    : windowUrl.includes(item.href);
                 return (
                   <li
                     key={item.label}
