@@ -1,10 +1,11 @@
 import React from "react";
 
-export const Container = ({ children, size = "default", className = "" }) => {
+export const Container = ({ children, size = "medium", className = "" }) => {
   const verticalPadding = {
-    default: "py-12",
     small: "py-8",
-    large: "py-20",
+    medium: "py-12",
+    large: "py-24",
+    default: "py-12",
   };
 
   return (
