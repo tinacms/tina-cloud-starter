@@ -24,7 +24,7 @@ blocks:
     _template: hero
   - items:
       - icon:
-          color: pink
+          color: red
           style: float
           name: code
         title: Amazing Feature
@@ -32,7 +32,6 @@ blocks:
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
-          color: blue
           style: float
           name: like
         title: This Is a Feature
