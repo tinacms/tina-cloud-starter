@@ -54,7 +54,11 @@ export const Footer = ({ data, rawData }) => {
           </Link>
           <div className="flex gap-4">
             {data.social && data.social.facebook && (
-              <a href={data.facebook} target="_blank">
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={data.social.facebook}
+                target="_blank"
+              >
                 <FaFacebookF
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
@@ -65,7 +69,11 @@ export const Footer = ({ data, rawData }) => {
               </a>
             )}
             {data.social && data.social.twitter && (
-              <a href={data.twitter} target="_blank">
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={data.social.twitter}
+                target="_blank"
+              >
                 <FaTwitter
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
@@ -76,7 +84,11 @@ export const Footer = ({ data, rawData }) => {
               </a>
             )}
             {data.social && data.social.instagram && (
-              <a href={data.instagram} target="_blank">
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={data.social.instagram}
+                target="_blank"
+              >
                 <AiFillInstagram
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
@@ -87,7 +99,11 @@ export const Footer = ({ data, rawData }) => {
               </a>
             )}
             {data.social && data.social.github && (
-              <a href={data.github} target="_blank">
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={data.social.github}
+                target="_blank"
+              >
                 <FaGithub
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
