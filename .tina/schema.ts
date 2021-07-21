@@ -515,6 +515,36 @@ export default unstable_defineSchema({
                 },
               ],
             },
+            {
+              type: "string",
+              name: "font",
+              label: "Font Family",
+              options: [
+                {
+                  label: "System Sans",
+                  value: "sans",
+                },
+                {
+                  label: "System Geometric",
+                  value: "geometric",
+                },
+              ],
+            },
+            {
+              type: "string",
+              name: "icon",
+              label: "Icon Set",
+              options: [
+                {
+                  label: "Boxicons",
+                  value: "boxicon",
+                },
+                {
+                  label: "Heroicons",
+                  value: "heroicon",
+                },
+              ],
+            },
           ],
         },
       ],

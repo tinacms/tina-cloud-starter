@@ -119,6 +119,8 @@ type GlobalFooter {
 
 type GlobalTheme {
   color: String
+  font: String
+  icon: String
 }
 
 type Global {
@@ -286,6 +288,8 @@ input GlobalFooterMutation {
 
 input GlobalThemeMutation {
   color: String
+  font: String
+  icon: String
 }
 
 input GlobalMutation {
