@@ -26,8 +26,9 @@ export const Hero = ({ data }) => {
       >
         <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-left">
           {data.tagline && (
-            <h2 className="w-full	mb-8 text-md font-bold tracking-wide title-font dark:text-gray-50">
+            <h2 className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20">
               {data.tagline}
+              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
             </h2>
           )}
           {data.headline && (
