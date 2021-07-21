@@ -105,26 +105,37 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
-type GlobalNav {
+type GlobalHeaderNav {
   href: String
   label: String
 }
 
-type GlobalFooter {
+type GlobalHeader {
+  color: String
+  nav: [GlobalHeaderNav]
+}
+
+type GlobalFooterSocial {
   facebook: String
   twitter: String
   instagram: String
   github: String
 }
 
+type GlobalFooter {
+  color: String
+  social: GlobalFooterSocial
+}
+
 type GlobalTheme {
   color: String
   font: String
   icon: String
+  darkMode: String
 }
 
 type Global {
-  nav: [GlobalNav]
+  header: GlobalHeader
   footer: GlobalFooter
   theme: GlobalTheme
 }
@@ -274,26 +285,37 @@ input PostsMutation {
   _body: String
 }
 
-input GlobalNavMutation {
+input GlobalHeaderNavMutation {
   href: String
   label: String
 }
 
-input GlobalFooterMutation {
+input GlobalHeaderMutation {
+  color: String
+  nav: [GlobalHeaderNavMutation]
+}
+
+input GlobalFooterSocialMutation {
   facebook: String
   twitter: String
   instagram: String
   github: String
 }
 
+input GlobalFooterMutation {
+  color: String
+  social: GlobalFooterSocialMutation
+}
+
 input GlobalThemeMutation {
   color: String
   font: String
   icon: String
+  darkMode: String
 }
 
 input GlobalMutation {
-  nav: [GlobalNavMutation]
+  header: GlobalHeaderMutation
   footer: GlobalFooterMutation
   theme: GlobalThemeMutation
 }
