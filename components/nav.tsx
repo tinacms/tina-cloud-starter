@@ -3,8 +3,21 @@ import Link from "next/link";
 import { Container } from "./container";
 // @ts-ignore
 import TinaIconSvg from "../public/tina.svg";
+import { ThemeContext } from "./theme";
 
 export const Nav = ({ data }) => {
+  const theme = React.useContext(ThemeContext);
+  const activeItemClasses = {
+    blue: "border-b-3 border-blue-200 dark:border-blue-700",
+    teal: "border-b-3 border-teal-200 dark:border-teal-700",
+    green: "border-b-3 border-green-200 dark:border-green-700",
+    red: "border-b-3 border-red-300 dark:border-red-700",
+    pink: "border-b-3 border-pink-200 dark:border-pink-700",
+    purple: "border-b-3 border-purple-200 dark:border-purple-700",
+    orange: "border-b-3 border-orange-200 dark:border-orange-700",
+    yellow: "border-b-3 border-yellow-300 dark:border-yellow-600",
+  };
+
   // If we're on an admin path, other links should also link to their admin paths
   const [prefix, setPrefix] = React.useState("");
   const [windowUrl, setUrl] = React.useState("");
@@ -37,11 +50,11 @@ export const Nav = ({ data }) => {
             {data &&
               data.map((item, i) => {
                 const activeItem = windowUrl.includes(item.href);
-                const listItemClasses = activeItem
-                  ? "border-b-3 border-blue-200 dark:border-blue-700"
-                  : "";
                 return (
-                  <li key={item.label} className={listItemClasses}>
+                  <li
+                    key={item.label}
+                    className={activeItem ? activeItemClasses[theme.color] : ""}
+                  >
                     <Link href={`${prefix}/${item.href}`} passHref>
                       <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out text-gray-600 dark:text-gray-100 opacity-70 hover:opacity-100 py-8">
                         {item.label}
