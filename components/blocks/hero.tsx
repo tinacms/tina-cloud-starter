@@ -33,7 +33,7 @@ export const Hero = ({ data }) => {
           )}
           {data.headline && (
             <h3
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal title-font`}
+              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
