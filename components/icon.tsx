@@ -19,10 +19,28 @@ import {
   BiCoffeeTogo,
   BiWorld,
 } from "react-icons/bi";
+import { ImTrophy } from "react-icons/im";
+import {
+  HiAdjustments,
+  HiBeaker,
+  HiChartBar,
+  HiChatAlt2,
+  HiCloud,
+  HiColorSwatch,
+  HiLocationMarker,
+  HiMap,
+  HiShieldCheck,
+  HiShoppingCart,
+  HiTerminal,
+  HiThumbUp,
+  HiUser,
+} from "react-icons/hi";
+import { RiTestTubeFill } from "react-icons/ri";
 import { FiAperture } from "react-icons/fi";
 import { Theme, ThemeContext } from "./theme";
+import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
 
-const iconOptions = {
+const biIconOptions = {
   code: BiCodeBlock,
   like: BiLike,
   map: BiMapAlt,
@@ -44,15 +62,39 @@ const iconOptions = {
   aperture: FiAperture,
 };
 
+const heroIconOptions = {
+  code: HiTerminal,
+  like: HiThumbUp,
+  map: HiMap,
+  palette: HiColorSwatch,
+  chart: HiChartBar,
+  pin: HiLocationMarker,
+  shield: HiShieldCheck,
+  settings: HiAdjustments,
+  store: HiShoppingCart,
+  ball: BiTennisBall,
+  tube: HiBeaker,
+  trophy: ImTrophy,
+  user: HiUser,
+  beer: FaBeer,
+  chat: HiChatAlt2,
+  cloud: HiCloud,
+  coffee: FaCoffee,
+  world: BiWorld,
+  aperture: FiAperture,
+};
+
 export const Icon = ({ icon, parentColor = "" }) => {
   const theme = React.useContext(ThemeContext);
   const IconSVG = React.useMemo(() => {
+    const iconOptions =
+      theme.icon === "boxicon" ? biIconOptions : heroIconOptions;
     if (!icon.name || icon.name === "" || !iconOptions[icon.name]) {
       return randomProperty(iconOptions);
     } else {
       return iconOptions[icon.name];
     }
-  }, [icon.name]);
+  }, [icon.name, theme.icon]);
 
   const iconSize = icon.size ? icon.size : "large";
 
