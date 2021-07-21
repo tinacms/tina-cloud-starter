@@ -291,6 +291,9 @@ const heroBlockSchema = {
       type: "string",
       label: "Text",
       name: "text",
+      ui: {
+        component: "textarea",
+      },
     },
     {
       label: "Actions",
