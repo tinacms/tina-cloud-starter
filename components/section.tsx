@@ -11,7 +11,7 @@ export const Section = ({ children, color = "", className = "" }) => {
       blue: "text-white bg-blue-500 bg-gradient-to-br from-blue-500 to-blue-600",
       teal: "text-white bg-teal-500 bg-gradient-to-br from-teal-500 to-teal-600",
       green:
-        "text-white bg-green-500 bg-gradient-to-br from-green-500 to-green-600",
+        "text-white bg-green-600 bg-gradient-to-br from-green-600 to-green-700",
       red: "text-white bg-red-500 bg-gradient-to-br from-red-500 to-red-600",
       pink: "text-white bg-pink-500 bg-gradient-to-br from-pink-500 to-pink-600",
       purple:

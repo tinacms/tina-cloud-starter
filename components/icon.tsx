@@ -79,7 +79,7 @@ export const Icon = ({ icon, parentColor = "" }) => {
     purple: "text-purple-400",
     orange: "text-orange-400",
     yellow: "text-yellow-400",
-    white: "text-gray-100",
+    white: "text-white opacity-80",
   };
 
   const iconSizeClass = {
@@ -105,7 +105,7 @@ export const Icon = ({ icon, parentColor = "" }) => {
         <IconSVG
           className={`${iconSizeClass[iconSize]} ${
             iconColorClass[
-              parentColor === "primary" && icon.color === theme.color
+              parentColor === "primary" && iconColor === theme.color
                 ? "white"
                 : iconColor
             ]
