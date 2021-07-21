@@ -84,6 +84,7 @@ module.exports = {
     },
     extend: {
       opacity: {
+        7: ".075",
         15: ".15",
       },
       maxWidth: {
