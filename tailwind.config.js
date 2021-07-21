@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -80,6 +81,13 @@ module.exports = {
       },
       zIndex: {
         "-1": "-1",
+      },
+      fontFamily: {
+        geometric: [
+          "Century Gothic",
+          "Futura",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       typography: (theme) => ({
         DEFAULT: {

@@ -232,6 +232,8 @@ export type GlobalFooter = {
 export type GlobalTheme = {
   __typename?: 'GlobalTheme';
   color?: Maybe<Scalars['String']>;
+  font?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['String']>;
 };
 
 export type Global = {
@@ -458,6 +460,8 @@ export type GlobalFooterMutation = {
 
 export type GlobalThemeMutation = {
   color?: Maybe<Scalars['String']>;
+  font?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['String']>;
 };
 
 export type GlobalMutation = {
