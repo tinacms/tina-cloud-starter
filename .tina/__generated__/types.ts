@@ -46,6 +46,11 @@ export type Node = {
   id: Scalars['ID'];
 };
 
+export type Document = {
+  sys?: Maybe<SystemInfo>;
+  id: Scalars['ID'];
+};
+
 /** A relay-compliant pagination connection */
 export type Connection = {
   totalCount: Scalars['Int'];
@@ -192,7 +197,7 @@ export type Posts = {
   _body?: Maybe<Scalars['String']>;
 };
 
-export type PostsDocument = Node & {
+export type PostsDocument = Node & Document & {
   __typename?: 'PostsDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
@@ -264,7 +269,7 @@ export type Global = {
   theme?: Maybe<GlobalTheme>;
 };
 
-export type GlobalDocument = Node & {
+export type GlobalDocument = Node & Document & {
   __typename?: 'GlobalDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
@@ -293,7 +298,7 @@ export type Authors = {
   avatar?: Maybe<Scalars['String']>;
 };
 
-export type AuthorsDocument = Node & {
+export type AuthorsDocument = Node & Document & {
   __typename?: 'AuthorsDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
@@ -380,7 +385,7 @@ export type Pages = {
   blocks?: Maybe<Array<Maybe<PagesBlocks>>>;
 };
 
-export type PagesDocument = Node & {
+export type PagesDocument = Node & Document & {
   __typename?: 'PagesDocument';
   id: Scalars['ID'];
   sys: SystemInfo;

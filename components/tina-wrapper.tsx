@@ -1,6 +1,5 @@
-import { TinaCloudProvider } from "tina-graphql-gateway";
+import { TinaCloudProvider, useGraphqlForms } from "tinacms";
 import React from "react";
-import { unstable_useGraphQLForms } from "tina-graphql-gateway";
 import { Loading } from "./loading";
 import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
@@ -14,7 +13,7 @@ const TinaWrapper = (props) => {
       clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
       branch="main"
       isLocalClient={Boolean(Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT))}
-      organization={process.env.NEXT_PUBLIC_ORGANIZATION_NAME}
+      // organization={process.env.NEXT_PUBLIC_ORGANIZATION_NAME}
       mediaStore={TinaCloudCloudinaryMediaStore}
     >
       <Inner {...props} />
@@ -23,7 +22,7 @@ const TinaWrapper = (props) => {
 };
 
 const Inner = (props) => {
-  const [payload, isLoading] = unstable_useGraphQLForms({
+  const [payload, isLoading] = useGraphqlForms({
     query: (gql) => gql(props.query),
     variables: props.variables || {},
   });
