@@ -1,5 +1,10 @@
 {
   "header": {
+    "icon": {
+      "color": "",
+      "style": "float",
+      "name": "tina"
+    },
     "color": "default",
     "nav": [
       {

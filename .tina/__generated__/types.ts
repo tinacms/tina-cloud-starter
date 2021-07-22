@@ -215,6 +215,13 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
+export type GlobalHeaderIcon = {
+  __typename?: 'GlobalHeaderIcon';
+  color?: Maybe<Scalars['String']>;
+  style?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
 export type GlobalHeaderNav = {
   __typename?: 'GlobalHeaderNav';
   href?: Maybe<Scalars['String']>;
@@ -223,6 +230,7 @@ export type GlobalHeaderNav = {
 
 export type GlobalHeader = {
   __typename?: 'GlobalHeader';
+  icon?: Maybe<GlobalHeaderIcon>;
   color?: Maybe<Scalars['String']>;
   nav?: Maybe<Array<Maybe<GlobalHeaderNav>>>;
 };
@@ -459,12 +467,19 @@ export type PostsMutation = {
   _body?: Maybe<Scalars['String']>;
 };
 
+export type GlobalHeaderIconMutation = {
+  color?: Maybe<Scalars['String']>;
+  style?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
 export type GlobalHeaderNavMutation = {
   href?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
 };
 
 export type GlobalHeaderMutation = {
+  icon?: Maybe<GlobalHeaderIconMutation>;
   color?: Maybe<Scalars['String']>;
   nav?: Maybe<Array<Maybe<GlobalHeaderNavMutation>>>;
 };

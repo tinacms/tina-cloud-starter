@@ -6,7 +6,7 @@ import { Icon } from "../icon";
 export const Feature = ({ featuresColor, data }) => {
   return (
     <div className="flex-1 flex flex-col gap-6" style={{ flexBasis: "16rem" }}>
-      {data.icon && <Icon parentColor={featuresColor} icon={data.icon} />}
+      {data.icon && <Icon parentColor={featuresColor} data={data.icon} />}
       {data.title && (
         <h3 className="text-2xl font-semibold title-font">{data.title}</h3>
       )}
