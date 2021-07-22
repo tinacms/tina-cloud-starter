@@ -4,6 +4,7 @@ import { Container } from "./container";
 // @ts-ignore
 import TinaIconSvg from "../public/tina.svg";
 import { ThemeContext } from "./theme";
+import { Icon } from "./icon";
 
 export const Header = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -62,7 +63,15 @@ export const Header = ({ data }) => {
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
               <a className="flex items-center">
-                <TinaIconSvg className="inline-block mr-2.5 h-9 w-auto text-orange-500" />{" "}
+                <Icon
+                  parentColor={data.color}
+                  data={{
+                    name: data.icon.name,
+                    color: data.icon.color,
+                    size: "custom",
+                  }}
+                  className="inline-block h-auto w-10 mr-1"
+                />{" "}
                 Tina Starter
               </a>
             </Link>

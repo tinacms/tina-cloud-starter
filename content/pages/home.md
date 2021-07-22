@@ -1,6 +1,6 @@
 ---
 blocks:
-  - tagline: ''
+  - tagline: ""
     headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -47,4 +47,3 @@ blocks:
     color: tint
     _template: features
 ---
-
