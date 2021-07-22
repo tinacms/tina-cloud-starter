@@ -1,4 +1,4 @@
-import { unstable_defineSchema } from "tina-graphql-gateway-cli";
+import { defineSchema } from "@tinacms/cli";
 
 const iconSchema = {
   type: "object",
@@ -380,7 +380,7 @@ const heroBlockSchema = {
   ],
 };
 
-export default unstable_defineSchema({
+export default defineSchema({
   collections: [
     {
       label: "Blog Posts",
