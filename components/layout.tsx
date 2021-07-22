@@ -44,7 +44,11 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 flex flex-col">
             {children}
           </div>
-          <Footer rawData={rawData} data={data?.footer} />
+          <Footer
+            rawData={rawData}
+            data={data?.footer}
+            icon={data?.header.icon}
+          />
         </div>
       </Theme>
     </>
