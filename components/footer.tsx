@@ -49,7 +49,7 @@ export const Footer = ({ data, icon, rawData }) => {
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>
-            <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-30 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
+            <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-50 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
               <Icon
                 parentColor={data.color}
                 data={{
@@ -123,7 +123,7 @@ export const Footer = ({ data, icon, rawData }) => {
               </a>
             )}
           </div>
-          <RawRenderer rawData={rawData} />
+          <RawRenderer parentColor={data.color} rawData={rawData} />
         </div>
         <div
           className={`absolute h-1 bg-gradient-to-r from-transparent ${
