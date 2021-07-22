@@ -55,6 +55,11 @@ export const layoutQueryFragment = `
   getGlobalDocument(relativePath: "index.json") {
     data {
       header {
+        icon {
+          name
+          color
+          style
+        }
         color
         nav {
           href
