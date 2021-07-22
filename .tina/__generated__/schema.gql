@@ -209,8 +209,8 @@ type PagesBlocksHero {
   headline: String
   text: String
   actions: [PagesBlocksHeroActions]
-  color: String
   image: PagesBlocksHeroImage
+  color: String
 }
 
 type PagesBlocksFeaturesItemsIcon {
@@ -356,8 +356,8 @@ input PagesBlocksHeroMutation {
   headline: String
   text: String
   actions: [PagesBlocksHeroActionsMutation]
-  color: String
   image: PagesBlocksHeroImageMutation
+  color: String
 }
 
 input PagesBlocksFeaturesItemsIconMutation {

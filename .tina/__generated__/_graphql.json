@@ -2834,21 +2834,6 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "color"
-          },
-          "arguments": [],
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
-            }
-          }
-        },
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -2857,6 +2842,21 @@
             "name": {
               "kind": "Name",
               "value": "PagesBlocksHeroImage"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "color"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
             }
           }
         }
@@ -4507,20 +4507,6 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "color"
-          },
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
-            }
-          }
-        },
-        {
-          "kind": "InputValueDefinition",
-          "name": {
-            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -4528,6 +4514,20 @@
             "name": {
               "kind": "Name",
               "value": "PagesBlocksHeroImageMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "color"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
             }
           }
         }
