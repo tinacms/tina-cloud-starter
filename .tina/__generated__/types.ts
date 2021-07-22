@@ -336,8 +336,8 @@ export type PagesBlocksHero = {
   headline?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
   actions?: Maybe<Array<Maybe<PagesBlocksHeroActions>>>;
-  color?: Maybe<Scalars['String']>;
   image?: Maybe<PagesBlocksHeroImage>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksFeaturesItemsIcon = {
@@ -531,8 +531,8 @@ export type PagesBlocksHeroMutation = {
   headline?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
   actions?: Maybe<Array<Maybe<PagesBlocksHeroActionsMutation>>>;
-  color?: Maybe<Scalars['String']>;
   image?: Maybe<PagesBlocksHeroImageMutation>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksFeaturesItemsIconMutation = {
