@@ -7,8 +7,9 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "./container";
 import { RawRenderer } from "./rawRenderer";
 import { ThemeContext } from "./theme";
+import { Icon } from "./icon";
 
-export const Footer = ({ data, rawData }) => {
+export const Footer = ({ data, icon, rawData }) => {
   const theme = React.useContext(ThemeContext);
   const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
@@ -49,7 +50,15 @@ export const Footer = ({ data, rawData }) => {
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>
             <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-30 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
-              <TinaIconSvg className="inline-block mr-2 h-10 w-auto group-hover:text-orange-500" />
+              <Icon
+                parentColor={data.color}
+                data={{
+                  name: icon.name,
+                  color: icon.color,
+                  size: "custom",
+                }}
+                className="inline-block h-10 w-auto group-hover:text-orange-500"
+              />
             </a>
           </Link>
           <div className="flex gap-4">
