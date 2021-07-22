@@ -1,12 +1,11 @@
 ---
 blocks:
-  - tagline: ''
+  - tagline: ""
     headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
-      `content/pages/index.md`, components from `components/blocks` and
-      `components/page`, and puts them all together in `pages/index.tsx`, all
+      `content/pages/home.md`, components from `components/blocks`, and puts them all together in `pages/[filename].tsx`, all
       based on a schema defined in `.tina/schema.ts`.
     actions:
       - label: Get Started
@@ -41,11 +40,9 @@ blocks:
           color: green
           style: float
           name: palette
-        title: Check Out This Text
+        title: Configurable Theme
         text: >-
-          Eleifend ipsum in, condimentum nibh. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices.
+          Edit global theme configuration with Tina. Change your theme's primary color, font, or icon set.
     color: tint
     _template: features
 ---
-
