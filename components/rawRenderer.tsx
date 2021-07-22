@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ThemeContext } from "./theme";
 
-export const RawRenderer = ({ rawData, color = "" }) => {
+export const RawRenderer = ({ rawData, parentColor }) => {
   const theme = React.useContext(ThemeContext);
   const buttonColorClasses = {
     blue: "text-blue-500",
@@ -30,11 +30,18 @@ export const RawRenderer = ({ rawData, color = "" }) => {
       <button
         type="button"
         onClick={openModal}
-        className={`z-10 relative flex items-center px-5 py-2 mx-3 my-2 font-semibold shadow-sm text-sm transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-none whitespace-nowrap bg-gradient-to-r from-gray-100 to-gray-150 dark:from-gray-800 dark:to-gray-700 opacity-80 hover:opacity-100 ${
+        className={`z-10 relative flex items-center px-5 py-2 mx-3 my-2 font-semibold shadow-sm text-sm transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-none whitespace-nowrap opacity-80 hover:opacity-100 shadow-md ${
           buttonColorClasses[theme.color]
         }`}
       >
         View Raw Data
+        <span
+          className={`absolute w-full h-full left-0 top-0 rounded -z-1 ${
+            parentColor === "primary"
+              ? `bg-white opacity-80`
+              : `bg-current opacity-15`
+          }`}
+        ></span>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
