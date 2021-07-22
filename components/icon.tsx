@@ -127,14 +127,26 @@ export const Icon = ({ data, parentColor = "", className = "" }) => {
     white: "text-white opacity-80",
   };
 
+  const iconColor = data.color
+    ? data.color === "primary"
+      ? theme.color
+      : data.color
+    : theme.color;
+
+  const iconColorClasses =
+    iconColorClass[
+      parentColor === "primary" &&
+      (iconColor === theme.color || iconColor === "primary")
+        ? "white"
+        : iconColor
+    ];
+
   const iconSizeClass = {
     small: "w-8 h-8",
     medium: "w-12 h-12",
     large: "w-14 h-14",
     custom: "",
   };
-
-  const iconColor = data.color ? data.color : theme.color;
 
   const Component = React.useMemo(() => {
     if (!IconSVG) return null;
@@ -149,13 +161,7 @@ export const Icon = ({ data, parentColor = "", className = "" }) => {
     } else {
       return (
         <IconSVG
-          className={`${iconSizeClass[iconSize]} ${
-            iconColorClass[
-              parentColor === "primary" && iconColor === theme.color
-                ? "white"
-                : iconColor
-            ]
-          } ${className}`}
+          className={`${iconSizeClass[iconSize]} ${iconColorClasses} ${className}`}
         />
       );
     }

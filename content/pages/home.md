@@ -1,6 +1,6 @@
 ---
 blocks:
-  - tagline: ""
+  - tagline: ''
     headline: Welcome to the Tina Starter.
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -17,10 +17,10 @@ blocks:
         type: link
         icon: false
         link: /posts
-    color: default
     image:
       src: tina-illustration.png
       alt: Tina
+    color: default
     _template: hero
   - items:
       - icon:
@@ -32,6 +32,7 @@ blocks:
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
+          color: primary
           style: float
           name: like
         title: This Is a Feature
@@ -47,3 +48,4 @@ blocks:
     color: tint
     _template: features
 ---
+

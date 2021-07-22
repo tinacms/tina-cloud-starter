@@ -74,6 +74,10 @@
                   "name": "color",
                   "options": [
                     {
+                      "label": "Primary",
+                      "value": "primary"
+                    },
+                    {
                       "label": "Blue",
                       "value": "blue"
                     },
@@ -510,6 +514,23 @@
                   ]
                 },
                 {
+                  "type": "object",
+                  "label": "Image",
+                  "name": "image",
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Image Source",
+                      "type": "image"
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Alt Text",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
                   "type": "string",
                   "label": "Color",
                   "name": "color",
@@ -525,23 +546,6 @@
                     {
                       "label": "Primary",
                       "value": "primary"
-                    }
-                  ]
-                },
-                {
-                  "type": "object",
-                  "label": "Image",
-                  "name": "image",
-                  "fields": [
-                    {
-                      "name": "src",
-                      "label": "Image Source",
-                      "type": "image"
-                    },
-                    {
-                      "name": "alt",
-                      "label": "Alt Text",
-                      "type": "string"
                     }
                   ]
                 }
@@ -611,6 +615,10 @@
                           "label": "Color",
                           "name": "color",
                           "options": [
+                            {
+                              "label": "Primary",
+                              "value": "primary"
+                            },
                             {
                               "label": "Blue",
                               "value": "blue"
@@ -789,6 +797,11 @@
             {
               "name": "content",
               "label": "Content",
+              "ui": {
+                "defaultItem": {
+                  "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+                }
+              },
               "fields": [
                 {
                   "type": "string",

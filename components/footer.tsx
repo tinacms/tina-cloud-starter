@@ -54,7 +54,7 @@ export const Footer = ({ data, icon, rawData }) => {
                 parentColor={data.color}
                 data={{
                   name: icon.name,
-                  color: icon.color,
+                  color: data.color === "primary" ? "primary" : icon.color,
                   size: "custom",
                 }}
                 className="inline-block h-10 w-auto group-hover:text-orange-500"
