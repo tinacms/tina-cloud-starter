@@ -24,7 +24,7 @@ export const Hero = ({ data }) => {
         size="large"
         className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8 items-center justify-center"
       >
-        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-left">
+        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-center lg:text-left">
           {data.tagline && (
             <h2 className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20">
               {data.tagline}
@@ -48,7 +48,7 @@ export const Hero = ({ data }) => {
           )}
           {data.text && (
             <div
-              className={`prose prose-lg mb-10 ${
+              className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >
@@ -57,14 +57,14 @@ export const Hero = ({ data }) => {
           )}
           {data.actions && (
             <Actions
-              className="justify-start py-2"
+              className="justify-center lg:justify-start py-2"
               parentColor={data.color}
               actions={data.actions}
             />
           )}
         </div>
         {data.image && (
-          <div className="row-start-1 flex lg:justify-center">
+          <div className="row-start-1 flex justify-center">
             <img
               className="w-full max-w-xs lg:max-w-none h-auto"
               alt={data.image.alt}
