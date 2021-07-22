@@ -35,10 +35,11 @@ import {
   HiThumbUp,
   HiUser,
 } from "react-icons/hi";
-import { RiTestTubeFill } from "react-icons/ri";
 import { FiAperture } from "react-icons/fi";
 import { Theme, ThemeContext } from "./theme";
 import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
+// @ts-ignore
+import TinaIconSvg from "../public/tina.svg";
 
 const biIconOptions = {
   code: BiCodeBlock,
@@ -60,6 +61,7 @@ const biIconOptions = {
   coffee: BiCoffeeTogo,
   world: BiWorld,
   aperture: FiAperture,
+  tina: TinaIconSvg,
 };
 
 const heroIconOptions = {
@@ -82,21 +84,22 @@ const heroIconOptions = {
   coffee: FaCoffee,
   world: BiWorld,
   aperture: FiAperture,
+  tina: TinaIconSvg,
 };
 
-export const Icon = ({ icon, parentColor = "" }) => {
+export const Icon = ({ data, parentColor = "", className = "" }) => {
   const theme = React.useContext(ThemeContext);
   const IconSVG = React.useMemo(() => {
     const iconOptions =
       theme.icon === "boxicon" ? biIconOptions : heroIconOptions;
-    if (!icon.name || icon.name === "" || !iconOptions[icon.name]) {
+    if (!data.name || data.name === "" || !iconOptions[data.name]) {
       return randomProperty(iconOptions);
     } else {
-      return iconOptions[icon.name];
+      return iconOptions[data.name];
     }
-  }, [icon.name, theme.icon]);
+  }, [data.name, theme.icon]);
 
-  const iconSize = icon.size ? icon.size : "large";
+  const iconSize = data.size ? data.size : "large";
 
   /* Full class strings are required for Tailwind's just-in-time mode,
      I would love a better solution that doesn't require so much repetition */
@@ -128,16 +131,17 @@ export const Icon = ({ icon, parentColor = "" }) => {
     small: "w-8 h-8",
     medium: "w-12 h-12",
     large: "w-14 h-14",
+    custom: "",
   };
 
-  const iconColor = icon.color ? icon.color : theme.color;
+  const iconColor = data.color ? data.color : theme.color;
 
   const Component = React.useMemo(() => {
     if (!IconSVG) return null;
-    if (icon.style == "circle") {
+    if (data.style == "circle") {
       return (
         <div
-          className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClass[iconSize]} rounded-full ${iconCircleColorClass[iconColor]}`}
+          className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClass[iconSize]} rounded-full ${iconCircleColorClass[iconColor]} ${className}`}
         >
           <IconSVG className="w-2/3 h-2/3" />
         </div>
@@ -151,16 +155,16 @@ export const Icon = ({ icon, parentColor = "" }) => {
                 ? "white"
                 : iconColor
             ]
-          }`}
+          } ${className}`}
         />
       );
     }
   }, [
     parentColor,
-    icon.style,
-    icon.size,
-    icon.color,
-    icon.name,
+    data.style,
+    data.size,
+    data.color,
+    data.name,
     IconSVG,
     iconColor,
   ]);
