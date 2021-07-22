@@ -11,6 +11,10 @@ const iconSchema = {
       name: "color",
       options: [
         {
+          label: "Primary",
+          value: "primary",
+        },
+        {
           label: "Blue",
           value: "blue",
         },
@@ -212,6 +216,11 @@ const featureBlockShema = {
 const contentBlockSchema = {
   name: "content",
   label: "Content",
+  ui: {
+    defaultItem: {
+      body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+    },
+  },
   fields: [
     {
       type: "string",
@@ -342,16 +351,6 @@ const heroBlockSchema = {
       ],
     },
     {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
-    },
-    {
       type: "object",
       label: "Image",
       name: "image",
@@ -366,6 +365,16 @@ const heroBlockSchema = {
           label: "Alt Text",
           type: "string",
         },
+      ],
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
       ],
     },
   ],
