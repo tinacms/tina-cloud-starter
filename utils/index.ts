@@ -1,4 +1,4 @@
-import { Client, LocalClient } from "tina-graphql-gateway";
+import { Client, LocalClient } from "tinacms";
 
 export const createClient = () => {
   return process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT === "1"
@@ -24,7 +24,7 @@ export const createCloudClient = () => {
   }
 
   return new Client({
-    organizationId: organization,
+    // organizationId: organization,
     clientId,
     branch: "main",
     tokenStorage: "LOCAL_STORAGE",
