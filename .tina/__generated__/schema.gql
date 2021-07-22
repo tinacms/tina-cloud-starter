@@ -28,6 +28,12 @@ interface Node {
   id: ID!
 }
 
+""""""
+interface Document {
+  sys: SystemInfo
+  id: ID!
+}
+
 """A relay-compliant pagination connection"""
 interface Connection {
   totalCount: Int!
@@ -85,7 +91,7 @@ type Posts {
   _body: String
 }
 
-type PostsDocument implements Node {
+type PostsDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
   data: Posts!
@@ -147,7 +153,7 @@ type Global {
   theme: GlobalTheme
 }
 
-type GlobalDocument implements Node {
+type GlobalDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
   data: Global!
@@ -172,7 +178,7 @@ type Authors {
   avatar: String
 }
 
-type AuthorsDocument implements Node {
+type AuthorsDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
   data: Authors!
@@ -247,7 +253,7 @@ type Pages {
   blocks: [PagesBlocks]
 }
 
-type PagesDocument implements Node {
+type PagesDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
   data: Pages!
