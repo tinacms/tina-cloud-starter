@@ -1,6 +1,5 @@
 import { getStaticPropsForTina, staticRequest } from "tinacms";
 import { Blocks } from "../components/blocks";
-import { AsyncReturnType } from "../utils";
 import { layoutQueryFragment } from "../components/layout";
 import type { PagesDocument } from "../.tina/__generated__/types";
 
@@ -97,3 +96,6 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
+  T extends (...args: any) => Promise<infer R> ? R : any;
