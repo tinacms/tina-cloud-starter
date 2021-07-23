@@ -2,7 +2,6 @@ import { getStaticPropsForTina } from "tinacms";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
 import { Posts } from "../components/posts";
-import { AsyncReturnType } from "../utils";
 import { layoutQueryFragment } from "../components/layout";
 import type { PostsConnection } from "../.tina/__generated__/types";
 
@@ -48,6 +47,7 @@ export const getStaticProps = async () => {
         }
       }
     `,
+    variables: {},
   })) as { data: { getPostsList: PostsConnection } };
 
   return {
@@ -56,3 +56,6 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
+  T extends (...args: any) => Promise<infer R> ? R : any;

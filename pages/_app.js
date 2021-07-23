@@ -31,7 +31,12 @@ const App = ({ Component, pageProps }) => {
           </TinaCMS>
         }
       >
-        <Component {...pageProps} />
+        <Layout
+          rawData={pageProps}
+          data={pageProps.data?.getGlobalDocument?.data}
+        >
+          <Component {...pageProps} />
+        </Layout>
       </TinaEditProvider>
     </>
   );
