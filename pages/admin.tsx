@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Container } from "../components/container";
 import { Section } from "../components/section";
 import { Layout } from "../components/layout";
-import { useEditState } from "../utils/editState";
+import { useEditState } from "tinacms/dist/edit-state";
 
 const GoToEditPage: React.FC = () => {
   const { setEdit } = useEditState();
