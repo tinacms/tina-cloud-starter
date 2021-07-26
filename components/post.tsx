@@ -40,7 +40,7 @@ export const Post = ({ data }) => {
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
-                  className="h-14 w-14 rounded-full shadow-sm"
+                  className="h-14 w-14 object-cover rounded-full shadow-sm"
                   src={data.author.data.avatar}
                   alt={data.author.data.name}
                 />

@@ -47,7 +47,7 @@ export const Posts = ({ data }) => {
               <div className="flex items-center -mb-2">
                 <div className="flex-shrink-0 mr-2">
                   <img
-                    className="h-10 w-10 rounded-full shadow-sm"
+                    className="h-10 w-10 object-cover rounded-full shadow-sm"
                     src={post.data.author.data.avatar}
                     alt={post.data.author.data.name}
                   />
