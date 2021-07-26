@@ -31,22 +31,22 @@ export const Post = ({ data }) => {
               titleColorClasses[theme.color]
             }`}
           >
-            {data.data.title}
+            {data.title}
           </span>
         </h2>
 
         <div className="flex items-center justify-center mb-16">
-          {data.data.author && (
+          {data.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
                   className="h-14 w-14 rounded-full shadow-sm"
-                  src={data.data.author.data.avatar}
-                  alt={data.data.author.data.name}
+                  src={data.author.data.avatar}
+                  alt={data.author.data.name}
                 />
               </div>
               <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                {data.data.author.data.name}
+                {data.author.data.name}
               </p>
               <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                 —
@@ -54,21 +54,21 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            {data.data.date}
+            {data.date}
           </p>
         </div>
       </Container>
-      {data.data.heroImg && (
+      {data.heroImg && (
         <div className="">
           <img
-            src={data.data.heroImg}
+            src={data.heroImg}
             className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
           />
         </div>
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data.data._body}</Markdown>
+          <Markdown>{data._body}</Markdown>
         </div>
       </Container>
     </Section>

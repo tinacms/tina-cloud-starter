@@ -1,45 +1,45 @@
-import dynamic from "next/dynamic";
 import "../styles.css";
+import dynamic from "next/dynamic";
+import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
-import { EditProvider, setEditing, useEditState } from "../utils/editState";
+const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
+// import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
-// InnerApp that handles rendering edit mode or not
-function InnerApp({ Component, pageProps }) {
-  const { edit } = useEditState();
-  if (edit) {
-    // Dynamically load Tina only when in edit mode so it does not affect production
-    // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
-    const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
+const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
+const NEXT_PUBLIC_USE_LOCAL_CLIENT =
+  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || true;
 
-    return (
-      <>
-        <TinaWrapper {...pageProps}>
-          {(props) => (
-            <Layout
-              rawData={pageProps}
-              data={props.data?.getGlobalDocument?.data}
-            >
-              <Component {...props} />
-            </Layout>
-          )}
-        </TinaWrapper>
-      </>
-    );
-  }
+const App = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <TinaEditProvider
+        editMode={
+          <TinaCMS
+            branch="main"
+            clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
+            isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
+            {...pageProps}
+          >
+            {(livePageProps) => (
+              <Layout
+                rawData={livePageProps}
+                data={livePageProps.data?.getGlobalDocument?.data}
+              >
+                <Component {...livePageProps} />
+              </Layout>
+            )}
+          </TinaCMS>
+        }
+      >
+        <Layout
+          rawData={pageProps}
+          data={pageProps.data?.getGlobalDocument?.data}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </TinaEditProvider>
+    </>
   );
-}
-
-// Our app is wrapped with edit provider
-function App(props) {
-  return (
-    <EditProvider>
-      <InnerApp {...props} />
-    </EditProvider>
-  );
-}
+};
 
 export default App;
