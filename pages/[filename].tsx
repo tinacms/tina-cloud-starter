@@ -1,7 +1,7 @@
+import { getStaticPropsForTina, staticRequest } from "tinacms";
 import { Blocks } from "../components/blocks";
-import type { PagesDocument } from "../.tina/__generated__/types";
-import { createLocalClient, AsyncReturnType } from "../utils";
 import { layoutQueryFragment } from "../components/layout";
+import type { PagesDocument } from "../.tina/__generated__/types";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -9,79 +9,73 @@ export default function HomePage(
   return <Blocks {...props.data.getPagesDocument.data} />;
 }
 
-export const query = `#graphql
-  query ContentQuery($relativePath: String!) {
-    # "index.md" is _relative_ to the "Pages" path property in your schema definition
-    # you can inspect this file at "content/pages/index.md"
-    ${layoutQueryFragment}
-    getPagesDocument(relativePath: $relativePath) {
-      data {
-        __typename
-      	blocks {
-					__typename
-          ... on PagesBlocksFeatures {
-            color
-            items {
-              icon {
-                name
+export const getStaticProps = async ({ params }) => {
+  const tinaProps = (await getStaticPropsForTina({
+    query: `#graphql
+      query ContentQuery($relativePath: String!) {
+        # "index.md" is _relative_ to the "Pages" path property in your schema definition
+        # you can inspect this file at "content/pages/index.md"
+        ${layoutQueryFragment}
+        getPagesDocument(relativePath: $relativePath) {
+          data {
+            __typename
+            blocks {
+              __typename
+              ... on PagesBlocksFeatures {
                 color
-                style
+                items {
+                  icon {
+                    name
+                    color
+                    style
+                  }
+                  title
+                  text
+                }
               }
-              title
-              text
-            }
-          }
-          ... on PagesBlocksContent {
-						body
-            color
-          }
-          ... on PagesBlocksTestimonial {
-            quote
-            author
-            color
-          }
-          ... on PagesBlocksHero {
-            tagline
-            headline
-            text
-            actions {
-							label
-              type
-              icon
-              link
-            }
-            color 
-            image {
-							src
-              alt
+              ... on PagesBlocksContent {
+                body
+                color
+              }
+              ... on PagesBlocksTestimonial {
+                quote
+                author
+                color
+              }
+              ... on PagesBlocksHero {
+                tagline
+                headline
+                text
+                actions {
+                  label
+                  type
+                  icon
+                  link
+                }
+                color
+                image {
+                  src
+                  alt
+                }
+              }
             }
           }
         }
       }
-    }
-  }
-`;
+  `,
+    variables: { relativePath: `${params.filename}.md` },
+  })) as { data: { getPagesDocument: PagesDocument } };
 
-export const getStaticProps = async ({ params }) => {
-  const variables = { relativePath: `${params.filename}.md` };
   return {
     props: {
-      data: await client.request<{ getPagesDocument: PagesDocument }>(query, {
-        variables,
-      }),
-      variables,
-      query,
+      ...tinaProps,
     },
   };
 };
 
-const client = createLocalClient();
-
 export const getStaticPaths = async () => {
-  const pagesListData = await client.request<{
-    getPagesList: any;
-  }>(
-    (gql) => gql`
+  const pagesListData = (await staticRequest({
+    query: `#graphql
       {
         getPagesList {
           edges {
@@ -94,8 +88,7 @@ export const getStaticPaths = async () => {
         }
       }
     `,
-    { variables: {} }
-  );
+  })) as any;
   return {
     paths: pagesListData.getPagesList.edges.map((page) => ({
       params: { filename: page.node.sys.filename },
@@ -103,3 +96,6 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
+  T extends (...args: any) => Promise<infer R> ? R : any;

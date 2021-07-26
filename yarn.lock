@@ -2064,10 +2064,10 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/toolkit@0.0.0-2021620215324":
-  version "0.0.0-2021620215324"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.0.0-2021620215324.tgz#797aa086b1d93fc8c5f9751b8816c97712a7d2ef"
-  integrity sha512-M5VhzULEjFDPR84Mprv0wn0AbBLkIiHcu89V2GQWzCZm+fUUjiZ/ujmORRkB20d1Knf8gA/cvaLT4a6095i7+g==
+"@tinacms/toolkit@0.43.1":
+  version "0.43.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.43.1.tgz#71d7694163ecdc82245e58c231e1d5e3e56d5e09"
+  integrity sha512-EQrIfmcD2xKH4rx+9MEeixVIpuabBUYbd5yqUq+Y0970iZi+tjm/aZoYZwCTbvgXzktG/HGgxml9ZuiJ/rAinA==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/prop-types" "^15.7.4"
@@ -10330,15 +10330,15 @@ tina-cloud-next@^0.0.4:
   resolved "https://registry.yarnpkg.com/tina-cloud-next/-/tina-cloud-next-0.0.4.tgz#49348009ae7ea42999121f87f50ad650604beb2d"
   integrity sha512-CZspv7GNrvsPmib/7SjUwsWYB+tTouUUO9HaQ+HIg5fVuSh2HAW54CnAEuYDg1039M+dAt6rA9fY2DARVcjfgA==
 
-tinacms@^0.0.0-2021620215324:
-  version "0.0.0-2021620215324"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-2021620215324.tgz#0f8b716c35dbbade6b14fb0b929205cc2a8a3859"
-  integrity sha512-NQdOHzPIed54iv5kVJ2+XF0dDnBwgip5CdiO+9E9uDRm25NWhWTQ38gSYX8x3IsEcbueIWG5OUDClm1oI4GhDw==
+tinacms@^0.4.0-dev.0:
+  version "0.4.0-dev.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.4.0-dev.0.tgz#28e93300c5aedc3c9e1f09c8aff47af3f83b1fee"
+  integrity sha512-+Y3xPuHBWRSxoebLU9P3nIATZ0aj5xCVlXscuF9HjoZaI7UQeE0G+djwdqwLJAmAOams7L7+6VYx2grBUW2v0Q==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
-    "@tinacms/toolkit" "0.0.0-2021620215324"
+    "@tinacms/toolkit" "0.43.1"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"
