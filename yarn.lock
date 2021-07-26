@@ -1994,6 +1994,11 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
+"@tinacms/auth@^0.0.0-2021620215324":
+  version "0.0.0-2021620215324"
+  resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.0.0-2021620215324.tgz#632f5cb14346b52a4a5182b20060d6a9ecd1ad40"
+  integrity sha512-2OMeKusMG7T+wZLPHyGYTodcW8vxYu/HXZY9X1knfBDE87cdwlquPQXyJmX79JJZKWuRgu2l0GUwIddx7YNS0w==
+
 "@tinacms/cli@^0.0.0-2021620215324":
   version "0.0.0-2021620215324"
   resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-2021620215324.tgz#573b734c3215418b66127ff5b89f1268c009c6cd"
@@ -10324,11 +10329,6 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
-
-tina-cloud-next@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/tina-cloud-next/-/tina-cloud-next-0.0.4.tgz#49348009ae7ea42999121f87f50ad650604beb2d"
-  integrity sha512-CZspv7GNrvsPmib/7SjUwsWYB+tTouUUO9HaQ+HIg5fVuSh2HAW54CnAEuYDg1039M+dAt6rA9fY2DARVcjfgA==
 
 tinacms@^0.4.0-dev.0:
   version "0.4.0-dev.0"
