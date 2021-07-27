@@ -1,40 +1,45 @@
 ---
 title: Just Another Blog Post
 author: content/authors/napoleon.md
-date: "July 12 2021"
-excerpt: "Lorem markdownum evinctus ut cape adhaeret gravis licet progenies ut haesit maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad vasti, distulit. Crudus sub coniuge iam: dea propera sive?"
-_template: article
----
+date: July 27 2021
+excerpt: >-
+  Lorem markdownum evinctus ut cape adhaeret gravis licet progenies ut haesit
+  maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad
+  vasti, distulit. Crudus sub coniuge iam: dea propera sive?
+_body: |2
 
-  [pinuque](http://eratloco.io/velut.html) cessit lupus postquam.
-
-
-  ## Simulasse optavit aquae plangor pectora data hostia
-
-
-  Rata nec nive mihi pluvialis Ceycis via ardor devovitque illas. Tamen nocent
-
-  ictibus myricae et puto, trahunt, coluere oculis. Pariter post ferrum cum
-
-  moriens, videt gentis terram murra quoniam.
+    [pinuque](http://eratloco.io/velut.html) cessit lupus postquam.
 
 
-  > Dextra posito. Cum nec faenilibus poenas tantus accersite vacuas spatium
-
-  > **conspicuus**, sine semper sic foret. Nostro **vero haeret** velamina
-  media,
-
-  > crimen esse, defensatque ulmus. Ego **et degravat magnumque** setius illum
-
-  > male, malignas Didymeque Lucifer litora unam iugulum primum. Que materno,
-
-  > harenas, solent vero telis humo canna nubila!
+    ## Simulasse optavit aquae plangor pectora data hostia
 
 
-  Regna tenus; dum qui sed; igni nisi mihi fluctibus, cum viridi rogabat haberet
+    Rata nec nive mihi pluvialis Ceycis via ardor devovitque illas. Tamen nocent
 
-  tecto seducunt pares, omne. Dracone eventu, Zephyro, humum boum: huc, torvi
+    ictibus myricae et puto, trahunt, coluere oculis. Pariter post ferrum cum
 
-  pericula cratera.
+    moriens, videt gentis terram murra quoniam.
+
+
+    > Dextra posito. Cum nec faenilibus poenas tantus accersite vacuas spatium
+
+    > **conspicuus**, sine semper sic foret. Nostro **vero haeret** velamina
+    media,
+
+    > crimen esse, defensatque ulmus. Ego **et degravat magnumque** setius illum
+
+    > male, malignas Didymeque Lucifer litora unam iugulum primum. Que materno,
+
+    > harenas, solent vero telis humo canna nubila!
+
+
+    Regna tenus; dum qui sed; igni nisi mihi fluctibus, cum viridi rogabat haberet
+
+    tecto seducunt pares, omne. Dracone eventu, Zephyro, humum boum: huc, torvi
+
+    pericula cratera.
+  ---
+
+  this is a test
 ---
 
