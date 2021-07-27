@@ -18,7 +18,6 @@ export const getStaticProps = async ({ params }) => {
         getPostsDocument(relativePath: $relativePath) {
           data {
             title
-            date
             author {
               ... on AuthorsDocument {
                 data {
