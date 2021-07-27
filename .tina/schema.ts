@@ -399,17 +399,6 @@ export default defineSchema({
           collections: ["authors"],
         },
         {
-          type: "datetime",
-          label: "Posted Date",
-          name: "date",
-          dateFormat: "MMMM DD YYYY",
-          timeFormat: "",
-          ui: {
-            dateFormat: "MMMM DD YYYY",
-            timeFormat: false,
-          },
-        },
-        {
           type: "image",
           name: "heroImg",
           label: "Hero Image",

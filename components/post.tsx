@@ -54,7 +54,7 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            {data.date}
+            July 28, 2021
           </p>
         </div>
       </Container>
