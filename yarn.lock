@@ -1994,10 +1994,10 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
-"@tinacms/auth@^0.0.0-2021620215324":
-  version "0.0.0-2021620215324"
-  resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.0.0-2021620215324.tgz#632f5cb14346b52a4a5182b20060d6a9ecd1ad40"
-  integrity sha512-2OMeKusMG7T+wZLPHyGYTodcW8vxYu/HXZY9X1knfBDE87cdwlquPQXyJmX79JJZKWuRgu2l0GUwIddx7YNS0w==
+"@tinacms/auth@^0.50.0":
+  version "0.50.0"
+  resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.0.tgz#07b05cc4f79d7c442269cb371df29297078a3174"
+  integrity sha512-C4LQALN+eJqyrnEVmgB2Ee/kpZWdIGPZ2CuAdA0VHtOiuUovBasH3ut4/WjcgwJz9itzAT9b51raSMgZ9XUgXw==
 
 "@tinacms/cli@^0.0.0-2021620215324":
   version "0.0.0-2021620215324"
@@ -2069,10 +2069,10 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/toolkit@0.43.1":
-  version "0.43.1"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.43.1.tgz#71d7694163ecdc82245e58c231e1d5e3e56d5e09"
-  integrity sha512-EQrIfmcD2xKH4rx+9MEeixVIpuabBUYbd5yqUq+Y0970iZi+tjm/aZoYZwCTbvgXzktG/HGgxml9ZuiJ/rAinA==
+"@tinacms/toolkit@0.50.0":
+  version "0.50.0"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.50.0.tgz#4889a4c4624030e8aacd5e4315cbfec8767fd157"
+  integrity sha512-MyMsV+QznorOFNZsh984AVI5+5SNilcLOR64EX10AdD4bSPKp1bTdepjCanFXkMZxM3a22tD/BeKOFhWnN/a6g==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/prop-types" "^15.7.4"
@@ -10330,15 +10330,15 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.4.0-dev.0:
-  version "0.4.0-dev.0"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.4.0-dev.0.tgz#28e93300c5aedc3c9e1f09c8aff47af3f83b1fee"
-  integrity sha512-+Y3xPuHBWRSxoebLU9P3nIATZ0aj5xCVlXscuF9HjoZaI7UQeE0G+djwdqwLJAmAOams7L7+6VYx2grBUW2v0Q==
+tinacms@^0.50.0:
+  version "0.50.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.50.0.tgz#05054df16c71b4684c7f70a7864bf266777bdd61"
+  integrity sha512-4lJkEkG7S0y6X1MV62Ugc2RwzpVcRnaYL8cueqPqRe527dpEQkyd7P/ianU0lpU6dZBGNASPFeSicZIjeK2rxw==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
-    "@tinacms/toolkit" "0.43.1"
+    "@tinacms/toolkit" "0.50.0"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"
