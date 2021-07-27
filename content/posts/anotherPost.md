@@ -1,34 +1,12 @@
 ---
 title: Just Another Blog Post
-author: content/authors/napolean.md
-date: July 12 2021
-excerpt: >-
-  Lorem markdownum evinctus ut cape adhaeret gravis licet progenies ut haesit
-  maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad
-  vasti, distulit. Crudus sub coniuge iam: dea propera sive?
-_body: >
+author: content/authors/napoleon.md
+date: "July 12 2021"
+excerpt: "Lorem markdownum evinctus ut cape adhaeret gravis licet progenies ut haesit maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad vasti, distulit. Crudus sub coniuge iam: dea propera sive?"
+_template: article
+---
 
-  Lorem markdownum evinctus _ut cape_ adhaeret gravis licet progenies ut haesit
-
-  maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad
-
-  vasti, **distulit**. Crudus sub **coniuge iam**: dea propera sive?
-
-
-  - Quis illa aut traherent obliquis omnes vitare
-
-  - Quid non crimen
-
-  - Aeneia Paridis
-
-  - Sparten miserande tremuere
-
-  - Morte Phineus caeleste anguigenae sitae nolet sceleri
-
-
-  Te procorum, in gemini quondam cannis. Telasque [abibat ad
-
-  pinuque](http://eratloco.io/velut.html) cessit lupus postquam.
+  [pinuque](http://eratloco.io/velut.html) cessit lupus postquam.
 
 
   ## Simulasse optavit aquae plangor pectora data hostia
