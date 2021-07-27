@@ -7345,14 +7345,13 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next-tinacms-cloudinary@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-2.0.0.tgz#59c0949d3a3a68b522ed8265fa142532315e896a"
-  integrity sha512-ry9dH5rKfIR5M2CKPWCU8dqZul3CoWcroTLxuENYB9GoQu79WkTeNvpNfTnhaSEY7uVK2EqqiD6/U0noUBo2zQ==
+next-tinacms-cloudinary@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-3.1.0.tgz#3e5e78a00b2820fa7eebda91d0ed0c0c02fa3204"
+  integrity sha512-2ufgBbfl1NlnvILVDKDYiEFdirKjEWyoCO7w+heA6a8gtEDRJm7vTWGrzCS/yBa/R82RyWM/2b//Hg5XVWU0cA==
   dependencies:
     cloudinary "^1.25.2"
     multer "^1.4.2"
-    tsup "^3.7.0"
 
 next@10.0.5:
   version "10.0.5"
