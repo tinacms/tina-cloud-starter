@@ -1,6 +1,6 @@
-# Tina Cloud Starter 🦙
+# Tina Starter 🦙
 
-[![Preview homepage](https://user-images.githubusercontent.com/103008/127326555-6d7d3083-fd4d-4c01-8634-d3421b2b408a.png)](https://tina-cloud-starter-orcin.vercel.app/ "Preview Tina Cloud Starter")
+[![Preview homepage](https://user-images.githubusercontent.com/103008/127326555-6d7d3083-fd4d-4c01-8634-d3421b2b408a.png)](https://tina-cloud-starter-orcin.vercel.app/ "Preview Tina Starter")
 
 This Next.js starter is powered by [TinaCMS](https://tina.io) for you and your team to visually live edit content while browing the website. ✨  
 The content is managed through text files stored in your GitHub repository, and queried through our Tina GraphQL API.
@@ -34,7 +34,7 @@ These are rebuilt when your `.tina` config changes.
 
 #### GraphQL extension
 
-Tina Cloud generates your GraphQL schema automatically. 🪄
+TinaCMS generates your GraphQL schema automatically. 🪄
 
 [Install GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) to benefit from type auto-completion.
 
@@ -44,14 +44,15 @@ When your run the server locally, you can browse the GraphQL docs and test your 
 
 ## Getting Help
 
-Tina Cloud is in public beta, you might face issues, to provide feedback or get help with any challenges you may have:
+TinaCMS backend is in public beta, you might face issues, to provide feedback or get help with any challenges you may have:
 
--   Read the [Tina Cloud documentation](https://tina.io/docs/tina-cloud/).
--   [Join our Discord](https://discord.gg/zumN63Ybpf).
+-   Visit the [documentation](https://tina.io/docs/) to learn more about Tina.
+-   [Join our Discord](https://discord.gg/zumN63Ybpf) to share feedback.
 -   Visit the [community forum](https://community.tinacms.org/) to ask questions.
--   Reach out to us on Twitter at [@tina_cms](https://twitter.com/tina_cms).
+-   [Search or open an issue](https://github.com/tinacms/tinacms/issues) if something is not working.
+-   Reach out on Twitter at [@tina_cms](https://twitter.com/tina_cms).
 -   [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
--   Get support through the chat widget on the Tina Cloud Dashboard
+-   Get support through the chat widget on the TinaCMS Dashboard
 
 ## LICENSE
 
