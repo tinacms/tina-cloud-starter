@@ -19,23 +19,6 @@ const App = ({ Component, pageProps }) => {
             clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
             mediaStore={TinaCloudCloudinaryMediaStore}
-            documentCreatorCallback={{
-              /**
-               * After a new document is created, redirect to its location
-               */
-              onNewDocument: ({ collection: { slug }, breadcrumbs }) => {
-                const relativeUrl = `/${slug}/${breadcrumbs.join("/")}`;
-                return (window.location.href = relativeUrl);
-              },
-              /**
-               * Only allows documents to be created to the `Blog Posts` Collection
-               */
-              filterCollections: (options) => {
-                return options.filter(
-                  (option) => option.label === "Blog Posts"
-                );
-              },
-            }}
             {...pageProps}
           >
             {(livePageProps) => (
