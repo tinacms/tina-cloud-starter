@@ -35,6 +35,7 @@ const App = ({ Component, pageProps }) => {
                   (option) => option.label === "Blog Posts"
                 );
               },
+            }}
             cmsCallback={(cms) => {
               import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
                 cms.plugins.add(MarkdownFieldPlugin);
