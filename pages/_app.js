@@ -4,6 +4,7 @@ import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
 const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
 import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
+import { GlobalFormPlugin, Form } from "tinacms";
 
 const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 const NEXT_PUBLIC_USE_LOCAL_CLIENT =
@@ -20,6 +21,16 @@ const App = ({ Component, pageProps }) => {
             clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
             mediaStore={TinaCloudCloudinaryMediaStore}
+            formifyCallback={({ formConfig, createForm }, cms) => {
+              if (formConfig.id === "getGlobalDocument") {
+                const form = new Form(formConfig);
+                // The site nav will be a global plugin
+                cms.plugins.add(new GlobalFormPlugin(form));
+                return form;
+              }
+
+              return createForm(formConfig);
+            }}
             cmsCallback={(cms) => {
               import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
                 cms.plugins.add(MarkdownFieldPlugin);
