@@ -225,7 +225,7 @@ const contentBlockSchema = {
     {
       type: "string",
       ui: {
-        component: "textarea",
+        component: "markdown",
       },
       label: "Body",
       name: "body",
@@ -307,7 +307,7 @@ const heroBlockSchema = {
       label: "Text",
       name: "text",
       ui: {
-        component: "textarea",
+        component: "markdown",
       },
     },
     {
@@ -415,7 +415,7 @@ export default defineSchema({
           type: "string",
           label: "Body",
           ui: {
-            component: "textarea",
+            component: "markdown",
           },
           name: "_body",
           isBody: true,
