@@ -19,6 +19,11 @@ const App = ({ Component, pageProps }) => {
             clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
             mediaStore={TinaCloudCloudinaryMediaStore}
+            cmsCallback={(cms) => {
+              import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
+                cms.plugins.add(MarkdownFieldPlugin);
+              });
+            }}
             {...pageProps}
           >
             {(livePageProps) => (
