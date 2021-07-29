@@ -9,7 +9,7 @@
     "export": "yarn build && next export"
   },
   "devDependencies": {
-    "@tinacms/cli": "^0.0.0-2021620215324",
+    "@tinacms/cli": "^0.51.1",
     "@types/js-cookie": "^2.2.6",
     "@types/node": "^13.13.1",
     "@types/react": "^16.9.43",
@@ -35,10 +35,7 @@
     "react-tinacms-editor": "^0.51.0",
     "styled-components": "^5.1.3",
     "styled-jsx": "^3.2.5",
-    "tinacms": "^0.50.0",
+    "tinacms": "^0.50.1",
     "typescript": "^3.8.3"
-  },
-  "resolutions": {
-    "final-form": "4.20.1"
   }
 }
