@@ -68,7 +68,7 @@ export const Post = ({ data }) => {
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data._body}</Markdown>
+          <Markdown>{data.body}</Markdown>
         </div>
       </Container>
     </Section>
