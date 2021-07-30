@@ -417,7 +417,7 @@ export default defineSchema({
           ui: {
             component: "markdown",
           },
-          name: "_body",
+          name: "body",
           isBody: true,
         },
       ],
