@@ -31,6 +31,7 @@ const App = ({ Component, pageProps }) => {
               <Layout
                 rawData={livePageProps}
                 data={livePageProps.data?.getGlobalDocument?.data}
+                editing={true}
               >
                 <Component {...livePageProps} />
               </Layout>

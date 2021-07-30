@@ -4,8 +4,9 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import layoutData from "../content/global/index.json";
 import { Theme } from "./theme";
+import { LocalMode } from "./localMode"
 
-export const Layout = ({ rawData = "", data = layoutData, children }) => {
+export const Layout = ({ rawData = "", data = layoutData, editing = false, children }) => {
   return (
     <>
       <Head>
@@ -40,6 +41,9 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
             data.theme.font === "sans" && "font-sans"
           }`}
         >
+          {process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT && editing && (
+            <LocalMode />
+          )}
           <Header data={data?.header} />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 flex flex-col">
             {children}
