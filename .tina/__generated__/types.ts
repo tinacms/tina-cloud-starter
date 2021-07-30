@@ -193,7 +193,7 @@ export type Posts = {
   author?: Maybe<PostsAuthorDocument>;
   heroImg?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  _body?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['String']>;
 };
 
 export type PostsDocument = Node & Document & {
@@ -467,7 +467,7 @@ export type PostsMutation = {
   author?: Maybe<Scalars['String']>;
   heroImg?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  _body?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['String']>;
 };
 
 export type GlobalHeaderIconMutation = {
