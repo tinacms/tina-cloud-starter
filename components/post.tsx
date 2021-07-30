@@ -59,10 +59,11 @@ export const Post = ({ data }) => {
         </div>
       </Container>
       {data.heroImg && (
-        <div className="">
+        <div className="px-6">
           <img
             src={data.heroImg}
-            className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
+            className="mb-14 block h-auto w-full max-w-4xl lg:max-w-6xl mx-auto object-cover rounded-md"
+            style={{ maxHeight: "70vh" }}
           />
         </div>
       )}
