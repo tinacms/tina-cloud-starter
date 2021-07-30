@@ -87,7 +87,7 @@ type Posts {
   author: PostsAuthorDocument
   heroImg: String
   excerpt: String
-  _body: String
+  body: String
 }
 
 type PostsDocument implements Node & Document {
@@ -293,7 +293,7 @@ input PostsMutation {
   author: String
   heroImg: String
   excerpt: String
-  _body: String
+  body: String
 }
 
 input GlobalHeaderIconMutation {
