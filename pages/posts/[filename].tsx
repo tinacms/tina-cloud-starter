@@ -27,7 +27,7 @@ export const getStaticProps = async ({ params }) => {
               }
             }
             heroImg
-            _body
+            body
           }
         }
       }
