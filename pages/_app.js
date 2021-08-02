@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={true}
+        showEditButton={!!process.env.NEXT_PUBLIC_TINA_CLIENT_ID} // Don't show the edit button if there is no clientId.
         editMode={
           <TinaCMS
             branch="main"
