@@ -1,76 +1,46 @@
+import "../styles.css";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import { TinaEditProvider } from "tinacms/dist/edit-state";
+import { Layout } from "../components/layout";
+const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
+import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
-import { EditProvider, setEditing, useEditState } from "../utils/editState";
+const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
+const NEXT_PUBLIC_USE_LOCAL_CLIENT =
+  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || true;
 
-// InnerApp that handles rendering edit mode or not
-function InnerApp({ Component, pageProps }) {
-  const { edit } = useEditState();
-  if (edit) {
-    // Dynamically load Tina only when in edit mode so it does not affect production
-    // see https://nextjs.org/docs/advanced-features/dynamic-import#basic-usage
-    const TinaWrapper = dynamic(() => import("../components/tina-wrapper"));
-    return (
-      <>
-        <TinaWrapper {...pageProps}>
-          {(props) => <Component {...props} />}
-        </TinaWrapper>
-        <EditToggle isInEditMode={true} />
-      </>
-    );
-  }
+const App = ({ Component, pageProps }) => {
   return (
     <>
-      <Component {...pageProps} />
-      <EditToggle isInEditMode={true} />
-    </>
-  );
-}
-
-const EditToggle = (isInEditMode) => {
-  const { edit, setEdit } = useEditState();
-  return (
-    <>
-      {(Number(process.env.NEXT_PUBLIC_SHOW_EDIT_BTN) || edit) && (
-        <>
-          <button
-            onClick={() => {
-              setEdit(!edit);
-            }}
-            className="editLink"
+      <TinaEditProvider
+        editMode={
+          <TinaCMS
+            branch="main"
+            clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
+            isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
+            mediaStore={TinaCloudCloudinaryMediaStore}
+            {...pageProps}
           >
-            {edit ? "Exit edit mode" : "Enter edit mode"}
-          </button>
-          <style jsx>{`
-            .editLink {
-              border: none;
-              position: fixed;
-              top: 0;
-              right: 0;
-              background: var(--orange);
-              color: var(--white);
-              padding: 0.5rem 0.75rem;
-              font-weight: bold;
-              text-decoration: none;
-              display: inline-block;
-              border-bottom-left-radius: 0.5rem;
-              cursor: pointer;
-              font-size: 20px;
-            }
-          `}</style>
-        </>
-      )}
+            {(livePageProps) => (
+              <Layout
+                rawData={livePageProps}
+                data={livePageProps.data?.getGlobalDocument?.data}
+              >
+                <Component {...livePageProps} />
+              </Layout>
+            )}
+          </TinaCMS>
+        }
+      >
+        <Layout
+          rawData={pageProps}
+          data={pageProps.data?.getGlobalDocument?.data}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </TinaEditProvider>
     </>
   );
 };
-
-// Our app is wrapped with edit provider
-function App(props) {
-  return (
-    <EditProvider>
-      <InnerApp {...props} />
-    </EditProvider>
-  );
-}
 
 export default App;

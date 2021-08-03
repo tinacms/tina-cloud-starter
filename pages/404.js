@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Wrapper } from "../components/helper-components";
+import { Layout } from "../components/layout";
 
 export default function FourOhFour() {
   return (
-    <Wrapper>
+    <Layout>
       <h2>OOPS, NOTHING TO SEE HERE...</h2>
       <Link href="/">Go back home</Link>
-    </Wrapper>
+    </Layout>
   );
 }

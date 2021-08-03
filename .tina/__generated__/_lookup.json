@@ -1,0 +1,108 @@
+{
+  "DocumentConnection": {
+    "type": "DocumentConnection",
+    "resolveType": "multiCollectionDocumentList",
+    "collections": [
+      "posts",
+      "global",
+      "authors",
+      "pages"
+    ]
+  },
+  "Node": {
+    "type": "Node",
+    "resolveType": "nodeDocument"
+  },
+  "DocumentNode": {
+    "type": "DocumentNode",
+    "resolveType": "multiCollectionDocument"
+  },
+  "PostsArticleAuthorDocument": {
+    "type": "PostsArticleAuthorDocument",
+    "resolveType": "multiCollectionDocument"
+  },
+  "Posts": {
+    "type": "Posts",
+    "resolveType": "unionData",
+    "typeMap": {
+      "article": "PostsArticle"
+    }
+  },
+  "PostsDocument": {
+    "type": "PostsDocument",
+    "resolveType": "collectionDocument",
+    "collection": "posts"
+  },
+  "PostsConnection": {
+    "type": "PostsConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "posts"
+  },
+  "Authors": {
+    "type": "Authors",
+    "resolveType": "unionData",
+    "typeMap": {
+      "author": "AuthorsAuthor"
+    }
+  },
+  "AuthorsDocument": {
+    "type": "AuthorsDocument",
+    "resolveType": "collectionDocument",
+    "collection": "authors"
+  },
+  "AuthorsConnection": {
+    "type": "AuthorsConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "authors"
+  },
+  "PagesPageBlocks": {
+    "type": "PagesPageBlocks",
+    "resolveType": "unionData",
+    "typeMap": {
+      "raw": "PagesPageBlocksRaw",
+      "content": "PagesPageBlocksContent",
+      "image": "PagesPageBlocksImage"
+    }
+  },
+  "Pages": {
+    "type": "Pages",
+    "resolveType": "unionData",
+    "typeMap": {
+      "page": "PagesPage"
+    }
+  },
+  "PagesDocument": {
+    "type": "PagesDocument",
+    "resolveType": "collectionDocument",
+    "collection": "pages"
+  },
+  "PagesConnection": {
+    "type": "PagesConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "pages"
+  },
+  "PostsAuthorDocument": {
+    "type": "PostsAuthorDocument",
+    "resolveType": "multiCollectionDocument"
+  },
+  "PagesBlocks": {
+    "type": "PagesBlocks",
+    "resolveType": "unionData",
+    "typeMap": {
+      "hero": "PagesBlocksHero",
+      "features": "PagesBlocksFeatures",
+      "content": "PagesBlocksContent",
+      "testimonial": "PagesBlocksTestimonial"
+    }
+  },
+  "GlobalDocument": {
+    "type": "GlobalDocument",
+    "resolveType": "collectionDocument",
+    "collection": "global"
+  },
+  "GlobalConnection": {
+    "type": "GlobalConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "global"
+  }
+}
