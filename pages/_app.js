@@ -7,18 +7,24 @@ import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
 const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 const NEXT_PUBLIC_USE_LOCAL_CLIENT =
-  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || true;
+  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || 0;
 
 const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
+        showEditButton={true}
         editMode={
           <TinaCMS
             branch="main"
             clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
             mediaStore={TinaCloudCloudinaryMediaStore}
+            cmsCallback={(cms) => {
+              import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
+                cms.plugins.add(MarkdownFieldPlugin);
+              });
+            }}
             {...pageProps}
           >
             {(livePageProps) => (

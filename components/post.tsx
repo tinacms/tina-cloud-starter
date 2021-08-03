@@ -24,7 +24,7 @@ export const Post = ({ data }) => {
     <Section className="flex-1">
       <Container className={`flex-1 max-w-4xl pb-2`} size="large">
         <h2
-          className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
+          className={`w-full relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r ${
@@ -54,21 +54,22 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            {data.date}
+            July 28, 2021
           </p>
         </div>
       </Container>
       {data.heroImg && (
-        <div className="">
+        <div className="px-6 max-w-4xl lg:max-w-6xl flex justify-center mx-auto">
           <img
             src={data.heroImg}
-            className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
+            className="mb-14 block h-auto max-w-full mx-auto object-cover rounded-md"
+            style={{ maxHeight: "80vh" }}
           />
         </div>
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data._body}</Markdown>
+          <Markdown>{data.body}</Markdown>
         </div>
       </Container>
     </Section>
