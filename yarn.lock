@@ -2096,6 +2096,33 @@
     tsup "^3.7.0"
     webfontloader "1.6.28"
 
+"@tinacms/toolkit@0.50.1":
+  version "0.50.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.50.1.tgz#1f0e6ff0f5c0f27d4347d3e92c907e45d3bc7fd4"
+  integrity sha512-7lcVCmmNH0S1wRwNyVfVBEuE4E/5dckHy/Xmm21GVFVaLUg+hgKNpDx5Ld4lKRef4pZuMmZRin3pBH27TIRYVg==
+  dependencies:
+    "@sambego/storybook-styles" "^1.0.0"
+    "@types/prop-types" "^15.7.4"
+    atob "2.1.2"
+    color-string "^1.5.3"
+    cors "^2.8.5"
+    express "^4.17.1"
+    final-form "^4.20.2"
+    final-form-arrays "^3.0.1"
+    lodash.get "^4.4.2"
+    moment ">=2 <=3"
+    multer "1.4.2"
+    prop-types "15.7.2"
+    react-beautiful-dnd "^11.0.5"
+    react-color "^2.17.3"
+    react-datetime "^2.16.3"
+    react-dismissible "^1.3.0"
+    react-dropzone "10.1.8"
+    react-final-form "^6.3.0"
+    simple-git "1.126.0"
+    tsup "^3.7.0"
+    webfontloader "1.6.28"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -10500,15 +10527,15 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.50.1:
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.50.1.tgz#7dfaa52da7f99b1057e9fa789f397bc690f28cef"
-  integrity sha512-XXYmiUDcbU7aKjAvF6JXC8sFe6Sg6x4b3A/VWcOjESuuG8G8PrVZmhysponcRl466J7w+18CEcGP4abcPHFHbQ==
+tinacms@^0.51.0:
+  version "0.51.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.51.0.tgz#a5ca6e10e1abfb2d6bd1c8c6ac512e3b070910bc"
+  integrity sha512-J1oTauO3+rxqQ1qyV7vydhNS9INZGZcVf5mYNBPPMBkIHKlB/uVNjbR1gSgTv1TYPiTmE2oXigarKzMMXBJ0oA==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
-    "@tinacms/toolkit" "0.50.0"
+    "@tinacms/toolkit" "0.50.1"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"
