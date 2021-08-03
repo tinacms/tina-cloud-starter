@@ -85,10 +85,9 @@ union PostsAuthorDocument = AuthorsDocument
 type Posts {
   title: String
   author: PostsAuthorDocument
-  date: String
   heroImg: String
   excerpt: String
-  _body: String
+  body: String
 }
 
 type PostsDocument implements Node & Document {
@@ -292,10 +291,9 @@ input DocumentMutation {
 input PostsMutation {
   title: String
   author: String
-  date: String
   heroImg: String
   excerpt: String
-  _body: String
+  body: String
 }
 
 input GlobalHeaderIconMutation {
