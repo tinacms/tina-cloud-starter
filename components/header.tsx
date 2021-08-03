@@ -70,7 +70,7 @@ export const Header = ({ data }) => {
                 const activeItem = route.includes(href);
                 return (
                   <li
-                    key={item.label}
+                    key={`${item.label}-${i}`}
                     className={activeItem ? activeItemClasses[theme.color] : ""}
                   >
                     <Link href={`/${item.href || "home"}`}>
