@@ -9,7 +9,7 @@
     "export": "yarn build && next export"
   },
   "devDependencies": {
-    "@tinacms/cli": "^0.52.2",
+    "@tinacms/cli": "^0.53.0",
     "@types/js-cookie": "^2.2.6",
     "@types/node": "^13.13.1",
     "@types/react": "^16.9.43",
