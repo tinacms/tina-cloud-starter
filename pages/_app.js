@@ -25,6 +25,33 @@ const App = ({ Component, pageProps }) => {
                 cms.plugins.add(MarkdownFieldPlugin);
               });
             }}
+            documentCreatorCallback={{
+              /**
+               * After a new document is created, redirect to its location
+               */
+              onNewDocument: ({ collection: { slug }, breadcrumbs }) => {
+                const relativeUrl = `/${slug}/${breadcrumbs.join("/")}`;
+                return (window.location.href = relativeUrl);
+              },
+              /**
+               * Only allows documents to be created to the `Blog Posts` Collection
+               */
+              filterCollections: (options) => {
+                return options.filter(
+                  (option) => option.label === "Blog Posts"
+                );
+              },
+            }}
+            /**
+             * Treat the Global collection as a global form
+             */
+            formifyCallback={({ formConfig, createForm, createGlobalForm }) => {
+              if (formConfig.id === "getGlobalDocument") {
+                return createGlobalForm(formConfig);
+              }
+
+              return createForm(formConfig);
+            }}
             {...pageProps}
           >
             {(livePageProps) => (
