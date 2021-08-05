@@ -7,6 +7,10 @@ import type { PostsDocument } from "../../.tina/__generated__/types";
 export default function BlogPostPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
+  if (!props.data) {
+    console.log(props);
+    return <div></div>;
+  }
   return <Post {...props.data.getPostsDocument} />;
 }
 
