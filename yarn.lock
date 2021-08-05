@@ -1999,15 +1999,15 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.0.tgz#07b05cc4f79d7c442269cb371df29297078a3174"
   integrity sha512-C4LQALN+eJqyrnEVmgB2Ee/kpZWdIGPZ2CuAdA0VHtOiuUovBasH3ut4/WjcgwJz9itzAT9b51raSMgZ9XUgXw==
 
-"@tinacms/cli@^0.51.1":
-  version "0.51.1"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.51.1.tgz#784633ab80479a067827958656d4da413021ffd1"
-  integrity sha512-Vr53lwZlwROU29sSiMJyt6/zCaNI4Rx5ONgn9p8FgBiq/td7qPTZKP8Y/izB6Qi0GFc1W5xkx9eCkx5iGwYlig==
+"@tinacms/cli@^0.53.0":
+  version "0.53.0"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.53.0.tgz#022a979539ebf50af29b9e74099a46f7e93b730d"
+  integrity sha512-e8eR++Ce4KuM2ys+RoV8yzyF9lD6AWCM7d4z1RNW2POkEsY/UNKqXfC/TMtKV8soJmgPwd8hFzyDUdcDrKXYow==
   dependencies:
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
-    "@tinacms/graphql" "0.50.2"
+    "@tinacms/graphql" "0.51.1"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     axios "0.19.0"
@@ -2032,10 +2032,10 @@
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.50.2":
-  version "0.50.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.50.2.tgz#1ac2a9c2df13e5fbdbf5760dfde765915fa8b8ff"
-  integrity sha512-O/aaQGvB8wp+fI1UAX3+WL6U5owrp8a09JlrUnwQnvHf7PwToU1GWxO4AI6y+we+S9Y1pxFNmeNdQU93stG+0w==
+"@tinacms/graphql@0.51.1":
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.51.1.tgz#02fc5961ef9881923d1ef31f2a7c147044dfec93"
+  integrity sha512-1cgVmlph0X0biVwzVthp9ps3pVbuTKgYy0zPd3wRHBEQ2LklsCmJSfDnpIonjvYtPf/NOU6jqoetaZIWpjP7UA==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -2053,6 +2053,7 @@
     js-yaml "^3.14.0"
     lodash "^4.17.20"
     lru-cache "^6.0.0"
+    normalize-path "^3.0.0"
     prettier "^2.2.1"
     rehype-format "^3.1.0"
     rehype-stringify "^8.0.0"
@@ -2073,6 +2074,33 @@
   version "0.50.0"
   resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.50.0.tgz#4889a4c4624030e8aacd5e4315cbfec8767fd157"
   integrity sha512-MyMsV+QznorOFNZsh984AVI5+5SNilcLOR64EX10AdD4bSPKp1bTdepjCanFXkMZxM3a22tD/BeKOFhWnN/a6g==
+  dependencies:
+    "@sambego/storybook-styles" "^1.0.0"
+    "@types/prop-types" "^15.7.4"
+    atob "2.1.2"
+    color-string "^1.5.3"
+    cors "^2.8.5"
+    express "^4.17.1"
+    final-form "^4.20.2"
+    final-form-arrays "^3.0.1"
+    lodash.get "^4.4.2"
+    moment ">=2 <=3"
+    multer "1.4.2"
+    prop-types "15.7.2"
+    react-beautiful-dnd "^11.0.5"
+    react-color "^2.17.3"
+    react-datetime "^2.16.3"
+    react-dismissible "^1.3.0"
+    react-dropzone "10.1.8"
+    react-final-form "^6.3.0"
+    simple-git "1.126.0"
+    tsup "^3.7.0"
+    webfontloader "1.6.28"
+
+"@tinacms/toolkit@0.50.1":
+  version "0.50.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.50.1.tgz#1f0e6ff0f5c0f27d4347d3e92c907e45d3bc7fd4"
+  integrity sha512-7lcVCmmNH0S1wRwNyVfVBEuE4E/5dckHy/Xmm21GVFVaLUg+hgKNpDx5Ld4lKRef4pZuMmZRin3pBH27TIRYVg==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/prop-types" "^15.7.4"
@@ -10500,15 +10528,15 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.50.1:
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.50.1.tgz#7dfaa52da7f99b1057e9fa789f397bc690f28cef"
-  integrity sha512-XXYmiUDcbU7aKjAvF6JXC8sFe6Sg6x4b3A/VWcOjESuuG8G8PrVZmhysponcRl466J7w+18CEcGP4abcPHFHbQ==
+tinacms@^0.52.0:
+  version "0.52.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.52.0.tgz#964008cc32ca2e7357535d2fb3b5290900b2a9f9"
+  integrity sha512-DykJb5zex1mU9HcsNvU1LGdm6i8Qf9T+7eOceGhy2PM5IE5jAfCwwzY4gLJS1/jOQfAmYvA1LQLyW6m3jJDdPQ==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
-    "@tinacms/toolkit" "0.50.0"
+    "@tinacms/toolkit" "0.50.1"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"
