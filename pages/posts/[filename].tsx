@@ -7,16 +7,18 @@ import type { PostsDocument } from "../../.tina/__generated__/types";
 export default function BlogPostPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  if (!props.data) {
-    console.log(props);
-    return <div></div>;
+  // @ts-ignore
+  if (props.data && props.data.getPostsDocument) {
+    // @ts-ignore
+    return <Post {...props.data.getPostsDocument} />;
   }
-  return <Post {...props.data.getPostsDocument} />;
+  return <div></div>;
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = (await getStaticPropsForTina({
-    query: `#graphql
+  try {
+    const tinaProps = (await getStaticPropsForTina({
+      query: `#graphql
       query BlogPostQuery($relativePath: String!) {
         ${layoutQueryFragment}
         getPostsDocument(relativePath: $relativePath) {
@@ -36,13 +38,41 @@ export const getStaticProps = async ({ params }) => {
         }
       }
     `,
-    variables: { relativePath: `${params.filename}.md` },
-  })) as { data: { getPostsDocument: PostsDocument } };
-  return {
-    props: {
-      ...tinaProps,
-    },
-  };
+      variables: { relativePath: `${params.filename}.md` },
+    })) as { data: { getPostsDocument: PostsDocument } };
+    return {
+      props: {
+        ...tinaProps,
+      },
+    };
+  } catch (e) {
+    return {
+      props: {
+        query: `#graphql
+      query BlogPostQuery($relativePath: String!) {
+        ${layoutQueryFragment}
+        getPostsDocument(relativePath: $relativePath) {
+          data {
+            title
+            author {
+              ... on AuthorsDocument {
+                data {
+                  name
+                  avatar
+                }
+              }
+            }
+            heroImg
+            body
+          }
+        }
+      }
+    `,
+        variables: { relativePath: `${params.filename}.md` },
+        data: {},
+      },
+    };
+  }
 };
 
 /**
