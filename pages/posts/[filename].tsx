@@ -68,7 +68,7 @@ export const getStaticPaths = async () => {
     paths: postsListData.getPostsList.edges.map((post) => ({
       params: { filename: post.node.sys.filename },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
 
