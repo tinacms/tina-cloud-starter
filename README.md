@@ -22,8 +22,27 @@ The content is managed through text files stored in your GitHub repository, and 
 - A [TinaCMS](https://app.tina.io) account for live editing
 - A [Cloudinary](https://cloudinary.com) account for media support
 
+## Local development
 
-## Local development workflow tips
+Install the project's dependencies with
+
+```
+yarn install
+```
+
+Run the project locally with
+
+```
+yarn dev
+```
+
+### URLs
+
+- http://localhost:3000 : browse the website 
+- http://localhost:3000/admin : connect to Tina Cloud and go in edit mode
+- http://localhost:3000/exit-admin : log out of Tina Cloud
+- http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
+
 
 ### Typescript
 
