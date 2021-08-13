@@ -1,15 +1,23 @@
 import "../styles.css";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
 const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
 import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
+import { useRouter } from "next/router";
 
 const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 const NEXT_PUBLIC_USE_LOCAL_CLIENT =
   process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || 0;
 
 const App = ({ Component, pageProps }) => {
+  const router = useRouter();
+  useEffect(() => {
+    if (window.location.pathname !== "/admin") {
+      window.sessionStorage.setItem("last_viewed", window.location.pathname);
+    }
+  }, [router.asPath]);
   return (
     <>
       <TinaEditProvider

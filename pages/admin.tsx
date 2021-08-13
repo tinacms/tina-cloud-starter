@@ -9,8 +9,9 @@ const GoToEditPage: React.FC = () => {
   const { setEdit } = useEditState();
   const router = useRouter();
   useEffect(() => {
+    const last_viewed = window.sessionStorage.getItem("last_viewed") || "/";
     setEdit(true);
-    router.back();
+    window.location.pathname = last_viewed;
   }, []);
   return (
     <Layout>
