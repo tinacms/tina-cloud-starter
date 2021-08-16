@@ -3,6 +3,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import { BsArrowRight } from "react-icons/bs";
 import { ThemeContext } from "./theme";
+import format from "date-fns/format";
 
 export const Posts = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -21,6 +22,8 @@ export const Posts = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
+        const date = new Date(post?.values?.date) ?? new Date();
+        const formattedDate = format(date, "MMM dd, yyyy");
         return (
           <Link
             key={post.sys.filename}
@@ -59,7 +62,7 @@ export const Posts = ({ data }) => {
                   —
                 </span>
                 <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                  July 28, 2021
+                  {formattedDate}
                 </p>
               </div>
             </a>
