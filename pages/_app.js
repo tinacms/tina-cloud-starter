@@ -13,9 +13,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={Boolean(
-          Number(process.env.NEXT_PUBLIC_SHOW_EDIT_BTN ?? 1)
-        )}
+        showEditButton={false}
         editMode={
           <TinaCMS
             branch="main"
