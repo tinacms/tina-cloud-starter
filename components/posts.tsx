@@ -22,8 +22,15 @@ export const Posts = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
-        const date = new Date(post?.values?.date) ?? new Date();
-        const formattedDate = format(date, "MMM dd, yyyy");
+        /**
+         * Formats date field value to be more readable.
+         */
+        let formattedDate
+        if (post?.values.date !== null) {
+          const date = post.values.date ? new Date(post?.values?.date) : '';
+          formattedDate = date ? format(date, "MMM dd, yyyy") : date;
+        }
+
         return (
           <Link
             key={post.sys.filename}
@@ -56,7 +63,7 @@ export const Posts = ({ data }) => {
                   />
                 </div>
                 <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                  {post.data.author.data.name}
+                  {post.data.author?.data.name}
                 </p>
                 <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                   —
