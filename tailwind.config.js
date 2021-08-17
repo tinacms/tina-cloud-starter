@@ -84,6 +84,7 @@ module.exports = {
       4: "4px",
     },
     extend: {
+      textDecoration: ["active"],
       opacity: {
         7: ".075",
         15: ".15",
