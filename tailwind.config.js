@@ -136,13 +136,24 @@ module.exports = {
           },
         },
         lg: {
-          css: [
-            {
-              pre: {
-                lineHeight: 1.5,
-              },
+          css: {
+            pre: {
+              lineHeight: 1.5,
             },
-          ],
+            "p:first-of-type": {
+              fontSize: "1.365rem",
+            },
+          },
+        },
+        xl: {
+          css: {
+            pre: {
+              lineHeight: 1.5,
+            },
+            "p:first-of-type": {
+              fontSize: "1.365rem",
+            },
+          },
         },
         dark: {
           css: {
