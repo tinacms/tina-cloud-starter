@@ -33,6 +33,7 @@ export const getStaticProps = async ({ params }) => {
                 }
               }
             }
+            date
             heroImg
             body
           }
