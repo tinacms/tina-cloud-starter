@@ -20,8 +20,14 @@ export const Post = ({ data }) => {
     yellow:
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
   };
-  const date = new Date(data.date);
-  const formattedDate = format(date, "MMM dd, yyyy");
+  /**
+   * Formats date field value to be more readable.
+   */
+  let formattedDate
+  if (data?.date !== null) {
+    const date = data.date ? new Date(data.date) : '';
+    formattedDate = date ? format(date, "MMM dd, yyyy") : date;
+  }
 
   return (
     <Section className="flex-1">
