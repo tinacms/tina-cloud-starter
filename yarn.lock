@@ -1999,15 +1999,15 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.0.tgz#07b05cc4f79d7c442269cb371df29297078a3174"
   integrity sha512-C4LQALN+eJqyrnEVmgB2Ee/kpZWdIGPZ2CuAdA0VHtOiuUovBasH3ut4/WjcgwJz9itzAT9b51raSMgZ9XUgXw==
 
-"@tinacms/cli@^0.55.0":
-  version "0.55.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.55.0.tgz#d57007adb388fade33aa816a83bd913372b26581"
-  integrity sha512-ZD5y/TPhML/uJz1T6UdCT21HMNFa1/RF6U+fQ1YMZIc261Zag0YkgbtTYDdFFYiW+5/ywTrkPnK3yzHEbMS6Qg==
+"@tinacms/cli@^0.55.1":
+  version "0.55.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.55.1.tgz#ed6154ba1cfe847ddfd97550c44f0854205ab973"
+  integrity sha512-Ol6Rjz+QnrSVGdr8ZBmqRW8axwLTMeMOXeUkV82RNxh5VKNeIdSYFJHZC04IOh0upc1kM14SaOrukmJVeWNgqw==
   dependencies:
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
-    "@tinacms/graphql" "0.54.1"
+    "@tinacms/graphql" "0.54.2"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     axios "0.19.0"
@@ -2032,10 +2032,10 @@
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.54.1":
-  version "0.54.1"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.54.1.tgz#a0a97edf3075e0fb71362373b3096d0ba7c7487f"
-  integrity sha512-aOadkZ42WoSGcGI/UQaZmEU51y02You3jNYN5eCxfeJk8sqftK/zcyAc875E9uUCXtqG+nMk5RyV/GYNXo/ouQ==
+"@tinacms/graphql@0.54.2":
+  version "0.54.2"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.54.2.tgz#47317bb4a8367cb17658d782db1dbb4eec303615"
+  integrity sha512-sihEq40sz3T6k5AxuXmogBdOvcgtQqmsAD/M1o4UUsQ8a8WvV2SM/xnbuzA9BZ1SYMGalEkK4LHWVHSCtiQ2NA==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -10506,10 +10506,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.54.4:
-  version "0.54.4"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.54.4.tgz#4d2a5d20729dedb3264058242847b6a2cfe3f079"
-  integrity sha512-LE5w2s7U0XTdVpOQ5B5pMohHg/bTikZAg20LQzo7VMvacmbIzCcW6bhsct5K65BIEsT+IvJPQ0EKeZistLVnFQ==
+tinacms@^0.55.0:
+  version "0.55.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.55.0.tgz#b5141c3631d27dc192879539609d6e3e246a5dc8"
+  integrity sha512-Rn0+AWi+2d7JJV2FdpI6erHmg8Nq091k5mTBXpFAMQ0UgWHNnyZfZ/O4PUrwglhawkto1gDhMc5hX3O5HRvFIA==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
