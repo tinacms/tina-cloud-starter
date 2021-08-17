@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import { Button } from "tinacms";
-import { Container } from "../components/container";
-import { Section } from "../components/section";
+import { Container } from "../../components/container";
+import { Section } from "../../components/section";
 import { useEditState } from "tinacms/dist/edit-state";
-import { ThemeContext } from "../components/theme";
+import { ThemeContext } from "../../components/theme";
 import React from "react";
 import {
   buttonColorClasses,
   invertedButtonColorClasses,
-} from "../components/actions";
+} from "../../components/actions";
 
 const GoToEditPage: React.FC = () => {
   const { edit, setEdit } = useEditState();
