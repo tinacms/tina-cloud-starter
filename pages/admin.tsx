@@ -27,8 +27,8 @@ const GoToEditPage: React.FC = () => {
               <a className="underline" href="https://tina.io">
                 TinaCMS!
               </a>{" "}
-              Please login with Tina Cloud, and then navigate your site in edit
-              mode.
+              Please login with Tina Cloud. Once you are logged in you will be
+              able to edit your site.
             </p>
           </>
         )}
