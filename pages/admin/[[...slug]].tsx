@@ -25,7 +25,10 @@ const GoToEditPage: React.FC = () => {
         {!edit && (
           <p className="mb-10 text-lg">
             Thanks for using{" "}
-            <a className="underline" href="https://tina.io">
+            <a
+              className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-500 transition-all ease-out duration-150"
+              href="https://tina.io"
+            >
               TinaCMS!
             </a>{" "}
             Please login with Tina Cloud. Once you are logged in you will be
