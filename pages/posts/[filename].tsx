@@ -2,12 +2,19 @@ import { Post } from "../../components/post";
 import { getStaticPropsForTina, staticRequest } from "tinacms";
 import { layoutQueryFragment } from "../../components/layout";
 import type { PostsDocument } from "../../.tina/__generated__/types";
+import FourOhFour from "../404";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  return <Post {...props.data.getPostsDocument} />;
+  if (props.data && props.data.getPostsDocument) {
+    return <Post {...props.data.getPostsDocument} />;
+  }
+  // We're likely loading a new document that doesn't yet have data
+  // show the 404 which will quickly be replace by client side content
+  // from Tina
+  return <FourOhFour />;
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -26,6 +33,7 @@ export const getStaticProps = async ({ params }) => {
                 }
               }
             }
+            date
             heroImg
             body
           }
@@ -68,7 +76,7 @@ export const getStaticPaths = async () => {
     paths: postsListData.getPostsList.edges.map((post) => ({
       params: { filename: post.node.sys.filename },
     })),
-    fallback: false,
+    fallback:'blocking',
   };
 };
 

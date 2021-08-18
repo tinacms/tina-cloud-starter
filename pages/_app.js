@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={true}
+        showEditButton={false}
         editMode={
           <TinaCMS
             branch="main"

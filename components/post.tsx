@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
+import format from 'date-fns/format'
 
 export const Post = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -19,6 +20,14 @@ export const Post = ({ data }) => {
     yellow:
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
   };
+  /**
+   * Formats date field value to be more readable.
+   */
+  let formattedDate
+  if (data?.date !== null) {
+    const date = data.date ? new Date(data.date) : '';
+    formattedDate = date ? format(date, "MMM dd, yyyy") : date;
+  }
 
   return (
     <Section className="flex-1">
@@ -54,7 +63,7 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            July 28, 2021
+           {formattedDate}
           </p>
         </div>
       </Container>
