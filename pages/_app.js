@@ -24,6 +24,9 @@ const App = ({ Component, pageProps }) => {
               import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
                 cms.plugins.add(MarkdownFieldPlugin);
               });
+              import("../plugins/exampleScreen").then(({ MyPagePlugin }) => {
+                cms.plugins.add(MyPagePlugin);
+              });
             }}
             documentCreatorCallback={{
               /**
