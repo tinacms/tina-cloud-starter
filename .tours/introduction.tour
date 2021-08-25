@@ -1,0 +1,37 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Introduction",
+  "steps": [
+    {
+      "file": "pages/_app.js",
+      "description": "Wrapping your App in the TinaEditProvider sets up a lightweight context which allows you to switch in and out of edit mode.",
+      "line": 15
+    },
+    {
+      "file": "pages/_app.js",
+      "description": "When in edit mode, `TinaEditProvider` will dynamically load and initialize `TinaCMS`. From here you can configure things to your liking.",
+      "line": 18
+    },
+    {
+      "file": "pages/[filename].tsx",
+      "description": "We're using a dynamic route for most pages. To build them properly we need to request data from the GraphQL API, `staticRequest` is a simple wrapper around the `fetch` API, and you can see we're building out a list of pages. These pages come from the `content/pages` directory. Which we'll look at next. Once we've built the routing, we'll move to the data fetching...",
+      "line": 76
+    },
+    {
+      "file": "pages/[filename].tsx",
+      "description": "From here, `params.filename` is used to request a specific page. The home page, for example will serve the content from `content/pages/index.md`. And you can see that it's structured with a block-based model.",
+      "line": 13
+    },
+    {
+      "file": "content/pages/home.md",
+      "description": "Each block has a `_template` property, allowing you to mix and match however you'd like. This content is backed by a collection in a schema that _you_ define. We'll look at that next.",
+      "line": 2
+    },
+    {
+      "file": ".tina/schema.ts",
+      "description": "We just looked at `content/pages/index.md`, the shape of that content is defined here, you can see that we set up a `blocks` field, which can be one of 4 different templates. ",
+      "line": 643
+    }
+  ],
+  "ref": "main"
+}
