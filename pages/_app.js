@@ -27,6 +27,9 @@ const App = ({ Component, pageProps }) => {
               import("../plugins/exampleScreen").then(({ MyPagePlugin }) => {
                 cms.plugins.add(MyPagePlugin);
               });
+              import("../plugins/authorScreeen").then(({ MyPagePlugin }) => {
+                cms.plugins.add(MyPagePlugin);
+              });
             }}
             documentCreatorCallback={{
               /**

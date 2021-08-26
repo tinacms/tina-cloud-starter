@@ -633,7 +633,7 @@ export default defineSchema({
           name: "name",
         },
         {
-          type: "string",
+          type: "image",
           label: "Avatar",
           name: "avatar",
         },
