@@ -31,21 +31,20 @@ const GoToEditPage: React.FC = () => {
             >
               TinaCMS!
             </a>{" "}
-            Please login with Tina Cloud. Once you are logged in you will be
-            able to edit your site.
+            Please login with Tina Cloud to be able to edit your site.
           </p>
         )}
         {edit && (
           <p className="mb-10 text-lg">
-            You are now logged in and in edit mode! You can now to to the home
-            page and begin to make content changes
+            OK, now that your are logged in, you can go to the home
+            page and begin to make content changes.
           </p>
         )}
         <div className="flex flex-wrap items-center gap-y-6 gap-x-8">
           {edit && (
             <>
               <button
-                className={`z-10 cursor-pointer relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                className={`z-10 cursor-pointer relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                   invertedButtonColorClasses[theme.color]
                 }`}
                 onClick={() => {
@@ -56,7 +55,7 @@ const GoToEditPage: React.FC = () => {
                 home page
               </button>
               <button
-                className={`z-10 cursor-pointer relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                className={`z-10 cursor-pointer relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                   invertedButtonColorClasses[theme.color]
                 }`}
                 onClick={() => {
@@ -75,7 +74,7 @@ const GoToEditPage: React.FC = () => {
                 href=""
               >
                 <BiLogOut className={`mr-2.5 ml-1 w-6 h-6 opacity-80`} /> Logout
-                of TinaCMS
+                of Tina Cloud
               </a>
             </>
           )}
@@ -90,7 +89,7 @@ const GoToEditPage: React.FC = () => {
                 }}
               >
                 <BiLogIn className={`mr-1.5 w-6 h-6 opacity-80`} /> Login with
-                TinaCMS
+                Tina Cloud
               </button>
               <button
                 className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
