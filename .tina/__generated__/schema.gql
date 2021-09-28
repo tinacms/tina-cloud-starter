@@ -88,7 +88,7 @@ type Posts {
   date: String
   heroImg: String
   excerpt: String
-  body: String
+  body: JSON
 }
 
 type PostsDocument implements Node & Document {
@@ -295,7 +295,7 @@ input PostsMutation {
   date: String
   heroImg: String
   excerpt: String
-  body: String
+  body: JSON
 }
 
 input GlobalHeaderIconMutation {

@@ -1,9 +1,79 @@
 import React from "react";
-import Markdown from "react-markdown";
 import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
-import format from 'date-fns/format'
+import format from "date-fns/format";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+const blockRenderer = {
+  BlockQuote: (props) => {
+    return (
+      <div>
+        <blockquote>
+          <TinaMarkdown>{props.children}</TinaMarkdown>
+          {props.authorName}
+        </blockquote>
+      </div>
+    );
+  },
+  DateTime: (props) => {
+    const dt = React.useMemo(() => {
+      return new Date();
+    }, []);
+
+    switch (props.format) {
+      case "iso":
+        return <span>{dt.toISOString()}</span>;
+      case "utc":
+        return <span>{dt.toUTCString()}</span>;
+      case "local":
+        return <span>{dt.toLocaleDateString()}</span>;
+      default:
+        return <span>{dt.toLocaleDateString()}</span>;
+    }
+  },
+  NewsletterSignup: (props) => {
+    return (
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8 md:flex md:items-center">
+          <div className="md:w-0 md:flex-1">
+            <TinaMarkdown>{props.children}</TinaMarkdown>
+          </div>
+          <div className="mt-8 md:mt-0 md:ml-8">
+            <form className="sm:flex">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email-address"
+                name="email-address"
+                type="email"
+                autoComplete="email"
+                required
+                className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
+                placeholder={props.placeholder}
+              />
+              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                >
+                  {props.buttonText}
+                </button>
+              </div>
+            </form>
+            <p className="mt-3 text-sm text-gray-500">
+              {/* {props.disclaimer} */}
+              {props.disclaimer && (
+                <TinaMarkdown>{props.disclaimer}</TinaMarkdown>
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
 
 export const Post = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -20,20 +90,18 @@ export const Post = ({ data }) => {
     yellow:
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
   };
-  /**
-   * Formats date field value to be more readable.
-   */
-  let formattedDate
-  if (data?.date !== null) {
-    const date = data.date ? new Date(data.date) : '';
-    formattedDate = date ? format(date, "MMM dd, yyyy") : date;
+
+  const date = new Date(data.date);
+  let formattedDate = "";
+  if (!isNaN(date.getTime())) {
+    formattedDate = format(date, "MMM dd, yyyy");
   }
 
   return (
     <Section className="flex-1">
       <Container className={`flex-1 max-w-4xl pb-2`} size="large">
         <h2
-          className={`w-full relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
+          className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r ${
@@ -63,22 +131,21 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-           {formattedDate}
+            {formattedDate}
           </p>
         </div>
       </Container>
       {data.heroImg && (
-        <div className="px-6 max-w-4xl lg:max-w-6xl flex justify-center mx-auto">
+        <div className="">
           <img
             src={data.heroImg}
-            className="mb-14 block h-auto max-w-full mx-auto object-cover rounded-md"
-            style={{ maxHeight: "80vh" }}
+            className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
           />
         </div>
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data.body}</Markdown>
+          <TinaMarkdown blocks={blockRenderer}>{data.body}</TinaMarkdown>
         </div>
       </Container>
     </Section>

@@ -194,7 +194,7 @@ export type Posts = {
   date?: Maybe<Scalars['String']>;
   heroImg?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  body?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['JSON']>;
 };
 
 export type PostsDocument = Node & Document & {
@@ -469,7 +469,7 @@ export type PostsMutation = {
   date?: Maybe<Scalars['String']>;
   heroImg?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  body?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['JSON']>;
 };
 
 export type GlobalHeaderIconMutation = {
