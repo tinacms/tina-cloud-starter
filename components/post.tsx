@@ -3,9 +3,10 @@ import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
 import format from "date-fns/format";
+// FIXME: types are broken on the latest mdx build
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const blockRenderer = {
+const components = {
   BlockQuote: (props) => {
     return (
       <div>
@@ -145,7 +146,7 @@ export const Post = ({ data }) => {
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <TinaMarkdown blocks={blockRenderer}>{data.body}</TinaMarkdown>
+          <TinaMarkdown components={components}>{data.body}</TinaMarkdown>
         </div>
       </Container>
     </Section>
