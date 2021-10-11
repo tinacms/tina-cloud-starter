@@ -2271,15 +2271,15 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.1.tgz#47ee8fd6fb235de07d30802076391a9221f9270e"
   integrity sha512-lXlH2Y+ffRAHejvw2TGUU+LO+R5MBYcaxb7uE9dr5jgVURCqRRVLiuwSz4o8WgfwUb5cni+wFHCZVHjqT3e0kQ==
 
-"@tinacms/cli@0.0.0-202198235220":
-  version "0.0.0-202198235220"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-202198235220.tgz#ed25a088525cbc46f6062a99976e14a2881ffae6"
-  integrity sha512-8VJVgDntHjAmzJhTZNL3lm6Ru075/r4/6vbV4Jv1ffWJZhXUZOSSVa9hQ7MEy2Il8GpxE95zEyqED9Ns33eZqw==
+"@tinacms/cli@0.0.0-2021911175323":
+  version "0.0.0-2021911175323"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-2021911175323.tgz#3ccee9d2454495ddecc83d6bbad741b935b97b5f"
+  integrity sha512-NOf6kELb70E1LWkw0oNXSkRFYCIuixoKlH575ijc+rM90jy3ppyRc9bV+ocV/AJJLRl67PA2SI8EZ74ceTZDXw==
   dependencies:
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
-    "@tinacms/graphql" "0.0.0-202198235220"
+    "@tinacms/graphql" "0.0.0-2021911175323"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     axios "0.19.0"
@@ -2304,10 +2304,10 @@
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.0.0-202198235220":
-  version "0.0.0-202198235220"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-202198235220.tgz#931db7a2ff783f1dee51a57c7968ae8144e73452"
-  integrity sha512-6JVchy6hTJCHbOMPa0C6JjKTCI5/AKADgm2OgcXAZXUQy8m2aTxhTp478zVNTpOiGF0SEelAYHXMidD3NOHUOw==
+"@tinacms/graphql@0.0.0-2021911175323":
+  version "0.0.0-2021911175323"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-2021911175323.tgz#27f984aee23a9cb30c5cb5b0548c3304f771e744"
+  integrity sha512-7DVvFSFWCqd+Ln21c6CB1YaDZRAAzPi8KgGHT6V2zk9UP1nvoxbZfC/nNq5Ym3dVRXaGc3DGqu2Vi3Au82sOzA==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -2359,10 +2359,10 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/toolkit@0.0.0-202198235220":
-  version "0.0.0-202198235220"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.0.0-202198235220.tgz#e883328f4e943b0dc171809664cd7bce7c1dae00"
-  integrity sha512-hVwSm99kiPjy5Qihj+xgQAnHJ564FNpWi0Kh6A9aFKQk14MZ4pL+qu63jq88r25SSM1ylfYUsQI/CJUqKR/aGQ==
+"@tinacms/toolkit@0.0.0-2021911175323":
+  version "0.0.0-2021911175323"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.0.0-2021911175323.tgz#175e593aeb5960f0c6f95804553bb99e023d4203"
+  integrity sha512-8pTjJrv/zps4CZFq4jVKTRYoot2MP+3l4w/3zRckPhx/q7aWLtq8kBR0ucZHafUT3aCfwxtSJ0/S32dgFE1l/A==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/atob" "^2.1.2"
@@ -12818,15 +12818,15 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@0.0.0-202198235220:
-  version "0.0.0-202198235220"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-202198235220.tgz#937387d5c40820136c688e8828d84a02c4267e78"
-  integrity sha512-ojzE1jxt2FChCp4NEeNYW7Gjdq0f3aDTH0Z6cXLe5bJ7EBx2vYxIdEObFXQbnDEIu8q+LsZgt1UzlliavgVj4g==
+tinacms@0.0.0-2021911175323:
+  version "0.0.0-2021911175323"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-2021911175323.tgz#b16ef4cfd374adeb543344b4549e3ae93024be91"
+  integrity sha512-TCzdfc4jfRTNVloDa4oZy3jCIVp5+4y0YFtp1o/kUHCayfOzqEy5iGVsSoBH8xIyQiQvLJ/nQVnYbphUh7F0JA==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
-    "@tinacms/toolkit" "0.0.0-202198235220"
+    "@tinacms/toolkit" "0.0.0-2021911175323"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"
