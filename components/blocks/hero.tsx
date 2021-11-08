@@ -33,10 +33,10 @@ export const Hero = ({ data }) => {
           )}
           {data.headline && (
             <h3
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              className={`w-full block relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
+                className={`bg-clip-text inline-block text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
                     ? `from-white to-gray-100`
                     : headlineColorClasses[theme.color]
