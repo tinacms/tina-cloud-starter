@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
-import format from 'date-fns/format'
+import format from "date-fns/format";
 
 export const Post = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -23,9 +23,9 @@ export const Post = ({ data }) => {
   /**
    * Formats date field value to be more readable.
    */
-  let formattedDate
+  let formattedDate;
   if (data?.date !== null) {
-    const date = data.date ? new Date(data.date) : '';
+    const date = data.date ? new Date(data.date) : "";
     formattedDate = date ? format(date, "MMM dd, yyyy") : date;
   }
 
@@ -33,10 +33,10 @@ export const Post = ({ data }) => {
     <Section className="flex-1">
       <Container className={`flex-1 max-w-4xl pb-2`} size="large">
         <h2
-          className={`w-full relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
+          className={`w-full block relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
         >
           <span
-            className={`bg-clip-text text-transparent bg-gradient-to-r ${
+            className={`bg-clip-text inline-block text-transparent bg-gradient-to-r ${
               titleColorClasses[theme.color]
             }`}
           >
@@ -63,7 +63,7 @@ export const Post = ({ data }) => {
             </>
           )}
           <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-           {formattedDate}
+            {formattedDate}
           </p>
         </div>
       </Container>
