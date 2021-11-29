@@ -96,17 +96,6 @@ const GoToEditPage: React.FC = () => {
                   linkButtonColorClasses[theme.color]
                 }`}
                 onClick={() => {
-                  router.push("/");
-                }}
-              >
-                <BiHomeAlt className={`mr-1.5 w-6 h-6 opacity-80`} /> Go to the
-                home page
-              </button>
-              <button
-                className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
-                  linkButtonColorClasses[theme.color]
-                }`}
-                onClick={() => {
                   router.back();
                 }}
               >
