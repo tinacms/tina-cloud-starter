@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }) => {
               import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
                 cms.plugins.add(MarkdownFieldPlugin);
               });
+              cms.flags.set("branch-switcher", true);
             }}
             documentCreatorCallback={{
               /**
