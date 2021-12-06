@@ -198,6 +198,9 @@ const featureBlockShema: TinaTemplate = {
           type: "string",
           label: "Text",
           name: "text",
+          ui: {
+            component: "textarea",
+          },
         },
       ],
     },
@@ -224,10 +227,7 @@ const contentBlockSchema: TinaTemplate = {
   },
   fields: [
     {
-      type: "string",
-      ui: {
-        component: "textarea",
-      },
+      type: "rich-text",
       label: "Body",
       name: "body",
     },
@@ -306,10 +306,7 @@ const heroBlockSchema: TinaTemplate = {
     {
       label: "Text",
       name: "text",
-      type: "string",
-      ui: {
-        component: "markdown",
-      },
+      type: "rich-text",
     },
     {
       label: "Actions",
@@ -390,6 +387,36 @@ export default defineSchema({
       format: "mdx",
       fields: [
         {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "image",
+          name: "heroImg",
+          label: "Hero Image",
+        },
+        {
+          type: "rich-text",
+          label: "Excerpt",
+          name: "excerpt",
+        },
+        {
+          type: "reference",
+          label: "Author",
+          name: "author",
+          collections: ["authors"],
+        },
+        {
+          type: "datetime",
+          label: "Posted Date",
+          name: "date",
+          ui: {
+            dateFormat: "MMMM DD YYYY",
+            timeFormat: "hh:mm A",
+          },
+        },
+        {
           type: "rich-text",
           label: "Body",
           name: "_body",
@@ -457,39 +484,6 @@ export default defineSchema({
             },
           ],
           isBody: true,
-        },
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "reference",
-          label: "Author",
-          name: "author",
-          collections: ["authors"],
-        },
-        {
-          type: "datetime",
-          label: "Posted Date",
-          name: "date",
-          ui: {
-            dateFormat: "MMMM DD YYYY",
-            timeFormat: "hh:mm A",
-          },
-        },
-        {
-          type: "image",
-          name: "heroImg",
-          label: "Hero Image",
-        },
-        {
-          type: "string",
-          label: "Excerpt",
-          ui: {
-            component: "textarea",
-          },
-          name: "excerpt",
         },
       ],
     },

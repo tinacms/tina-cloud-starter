@@ -1,9 +1,9 @@
 import * as React from "react";
-import Markdown from "react-markdown";
 import { Actions } from "../actions";
 import { Container } from "../container";
 import { Section } from "../section";
 import { ThemeContext } from "../theme";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Hero = ({ data, parentField }) => {
   const theme = React.useContext(ThemeContext);
@@ -57,7 +57,7 @@ export const Hero = ({ data, parentField }) => {
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >
-              <Markdown>{data.text}</Markdown>
+              <TinaMarkdown content={data.text} />
             </div>
           )}
           {data.actions && (
