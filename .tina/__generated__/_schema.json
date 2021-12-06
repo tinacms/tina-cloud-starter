@@ -7,6 +7,58 @@
       "format": "mdx",
       "fields": [
         {
+          "type": "string",
+          "label": "Title",
+          "name": "title",
+          "namespace": [
+            "posts",
+            "title"
+          ]
+        },
+        {
+          "type": "image",
+          "name": "heroImg",
+          "label": "Hero Image",
+          "namespace": [
+            "posts",
+            "heroImg"
+          ]
+        },
+        {
+          "type": "rich-text",
+          "label": "Excerpt",
+          "name": "excerpt",
+          "namespace": [
+            "posts",
+            "excerpt"
+          ]
+        },
+        {
+          "type": "reference",
+          "label": "Author",
+          "name": "author",
+          "collections": [
+            "authors"
+          ],
+          "namespace": [
+            "posts",
+            "author"
+          ]
+        },
+        {
+          "type": "datetime",
+          "label": "Posted Date",
+          "name": "date",
+          "ui": {
+            "dateFormat": "MMMM DD YYYY",
+            "timeFormat": "hh:mm A"
+          },
+          "namespace": [
+            "posts",
+            "date"
+          ]
+        },
+        {
           "type": "rich-text",
           "label": "Body",
           "name": "_body",
@@ -138,61 +190,6 @@
           "namespace": [
             "posts",
             "_body"
-          ]
-        },
-        {
-          "type": "string",
-          "label": "Title",
-          "name": "title",
-          "namespace": [
-            "posts",
-            "title"
-          ]
-        },
-        {
-          "type": "reference",
-          "label": "Author",
-          "name": "author",
-          "collections": [
-            "authors"
-          ],
-          "namespace": [
-            "posts",
-            "author"
-          ]
-        },
-        {
-          "type": "datetime",
-          "label": "Posted Date",
-          "name": "date",
-          "ui": {
-            "dateFormat": "MMMM DD YYYY",
-            "timeFormat": "hh:mm A"
-          },
-          "namespace": [
-            "posts",
-            "date"
-          ]
-        },
-        {
-          "type": "image",
-          "name": "heroImg",
-          "label": "Hero Image",
-          "namespace": [
-            "posts",
-            "heroImg"
-          ]
-        },
-        {
-          "type": "string",
-          "label": "Excerpt",
-          "ui": {
-            "component": "textarea"
-          },
-          "name": "excerpt",
-          "namespace": [
-            "posts",
-            "excerpt"
           ]
         }
       ],
@@ -747,10 +744,7 @@
                 {
                   "label": "Text",
                   "name": "text",
-                  "type": "string",
-                  "ui": {
-                    "component": "markdown"
-                  },
+                  "type": "rich-text",
                   "namespace": [
                     "pages",
                     "blocks",
@@ -1164,6 +1158,9 @@
                       "type": "string",
                       "label": "Text",
                       "name": "text",
+                      "ui": {
+                        "component": "textarea"
+                      },
                       "namespace": [
                         "pages",
                         "blocks",
@@ -1222,10 +1219,7 @@
               },
               "fields": [
                 {
-                  "type": "string",
-                  "ui": {
-                    "component": "textarea"
-                  },
+                  "type": "rich-text",
                   "label": "Body",
                   "name": "body",
                   "namespace": [
