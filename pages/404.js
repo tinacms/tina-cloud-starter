@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Container } from "../components/container";
 import { Hero } from "../components/blocks/hero";
 
 export default function FourOhFour() {
