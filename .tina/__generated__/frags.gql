@@ -1,14 +1,14 @@
 fragment PostsParts on Posts {
-  _body
   title
+  heroImg
+  excerpt
   author {
     ... on Document {
       id
     }
   }
   date
-  heroImg
-  excerpt
+  _body
 }
 
 fragment GlobalParts on Global {

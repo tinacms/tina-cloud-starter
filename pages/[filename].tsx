@@ -1,4 +1,3 @@
-import { staticRequest } from "tinacms";
 import { Blocks } from "../components/blocks";
 import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
 
