@@ -25,15 +25,15 @@ const App = ({ Component, pageProps }) => {
               return pack.TinaCloudCloudinaryMediaStore;
             }}
             cmsCallback={(cms) => {
-              import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
-                cms.plugins.add(MarkdownFieldPlugin);
-              });
-              cms.flags.set("branch-switcher", true);
+              /**
+               * Enables experimental branch switcher
+               */
+              cms.flags.set("branch-switcher", false);
 
               /**
                * Enables `tina-admin` specific features in the Tina Sidebar
                */
-              cms.flags.set("tina-admin", true);
+              cms.flags.set("tina-admin", false);
 
               /**
                * An example of a RouteMapping plugin for TinaAdmin
