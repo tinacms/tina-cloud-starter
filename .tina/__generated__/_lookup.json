@@ -19,16 +19,11 @@
     "createDocument": "create",
     "updateDocument": "update"
   },
-  "PostsArticleAuthorDocument": {
-    "type": "PostsArticleAuthorDocument",
-    "resolveType": "multiCollectionDocument"
-  },
-  "Posts": {
-    "type": "Posts",
-    "resolveType": "unionData",
-    "typeMap": {
-      "article": "PostsArticle"
-    }
+  "PostsAuthorDocument": {
+    "type": "PostsAuthorDocument",
+    "resolveType": "multiCollectionDocument",
+    "createDocument": "create",
+    "updateDocument": "update"
   },
   "PostsDocument": {
     "type": "PostsDocument",
@@ -42,12 +37,17 @@
     "resolveType": "collectionDocumentList",
     "collection": "posts"
   },
-  "Authors": {
-    "type": "Authors",
-    "resolveType": "unionData",
-    "typeMap": {
-      "author": "AuthorsAuthor"
-    }
+  "GlobalDocument": {
+    "type": "GlobalDocument",
+    "resolveType": "collectionDocument",
+    "collection": "global",
+    "createGlobalDocument": "create",
+    "updateGlobalDocument": "update"
+  },
+  "GlobalConnection": {
+    "type": "GlobalConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "global"
   },
   "AuthorsDocument": {
     "type": "AuthorsDocument",
@@ -61,20 +61,14 @@
     "resolveType": "collectionDocumentList",
     "collection": "authors"
   },
-  "PagesPageBlocks": {
-    "type": "PagesPageBlocks",
+  "PagesBlocks": {
+    "type": "PagesBlocks",
     "resolveType": "unionData",
     "typeMap": {
-      "raw": "PagesPageBlocksRaw",
-      "content": "PagesPageBlocksContent",
-      "image": "PagesPageBlocksImage"
-    }
-  },
-  "Pages": {
-    "type": "Pages",
-    "resolveType": "unionData",
-    "typeMap": {
-      "page": "PagesPage"
+      "hero": "PagesBlocksHero",
+      "features": "PagesBlocksFeatures",
+      "content": "PagesBlocksContent",
+      "testimonial": "PagesBlocksTestimonial"
     }
   },
   "PagesDocument": {
@@ -88,33 +82,5 @@
     "type": "PagesConnection",
     "resolveType": "collectionDocumentList",
     "collection": "pages"
-  },
-  "PostsAuthorDocument": {
-    "type": "PostsAuthorDocument",
-    "resolveType": "multiCollectionDocument",
-    "createDocument": "create",
-    "updateDocument": "update"
-  },
-  "PagesBlocks": {
-    "type": "PagesBlocks",
-    "resolveType": "unionData",
-    "typeMap": {
-      "hero": "PagesBlocksHero",
-      "features": "PagesBlocksFeatures",
-      "content": "PagesBlocksContent",
-      "testimonial": "PagesBlocksTestimonial"
-    }
-  },
-  "GlobalDocument": {
-    "type": "GlobalDocument",
-    "resolveType": "collectionDocument",
-    "collection": "global",
-    "createGlobalDocument": "create",
-    "updateGlobalDocument": "update"
-  },
-  "GlobalConnection": {
-    "type": "GlobalConnection",
-    "resolveType": "collectionDocumentList",
-    "collection": "global"
   }
 }

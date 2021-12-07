@@ -87,11 +87,11 @@ union PostsAuthorDocument = AuthorsDocument
 
 type Posts {
   title: String
+  heroImg: String
+  excerpt: JSON
   author: PostsAuthorDocument
   date: String
-  heroImg: String
-  excerpt: String
-  body: String
+  _body: JSON
 }
 
 type PostsDocument implements Node & Document {
@@ -216,7 +216,7 @@ type PagesBlocksHeroImage {
 type PagesBlocksHero {
   tagline: String
   headline: String
-  text: String
+  text: JSON
   actions: [PagesBlocksHeroActions]
   image: PagesBlocksHeroImage
   color: String
@@ -240,7 +240,7 @@ type PagesBlocksFeatures {
 }
 
 type PagesBlocksContent {
-  body: String
+  body: JSON
   color: String
 }
 
@@ -299,11 +299,11 @@ input DocumentMutation {
 
 input PostsMutation {
   title: String
+  heroImg: String
+  excerpt: JSON
   author: String
   date: String
-  heroImg: String
-  excerpt: String
-  body: String
+  _body: JSON
 }
 
 input GlobalHeaderIconMutation {
@@ -368,7 +368,7 @@ input PagesBlocksHeroImageMutation {
 input PagesBlocksHeroMutation {
   tagline: String
   headline: String
-  text: String
+  text: JSON
   actions: [PagesBlocksHeroActionsMutation]
   image: PagesBlocksHeroImageMutation
   color: String
@@ -392,7 +392,7 @@ input PagesBlocksFeaturesMutation {
 }
 
 input PagesBlocksContentMutation {
-  body: String
+  body: JSON
   color: String
 }
 

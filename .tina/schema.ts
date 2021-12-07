@@ -1,5 +1,5 @@
 import { defineSchema } from "@tinacms/cli";
-import type { TinaCollection, TinaTemplate, TinaField } from "@tinacms/cli";
+import type { TinaTemplate, TinaField } from "@tinacms/cli";
 
 const iconSchema: TinaField = {
   type: "object",
@@ -198,6 +198,9 @@ const featureBlockShema: TinaTemplate = {
           type: "string",
           label: "Text",
           name: "text",
+          ui: {
+            component: "textarea",
+          },
         },
       ],
     },
@@ -224,10 +227,7 @@ const contentBlockSchema: TinaTemplate = {
   },
   fields: [
     {
-      type: "string",
-      ui: {
-        component: "markdown",
-      },
+      type: "rich-text",
       label: "Body",
       name: "body",
     },
@@ -304,12 +304,9 @@ const heroBlockSchema: TinaTemplate = {
       name: "headline",
     },
     {
-      type: "string",
       label: "Text",
       name: "text",
-      ui: {
-        component: "markdown",
-      },
+      type: "rich-text",
     },
     {
       label: "Actions",
@@ -387,11 +384,22 @@ export default defineSchema({
       label: "Blog Posts",
       name: "posts",
       path: "content/posts",
+      format: "mdx",
       fields: [
         {
           type: "string",
           label: "Title",
           name: "title",
+        },
+        {
+          type: "image",
+          name: "heroImg",
+          label: "Hero Image",
+        },
+        {
+          type: "rich-text",
+          label: "Excerpt",
+          name: "excerpt",
         },
         {
           type: "reference",
@@ -409,25 +417,72 @@ export default defineSchema({
           },
         },
         {
-          type: "image",
-          name: "heroImg",
-          label: "Hero Image",
-        },
-        {
-          type: "string",
-          label: "Excerpt",
-          ui: {
-            component: "textarea",
-          },
-          name: "excerpt",
-        },
-        {
-          type: "string",
+          type: "rich-text",
           label: "Body",
-          ui: {
-            component: "markdown",
-          },
-          name: "body",
+          name: "_body",
+          templates: [
+            {
+              name: "DateTime",
+              label: "Date & Time",
+              inline: true,
+              fields: [
+                {
+                  name: "format",
+                  label: "Format",
+                  type: "string",
+                  options: ["utc", "iso", "local"],
+                },
+              ],
+            },
+            {
+              name: "BlockQuote",
+              label: "Block Quote",
+              fields: [
+                {
+                  name: "children",
+                  label: "Quote",
+                  type: "rich-text",
+                },
+                {
+                  name: "authorName",
+                  label: "Author",
+                  type: "string",
+                },
+              ],
+            },
+            {
+              name: "NewsletterSignup",
+              label: "Newsletter Sign Up",
+              fields: [
+                {
+                  name: "children",
+                  label: "CTA",
+                  type: "rich-text",
+                },
+                {
+                  name: "placeholder",
+                  label: "Placeholder",
+                  type: "string",
+                },
+                {
+                  name: "buttonText",
+                  label: "Button Text",
+                  type: "string",
+                },
+                {
+                  name: "disclaimer",
+                  label: "Disclaimer",
+                  type: "rich-text",
+                },
+              ],
+              ui: {
+                defaultItem: {
+                  placeholder: "Enter your email",
+                  buttonText: "Notify Me",
+                },
+              },
+            },
+          ],
           isBody: true,
         },
       ],
@@ -436,6 +491,7 @@ export default defineSchema({
       label: "Global",
       name: "global",
       path: "content/global",
+      format: "json",
       fields: [
         {
           type: "object",
