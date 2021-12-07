@@ -27,12 +27,12 @@ const App = ({ Component, pageProps }) => {
               /**
                * Enables experimental branch switcher
                */
-              cms.flags.set("branch-switcher", false);
+              cms.flags.set("branch-switcher", true);
 
               /**
                * Enables `tina-admin` specific features in the Tina Sidebar
                */
-              cms.flags.set("tina-admin", false);
+              cms.flags.set("tina-admin", true);
             }}
             documentCreatorCallback={{
               /**
