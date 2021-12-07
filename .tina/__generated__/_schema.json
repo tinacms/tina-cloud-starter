@@ -4,6 +4,7 @@
       "label": "Blog Posts",
       "name": "posts",
       "path": "content/posts",
+      "format": "mdx",
       "fields": [
         {
           "type": "string",
@@ -12,6 +13,24 @@
           "namespace": [
             "posts",
             "title"
+          ]
+        },
+        {
+          "type": "image",
+          "name": "heroImg",
+          "label": "Hero Image",
+          "namespace": [
+            "posts",
+            "heroImg"
+          ]
+        },
+        {
+          "type": "rich-text",
+          "label": "Excerpt",
+          "name": "excerpt",
+          "namespace": [
+            "posts",
+            "excerpt"
           ]
         },
         {
@@ -40,37 +59,137 @@
           ]
         },
         {
-          "type": "image",
-          "name": "heroImg",
-          "label": "Hero Image",
-          "namespace": [
-            "posts",
-            "heroImg"
-          ]
-        },
-        {
-          "type": "string",
-          "label": "Excerpt",
-          "ui": {
-            "component": "textarea"
-          },
-          "name": "excerpt",
-          "namespace": [
-            "posts",
-            "excerpt"
-          ]
-        },
-        {
-          "type": "string",
+          "type": "rich-text",
           "label": "Body",
-          "ui": {
-            "component": "markdown"
-          },
-          "name": "body",
+          "name": "_body",
+          "templates": [
+            {
+              "name": "DateTime",
+              "label": "Date & Time",
+              "inline": true,
+              "fields": [
+                {
+                  "name": "format",
+                  "label": "Format",
+                  "type": "string",
+                  "options": [
+                    "utc",
+                    "iso",
+                    "local"
+                  ],
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "DateTime",
+                    "format"
+                  ]
+                }
+              ],
+              "namespace": [
+                "posts",
+                "_body",
+                "DateTime"
+              ]
+            },
+            {
+              "name": "BlockQuote",
+              "label": "Block Quote",
+              "fields": [
+                {
+                  "name": "children",
+                  "label": "Quote",
+                  "type": "rich-text",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "BlockQuote",
+                    "children"
+                  ]
+                },
+                {
+                  "name": "authorName",
+                  "label": "Author",
+                  "type": "string",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "BlockQuote",
+                    "authorName"
+                  ]
+                }
+              ],
+              "namespace": [
+                "posts",
+                "_body",
+                "BlockQuote"
+              ]
+            },
+            {
+              "name": "NewsletterSignup",
+              "label": "Newsletter Sign Up",
+              "fields": [
+                {
+                  "name": "children",
+                  "label": "CTA",
+                  "type": "rich-text",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "NewsletterSignup",
+                    "children"
+                  ]
+                },
+                {
+                  "name": "placeholder",
+                  "label": "Placeholder",
+                  "type": "string",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "NewsletterSignup",
+                    "placeholder"
+                  ]
+                },
+                {
+                  "name": "buttonText",
+                  "label": "Button Text",
+                  "type": "string",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "NewsletterSignup",
+                    "buttonText"
+                  ]
+                },
+                {
+                  "name": "disclaimer",
+                  "label": "Disclaimer",
+                  "type": "rich-text",
+                  "namespace": [
+                    "posts",
+                    "_body",
+                    "NewsletterSignup",
+                    "disclaimer"
+                  ]
+                }
+              ],
+              "ui": {
+                "defaultItem": {
+                  "placeholder": "Enter your email",
+                  "buttonText": "Notify Me"
+                }
+              },
+              "namespace": [
+                "posts",
+                "_body",
+                "NewsletterSignup"
+              ]
+            }
+          ],
           "isBody": true,
           "namespace": [
             "posts",
-            "body"
+            "_body"
           ]
         }
       ],
@@ -82,6 +201,7 @@
       "label": "Global",
       "name": "global",
       "path": "content/global",
+      "format": "json",
       "fields": [
         {
           "type": "object",
@@ -622,12 +742,9 @@
                   ]
                 },
                 {
-                  "type": "string",
                   "label": "Text",
                   "name": "text",
-                  "ui": {
-                    "component": "markdown"
-                  },
+                  "type": "rich-text",
                   "namespace": [
                     "pages",
                     "blocks",
@@ -1041,6 +1158,9 @@
                       "type": "string",
                       "label": "Text",
                       "name": "text",
+                      "ui": {
+                        "component": "textarea"
+                      },
                       "namespace": [
                         "pages",
                         "blocks",
@@ -1099,10 +1219,7 @@
               },
               "fields": [
                 {
-                  "type": "string",
-                  "ui": {
-                    "component": "markdown"
-                  },
+                  "type": "rich-text",
                   "label": "Body",
                   "name": "body",
                   "namespace": [
@@ -1223,6 +1340,5 @@
         "pages"
       ]
     }
-  ],
-  "namespace": []
+  ]
 }
