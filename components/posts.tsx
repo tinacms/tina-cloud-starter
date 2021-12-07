@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Markdown from "react-markdown";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { ThemeContext } from "./theme";
-import format from "date-fns/format";
 
 export const Posts = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -22,15 +21,6 @@ export const Posts = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
-        /**
-         * Formats date field value to be more readable.
-         */
-        let formattedDate
-        if (post?.values.date !== null) {
-          const date = post.values.date ? new Date(post?.values?.date) : '';
-          formattedDate = date ? format(date, "MMM dd, yyyy") : date;
-        }
-
         return (
           <Link
             key={post.sys.filename}
@@ -52,24 +42,24 @@ export const Posts = ({ data }) => {
                 </span>
               </h3>
               <div className="prose dark:prose-dark prose-lg w-full max-w-none mb-5">
-                <Markdown>{post.values.excerpt}</Markdown>
+                <TinaMarkdown content={post.values.excerpt} />
               </div>
               <div className="flex items-center -mb-2">
                 <div className="flex-shrink-0 mr-2">
                   <img
                     className="h-10 w-10 object-cover rounded-full shadow-sm"
-                    src={post.data.author?.data?.avatar}
-                    alt={post.data.author?.data?.name}
+                    src={post?.data.author?.data.avatar}
+                    alt={post?.data.author?.data.name}
                   />
                 </div>
                 <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                  {post.data.author?.data.name}
+                  {post?.data.author?.data.name}
                 </p>
                 <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                   —
                 </span>
                 <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                  {formattedDate}
+                  {post.values.date}
                 </p>
               </div>
             </a>

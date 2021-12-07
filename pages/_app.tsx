@@ -2,30 +2,37 @@ import "../styles.css";
 import dynamic from "next/dynamic";
 import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
+// @ts-ignore FIXME: default export needs to be 'ComponentType<{}>
 const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
-import { TinaCloudCloudinaryMediaStore } from "next-tinacms-cloudinary";
 
 const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 const NEXT_PUBLIC_USE_LOCAL_CLIENT =
-  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || 0;
-const NEXT_PUBLIC_HIDE_EDIT_BUTTON =
-  process.env.NEXT_PUBLIC_HIDE_EDIT_BUTTON || 0;
+  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || true;
 
 const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={!Boolean(Number(NEXT_PUBLIC_HIDE_EDIT_BUTTON))}
+        showEditButton={true}
         editMode={
           <TinaCMS
-            branch="main"
+            branch="update-tina-and-add-experimental-features"
             clientId={NEXT_PUBLIC_TINA_CLIENT_ID}
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
-            mediaStore={TinaCloudCloudinaryMediaStore}
+            mediaStore={async () => {
+              const pack = await import("next-tinacms-cloudinary");
+              return pack.TinaCloudCloudinaryMediaStore;
+            }}
             cmsCallback={(cms) => {
-              import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
-                cms.plugins.add(MarkdownFieldPlugin);
-              });
+              /**
+               * Enables experimental branch switcher
+               */
+              cms.flags.set("branch-switcher", true);
+
+              /**
+               * Enables `tina-admin` specific features in the Tina Sidebar
+               */
+              cms.flags.set("tina-admin", false);
             }}
             documentCreatorCallback={{
               /**
@@ -44,9 +51,6 @@ const App = ({ Component, pageProps }) => {
                 );
               },
             }}
-            /**
-             * Treat the Global collection as a global form
-             */
             formifyCallback={({ formConfig, createForm, createGlobalForm }) => {
               if (formConfig.id === "getGlobalDocument") {
                 return createGlobalForm(formConfig);
