@@ -5,8 +5,8 @@ export const Section = ({ children, color = "", className = "" }) => {
   const theme = React.useContext(ThemeContext);
   const sectionColor = {
     default:
-      "text-gray-800 dark:text-gray-50 bg-gradient-to-br from-gray-50 dark:from-gray-800 via-gray-50 to-white dark:via-gray-800 dark:to-gray-900",
-    tint: "text-gray-900 dark:text-gray-100 bg-gradient-to-br from-gray-100 dark:from-gray-1000 to-gray-50 dark:to-gray-900",
+      "text-gray-800 dark:text-gray-50 bg-gradient-to-br from-gray-50 dark:from-gray-800 via-transparent to-transparent",
+    tint: "text-gray-900 dark:text-gray-100 bg-gradient-to-br from-gray-100 dark:from-gray-1000 to-transparent",
     primary: {
       blue: "text-white bg-blue-500 bg-gradient-to-br from-blue-500 to-blue-600",
       teal: "text-white bg-teal-500 bg-gradient-to-br from-teal-500 to-teal-600",

@@ -1,8 +1,5 @@
 import { Post } from "../../components/post";
-import { getStaticPropsForTina, staticRequest } from "tinacms";
-import { layoutQueryFragment } from "../../components/layout";
-import type { PostsDocument } from "../../.tina/__generated__/types";
-import FourOhFour from "../404";
+import { ExperimentalGetTinaClient } from "../../.tina/__generated__/types";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -11,37 +8,14 @@ export default function BlogPostPage(
   if (props.data && props.data.getPostsDocument) {
     return <Post {...props.data.getPostsDocument} />;
   }
-  // We're likely loading a new document that doesn't yet have data
-  // show the 404 which will quickly be replace by client side content
-  // from Tina
-  return <FourOhFour />;
+  return <div>No data</div>;
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = (await getStaticPropsForTina({
-    query: `#graphql
-      query BlogPostQuery($relativePath: String!) {
-        ${layoutQueryFragment}
-        getPostsDocument(relativePath: $relativePath) {
-          data {
-            title
-            author {
-              ... on AuthorsDocument {
-                data {
-                  name
-                  avatar
-                }
-              }
-            }
-            date
-            heroImg
-            body
-          }
-        }
-      }
-    `,
-    variables: { relativePath: `${params.filename}.md` },
-  })) as { data: { getPostsDocument: PostsDocument } };
+  const client = ExperimentalGetTinaClient();
+  const tinaProps = await client.BlogPostQuery({
+    relativePath: `${params.filename}.mdx`,
+  });
   return {
     props: {
       ...tinaProps,
@@ -57,26 +31,13 @@ export const getStaticProps = async ({ params }) => {
  * be viewable at http://localhost:3000/posts/hello
  */
 export const getStaticPaths = async () => {
-  const postsListData = (await staticRequest({
-    query: `#graphql
-      {
-        getPostsList {
-          edges {
-            node {
-              sys {
-                filename
-              }
-            }
-          }
-        }
-      }
-    `,
-  })) as any;
+  const client = ExperimentalGetTinaClient();
+  const postsListData = await client.getPostsList();
   return {
-    paths: postsListData.getPostsList.edges.map((post) => ({
+    paths: postsListData.data.getPostsList.edges.map((post) => ({
       params: { filename: post.node.sys.filename },
     })),
-    fallback:'blocking',
+    fallback: "blocking",
   };
 };
 
