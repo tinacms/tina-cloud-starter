@@ -9631,10 +9631,10 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@0.60.1:
-  version "0.60.1"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.60.1.tgz#ef3e47fee32c4f6095183cb7cb85f891410427af"
-  integrity sha512-BtDsoPv8WFxTIQruMfKvLBL0UcrQ+svvaqM3FlDD5VdljWOGzT7SVH8jQoc8pBuiovvfBJTtzvtTUq+nIcX1tg==
+tinacms@0.60.3:
+  version "0.60.3"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.60.3.tgz#8b073ab6f8d56bbe2f01c87046eb7a5dee6c70a9"
+  integrity sha512-DMo7u3fIoukDxkAXUfpIfaABmqcwZAgZ/wRx+4aT8cHUXNHeAEOKdE9flXWeYMb19Kh7X70nR7uEQZJ60hA/wA==
   dependencies:
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
