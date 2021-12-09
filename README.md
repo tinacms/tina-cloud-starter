@@ -6,10 +6,6 @@ This Next.js starter is powered by [TinaCMS](https://app.tina.io) for you and yo
 
 The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.
 
-## Getting Started
-
-### [Follow our starter guide to setup live editing with Tina](https://tina.io/guides/tina-cloud/starter/overview/)
-
 ### Features
 
 - [Tina Headless CMS](https://app.tina.io) for authentication, content modeling, visual editing and team management.
@@ -43,6 +39,21 @@ yarn dev
 - http://localhost:3000/admin : connect to Tina Cloud and go in edit mode
 - http://localhost:3000/exit-admin : log out of Tina Cloud
 - http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
+
+### Using Tina Cloud Locally
+
+Replace the `.env.local.example`, with `.env.local` and add in the details from Cloudinary and Tina. 
+
+```
+NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
+
+# These are used in conjunction with a Cloudinary account for media asset management
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=<Get this from your Cloudinary account>
+NEXT_PUBLIC_CLOUDINARY_API_KEY=<Get this from your Cloudinary account>
+CLOUDINARY_API_SECRET=<Get this from your Cloudinary account>
+NEXT_PUBLIC_USE_LOCAL_CLIENT=1
+NEXT_PUBLIC_HIDE_EDIT_BUTTON=0 
+```
 
 ## Getting Help
 
