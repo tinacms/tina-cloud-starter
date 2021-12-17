@@ -1716,10 +1716,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
 
-"@tinacms/cli@0.58.2":
-  version "0.58.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.58.2.tgz#862a88c63da61e122679c0defde3b88784279a8d"
-  integrity sha512-Cy2j7du9QnQROGTZQscuKKxs0Yic17pNTrpqTDeFtK5LjkZ13vePgBdEGgkYs6WhEuY2C6D1BQSKg2MHblhyJw==
+"@tinacms/cli@0.58.5":
+  version "0.58.5"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.58.5.tgz#8c20c745a4c8cdbe4eb059c457fca72be730637c"
+  integrity sha512-4C0ZLAhvV4jVnqg1nHPRGZJDd6r8UWLkpKAOvne0QRJOoBAgALNXq6xcJziPpd4G6SRxVRx1JBqQoRLpVyVMLg==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -1729,7 +1729,7 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/graphql" "0.58.2"
+    "@tinacms/graphql" "0.59.2"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     auto-bind "^4.0.0"
@@ -1754,10 +1754,10 @@
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.58.2":
-  version "0.58.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.58.2.tgz#a3f1416fe5607d6d3abe36b5d611db646751acdb"
-  integrity sha512-h/0i7GNtTDsauH/n1RpLG4kP+EjtaCEfptc+7r76iE/KbA68nqv3yHkXzGGYo2Ch7Fd9BwQI0JYNMDcrhFdZcw==
+"@tinacms/graphql@0.59.2":
+  version "0.59.2"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.2.tgz#8c8634b3976473bdbf7a9059cde75106e5e08e12"
+  integrity sha512-rP2pqgDzWaeBeIAQlQgUUn0I3TwBQlcVP5ERxoHAQr6ycoNIJzMS8Co3fa8epDF7hmijpDoeaS12stcyihGfXw==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -1811,10 +1811,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.0.1.tgz#ae8c8799e3b6ac059cb787fafd5dc9687f43ff9f"
   integrity sha512-CrlZKoj1bwHM9xhmEVseRs/Ff+AQjwhXCFmsGgWb4ClgghyE5FJFzugTOaaBPm0PvcFg+2hJVUoIzBBhHH0bVA==
 
-"@tinacms/toolkit@0.56.3":
-  version "0.56.3"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.3.tgz#bb6e2950058cbf652c2b1de0e6b51c2e77a7b97c"
-  integrity sha512-ME9MUIpjMWYd94N7sCCtjHz5tlwj78VUDO3HRcALgDD8ksanIF/y2ZRGmwmj2O8rJtVvzsTww2yArDGt/EMOnA==
+"@tinacms/toolkit@0.56.4":
+  version "0.56.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.4.tgz#5599eeeabb185fcef8b8a1830d714a6f72efe966"
+  integrity sha512-nZk/mtwI0CsJHsxLT497vJ/XJWY+qRGxjkGXBiSfST0jTIOV2Pt+pumMj+aLj6Gmf8xt1NUOL046RJHw7CE6Mg==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/atob" "^2.1.2"
@@ -7420,10 +7420,10 @@ next-svgr@^0.0.2:
   dependencies:
     "@svgr/webpack" "^4.3.0"
 
-next-tinacms-cloudinary@3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-3.4.2.tgz#0d890eb0f34e8108fd8052ff41553c76f64f01b1"
-  integrity sha512-O75hWbuzcoh5S2zUYA7i44hrNvsaCvkqEbPWenc+TVMgdSAM/0HWRGeqHdzaw6C80Y7swB/o2n1dmK8of+7htw==
+next-tinacms-cloudinary@3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-3.4.3.tgz#cbeed12a6f9092404c8ad10013dc00166f60d864"
+  integrity sha512-8nvY5l+kA0Yg3Wcpm88N7ByqGfJtSAE7nwp9XZC9RoXq3ZlIpv0npR01IqINZ9U6u8THcudVBLhf2Wi2Hw4xNg==
   dependencies:
     cloudinary "^1.25.2"
     multer "^1.4.2"
@@ -9631,15 +9631,15 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@0.60.3:
-  version "0.60.3"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.60.3.tgz#8b073ab6f8d56bbe2f01c87046eb7a5dee6c70a9"
-  integrity sha512-DMo7u3fIoukDxkAXUfpIfaABmqcwZAgZ/wRx+4aT8cHUXNHeAEOKdE9flXWeYMb19Kh7X70nR7uEQZJ60hA/wA==
+tinacms@0.61.1:
+  version "0.61.1"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.61.1.tgz#6e9bfcf3dd089f393760d7be5cf14478732d2085"
+  integrity sha512-3j4Gb7k+SRcpbYQ2T77yoPIm87vwamcx9o0YGXeB0oQTB/qSBdh991ZdyEW9iLzMaiYWhP9+MtwJu+3b7UcsRQ==
   dependencies:
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
     "@tinacms/sharedctx" "0.0.1"
-    "@tinacms/toolkit" "0.56.3"
+    "@tinacms/toolkit" "0.56.4"
     crypto-js "^4.0.0"
     final-form "4.20.1"
     graphql "^15.1.0"
