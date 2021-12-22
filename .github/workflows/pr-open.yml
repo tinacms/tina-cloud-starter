@@ -1,4 +1,4 @@
-name: Deploy Pull request
+name: Build Pull request
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ["12", "14", "16", "17"]
+        node: ["12", "14", "16"]
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v2
@@ -16,5 +16,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - run: yarn install
+      - run: yarn build
+  build-17:
+    runs-on: ubuntu-latest
+    name: Node ${{ matrix.node }} sample
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17
       - run: yarn install
       - run: yarn build
