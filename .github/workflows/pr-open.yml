@@ -4,6 +4,17 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  build-17:
+    runs-on: ubuntu-latest
+    name: Node 17 sample
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17
+      - run: yarn install
+      - run: yarn build
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -16,16 +27,5 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-      - run: yarn install
-      - run: yarn build
-  build-17:
-    runs-on: ubuntu-latest
-    name: Node ${{ matrix.node }} sample
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 17
       - run: yarn install
       - run: yarn build
