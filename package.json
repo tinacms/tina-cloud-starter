@@ -17,7 +17,7 @@
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",
-    "postcss-nesting": "^9.0.0",
+    "postcss-nesting": "^10.1.0",
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
