@@ -1716,10 +1716,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
 
-"@tinacms/cli@0.58.5":
-  version "0.58.5"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.58.5.tgz#8c20c745a4c8cdbe4eb059c457fca72be730637c"
-  integrity sha512-4C0ZLAhvV4jVnqg1nHPRGZJDd6r8UWLkpKAOvne0QRJOoBAgALNXq6xcJziPpd4G6SRxVRx1JBqQoRLpVyVMLg==
+"@tinacms/cli@0.60.0":
+  version "0.60.0"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.0.tgz#668e7520f7bda94a96673ca7459c3978169277f8"
+  integrity sha512-TPeO4xeR9ncnDr6AhgrrX4MZNloPRkN7Ocm7xlB7xLmsa4YKz+afRt74zpMCn1+0kUE1tdREa/tRo71dmzCVIA==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -1729,7 +1729,8 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/graphql" "0.59.2"
+    "@tinacms/datalayer" "0.0.1"
+    "@tinacms/graphql" "0.59.4"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     auto-bind "^4.0.0"
@@ -1754,14 +1755,33 @@
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.59.2":
-  version "0.59.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.2.tgz#8c8634b3976473bdbf7a9059cde75106e5e08e12"
-  integrity sha512-rP2pqgDzWaeBeIAQlQgUUn0I3TwBQlcVP5ERxoHAQr6ycoNIJzMS8Co3fa8epDF7hmijpDoeaS12stcyihGfXw==
+"@tinacms/datalayer@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.1.tgz#711e488b7052fc36dfa23517a9424f654096832a"
+  integrity sha512-L003RgOcnmDZycHOy17TP+CdMFvN9MFDExjnRy5CT9/2kT0pJJykDjMYlqe6QRDFYcjG/uvIeaszUi5v7wXmIg==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
     "@octokit/rest" "18.0.6"
+    encoding-down "^7.1.0"
+    fast-glob "^3.2.5"
+    fs-extra "^9.0.1"
+    graphql "^15.3.0"
+    gray-matter "^4.0.2"
+    js-yaml "^3.14.0"
+    level "^7.0.1"
+    levelup "^5.1.1"
+    lodash "^4.17.20"
+    memdown "^6.1.1"
+    normalize-path "^3.0.0"
+    prettier "^2.2.1"
+    yup "^0.32.9"
+
+"@tinacms/graphql@0.59.4":
+  version "0.59.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.4.tgz#6999f1edbd0672b14c1bceed0974261d3ef79bbf"
+  integrity sha512-cdmzjB/uIPLcntXfmv29mv7qmFBoVb4nxdDQHYAMw78c7CuTS1qkcyQkKVdnspmQXwiPrOKRMhewWM/RWB73xQ==
+  dependencies:
     body-parser "^1.19.0"
     cors "^2.8.5"
     dataloader "^2.0.0"
@@ -1777,15 +1797,12 @@
     graphql-type-json "^0.3.2"
     gray-matter "^4.0.2"
     js-yaml "^3.14.0"
-    level "^7.0.1"
-    levelup "^5.1.1"
     lodash "^4.17.20"
     mdast "^3.0.0"
     mdast-util-from-markdown "^1.0.0"
     mdast-util-mdx "^1.1.0"
     mdast-util-mdx-expression "^1.1.0"
     mdast-util-to-markdown "^1.2.1"
-    memdown "^6.1.1"
     micromark-extension-mdxjs "^1.0.0"
     mocha "^9.1.1"
     normalize-path "^3.0.0"
