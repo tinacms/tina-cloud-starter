@@ -1811,10 +1811,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.0.1.tgz#ae8c8799e3b6ac059cb787fafd5dc9687f43ff9f"
   integrity sha512-CrlZKoj1bwHM9xhmEVseRs/Ff+AQjwhXCFmsGgWb4ClgghyE5FJFzugTOaaBPm0PvcFg+2hJVUoIzBBhHH0bVA==
 
-"@tinacms/toolkit@0.56.5":
-  version "0.56.5"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.5.tgz#c2a93cfb773bf23e54299555f0a2358e56aed026"
-  integrity sha512-tv63sfl21zpt5Yioz+gMAXVCxd6vX/S61pVGPrFO25xHNfjXlrtsV3C5QOmg0qHqUpCc+2tVuTAL3MZwWV3RXQ==
+"@tinacms/toolkit@0.56.7":
+  version "0.56.7"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.7.tgz#2d00dc5d139209a5a6cfd57104e2ee87892481de"
+  integrity sha512-hkrSoddti+GLY4t4UPWNhNVXxmhBjMzmwukkNFgAHzVKtWkDlfpwWwSMTIOS6hMOIsl5FqvC0BbFKzeDaIBvjQ==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/atob" "^2.1.2"
@@ -9641,15 +9641,15 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@0.62.0:
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.62.0.tgz#2f9faa76fc3238f900f63eb383253016e00961f0"
-  integrity sha512-kQ+3AipfGc0Movp0fHS74vEGTNPh7QQ0mVrbqr/cxAghJD/Pfo/FREK/DZM930o3AP7UkPFOm9QCHmnI9W+RTQ==
+tinacms@0.64.1:
+  version "0.64.1"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.64.1.tgz#85c8dc34ab113f18b295d89fca97ba36b57f82e9"
+  integrity sha512-dJLxfochhzuVbUS1qb8DG1s8BnQkxA3X4nEFEsBBWHjRbScrg+lbhKxo09t8iFdDeGUVbh2GXv5ZyOZAKRMQ7g==
   dependencies:
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
     "@tinacms/sharedctx" "0.0.1"
-    "@tinacms/toolkit" "0.56.5"
+    "@tinacms/toolkit" "0.56.7"
     crypto-js "^4.0.0"
     final-form "4.20.1"
     graphql "^15.1.0"
@@ -9657,6 +9657,7 @@ tinacms@0.62.0:
     lodash.set "^4.3.2"
     react-icons "^4.3.1"
     react-router-dom "6"
+    url-pattern "^1.0.3"
     yup "^0.32.0"
 
 tiny-invariant@1.0.6:
@@ -10112,6 +10113,11 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+
+url-pattern@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/url-pattern/-/url-pattern-1.0.3.tgz#0409292471b24f23c50d65a47931793d2b5acfc1"
+  integrity sha1-BAkpJHGyTyPFDWWkeTF5PStaz8E=
 
 url@^0.11.0:
   version "0.11.0"
