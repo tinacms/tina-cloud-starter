@@ -51,7 +51,6 @@ NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=<Get this from your Cloudinary account>
 NEXT_PUBLIC_CLOUDINARY_API_KEY=<Get this from your Cloudinary account>
 CLOUDINARY_API_SECRET=<Get this from your Cloudinary account>
-NEXT_PUBLIC_USE_LOCAL_CLIENT=1
 NEXT_PUBLIC_HIDE_EDIT_BUTTON=0 
 ```
 
