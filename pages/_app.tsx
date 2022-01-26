@@ -45,6 +45,8 @@ const App = ({ Component, pageProps }) => {
                * Enables `tina-admin` specific features in the Tina Sidebar
                */
               cms.flags.set("tina-admin", false);
+
+              return cms;
             }}
             documentCreatorCallback={{
               /**
