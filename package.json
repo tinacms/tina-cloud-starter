@@ -25,7 +25,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "@tinacms/auth": "0.50.2",
     "date-fns": "^2.23.0",
-    "next": "^12.0.4",
+    "next": "^12.0.5",
     "next-svgr": "^0.0.2",
     "next-tinacms-cloudinary": "3.4.3",
     "react": "^17.0.2",
