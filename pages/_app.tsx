@@ -45,6 +45,10 @@ const App = ({ Component, pageProps }) => {
                * Enables `tina-admin` specific features in the Tina Sidebar
                */
               cms.flags.set("tina-admin", false);
+              /**
+               * Enables experimental rich-text editor
+               */
+              cms.flags.set("rich-text-alt", true);
 
               return cms;
             }}
