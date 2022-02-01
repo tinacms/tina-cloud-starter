@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tinacms server:start -c \"next dev\"",
-    "build": "tinacms server:start -c \"next build\"",
-    "start": "tinacms server:start -c \"next start\"",
+    "dev": "tinacms server:start -c \"next dev\" --experimentalData",
+    "build": "tinacms server:start -c \"next build\" --experimentalData",
+    "start": "tinacms server:start -c \"next start\" --experimentalData",
     "export": "npm run build && next export"
   },
   "devDependencies": {
