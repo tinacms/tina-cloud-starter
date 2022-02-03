@@ -9,7 +9,7 @@
     "export": "npm run build && next export"
   },
   "devDependencies": {
-    "@tinacms/cli": "^0.60.0",
+    "@tinacms/cli": "^0.60.4",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
