@@ -2,6 +2,7 @@ import "../styles.css";
 import dynamic from "next/dynamic";
 import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
+import { RouteMappingPlugin } from "tinacms";
 // @ts-ignore FIXME: default export needs to be 'ComponentType<{}>
 const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
 import { useTina } from "tinacms/dist/edit-state";
@@ -45,6 +46,28 @@ const App = ({ Component, pageProps }) => {
                * Enables `tina-admin` specific features in the Tina Sidebar
                */
               cms.flags.set("tina-admin", false);
+
+              /**
+               * When `tina-admin` is enabled, this plugin configures contextual editing for collections
+               */
+              const RouteMapping = new RouteMappingPlugin(
+                (collection, document) => {
+                  if (["authors", "global"].includes(collection.name)) {
+                    return undefined;
+                  }
+                  if (["pages"].includes(collection.name)) {
+                    if (document.sys.filename === "home") {
+                      return `/`;
+                    }
+                    if (document.sys.filename === "about") {
+                      return `/about`;
+                    }
+                    return undefined;
+                  }
+                  return `/${collection.name}/${document.sys.filename}`;
+                }
+              );
+              cms.plugins.add(RouteMapping);
 
               return cms;
             }}
