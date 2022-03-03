@@ -1,7 +1,7 @@
 ---
 blocks:
-  - tagline: ''
-    headline: Welcome to the Tina Starter
+  - tagline: asdf
+    headline: Welcome to the Tina Starter asdf
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
