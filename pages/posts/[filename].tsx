@@ -1,12 +1,18 @@
 import { Post } from "../../components/post";
 import { ExperimentalGetTinaClient } from "../../.tina/__generated__/types";
+import { useTina } from "tinacms/dist/edit-state";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  if (props.data && props.data.getPostsDocument) {
-    return <Post {...props.data.getPostsDocument} />;
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+  if (data && data.getPostsDocument) {
+    return <Post {...data.getPostsDocument} />;
   }
   return <div>No data</div>;
 }
