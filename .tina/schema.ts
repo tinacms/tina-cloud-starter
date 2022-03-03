@@ -736,11 +736,6 @@ export const tinaConfig = defineConfig({
     cms.flags.set("branch-switcher", true);
 
     /**
-     * Enables `tina-admin` specific features in the Tina Sidebar
-     */
-    cms.flags.set("tina-admin", true);
-
-    /**
      * When `tina-admin` is enabled, this plugin configures contextual editing for collections
      */
     import("tinacms").then(({ RouteMappingPlugin }) => {
