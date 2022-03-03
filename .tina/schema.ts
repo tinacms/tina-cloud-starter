@@ -1,5 +1,5 @@
-import { defineSchema } from "@tinacms/cli";
-import type { TinaTemplate, TinaField } from "@tinacms/cli";
+import { defineSchema, defineConfig } from "tinacms";
+import type { TinaTemplate, TinaField } from "tinacms";
 
 const iconSchema: TinaField = {
   type: "object",
@@ -715,4 +715,55 @@ export default defineSchema({
       ],
     },
   ],
+});
+
+const branch = "main";
+const apiURL =
+  process.env.NODE_ENV == "development"
+    ? "http://localhost:4001/graphql"
+    : `https://content.tinajs.io/content/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
+
+export const tinaConfig = defineConfig({
+  apiURL,
+  mediaStore: async () => {
+    const pack = await import("next-tinacms-cloudinary");
+    return pack.TinaCloudCloudinaryMediaStore;
+  },
+  cmsCallback: (cms) => {
+    /**
+     * Enables experimental branch switcher
+     */
+    cms.flags.set("branch-switcher", true);
+
+    /**
+     * When `tina-admin` is enabled, this plugin configures contextual editing for collections
+     */
+    import("tinacms").then(({ RouteMappingPlugin }) => {
+      const RouteMapping = new RouteMappingPlugin((collection, document) => {
+        if (["authors", "global"].includes(collection.name)) {
+          return undefined;
+        }
+        if (["pages"].includes(collection.name)) {
+          if (document.sys.filename === "home") {
+            return `/`;
+          }
+          if (document.sys.filename === "about") {
+            return `/about`;
+          }
+          return undefined;
+        }
+        return `/${collection.name}/${document.sys.filename}`;
+      });
+      cms.plugins.add(RouteMapping);
+    });
+
+    return cms;
+  },
+  formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
+    if (formConfig.id === "getGlobalDocument") {
+      return createGlobalForm(formConfig);
+    }
+
+    return createForm(formConfig);
+  },
 });
