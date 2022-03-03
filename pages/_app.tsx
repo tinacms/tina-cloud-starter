@@ -30,7 +30,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={{Boolean(Number(NEXT_PUBLIC_HIDE_EDIT_BUTTON))}}
+        showEditButton={Boolean(Number(NEXT_PUBLIC_HIDE_EDIT_BUTTON))}
         editMode={
           <TinaCMS
             apiURL={apiURL}
