@@ -23,11 +23,14 @@ const apiURL =
     ? "http://localhost:4001/graphql"
     : `https://content.tinajs.io/content/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
 
+const NEXT_PUBLIC_HIDE_EDIT_BUTTON =
+  process.env.NEXT_PUBLIC_HIDE_EDIT_BUTTON || true;
+
 const App = ({ Component, pageProps }) => {
   return (
     <>
       <TinaEditProvider
-        showEditButton={true}
+        showEditButton={{Boolean(Number(NEXT_PUBLIC_HIDE_EDIT_BUTTON))}}
         editMode={
           <TinaCMS
             apiURL={apiURL}
