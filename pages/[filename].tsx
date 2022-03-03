@@ -1,10 +1,16 @@
 import { Blocks } from "../components/blocks";
 import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
+import { useTina } from "tinacms/dist/edit-state";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  return <Blocks {...props.data.getPagesDocument.data} />;
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+  return <Blocks {...data.getPagesDocument.data} />;
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -14,7 +20,9 @@ export const getStaticProps = async ({ params }) => {
   });
   return {
     props: {
-      ...tinaProps,
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
     },
   };
 };
