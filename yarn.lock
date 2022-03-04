@@ -1978,10 +1978,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
 
-"@tinacms/cli@^0.60.6":
-  version "0.60.6"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.6.tgz#c4234b9ab04a782291a58fde26f5f610f46b027d"
-  integrity sha512-pdNy7LbVC/tjSRCLLjbIRbUqTuB1Ck1PGRLze3zSPt1TyXEcbRHdHOkAKEOWVPBmqVoSzA/aNap/rT00sLBXGA==
+"@tinacms/cli@^0.60.8":
+  version "0.60.8"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.8.tgz#86f4334c478c10f4fd90acc44a3b8c3959db360c"
+  integrity sha512-mRRGQl0F0fRGpoSifqGKdrQnyNAoZC7rLiY7S5jO9G8w2KT1w9aY/WBmp11RUTz6yypuRBDOJQRrBzGHgD+DzQ==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -10304,10 +10304,10 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@^0.66.6:
-  version "0.66.6"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.66.6.tgz#df28c444d33952a54804498ef88fa00015dab943"
-  integrity sha512-vAIZoZWxs8Umj8MuChnCj3h4VcXxKeWvR09gxTG23rE1jilMm1/amTGQEt8QEwDbXbHu/RiGhXR1Mipu9aE9UQ==
+tinacms@^0.66.7:
+  version "0.66.7"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.66.7.tgz#58cc4ed9baffb1c841a6b0b936925181a7b6e385"
+  integrity sha512-J6rpSTuJ6rnhmXOY5hBZXW9K99d2his8qDbksTD8TwJjKvGczPdWeta4BMFM3onblMvZ/PJi4PGj2FuNr+neKg==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.4.1"
