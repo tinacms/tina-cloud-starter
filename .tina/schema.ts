@@ -734,6 +734,7 @@ export const tinaConfig = defineConfig({
      * Enables experimental branch switcher
      */
     cms.flags.set("branch-switcher", true);
+    cms.flags.set("use-unstable-formify", true);
 
     /**
      * When `tina-admin` is enabled, this plugin configures contextual editing for collections
@@ -760,7 +761,7 @@ export const tinaConfig = defineConfig({
     return cms;
   },
   formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
-    if (formConfig.id === "getGlobalDocument") {
+    if (formConfig.id === "content/global/index.json") {
       return createGlobalForm(formConfig);
     }
 
