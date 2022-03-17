@@ -23,11 +23,11 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@tailwindcss/typography": "^0.4.1",
-    "@tinacms/auth": "0.50.2",
+    "@tinacms/auth": "^0.50.2",
     "date-fns": "^2.23.0",
     "next": "^12.0.4",
     "next-svgr": "^0.0.2",
-    "next-tinacms-cloudinary": "3.4.3",
+    "next-tinacms-cloudinary": "^3.5.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
