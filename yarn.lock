@@ -994,14 +994,6 @@
     "@babel/plugin-transform-react-jsx-development" "^7.16.0"
     "@babel/plugin-transform-react-pure-annotations" "^7.16.0"
 
-"@babel/runtime-corejs2@^7.4.5":
-  version "7.16.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.16.3.tgz#26064188b2cb843121a58b6343b68812bfb94b88"
-  integrity sha512-VrmNH31CEUoR7kIel005qFMVUJpJm1VxfM7YUzVVc2jrxHCi/I6lBEJuqAcP9u9nEzmTD2RnSPhzfdupcSbnPQ==
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.4"
-
 "@babel/runtime@7.15.4":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
@@ -1978,10 +1970,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
 
-"@tinacms/cli@^0.60.8":
-  version "0.60.8"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.8.tgz#86f4334c478c10f4fd90acc44a3b8c3959db360c"
-  integrity sha512-mRRGQl0F0fRGpoSifqGKdrQnyNAoZC7rLiY7S5jO9G8w2KT1w9aY/WBmp11RUTz6yypuRBDOJQRrBzGHgD+DzQ==
+"@tinacms/cli@^0.60.9":
+  version "0.60.9"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.9.tgz#b1be6e0a8d58bd93b55931dc3440e86c11d641ac"
+  integrity sha512-JWnSEMTZpmrvxma6lEjz/ag47f2TLI8u+gVVs76t/Yg+Gz4OR6XYuj18IFg4+VBBvMszTPw1UkYF0PSnBIHUWg==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -1992,7 +1984,7 @@
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
     "@tinacms/datalayer" "0.0.2"
-    "@tinacms/graphql" "0.59.7"
+    "@tinacms/graphql" "0.59.8"
     "@tinacms/metrics" "0.0.2"
     "@yarnpkg/esbuild-plugin-pnp" "^2.0.1-rc.3"
     add "^2.0.6"
@@ -2043,11 +2035,12 @@
     prettier "^2.2.1"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.59.7":
-  version "0.59.7"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.7.tgz#8fed566067af7b80e84d099cc8cd0dbff4014865"
-  integrity sha512-2nuIwbg2GL2l81OdbLHYAlKrwvAKW8Q4Qc4kAM0sQaLwo+cT3ZjvsdE9MrfSf+HrVwAW3pLTJt4Sd132SH53IA==
+"@tinacms/graphql@0.59.8":
+  version "0.59.8"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.8.tgz#cf073a4cf56b917e3010aadb1c2694b8afa657bb"
+  integrity sha512-lOZHoR1W3VkO7uugZOkqhUds04eU70CEf2U9lUkd4H/ofFhUmdwoHP+G+SEUqDjfb0CgJ6KtQWJEVT0SPJUthQ==
   dependencies:
+    "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     body-parser "^1.19.0"
     cors "^2.8.5"
     dataloader "^2.0.0"
@@ -2101,10 +2094,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.1.0.tgz#1ca290ac96f394362d07b625164a30b85194cc97"
   integrity sha512-iorVcydqFDsjDp/PMaN4y0kF15qTTfHDd00fUN3wgW9h2fOmCu3o0KjC4yjrDyLnCdA0pHivpbPvOg3kLmCXog==
 
-"@tinacms/toolkit@0.56.17":
-  version "0.56.17"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.17.tgz#51e225e826fd217bac25bff4c87b793cad81bc21"
-  integrity sha512-rGYnzmXZhMz7ARyJw4SlLgOw/zbP2KOoczDDRWBMVeaCTHHiHThYXkYu4lLN8PVwCKXNWB3bVTuQG2yQGTLpbw==
+"@tinacms/toolkit@0.56.18":
+  version "0.56.18"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.18.tgz#291a69f53b3b2123e9ec231a443eae64a482fe67"
+  integrity sha512-KP1IDTP4ApEHzxjpH5UqF3ZlvfnzkNiE3p50n3j6kiSBJz3N9ynIwc7WB/lXOHSXG+uwDAxZ8/JzotrMLq/2Uw==
   dependencies:
     "@floating-ui/dom" "^0.1.7"
     "@floating-ui/react-dom" "^0.3.3"
@@ -2157,7 +2150,7 @@
     multer "1.4.2"
     path "^0.12.7"
     prop-types "15.7.2"
-    react-beautiful-dnd "^11.0.5"
+    react-beautiful-dnd "^13.1.0"
     react-color "^2.17.3"
     react-datetime "^2.16.3"
     react-dropzone "10.1.8"
@@ -4600,7 +4593,7 @@ core-js@3.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
-core-js@^2.5.0, core-js@^2.6.5:
+core-js@^2.5.0:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
@@ -4718,7 +4711,7 @@ crypto-js@^4.0.0:
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
   integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
 
-css-box-model@^1.1.2:
+css-box-model@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/css-box-model/-/css-box-model-1.2.1.tgz#59951d3b81fd6b2074a62d49444415b0d2b4d7c1"
   integrity sha512-a7Vr4Q/kd/aw96bnJG332W9V9LkJO69JRcaCYDUqjp6/z0w6VcZjgAcTbgFxEPfBgdnAwlh3iwu+hLopa+flJw==
@@ -7503,7 +7496,7 @@ memdown@^6.1.1:
     inherits "^2.0.1"
     ltgt "^2.2.0"
 
-memoize-one@^5.0.4:
+memoize-one@^5.1.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
@@ -8879,7 +8872,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-raf-schd@^4.0.0:
+raf-schd@^4.0.2:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/raf-schd/-/raf-schd-4.0.3.tgz#5d6c34ef46f8b2a0e880a8fcdb743efc5bfdbc1a"
   integrity sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==
@@ -8931,19 +8924,18 @@ re-resizable@^6.9.0, re-resizable@^6.9.1:
   dependencies:
     fast-memoize "^2.5.1"
 
-react-beautiful-dnd@^11.0.5:
-  version "11.0.5"
-  resolved "https://registry.yarnpkg.com/react-beautiful-dnd/-/react-beautiful-dnd-11.0.5.tgz#16b1dbd4d6493de0cb3f842cad57c7e9e1ff5fe7"
-  integrity sha512-7llby9U+jIfkINcyxPHVWU0HFYzqxMemUYgGHsFsbx4fZo1n/pW6sYKYzhxGxR3Ap5HxqswcQkKUZX4uEUWhlw==
+react-beautiful-dnd@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/react-beautiful-dnd/-/react-beautiful-dnd-13.1.0.tgz#ec97c81093593526454b0de69852ae433783844d"
+  integrity sha512-aGvblPZTJowOWUNiwd6tNfEpgkX5OxmpqxHKNW/4VmvZTNTbeiq7bA3bn5T+QSF2uibXB0D1DmJsb1aC/+3cUA==
   dependencies:
-    "@babel/runtime-corejs2" "^7.4.5"
-    css-box-model "^1.1.2"
-    memoize-one "^5.0.4"
-    raf-schd "^4.0.0"
-    react-redux "^7.0.3"
-    redux "^4.0.1"
-    tiny-invariant "^1.0.4"
-    use-memo-one "^1.1.0"
+    "@babel/runtime" "^7.9.2"
+    css-box-model "^1.2.0"
+    memoize-one "^5.1.1"
+    raf-schd "^4.0.2"
+    react-redux "^7.2.0"
+    redux "^4.0.4"
+    use-memo-one "^1.1.1"
 
 react-color@^2.17.3:
   version "2.19.3"
@@ -9044,7 +9036,7 @@ react-popper@2.2.5, react-popper@^2.2.4:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
 
-react-redux@^7.0.3:
+react-redux@^7.2.0:
   version "7.2.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.6.tgz#49633a24fe552b5f9caf58feb8a138936ddfe9aa"
   integrity sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ==
@@ -9186,7 +9178,7 @@ reduce-css-calc@^2.1.8:
     css-unit-converter "^1.1.1"
     postcss-value-parser "^3.3.0"
 
-redux@^4.0.0, redux@^4.0.1, redux@^4.1.1:
+redux@^4.0.0, redux@^4.0.4, redux@^4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.2.tgz#140f35426d99bb4729af760afcf79eaaac407104"
   integrity sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==
@@ -10310,16 +10302,16 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@^0.66.8:
-  version "0.66.8"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.66.8.tgz#00036723f76e07e1cfe0404fbccbd2eb8bc6bed6"
-  integrity sha512-d5a3vH2hXlVXxspZZ89brBFHYB5pr/AW+j6OSS40VnWcQtQ6uIrlz3JbJoSi2xcnHBVVq7LKCauBhrwF1xC0zw==
+tinacms@^0.66.9:
+  version "0.66.9"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.66.9.tgz#0778467357a440ba40bcb1fd961447d8c0e18041"
+  integrity sha512-b+OAHEKs2GcBQdruf4B7IIquKZy8jqWckVIi1UHe/gfB9vzTSghCGtANc4LaJek065ykYz7/ATtWtbVTh5B96w==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
     "@tinacms/sharedctx" "0.1.0"
-    "@tinacms/toolkit" "0.56.17"
+    "@tinacms/toolkit" "0.56.18"
     crypto-js "^4.0.0"
     final-form "4.20.1"
     graphql "^15.1.0"
@@ -10335,7 +10327,7 @@ tiny-invariant@1.0.6:
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.6.tgz#b3f9b38835e36a41c843a3b0907a5a7b3755de73"
   integrity sha512-FOyLWWVjG+aC0UqG76V53yAWdXfH8bO6FNmyZOuUrzDzK8DI3/JRY25UD7+g49JWM1LXwymsKERB+DzI0dTEQA==
 
-tiny-invariant@^1.0.4, tiny-invariant@^1.0.6:
+tiny-invariant@^1.0.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.2.0.tgz#a1141f86b672a9148c72e978a19a73b9b94a15a9"
   integrity sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==
@@ -10818,7 +10810,7 @@ use-latest@^1.0.0:
   dependencies:
     use-isomorphic-layout-effect "^1.0.0"
 
-use-memo-one@^1.1.0:
+use-memo-one@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.2.tgz#0c8203a329f76e040047a35a1197defe342fab20"
   integrity sha512-u2qFKtxLsia/r8qG0ZKkbytbztzRb317XCkT7yP8wxL0tZ/CzK2G+WWie5vWvpyeP7+YoPIwbJoIHJ4Ba4k0oQ==
