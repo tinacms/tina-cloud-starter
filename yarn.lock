@@ -1965,7 +1965,7 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
-"@tinacms/auth@0.50.2":
+"@tinacms/auth@^0.50.2":
   version "0.50.2"
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
@@ -8082,10 +8082,10 @@ next-svgr@^0.0.2:
   dependencies:
     "@svgr/webpack" "^4.3.0"
 
-next-tinacms-cloudinary@3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-3.4.3.tgz#cbeed12a6f9092404c8ad10013dc00166f60d864"
-  integrity sha512-8nvY5l+kA0Yg3Wcpm88N7ByqGfJtSAE7nwp9XZC9RoXq3ZlIpv0npR01IqINZ9U6u8THcudVBLhf2Wi2Hw4xNg==
+next-tinacms-cloudinary@^3.5.11:
+  version "3.5.11"
+  resolved "https://registry.yarnpkg.com/next-tinacms-cloudinary/-/next-tinacms-cloudinary-3.5.11.tgz#16b88faf6631569cb43a3aba7b26b9947cf39bbe"
+  integrity sha512-C/LBbqtWyIcCZHvl8ymGYYP+cyJnE7/h01e1ro9l2glU9Eoh0eLYVo1QRVWNR5EEhe6PMvR2fp6FzK1mOOLGOA==
   dependencies:
     cloudinary "^1.25.2"
     multer "^1.4.2"
