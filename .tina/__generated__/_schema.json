@@ -714,11 +714,15 @@
           "list": true,
           "name": "blocks",
           "label": "Sections",
+          "ui": {
+            "visualSelector": true
+          },
           "templates": [
             {
               "name": "hero",
               "label": "Hero",
               "ui": {
+                "previewSrc": "/blocks/hero.png",
                 "defaultItem": {
                   "tagline": "Here's some text above the other text",
                   "headline": "This Big Text is Totally Awesome",
@@ -912,6 +916,7 @@
               "name": "features",
               "label": "Features",
               "ui": {
+                "previewSrc": "/blocks/features.png",
                 "defaultItem": {
                   "items": [
                     {
@@ -1220,6 +1225,7 @@
               "name": "content",
               "label": "Content",
               "ui": {
+                "previewSrc": "/blocks/content.png",
                 "defaultItem": {
                   "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
                 }
@@ -1272,6 +1278,7 @@
               "name": "testimonial",
               "label": "Testimonial",
               "ui": {
+                "previewSrc": "/blocks/testimonial.png",
                 "defaultItem": {
                   "quote": "There are only two hard things in Computer Science: cache invalidation and naming things.",
                   "author": "Phil Karlton",
