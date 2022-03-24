@@ -5,12 +5,7 @@ import TinaProvider from "../.tina/components/TinaDynamicProvider";
 const App = ({ Component, pageProps }) => {
   return (
     <TinaProvider>
-      <Layout
-        rawData={pageProps}
-        data={pageProps?.data?.getGlobalDocument?.data}
-      >
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </TinaProvider>
   );
 };
