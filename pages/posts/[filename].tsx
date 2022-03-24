@@ -1,6 +1,7 @@
 import { Post } from "../../components/post";
 import { ExperimentalGetTinaClient } from "../../.tina/__generated__/types";
 import { useTina } from "tinacms/dist/edit-state";
+import { Layout } from "../../components/layout";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -12,9 +13,17 @@ export default function BlogPostPage(
     data: props.data,
   });
   if (data && data.getPostsDocument) {
-    return <Post {...data.getPostsDocument} />;
+    return (
+      <Layout rawData={data} data={data.getGlobalDocument.data}>
+        <Post {...data.getPostsDocument} />;
+      </Layout>
+    );
   }
-  return <div>No data</div>;
+  return (
+    <Layout>
+      <div>No data</div>;
+    </Layout>
+  );
 }
 
 export const getStaticProps = async ({ params }) => {
