@@ -13,7 +13,7 @@ export default function HomePage(
   });
   return (
     <Layout rawData={data} data={data.getGlobalDocument.data}>
-      <Blocks {...data.getPagesDocument.data} />;
+      <Blocks {...data.getPagesDocument.data} />
     </Layout>
   );
 }
