@@ -309,6 +309,7 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
+      format: 'md',
       fields: [
         {
           type: "string",
