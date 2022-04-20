@@ -69,7 +69,6 @@ export const Header = ({ data }) => {
                     name: data.icon.name,
                     color: data.icon.color,
                     style: data.icon.style,
-                    size: "custom",
                   }}
                   className="inline-block h-auto w-10 mr-1"
                 />{" "}
