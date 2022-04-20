@@ -309,7 +309,7 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
-      format: 'md',
+      format: "md",
       fields: [
         {
           type: "string",
@@ -391,7 +391,7 @@ export const tinaConfig = defineConfig({
     return cms;
   },
   formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
-    if (formConfig.id === "getGlobalDocument") {
+    if (formConfig.id === "content/global/index.json") {
       return createGlobalForm(formConfig);
     }
 
