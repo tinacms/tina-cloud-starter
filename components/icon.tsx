@@ -36,58 +36,34 @@ import {
   HiUser,
 } from "react-icons/hi";
 import { FiAperture } from "react-icons/fi";
-import { Theme, ThemeContext } from "./theme";
-import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
-// @ts-ignore
+import { ThemeContext } from "./theme";
+import { FaBeer, FaCoffee } from "react-icons/fa";
 import TinaIconSvg from "../public/tina.svg";
 import type { TinaField } from "tinacms";
-import { cp } from "fs";
 
-const biIconOptions = {
-  code: BiCodeBlock,
-  like: BiLike,
-  map: BiMapAlt,
-  palette: BiPalette,
-  chart: BiPieChartAlt2,
-  pin: BiPin,
-  shield: BiShield,
-  settings: BiSlider,
-  store: BiStore,
-  ball: BiTennisBall,
-  tube: BiTestTube,
-  trophy: BiTrophy,
-  user: BiUserCircle,
-  beer: BiBeer,
-  chat: BiChat,
-  cloud: BiCloud,
-  coffee: BiCoffeeTogo,
-  world: BiWorld,
-  aperture: FiAperture,
-  tina: TinaIconSvg,
+const iconOptions = {
+  code: { bi: BiCodeBlock, hi: HiTerminal },
+  like: { bi: BiLike, hi: HiThumbUp },
+  map: { bi: BiMapAlt, hi: HiMap },
+  palette: { bi: BiPalette, hi: HiColorSwatch },
+  chart: { bi: BiPieChartAlt2, hi: HiChartBar },
+  pin: { bi: BiPin, hi: HiLocationMarker },
+  shield: { bi: BiShield, hi: HiShieldCheck },
+  settings: { bi: BiSlider, hi: HiAdjustments },
+  store: { bi: BiStore, hi: HiShoppingCart },
+  ball: { bi: BiTennisBall, hi: BiTennisBall },
+  tube: { bi: BiTestTube, hi: HiBeaker },
+  trophy: { bi: BiTrophy, hi: ImTrophy },
+  user: { bi: BiUserCircle, hi: HiUser },
+  beer: { bi: BiBeer, hi: FaBeer },
+  chat: { bi: BiChat, hi: HiChatAlt2 },
+  cloud: { bi: BiCloud, hi: HiCloud },
+  coffee: { bi: BiCoffeeTogo, hi: FaCoffee },
+  world: { bi: BiWorld, hi: BiWorld },
+  aperture: { bi: FiAperture, hi: FiAperture },
+  tina: { bi: TinaIconSvg, hi: TinaIconSvg },
 };
 
-const heroIconOptions = {
-  code: HiTerminal,
-  like: HiThumbUp,
-  map: HiMap,
-  palette: HiColorSwatch,
-  chart: HiChartBar,
-  pin: HiLocationMarker,
-  shield: HiShieldCheck,
-  settings: HiAdjustments,
-  store: HiShoppingCart,
-  ball: BiTennisBall,
-  tube: HiBeaker,
-  trophy: ImTrophy,
-  user: HiUser,
-  beer: FaBeer,
-  chat: HiChatAlt2,
-  cloud: HiCloud,
-  coffee: FaCoffee,
-  world: BiWorld,
-  aperture: FiAperture,
-  tina: TinaIconSvg,
-};
 const iconColorClass: { [name: string]: { regular: string; circle: string } } =
   {
     blue: {
@@ -142,13 +118,8 @@ export const Icon = ({
 }) => {
   const theme = React.useContext(ThemeContext);
 
-  const iconOptions =
-    theme.icon === "boxicon" ? biIconOptions : heroIconOptions;
-
-  const IconSVG =
-    !data.name || !iconOptions[data.name]
-      ? Object.keys(iconOptions)[0]
-      : iconOptions[data.name];
+  const iconName = data.name || Object.keys(iconOptions)[0];
+  const IconSVG = iconOptions[iconName][theme.icon === "boxicon" ? "bi" : "hi"];
 
   const iconSizeClasses = data.size && iconSizeClass[data.size];
 
@@ -187,6 +158,10 @@ export const Icon = ({
   }
 };
 
+const formatFieldLabel = (value: string) => {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+};
+
 export const iconSchema: TinaField = {
   type: "object",
   label: "Icon",
@@ -197,7 +172,7 @@ export const iconSchema: TinaField = {
       label: "Color",
       name: "color",
       options: Object.keys(iconColorClass).map((color) => ({
-        label: color.charAt(0).toUpperCase() + color.slice(1),
+        label: formatFieldLabel(color),
         value: color,
       })),
     },
@@ -220,92 +195,10 @@ export const iconSchema: TinaField = {
       type: "string",
       label: "Icon",
       name: "name",
-      options: [
-        {
-          label: "Random",
-          value: "",
-        },
-        {
-          label: "Aperture",
-          value: "aperture",
-        },
-        {
-          label: "Code Block",
-          value: "code",
-        },
-        {
-          label: "Like",
-          value: "like",
-        },
-        {
-          label: "Map",
-          value: "map",
-        },
-        {
-          label: "Palette",
-          value: "palette",
-        },
-        {
-          label: "Pie Chart",
-          value: "chart",
-        },
-        {
-          label: "Pin",
-          value: "pin",
-        },
-        {
-          label: "Shield",
-          value: "shield",
-        },
-        {
-          label: "Setting Sliders",
-          value: "settings",
-        },
-        {
-          label: "Store",
-          value: "store",
-        },
-        {
-          label: "Tennis Ball",
-          value: "ball",
-        },
-        {
-          label: "Test Tube",
-          value: "tube",
-        },
-        {
-          label: "Trophy",
-          value: "trophy",
-        },
-        {
-          label: "User",
-          value: "user",
-        },
-        {
-          label: "Beer",
-          value: "beer",
-        },
-        {
-          label: "Chat",
-          value: "chat",
-        },
-        {
-          label: "Cloud",
-          value: "cloud",
-        },
-        {
-          label: "Coffee",
-          value: "coffee",
-        },
-        {
-          label: "World",
-          value: "world",
-        },
-        {
-          label: "Tina",
-          value: "tina",
-        },
-      ],
+      options: Object.keys(iconOptions).map((icon) => ({
+        label: formatFieldLabel(icon),
+        value: icon,
+      })),
     },
   ],
 };
