@@ -41,6 +41,7 @@ import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
 // @ts-ignore
 import TinaIconSvg from "../public/tina.svg";
 import type { TinaField } from "tinacms";
+import { cp } from "fs";
 
 const biIconOptions = {
   code: BiCodeBlock,
@@ -195,44 +196,10 @@ export const iconSchema: TinaField = {
       type: "string",
       label: "Color",
       name: "color",
-      options: [
-        {
-          label: "Primary",
-          value: "primary",
-        },
-        {
-          label: "Blue",
-          value: "blue",
-        },
-        {
-          label: "Teal",
-          value: "teal",
-        },
-        {
-          label: "Green",
-          value: "green",
-        },
-        {
-          label: "Red",
-          value: "red",
-        },
-        {
-          label: "Pink",
-          value: "pink",
-        },
-        {
-          label: "Purple",
-          value: "purple",
-        },
-        {
-          label: "Orange",
-          value: "orange",
-        },
-        {
-          label: "Yellow",
-          value: "yellow",
-        },
-      ],
+      options: Object.keys(iconColorClass).map((color) => ({
+        label: color.charAt(0).toUpperCase() + color.slice(1),
+        value: color,
+      })),
     },
     {
       name: "style",
