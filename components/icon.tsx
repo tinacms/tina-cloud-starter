@@ -131,7 +131,6 @@ const iconSizeClass = {
   small: "w-8 h-8",
   medium: "w-12 h-12",
   large: "w-14 h-14",
-  custom: "",
 };
 
 export const Icon = ({
@@ -150,7 +149,7 @@ export const Icon = ({
       ? Object.keys(iconOptions)[0]
       : iconOptions[data.name];
 
-  const iconSize = data.size ? data.size : "large";
+  const iconSizeClasses = data.size && iconSizeClass[data.size];
 
   /* Full class strings are required for Tailwind's just-in-time mode,
      I would love a better solution that doesn't require so much repetition */
@@ -165,7 +164,7 @@ export const Icon = ({
     return (
       <div
         data-tinafield={tinaField}
-        className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClass[iconSize]} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
+        className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
       >
         <IconSVG className="w-2/3 h-2/3" />
       </div>
@@ -181,7 +180,7 @@ export const Icon = ({
     return (
       <IconSVG
         data-tinafield={tinaField}
-        className={`${iconSizeClass[iconSize]} ${iconColorClasses} ${className}`}
+        className={`${iconSizeClasses} ${iconColorClasses} ${className}`}
       />
     );
   }
