@@ -1,4 +1,4 @@
-import { Blocks } from "../components/blocks";
+import { Blocks } from "../components/blocks-renderer";
 import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
 import { useTina } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
