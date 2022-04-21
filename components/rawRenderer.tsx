@@ -15,7 +15,7 @@ export const RawRenderer = ({ rawData, parentColor }) => {
     orange: "text-orange-500",
     yellow: "text-yellow-600",
   };
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);

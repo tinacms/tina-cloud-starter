@@ -1,7 +1,5 @@
 import React from "react";
 import Link from "next/link";
-// @ts-ignore
-import TinaIconSvg from "../public/tina.svg";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "./container";
