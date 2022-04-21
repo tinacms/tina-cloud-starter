@@ -36,9 +36,9 @@ import {
   HiUser,
 } from "react-icons/hi";
 import { FiAperture } from "react-icons/fi";
-import { ThemeContext } from "./theme";
+import { useTheme } from "../layout";
 import { FaBeer, FaCoffee } from "react-icons/fa";
-import TinaIconSvg from "../public/tina.svg";
+import TinaIconSvg from "../../public/tina.svg";
 import type { TinaField } from "tinacms";
 
 const biIconOptions = {
@@ -93,7 +93,7 @@ export const Icon = ({
   className = "",
   tinaField = "",
 }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const IconSVG = React.useMemo(() => {
     const iconOptions =
       theme.icon === "boxicon" ? biIconOptions : heroIconOptions;

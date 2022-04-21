@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../container";
-import { Section } from "../section";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 
