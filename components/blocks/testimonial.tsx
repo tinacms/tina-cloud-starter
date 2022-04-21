@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../container";
-import { Section } from "../section";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
 
 export const Testimonial = ({ data, parentField = "" }) => {

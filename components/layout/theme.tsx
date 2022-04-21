@@ -1,7 +1,9 @@
 import * as React from "react";
-import GlobalData from "../content/global/index.json";
+import GlobalData from "../../content/global/index.json";
 
-export const ThemeContext = React.createContext(GlobalData.theme);
+const ThemeContext = React.createContext(GlobalData.theme);
+
+export const useTheme = () => React.useContext(ThemeContext);
 
 const updateRenderColorMode = (themeMode: "dark" | "light") => {
   if (typeof window !== "undefined") {

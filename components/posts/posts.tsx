@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
-import { ThemeContext } from "./theme";
+import { useTheme } from "../layout";
 
 export const Posts = ({ data }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
     teal: "group-hover:text-teal-600 dark:group-hover:text-teal-300",
