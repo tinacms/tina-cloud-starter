@@ -1,10 +1,10 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ThemeContext } from "./theme";
+import { useTheme } from "..";
 
 export const RawRenderer = ({ rawData, parentColor }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const buttonColorClasses = {
     blue: "text-blue-500",
     teal: "text-teal-500",
@@ -15,7 +15,7 @@ export const RawRenderer = ({ rawData, parentColor }) => {
     orange: "text-orange-500",
     yellow: "text-yellow-600",
   };
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);

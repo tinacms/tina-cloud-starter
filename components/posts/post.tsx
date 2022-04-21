@@ -12,9 +12,9 @@ limitations under the License.
 */
 
 import React from "react";
-import { Container } from "./container";
-import { Section } from "./section";
-import { ThemeContext } from "./theme";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
+import { useTheme } from "../layout";
 import format from "date-fns/format";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
@@ -104,7 +104,7 @@ const components: Components<{
 };
 
 export const Post = ({ data }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const titleColorClasses = {
     blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
     teal: "from-teal-400 to-teal-600 dark:from-teal-300 dark:to-teal-500",

@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { Container } from "./container";
-// @ts-ignore
-import TinaIconSvg from "../public/tina.svg";
-import { ThemeContext } from "./theme";
-import { Icon } from "./icon";
+import { Container } from "../util/container";
+import { useTheme } from ".";
+import { Icon } from "../util/icon";
 
 export const Header = ({ data }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const headerColor = {
     default:

@@ -1,9 +1,9 @@
 import { defineSchema, defineConfig } from "tinacms";
 import { contentBlockSchema } from "../components/blocks/content";
-import { featureBlockShema } from "../components/blocks/features";
+import { featureBlockSchema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
-import { iconSchema } from "../components/icon";
+import { iconSchema } from "../components/util/icon";
 
 export default defineSchema({
   collections: [
@@ -309,7 +309,7 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
-      format: 'md',
+      format: "md",
       fields: [
         {
           type: "string",
@@ -338,7 +338,7 @@ export default defineSchema({
           },
           templates: [
             heroBlockSchema,
-            featureBlockShema,
+            featureBlockSchema,
             contentBlockSchema,
             testimonialBlockSchema,
           ],
