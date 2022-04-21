@@ -36,9 +36,8 @@ import {
   HiUser,
 } from "react-icons/hi";
 import { FiAperture } from "react-icons/fi";
-import { Theme, ThemeContext } from "./theme";
-import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
-// @ts-ignore
+import { ThemeContext } from "./theme";
+import { FaBeer, FaCoffee } from "react-icons/fa";
 import TinaIconSvg from "../public/tina.svg";
 import type { TinaField } from "tinacms";
 
@@ -187,7 +186,7 @@ export const Icon = ({
 };
 
 const randomProperty = (obj) => {
-  let keys = Object.keys(obj);
+  const keys = Object.keys(obj);
   return obj[keys[(keys.length * Math.random()) << 0]];
 };
 
