@@ -73,7 +73,7 @@ const defaultFeature = {
   },
 };
 
-export const featureBlockShema: TinaTemplate = {
+export const featureBlockSchema: TinaTemplate = {
   name: "features",
   label: "Features",
   ui: {
