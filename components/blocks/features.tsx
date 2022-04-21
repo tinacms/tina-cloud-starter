@@ -1,9 +1,9 @@
-import { Actions } from "../actions";
-import { Section } from "../section";
-import { Container } from "../container";
-import { Icon } from "../icon";
+import { Actions } from "../util/actions";
+import { Section } from "../util/section";
+import { Container } from "../util/container";
+import { Icon } from "../util/icon";
 import type { TinaTemplate } from "tinacms";
-import { iconSchema } from "../icon";
+import { iconSchema } from "../util/icon";
 
 export const Feature = ({ featuresColor, data, tinaField }) => {
   return (

@@ -1,4 +1,4 @@
-import { Post } from "../../components/post";
+import { Post } from "../../components/posts/post";
 import { ExperimentalGetTinaClient } from "../../.tina/__generated__/types";
 import { useTina } from "tinacms/dist/edit-state";
 import { Layout } from "../../components/layout";

@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Actions } from "../actions";
-import { Container } from "../container";
-import { Section } from "../section";
-import { ThemeContext } from "../theme";
+import { Actions } from "../util/actions";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
+import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 
 export const Hero = ({ data, parentField }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const headlineColorClasses = {
     blue: "from-blue-400 to-blue-600",
     teal: "from-teal-400 to-teal-600",
