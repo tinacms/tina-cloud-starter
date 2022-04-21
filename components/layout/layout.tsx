@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import layoutData from "../content/global/index.json";
+import layoutData from "../../content/global/index.json";
 import { Theme } from "./theme";
 
 export const Layout = ({ rawData = {}, data = layoutData, children }) => {
