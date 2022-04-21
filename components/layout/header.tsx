@@ -66,7 +66,7 @@ export const Header = ({ data }) => {
                   data={{
                     name: data.icon.name,
                     color: data.icon.color,
-                    size: "custom",
+                    style: data.icon.style,
                   }}
                   className="inline-block h-auto w-10 mr-1"
                 />{" "}
