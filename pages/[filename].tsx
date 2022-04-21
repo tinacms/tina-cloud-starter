@@ -1,4 +1,4 @@
-import { Blocks } from "../components/blocks";
+import { Blocks } from "../components/blocks-renderer";
 import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
 import { useTina } from "tinacms/dist/edit-state";
 import { Layout } from "../components/layout";
@@ -12,7 +12,7 @@ export default function HomePage(
     data: props.data,
   });
   return (
-    <Layout rawData={data} data={data.getGlobalDocument.data}>
+    <Layout rawData={data} data={data.getGlobalDocument.data as any}>
       <Blocks {...data.getPagesDocument.data} />
     </Layout>
   );
