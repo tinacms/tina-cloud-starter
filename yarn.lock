@@ -1364,7 +1364,7 @@
   resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.4.2.tgz#87e264f190dbebbf8dfdd900530da973dad24576"
   integrity sha512-N8tv7kLhg9qGKBkVdtg572BvKvWhmiudmeEpOCyNwzOsZHCXBtl8AazGikIfUS+vBoub20Fse3BjawXDVPPdug==
 
-"@headlessui/react@^1.4.2":
+"@headlessui/react@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.5.0.tgz#483b44ba2c8b8d4391e1d2c863898d7dd0cc0296"
   integrity sha512-aaRnYxBb3MU2FNJf3Ut9RMTUqqU3as0aI1lQhgo2n9Fa67wRu14iOGqx93xB+uMNVfNwZ5B3y/Ndm7qZGuFeMQ==
@@ -1462,6 +1462,18 @@
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
+
+"@kwsites/file-exists@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
+  integrity sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==
+  dependencies:
+    debug "^4.1.1"
+
+"@kwsites/promise-deferred@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
+  integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
 
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
@@ -1999,7 +2011,7 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
   integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
 
-"@tinacms/cli@^0.60.9":
+"@tinacms/cli@^0.60.12":
   version "0.60.12"
   resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.12.tgz#51cf87e172a86211d00fe0200898cdd75fb1cc4c"
   integrity sha512-1XD4OpKMUR6MdD3npD9yG0DW30tZwTVeK3Pc0KoiSE21xZzcD0VT+YBUcvSjRCqwAuBwstjdIUEdQ7OGzO/O+Q==
@@ -2122,11 +2134,6 @@
   dependencies:
     isomorphic-fetch "^3.0.0"
 
-"@tinacms/schema-tools@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-0.0.2.tgz#219c2b3ddc54b74bff74d94cecfb2f7241c83a6e"
-  integrity sha512-KOq9YOjmSvs5PuId9iLrRjSQHy0rh3JodqdhJGGW6LYoo9wfXqQ/hmBSkqE8udKrlKnjtQsz8isf1tdBVBel6A==
-
 "@tinacms/schema-tools@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-0.0.3.tgz#8d2887e75b44b7d00dccbe2c2e28021568246c88"
@@ -2139,14 +2146,14 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.1.1.tgz#8ca3446348b87653095a4a3bda797ddaa65d4d38"
   integrity sha512-+23d5EWdj34p/fYTYn+R2QOt8hn5qqirH7/o2cWYhY1ywCi/gZbCjzRXyi7PxBMh4fH1lFZuO5zseZrIWgmodA==
 
-"@tinacms/toolkit@0.56.19":
-  version "0.56.19"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.19.tgz#2713237d02a2ff38ad0866365ad48d931b48113e"
-  integrity sha512-Hv7oxOn28SYjQgQyTJIZfsyRO8R7SA/h8jUTkwc2KZVFjQUgnYHIgoR6zi3pM067P3Bn/miXrjVcFTWdV3qXrw==
+"@tinacms/toolkit@0.0.0-2022320233614":
+  version "0.0.0-2022320233614"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.0.0-2022320233614.tgz#7eb4b002447adc779b06838e380a32b47d381ee1"
+  integrity sha512-H+FFaVWuDUbzjzt3IV0rbj+tYmVB9JKK1nVfhkDpBhVyukYef3iCbRWySs8UG0cL6uRm2aIY2JDiMBvZ42vTkg==
   dependencies:
     "@floating-ui/dom" "^0.1.7"
     "@floating-ui/react-dom" "^0.3.3"
-    "@headlessui/react" "^1.4.2"
+    "@headlessui/react" "^1.5.0"
     "@heroicons/react" "^1.0.5"
     "@react-aria/i18n" "^3.3.4"
     "@react-aria/listbox" "3.3.0"
@@ -2201,7 +2208,7 @@
     react-dropzone "10.1.8"
     react-final-form "^6.3.0"
     react-icons "^4.3.1"
-    simple-git "1.126.0"
+    simple-git "3.5.0"
     slate "^0.66.0"
     slate-history "^0.66.0"
     slate-hyperscript "^0.66.0"
@@ -4970,7 +4977,7 @@ debug@^4.0.0, debug@^4.1.0, debug@^4.1.1:
   dependencies:
     ms "2.1.2"
 
-debug@^4.0.1, debug@^4.3.2:
+debug@^4.3.2:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -10005,12 +10012,14 @@ signedsource@^1.0.0:
   resolved "https://registry.yarnpkg.com/signedsource/-/signedsource-1.0.0.tgz#1ddace4981798f93bd833973803d80d52e93ad6a"
   integrity sha1-HdrOSYF5j5O9gzlzgD2A1S6TrWo=
 
-simple-git@1.126.0:
-  version "1.126.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.126.0.tgz#0c345372275139c8433b8277f4b3e155092aa434"
-  integrity sha512-47mqHxgZnN8XRa9HbpWprzUv3Ooqz9RY/LSZgvA7jCkW8jcwLahMz7LKugY91KZehfG0sCVPtgXiU72hd6b1Bw==
+simple-git@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-3.5.0.tgz#3c3538f4d7a1b3c8f3904412b12740bdcad9c8b1"
+  integrity sha512-fZsaq5nzdxQRhMNs6ESGLpMUHoL5GRP+boWPhq9pMYMKwOGZV2jHOxi8AbFFA2Y/6u4kR99HoULizSbpzaODkA==
   dependencies:
-    debug "^4.0.1"
+    "@kwsites/file-exists" "^1.1.1"
+    "@kwsites/promise-deferred" "^1.1.1"
+    debug "^4.3.3"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -10563,17 +10572,17 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
-tinacms@^0.66.9:
-  version "0.66.10"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.66.10.tgz#8ac30142f6accf43af98e6c7c4055cee0ed50851"
-  integrity sha512-jxn6p0nLlz9ZkhUdm7x1kmszZnEd4FjSCYashcS9SeAsh1bX4UkQkHQZ3NximtopveZuSb6DpSmzKCB6+FOnXg==
+tinacms@0.0.0-2022320233614:
+  version "0.0.0-2022320233614"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-2022320233614.tgz#7a61488255f4320e5b10f45d5baee7296d82c7da"
+  integrity sha512-c7jtIoeAfxVMkq6sWepStzLPe2Mcxe8pvTyeOXGrB2Ehp/VkjZzhFV2BdfynpYCh/QOFf209IElij0H1NsRZXA==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
-    "@headlessui/react" "^1.4.1"
+    "@headlessui/react" "^1.5.0"
     "@heroicons/react" "^1.0.4"
-    "@tinacms/schema-tools" "0.0.2"
+    "@tinacms/schema-tools" "0.0.3"
     "@tinacms/sharedctx" "0.1.1"
-    "@tinacms/toolkit" "0.56.19"
+    "@tinacms/toolkit" "0.0.0-2022320233614"
     crypto-js "^4.0.0"
     final-form "4.20.1"
     graphql "^15.1.0"
