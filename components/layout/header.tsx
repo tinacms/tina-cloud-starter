@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { Container } from "./container";
-// @ts-ignore
-import TinaIconSvg from "../public/tina.svg";
-import { ThemeContext } from "./theme";
-import { Icon } from "./icon";
+import { Container } from "../util/container";
+import { useTheme } from ".";
+import { Icon } from "../util/icon";
 
 export const Header = ({ data }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const headerColor = {
     default:
@@ -43,11 +41,11 @@ export const Header = ({ data }) => {
   // If we're on an admin path, other links should also link to their admin paths
   const [prefix, setPrefix] = React.useState("");
   const [windowUrl, setUrl] = React.useState("");
-  const isBrowser = typeof window !== "undefined"
-  const hasUrl = isBrowser ? window.location.href : '';
+  const isBrowser = typeof window !== "undefined";
+  const hasUrl = isBrowser ? window.location.href : "";
 
   React.useEffect(() => {
-      setUrl(hasUrl);
+    setUrl(hasUrl);
   }, [hasUrl]);
 
   React.useEffect(() => {
@@ -68,7 +66,7 @@ export const Header = ({ data }) => {
                   data={{
                     name: data.icon.name,
                     color: data.icon.color,
-                    size: "custom",
+                    style: data.icon.style,
                   }}
                   className="inline-block h-auto w-10 mr-1"
                 />{" "}

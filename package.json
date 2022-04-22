@@ -6,7 +6,8 @@
     "dev": "tinacms server:start -c \"next dev\"",
     "build": "tinacms server:start -c \"next build\"",
     "start": "tinacms server:start -c \"next start\"",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
     "@tinacms/cli": "^0.60.12",
@@ -14,7 +15,10 @@
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
     "@types/styled-components": "^5.1.15",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.13.0",
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^10.1.0",
