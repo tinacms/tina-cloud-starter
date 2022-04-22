@@ -5,7 +5,7 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 
-export default defineSchema({
+const schema = defineSchema({
   collections: [
     {
       label: "Blog Posts",
@@ -356,6 +356,7 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  schema,
   mediaStore: async () => {
     const pack = await import("next-tinacms-cloudinary");
     return pack.TinaCloudCloudinaryMediaStore;
@@ -398,3 +399,5 @@ export const tinaConfig = defineConfig({
     return createForm(formConfig);
   },
 });
+
+export default schema;
