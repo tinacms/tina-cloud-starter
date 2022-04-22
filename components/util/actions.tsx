@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { ThemeContext } from "./theme";
+import { useTheme } from "../layout";
 
 export const Actions = ({
   parentColor = "default",
@@ -9,7 +9,7 @@ export const Actions = ({
   className = "",
   actions,
 }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const buttonColorClasses = {
     blue: "text-white bg-blue-500 hover:bg-blue-600 bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-400 hover:to-blue-500",
     teal: "text-white bg-teal-500 hover:bg-teal-600 bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-400 hover:to-teal-500",

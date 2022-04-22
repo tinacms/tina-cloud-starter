@@ -1,16 +1,14 @@
 import React from "react";
 import Link from "next/link";
-// @ts-ignore
-import TinaIconSvg from "../public/tina.svg";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import { Container } from "./container";
+import { Container } from "../../util/container";
 import { RawRenderer } from "./rawRenderer";
-import { ThemeContext } from "./theme";
-import { Icon } from "./icon";
+import { useTheme } from "..";
+import { Icon } from "../../util/icon";
 
 export const Footer = ({ data, icon, rawData }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
   const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
     blue: "text-blue-500 dark:text-blue-400 hover:text-blue-300",
@@ -55,7 +53,7 @@ export const Footer = ({ data, icon, rawData }) => {
                 data={{
                   name: icon.name,
                   color: data.color === "primary" ? "primary" : icon.color,
-                  size: "custom",
+                  style: icon.style,
                 }}
                 className="inline-block h-10 w-auto group-hover:text-orange-500"
               />
