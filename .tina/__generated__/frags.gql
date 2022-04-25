@@ -1,4 +1,4 @@
-fragment PostsParts on Posts {
+fragment PostParts on Post {
   title
   heroImg
   excerpt
@@ -47,15 +47,15 @@ fragment GlobalParts on Global {
   }
 }
 
-fragment AuthorsParts on Authors {
+fragment AuthorParts on Author {
   name
   avatar
 }
 
-fragment PagesParts on Pages {
+fragment PageParts on Page {
   blocks {
     __typename
-    ... on PagesBlocksHero {
+    ... on PageBlocksHero {
       tagline
       headline
       text
@@ -73,7 +73,7 @@ fragment PagesParts on Pages {
       }
       color
     }
-    ... on PagesBlocksFeatures {
+    ... on PageBlocksFeatures {
       items {
         __typename
         icon {
@@ -87,11 +87,11 @@ fragment PagesParts on Pages {
       }
       color
     }
-    ... on PagesBlocksContent {
+    ... on PageBlocksContent {
       body
       color
     }
-    ... on PagesBlocksTestimonial {
+    ... on PageBlocksTestimonial {
       quote
       author
       color
