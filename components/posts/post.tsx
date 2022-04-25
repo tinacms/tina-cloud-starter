@@ -66,11 +66,11 @@ const components: Components<{
   NewsletterSignup: (props) => {
     return (
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8 md:flex md:items-center">
-          <div className="md:w-0 md:flex-1">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <div className="">
             <TinaMarkdown content={props.children} />
           </div>
-          <div className="mt-8 md:mt-0 md:ml-8">
+          <div className="mt-8 ">
             <form className="sm:flex">
               <label htmlFor="email-address" className="sr-only">
                 Email address
