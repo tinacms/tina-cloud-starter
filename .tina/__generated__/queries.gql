@@ -1,5 +1,5 @@
-query posts($relativePath: String!) {
-  posts(relativePath: $relativePath) {
+query post($relativePath: String!) {
+  post(relativePath: $relativePath) {
     _sys {
       filename
       basename
@@ -9,12 +9,12 @@ query posts($relativePath: String!) {
       extension
     }
     id
-    ...PostsParts
+    ...PostParts
   }
 }
 
-query postsConnection {
-  postsConnection {
+query postConnection {
+  postConnection {
     totalCount
     edges {
       node {
@@ -27,7 +27,7 @@ query postsConnection {
           relativePath
           extension
         }
-        ...PostsParts
+        ...PostParts
       }
     }
   }
@@ -68,8 +68,8 @@ query globalConnection {
   }
 }
 
-query authors($relativePath: String!) {
-  authors(relativePath: $relativePath) {
+query author($relativePath: String!) {
+  author(relativePath: $relativePath) {
     _sys {
       filename
       basename
@@ -79,12 +79,12 @@ query authors($relativePath: String!) {
       extension
     }
     id
-    ...AuthorsParts
+    ...AuthorParts
   }
 }
 
-query authorsConnection {
-  authorsConnection {
+query authorConnection {
+  authorConnection {
     totalCount
     edges {
       node {
@@ -97,14 +97,14 @@ query authorsConnection {
           relativePath
           extension
         }
-        ...AuthorsParts
+        ...AuthorParts
       }
     }
   }
 }
 
-query pages($relativePath: String!) {
-  pages(relativePath: $relativePath) {
+query page($relativePath: String!) {
+  page(relativePath: $relativePath) {
     _sys {
       filename
       basename
@@ -114,12 +114,12 @@ query pages($relativePath: String!) {
       extension
     }
     id
-    ...PagesParts
+    ...PageParts
   }
 }
 
-query pagesConnection {
-  pagesConnection {
+query pageConnection {
+  pageConnection {
     totalCount
     edges {
       node {
@@ -132,7 +132,7 @@ query pagesConnection {
           relativePath
           extension
         }
-        ...PagesParts
+        ...PageParts
       }
     }
   }
