@@ -1,17 +1,17 @@
 import React from "react";
-import type { Pages } from "../.tina/__generated__/types";
+import type { Page } from "../.tina/__generated__/types";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
 import { Testimonial } from "./blocks/testimonial";
 
-export const Blocks = (props: Pages) => {
+export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   return (
     <>
       {props.blocks
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
-              case "PagesBlocksContent":
+              case "PageBlocksContent":
                 return (
                   <div
                     data-tinafield={`blocks.${i}`}
@@ -20,7 +20,7 @@ export const Blocks = (props: Pages) => {
                     <Content data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
-              case "PagesBlocksHero":
+              case "PageBlocksHero":
                 return (
                   <div
                     data-tinafield={`blocks.${i}`}
@@ -29,7 +29,7 @@ export const Blocks = (props: Pages) => {
                     <Hero data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
-              case "PagesBlocksFeatures":
+              case "PageBlocksFeatures":
                 return (
                   <div
                     data-tinafield={`blocks.${i}`}
@@ -38,7 +38,7 @@ export const Blocks = (props: Pages) => {
                     <Features data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
-              case "PagesBlocksTestimonial":
+              case "PageBlocksTestimonial":
                 return (
                   <div
                     data-tinafield={`blocks.${i}`}
