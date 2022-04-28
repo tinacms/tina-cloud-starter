@@ -5,11 +5,11 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 
-export default defineSchema({
+const schema = defineSchema({
   collections: [
     {
       label: "Blog Posts",
-      name: "posts",
+      name: "post",
       path: "content/posts",
       format: "mdx",
       fields: [
@@ -32,7 +32,7 @@ export default defineSchema({
           type: "reference",
           label: "Author",
           name: "author",
-          collections: ["authors"],
+          collections: ["author"],
         },
         {
           type: "datetime",
@@ -307,7 +307,7 @@ export default defineSchema({
     },
     {
       label: "Authors",
-      name: "authors",
+      name: "author",
       path: "content/authors",
       format: "md",
       fields: [
@@ -325,7 +325,7 @@ export default defineSchema({
     },
     {
       label: "Pages",
-      name: "pages",
+      name: "page",
       path: "content/pages",
       fields: [
         {
@@ -356,6 +356,7 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  schema,
   mediaStore: async () => {
     const pack = await import("next-tinacms-cloudinary");
     return pack.TinaCloudCloudinaryMediaStore;
@@ -398,3 +399,5 @@ export const tinaConfig = defineConfig({
     return createForm(formConfig);
   },
 });
+
+export default schema;
