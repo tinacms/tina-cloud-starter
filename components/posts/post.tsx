@@ -66,11 +66,11 @@ const components: Components<{
   NewsletterSignup: (props) => {
     return (
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8 md:flex md:items-center">
-          <div className="md:w-0 md:flex-1">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <div className="">
             <TinaMarkdown content={props.children} />
           </div>
-          <div className="mt-8 md:mt-0 md:ml-8">
+          <div className="mt-8 ">
             <form className="sm:flex">
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -103,7 +103,7 @@ const components: Components<{
   },
 };
 
-export const Post = ({ data }) => {
+export const Post = (props) => {
   const theme = useTheme();
   const titleColorClasses = {
     blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -119,7 +119,7 @@ export const Post = ({ data }) => {
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
   };
 
-  const date = new Date(data.date);
+  const date = new Date(props.date);
   let formattedDate = "";
   if (!isNaN(date.getTime())) {
     formattedDate = format(date, "MMM dd, yyyy");
@@ -137,24 +137,24 @@ export const Post = ({ data }) => {
               titleColorClasses[theme.color]
             }`}
           >
-            {data.title}
+            {props.title}
           </span>
         </h2>
         <div
           data-tinafield="author"
           className="flex items-center justify-center mb-16"
         >
-          {data.author && (
+          {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
                   className="h-14 w-14 object-cover rounded-full shadow-sm"
-                  src={data.author.data.avatar}
-                  alt={data.author.data.name}
+                  src={props.author.avatar}
+                  alt={props.author.name}
                 />
               </div>
               <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                {data.author.data.name}
+                {props.author.name}
               </p>
               <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                 —
@@ -169,18 +169,17 @@ export const Post = ({ data }) => {
           </p>
         </div>
       </Container>
-      {data.heroImg && (
+      {props.heroImg && (
         <div data-tinafield="heroImg" className="">
           <img
-            src={data.heroImg}
+            src={props.heroImg}
             className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
           />
         </div>
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <TinaMarkdown components={components} content={data._body} />
-          {/* <pre>{JSON.stringify(data._body, null, 2)}</pre> */}
+          <TinaMarkdown components={components} content={props._body} />
         </div>
       </Container>
     </Section>
