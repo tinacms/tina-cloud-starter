@@ -375,7 +375,7 @@ export const tinaConfig = defineConfig({
         if (["authors", "global"].includes(collection.name)) {
           return undefined;
         }
-        if (["pages"].includes(collection.name)) {
+        if (["page"].includes(collection.name)) {
           if (document._sys.filename === "home") {
             return `/`;
           }
