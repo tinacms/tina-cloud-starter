@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "@tinacms/auth": "^0.50.2",
     "date-fns": "^2.23.0",
-    "next": "^12.0.4",
+    "next": "^12.1.0",
     "next-svgr": "^0.0.2",
     "next-tinacms-cloudinary": "^3.5.23",
     "react": "^17.0.2",
