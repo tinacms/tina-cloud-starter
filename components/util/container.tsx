@@ -7,6 +7,7 @@ export const Container = ({
   ...props
 }) => {
   const verticalPadding = {
+    custom: "",
     small: "py-8",
     medium: "py-12",
     large: "py-24",
