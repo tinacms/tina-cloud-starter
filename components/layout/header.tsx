@@ -56,7 +56,7 @@ export const Header = ({ data }) => {
 
   return (
     <div className={`bg-gradient-to-b ${headerColorCss}`}>
-      <Container className="py-0 relative z-10 max-w-8xl">
+      <Container size="custom" className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
