@@ -375,7 +375,7 @@ export const tinaConfig = defineConfig({
      */
     import("tinacms").then(({ RouteMappingPlugin }) => {
       const RouteMapping = new RouteMappingPlugin((collection, document) => {
-        if (["authors", "global"].includes(collection.name)) {
+        if (["author", "global"].includes(collection.name)) {
           return undefined;
         }
         if (["page"].includes(collection.name)) {
