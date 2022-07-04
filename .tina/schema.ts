@@ -1,9 +1,9 @@
 import { defineSchema, defineConfig } from "tinacms";
-import { contentBlockSchema } from "../components/blocks/content";
-import { featureBlockSchema } from "../components/blocks/features";
-import { heroBlockSchema } from "../components/blocks/hero";
-import { testimonialBlockSchema } from "../components/blocks/testimonial";
-import { iconSchema } from "../components/util/icon";
+import { createContentBlockSchema } from "../components/blocks/content";
+import { createFeatureBlockSchema } from "../components/blocks/features";
+import { createHeroBlockSchema } from "../components/blocks/hero";
+import { createTestimonialBlockSchema } from "../components/blocks/testimonial";
+import { createIconSchema } from "../components/util/icon";
 
 const schema = defineSchema({
   collections: [
@@ -125,7 +125,7 @@ const schema = defineSchema({
           label: "Header",
           name: "header",
           fields: [
-            iconSchema,
+            createIconSchema(),
             {
               type: "string",
               label: "Color",
@@ -340,10 +340,10 @@ const schema = defineSchema({
             visualSelector: true,
           },
           templates: [
-            heroBlockSchema,
-            featureBlockSchema,
-            contentBlockSchema,
-            testimonialBlockSchema,
+            createHeroBlockSchema(),
+            createFeatureBlockSchema(),
+            createContentBlockSchema(),
+            createTestimonialBlockSchema(),
           ],
         },
       ],

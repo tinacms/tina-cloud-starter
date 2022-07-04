@@ -162,43 +162,45 @@ const formatFieldLabel = (value: string) => {
   return value.charAt(0).toUpperCase() + value.slice(1);
 };
 
-export const iconSchema: TinaField = {
-  type: "object",
-  label: "Icon",
-  name: "icon",
-  fields: [
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: Object.keys(iconColorClass).map((color) => ({
-        label: formatFieldLabel(color),
-        value: color,
-      })),
-    },
-    {
-      name: "style",
-      label: "Style",
-      type: "string",
-      options: [
-        {
-          label: "Circle",
-          value: "circle",
-        },
-        {
-          label: "Float",
-          value: "float",
-        },
-      ],
-    },
-    {
-      type: "string",
-      label: "Icon",
-      name: "name",
-      options: Object.keys(iconOptions).map((icon) => ({
-        label: formatFieldLabel(icon),
-        value: icon,
-      })),
-    },
-  ],
+export const createIconSchema = (): TinaField => {
+  return {
+    type: "object",
+    label: "Icon",
+    name: "icon",
+    fields: [
+      {
+        type: "string",
+        label: "Color",
+        name: "color",
+        options: Object.keys(iconColorClass).map((color) => ({
+          label: formatFieldLabel(color),
+          value: color,
+        })),
+      },
+      {
+        name: "style",
+        label: "Style",
+        type: "string",
+        options: [
+          {
+            label: "Circle",
+            value: "circle",
+          },
+          {
+            label: "Float",
+            value: "float",
+          },
+        ],
+      },
+      {
+        type: "string",
+        label: "Icon",
+        name: "name",
+        options: Object.keys(iconOptions).map((icon) => ({
+          label: formatFieldLabel(icon),
+          value: icon,
+        })),
+      },
+    ],
+  };
 };

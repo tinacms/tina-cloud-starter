@@ -3,7 +3,7 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import type { TinaTemplate } from "tinacms";
-import { iconSchema } from "../util/icon";
+import { createIconSchema } from "../util/icon";
 
 export const Feature = ({ featuresColor, data, tinaField }) => {
   return (
@@ -63,62 +63,68 @@ export const Features = ({ data, parentField }) => {
   );
 };
 
-const defaultFeature = {
-  title: "Here's Another Feature",
-  text: "This is where you might talk about the feature, if this wasn't just filler text.",
-  icon: {
-    color: "",
-    style: "float",
-    name: "",
-  },
-};
-
-export const featureBlockSchema: TinaTemplate = {
-  name: "features",
-  label: "Features",
-  ui: {
-    previewSrc: "/blocks/features.png",
-    defaultItem: {
-      items: [defaultFeature, defaultFeature, defaultFeature],
+export const createFeatureBlockSchema = (): TinaTemplate => {
+  const defaultFeature = {
+    title: "Here's Another Feature",
+    text: "This is where you might talk about the feature, if this wasn't just filler text.",
+    icon: {
+      color: "",
+      style: "float",
+      name: "",
     },
-  },
-  fields: [
-    {
-      type: "object",
-      label: "Feature Items",
-      name: "items",
-      list: true,
-      ui: {
-        defaultItem: {
-          ...defaultFeature,
-        },
+  };
+
+  return {
+    name: "features",
+    label: "Features",
+    ui: {
+      previewSrc: "/blocks/features.png",
+      defaultItem: {
+        items: [
+          { ...defaultFeature },
+          { ...defaultFeature },
+          { ...defaultFeature },
+        ],
       },
-      fields: [
-        iconSchema,
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-          ui: {
-            component: "textarea",
+    },
+    fields: [
+      {
+        type: "object",
+        label: "Feature Items",
+        name: "items",
+        list: true,
+        ui: {
+          defaultItem: {
+            ...defaultFeature,
           },
         },
-      ],
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
-    },
-  ],
+        fields: [
+          createIconSchema(),
+          {
+            type: "string",
+            label: "Title",
+            name: "title",
+          },
+          {
+            type: "string",
+            label: "Text",
+            name: "text",
+            ui: {
+              component: "textarea",
+            },
+          },
+        ],
+      },
+      {
+        type: "string",
+        label: "Color",
+        name: "color",
+        options: [
+          { label: "Default", value: "default" },
+          { label: "Tint", value: "tint" },
+          { label: "Primary", value: "primary" },
+        ],
+      },
+    ],
+  };
 };
