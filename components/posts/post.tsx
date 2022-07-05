@@ -66,7 +66,7 @@ const components: Components<{
   NewsletterSignup: (props) => {
     return (
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="">
             <TinaMarkdown content={props.children} />
           </div>
@@ -101,6 +101,11 @@ const components: Components<{
       </div>
     );
   },
+  img: (props) => (
+    <div className="flex items-center justify-center">
+      <img src={props.url} alt={props.alt} />
+    </div>
+  ),
 };
 
 export const Post = (props) => {
