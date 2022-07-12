@@ -36,13 +36,13 @@ export const Posts = ({ data }) => {
                   titleColorClasses[theme.color]
                 }`}
               >
-                {post._values.title}{" "}
+                {post.title}{" "}
                 <span className="inline-block opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
                   <BsArrowRight className="inline-block h-8 -mt-1 ml-1 w-auto opacity-70" />
                 </span>
               </h3>
               <div className="prose dark:prose-dark prose-lg w-full max-w-none mb-5">
-                <TinaMarkdown content={post._values.excerpt} />
+                <TinaMarkdown content={post.excerpt} />
               </div>
               <div className="flex items-center -mb-2">
                 <div className="flex-shrink-0 mr-2">

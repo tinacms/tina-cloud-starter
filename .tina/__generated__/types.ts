@@ -611,7 +611,7 @@ export type LayoutQueryFragmentFragment = { __typename?: 'Query', global: { __ty
 export type PageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PageQueryQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', id: string, _values: any, author?: { __typename?: 'Author', name?: string | null, avatar?: string | null } | null, _sys: { __typename?: 'SystemInfo', filename: string } } | null } | null> | null }, global: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null, style?: string | null, name?: string | null } | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null, label?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', color?: string | null, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null, twitter?: string | null, instagram?: string | null, github?: string | null } | null } | null, theme?: { __typename: 'GlobalTheme', color?: string | null, font?: string | null, icon?: string | null, darkMode?: string | null } | null } };
+export type PageQueryQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', title?: string | null, heroImg?: string | null, excerpt?: any | null, date?: string | null, _body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string }, author?: { __typename: 'Author', name?: string | null, avatar?: string | null, id: string } | null } | null } | null> | null }, global: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null, style?: string | null, name?: string | null } | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null, label?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', color?: string | null, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null, twitter?: string | null, instagram?: string | null, github?: string | null } | null } | null, theme?: { __typename: 'GlobalTheme', color?: string | null, font?: string | null, icon?: string | null, darkMode?: string | null } | null } };
 
 export type ContentQueryQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -825,22 +825,24 @@ export const PageQueryDocument = gql`
   postConnection {
     edges {
       node {
-        id
-        _values
-        author {
-          ... on Author {
-            ...AuthorParts
-          }
-        }
         _sys {
           filename
+        }
+        ...PostParts
+        author {
+          __typename
+          ... on Author {
+            name
+            avatar
+            id
+          }
         }
       }
     }
   }
 }
     ${LayoutQueryFragmentFragmentDoc}
-${AuthorPartsFragmentDoc}`;
+${PostPartsFragmentDoc}`;
 export const ContentQueryDocument = gql`
     query ContentQuery($relativePath: String!) {
   ...LayoutQueryFragment

@@ -3,21 +3,22 @@ query PageQuery {
   postConnection {
     edges {
       node {
-        id
-        _values
-        author {
-          ... on Author {
-            ...AuthorParts
-          }
-        }
         _sys {
           filename
+        }
+        ...PostParts
+        author {
+          __typename
+          ... on Author {
+            name
+            avatar
+            id
+          }
         }
       }
     }
   }
 }
-
 query ContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
