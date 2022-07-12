@@ -2108,6 +2108,13 @@
   dependencies:
     zod "^3.14.3"
 
+"@tinacms/schema-tools@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-0.0.8.tgz#4caf25429d8252c3a4b432e6930ee72f7cdf7af5"
+  integrity sha512-VTlQXzABJWKgra6G9v3SuhukHeXh8bz19Mo8tOhj4OocCn9rwNic0gFf9xgz/GQ8VwtMJTja8Ec6s+jmyQ4Ctg==
+  dependencies:
+    zod "^3.14.3"
+
 "@tinacms/sharedctx@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.1.2.tgz#c7568304868cf9da2412805e4559e5f80b425e1f"
@@ -8988,16 +8995,16 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-tinacms@^0.68.12:
-  version "0.68.12"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.68.12.tgz#a3182e964c75bb14af3ea47abb0c73f90b893214"
-  integrity sha512-wQEi5KXHPnChQGiAY6LobflX5vjU68kW1nItYocZBPA6FSy/UEK0dzSQEk1lw8NqA66X5nhFR+7jHWp5SH2Uyw==
+tinacms@^0.68.13:
+  version "0.68.13"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.68.13.tgz#be86c309219811b13dc13a9af82314bcca560948"
+  integrity sha512-o0UncLXl1EXycjhWOga5E77wdo6HlgEOdhO1g8OVjEtMl/IORnUnttNyqrfHvB59ZauPkMyqVnRQRwACOyBCAw==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.5.0"
     "@heroicons/react" "^1.0.4"
     "@react-hook/window-size" "^3.0.7"
-    "@tinacms/schema-tools" "0.0.7"
+    "@tinacms/schema-tools" "0.0.8"
     "@tinacms/sharedctx" "0.1.2"
     "@tinacms/toolkit" "0.56.35"
     crypto-js "^4.0.0"
