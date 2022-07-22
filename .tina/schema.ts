@@ -7,6 +7,13 @@ import { iconSchema } from "../components/util/icon";
 
 const schema = defineSchema({
   config: {
+    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
+    branch:
+      process.env.NEXT_PUBLIC_TINA_BRANCH ||
+      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+      process.env.HEAD ||
+      "main",
+    token: process.env.NEXT_PUBLIC_TINA_TOKEN!,
     media: {
       // If you wanted cloudinary do this
       // loadCustomStore: async () => {
@@ -365,14 +372,7 @@ const schema = defineSchema({
   ],
 });
 
-const branch = "main";
-const apiURL =
-  process.env.NODE_ENV == "development"
-    ? "http://localhost:4001/graphql"
-    : `https://content.tinajs.io/content/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
-
 export const tinaConfig = defineConfig({
-  apiURL,
   schema,
   cmsCallback: (cms) => {
     /**
