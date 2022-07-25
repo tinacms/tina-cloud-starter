@@ -7,6 +7,9 @@ import { iconSchema } from "../components/util/icon";
 
 const schema = defineSchema({
   config: {
+    branch: "main",
+    clientId: "some-client",
+    token: "some-token",
     media: {
       // If you wanted cloudinary do this
       // loadCustomStore: async () => {
