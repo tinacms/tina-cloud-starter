@@ -165,7 +165,7 @@ type GlobalConnection implements Connection {
 }
 
 type Author implements Node & Document {
-  name: String
+  name: String!
   avatar: String
   id: ID!
   _sys: SystemInfo!
