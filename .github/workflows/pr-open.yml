@@ -5,7 +5,7 @@ on:
 env:
   NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
   NEXT_PUBLIC_TINA_TOKEN: ${{ secrets.NEXT_PUBLIC_TINA_TOKEN }}
-  NEXT_PUBLIC_TINA_BRANCH: ${{ github.ref_name }}
+  NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref }}
 jobs:
   build:
     runs-on: ubuntu-latest
