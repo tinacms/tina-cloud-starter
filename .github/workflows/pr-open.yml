@@ -3,7 +3,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 env:
-  FOO_REF_NAME: "new-client"
+  NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+  NEXT_PUBLIC_TINA_TOKEN: ${{ secrets.NEXT_PUBLIC_TINA_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
