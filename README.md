@@ -17,7 +17,7 @@ The content is managed through Markdown and JSON files stored in your GitHub rep
 - Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), Yarn installed for local development.
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
-## Local development
+## Local Development
 
 Install the project's dependencies:
 
@@ -38,7 +38,7 @@ yarn dev
 - http://localhost:3000/exit-admin : log out of Tina Cloud
 - http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
 
-### Using Starter Locally
+### Building the Starter Locally (Using the hosted content API)
 
 Replace the `.env.local.example`, with `.env.local`
 
@@ -46,6 +46,12 @@ Replace the `.env.local.example`, with `.env.local`
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
 TINA_TOKEN=<get this from the project you create at app.tina.io>
 NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
+```
+
+Build the project:
+
+```bash
+yarn build
 ```
 
 ## Getting Help
