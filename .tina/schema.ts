@@ -5,17 +5,14 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 
-console.log("GITHUB_REF_NAME ", process.env.GITHUB_REF_NAME);
-console.log("FOO_REF_NAME ", process.env.FOO_REF_NAME);
-
 const schema = defineSchema({
   config: {
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
     branch:
-      process.env.NEXT_PUBLIC_TINA_BRANCH! ||
-      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! ||
-      process.env.HEAD! ||
-      process.env.GITHUB_REF_NAME!,
+      process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
+      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
+      process.env.HEAD! || // Netlify branch env
+      process.env.GITHUB_REF?.split("/").pop()!, // GitHub action branch env
     token: process.env.NEXT_PUBLIC_TINA_TOKEN!,
     media: {
       // If you wanted cloudinary do this
