@@ -9,10 +9,10 @@ const schema = defineSchema({
   config: {
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
     branch:
-      process.env.NEXT_PUBLIC_TINA_BRANCH ||
-      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
-      process.env.HEAD ||
-      "main",
+      process.env.NEXT_PUBLIC_TINA_BRANCH! ||
+      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! ||
+      process.env.HEAD! ||
+      process.env.GITHUB_REF_NAME!,
     token: process.env.NEXT_PUBLIC_TINA_TOKEN!,
     media: {
       // If you wanted cloudinary do this
