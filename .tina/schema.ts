@@ -7,7 +7,7 @@ import { iconSchema } from "../components/util/icon";
 
 console.log(
   "process.env.NEXT_PUBLIC_TINA_CLIENT_ID ",
-  process.env.NEXT_PUBLIC_TINA_CLIENT_ID
+  process.env.NEXT_PUBLIC_TINA_CLIENT_ID?.charAt(1)
 );
 console.log(
   "process.env.NEXT_PUBLIC_TINA_TOKEN ",
@@ -19,7 +19,7 @@ console.log(
   process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD! || // Netlify branch env
-    process.env.GITHUB_REF_NAME?.split("/").pop()!
+    process.env.GITHUB_REF_NAME!
 );
 
 const schema = defineSchema({
