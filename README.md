@@ -44,7 +44,7 @@ Replace the `.env.local.example`, with `.env.local`
 
 ```
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
-NEXT_PUBLIC_TINA_TOKEN=<get this from the project you create at app.tina.io>
+TINA_TOKEN=<get this from the project you create at app.tina.io>
 NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
 ```
 
