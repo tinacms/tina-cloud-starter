@@ -5,6 +5,23 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 
+console.log(
+  "process.env.NEXT_PUBLIC_TINA_CLIENT_ID ",
+  process.env.NEXT_PUBLIC_TINA_CLIENT_ID
+);
+console.log(
+  "process.env.NEXT_PUBLIC_TINA_TOKEN ",
+  process.env.NEXT_PUBLIC_TINA_TOKEN?.charAt(1)
+);
+console.log("process.env.GITHUB_REF ", process.env.GITHUB_REF);
+console.log(
+  "branch ",
+  process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
+    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
+    process.env.HEAD! || // Netlify branch env
+    process.env.GITHUB_REF?.split("/").pop()!
+);
+
 const schema = defineSchema({
   config: {
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
