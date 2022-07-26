@@ -13,13 +13,13 @@ console.log(
   "process.env.NEXT_PUBLIC_TINA_TOKEN ",
   process.env.NEXT_PUBLIC_TINA_TOKEN?.charAt(1)
 );
-console.log("process.env.GITHUB_REF ", process.env.GITHUB_REF);
+console.log("process.env.GITHUB_REF_NAME ", process.env.GITHUB_REF_NAME);
 console.log(
   "branch ",
   process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD! || // Netlify branch env
-    process.env.GITHUB_REF?.split("/").pop()!
+    process.env.GITHUB_REF_NAME?.split("/").pop()!
 );
 
 const schema = defineSchema({
@@ -29,7 +29,7 @@ const schema = defineSchema({
       process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
       process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
       process.env.HEAD! || // Netlify branch env
-      process.env.GITHUB_REF?.split("/").pop()!, // GitHub action branch env
+      process.env.GITHUB_REF_NAME!, // GitHub action branch env
     token: process.env.NEXT_PUBLIC_TINA_TOKEN!,
     media: {
       // If you wanted cloudinary do this
