@@ -1,4 +1,4 @@
-import { defineSchema, defineConfig } from "tinacms";
+import { defineSchema, defineConfig, RouteMappingPlugin } from "tinacms";
 import { contentBlockSchema } from "../components/blocks/content";
 import { featureBlockSchema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
@@ -377,24 +377,22 @@ export const tinaConfig = defineConfig({
     /**
      * When `tina-admin` is enabled, this plugin configures contextual editing for collections
      */
-    import("tinacms").then(({ RouteMappingPlugin }) => {
-      const RouteMapping = new RouteMappingPlugin((collection, document) => {
-        if (["author", "global"].includes(collection.name)) {
-          return undefined;
+    const RouteMapping = new RouteMappingPlugin((collection, document) => {
+      if (["author", "global"].includes(collection.name)) {
+        return undefined;
+      }
+      if (["page"].includes(collection.name)) {
+        if (document._sys.filename === "home") {
+          return `/`;
         }
-        if (["page"].includes(collection.name)) {
-          if (document._sys.filename === "home") {
-            return `/`;
-          }
-          if (document._sys.filename === "about") {
-            return `/about`;
-          }
-          return undefined;
+        if (document._sys.filename === "about") {
+          return `/about`;
         }
-        return `/${collection.name}/${document._sys.filename}`;
-      });
-      cms.plugins.add(RouteMapping);
+        return undefined;
+      }
+      return `/${collection.name}/${document._sys.filename}`;
     });
+    cms.plugins.add(RouteMapping);
 
     return cms;
   },
