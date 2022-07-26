@@ -13,6 +13,10 @@ console.log(
   "process.env.NEXT_PUBLIC_TINA_TOKEN ",
   process.env.NEXT_PUBLIC_TINA_TOKEN?.charAt(1)
 );
+console.log(
+  "process.env.NEXT_PUBLIC_TINA_BRANCH ",
+  process.env.NEXT_PUBLIC_TINA_BRANCH
+);
 console.log("process.env.GITHUB_REF_NAME ", process.env.GITHUB_REF_NAME);
 console.log(
   "branch ",
