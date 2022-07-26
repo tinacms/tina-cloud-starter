@@ -2,7 +2,8 @@ name: Build Pull request
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
+env:
+  FOO_REF_NAME: "new-client"
 jobs:
   build:
     runs-on: ubuntu-latest
