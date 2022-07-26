@@ -5,6 +5,9 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 
+console.log("GITHUB_REF_NAME ", process.env.GITHUB_REF_NAME);
+console.log("FOO_REF_NAME ", process.env.FOO_REF_NAME);
+
 const schema = defineSchema({
   config: {
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
