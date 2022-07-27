@@ -21,7 +21,7 @@ export default function HomePage(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.PageQuery();
+  const tinaProps = await client.queries.pageQuery();
   return {
     props: {
       ...tinaProps,
