@@ -1,4 +1,4 @@
-query PageQuery {
+query pageQuery {
   ...LayoutQueryFragment
   postConnection {
     edges {
@@ -18,14 +18,14 @@ query PageQuery {
   }
 }
 
-query ContentQuery($relativePath: String!) {
+query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
     ...PageParts
   }
 }
 
-query BlogPostQuery($relativePath: String!) {
+query blogPostQuery($relativePath: String!) {
   ...LayoutQueryFragment
   post(relativePath: $relativePath) {
     ...PostParts
