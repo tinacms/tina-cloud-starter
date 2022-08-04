@@ -4,6 +4,7 @@ import { featureBlockSchema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
+import { client } from "./__generated__/client";
 
 const schema = defineSchema({
   config: {
@@ -372,6 +373,7 @@ const schema = defineSchema({
 });
 
 export const tinaConfig = defineConfig({
+  client,
   schema,
   cmsCallback: (cms) => {
     /**
