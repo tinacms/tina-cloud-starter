@@ -1972,10 +1972,10 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
-"@tinacms/cli@^0.61.0":
-  version "0.61.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.61.0.tgz#548ac03ac582dfaf7bd278906b5c480d6421e510"
-  integrity sha512-he3dBYECy9tF7Awx0dkdXFstrJQp4FHQSiQBwAIxbGo//f5DqtTWSH0L9NH/XeBLMIm/E0PmtZeYdMd8LVmJQQ==
+"@tinacms/cli@^0.61.1":
+  version "0.61.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.61.1.tgz#9b2b0ff4d99949b71d02236a2253cd7009358b2b"
+  integrity sha512-YdfHHBhN7P2X5+aXnWWr4SR8AilxPRA8xy+uqCXH45/rr3rFptQ26xQkTolZd5JhzheSuM6+pqPlpxUFEZnsMw==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -1986,7 +1986,7 @@
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
     "@tinacms/datalayer" "0.2.2"
-    "@tinacms/graphql" "0.62.0"
+    "@tinacms/graphql" "0.62.1"
     "@tinacms/metrics" "0.0.3"
     "@tinacms/schema-tools" "0.0.9"
     add "^2.0.6"
@@ -2046,10 +2046,10 @@
     prettier "^2.2.1"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.62.0":
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.62.0.tgz#e40972f14cfbcf903e2713119f1abe767f416168"
-  integrity sha512-LyCkSSVZ1PspzhGXfXdrlrhxOL+ppwVte5ecrk3JhDsvwKHDu7WYBmZ8xjS1/44Pbu3FMs61EyXNLjEA0SCtiA==
+"@tinacms/graphql@0.62.1":
+  version "0.62.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.62.1.tgz#bc5629bf3c27f806a29e329e9382ca5e2515530a"
+  integrity sha512-ZcP29EecJFcj4PjZQEJnFaIjVNEHJT5knWR6VPgT2j5iq5AhA0WiLPjafxSBhYIThyS9DE3dudiQDBVsrEC7pA==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@tinacms/datalayer" "0.2.2"
