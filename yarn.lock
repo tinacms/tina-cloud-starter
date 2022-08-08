@@ -2114,10 +2114,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-0.1.2.tgz#c7568304868cf9da2412805e4559e5f80b425e1f"
   integrity sha512-AQr78yxUB67UFl4fWaxewxESaYJmpOwl3ZLDZtgMe3FC/f6lQy8ysknBExLRVJ5kiVXoDsLcptp2CgcOa0iKJQ==
 
-"@tinacms/toolkit@0.56.36":
-  version "0.56.36"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.36.tgz#bd204320b9cda7edf098834badcabec5f7371b1e"
-  integrity sha512-khD+rB7GJTKUd4cWjEUjcfIQlZkDSym9xfaC4UVyHxTn8xoOS3KiNRyOWeMmDJr/I22+IwWAXjCovHw5S3WJwA==
+"@tinacms/toolkit@0.56.37":
+  version "0.56.37"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.37.tgz#d01a04d4884402562a26cd8d5c3e57b2abe19069"
+  integrity sha512-/TCOWr45riBXT5JU415DW+I41FWh9wkIiNqnoXLHuudblg74SpzkFdkIcvju/jBSKXWcic0Di1gJIpivJexa/A==
   dependencies:
     "@floating-ui/dom" "^0.1.7"
     "@floating-ui/react-dom" "^0.3.3"
@@ -8743,10 +8743,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-tinacms@^0.68.14:
-  version "0.68.14"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.68.14.tgz#877256843d37a177a43b7531afa966119737969c"
-  integrity sha512-o+jOEvzuVZ9FjL1O+vV/EgxypAfe03/gwn/hQWB0sCVpBkMzN0JUa7fwcTlGZrK+91wXPG4qQ0VaF2PnBTuThQ==
+tinacms@^0.68.15:
+  version "0.68.15"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.68.15.tgz#187454f38a9cbfea1266adac94f395b45ecd5b75"
+  integrity sha512-/bnucniGFPotWYhGxKPsHDWc8B36VmzKzGawKvtVFfmOIqcJ4K/Qesls65txOXucIAb8IId1B3m7MzgSWq4W+w==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.5.0"
@@ -8754,7 +8754,7 @@ tinacms@^0.68.14:
     "@react-hook/window-size" "^3.0.7"
     "@tinacms/schema-tools" "0.0.9"
     "@tinacms/sharedctx" "0.1.2"
-    "@tinacms/toolkit" "0.56.36"
+    "@tinacms/toolkit" "0.56.37"
     crypto-js "^4.0.0"
     fetch-ponyfill "^7.1.0"
     final-form "4.20.1"
