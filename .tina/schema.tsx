@@ -5,6 +5,7 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { iconSchema } from "../components/util/icon";
 import { client } from "./__generated__/client";
+import React from "react";
 
 const schema = defineSchema({
   config: {
@@ -38,6 +39,9 @@ const schema = defineSchema({
           type: "string",
           label: "Title",
           name: "title",
+          ui: {
+            component: () => <div>Hello</div>,
+          },
         },
         {
           type: "image",
