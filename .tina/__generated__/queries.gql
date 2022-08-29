@@ -24,6 +24,12 @@ query postConnection($before: String, $after: String, $first: Float, $last: Floa
     sort: $sort
     filter: $filter
   ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
     totalCount
     edges {
       node {
@@ -70,6 +76,12 @@ query globalConnection($before: String, $after: String, $first: Float, $last: Fl
     sort: $sort
     filter: $filter
   ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
     totalCount
     edges {
       node {
@@ -116,6 +128,12 @@ query authorConnection($before: String, $after: String, $first: Float, $last: Fl
     sort: $sort
     filter: $filter
   ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
     totalCount
     edges {
       node {
@@ -162,6 +180,12 @@ query pageConnection($before: String, $after: String, $first: Float, $last: Floa
     sort: $sort
     filter: $filter
   ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
     totalCount
     edges {
       node {
