@@ -28,7 +28,7 @@ export default function BlogPostPage(
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.blogPostQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${params.relativePath}.mdx`,
   });
   return {
     props: {
@@ -39,16 +39,17 @@ export const getStaticProps = async ({ params }) => {
 
 /**
  * To build the blog post pages we just iterate through the list of
- * posts and provide their "filename" as part of the URL path
+ * posts and provide their "relativePath" as part of the URL path
  *
  * So a blog post at "content/posts/hello.md" would
  * be viewable at http://localhost:3000/posts/hello
  */
 export const getStaticPaths = async () => {
   const postsListData = await client.queries.postConnection();
+
   return {
     paths: postsListData.data.postConnection.edges.map((post) => ({
-      params: { filename: post.node._sys.filename },
+      params: { relativePath: post.node._sys.breadcrumbs.join("/") },
     })),
     fallback: "blocking",
   };

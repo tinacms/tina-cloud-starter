@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
-
 export const Posts = ({ data }) => {
   const theme = useTheme();
   const titleColorClasses = {
@@ -21,12 +20,9 @@ export const Posts = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
+        const postPath = post._sys.breadcrumbs.join("/");
         return (
-          <Link
-            key={post._sys.filename}
-            href={`/post/` + post._sys.filename}
-            passHref
-          >
+          <Link key={postPath} href={`/post/` + postPath} passHref>
             <a
               key={post.id}
               className="group block px-8 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"

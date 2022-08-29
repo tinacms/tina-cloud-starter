@@ -12,6 +12,8 @@ query pageQuery {
         }
         _sys {
           filename
+          relativePath
+          breadcrumbs(excludeExtension: true)
         }
       }
     }
