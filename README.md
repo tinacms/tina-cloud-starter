@@ -40,7 +40,7 @@ yarn dev
 
 ### Building the Starter Locally (Using the hosted content API)
 
-Replace the `.env.local.example`, with `.env.local`
+Replace the `.env.example`, with `.env`
 
 ```
 NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
