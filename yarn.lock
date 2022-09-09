@@ -2321,7 +2321,7 @@
     vite "^2.4.3"
     vite-node "^0.18.1"
 
-"@tinacms/cli@^0.61.10":
+"@tinacms/cli@0.61.10":
   version "0.61.10"
   resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.61.10.tgz#401d1b6123039e2c321887cb635eaebee751f10a"
   integrity sha512-OCbDP51IcWxoETUbQnFkeTFmCSh9nkg/07APtsHZpGZfBct2DRi6oJjZU9EUaAlRsTz7C0pmNIGkvUKnVt0vOg==
@@ -10928,7 +10928,7 @@ throat@^6.0.1:
   resolved "https://registry.yarnpkg.com/throat/-/throat-6.0.1.tgz#d514fedad95740c12c2d7fc70ea863eb51ade375"
   integrity sha512-8hmiGIJMDlwjg7dlJ4yKGLK8EsYqKgPWbG3b4wjJddKNwc7N7Dpn08Df4szr/sZdMVeOstrdYSsqzX6BYbcB+w==
 
-tinacms@0.69.5, tinacms@^0.69.5:
+tinacms@0.69.5:
   version "0.69.5"
   resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.69.5.tgz#3f4f48769a896b19d762e5c34044430d2eaf1327"
   integrity sha512-YEklLS7EmSw/AdKGA2+UN5pB7fCjbi4LwsZB6NlMbcsFaCBxEKH4OfCK5GL+Rca5SF4gn2qX2IA3gT5ilVhqFg==
