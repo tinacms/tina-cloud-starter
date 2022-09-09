@@ -5438,7 +5438,7 @@ estree-walker@^2.0.1:
 
 estree-walker@^3.0.0:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-3.0.1.tgz#c2a9fb4a30232f5039b7c030b37ead691932debd"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estre,e-walker-3.0.1.tgz#c2a9fb4a30232f5039b7c030b37ead691932debd"
   integrity sha512-woY0RUD87WzMBUiZLx8NsYr23N5BKsOMZHhu2hoNRVh6NXGfoiT1KOL8G3UHlJAnEDGmfa5ubNA/AacfG+Kb0g==
 
 esutils@^2.0.2:
