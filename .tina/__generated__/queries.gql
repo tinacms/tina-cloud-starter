@@ -32,6 +32,7 @@ query postConnection($before: String, $after: String, $first: Float, $last: Floa
     }
     totalCount
     edges {
+      cursor
       node {
         ... on Document {
           _sys {
@@ -84,6 +85,7 @@ query globalConnection($before: String, $after: String, $first: Float, $last: Fl
     }
     totalCount
     edges {
+      cursor
       node {
         ... on Document {
           _sys {
@@ -136,6 +138,7 @@ query authorConnection($before: String, $after: String, $first: Float, $last: Fl
     }
     totalCount
     edges {
+      cursor
       node {
         ... on Document {
           _sys {
@@ -188,6 +191,7 @@ query pageConnection($before: String, $after: String, $first: Float, $last: Floa
     }
     totalCount
     edges {
+      cursor
       node {
         ... on Document {
           _sys {
