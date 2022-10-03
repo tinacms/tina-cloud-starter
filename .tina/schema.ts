@@ -33,6 +33,11 @@ const schema = defineSchema({
       name: "post",
       path: "content/posts",
       format: "mdx",
+      ui: {
+        router: ({ document }) => {
+          return `/post/${document._sys.filename}`;
+        },
+      },
       fields: [
         {
           type: "string",
@@ -140,6 +145,9 @@ const schema = defineSchema({
       name: "global",
       path: "content/global",
       format: "json",
+      ui: {
+        global: true,
+      },
       fields: [
         {
           type: "object",
@@ -351,6 +359,17 @@ const schema = defineSchema({
       label: "Pages",
       name: "page",
       path: "content/pages",
+      ui: {
+        router: ({ document }) => {
+          if (document._sys.filename === "home") {
+            return `/`;
+          }
+          if (document._sys.filename === "about") {
+            return `/about`;
+          }
+          return undefined;
+        },
+      },
       fields: [
         {
           type: "object",
@@ -375,36 +394,6 @@ const schema = defineSchema({
 export const tinaConfig = defineConfig({
   client,
   schema,
-  cmsCallback: (cms) => {
-    /**
-     * When `tina-admin` is enabled, this plugin configures contextual editing for collections
-     */
-    const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if (["author", "global"].includes(collection.name)) {
-        return undefined;
-      }
-      if (["page"].includes(collection.name)) {
-        if (document._sys.filename === "home") {
-          return `/`;
-        }
-        if (document._sys.filename === "about") {
-          return `/about`;
-        }
-        return undefined;
-      }
-      return `/${collection.name}/${document._sys.filename}`;
-    });
-    cms.plugins.add(RouteMapping);
-
-    return cms;
-  },
-  formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
-    if (formConfig.id === "content/global/index.json") {
-      return createGlobalForm(formConfig);
-    }
-
-    return createForm(formConfig);
-  },
 });
 
 export default schema;
