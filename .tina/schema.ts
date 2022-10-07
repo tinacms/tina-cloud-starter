@@ -162,6 +162,7 @@ const schema = defineSchema({
               name: "nav",
               list: true,
               ui: {
+                // itemProps: (x) => ({ label: x?.label as string }),
                 itemProps: (item) => {
                   return { label: item?.label };
                 },
