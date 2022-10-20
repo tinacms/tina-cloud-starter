@@ -45,12 +45,8 @@ const config = defineStaticConfig({
             type: "string",
             label: "Title",
             name: "title",
-          },
-          {
-            type: "datetime",
-            label: "Foo2",
-            name: "foo",
-            list: true,
+            isTitle: true,
+            required: true,
           },
           {
             type: "image",
@@ -355,6 +351,8 @@ const config = defineStaticConfig({
             type: "string",
             label: "Name",
             name: "name",
+            isTitle: true,
+            required: true,
           },
           {
             type: "string",
@@ -380,6 +378,13 @@ const config = defineStaticConfig({
         },
         fields: [
           {
+            type: "string",
+            label: "Title",
+            name: "title",
+            isTitle: true,
+            required: true,
+          },
+          {
             type: "object",
             list: true,
             name: "blocks",
@@ -399,6 +404,5 @@ const config = defineStaticConfig({
     ],
   },
 });
-console.log(JSON.stringify(config, null, 2));
 
 export default config;
