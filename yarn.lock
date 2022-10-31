@@ -2296,10 +2296,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^0.62.0":
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.62.0.tgz#2f645d1a2f3c63e553bc50bd596c542a741b6e80"
-  integrity sha512-ScJxM3WwJz2KaDUWBSm5ZmxQ7fCiMhXRCJevqGIoeN8KDp7KIrXixChIKGhOMrwopZ7nh1rQ9CayJ+z412wfHQ==
+"@tinacms/cli@^0.62.1":
+  version "0.62.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.62.1.tgz#1789e5830d39ec7abc5d2a1cc4295012a5e5ff1a"
+  integrity sha512-+azWManuxbu0LGxZEXAWVebhUj5iNPptJUb470ncCMujat/5NCXkE7P8wqA+eN/iL3H9mM4lmR7oI9FF9Heuow==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
