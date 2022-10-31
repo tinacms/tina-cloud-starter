@@ -1,6 +1,13 @@
-const withSvgr = require("next-svgr");
+module.exports = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
 
-module.exports = withSvgr({
+    return config;
+  },
   async rewrites() {
     return [
       {
@@ -9,4 +16,4 @@ module.exports = withSvgr({
       },
     ];
   },
-});
+};
