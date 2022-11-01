@@ -2265,10 +2265,10 @@
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
 
-"@tinacms/app@0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-0.0.26.tgz#a2ff3044962451fdf1aa32ac63ad43dfb13b9639"
-  integrity sha512-iZ1al4L0fna8fEMHW+yAi7XT8O28jnK0HSkLilb/GOXfAuZk8n6+aE556qTCqutc1FSbzgTRUbFnuKt44BqCTA==
+"@tinacms/app@0.0.0-20221101180417":
+  version "0.0.0-20221101180417"
+  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-0.0.0-20221101180417.tgz#060605aef6d59710aa674f48b1f541700abe296b"
+  integrity sha512-5lqli69aliRg4yJlDyYz3tYAy7xjZoiWJ9PkZ8GpkeBRe/lJ4s1m18ZvuyU4veQ6TH8SPG8ShmWUsjxuJsUgcA==
   dependencies:
     "@headlessui/react" "1.6.6"
     "@heroicons/react" "1.0.6"
@@ -2296,10 +2296,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^0.62.0":
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.62.0.tgz#2f645d1a2f3c63e553bc50bd596c542a741b6e80"
-  integrity sha512-ScJxM3WwJz2KaDUWBSm5ZmxQ7fCiMhXRCJevqGIoeN8KDp7KIrXixChIKGhOMrwopZ7nh1rQ9CayJ+z412wfHQ==
+"@tinacms/cli@^0.0.0-20221101180417":
+  version "0.0.0-20221101180417"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-20221101180417.tgz#f902a29c7ce8443a1a2d891eccc7f04875f898b3"
+  integrity sha512-EzrfaMac+7fLf3KqmaIGmd6f0tYSEZwYHeWkFPxm10Pm/t+Pja4k7Id5QmrSkIFG7VeI/3zwOdo9iHlCxNEV6w==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -2309,7 +2309,7 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/app" "0.0.26"
+    "@tinacms/app" "0.0.0-20221101180417"
     "@tinacms/datalayer" "0.2.4"
     "@tinacms/graphql" "0.63.18"
     "@tinacms/metrics" "0.0.3"
