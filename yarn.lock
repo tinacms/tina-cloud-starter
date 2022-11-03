@@ -2265,10 +2265,10 @@
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
 
-"@tinacms/app@0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-0.0.26.tgz#a2ff3044962451fdf1aa32ac63ad43dfb13b9639"
-  integrity sha512-iZ1al4L0fna8fEMHW+yAi7XT8O28jnK0HSkLilb/GOXfAuZk8n6+aE556qTCqutc1FSbzgTRUbFnuKt44BqCTA==
+"@tinacms/app@0.0.0-20221103164732":
+  version "0.0.0-20221103164732"
+  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-0.0.0-20221103164732.tgz#fe522e0227c82c24534ea9b0ee48c4ab997a8de8"
+  integrity sha512-4iAmxsx710D2GXEvK6LILIvE/unc+F7BMojaF3egMBwnPOvxSEZuIeWHZ0frK0fxV+HXHpFA4nLPDR5GhiGbvQ==
   dependencies:
     "@headlessui/react" "1.6.6"
     "@heroicons/react" "1.0.6"
@@ -2296,10 +2296,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^0.62.0":
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.62.0.tgz#2f645d1a2f3c63e553bc50bd596c542a741b6e80"
-  integrity sha512-ScJxM3WwJz2KaDUWBSm5ZmxQ7fCiMhXRCJevqGIoeN8KDp7KIrXixChIKGhOMrwopZ7nh1rQ9CayJ+z412wfHQ==
+"@tinacms/cli@0.0.0-20221103164732":
+  version "0.0.0-20221103164732"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-20221103164732.tgz#335fac25d1ad2286fedf7cdfc33225309d671fe3"
+  integrity sha512-/iAsxykDJgdZ7/KzNh/LSHsLYGzgiZaBr96DOu6qkHaq/Go5xlBPBtRhanfB8j0PN4gS6z3xuWlhV2PmptE90g==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -2309,11 +2309,11 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/app" "0.0.26"
+    "@tinacms/app" "0.0.0-20221103164732"
     "@tinacms/datalayer" "0.2.4"
-    "@tinacms/graphql" "0.63.18"
+    "@tinacms/graphql" "0.0.0-20221103164732"
     "@tinacms/metrics" "0.0.3"
-    "@tinacms/schema-tools" "0.2.0"
+    "@tinacms/schema-tools" "0.0.0-20221103164732"
     add "^2.0.6"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
@@ -2340,6 +2340,7 @@
     normalize-path "^3.0.0"
     progress "^2.0.3"
     prompts "^2.4.1"
+    url-pattern "^1.0.3"
     yarn "^1.22.17"
     yup "^0.32.9"
 
@@ -2369,15 +2370,15 @@
     prettier "^2.2.1"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.63.18":
-  version "0.63.18"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.63.18.tgz#cac44592f083aa11edf29e38c0808271635d266e"
-  integrity sha512-4cPlLSrWMGNoiTr6/dqVRUFWQAtvAuQ7Qi4Bg/LNJ2TjExPIMsdiUcv/S8TnKFvyAjRT1vNWCqwyq3YTX/E6lA==
+"@tinacms/graphql@0.0.0-20221103164732":
+  version "0.0.0-20221103164732"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-20221103164732.tgz#bf3997a7cd69136e245e0620cc248831a81fbbc9"
+  integrity sha512-11H53Fs2ol2UkKfAgEacgWG7qx2u34qhJg+jiUuBttm7TmtOS2zRu1QLC4pGlqhu7P8qKBwhLoa5tMWzfgUWwQ==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@tinacms/datalayer" "0.2.4"
-    "@tinacms/mdx" "0.61.15"
-    "@tinacms/schema-tools" "0.2.0"
+    "@tinacms/mdx" "0.0.0-20221103164732"
+    "@tinacms/schema-tools" "0.0.0-20221103164732"
     body-parser "^1.19.0"
     cors "^2.8.5"
     dataloader "^2.0.0"
@@ -2419,12 +2420,12 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/mdx@0.61.15":
-  version "0.61.15"
-  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-0.61.15.tgz#b0aab517406bf08e265fa90109b35f2b3f34c6fd"
-  integrity sha512-xb4T6xv+HpUF2htAm3KJ0qs84v4slFy+/jHtkseessRCkmaF1NOndW5Dneq4JToyqXwK81yBELkiNrHqwP3aQg==
+"@tinacms/mdx@0.0.0-20221103164732":
+  version "0.0.0-20221103164732"
+  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-0.0.0-20221103164732.tgz#cf167b0136150e17d569d957b8acea5e4b45c1cf"
+  integrity sha512-c6S/Uu/lIAkoqmbIEY/8FT8j0xSB25kBckTI/51eP7H53sZU45MIrxO5VLUl2EtEMqqkggliC+F6dS9PnorvMQ==
   dependencies:
-    "@tinacms/schema-tools" "0.2.0"
+    "@tinacms/schema-tools" "0.0.0-20221103164732"
     acorn "^8.7.1"
     lodash-es "^4.17.21"
     mdast-util-mdx-jsx "^2.0.1"
@@ -2432,6 +2433,7 @@
     prettier "^2.7.1"
     remark "^14.0.2"
     remark-mdx "^2.1.2"
+    remark-unwrap-images "^3.0.1"
     unist-util-visit "^4.1.0"
     vfile "^4.2.0"
 
@@ -2441,6 +2443,13 @@
   integrity sha512-qopRyLvkbNuHuZGHdXsJ6M1DxtB65aecDIf8s8XZP9l6NfEfmWPC4/1uMYgG4PtTLgRymprM0l51XLqneq+5Ng==
   dependencies:
     isomorphic-fetch "^3.0.0"
+
+"@tinacms/schema-tools@0.0.0-20221103164732":
+  version "0.0.0-20221103164732"
+  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-0.0.0-20221103164732.tgz#59ea5a109462e10be7edcf49d8872e79474ad179"
+  integrity sha512-5pbM1QgyDI2iB7DNrK8+KbgNS+5VpTsPp/SC4YrxUZh50GGfFXEAhWITX9zCD5vQAcW77KMoB397JR21x9km3g==
+  dependencies:
+    zod "^3.14.3"
 
 "@tinacms/schema-tools@0.2.0":
   version "0.2.0"
@@ -5406,6 +5415,11 @@ hast-util-whitespace@^1.0.0, hast-util-whitespace@^1.0.4:
   resolved "https://registry.yarnpkg.com/hast-util-whitespace/-/hast-util-whitespace-1.0.4.tgz#e4fe77c4a9ae1cb2e6c25e02df0043d0164f6e41"
   integrity sha512-I5GTdSfhYfAPNztx2xJRQpG8cuDSNt599/7YUn7Gx/WxNMsG+a835k97TDkFgk123cwjfwINaZknkKkphx/f2A==
 
+hast-util-whitespace@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-whitespace/-/hast-util-whitespace-2.0.0.tgz#4fc1086467cc1ef5ba20673cb6b03cec3a970f1c"
+  integrity sha512-Pkw+xBHuV6xFeJprJe2BBEoDV+AvQySaz3pPDRUs5PNZEMQjpXJJueqrpcHIXxnWTcAGi/UOCgVShlkY6kLoqg==
+
 header-case@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/header-case/-/header-case-2.0.4.tgz#5a42e63b55177349cf405beb8d775acabb92c063"
@@ -8152,6 +8166,16 @@ remark-stringify@^9.0.0:
   integrity sha512-mWmNg3ZtESvZS8fv5PTvaPckdL4iNlCHTt8/e/8oN08nArHRHjNZMKzA/YW3+p7/lYqIw4nx1XsjCBo/AxNChg==
   dependencies:
     mdast-util-to-markdown "^0.6.0"
+
+remark-unwrap-images@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/remark-unwrap-images/-/remark-unwrap-images-3.0.1.tgz#22a547baa8fa1e2c66c7d087ebd9cf829a74a255"
+  integrity sha512-5VUY0n+J9lPTPfkct5S3/SbutryBjp8J/4mbgtlkDrOk3h8jde0hyqdYUJOoJKherZezS08tjd6i4+nnQ+wl5w==
+  dependencies:
+    "@types/mdast" "^3.0.0"
+    hast-util-whitespace "^2.0.0"
+    unified "^10.0.0"
+    unist-util-visit "^4.0.0"
 
 remark@^13.0.0:
   version "13.0.0"
