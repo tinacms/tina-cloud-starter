@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
+import format from "date-fns/format";
 
 export const Posts = ({ data }) => {
   const theme = useTheme();
@@ -21,6 +22,11 @@ export const Posts = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
+        const date = new Date(post.date);
+        let formattedDate = "";
+        if (!isNaN(date.getTime())) {
+          formattedDate = format(date, "MMM dd, yyyy");
+        }
         return (
           <Link
             key={post._sys.filename}
@@ -29,10 +35,10 @@ export const Posts = ({ data }) => {
           >
             <a
               key={post.id}
-              className="group block px-8 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"
+              className="group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
             >
               <h3
-                className={`text-gray-900 dark:text-white text-3xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
+                className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
                   titleColorClasses[theme.color]
                 }`}
               >
@@ -41,10 +47,10 @@ export const Posts = ({ data }) => {
                   <BsArrowRight className="inline-block h-8 -mt-1 ml-1 w-auto opacity-70" />
                 </span>
               </h3>
-              <div className="prose dark:prose-dark prose-lg w-full max-w-none mb-5">
+              <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
                 <TinaMarkdown content={post._values.excerpt} />
               </div>
-              <div className="flex items-center -mb-2">
+              <div className="flex items-center">
                 <div className="flex-shrink-0 mr-2">
                   <img
                     className="h-10 w-10 object-cover rounded-full shadow-sm"
@@ -52,15 +58,19 @@ export const Posts = ({ data }) => {
                     alt={post?.author?.name}
                   />
                 </div>
-                <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
+                <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
                   {post?.author?.name}
                 </p>
-                <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
-                  —
-                </span>
-                <p className="text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                  {post.date}
-                </p>
+                {formattedDate !== "" && (
+                  <>
+                    <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
+                      —
+                    </span>
+                    <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
+                      {formattedDate}
+                    </p>
+                  </>
+                )}
               </div>
             </a>
           </Link>

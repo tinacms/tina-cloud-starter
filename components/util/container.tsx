@@ -3,6 +3,7 @@ import React from "react";
 export const Container = ({
   children,
   size = "medium",
+  width = "large",
   className = "",
   ...props
 }) => {
@@ -13,10 +14,16 @@ export const Container = ({
     large: "py-24",
     default: "py-12",
   };
+  const widthClass = {
+    small: "max-w-4xl",
+    medium: "max-w-5xl",
+    large: "max-w-7xl",
+    custom: "",
+  };
 
   return (
     <div
-      className={`max-w-7xl mx-auto px-6 sm:px-8 ${verticalPadding[size]} ${className}`}
+      className={`${widthClass[width]} mx-auto px-6 sm:px-8 ${verticalPadding[size]} ${className}`}
       {...props}
     >
       {children}

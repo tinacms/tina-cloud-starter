@@ -62,6 +62,7 @@ const iconOptions = {
   world: { bi: BiWorld, hi: BiWorld },
   aperture: { bi: FiAperture, hi: FiAperture },
   tina: { bi: TinaIconSvg, hi: TinaIconSvg },
+  none: null,
 };
 
 const iconColorClass: { [name: string]: { regular: string; circle: string } } =
@@ -116,6 +117,10 @@ export const Icon = ({
   className = "",
   tinaField = "",
 }) => {
+  if (iconOptions[data.name] === null) {
+    return null;
+  }
+
   const theme = useTheme();
 
   const iconName = data.name || Object.keys(iconOptions)[0];

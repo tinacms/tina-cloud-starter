@@ -134,7 +134,7 @@ export const Post = (props) => {
 
   return (
     <Section className="flex-1">
-      <Container className={`flex-1 max-w-4xl pb-2`} size="large">
+      <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
           data-tinafield="title"
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
@@ -184,7 +184,7 @@ export const Post = (props) => {
           />
         </div>
       )}
-      <Container className={`flex-1 max-w-4xl pt-4`} size="large">
+      <Container className={`flex-1 pt-4`} width="medium" size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
           <TinaMarkdown components={components} content={props._body} />
         </div>

@@ -161,6 +161,11 @@ const config = defineStaticConfig({
               iconSchema,
               {
                 type: "string",
+                label: "Name",
+                name: "name",
+              },
+              {
+                type: "string",
                 label: "Color",
                 name: "color",
                 options: [
