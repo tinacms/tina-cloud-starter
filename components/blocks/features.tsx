@@ -12,13 +12,13 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
       className="flex-1 flex flex-col gap-6 text-center items-center lg:items-start lg:text-left max-w-xl mx-auto"
       style={{ flexBasis: "16rem" }}
     >
-      {data.icon && (
+      {/* {data.icon && (
         <Icon
           tinaField={`${tinaField}.icon`}
           parentColor={featuresColor}
           data={{ size: "large", ...data.icon }}
         />
-      )}
+      )} */}
       {data.title && (
         <h3
           data-tinafield={`${tinaField}.title`}
