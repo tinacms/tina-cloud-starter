@@ -152,7 +152,7 @@ export const iconSchema: TinaField = {
                         <BoxIcons.BiCoffeeTogo className="w-8 h-auto fill-current text-blue-500" />
                       </Button>
                     </Popover.Button>
-                    <div className="absolute w-3/4 bottom-1 left-0">
+                    <div className="absolute w-3/4 left-0">
                       <Transition
                         enter="transition duration-150 ease-out"
                         enterFrom="transform opacity-0 -translate-y-2"
@@ -186,7 +186,7 @@ export const iconSchema: TinaField = {
                               )}
                               {filteredBlocks.length > 0 && (
                                 <div
-                                  className="w-full grid grid-cols-6 auto-rows-auto p-1"
+                                  className="w-full grid grid-cols-6 auto-rows-auto p-1 border-red-300 border-2"
                                   style={{
                                     gridTemplateColumns:
                                       "repeat(6, minmax(0, 1fr))",
