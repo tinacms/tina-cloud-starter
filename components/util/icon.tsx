@@ -1,69 +1,8 @@
 import * as React from "react";
-import {
-  BiCodeBlock,
-  BiLike,
-  BiMapAlt,
-  BiPalette,
-  BiPieChartAlt2,
-  BiPin,
-  BiShield,
-  BiSlider,
-  BiStore,
-  BiTennisBall,
-  BiTestTube,
-  BiTrophy,
-  BiUserCircle,
-  BiBeer,
-  BiChat,
-  BiCloud,
-  BiCoffeeTogo,
-  BiWorld,
-} from "react-icons/bi";
-import { ImTrophy } from "react-icons/im";
-import {
-  HiAdjustments,
-  HiBeaker,
-  HiChartBar,
-  HiChatAlt2,
-  HiCloud,
-  HiColorSwatch,
-  HiLocationMarker,
-  HiMap,
-  HiShieldCheck,
-  HiShoppingCart,
-  HiTerminal,
-  HiThumbUp,
-  HiUser,
-} from "react-icons/hi";
-import { FiAperture } from "react-icons/fi";
+import * as BoxIcons from "react-icons/bi";
 import { useTheme } from "../layout";
-import { FaBeer, FaCoffee } from "react-icons/fa";
-import TinaIconSvg from "../../public/tina.svg";
-import type { TinaField } from "tinacms";
-
-const iconOptions = {
-  code: { bi: BiCodeBlock, hi: HiTerminal },
-  like: { bi: BiLike, hi: HiThumbUp },
-  map: { bi: BiMapAlt, hi: HiMap },
-  palette: { bi: BiPalette, hi: HiColorSwatch },
-  chart: { bi: BiPieChartAlt2, hi: HiChartBar },
-  pin: { bi: BiPin, hi: HiLocationMarker },
-  shield: { bi: BiShield, hi: HiShieldCheck },
-  settings: { bi: BiSlider, hi: HiAdjustments },
-  store: { bi: BiStore, hi: HiShoppingCart },
-  ball: { bi: BiTennisBall, hi: BiTennisBall },
-  tube: { bi: BiTestTube, hi: HiBeaker },
-  trophy: { bi: BiTrophy, hi: ImTrophy },
-  user: { bi: BiUserCircle, hi: HiUser },
-  beer: { bi: BiBeer, hi: FaBeer },
-  chat: { bi: BiChat, hi: HiChatAlt2 },
-  cloud: { bi: BiCloud, hi: HiCloud },
-  coffee: { bi: BiCoffeeTogo, hi: FaCoffee },
-  world: { bi: BiWorld, hi: BiWorld },
-  aperture: { bi: FiAperture, hi: FiAperture },
-  tina: { bi: TinaIconSvg, hi: TinaIconSvg },
-  none: null,
-};
+import { Button, TinaField } from "tinacms";
+import { Popover, Transition } from "@headlessui/react";
 
 const iconColorClass: { [name: string]: { regular: string; circle: string } } =
   {
@@ -109,6 +48,7 @@ const iconSizeClass = {
   small: "w-8 h-8",
   medium: "w-12 h-12",
   large: "w-14 h-14",
+  custom: "",
 };
 
 export const Icon = ({
@@ -117,24 +57,22 @@ export const Icon = ({
   className = "",
   tinaField = "",
 }) => {
-  if (iconOptions[data.name] === null) {
+  if (BoxIcons[data.name] === null || BoxIcons[data.name] === undefined) {
     return null;
   }
 
+  const { name, color, size } = data;
+
   const theme = useTheme();
 
-  const iconName = data.name || Object.keys(iconOptions)[0];
-  const IconSVG = iconOptions[iconName][theme.icon === "boxicon" ? "bi" : "hi"];
+  const IconSVG = BoxIcons[name];
 
-  const iconSizeClasses = data.size && iconSizeClass[data.size];
+  const iconSizeClasses = size && iconSizeClass[size];
 
-  /* Full class strings are required for Tailwind's just-in-time mode,
-     I would love a better solution that doesn't require so much repetition */
-
-  const iconColor = data.color
-    ? data.color === "primary"
+  const iconColor = color
+    ? color === "primary"
       ? theme.color
-      : data.color
+      : color
     : theme.color;
 
   if (data.style == "circle") {
@@ -167,11 +105,132 @@ const formatFieldLabel = (value: string) => {
   return value.charAt(0).toUpperCase() + value.slice(1);
 };
 
+const parseIconName = (name: string) => {
+  return name
+    .split(/(?=[A-Z])/)
+    .slice(1)
+    .join(" ");
+};
+
 export const iconSchema: TinaField = {
   type: "object",
   label: "Icon",
   name: "icon",
   fields: [
+    {
+      type: "string",
+      label: "Icon",
+      name: "name",
+      ui: {
+        component: ({ input }) => {
+          const [filter, setFilter] = React.useState("");
+          const filteredBlocks = React.useMemo(() => {
+            return Object.keys(BoxIcons).filter((name) => {
+              return parseIconName(name)
+                .toLowerCase()
+                .includes(filter.toLowerCase());
+            });
+          }, [filter]);
+
+          return (
+            <div className="mb-4 relative z-[1000]" style={{ zIndex: 1000 }}>
+              <input
+                type="text"
+                id={input.name}
+                className="hidden"
+                {...input}
+              />
+              <Popover>
+                {({ open }) => (
+                  <>
+                    <Popover.Button as={"span"}>
+                      <Button
+                        size="medium"
+                        rounded="full"
+                        variant={open ? "ghost" : "white"}
+                      >
+                        <BoxIcons.BiCoffeeTogo className="w-8 h-auto fill-current text-blue-500" />
+                      </Button>
+                    </Popover.Button>
+                    <div className="absolute w-3/4 bottom-1 left-0">
+                      <Transition
+                        enter="transition duration-150 ease-out"
+                        enterFrom="transform opacity-0 -translate-y-2"
+                        enterTo="transform opacity-100 translate-y-0"
+                        leave="transition duration-75 ease-in"
+                        leaveFrom="transform opacity-100 translate-y-0"
+                        leaveTo="transform opacity-0 -translate-y-2"
+                      >
+                        <Popover.Panel className="relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-100 z-50">
+                          {({ close }) => (
+                            <div className="min-w-[192px] max-h-[24rem] overflow-y-auto flex flex-col w-full h-full">
+                              <div className="sticky top-0 bg-gray-50 p-2 border-b border-gray-100 z-10">
+                                <input
+                                  type="text"
+                                  className="bg-white text-xs rounded-sm border border-gray-100 shadow-inner py-1 px-2 w-full block placeholder-gray-200"
+                                  onClick={(event: any) => {
+                                    event.stopPropagation();
+                                    event.preventDefault();
+                                  }}
+                                  value={filter}
+                                  onChange={(event: any) => {
+                                    setFilter(event.target.value);
+                                  }}
+                                  placeholder="Filter..."
+                                />
+                              </div>
+                              {filteredBlocks.length === 0 && (
+                                <span className="relative text-center text-xs px-2 py-3 text-gray-300 bg-gray-50 italic">
+                                  No matches found
+                                </span>
+                              )}
+                              {filteredBlocks.length > 0 && (
+                                <div
+                                  className="w-full grid grid-cols-6 auto-rows-auto p-1"
+                                  style={{
+                                    gridTemplateColumns:
+                                      "repeat(6, minmax(0, 1fr))",
+                                    gridAutoRows: "auto",
+                                  }}
+                                >
+                                  {filteredBlocks.map((name) => {
+                                    return (
+                                      <button
+                                        className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
+                                        key={name}
+                                        onClick={() => {
+                                          alert("boom");
+                                          setFilter("");
+                                          close();
+                                        }}
+                                      >
+                                        <Icon
+                                          data={{
+                                            name: name,
+                                            size: "custom",
+                                            color: "blue",
+                                          }}
+                                          className="w-6 h-auto"
+                                        />
+                                        {/* {parseIconName(name)} */}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </Popover.Panel>
+                      </Transition>
+                    </div>
+                  </>
+                )}
+              </Popover>
+            </div>
+          );
+        },
+      },
+    },
     {
       type: "string",
       label: "Color",
@@ -195,15 +254,6 @@ export const iconSchema: TinaField = {
           value: "float",
         },
       ],
-    },
-    {
-      type: "string",
-      label: "Icon",
-      name: "name",
-      options: Object.keys(iconOptions).map((icon) => ({
-        label: formatFieldLabel(icon),
-        value: icon,
-      })),
     },
   ],
 };
