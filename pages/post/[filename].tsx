@@ -31,6 +31,8 @@ export const getStaticProps = async ({ params, preview = false }) => {
     relativePath: `${params.filename}.mdx`,
   });
   return {
+    // a post can not be shown if we are not in preview mode and it is a draft
+    notFound: tinaProps?.data?.post?.draft && !preview,
     props: {
       preview,
       ...tinaProps,
