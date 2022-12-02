@@ -1,4 +1,5 @@
 import * as React from "react";
+import { GoCircleSlash } from "react-icons/go";
 import * as BoxIcons from "react-icons/bi";
 import TinaIconSvg from "../../public/tina.svg";
 import { useTheme } from "../layout";
@@ -147,7 +148,7 @@ export const iconSchema: TinaField = {
       label: "Icon",
       name: "name",
       ui: {
-        component: wrapFieldsWithMeta(({ field, input, meta }) => {
+        component: wrapFieldsWithMeta(({ input }) => {
           const [filter, setFilter] = React.useState("");
           const filteredBlocks = React.useMemo(() => {
             return Object.keys(IconOptions).filter((name) => {
@@ -175,7 +176,7 @@ export const iconSchema: TinaField = {
                   <>
                     <Popover.Button as={"span"}>
                       <Button
-                        className="text-sm h-11 pl-5 pr-4"
+                        className="text-sm h-11 px-4"
                         size="custom"
                         rounded="full"
                         variant={open ? "secondary" : "white"}
@@ -220,6 +221,17 @@ export const iconSchema: TinaField = {
                               )}
                               {filteredBlocks.length > 0 && (
                                 <div className="w-full grid grid-cols-6 auto-rows-auto p-2 overflow-y-auto">
+                                  <button
+                                    className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
+                                    key={"clear-input"}
+                                    onClick={() => {
+                                      input.onChange("");
+                                      setFilter("");
+                                      close();
+                                    }}
+                                  >
+                                    <GoCircleSlash className="w-6 h-auto text-gray-200" />
+                                  </button>
                                   {filteredBlocks.map((name) => {
                                     return (
                                       <button
@@ -239,7 +251,6 @@ export const iconSchema: TinaField = {
                                           }}
                                           className="w-7 h-auto"
                                         />
-                                        {/* {parseIconName(name)} */}
                                       </button>
                                     );
                                   })}
