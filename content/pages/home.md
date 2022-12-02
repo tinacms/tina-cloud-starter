@@ -26,7 +26,7 @@ blocks:
       - icon:
           color: red
           style: float
-          name: code
+          name: BiCodeBlock
         title: Amazing Feature
         text: >-
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
@@ -34,13 +34,13 @@ blocks:
       - icon:
           color: primary
           style: float
-          name: like
+          name: BiLike
         title: This Is a Feature
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
           color: green
           style: float
-          name: palette
+          name: BiPalette
         title: Configurable Theme
         text: >-
           Edit global theme configuration with Tina. Change your theme's primary
