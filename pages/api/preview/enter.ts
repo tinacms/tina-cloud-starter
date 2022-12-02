@@ -6,11 +6,10 @@ const handler = async (req, res) => {
     res.setPreviewData({});
     return res.redirect(req.query.slug);
   }
-
   // Check tina cloud token
   const isAuthorizedRes = await isUserAuthorized({
     token: `Bearer ${req.query.token}`,
-    clientID: process.env.TINA_CLIENT_ID,
+    clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   });
 
   if (isAuthorizedRes) {
@@ -18,7 +17,7 @@ const handler = async (req, res) => {
     return res.redirect(req.query.slug);
   }
 
-  return res.status(401).json({ message: "Invalid token" });
+  return res.status(401).json({ message: "Invalid token or clientID" });
 };
 
 export default handler;
