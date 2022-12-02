@@ -136,11 +136,11 @@ export const Header = ({ data }) => {
                                 gradientUnits="userSpaceOnUse"
                                 gradientTransform="translate(345 230) rotate(90) scale(230 115)"
                               >
-                                <stop stop-color="currentColor" />
+                                <stop stopColor="currentColor" />
                                 <stop
                                   offset="1"
-                                  stop-color="currentColor"
-                                  stop-opacity="0"
+                                  stopColor="currentColor"
+                                  stopOpacity="0"
                                 />
                               </radialGradient>
                             </defs>

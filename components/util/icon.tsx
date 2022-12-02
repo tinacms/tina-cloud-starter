@@ -155,6 +155,13 @@ export const iconSchema: TinaField = {
             });
           }, [filter]);
 
+          const inputLabel = Object.keys(IconOptions).includes(input.value)
+            ? parseIconName(input.value)
+            : "Select Icon";
+          const InputIcon = IconOptions[input.value]
+            ? IconOptions[input.value]
+            : null;
+
           return (
             <div className="relative z-[1000]">
               <input
@@ -173,10 +180,10 @@ export const iconSchema: TinaField = {
                         rounded="full"
                         variant={open ? "secondary" : "white"}
                       >
-                        <IconOptions.BiCoffeeTogo className="w-7 mr-1 h-auto fill-current text-blue-500" />
-                        {input.value !== ""
-                          ? parseIconName(input.value)
-                          : "Select Icon"}
+                        {InputIcon && (
+                          <InputIcon className="w-7 mr-1 h-auto fill-current text-blue-500" />
+                        )}
+                        {inputLabel}
                       </Button>
                     </Popover.Button>
                     <div className="absolute w-full -bottom-2 left-0 translate-y-full">
@@ -219,7 +226,7 @@ export const iconSchema: TinaField = {
                                         className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
                                         key={name}
                                         onClick={() => {
-                                          alert("boom");
+                                          input.onChange(name);
                                           setFilter("");
                                           close();
                                         }}
