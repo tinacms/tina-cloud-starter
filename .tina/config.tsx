@@ -28,6 +28,16 @@ const config = defineStaticConfig({
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
   },
+  admin: {
+    auth: {
+      onLogin: async ({ token }) => {
+        // Enter preview and pass the token
+        location.href =
+          `/api/preview/enter?token=${token.id_token}&slug=` +
+          location?.pathname;
+      },
+    },
+  },
   schema: {
     collections: [
       {
@@ -47,6 +57,13 @@ const config = defineStaticConfig({
             name: "title",
             isTitle: true,
             required: true,
+          },
+          {
+            name: "draft",
+            label: "Draft",
+            type: "boolean",
+            required: true,
+            description: "If this is checked the post will not be published",
           },
           {
             type: "image",

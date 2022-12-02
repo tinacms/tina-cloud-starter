@@ -18,12 +18,13 @@ export default function HomePage(
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, preview = false }) => {
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
   return {
     props: {
+      preview,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

@@ -1,6 +1,20 @@
-query pageQuery {
+query pageQuery(
+  $before: String
+  $after: String
+  $first: Float
+  $last: Float
+  $sort: String
+  $filter: PostFilter
+) {
   ...LayoutQueryFragment
-  postConnection {
+  postConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
     edges {
       node {
         id
