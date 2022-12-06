@@ -3,6 +3,7 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import type { TinaTemplate } from "tinacms";
+import { tinaField as tfield } from "tinacms/dist/react";
 import { iconSchema } from "../util/icon";
 
 export const Feature = ({ featuresColor, data, tinaField }) => {
@@ -13,23 +14,25 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
       style={{ flexBasis: "16rem" }}
     >
       {data.icon && (
-        <Icon
-          tinaField={`${tinaField}.icon`}
-          parentColor={featuresColor}
-          data={{ size: "large", ...data.icon }}
-        />
+        <div data-tinafield={tfield(data, "icon")}>
+          <Icon
+            tinaField={`${tinaField}.icon`}
+            parentColor={featuresColor}
+            data={{ size: "large", ...data.icon }}
+          />
+        </div>
       )}
       {data.title && (
         <h3
-          data-tinafield={`${tinaField}.title`}
+          data-tinafield={tfield(data, "title")}
           className="text-2xl font-semibold title-font"
         >
-          {data.title}
+          {data.title}!
         </h3>
       )}
       {data.text && (
         <p
-          data-tinafield={`${tinaField}.text`}
+          data-tinafield={tfield(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
           {data.text}
