@@ -23,7 +23,7 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
     red: "bg-red-500 border-red-600",
     purple: "bg-purple-500 border-purple-600",
     pink: "bg-pink-500 border-pink-600",
-    gray: "bg-gray-500 border-gray-600",
+    white: "bg-gray-50 border-gray-200",
   };
 
   return (
