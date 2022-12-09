@@ -49,7 +49,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                 )}
               </Button>
             </Popover.Button>
-            <div className="absolute w-full -bottom-2 left-0 translate-y-full">
+            <div className="absolute w-full min-w-[192px] max-w-2xl -bottom-2 left-0 translate-y-full">
               <Transition
                 enter="transition duration-150 ease-out"
                 enterFrom="transform opacity-0 -translate-y-2"
@@ -60,7 +60,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
               >
                 <Popover.Panel className="relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-150 z-50">
                   {({ close }) => (
-                    <div className="min-w-[192px] max-h-[24rem] flex flex-col w-full h-full">
+                    <div className="max-h-[24rem] flex flex-col w-full h-full">
                       <div className="bg-gray-50 p-2 border-b border-gray-100 z-10 shadow-sm">
                         <input
                           type="text"
@@ -97,7 +97,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                           {filteredBlocks.map((name) => {
                             return (
                               <button
-                                className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
+                                className="relative flex items-center justify-center rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
                                 key={name}
                                 onClick={() => {
                                   input.onChange(name);
