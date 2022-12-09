@@ -310,21 +310,6 @@ const config = defineStaticConfig({
               },
               {
                 type: "string",
-                name: "icon",
-                label: "Icon Set",
-                options: [
-                  {
-                    label: "Boxicons",
-                    value: "boxicon",
-                  },
-                  {
-                    label: "Heroicons",
-                    value: "heroicon",
-                  },
-                ],
-              },
-              {
-                type: "string",
                 name: "darkMode",
                 label: "Dark Mode",
                 options: [
