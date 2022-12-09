@@ -79,9 +79,11 @@ const iconColorClass: {
 };
 
 const iconSizeClass = {
-  small: "w-8 h-8",
-  medium: "w-12 h-12",
-  large: "w-14 h-14",
+  xs: "w-6 h-6 flex-shrink-0",
+  small: "w-8 h-8 flex-shrink-0",
+  medium: "w-12 h-12 flex-shrink-0",
+  large: "w-14 h-14 flex-shrink-0",
+  xl: "w-16 h-16 flex-shrink-0",
   custom: "",
 };
 
@@ -95,13 +97,16 @@ export const Icon = ({
     return null;
   }
 
-  const { name, color, size } = data;
+  const { name, color, size = "medium", style = "regular" } = data;
 
   const theme = useTheme();
 
   const IconSVG = IconOptions[name];
 
-  const iconSizeClasses = size && iconSizeClass[size];
+  const iconSizeClasses =
+    typeof size === "string"
+      ? iconSizeClass[size]
+      : iconSizeClass[Object.keys(iconSizeClass)[size]];
 
   const iconColor = color
     ? color === "primary"
@@ -109,7 +114,7 @@ export const Icon = ({
       : color
     : theme.color;
 
-  if (data.style == "circle") {
+  if (style == "circle") {
     return (
       <div
         data-tinafield={tinaField}
@@ -321,6 +326,23 @@ const ToggleButtonInput = wrapFieldsWithMeta(({ field, input, meta }) => {
   );
 });
 
+const RangeSliderInput = wrapFieldsWithMeta(({ field, input, meta }) => {
+  return (
+    <>
+      <input
+        name="saturation"
+        id={input.name}
+        type="range"
+        min="0"
+        max="4"
+        step="1"
+        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+        {...input}
+      />
+    </>
+  );
+});
+
 export const iconSchema: TinaField = {
   type: "object",
   label: "Icon",
@@ -358,6 +380,14 @@ export const iconSchema: TinaField = {
       ],
       ui: {
         component: ToggleButtonInput,
+      },
+    },
+    {
+      name: "size2",
+      label: "Size",
+      type: "string",
+      ui: {
+        component: RangeSliderInput,
       },
     },
   ],
