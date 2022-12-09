@@ -47,12 +47,7 @@ export const Theme = ({ data, children }) => {
     return;
   }, [setSystemDarkMode]);
 
-  const {
-    color = "blue",
-    icon = "boxicon",
-    font = "sans",
-    darkMode = "system",
-  } = data;
+  const { color = "blue", font = "sans", darkMode = "system" } = data;
 
   React.useEffect(() => {
     updateRenderColorMode(
@@ -68,7 +63,6 @@ export const Theme = ({ data, children }) => {
     <ThemeContext.Provider
       value={{
         color,
-        icon,
         font,
         darkMode,
       }}
