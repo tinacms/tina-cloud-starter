@@ -1,7 +1,6 @@
 import * as React from "react";
 import { GoCircleSlash } from "react-icons/go";
 import * as BoxIcons from "react-icons/bi";
-import TinaIconSvg from "../../public/tina.svg";
 import { useTheme } from "../layout";
 import { Button, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { Popover, Transition } from "@headlessui/react";
