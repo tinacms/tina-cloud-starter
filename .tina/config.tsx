@@ -384,6 +384,7 @@ const config = defineStaticConfig({
             },
             templates: [
               heroBlockSchema,
+              // @ts-ignore
               featureBlockSchema,
               contentBlockSchema,
               testimonialBlockSchema,
