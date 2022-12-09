@@ -18,8 +18,8 @@ blocks:
         icon: false
         link: /posts
     image:
-      src: /uploads/tina-illustration.webp
-      alt: Tina
+      src: /uploads/unsplash-75EFpyXu3Wg.jpg
+      alt: Photo of palm trees at sunset by Adam Birkett - unsplash.com/photos/75EFpyXu3Wg
     color: default
     _template: hero
   - items:

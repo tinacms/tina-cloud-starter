@@ -295,54 +295,6 @@ const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
   );
 });
 
-const ToggleButtonInput = wrapFieldsWithMeta(({ field, input, meta }) => {
-  return (
-    <>
-      <input type="text" id={input.name} className="hidden" {...input} />
-      <div className="flex shadow-inner bg-gray-50 border border-gray-200 w-full justify-between flex-wrap rounded-md">
-        {/* @ts-ignore */}
-        {field.options.map((option) => {
-          const { label, value } = option;
-          if (value === "" || value === undefined) {
-            return null;
-          }
-          return (
-            <button
-              className={`flex-1 block text-base px-3 py-2 text-gray-400 w-full  transition-all ease-out duration-150 rounded-md ${
-                input.value === value
-                  ? "bg-white border border-gray-200 shadow text-blue-500 -m-px h-[calc(100%+2px)] font-medium"
-                  : ""
-              }`}
-              onClick={() => {
-                input.onChange(value);
-              }}
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
-    </>
-  );
-});
-
-const RangeSliderInput = wrapFieldsWithMeta(({ field, input, meta }) => {
-  return (
-    <>
-      <input
-        name="saturation"
-        id={input.name}
-        type="range"
-        min="0"
-        max="4"
-        step="1"
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-        {...input}
-      />
-    </>
-  );
-});
-
 export const iconSchema: TinaField = {
   type: "object",
   label: "Icon",
@@ -378,17 +330,6 @@ export const iconSchema: TinaField = {
           value: "float",
         },
       ],
-      ui: {
-        component: ToggleButtonInput,
-      },
-    },
-    {
-      name: "size2",
-      label: "Size",
-      type: "string",
-      ui: {
-        component: RangeSliderInput,
-      },
     },
   ],
 };

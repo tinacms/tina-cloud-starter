@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
 import { Icon } from "../util/icon";
 
 export const Header = ({ data }) => {
+  const router = useRouter();
   const theme = useTheme();
 
   const headerColor = {
@@ -55,22 +57,17 @@ export const Header = ({ data }) => {
 
   // If we're on an admin path, other links should also link to their admin paths
   const [prefix, setPrefix] = React.useState("");
-  const [windowUrl, setUrl] = React.useState("");
-  const isBrowser = typeof window !== "undefined";
-  const hasUrl = isBrowser ? window.location.href : "";
 
   React.useEffect(() => {
-    setUrl(hasUrl);
-  }, [hasUrl]);
-
-  React.useEffect(() => {
-    if (window.location.pathname.startsWith("/admin")) {
+    if (window && window.location.pathname.startsWith("/admin")) {
       setPrefix("/admin");
     }
-  });
+  }, []);
 
   return (
-    <div className={`bg-gradient-to-b ${headerColorCss}`}>
+    <div
+      className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
+    >
       <Container size="custom" className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between gap-6">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
@@ -93,13 +90,14 @@ export const Header = ({ data }) => {
               data.nav.map((item, i) => {
                 const activeItem =
                   item.href === ""
-                    ? typeof location !== "undefined" &&
-                      location.pathname == "/"
-                    : windowUrl.includes(item.href);
+                    ? router.asPath === "/"
+                    : router.asPath.includes(item.href);
                 return (
                   <li
                     key={`${item.label}-${i}`}
-                    className={activeItem ? activeItemClasses[theme.color] : ""}
+                    className={`${
+                      activeItem ? activeItemClasses[theme.color] : ""
+                    }`}
                   >
                     <Link href={`${prefix}/${item.href}`} passHref>
                       <a
@@ -110,7 +108,7 @@ export const Header = ({ data }) => {
                         {item.label}
                         {activeItem && (
                           <svg
-                            className={`absolute bottom-0 left-1/2 w-[150%] h-3/4 -translate-x-1/2 -z-1 opacity-10 dark:opacity-20 ${
+                            className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${
                               activeBackgroundClasses[theme.color]
                             }`}
                             preserveAspectRatio="none"
