@@ -3,6 +3,7 @@ import { contentBlockSchema } from "../components/blocks/content";
 import { featureBlockSchema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
+import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
 const config = defineStaticConfig({
@@ -249,45 +250,15 @@ const config = defineStaticConfig({
             type: "object",
             label: "Theme",
             name: "theme",
+            // @ts-ignore
             fields: [
               {
                 type: "string",
                 label: "Primary Color",
                 name: "color",
-                options: [
-                  {
-                    label: "Blue",
-                    value: "blue",
-                  },
-                  {
-                    label: "Teal",
-                    value: "teal",
-                  },
-                  {
-                    label: "Green",
-                    value: "green",
-                  },
-                  {
-                    label: "Red",
-                    value: "red",
-                  },
-                  {
-                    label: "Pink",
-                    value: "pink",
-                  },
-                  {
-                    label: "Purple",
-                    value: "purple",
-                  },
-                  {
-                    label: "Orange",
-                    value: "orange",
-                  },
-                  {
-                    label: "Yellow",
-                    value: "yellow",
-                  },
-                ],
+                ui: {
+                  component: ColorPickerInput,
+                },
               },
               {
                 type: "string",
