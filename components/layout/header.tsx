@@ -75,7 +75,7 @@ export const Header = ({ data }) => {
         <div className="flex items-center justify-between gap-6">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
-              <a className="flex items-center whitespace-nowrap tracking-[.002em]">
+              <a className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]">
                 <Icon
                   parentColor={data.color}
                   data={{
@@ -83,8 +83,7 @@ export const Header = ({ data }) => {
                     color: data.icon.color,
                     style: data.icon.style,
                   }}
-                  className="inline-block h-auto w-10 mr-1"
-                />{" "}
+                />
                 {data.name}
               </a>
             </Link>
