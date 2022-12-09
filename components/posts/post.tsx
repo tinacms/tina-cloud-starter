@@ -177,15 +177,26 @@ export const Post = (props) => {
         </div>
       </Container>
       {props.heroImg && (
-        <div data-tinafield="heroImg" className="">
-          <img
-            src={props.heroImg}
-            className="mb-14 block h-auto max-w-4xl lg:max-w-6xl mx-auto"
-          />
+        <div className="px-4 w-full">
+          <div
+            data-tinafield="heroImg"
+            className="relative max-w-4xl lg:max-w-5xl mx-auto"
+          >
+            <img
+              src={props.heroImg}
+              className="absolute block rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+              aria-hidden="true"
+            />
+            <img
+              src={props.heroImg}
+              alt={props.title}
+              className="relative z-10 mb-14 block rounded-lg w-full h-auto opacity-100"
+            />
+          </div>
         </div>
       )}
-      <Container className={`flex-1 pt-4`} width="medium" size="large">
-        <div className="prose dark:prose-dark  w-full max-w-none">
+      <Container className={`flex-1 pt-4`} width="small" size="large">
+        <div className="prose dark:prose-dark w-full max-w-none">
           <TinaMarkdown components={components} content={props._body} />
         </div>
       </Container>
