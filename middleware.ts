@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  if (!request.cookies.get("_ga")) {
+  if (!request.cookies.get("tina_auth")) {
     return NextResponse.next();
   }
 
