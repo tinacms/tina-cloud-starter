@@ -27,7 +27,7 @@ export const Posts = ({ data }) => {
             href={`/post/` + post._sys.filename}
             passHref
           >
-            <a
+            <div
               key={post.id}
               className="group block px-8 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-700 dark:from-gray-800 dark:to-gray-700 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-600"
             >
@@ -62,7 +62,7 @@ export const Posts = ({ data }) => {
                   {post.date}
                 </p>
               </div>
-            </a>
+            </div>
           </Link>
         );
       })}

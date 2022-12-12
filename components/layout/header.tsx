@@ -60,7 +60,7 @@ export const Header = ({ data }) => {
         <div className="flex items-center justify-between">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
-              <a className="flex items-center">
+              <div className="flex items-center">
                 <Icon
                   parentColor={data.color}
                   data={{
@@ -71,7 +71,7 @@ export const Header = ({ data }) => {
                   className="inline-block h-auto w-10 mr-1"
                 />{" "}
                 Tina Starter
-              </a>
+              </div>
             </Link>
           </h4>
           <ul className="flex gap-6 sm:gap-8 lg:gap-10">
@@ -88,9 +88,9 @@ export const Header = ({ data }) => {
                     className={activeItem ? activeItemClasses[theme.color] : ""}
                   >
                     <Link href={`${prefix}/${item.href}`} passHref>
-                      <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-8">
+                      <div className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-8">
                         {item.label}
-                      </a>
+                      </div>
                     </Link>
                   </li>
                 );
