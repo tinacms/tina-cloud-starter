@@ -4,14 +4,14 @@ import type { NextRequest } from "next/server";
 import { isAuthorized } from "@tinacms/auth";
 
 // This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   // return NextResponse.next();
 
   const mockedReq = {
     query: { clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID },
     headers: request.headers,
   };
-  if (!isAuthorized(mockedReq as any)) {
+  if (!(await isAuthorized(mockedReq as any))) {
     return NextResponse.next();
   }
 
