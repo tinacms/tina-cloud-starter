@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
 
   const mockedReq = {
     query: { clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID },
-    headers: { authorization: request.headers.get("authorization") },
+    headers: request.headers,
   };
   if (!isAuthorized(mockedReq as any)) {
     return NextResponse.next();
