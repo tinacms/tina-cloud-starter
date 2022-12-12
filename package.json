@@ -28,6 +28,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@tailwindcss/typography": "^0.4.1",
+    "@tinacms/auth": "^1.0.2",
     "date-fns": "^2.23.0",
     "next": "^13.0.6",
     "react": "^18.2.0",

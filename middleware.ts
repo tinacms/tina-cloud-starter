@@ -1,10 +1,20 @@
 // middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isUserAuthorized } from "@tinacms/auth";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
   // return NextResponse.next();
+
+  if (
+    !isUserAuthorized({
+      clientID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+      token: process.env.TINA_TOKEN,
+    })
+  ) {
+    return NextResponse.next();
+  }
 
   const dest = request.headers.get("sec-fetch-dest");
 
