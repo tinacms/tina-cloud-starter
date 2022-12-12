@@ -30,7 +30,8 @@ export function middleware(request: NextRequest) {
         new URL("/admin#/~" + pathName, request.url).href
       }`
     );
-    return NextResponse.rewrite(new URL("/admin#/~" + pathName, request.url));
+    return NextResponse.rewrite(new URL("/admin", request.url));
+    //return NextResponse.rewrite(new URL("/admin#/~" + pathName, request.url));
   }
   return NextResponse.next();
 
