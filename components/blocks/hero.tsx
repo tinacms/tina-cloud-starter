@@ -23,9 +23,9 @@ export const Hero = ({ data, parentField }) => {
     <Section color={data.color}>
       <Container
         size="large"
-        className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8 items-center justify-center"
+        className="grid grid-cols-1 lg:grid-cols-5 gap-14 items-center justify-center"
       >
-        <div className="row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 text-center lg:text-left">
+        <div className="row-start-2 lg:row-start-1 lg:col-span-3 text-center lg:text-left">
           {data.tagline && (
             <h2
               data-tinafield={`${parentField}.tagline`}
@@ -73,10 +73,15 @@ export const Hero = ({ data, parentField }) => {
         {data.image && (
           <div
             data-tinafield={`${parentField}.image`}
-            className="row-start-1 flex justify-center"
+            className="relative row-start-1 lg:col-span-2 flex justify-center"
           >
             <img
-              className="w-full max-w-xs lg:max-w-none h-auto"
+              className="absolute w-full rounded-lg max-w-xs lg:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+              src={data.image.src}
+              aria-hidden="true"
+            />
+            <img
+              className="relative z-10 w-full max-w-xs rounded-lg lg:max-w-none h-auto"
               alt={data.image.alt}
               src={data.image.src}
             />
@@ -126,6 +131,7 @@ export const heroBlockSchema: TinaTemplate = {
           icon: true,
           link: "/",
         },
+        itemProps: (item) => ({ label: item.label }),
       },
       fields: [
         {
