@@ -131,6 +131,7 @@ export const heroBlockSchema: TinaTemplate = {
           icon: true,
           link: "/",
         },
+        itemProps: (item) => ({ label: item.label }),
       },
       fields: [
         {
