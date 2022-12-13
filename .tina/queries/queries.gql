@@ -5,6 +5,7 @@ query pageQuery {
       node {
         id
         _values
+        date
         author {
           ... on Author {
             ...AuthorParts

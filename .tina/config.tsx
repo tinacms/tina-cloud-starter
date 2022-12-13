@@ -3,6 +3,7 @@ import { contentBlockSchema } from "../components/blocks/content";
 import { featureBlockSchema } from "../components/blocks/features";
 import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
+import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
 const config = defineStaticConfig({
@@ -37,7 +38,7 @@ const config = defineStaticConfig({
         format: "mdx",
         ui: {
           router: ({ document }) => {
-            return `/post/${document._sys.filename}`;
+            return `/posts/${document._sys.filename}`;
           },
         },
         fields: [
@@ -161,6 +162,11 @@ const config = defineStaticConfig({
               iconSchema,
               {
                 type: "string",
+                label: "Name",
+                name: "name",
+              },
+              {
+                type: "string",
                 label: "Color",
                 name: "color",
                 options: [
@@ -244,45 +250,15 @@ const config = defineStaticConfig({
             type: "object",
             label: "Theme",
             name: "theme",
+            // @ts-ignore
             fields: [
               {
                 type: "string",
                 label: "Primary Color",
                 name: "color",
-                options: [
-                  {
-                    label: "Blue",
-                    value: "blue",
-                  },
-                  {
-                    label: "Teal",
-                    value: "teal",
-                  },
-                  {
-                    label: "Green",
-                    value: "green",
-                  },
-                  {
-                    label: "Red",
-                    value: "red",
-                  },
-                  {
-                    label: "Pink",
-                    value: "pink",
-                  },
-                  {
-                    label: "Purple",
-                    value: "purple",
-                  },
-                  {
-                    label: "Orange",
-                    value: "orange",
-                  },
-                  {
-                    label: "Yellow",
-                    value: "yellow",
-                  },
-                ],
+                ui: {
+                  component: ColorPickerInput,
+                },
               },
               {
                 type: "string",
@@ -300,21 +276,6 @@ const config = defineStaticConfig({
                   {
                     label: "Lato",
                     value: "lato",
-                  },
-                ],
-              },
-              {
-                type: "string",
-                name: "icon",
-                label: "Icon Set",
-                options: [
-                  {
-                    label: "Boxicons",
-                    value: "boxicon",
-                  },
-                  {
-                    label: "Heroicons",
-                    value: "heroicon",
                   },
                 ],
               },
@@ -381,6 +342,8 @@ const config = defineStaticConfig({
             type: "string",
             label: "Title",
             name: "title",
+            description:
+              "The title of the page. This is used to display the title in the CMS",
             isTitle: true,
             required: true,
           },
@@ -394,6 +357,7 @@ const config = defineStaticConfig({
             },
             templates: [
               heroBlockSchema,
+              // @ts-ignore
               featureBlockSchema,
               contentBlockSchema,
               testimonialBlockSchema,
