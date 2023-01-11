@@ -25,6 +25,9 @@ const config = defineStaticConfig({
       mediaRoot: "uploads",
     },
   },
+  remote: {
+    rootPath: process.env.REMOTE_ROOT_PATH,
+  },
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
