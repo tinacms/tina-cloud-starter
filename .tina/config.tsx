@@ -6,6 +6,10 @@ import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
+import * as dotenv from "dotenv";
+dotenv.config();
+console.log(process.env.REMOTE_ROOT_PATH);
+
 const config = defineStaticConfig({
   // clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   clientId: process.env.NEXT_PUBLIC_TINA_REMOTE_CLIENT_ID!,
