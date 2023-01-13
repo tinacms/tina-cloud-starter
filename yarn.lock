@@ -3209,7 +3209,7 @@
     yup "^0.32.9"
     zod "^3.14.3"
 
-"@tinacms/datalayer@0.0.0-20230113234509":
+"@tinacms/datalayer@0.0.0-20230113234509", "@tinacms/datalayer@^0.0.0-20230113234509":
   version "0.0.0-20230113234509"
   resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.0-20230113234509.tgz#295ded0425b691439cffa98f12e7e0eb5abe5a84"
   integrity sha512-C06jer/CArDEkAmldcSUJrLBwQSZofkNCZYu+s4Q1tmGR4WFq1+z82a7qYnVgeOAbcEfpwgYT8tAcii+YGbwRA==

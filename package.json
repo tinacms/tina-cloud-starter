@@ -28,6 +28,7 @@
     "@headlessui/react": "1.7.5",
     "@octokit/rest": "^19.0.5",
     "@tailwindcss/typography": "^0.5.8",
+    "@tinacms/datalayer": "^0.0.0-20230113234509",
     "@tinacms/graphql": "0.0.0-20230113234509",
     "date-fns": "^2.23.0",
     "dotenv": "^16.0.3",
