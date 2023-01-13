@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
-    "@tinacms/cli": "^1.0.3",
+    "@tinacms/cli": "0.0.0-20230113234509",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
@@ -27,7 +27,10 @@
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
+    "@tinacms/graphql": "0.0.0-20230113234509",
     "date-fns": "^2.23.0",
+    "dotenv": "^16.0.3",
+    "mongodb-level": "^0.0.1",
     "next": "^12.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
