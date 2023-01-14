@@ -9,6 +9,47 @@ import { iconSchema } from "../components/util/icon";
 const config = defineStaticConfig({
   contentApiUrlOverride:
     "https://tina-cloud-starter-git-self-hosted-tinacms.vercel.app/api/gql",
+  admin: {
+    auth: {
+      // This is called when they want to authenticate a user. For a lot of implementations it just may be redirecting to the login page
+      async authenticate() {
+        console.log("Authenticating...");
+        localStorage.setItem(
+          "logan",
+          JSON.stringify({ name: "Logan", role: "admin" })
+        );
+        return {};
+      },
+      async logOut() {
+        console.log("logOut...");
+        localStorage.removeItem("logan");
+        window.location.href = "/";
+      },
+      async getUser() {
+        console.log("getUser...");
+        const userStr = localStorage.getItem("logan");
+        if (!userStr) {
+          return undefined;
+        } else {
+          try {
+            return JSON.parse(userStr);
+          } catch {
+            return null;
+          }
+        }
+      },
+
+      // Other methods
+      onLogin: () => {
+        console.log("Logged in!");
+        // hook function to be called when the user logs in
+      },
+      onLogout: () => {
+        console.log("Logged out!");
+        // hook function to be called when the user logs out
+      },
+    },
+  },
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
     process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override

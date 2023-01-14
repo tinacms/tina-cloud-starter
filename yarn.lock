@@ -3158,10 +3158,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^0.0.0-20230114000614":
-  version "0.0.0-20230114000614"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-20230114000614.tgz#0f16f5e6b71d83ac0d230a0ab902925a5a421cef"
-  integrity sha512-hD5HmVgfxxRIdNN1WOLkyHKGHwfpFQEb3VnZjdMLgaUoJ6VNyGej2v5F6tASAorS4/SM74hdNro4lm9JeXzoJA==
+"@tinacms/cli@^0.0.0-20230114004601":
+  version "0.0.0-20230114004601"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-20230114004601.tgz#4cf999a8d547ca7dda0226a3cf3ad200ba466066"
+  integrity sha512-MAZDb4iconMoFMGRCvKF1uaOBtuYGmlS7goOWH0JMnqO0iphMuO+MMzEHYsHJfT0km+kZYRhPWbxcDq98Oh9AQ==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -3172,8 +3172,8 @@
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
     "@tinacms/app" "1.0.4"
-    "@tinacms/datalayer" "0.0.0-20230114000614"
-    "@tinacms/graphql" "0.0.0-20230114000614"
+    "@tinacms/datalayer" "0.0.0-20230114004601"
+    "@tinacms/graphql" "0.0.0-20230114004601"
     "@tinacms/metrics" "1.0.1"
     "@tinacms/schema-tools" "1.1.0"
     add "^2.0.6"
@@ -3209,10 +3209,10 @@
     yup "^0.32.9"
     zod "^3.14.3"
 
-"@tinacms/datalayer@0.0.0-20230114000614", "@tinacms/datalayer@^0.0.0-20230114000614":
-  version "0.0.0-20230114000614"
-  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.0-20230114000614.tgz#4930b31334238620b45fbe1a45e6525cea12334e"
-  integrity sha512-9VOWO3s40R1bNkgqOlhSJ+L2CmMOBR8Us1TpeTWjAaT46vHQZuTJVKgscsiDCAr9hrenHleOkZ3Yq+xz5PYOpw==
+"@tinacms/datalayer@0.0.0-20230114004601", "@tinacms/datalayer@^0.0.0-20230114004601":
+  version "0.0.0-20230114004601"
+  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.0-20230114004601.tgz#a8d94fc6bf9d3aa679b4774ce98753a3e4932a31"
+  integrity sha512-LVzn0FVK2eB3hNL2hNydnAIic4/atZHs9cMs42zk3MkKnG/DuANerP25Zc3zGXRlFzp58FpRE4raWlgXHc8rGQ==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -3230,14 +3230,14 @@
     prettier "^2.2.1"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.0.0-20230114000614", "@tinacms/graphql@^0.0.0-20230114000614":
-  version "0.0.0-20230114000614"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-20230114000614.tgz#f6419255271d40b5cf76e34faf9578b1f605a8ed"
-  integrity sha512-EkRha9zPgDmRu/YYdY+sG9cqqGkqmfKcy8/8DUHxmfhQXnqjU1IsWphpo17d+krWY77msg8TZuJHvkV/eyjsgg==
+"@tinacms/graphql@0.0.0-20230114004601", "@tinacms/graphql@^0.0.0-20230114004601":
+  version "0.0.0-20230114004601"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-20230114004601.tgz#5b96662b5e50f6e7440e7b03edbf4ff5269d971f"
+  integrity sha512-FbqpuR7FdQL/PMgwBxsHqvvvRkMCxyo/cSg9E230YDE5A2c+66pIVcsyNvJEm5Cr5uBuO02yh2BzYI/OtWbmgA==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
-    "@tinacms/datalayer" "0.0.0-20230114000614"
-    "@tinacms/mdx" "0.0.0-20230114000614"
+    "@tinacms/datalayer" "0.0.0-20230114004601"
+    "@tinacms/mdx" "0.0.0-20230114004601"
     "@tinacms/schema-tools" "1.1.0"
     abstract-level "^1.0.3"
     body-parser "^1.19.0"
@@ -3281,10 +3281,10 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/mdx@0.0.0-20230114000614":
-  version "0.0.0-20230114000614"
-  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-0.0.0-20230114000614.tgz#edb85c0a80c8c781fa3fe76936f5e6d27e56412d"
-  integrity sha512-g6bsd7Ye+C8a63I/s2rPOP8H46fcrVFLWzvnJcb9CActiTEALy6ahKBmFJWk58+K29ChV4YDzvRSdoLQzZkoqA==
+"@tinacms/mdx@0.0.0-20230114004601":
+  version "0.0.0-20230114004601"
+  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-0.0.0-20230114004601.tgz#a0b1bcca18cb0f9fb62f712264e8636065bcd817"
+  integrity sha512-Wd+i4nekmahwsxZAggmxxswBxu3LfRXcgg67I0Nnba+cFbq4XBxkxOOmCW33b0HTgjiI77lV8NbFaI67EaUDiA==
   dependencies:
     "@tinacms/schema-tools" "1.1.0"
     acorn "^8.7.1"
@@ -10152,10 +10152,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-tinacms@^0.0.0-20230114000614:
-  version "0.0.0-20230114000614"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-20230114000614.tgz#468ca7ec384d50d5e84217e5bf8bf7c0d5ab1df9"
-  integrity sha512-2PHnisAOz+8QcvIvSDBJfNXhj9O0f572d9yu38o2ArH4GgrflNQ0OP3jTIgfVnJixCJsaTKrXLUhe7k5FPanzg==
+tinacms@^0.0.0-20230114004601:
+  version "0.0.0-20230114004601"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.0.0-20230114004601.tgz#3f8bd2a27cb3b356e262fd9df8fd00852cfd16f7"
+  integrity sha512-cwgm6rjp5d9NrkhZBFQEnTKpLkgHXC9tqK2vrr7EeO5ErYR0WD4jpr+Y2zKZojaEPdVb1uP9IFHuRRLpBH06EA==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.5.0"
