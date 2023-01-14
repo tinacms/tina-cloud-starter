@@ -7,8 +7,7 @@ import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
 const config = defineStaticConfig({
-  contentApiUrlOverride:
-    "https://tina-cloud-starter-git-self-hosted-tinacms.vercel.app/api/gql",
+  contentApiUrlOverride: "/api/gql",
   admin: {
     auth: {
       // This is called when they want to authenticate a user. For a lot of implementations it just may be redirecting to the login page
