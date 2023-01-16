@@ -2,6 +2,7 @@ import { Post } from "../../components/posts/post";
 import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
+import { databaseRequest } from "../../lib/database";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -27,6 +28,11 @@ export default function BlogPostPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  // eslint-disable-next-line
+  // @ts-ignore
+  client.request = (args) => {
+    return databaseRequest({ query: args.query, variables: args.variables });
+  };
   const tinaProps = await client.queries.blogPostQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -45,6 +51,11 @@ export const getStaticProps = async ({ params }) => {
  * be viewable at http://localhost:3000/posts/hello
  */
 export const getStaticPaths = async () => {
+  // eslint-disable-next-line
+  // @ts-ignore
+  client.request = (args) => {
+    return databaseRequest({ query: args.query, variables: args.variables });
+  };
   const postsListData = await client.queries.postConnection();
   return {
     paths: postsListData.data.postConnection.edges.map((post) => ({

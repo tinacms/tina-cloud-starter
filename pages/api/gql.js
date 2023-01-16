@@ -1,19 +1,7 @@
-import database from "../../.tina/database";
-import { resolve } from "@tinacms/graphql";
+import { databaseRequest } from "../../lib/database";
 
 export default async function handler(req, res) {
   const { query, variables } = req.body;
-  const config = {
-    useRelativeMedia: true,
-  };
-
-  const result = await resolve({
-    config,
-    database,
-    query,
-    variables,
-    verbose: true,
-  });
-
+  const result = databaseRequest({ query, variables });
   return res.json(result);
 }

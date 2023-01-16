@@ -3,6 +3,7 @@ import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
 import { client } from "../.tina/__generated__/client";
 import { Layout } from "../components/layout";
+import { databaseRequest } from "../lib/database";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -21,6 +22,11 @@ export default function HomePage(
 }
 
 export const getStaticProps = async () => {
+  // eslint-disable-next-line
+  // @ts-ignore
+  client.request = (args) => {
+    return databaseRequest({ query: args.query, variables: args.variables });
+  };
   const tinaProps = await client.queries.pageQuery();
   return {
     props: {
