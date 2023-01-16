@@ -78,3 +78,9 @@ export default createDatabase({
   onPut,
   onDelete,
 });
+
+export const apiDB = createDatabase({
+  level,
+  onPut,
+  onDelete,
+});
