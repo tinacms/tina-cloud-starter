@@ -1,6 +1,5 @@
 import { createDatabase } from "@tinacms/graphql";
 import { FilesystemBridge } from "@tinacms/datalayer";
-import type { Bridge } from "@tinacms/datalayer";
 import { MongodbLevel } from "mongodb-level";
 import { config } from "dotenv";
 import { Octokit } from "@octokit/rest";
