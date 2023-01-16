@@ -1,5 +1,6 @@
 import { createDatabase } from "@tinacms/graphql";
 import { FilesystemBridge } from "@tinacms/datalayer";
+import type { Bridge } from "@tinacms/datalayer";
 import { MongodbLevel } from "mongodb-level";
 import { config } from "dotenv";
 import { Octokit } from "@octokit/rest";
@@ -79,7 +80,26 @@ export default createDatabase({
   onDelete,
 });
 
+export class MockBridge {
+  constructor() {}
+  async glob(pattern, extension) {
+    return [];
+  }
+  supportsBuilding() {
+    return false;
+  }
+  async delete(filepath) {}
+  async get(filepath) {
+    throw new Error("not supported!");
+
+    return "";
+  }
+  async putConfig(filepath, data) {}
+  async put(filepath, data) {}
+}
+
 export const apiDB = createDatabase({
+  bridge: new MockBridge(),
   level,
   onPut,
   onDelete,
