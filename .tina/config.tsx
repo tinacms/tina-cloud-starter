@@ -6,8 +6,10 @@ import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
+console.log(process.env.VERCEL_URL);
+
 const config = defineStaticConfig({
-  contentApiUrlOverride: "/api/gql",
+  contentApiUrlOverride: `${process.env.VERCEL_URL}/api/gql`,
   admin: {
     auth: {
       // This is called when they want to authenticate a user. For a lot of implementations it just may be redirecting to the login page
