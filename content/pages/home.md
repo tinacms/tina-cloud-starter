@@ -1,5 +1,5 @@
 ---
-title: "Tina Cloud Starter"
+title: Hello MongoDB
 blocks:
   - headline: Welcome to the Tina Starter
     text: >
@@ -19,28 +19,30 @@ blocks:
         link: /posts
     image:
       src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: Photo of palm trees at sunset by Adam Birkett - unsplash.com/photos/75EFpyXu3Wg
+      alt: >-
+        Photo of palm trees at sunset by Adam Birkett -
+        unsplash.com/photos/75EFpyXu3Wg
     color: default
     _template: hero
   - items:
       - icon:
+          name: BiCodeBlock
           color: red
           style: float
-          name: BiCodeBlock
         title: Amazing Feature
         text: >-
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
+          name: BiLike
           color: primary
           style: float
-          name: BiLike
         title: This Is a Feature
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
+          name: BiPalette
           color: green
           style: float
-          name: BiPalette
         title: Configurable Theme
         text: >-
           Edit global theme configuration with Tina. Change your theme's primary
@@ -48,3 +50,4 @@ blocks:
     color: tint
     _template: features
 ---
+
