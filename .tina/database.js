@@ -100,6 +100,7 @@ export class MockBridge {
 export const apiDB = createDatabase({
   bridge: new MockBridge(),
   level,
-  onPut,
-  onDelete,
+  // Uncomment this and provide your access token to the GITHUB_PERSONAL_ACCESS_TOKEN env var
+  // onPut,
+  // onDelete,
 });
