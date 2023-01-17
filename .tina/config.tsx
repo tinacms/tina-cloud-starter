@@ -12,7 +12,7 @@ const url = `${process.env.API_PROTOCOL || "https://"}${
 console.log("url", url);
 
 const config = defineStaticConfig({
-  contentApiUrlOverride: "/api/gql",
+  contentApiUrlOverride: url,
   admin: {
     auth: {
       // This is called when they want to authenticate a user. For a lot of implementations it just may be redirecting to the login page
