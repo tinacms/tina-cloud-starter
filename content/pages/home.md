@@ -1,5 +1,5 @@
 ---
-title: "Tina Cloud Starter"
+title: Tina Cloud Starter
 blocks:
   - headline: Welcome to the Tina Starter
     text: >
@@ -19,7 +19,9 @@ blocks:
         link: /posts
     image:
       src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: Photo of palm trees at sunset by Adam Birkett - unsplash.com/photos/75EFpyXu3Wg
+      alt: >-
+        Photo of palm trees at sunset by Adam Birkett -
+        unsplash.com/photos/75EFpyXu3Wg
     color: default
     _template: hero
   - items:
@@ -48,3 +50,4 @@ blocks:
     color: tint
     _template: features
 ---
+
