@@ -32,7 +32,7 @@ const config = defineStaticConfig({
   schema: {
     collections: [
       {
-        label: "Blog Posts",
+        label: "Blog Posts!",
         name: "post",
         path: "content/posts",
         format: "mdx",
