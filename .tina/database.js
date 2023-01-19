@@ -72,12 +72,12 @@ const level = new MongodbLevel({
   collectionName: "tinacms",
 });
 
-export default createDatabase({
-  bridge: new FilesystemBridge(process.cwd()),
-  level,
-  onPut,
-  onDelete,
-});
+// export default createDatabase({
+//   bridge: new FilesystemBridge(process.cwd()),
+//   level,
+//   onPut,
+//   onDelete,
+// });
 
 export class MockBridge {
   constructor() {}
@@ -97,8 +97,8 @@ export class MockBridge {
   async put(filepath, data) {}
 }
 
-export const apiDB = createDatabase({
-  bridge: new MockBridge(),
+export default createDatabase({
+  bridge: new FilesystemBridge(process.cwd()),
   level,
   // Uncomment this and provide your access token to the GITHUB_PERSONAL_ACCESS_TOKEN env var
   // onPut,
