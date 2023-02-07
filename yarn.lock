@@ -2290,10 +2290,10 @@
     traverse "^0.6.6"
     unified "^6.1.6"
 
-"@tinacms/app@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-1.0.5.tgz#d98fb32db0fde884710fb2018867798dc3964171"
-  integrity sha512-f0/EywBHBgdeuOJmcHdSofsdupfDGLsY7SJ/AmNWRSGVJQ49AjGbR2zmQQAArRk/8XE3ph6A8M3KI5cnw86ceQ==
+"@tinacms/app@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@tinacms/app/-/app-1.0.6.tgz#3869dbc068895ffc15efd06c6cc57ea95b3ed16b"
+  integrity sha512-SBrcAzX/VmM6+gO2VEue5TrdXFxBSddTn8pxylMlfSJTiDmjbskmc2GuQPi5Jj+BVqWOBEm1/jKiveh9+/zl/w==
   dependencies:
     "@headlessui/react" "1.6.6"
     "@heroicons/react" "1.0.6"
@@ -2321,10 +2321,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.0.8.tgz#6cf69bdf7307e041af4ed2be5410e7493d7c8f43"
-  integrity sha512-YtCZqyE9kd7qLYTlDoeU73aF633r0DoqdGCsYiZZeRgyaWbFIKypNTmuon9Nb1mRBB98Xnjyty3dDNSqr8olnw==
+"@tinacms/cli@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.0.9.tgz#3aee982819aecb25088c03fb9adadd985fa4091f"
+  integrity sha512-lMHXBHw+4+fQtM0bkfS4Gy8KWfNeSYT4Z+u81Vtyzr3Cj7Sq8XwU8y5ImUJBKSK6Wko3CP4gOe0hNy72mXuGsA==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -2334,7 +2334,7 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/app" "1.0.5"
+    "@tinacms/app" "1.0.6"
     "@tinacms/datalayer" "1.0.1"
     "@tinacms/graphql" "1.1.0"
     "@tinacms/metrics" "1.0.1"
