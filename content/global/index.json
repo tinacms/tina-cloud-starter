@@ -1,11 +1,11 @@
 {
   "header": {
-    "name": "Tina Starter",
     "icon": {
+      "name": "Tina",
       "color": "orange",
-      "style": "float",
-      "name": "Tina"
+      "style": "float"
     },
+    "name": "Habitat Zbraslav",
     "color": "default",
     "nav": [
       {
