@@ -35,21 +35,21 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
           <>
             <Popover.Button as={"span"}>
               <Button
-                className={`text-sm h-11 px-4 ${InputIcon ? "h-11" : "h-10"}`}
+                className={`h-11 px-4 text-sm ${InputIcon ? "h-11" : "h-10"}`}
                 size="custom"
                 rounded="full"
                 variant={open ? "secondary" : "white"}
               >
                 {InputIcon && (
-                  <InputIcon className="w-7 mr-1 h-auto fill-current text-blue-500" />
+                  <InputIcon className="mr-1 h-auto w-7 fill-current text-blue-500" />
                 )}
                 {inputLabel}
                 {!InputIcon && (
-                  <BiChevronRight className="w-5 h-auto fill-current opacity-70 ml-1" />
+                  <BiChevronRight className="ml-1 h-auto w-5 fill-current opacity-70" />
                 )}
               </Button>
             </Popover.Button>
-            <div className="absolute w-full min-w-[192px] max-w-2xl -bottom-2 left-0 translate-y-full">
+            <div className="absolute -bottom-2 left-0 w-full min-w-[192px] max-w-2xl translate-y-full">
               <Transition
                 enter="transition duration-150 ease-out"
                 enterFrom="transform opacity-0 -translate-y-2"
@@ -58,13 +58,13 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                 leaveFrom="transform opacity-100 translate-y-0"
                 leaveTo="transform opacity-0 -translate-y-2"
               >
-                <Popover.Panel className="relative overflow-hidden rounded-lg shadow-lg bg-white border border-gray-150 z-50">
+                <Popover.Panel className="relative z-50 overflow-hidden rounded-lg border border-gray-150 bg-white shadow-lg">
                   {({ close }) => (
-                    <div className="max-h-[24rem] flex flex-col w-full h-full">
-                      <div className="bg-gray-50 p-2 border-b border-gray-100 z-10 shadow-sm">
+                    <div className="flex h-full max-h-[24rem] w-full flex-col">
+                      <div className="z-10 border-b border-gray-100 bg-gray-50 p-2 shadow-sm">
                         <input
                           type="text"
-                          className="bg-white text-sm rounded-sm border border-gray-100 shadow-inner py-1.5 px-2.5 w-full block placeholder-gray-200"
+                          className="block w-full rounded-sm border border-gray-100 bg-white py-1.5 px-2.5 text-sm placeholder-gray-200 shadow-inner"
                           onClick={(event: any) => {
                             event.stopPropagation();
                             event.preventDefault();
@@ -77,14 +77,14 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                         />
                       </div>
                       {filteredBlocks.length === 0 && (
-                        <span className="relative text-center text-xs px-2 py-3 text-gray-300 bg-gray-50 italic">
+                        <span className="relative bg-gray-50 px-2 py-3 text-center text-xs italic text-gray-300">
                           No matches found
                         </span>
                       )}
                       {filteredBlocks.length > 0 && (
-                        <div className="w-full grid grid-cols-6 auto-rows-auto p-2 overflow-y-auto">
+                        <div className="grid w-full auto-rows-auto grid-cols-6 overflow-y-auto p-2">
                           <button
-                            className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
+                            className="relative flex-1 rounded-lg py-2 px-3 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
                             key={"clear-input"}
                             onClick={() => {
                               input.onChange("");
@@ -92,12 +92,12 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                               close();
                             }}
                           >
-                            <GoCircleSlash className="w-6 h-auto text-gray-200" />
+                            <GoCircleSlash className="h-auto w-6 text-gray-200" />
                           </button>
                           {filteredBlocks.map((name) => {
                             return (
                               <button
-                                className="relative flex items-center justify-center rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
+                                className="relative flex flex-1 items-center justify-center rounded-lg py-2 px-3 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
                                 key={name}
                                 onClick={() => {
                                   input.onChange(name);
@@ -111,7 +111,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                                     size: "custom",
                                     color: "blue",
                                   }}
-                                  className="w-7 h-auto"
+                                  className="h-auto w-7"
                                 />
                               </button>
                             );

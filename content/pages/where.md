@@ -10,4 +10,3 @@ blocks:
       alt: papouch
     _template: hero
 ---
-

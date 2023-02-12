@@ -18,59 +18,60 @@ export const Posts = ({ data }) => {
     yellow: "group-hover:text-yellow-500 dark:group-hover:text-yellow-300",
   };
 
-  return <>
-    {data.map((postData) => {
-      const post = postData.node;
-      const date = new Date(post.date);
-      let formattedDate = "";
-      if (!isNaN(date.getTime())) {
-        formattedDate = format(date, "MMM dd, yyyy");
-      }
-      return (
-        (<Link
-          key={post._sys.filename}
-          href={`/posts/` + post._sys.filename}
-          passHref
-          className="group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800">
-
-          <h3
-            className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
-              titleColorClasses[theme.color]
-            }`}
+  return (
+    <>
+      {data.map((postData) => {
+        const post = postData.node;
+        const date = new Date(post.date);
+        let formattedDate = "";
+        if (!isNaN(date.getTime())) {
+          formattedDate = format(date, "MMM dd, yyyy");
+        }
+        return (
+          <Link
+            key={post._sys.filename}
+            href={`/posts/` + post._sys.filename}
+            passHref
+            className="group mb-8 block rounded-md bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 px-6 py-10 shadow-sm transition-all duration-150 ease-out last:mb-0 hover:to-gray-50 hover:shadow-md dark:from-gray-900 dark:to-gray-1000 dark:hover:to-gray-800 sm:px-8 md:px-10"
           >
-            {post._values.title}{" "}
-            <span className="inline-block opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
-              <BsArrowRight className="inline-block h-8 -mt-1 ml-1 w-auto opacity-70" />
-            </span>
-          </h3>
-          <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
-            <TinaMarkdown content={post._values.excerpt} />
-          </div>
-          <div className="flex items-center">
-            <div className="flex-shrink-0 mr-2">
-              <img
-                className="h-10 w-10 object-cover rounded-full shadow-sm"
-                src={post?.author?.avatar}
-                alt={post?.author?.name}
-              />
+            <h3
+              className={`title-font mb-5 text-3xl font-semibold text-gray-700 transition-all duration-150 ease-out dark:text-white lg:text-4xl ${
+                titleColorClasses[theme.color]
+              }`}
+            >
+              {post._values.title}{" "}
+              <span className="inline-block opacity-0 transition-all duration-300 ease-out group-hover:opacity-100">
+                <BsArrowRight className="-mt-1 ml-1 inline-block h-8 w-auto opacity-70" />
+              </span>
+            </h3>
+            <div className="prose mb-5 w-full max-w-none opacity-70 dark:prose-dark">
+              <TinaMarkdown content={post._values.excerpt} />
             </div>
-            <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-              {post?.author?.name}
-            </p>
-            {formattedDate !== "" && (
-              <>
-                <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
-                  —
-                </span>
-                <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-                  {formattedDate}
-                </p>
-              </>
-            )}
-          </div>
-
-        </Link>)
-      );
-    })}
-  </>;
+            <div className="flex items-center">
+              <div className="mr-2 flex-shrink-0">
+                <img
+                  className="h-10 w-10 rounded-full object-cover shadow-sm"
+                  src={post?.author?.avatar}
+                  alt={post?.author?.name}
+                />
+              </div>
+              <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
+                {post?.author?.name}
+              </p>
+              {formattedDate !== "" && (
+                <>
+                  <span className="mx-2 font-bold text-gray-200 dark:text-gray-500">
+                    —
+                  </span>
+                  <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
+                    {formattedDate}
+                  </p>
+                </>
+              )}
+            </div>
+          </Link>
+        );
+      })}
+    </>
+  );
 };

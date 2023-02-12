@@ -68,13 +68,13 @@ export const Header = ({ data }) => {
     <div
       className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
     >
-      <Container size="custom" className="py-0 relative z-10 max-w-8xl">
+      <Container size="custom" className="relative z-10 max-w-8xl py-0">
         <div className="flex items-center justify-between gap-6">
-          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
+          <h4 className="my-4 transform select-none text-lg font-bold tracking-tight transition duration-150 ease-out">
             <Link
               href="/"
               passHref
-              className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
+              className="flex items-center gap-1 whitespace-nowrap tracking-[.002em]"
             >
               <Icon
                 parentColor={data.color}
@@ -87,7 +87,7 @@ export const Header = ({ data }) => {
               {data.name}
             </Link>
           </h4>
-          <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
+          <ul className="-mx-4 flex gap-6 tracking-[.002em] sm:gap-8 lg:gap-10">
             {data.nav &&
               data.nav.map((item, i) => {
                 const activeItem =
@@ -104,14 +104,14 @@ export const Header = ({ data }) => {
                     <Link
                       href={`${prefix}/${item.href}`}
                       passHref
-                      className={`relative select-none	text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
+                      className={`relative inline-block	select-none py-8 px-4 text-base tracking-wide transition duration-150 ease-out hover:opacity-100 ${
                         activeItem ? `` : `opacity-70`
                       }`}
                     >
                       {item.label}
                       {activeItem && (
                         <svg
-                          className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${
+                          className={`absolute bottom-0 left-1/2 -z-1 h-full w-[180%] -translate-x-1/2 opacity-10 dark:opacity-15 ${
                             activeBackgroundClasses[theme.color]
                           }`}
                           preserveAspectRatio="none"
@@ -155,7 +155,7 @@ export const Header = ({ data }) => {
         <div
           className={`absolute h-1 bg-gradient-to-r from-transparent ${
             data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
+          } bottom-0 left-4 right-4 -z-1 to-transparent opacity-5`}
         />
       </Container>
     </div>

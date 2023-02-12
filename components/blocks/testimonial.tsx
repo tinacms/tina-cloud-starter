@@ -9,14 +9,14 @@ export const Testimonial = ({ data, parentField = "" }) => {
       <Container size="large">
         <blockquote>
           <div
-            className={`relative z-10 max-w-3xl mx-auto text-4xl lg:text-5xl font-bold tracking-normal text-center title-font ${
+            className={`title-font relative z-10 mx-auto max-w-3xl text-center text-4xl font-bold tracking-normal lg:text-5xl ${
               data.color === "primary"
                 ? `text-white`
                 : `text-gray-700 dark:text-gray-50`
             }`}
           >
             <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-2	-left-4 leading-4 -z-1`}
+              className={`absolute inset-y-1/2 -left-4 -z-1 block translate-y-2 transform	text-8xl leading-4 opacity-15`}
             >
               &ldquo;
             </span>
@@ -27,14 +27,14 @@ export const Testimonial = ({ data, parentField = "" }) => {
               {data.quote}
             </p>
             <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-3	-right-4 leading-4 -z-1`}
+              className={`absolute inset-y-1/2 -right-4 -z-1 block translate-y-3 transform	text-8xl leading-4 opacity-15`}
             >
               &rdquo;
             </span>
           </div>
           <div className={`my-8 flex-grow-0`}>
             <span
-              className={`block mx-auto h-0.5 w-1/6 ${
+              className={`mx-auto block h-0.5 w-1/6 ${
                 data.color === "primary"
                   ? `bg-blue-600`
                   : `bg-gray-200 dark:bg-gray-700`
@@ -44,7 +44,7 @@ export const Testimonial = ({ data, parentField = "" }) => {
           <footer className="text-center">
             <p
               data-tinafield={`${parentField}.author`}
-              className={`tracking-wide title-font font-bold text-lg ${
+              className={`title-font text-lg font-bold tracking-wide ${
                 data.color === "primary"
                   ? `text-blue-200`
                   : `text-blue-500 dark:text-blue-300`

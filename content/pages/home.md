@@ -50,4 +50,3 @@ blocks:
     color: tint
     _template: features
 ---
-

@@ -107,9 +107,9 @@ export const Icon = ({
     return (
       <div
         data-tinafield={tinaField}
-        className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
+        className={`relative z-10 inline-flex flex-shrink-0 items-center justify-center ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
       >
-        <IconSVG className="w-2/3 h-2/3" />
+        <IconSVG className="h-2/3 w-2/3" />
       </div>
     );
   } else {
