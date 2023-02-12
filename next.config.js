@@ -8,6 +8,9 @@ module.exports = {
 
     return config;
   },
+  images: {
+    domains: ["assets.tina.io"],
+  },
   async rewrites() {
     return [
       {

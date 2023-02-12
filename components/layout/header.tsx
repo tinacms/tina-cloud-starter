@@ -92,7 +92,7 @@ export const Header = ({ data }) => {
               data.nav.map((item, i) => {
                 const activeItem =
                   item.href === ""
-                    ? router.asPath === "/"
+                    ? ["/", "/home"].includes(router.asPath)
                     : router.asPath.includes(item.href);
                 return (
                   <li
