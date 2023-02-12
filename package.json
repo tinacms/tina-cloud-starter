@@ -7,7 +7,8 @@
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",

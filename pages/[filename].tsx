@@ -12,6 +12,7 @@ export default function HomePage(
     data: props.data,
   });
   return (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
     </Layout>
@@ -41,5 +42,5 @@ export const getStaticPaths = async () => {
   };
 };
 
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
-  T extends (...args: any) => Promise<infer R> ? R : any;
+export type AsyncReturnType<T extends (...args) => Promise<unknown>> =
+  T extends (...args) => Promise<infer R> ? R : unknown;

@@ -29,5 +29,5 @@ export const getStaticProps = async () => {
   };
 };
 
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
-  T extends (...args: any) => Promise<infer R> ? R : any;
+export type AsyncReturnType<T extends (...args) => Promise<unknown>> =
+  T extends (...args) => Promise<infer R> ? R : unknown;

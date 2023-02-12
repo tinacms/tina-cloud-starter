@@ -65,12 +65,12 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                         <input
                           type="text"
                           className="block w-full rounded-sm border border-gray-100 bg-white py-1.5 px-2.5 text-sm placeholder-gray-200 shadow-inner"
-                          onClick={(event: any) => {
+                          onClick={(event) => {
                             event.stopPropagation();
                             event.preventDefault();
                           }}
                           value={filter}
-                          onChange={(event: any) => {
+                          onChange={(event) => {
                             setFilter(event.target.value);
                           }}
                           placeholder="Filter..."
