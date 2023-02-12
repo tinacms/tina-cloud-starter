@@ -1,7 +1,7 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - headline: Welcome to the Tina Starter
+  - headline: Habitat zbraslav
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
@@ -50,4 +50,5 @@ blocks:
     color: tint
     _template: features
 ---
+
 
