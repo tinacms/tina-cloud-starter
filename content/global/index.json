@@ -1,9 +1,8 @@
 {
   "header": {
-    "icon": {
-      "name": "BiWind",
-      "color": "green",
-      "style": "float"
+    "logo": {
+      "src": "/uploads/logo.webp",
+      "alt": "Habitat Zbraslav"
     },
     "name": "Habitat Zbraslav",
     "color": "default",

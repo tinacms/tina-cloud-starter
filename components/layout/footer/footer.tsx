@@ -5,9 +5,9 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
 import { RawRenderer } from "./rawRenderer";
 import { useTheme } from "..";
-import { Icon } from "../../util/icon";
+import Image from "next/image";
 
-export const Footer = ({ data, icon, rawData }) => {
+export const Footer = ({ data, logo, rawData }) => {
   const theme = useTheme();
   const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
@@ -51,14 +51,12 @@ export const Footer = ({ data, icon, rawData }) => {
             passHref
             className="group mx-2 flex items-center whitespace-nowrap font-bold tracking-tight text-gray-400 opacity-50 transition duration-150 ease-out hover:opacity-100 dark:text-gray-300"
           >
-            <Icon
-              parentColor={data.color}
-              data={{
-                name: icon.name,
-                color: data.color === "primary" ? "primary" : icon.color,
-                style: icon.style,
-              }}
-              className="inline-block h-10 w-auto group-hover:text-orange-500"
+            <Image
+              className="relative z-10 h-auto w-full max-w-xs rounded-lg lg:max-w-none"
+              alt={logo.alt}
+              src={logo.src}
+              width={320}
+              height={100}
             />
           </Link>
           <div className="flex gap-4">

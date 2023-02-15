@@ -47,7 +47,7 @@ export const Layout = ({ rawData = {}, data = layoutData, children }) => {
           <Footer
             rawData={rawData}
             data={data?.footer}
-            icon={data?.header.icon}
+            logo={data?.header.logo}
           />
         </div>
       </Theme>

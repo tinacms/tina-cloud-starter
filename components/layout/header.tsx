@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
-import { Icon } from "../util/icon";
+import Image from "next/image";
 
 export const Header = ({ data }) => {
   const router = useRouter();
@@ -76,15 +76,13 @@ export const Header = ({ data }) => {
               passHref
               className="flex items-center gap-1 whitespace-nowrap tracking-[.002em]"
             >
-              <Icon
-                parentColor={data.color}
-                data={{
-                  name: data.icon.name,
-                  color: data.icon.color,
-                  style: data.icon.style,
-                }}
+              <Image
+                className="relative z-10 h-12 w-auto max-w-xs lg:max-w-none"
+                alt={data.logo.alt}
+                src={data.logo.src}
+                width={200}
+                height={48}
               />
-              {data.name}
             </Link>
           </h4>
           <ul className="-mx-4 flex gap-6 tracking-[.002em] sm:gap-8 lg:gap-10">

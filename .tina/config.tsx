@@ -159,7 +159,23 @@ const config = defineConfig({
             label: "Header",
             name: "header",
             fields: [
-              iconSchema as any,
+              {
+                type: "object",
+                label: "Logo",
+                name: "logo",
+                fields: [
+                  {
+                    name: "src",
+                    label: "Image Source",
+                    type: "image",
+                  },
+                  {
+                    name: "alt",
+                    label: "Alt Text",
+                    type: "string",
+                  },
+                ],
+              },
               {
                 type: "string",
                 label: "Name",
