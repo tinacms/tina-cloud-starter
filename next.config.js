@@ -11,6 +11,10 @@ module.exports = {
   images: {
     domains: ["assets.tina.io"],
   },
+  i18n: {
+    locales: ["cs"],
+    defaultLocale: "cs",
+  },
   async rewrites() {
     return [
       {

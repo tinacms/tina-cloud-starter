@@ -2,17 +2,25 @@ import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
+import Image from "next/image";
 
 export const Testimonial = ({ data, parentField = "" }) => {
   return (
     <Section color={data.color}>
+      <Image
+        className={`absolute ${data.image.align} w-full`}
+        alt={data.image.alt}
+        src={data.image.src}
+        width={1024}
+        height={468}
+      />
       <Container size="large">
         <blockquote>
           <div
             className={`title-font relative z-10 mx-auto max-w-3xl text-center text-4xl font-bold tracking-normal lg:text-5xl ${
               data.color === "primary"
-                ? `text-white`
-                : `text-gray-700 dark:text-gray-50`
+                ? `text-green-500`
+                : `text-white dark:text-gray-50`
             }`}
           >
             <span
@@ -72,6 +80,33 @@ export const testimonialBlockSchema: TinaTemplate = {
     },
   },
   fields: [
+    {
+      type: "object",
+      label: "Image",
+      name: "image",
+      fields: [
+        {
+          name: "src",
+          label: "Image Source",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+        {
+          name: "align",
+          label: "Zarovnání",
+          type: "string",
+          options: [
+            { label: "Výchozí-shora", value: "top-0" },
+            { label: "Střed", value: "top-0 bottom-0 my-auto" },
+            { label: "Sdola", value: "bottom-0" },
+          ],
+        },
+      ],
+    },
     {
       type: "string",
       ui: {

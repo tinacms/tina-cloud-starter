@@ -1,6 +1,14 @@
 ---
-title: Tina Cloud Starter
+title: Úvod
 blocks:
+  - image:
+      src: /uploads/IMG_4065.jpeg
+      alt: Závist z rozhledny
+      align: top-0 bottom-0 my-auto
+    quote: Habitat
+    author: Zbraslav
+    color: default
+    _template: testimonial
   - headline: Habitat zbraslav
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -50,4 +58,7 @@ blocks:
     color: tint
     _template: features
 ---
+
+
+
 
