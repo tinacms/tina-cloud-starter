@@ -2,8 +2,8 @@
 title: Úvod
 blocks:
   - image:
-      src: /uploads/IMG_4065.jpeg
-      alt: Závist z rozhledny
+      src: /uploads/habitat.png
+      alt: Habitat Zbraslav
       align: top-0 bottom-0 my-auto
     quote: Habitat
     author: Zbraslav
@@ -58,6 +58,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
