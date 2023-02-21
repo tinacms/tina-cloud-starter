@@ -30,7 +30,7 @@
     }
   },
   "theme": {
-    "color": "green",
+    "color": "white",
     "font": "nunito",
     "darkMode": "light"
   }
