@@ -5,7 +5,7 @@ blocks:
       src: /uploads/habitat.png
       alt: Habitat Zbraslav
       align: top-0 bottom-0 my-auto
-    quote: ''
+    quote: ""
     author: Zbraslav
     color: default
     _template: testimonial
@@ -58,9 +58,3 @@ blocks:
     color: tint
     _template: features
 ---
-
-
-
-
-
-

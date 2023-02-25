@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export const Testimonial = ({ data, parentField = "" }) => {
   return (
-    <Section color={data.color}>
+    <Section color={data.color} className="relative h-full">
       <Image
-        className={`absolute ${data.image.align} w-full`}
+        className={`absolute ${data.image.align} min-w-full`}
         alt={data.image.alt}
         src={data.image.src}
         width={1024}

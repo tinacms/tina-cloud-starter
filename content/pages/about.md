@@ -15,7 +15,3 @@ blocks:
     color: tint
     _template: content
 ---
-
-
-
-
