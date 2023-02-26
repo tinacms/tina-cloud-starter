@@ -1,37 +1,11 @@
 ---
 title: Úvod
 blocks:
-  - image:
-      src: /uploads/habitat.png
-      alt: Habitat Zbraslav
-      align: top-0 bottom-0 my-auto
-    quote: ""
-    author: Zbraslav
+  - color: default
+    _template: intro
+  - body: "Jsme skupina rodičů, která se potkala v místní lesní školce. Spojuje nás snaha najít vlídné prostředí pro naše vlastní děti, kde jim bude umožněno přirozeně pokračovat v procesu poznávání světa.\_\n\nVzhledem k tomu, že jsme v bezprostředním okolí Zbraslavi nenašli nic, co by naplňovalo naše představy, nebo mělo volnou kapacitu, rozhodli jsme se vytvořit takový prostor sami.\n\nZaložili jsme spolek Habitat Zbraslav a těšíme se na to, že spolu s dalšími dětmi a jejich rodiči vytvoříme inspirativní prostředí, kde budou mít prostor učit se a růst nejen naše děti, ale my rodiče.\_\n"
     color: default
-    _template: testimonial
-  - headline: Habitat zbraslav
-    text: >
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      content/pages/home.md, components from components/blocks, and puts them
-      all together in pages/\[filename].tsx, all based on a schema defined in
-      .tina/schema.ts.
-    actions:
-      - label: Get Started
-        type: button
-        icon: true
-        link: /posts
-      - label: Read Blog
-        type: link
-        icon: false
-        link: /posts
-    image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
-    color: default
-    _template: hero
+    _template: content
   - items:
       - icon:
           name: BiCodeBlock
@@ -58,3 +32,7 @@ blocks:
     color: tint
     _template: features
 ---
+
+
+
+

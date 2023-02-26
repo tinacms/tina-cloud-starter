@@ -23,22 +23,12 @@ export const Testimonial = ({ data, parentField = "" }) => {
                 : `text-white dark:text-gray-50`
             }`}
           >
-            <span
-              className={`absolute inset-y-1/2 -left-4 -z-1 block translate-y-2 transform	text-8xl leading-4 opacity-15`}
-            >
-              &ldquo;
-            </span>
             <p
               data-tinafield={`${parentField}.quote`}
               className="relative opacity-95"
             >
               {data.quote}
             </p>
-            <span
-              className={`absolute inset-y-1/2 -right-4 -z-1 block translate-y-3 transform	text-8xl leading-4 opacity-15`}
-            >
-              &rdquo;
-            </span>
           </div>
           <div className={`my-8 flex-grow-0`}>
             <span
