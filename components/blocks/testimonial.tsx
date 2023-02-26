@@ -8,11 +8,12 @@ export const Testimonial = ({ data, parentField = "" }) => {
   return (
     <Section color={data.color} className="relative h-full">
       <Image
-        className={`absolute ${data.image.align} min-w-full`}
+        className={`absolute ${
+          data.image.align /* TODO: no more used with fill and object-cover? */
+        } object-cover`}
         alt={data.image.alt}
         src={data.image.src}
-        width={1024}
-        height={468}
+        fill
       />
       <Container size="large">
         <blockquote>

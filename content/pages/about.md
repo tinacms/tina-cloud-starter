@@ -4,7 +4,7 @@ blocks:
   - image:
       src: /uploads/IMG_4207.jpeg
       alt: Závist v zimě
-      align: top-0
+      align: top-0 bottom-0 my-auto
     quote: >-
       There are only two hard things in Computer Science: cache invalidation and
       naming things.
@@ -15,3 +15,4 @@ blocks:
     color: tint
     _template: content
 ---
+

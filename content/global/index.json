@@ -29,8 +29,9 @@
     "color": "default",
     "social": {
       "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "twitter": "",
+      "instagram": "",
+      "github": "https://github.com/matejkriz/habitatzbraslav"
     }
   },
   "theme": {
