@@ -12,12 +12,16 @@
         "label": "Úvod"
       },
       {
+        "href": "info",
+        "label": "Pro zájemce"
+      },
+      {
         "href": "about",
         "label": "Základní principy"
       },
       {
-        "href": "info",
-        "label": "Pro zájemce"
+        "href": "team",
+        "label": "Tým"
       }
     ]
   },
