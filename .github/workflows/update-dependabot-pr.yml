@@ -27,3 +27,4 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: "Update TinaCMS generated files"
+          branch: ${{ github.ref }}
