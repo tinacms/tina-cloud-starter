@@ -2,7 +2,6 @@ name: Update TinaCMS Dependencies
 on:
   push:
     branches:
-      - feat/add-update-tinacms-gh-action
       - dependabot/npm_and_yarn/**
 
 jobs:
@@ -29,3 +28,5 @@ jobs:
         with:
           message: "Update TinaCMS generated files"
           branch: ${{ github.ref }}
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
