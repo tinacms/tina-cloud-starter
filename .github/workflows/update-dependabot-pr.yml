@@ -2,6 +2,7 @@ name: Update TinaCMS Dependencies
 on:
   push:
     branches:
+      - feat/add-update-tinacms-gh-action
       - dependabot/npm_and_yarn/**
 
 jobs:
