@@ -200,7 +200,7 @@ export const Header = ({ data }) => {
                 </div>
                 <Transition
                   className="absolute top-16 left-0 z-40 w-full shadow-md sm:hidden"
-                  enter="transition duration-200 ease-out"
+                  enter="transition duration-100 ease-out"
                   enterFrom="transform -translate-y-1/4 opacity-0"
                   enterTo="transform translate-y-0 opacity-100"
                   leave="transition duration-100 ease-out"
