@@ -110,13 +110,13 @@ export const Header = ({ data }) => {
                   <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                       {/* Mobile menu button*/}
-                      <Disclosure.Button className="iteration-count-1 relative z-50 inline-flex items-center justify-center rounded-md bg-[#BAC590] p-2 text-white transition-shadow hover:shadow-xl focus:outline-none ">
+                      <Disclosure.Button className="hover:scale-115 relative z-50 inline-flex items-center justify-center p-2 text-[#BAC590] transition-transform focus:outline-none">
                         <span className="sr-only">Otevřít hlavní menu</span>
                         {open ? (
-                          <BiX className="block h-6 w-6" aria-hidden="true" />
+                          <BiX className="block h-8 w-8" aria-hidden="true" />
                         ) : (
                           <BiMenu
-                            className="block h-6 w-6"
+                            className="block h-8 w-8"
                             aria-hidden="true"
                           />
                         )}
