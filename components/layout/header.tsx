@@ -7,6 +7,22 @@ import { Container } from "../util/container";
 import { useTheme } from ".";
 import Image from "next/image";
 
+const RouterChangeComplete = ({ callback, children }) => {
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const handleRouteChange = () => {
+      callback();
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
+  return children;
+};
+
 export const Header = ({ data }) => {
   const router = useRouter();
   const theme = useTheme();
@@ -67,7 +83,9 @@ export const Header = ({ data }) => {
   }, []);
 
   return (
-    <div className={`relative  bg-gradient-to-b ${headerColorCss}`}>
+    <div
+      className={`sticky top-0 z-50 bg-gradient-to-b shadow-md ${headerColorCss}`}
+    >
       <Container size="custom" className="relative z-20 max-w-8xl py-0">
         <div className="flex items-center justify-between gap-6">
           <div className="my-4 transform select-none text-lg font-bold tracking-tight transition duration-150 ease-out">
@@ -86,13 +104,13 @@ export const Header = ({ data }) => {
             </Link>
           </div>
           <Disclosure as="nav">
-            {({ open }) => (
-              <>
+            {({ open, close }) => (
+              <RouterChangeComplete callback={close}>
                 <div className="mx-auto">
                   <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                       {/* Mobile menu button*/}
-                      <Disclosure.Button className="relative z-50 inline-flex items-center justify-center rounded-md p-2 text-yellow-500 hover:bg-[#BAC590] hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                      <Disclosure.Button className="iteration-count-1 relative z-50 inline-flex items-center justify-center rounded-md bg-[#BAC590] p-2 text-white transition-shadow hover:shadow-xl focus:outline-none ">
                         <span className="sr-only">Otevřít hlavní menu</span>
                         {open ? (
                           <BiX className="block h-6 w-6" aria-hidden="true" />
@@ -181,16 +199,16 @@ export const Header = ({ data }) => {
                   </div>
                 </div>
                 <Transition
-                  className="absolute top-16 left-0 z-40 w-full bg-white sm:hidden"
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-y-90 opacity-0"
-                  enterTo="transform scale-y-100 opacity-100"
-                  leave="transition duration-200 ease-out"
+                  className="absolute top-16 left-0 z-40 w-full shadow-md sm:hidden"
+                  enter="transition duration-200 ease-out"
+                  enterFrom="transform -translate-y-1/4 opacity-0"
+                  enterTo="transform translate-y-0 opacity-100"
+                  leave="transition duration-100 ease-out"
                   leaveFrom="transform scale-y-100 opacity-100"
                   leaveTo="transform scale-y-70 opacity-0"
                 >
                   <Disclosure.Panel>
-                    <div className=" space-y-1 px-6 pt-2 pb-3">
+                    <div className="space-y-1 bg-white bg-opacity-90 px-6 pt-2 pb-3 backdrop-blur-xl">
                       <ul className="-mx-4 flex flex-col gap-2 tracking-[.002em] sm:gap-3 md:gap-6 lg:gap-8">
                         {data.nav?.map((item, i) => {
                           const activeItem =
@@ -200,58 +218,57 @@ export const Header = ({ data }) => {
                           return (
                             <li
                               key={`${item.label}-${i}`}
-                              className={`${
+                              className={`flex justify-center ${
                                 activeItem ? activeItemClasses[theme.color] : ""
                               }`}
                             >
                               <Link
                                 href={`${prefix}/${item.href}`}
                                 passHref
-                                className={`relative inline-block select-none	whitespace-nowrap py-4 px-2 text-sm tracking-wide transition duration-150 ease-out hover:opacity-100 sm:py-6 md:px-4 md:text-base ${
+                                className={`relative inline-block w-full select-none whitespace-nowrap py-4	px-2 text-center text-sm tracking-wide transition duration-150 ease-out hover:opacity-100  focus:bg-yellow-500 focus:bg-opacity-50 active:bg-yellow-500 active:bg-opacity-70 sm:py-6 md:px-4 md:text-base ${
                                   activeItem ? `` : `opacity-70`
                                 }`}
+                                tabIndex={0}
                                 aria-current={activeItem ? "page" : undefined}
                               >
-                                <Disclosure.Button as="a">
-                                  {item.label}
-                                  {activeItem && (
-                                    <svg
-                                      className={`absolute bottom-0 left-1/2 -z-1 h-full w-[180%] -translate-x-1/2 opacity-10 dark:opacity-15 ${
-                                        activeBackgroundClasses[theme.color]
-                                      }`}
-                                      preserveAspectRatio="none"
-                                      viewBox="0 0 230 230"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <rect
-                                        x="230"
-                                        y="230"
-                                        width="230"
-                                        height="230"
-                                        transform="rotate(-180 230 230)"
-                                        fill="url(#paint0_radial_1_33)"
-                                      />
-                                      <defs>
-                                        <radialGradient
-                                          id="paint0_radial_1_33"
-                                          cx="0"
-                                          cy="0"
-                                          r="1"
-                                          gradientUnits="userSpaceOnUse"
-                                          gradientTransform="translate(345 230) rotate(90) scale(230 115)"
-                                        >
-                                          <stop stopColor="currentColor" />
-                                          <stop
-                                            offset="1"
-                                            stopColor="currentColor"
-                                            stopOpacity="0"
-                                          />
-                                        </radialGradient>
-                                      </defs>
-                                    </svg>
-                                  )}
-                                </Disclosure.Button>
+                                {item.label}
+                                {activeItem && (
+                                  <svg
+                                    className={`absolute bottom-0 left-1/2 -z-1 h-full w-[180%] -translate-x-1/2 opacity-10 dark:opacity-15 ${
+                                      activeBackgroundClasses[theme.color]
+                                    }`}
+                                    preserveAspectRatio="none"
+                                    viewBox="0 0 230 230"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      x="230"
+                                      y="230"
+                                      width="230"
+                                      height="230"
+                                      transform="rotate(-180 230 230)"
+                                      fill="url(#paint0_radial_1_33)"
+                                    />
+                                    <defs>
+                                      <radialGradient
+                                        id="paint0_radial_1_33"
+                                        cx="0"
+                                        cy="0"
+                                        r="1"
+                                        gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(345 230) rotate(90) scale(230 115)"
+                                      >
+                                        <stop stopColor="currentColor" />
+                                        <stop
+                                          offset="1"
+                                          stopColor="currentColor"
+                                          stopOpacity="0"
+                                        />
+                                      </radialGradient>
+                                    </defs>
+                                  </svg>
+                                )}
                               </Link>
                             </li>
                           );
@@ -260,7 +277,7 @@ export const Header = ({ data }) => {
                     </div>
                   </Disclosure.Panel>
                 </Transition>
-              </>
+              </RouterChangeComplete>
             )}
           </Disclosure>
         </div>
