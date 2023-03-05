@@ -110,16 +110,35 @@ export const Header = ({ data }) => {
                   <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                       {/* Mobile menu button*/}
-                      <Disclosure.Button className="hover:scale-115 relative z-50 inline-flex items-center justify-center p-2 text-[#BAC590] transition-transform focus:outline-none">
+                      <Disclosure.Button className="relative z-50 inline-flex items-center justify-center p-2 text-[#BAC590] focus:outline-none">
                         <span className="sr-only">Otevřít hlavní menu</span>
-                        {open ? (
+                        <Transition
+                          className="absolute transition-transform hover:scale-110"
+                          show={open}
+                          enter="transition duration-200 ease-out"
+                          enterFrom="transform -rotate-45 opacity-0"
+                          enterTo="transform rotate-0 opacity-100"
+                          leave="transition duration-200 ease-out"
+                          leaveFrom="transform rotate-0 opacity-100"
+                          leaveTo="transform -rotate-45 opacity-0"
+                        >
                           <BiX className="block h-8 w-8" aria-hidden="true" />
-                        ) : (
+                        </Transition>
+                        <Transition
+                          className="absolute transition-transform hover:scale-110"
+                          show={!open}
+                          enter="transition duration-200 ease-out"
+                          enterFrom="transform rotate-45 opacity-0"
+                          enterTo="transform rotate-0 opacity-100"
+                          leave="transition duration-200 ease-out"
+                          leaveFrom="transform rotate-0 opacity-100"
+                          leaveTo="transform rotate-45 opacity-0"
+                        >
                           <BiMenu
-                            className="block h-8 w-8"
+                            className="block h-7 w-7"
                             aria-hidden="true"
                           />
-                        )}
+                        </Transition>
                       </Disclosure.Button>
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
