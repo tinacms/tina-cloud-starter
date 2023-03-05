@@ -14,7 +14,7 @@ export const Intro = ({ data }) => {
         placeholder="blur"
       />
       <Image
-        className={`absolute top-0 bottom-0 left-0 right-0 m-auto h-full max-h-[40vh] max-w-[50vw]`}
+        className={`absolute top-0 bottom-0 left-0 right-0 m-auto h-full max-h-[40vh] w-full max-w-[50vw]`}
         alt="Habitat Zbraslav"
         src="/images/habitat-zbraslav.svg"
         width={374}
