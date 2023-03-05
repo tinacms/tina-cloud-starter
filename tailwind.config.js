@@ -102,6 +102,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
+        truculenta: ["var(--font-truculenta)", ...defaultTheme.fontFamily.sans],
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
       },
