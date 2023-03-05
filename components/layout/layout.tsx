@@ -33,13 +33,7 @@ export const Layout = ({ rawData = {}, data = layoutData, children }) => {
         )}
       </Head>
       <Theme data={data?.theme}>
-        <div
-          className={`flex min-h-screen flex-col ${
-            data.theme.font === "nunito" && "font-nunito"
-          } ${data.theme.font === "lato" && "font-lato"} ${
-            data.theme.font === "sans" && "font-sans"
-          }`}
-        >
+        <div className={`flex min-h-screen flex-col font-${data.theme.font}`}>
           <Header data={data?.header} />
           <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
             {children}

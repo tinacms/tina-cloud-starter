@@ -36,7 +36,7 @@
   },
   "theme": {
     "color": "yellow",
-    "font": "nunito",
-    "darkMode": "light"
+    "font": "truculenta",
+    "darkMode": "system"
   }
 }
