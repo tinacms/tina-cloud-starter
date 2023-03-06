@@ -28,8 +28,7 @@ export const Header = ({ data }) => {
   const theme = useTheme();
 
   const headerColor = {
-    default:
-      "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
+    default: "text-black dark:text-white bg-gray-50 dark:bg-gray-800",
     primary: {
       blue: "text-white from-blue-300 to-blue-500",
       teal: "text-white from-teal-400 to-teal-500",
@@ -84,7 +83,7 @@ export const Header = ({ data }) => {
 
   return (
     <div
-      className={`sticky top-0 z-50 bg-gradient-to-b shadow-md ${headerColorCss}`}
+      className={`sticky top-0 z-50 font-truculenta shadow-md ${headerColorCss}`}
     >
       <Container size="custom" className="relative z-20 max-w-8xl py-0">
         <div className="flex items-center justify-between gap-6">

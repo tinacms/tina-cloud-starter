@@ -298,6 +298,10 @@ const config = defineConfig({
                     label: "Truculenta",
                     value: "truculenta",
                   },
+                  {
+                    label: "Montserrat",
+                    value: "montserrat",
+                  },
                 ],
               },
               {

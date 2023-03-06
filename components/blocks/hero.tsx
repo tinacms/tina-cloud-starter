@@ -10,27 +10,27 @@ import type { TinaTemplate } from "tinacms";
 export const Hero = ({ data, parentField }) => {
   const theme = useTheme();
   const headlineColorClasses = {
-    blue: "from-blue-400 to-blue-600",
-    teal: "from-teal-400 to-teal-600",
-    green: "from-green-400 to-green-600",
-    red: "from-red-400 to-red-600",
-    pink: "from-pink-400 to-pink-600",
-    purple: "from-purple-400 to-purple-600",
-    orange: "from-orange-300 to-orange-600",
-    yellow: "from-yellow-400 to-yellow-600",
+    blue: "text-blue-600",
+    teal: "text-teal-600",
+    green: "text-green-600",
+    red: "text-red-600",
+    pink: "text-pink-600",
+    purple: "text-purple-600",
+    orange: "text-orange-600",
+    yellow: "text-yellow-600",
   };
 
   return (
     <Section color={data.color}>
       <Container
-        size="large"
-        className="grid grid-cols-1 items-center justify-center gap-14 lg:grid-cols-5"
+        size="medium"
+        className="grid grid-cols-1 items-center justify-center lg:grid-cols-5"
       >
         <div className="row-start-2 text-center lg:col-span-3 lg:row-start-1 lg:text-left">
           {data.tagline && (
             <h2
               data-tinafield={`${parentField}.tagline`}
-              className="text-md title-font relative z-20 mb-8 inline-block px-3 py-1 font-bold tracking-wide"
+              className="text-md relative z-20 mb-8 inline-block px-3 py-1 font-truculenta font-bold tracking-wide"
             >
               {data.tagline}
               <span className="absolute left-0 top-0 -z-1 h-full w-full rounded-full bg-current opacity-7"></span>
@@ -39,12 +39,12 @@ export const Hero = ({ data, parentField }) => {
           {data.headline && (
             <h3
               data-tinafield={`${parentField}.headline`}
-              className={`title-font relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal`}
+              className={`relative mb-10	w-full font-truculenta text-4xl font-extrabold leading-tight tracking-normal`}
             >
               <span
-                className={`bg-gradient-to-r bg-clip-text text-transparent  ${
+                className={`${
                   data.color === "primary"
-                    ? `from-white to-gray-100`
+                    ? `text-gray-100`
                     : headlineColorClasses[theme.color]
                 }`}
               >
