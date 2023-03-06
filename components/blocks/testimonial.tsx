@@ -18,7 +18,7 @@ export const Testimonial = ({ data, parentField = "" }) => {
       <Container size="large">
         <blockquote>
           <div
-            className={`title-font relative z-10 mx-auto max-w-3xl text-center text-4xl font-bold tracking-normal lg:text-5xl ${
+            className={`relative z-10 mx-auto max-w-3xl text-center font-truculenta text-4xl font-bold tracking-normal lg:text-5xl ${
               data.color === "primary"
                 ? `text-green-500`
                 : `text-white dark:text-gray-50`
@@ -40,13 +40,13 @@ export const Testimonial = ({ data, parentField = "" }) => {
               }`}
             ></span>
           </div>
-          <footer className="text-center">
+          <footer className="relative z-10 text-center">
             <p
               data-tinafield={`${parentField}.author`}
-              className={`title-font text-lg font-bold tracking-wide ${
+              className={`font-truculenta text-lg font-bold tracking-wide ${
                 data.color === "primary"
                   ? `text-blue-200`
-                  : `text-blue-500 dark:text-blue-300`
+                  : `text-yellow-200 dark:text-yellow-300`
               }`}
             >
               {data.author}

@@ -35,7 +35,7 @@ export const Posts = ({ data }) => {
             className="group mb-8 block rounded-md bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 px-6 py-10 shadow-sm transition-all duration-150 ease-out last:mb-0 hover:to-gray-50 hover:shadow-md dark:from-gray-900 dark:to-gray-1000 dark:hover:to-gray-800 sm:px-8 md:px-10"
           >
             <h3
-              className={`title-font mb-5 text-3xl font-semibold text-gray-700 transition-all duration-150 ease-out dark:text-white lg:text-4xl ${
+              className={`mb-5 font-truculenta text-3xl font-semibold text-gray-700 transition-all duration-150 ease-out dark:text-white lg:text-4xl ${
                 titleColorClasses[theme.color]
               }`}
             >

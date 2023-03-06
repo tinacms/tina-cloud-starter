@@ -12,7 +12,7 @@ export const Content = ({ data, parentField = "" }) => {
           data.color === "primary" ? `prose-primary` : `dark:prose-dark`
         }`}
         data-tinafield={`${parentField}.body`}
-        size="large"
+        size="medium"
         width="medium"
       >
         <TinaMarkdown content={data.body} />

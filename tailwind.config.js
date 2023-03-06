@@ -103,12 +103,31 @@ module.exports = {
       },
       fontFamily: {
         truculenta: ["var(--font-truculenta)", ...defaultTheme.fontFamily.sans],
+        montserrat: ["var(--font-montserrat)", ...defaultTheme.fontFamily.sans],
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            a: {
+              fontFamily: "var(--font-truculenta)",
+            },
+            blockquote: {
+              fontFamily: "var(--font-truculenta)",
+            },
+            h1: {
+              fontFamily: "var(--font-truculenta)",
+            },
+            h2: {
+              fontFamily: "var(--font-truculenta)",
+            },
+            h3: {
+              fontFamily: "var(--font-truculenta)",
+            },
+            h4: {
+              fontFamily: "var(--font-truculenta)",
+            },
             pre: {
               color: theme("colors.gray.700"),
               backgroundColor: theme("colors.gray.100"),
@@ -126,9 +145,6 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "p:first-of-type": {
-              fontSize: "1.125rem",
-            },
           },
         },
         tint: {
@@ -144,18 +160,12 @@ module.exports = {
             pre: {
               lineHeight: 1.5,
             },
-            "p:first-of-type": {
-              fontSize: "1.365rem",
-            },
           },
         },
         xl: {
           css: {
             pre: {
               lineHeight: 1.5,
-            },
-            "p:first-of-type": {
-              fontSize: "1.365rem",
             },
           },
         },
