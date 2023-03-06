@@ -5,26 +5,47 @@ blocks:
       src: /uploads/IMG_8330.jpeg
       alt: zavist
       align: top-0 bottom-0 my-auto
-    quote: >-
-      There are only two hard things in Computer Science: cache invalidation and
-      naming things.
-    author: Phil Karlton
-    color: primary
+    quote: 'To, čemu housenka říká konec světa, nazývá mistr motýlem.'
+    author: Richard Bach
+    color: default
     _template: testimonial
-  - tagline: Here's some text above the other text
-    headline: This Big Text is Totally Awesome
-    text: |
-      tt
-    actions:
-      - label: Action Label
-        type: button
-        icon: true
-        link: /
+  - tagline: Bety
+    headline: ''
+    text: ''
     image:
-      src: /uploads/259246_4109486109662_338693137_o.jpg
-      alt: zt
+      src: /uploads/habitat-sova.jpg
+      alt: sova
+    color: default
+    _template: hero
+  - tagline: Matěj
+    headline: ''
+    text: ''
+    image:
+      src: /uploads/habitat-strom.jpg
+    color: tint
+    _template: hero
+  - tagline: Jindřiška
+    headline: ''
+    text: ''
+    image:
+      src: /uploads/habitat-habitat.jpg
+    color: default
+    _template: hero
+  - tagline: Aleš
+    headline: ''
+    text: ''
+    image:
+      src: /uploads/habitat-atributy.jpg
+    color: tint
+    _template: hero
+  - tagline: Lucie
+    headline: ''
+    text: ''
+    image:
+      src: /uploads/habitat-kvetina.jpg
     color: default
     _template: hero
 ---
+
 
 
