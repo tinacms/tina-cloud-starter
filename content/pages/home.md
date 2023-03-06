@@ -3,36 +3,45 @@ title: Úvod
 blocks:
   - color: default
     _template: intro
-  - body: "Jsme skupina rodičů, která se potkala v místní lesní školce. Spojuje nás snaha najít vlídné prostředí pro naše vlastní děti, kde jim bude umožněno přirozeně pokračovat v procesu poznávání světa.\_\n\nVzhledem k tomu, že jsme v bezprostředním okolí Zbraslavi nenašli nic, co by naplňovalo naše představy, nebo mělo volnou kapacitu, rozhodli jsme se vytvořit takový prostor sami.\n\nZaložili jsme spolek Habitat Zbraslav a těšíme se na to, že spolu s dalšími dětmi a jejich rodiči vytvoříme inspirativní prostředí, kde budou mít prostor učit se a růst nejen naše děti, ale my rodiče.\_\n"
+  - tagline: ''
+    headline: Dětská vzdělávací skupina
+    text: >
+      Jsme skupina rodičů, která se potkala v místní lesní školce. Spojuje nás
+      snaha najít vlídné prostředí pro naše vlastní děti, kde budou mít možnost
+      pokračovat přirozeně v procesu poznávání světa.
+    actions:
+      - label: Přidejte se k nám
+        type: link
+        icon: true
+        link: /info
+    _template: hero
+  - body: "V bezprostředním okolí Zbraslavi jsme nenašli nic, co by naplňovalo naše představy, rozhodli jsme se tedy tvořit takový prostor sami.\n\nZaložili jsme spolek Habitat Zbraslav a těšíme se až spolu s dalšími dětmi a jejich rodiči vytvoříme inspirativní prostředí, kde budou mít prostor učit se a růst nejen naše děti, ale i my rodiče.\_\n"
     color: default
     _template: content
   - items:
       - icon:
-          name: BiCodeBlock
-          color: red
+          name: BiRefresh
+          color: green
           style: float
-        title: Amazing Feature
+        title: Respekt
         text: >-
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
-          name: BiLike
-          color: primary
+          name: BiBody
+          color: yellow
           style: float
-        title: This Is a Feature
+        title: Svoboda
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
           name: BiPalette
-          color: green
+          color: purple
           style: float
-        title: Configurable Theme
+        title: Inspirace
         text: >-
           Edit global theme configuration with Tina. Change your theme's primary
           color, font, or icon set.
     color: tint
     _template: features
 ---
-
-
-
 
