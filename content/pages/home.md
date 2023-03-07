@@ -5,10 +5,14 @@ blocks:
     _template: intro
   - tagline: ''
     headline: Dětská vzdělávací skupina
-    text: >
+    text: >+
+      #### Praha Zbraslav
+
+
       Jsme skupina rodičů, která se potkala v místní lesní školce. Spojuje nás
       snaha najít vlídné prostředí pro naše vlastní děti, kde budou mít možnost
       pokračovat přirozeně v procesu poznávání světa.
+
     actions:
       - label: Přidejte se k nám
         type: link
@@ -44,4 +48,5 @@ blocks:
     color: tint
     _template: features
 ---
+
 
