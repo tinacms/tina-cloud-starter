@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Image from "next/image";
 
 export const Testimonial = ({ data, parentField = "" }) => {
@@ -24,12 +25,12 @@ export const Testimonial = ({ data, parentField = "" }) => {
                 : `text-white dark:text-gray-50`
             }`}
           >
-            <p
+            <div
               data-tinafield={`${parentField}.quote`}
               className="relative opacity-95"
             >
-              {data.quote}
-            </p>
+              <TinaMarkdown content={data.quote} />
+            </div>
           </div>
           <div className={`my-8 flex-grow-0`}>
             <span
@@ -99,10 +100,7 @@ export const testimonialBlockSchema: TinaTemplate = {
       ],
     },
     {
-      type: "string",
-      ui: {
-        component: "textarea",
-      },
+      type: "rich-text",
       label: "Quote",
       name: "quote",
     },
