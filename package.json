@@ -20,15 +20,19 @@
     "@typescript-eslint/parser": "^5.20.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.13.0",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
     "postcss": "^8.3.11",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.1.0",
     "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.2"
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "scheduler": "^0.23.0"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@tailwindcss/typography": "^0.5.8",
+    "@vercel/analytics": "^0.1.11",
     "date-fns": "^2.23.0",
     "eslint-config-next": "^13.1.6",
     "next": "^13.2.3",
