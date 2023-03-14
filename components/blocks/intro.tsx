@@ -13,12 +13,14 @@ export const Intro = ({ data }) => {
         alt="Hravá dekorace"
         src={background}
         placeholder="blur"
+        priority
       />
       <Image
         className={`relative max-h-[65vh] w-full hidden lg:block`}
         alt="Hravá dekorace"
         src={backgroundWide}
         placeholder="blur"
+        priority
       />
       <Image
         className={`absolute top-0 bottom-0 left-0 right-0 m-auto h-full max-h-[40vh] w-full max-w-[50vw] lg:max-w-[38vw]`}
