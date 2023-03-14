@@ -24,9 +24,15 @@ export const Hero = ({ data, parentField }) => {
     <Section color={data.color}>
       <Container
         size="medium"
-        className="grid grid-cols-1 items-center justify-center lg:grid-cols-5"
+        className={`grid grid-cols-1 items-center justify-center ${
+          data.image && "lg:grid-cols-5"
+        }`}
       >
-        <div className="row-start-2 text-center lg:col-span-3 lg:row-start-1 lg:text-left">
+        <div
+          className={`row-start-2 text-center ${
+            data.image && "lg:col-span-3 lg:row-start-1 lg:text-left"
+          }`}
+        >
           {data.tagline && (
             <h2
               data-tinafield={`${parentField}.tagline`}
@@ -55,7 +61,9 @@ export const Hero = ({ data, parentField }) => {
           {data.text && (
             <div
               data-tinafield={`${parentField}.text`}
-              className={`prose prose-lg mx-auto mb-10 lg:mx-0 ${
+              className={`prose prose-lg mx-auto mb-10 ${
+                data.image && "lg:mx-0"
+              } ${
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >
@@ -65,7 +73,9 @@ export const Hero = ({ data, parentField }) => {
           {data.actions && (
             <Actions
               parentField={`${parentField}.actions`}
-              className="justify-center py-2 lg:justify-start"
+              className={`justify-center py-2 ${
+                data.image && "lg:justify-start"
+              }`}
               parentColor={data.color}
               actions={data.actions}
             />
