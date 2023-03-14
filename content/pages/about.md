@@ -4,8 +4,8 @@ blocks:
   - image:
       src: /uploads/IMG_4207.jpeg
       alt: Závist v zimě
-      align: top-0 bottom-0 my-auto
-    quote: 'Vzdělání je to, co člověku zůstane, když zapomene, co se naučil ve škole.'
+    quote: |
+      Vzdělání je to, co člověku zůstane, když zapomene, co se naučil ve škole.
     author: Albert Einstein
     color: tint
     _template: testimonial

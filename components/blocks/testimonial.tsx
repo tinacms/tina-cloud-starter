@@ -8,14 +8,14 @@ import Image from "next/image";
 export const Testimonial = ({ data, parentField = "" }) => {
   return (
     <Section color={data.color} className="relative h-full">
-      <Image
-        className={`absolute ${
-          data.image.align /* TODO: no more used with fill and object-cover? */
-        } object-cover`}
-        alt={data.image.alt}
-        src={data.image.src}
-        fill
-      />
+      {data.image?.src && (
+        <Image
+          className="absolute object-cover"
+          alt={data.image.alt}
+          src={data.image.src}
+          fill
+        />
+      )}
       <Container size="large">
         <blockquote>
           <div
@@ -65,10 +65,14 @@ export const testimonialBlockSchema: TinaTemplate = {
   ui: {
     previewSrc: "/blocks/testimonial.png",
     defaultItem: {
+      image: {
+        src: "/images/background.png",
+        alt: "Default",
+      },
       quote:
         "There are only two hard things in Computer Science: cache invalidation and naming things.",
       author: "Phil Karlton",
-      color: "primary",
+      color: "tint",
     },
   },
   fields: [
@@ -86,16 +90,6 @@ export const testimonialBlockSchema: TinaTemplate = {
           name: "alt",
           label: "Alt Text",
           type: "string",
-        },
-        {
-          name: "align",
-          label: "Zarovnání",
-          type: "string",
-          options: [
-            { label: "Výchozí-shora", value: "top-0" },
-            { label: "Střed", value: "top-0 bottom-0 my-auto" },
-            { label: "Sdola", value: "bottom-0" },
-          ],
         },
       ],
     },
