@@ -13,7 +13,7 @@ export const Content = ({ data, parentField = "" }) => {
         }`}
         data-tinafield={`${parentField}.body`}
         size="medium"
-        width="medium"
+        width="custom"
       >
         <TinaMarkdown content={data.body} />
       </Container>
