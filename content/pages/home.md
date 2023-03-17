@@ -18,13 +18,11 @@ blocks:
         title: Výuka
         text: 'Čtyři dny v týdnu, jeden z toho expediční.'
       - icon:
-          name: ''
+          name: BiBitcoin
           color: ''
           style: float
-        title: Here's Another Feature
-        text: >-
-          This is where you might talk about the feature, if this wasn't just
-          filler text.
+        title: Školné
+        text: 8 900 Kč
     _template: features
   - color: default
     _template: intro
@@ -66,6 +64,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
