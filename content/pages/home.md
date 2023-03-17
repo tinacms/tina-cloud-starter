@@ -34,9 +34,10 @@ blocks:
           style: float
         title: Školné
         text: 8 900 Kč
+    color: tint
     _template: features
   - body: "V bezprostředním okolí Zbraslavi jsme nenašli nic, co by naplňovalo naše představy, rozhodli jsme se\_tedy tvořit takový prostor sami.\n\nZaložili jsme spolek Habitat\_Zbraslav a\_těšíme se\_až\_spolu\_s\_dalšími dětmi a\_jejich rodiči vytvoříme inspirativní prostředí, kde\_budou mít prostor učit se a\_růst nejen naše děti, ale\_i\_my rodiče.\_\n"
-    color: default
+    color: primary
     _template: content
   - items:
       - icon:
@@ -64,6 +65,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
