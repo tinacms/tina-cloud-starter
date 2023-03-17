@@ -94,7 +94,7 @@ export const Header = ({ data }) => {
               className="flex items-center gap-1 whitespace-nowrap tracking-[.002em]"
             >
               <Image
-                className="relative z-20 h-8 w-auto max-w-xs sm:h-10 md:h-12 lg:max-w-none"
+                className="relative z-20 h-8 w-auto max-w-xs md:h-10 md:h-12 lg:max-w-none"
                 alt={data.logo.alt}
                 src={data.logo.src}
                 width={160}
@@ -107,7 +107,7 @@ export const Header = ({ data }) => {
               <RouterChangeComplete callback={close}>
                 <div className="mx-auto">
                   <div className="relative flex h-16 items-center justify-between">
-                    <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                    <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
                       {/* Mobile menu button*/}
                       <Disclosure.Button className="relative z-50 inline-flex items-center justify-center p-2 text-[#BAC590] focus:outline-none">
                         <span className="sr-only">Otevřít hlavní menu</span>
@@ -140,10 +140,10 @@ export const Header = ({ data }) => {
                         </Transition>
                       </Disclosure.Button>
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                      <div className="hidden sm:ml-6 sm:block">
+                    <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+                      <div className="hidden md:ml-6 md:block">
                         <div className="flex space-x-4">
-                          <ul className="-mx-4 flex gap-2 tracking-[.002em] sm:gap-3 md:gap-6 lg:gap-8">
+                          <ul className="-mx-4 flex gap-2 tracking-[.002em] md:gap-3 md:gap-6 lg:gap-8">
                             {data.nav?.map((item, i) => {
                               const activeItem =
                                 item.href === ""
@@ -161,7 +161,7 @@ export const Header = ({ data }) => {
                                   <Link
                                     href={`${prefix}/${item.href}`}
                                     passHref
-                                    className={`relative inline-block select-none	whitespace-nowrap py-4 px-2 text-sm tracking-wide transition duration-150 ease-out hover:opacity-100 sm:py-6 md:px-4 md:text-base ${
+                                    className={`relative inline-block select-none	whitespace-nowrap py-4 px-2 text-sm tracking-wide transition duration-150 ease-out hover:opacity-100 md:py-6 md:px-4 md:text-base ${
                                       activeItem ? `` : `opacity-70`
                                     }`}
                                     aria-current={
@@ -217,7 +217,7 @@ export const Header = ({ data }) => {
                   </div>
                 </div>
                 <Transition
-                  className="absolute top-16 left-0 z-40 w-full shadow-md sm:hidden"
+                  className="absolute top-16 left-0 z-40 w-full shadow-md md:hidden"
                   enter="transition duration-100 ease-out"
                   enterFrom="transform -translate-y-1/4 opacity-0"
                   enterTo="transform translate-y-0 opacity-100"
@@ -227,7 +227,7 @@ export const Header = ({ data }) => {
                 >
                   <Disclosure.Panel>
                     <div className="space-y-1 bg-white bg-opacity-90 px-6 pt-2 pb-3 backdrop-blur-xl">
-                      <ul className="-mx-4 flex flex-col gap-2 tracking-[.002em] sm:gap-3 md:gap-6 lg:gap-8">
+                      <ul className="-mx-4 flex flex-col gap-2 tracking-[.002em] md:gap-3 md:gap-6 lg:gap-8">
                         {data.nav?.map((item, i) => {
                           const activeItem =
                             item.href === ""
@@ -243,7 +243,7 @@ export const Header = ({ data }) => {
                               <Link
                                 href={`${prefix}/${item.href}`}
                                 passHref
-                                className={`relative inline-block w-full select-none whitespace-nowrap py-4	px-2 text-center text-sm tracking-wide transition duration-150 ease-out hover:opacity-100  focus:bg-yellow-500 focus:bg-opacity-50 active:bg-yellow-500 active:bg-opacity-70 sm:py-6 md:px-4 md:text-base ${
+                                className={`relative inline-block w-full select-none whitespace-nowrap py-4	px-2 text-center text-sm tracking-wide transition duration-150 ease-out hover:opacity-100  focus:bg-yellow-500 focus:bg-opacity-50 active:bg-yellow-500 active:bg-opacity-70 md:py-6 md:px-4 md:text-base ${
                                   activeItem ? `` : `opacity-70`
                                 }`}
                                 tabIndex={0}

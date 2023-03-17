@@ -22,6 +22,10 @@
       {
         "href": "team",
         "label": "Tým"
+      },
+      {
+        "href": "contact",
+        "label": "Kontakt"
       }
     ]
   },
