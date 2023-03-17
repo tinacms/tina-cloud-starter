@@ -7,15 +7,16 @@ blocks:
           color: ''
           style: float
         title: Kapacita
-        text: 15 dětí od 5 do 7 let (předškoláci až 2. třída)
+        text: |-
+          15 dětí od 5 do 7 let 
+
+          (předškoláci až 2. třída)
       - icon:
-          name: ''
-          color: ''
+          name: BiCalendar
+          color: orange
           style: float
-        title: Here's Another Feature
-        text: >-
-          This is where you might talk about the feature, if this wasn't just
-          filler text.
+        title: Výuka
+        text: 'Čtyři dny v týdnu, jeden z toho expediční.'
       - icon:
           name: ''
           color: ''
@@ -65,6 +66,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
