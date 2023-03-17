@@ -18,8 +18,8 @@ blocks:
           color: ''
           style: float
         title: Kapacita
-        text: |-
-          15 dětí od 5 do 7 let 
+        text: |
+          **15 dětí od 5 do 7 let**
 
           (předškoláci až 2. třída)
       - icon:
@@ -27,13 +27,16 @@ blocks:
           color: orange
           style: float
         title: Výuka
-        text: 'Čtyři dny v týdnu, jeden z toho expediční.'
+        text: |
+          Čtyři dny v týdnu,\
+          jeden z toho expediční.
       - icon:
           name: BiBitcoin
           color: ''
           style: float
         title: Školné
-        text: 8 900 Kč
+        text: |
+          `8 900` Kč
     color: tint
     _template: features
   - body: "V bezprostředním okolí Zbraslavi jsme nenašli nic, co by naplňovalo naše představy, rozhodli jsme se\_tedy tvořit takový prostor sami.\n\nZaložili jsme spolek Habitat\_Zbraslav a\_těšíme se\_až\_spolu\_s\_dalšími dětmi a\_jejich rodiči vytvoříme inspirativní prostředí, kde\_budou mít prostor učit se a\_růst nejen naše děti, ale\_i\_my rodiče.\_\n"
@@ -45,7 +48,7 @@ blocks:
           color: green
           style: float
         title: Respekt
-        text: >-
+        text: |
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
@@ -53,24 +56,17 @@ blocks:
           color: yellow
           style: float
         title: Svoboda
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+        text: |
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
           name: BiPalette
           color: purple
           style: float
         title: Inspirace
-        text: >-
+        text: |
           Edit global theme configuration with Tina. Change your theme's primary
           color, font, or icon set.
     color: default
     _template: features
 ---
-
-
-
-
-
-
-
-
 

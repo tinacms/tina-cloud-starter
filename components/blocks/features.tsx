@@ -3,12 +3,13 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { iconSchema } from "../util/icon";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Feature = ({ featuresColor, data, tinaField }) => {
   return (
     <div
       data-tinafield={tinaField}
-      className="mx-auto flex max-w-xl flex-1 flex-col items-center gap-6 text-center lg:items-start lg:text-left"
+      className="mx-auto flex max-w-xl flex-1 flex-col items-center gap-6 text-center"
       style={{ flexBasis: "16rem" }}
     >
       {data.icon && (
@@ -27,12 +28,12 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
         </h3>
       )}
       {data.text && (
-        <p
+        <div
           data-tinafield={`${tinaField}.text`}
           className="text-base leading-relaxed opacity-80"
         >
-          {data.text}
-        </p>
+          <TinaMarkdown content={data.text} />
+        </div>
       )}
       {data.actions && <Actions actions={data.actions} />}
     </div>
@@ -105,12 +106,9 @@ export const featureBlockSchema = {
           name: "title",
         },
         {
-          type: "string",
+          type: "rich-text",
           label: "Text",
           name: "text",
-          ui: {
-            component: "textarea",
-          },
         },
       ],
     },
