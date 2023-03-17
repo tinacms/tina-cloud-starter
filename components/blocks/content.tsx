@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { Title } from "../util/title";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 
@@ -13,7 +14,7 @@ export const Content = ({ data, parentField = "" }) => {
         size="medium"
         width="custom"
       >
-        <TinaMarkdown content={data.body} />
+        <TinaMarkdown content={data.body} components={{ Title }} />
       </Container>
     </Section>
   );
@@ -33,6 +34,36 @@ export const contentBlockSchema: TinaTemplate = {
       type: "rich-text",
       label: "Body",
       name: "body",
+      templates: [
+        {
+          name: "Title",
+          label: "Nadpis",
+          fields: [
+            {
+              type: "object",
+              label: "Image",
+              name: "image",
+              fields: [
+                {
+                  name: "src",
+                  label: "Image Source",
+                  type: "image",
+                },
+                {
+                  name: "alt",
+                  label: "Alt Text",
+                  type: "string",
+                },
+              ],
+            },
+            {
+              name: "children",
+              label: "Nadpis",
+              type: "rich-text",
+            },
+          ],
+        },
+      ],
     },
     {
       type: "string",

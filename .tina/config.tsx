@@ -351,7 +351,7 @@ const config = defineConfig({
         label: "Pages",
         name: "page",
         path: "content/pages",
-        format: "md",
+        format: "mdx",
         ui: {
           router: ({ document }) => {
             if (document._sys.filename === "home") {
