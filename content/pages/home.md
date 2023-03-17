@@ -1,6 +1,30 @@
 ---
 title: Úvod
 blocks:
+  - items:
+      - icon:
+          name: BiUser
+          color: ''
+          style: float
+        title: Kapacita
+        text: 15 dětí od 5 do 7 let (předškoláci až 2. třída)
+      - icon:
+          name: ''
+          color: ''
+          style: float
+        title: Here's Another Feature
+        text: >-
+          This is where you might talk about the feature, if this wasn't just
+          filler text.
+      - icon:
+          name: ''
+          color: ''
+          style: float
+        title: Here's Another Feature
+        text: >-
+          This is where you might talk about the feature, if this wasn't just
+          filler text.
+    _template: features
   - color: default
     _template: intro
   - tagline: ''
@@ -41,6 +65,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
