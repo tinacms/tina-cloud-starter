@@ -11,7 +11,7 @@ blocks:
     author: ''
     color: default
     _template: testimonial
-  - body: "Pro nadcházející školní rok otvíráme třídu pro 14 dětí ve věku od 5 do 7 let. Tedy pro věkové rozpětí předškoláků až 2. třída.\_\n\nPokud máte doma předškoláka a nejste si jisti výběrem školy, máte u nás příležitost vyzkoušet si, zda Vašemu dítěti bude vyhovovat náš způsob práce. Pokud ano, můžete pokračovat i v povinné školní docházce s námi, a pokud zjistíte, že Vám, či Vašemu dítěti, nevyhovuje náš styl práce, máte stále dostatek času najít vhodnější prostředí.\n"
+  - body: "V září 2023 otvíráme třídu pro 15 dětí ve věku od 5 do 7 let. Tedy pro věkové rozpětí předškoláků až 2. třída.\_\n\nPokud máte doma předškoláka a nejste si jisti výběrem školy, máte u nás příležitost vyzkoušet si, zda vašemu dítěti bude vyhovovat náš způsob práce.\n"
     color: default
     _template: content
   - body: "# Kdy bude probíhat výuka?\_\n\nVýuka bude probíhat **4 dny v týdnu**, **od pondělí do čtvrtka**. Jeden den v týdnu bude vždy dnem výletním.\_\n\n### ​​Denní rozvrh\n\n* 8:30 - 9:00 příchod dětí\_\n* 9:00 - 12:00 Dopolední blok\_\n* 12:00-12:30 oběd\_\n* 12:30-13:30 odpolední blok\_\n* 13:45-16:30 odpolední aktivity / družina - pokud bude zájem ze strany rodičů\n"
@@ -36,6 +36,7 @@ blocks:
     color: default
     _template: content
 ---
+
 
 
 

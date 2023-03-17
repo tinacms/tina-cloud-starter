@@ -1,6 +1,15 @@
 ---
 title: Kontakt
 blocks:
+  - image:
+      src: /uploads/Untitled_Artwork 2.png
+      alt: Default
+    quote: |
+      Není žádný rozdíl mezi žitím a učením… \
+      je nemožné, zavádějící a škodlivé přemýšlet o nich odděleně.
+    author: John Holt
+    color: default
+    _template: testimonial
   - body: >
       ## Alžběta Křížová
 
@@ -28,5 +37,6 @@ blocks:
     color: default
     _template: content
 ---
+
 
 
