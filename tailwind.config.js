@@ -19,6 +19,7 @@ module.exports = {
       red: colors.rose,
       purple: colors.purple,
       pink: colors.pink,
+      amber: colors.amber,
       yellow: colors.yellow,
       gray: {
         50: "#F6F6F9",
@@ -110,6 +111,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            "--tw-prose-headings": theme("colors.green[800]"),
             a: {
               fontFamily: "var(--font-truculenta)",
             },

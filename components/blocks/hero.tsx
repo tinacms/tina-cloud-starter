@@ -47,13 +47,7 @@ export const Hero = ({ data, parentField }) => {
               data-tinafield={`${parentField}.headline`}
               className={`relative mb-10	w-full font-truculenta text-4xl font-extrabold leading-tight tracking-normal`}
             >
-              <span
-                className={`${
-                  data.color === "primary"
-                    ? `text-gray-100`
-                    : headlineColorClasses[theme.color]
-                }`}
-              >
+              <span className={`${headlineColorClasses[theme.color]}`}>
                 {data.headline}
               </span>
             </h3>
@@ -63,8 +57,6 @@ export const Hero = ({ data, parentField }) => {
               data-tinafield={`${parentField}.text`}
               className={`prose prose-lg mx-auto mb-10 ${
                 data.image && "lg:mx-0"
-              } ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >
               <TinaMarkdown content={data.text} />
@@ -87,7 +79,7 @@ export const Hero = ({ data, parentField }) => {
             className="relative row-start-1 flex justify-center lg:col-span-2"
           >
             <Image
-              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 contrast-[0.9] saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
+              className="absolute h-auto w-full max-w-xs rounded-lg  dark:opacity-30 dark:brightness-150 lg:max-w-none"
               src={data.image.src}
               alt={data.image.alt}
               aria-hidden="true"

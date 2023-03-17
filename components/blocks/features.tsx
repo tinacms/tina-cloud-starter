@@ -22,7 +22,7 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
       {data.title && (
         <h3
           data-tinafield={`${tinaField}.title`}
-          className="font-truculenta text-2xl font-semibold"
+          className="font-truculenta text-2xl font-semibold text-green-900"
         >
           {data.title}
         </h3>

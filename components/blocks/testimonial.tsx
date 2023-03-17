@@ -19,11 +19,7 @@ export const Testimonial = ({ data, parentField = "" }) => {
       <Container size="large">
         <blockquote>
           <div
-            className={`relative z-10 mx-auto max-w-3xl text-center font-truculenta text-4xl font-bold tracking-normal lg:text-5xl ${
-              data.color === "primary"
-                ? `text-green-500`
-                : `text-white dark:text-gray-50`
-            }`}
+            className={`relative z-10 mx-auto max-w-3xl text-center font-truculenta text-4xl font-bold tracking-normal lg:text-5xl text-white dark:text-gray-50`}
           >
             <div
               data-tinafield={`${parentField}.quote`}
@@ -34,21 +30,13 @@ export const Testimonial = ({ data, parentField = "" }) => {
           </div>
           <div className={`my-8 flex-grow-0`}>
             <span
-              className={`mx-auto block h-0.5 w-1/6 ${
-                data.color === "primary"
-                  ? `bg-blue-600`
-                  : `bg-gray-200 dark:bg-gray-700`
-              }`}
+              className={`mx-auto block h-0.5 w-1/6 bg-gray-200 dark:bg-gray-700`}
             ></span>
           </div>
           <footer className="relative z-10 text-center">
             <p
               data-tinafield={`${parentField}.author`}
-              className={`font-truculenta text-lg font-bold tracking-wide ${
-                data.color === "primary"
-                  ? `text-blue-200`
-                  : `text-yellow-200 dark:text-yellow-300`
-              }`}
+              className={`font-truculenta text-lg font-bold tracking-wide text-yellow-200 dark:text-yellow-300`}
             >
               {data.author}
             </p>

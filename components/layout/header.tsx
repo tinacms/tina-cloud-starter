@@ -28,7 +28,7 @@ export const Header = ({ data }) => {
   const theme = useTheme();
 
   const headerColor = {
-    default: "text-black dark:text-white bg-gray-50 dark:bg-gray-800",
+    default: "text-green-900 dark:text-white bg-white dark:bg-yellow-800",
     primary: {
       blue: "text-white from-blue-300 to-blue-500",
       teal: "text-white from-teal-400 to-teal-500",
@@ -85,7 +85,7 @@ export const Header = ({ data }) => {
     <div
       className={`sticky top-0 z-50 font-truculenta shadow-md ${headerColorCss}`}
     >
-      <Container size="custom" className="relative z-20 max-w-8xl py-0">
+      <Container size="custom" className={`relative z-20 max-w-8xl py-0`}>
         <div className="flex items-center justify-between gap-6">
           <div className="my-4 transform select-none text-lg font-bold tracking-tight transition duration-150 ease-out">
             <Link
@@ -299,11 +299,6 @@ export const Header = ({ data }) => {
             )}
           </Disclosure>
         </div>
-        <div
-          className={`absolute h-1 bg-gradient-to-r from-transparent ${
-            data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } bottom-0 left-4 right-4 -z-1 to-transparent opacity-5`}
-        />
       </Container>
     </div>
   );
