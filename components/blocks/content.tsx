@@ -2,6 +2,8 @@ import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { Title } from "../util/title";
+import { List } from "../util/list";
+import { CustomColorPickerInput } from "../fields/customColor";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 
@@ -14,7 +16,7 @@ export const Content = ({ data, parentField = "" }) => {
         size="medium"
         width="custom"
       >
-        <TinaMarkdown content={data.body} components={{ Title }} />
+        <TinaMarkdown content={data.body} components={{ Title, List }} />
       </Container>
     </Section>
   );
@@ -57,8 +59,27 @@ export const contentBlockSchema: TinaTemplate = {
               ],
             },
             {
-              name: "children",
+              name: "title",
               label: "Nadpis",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "List",
+          label: "Seznam s barvou",
+          fields: [
+            {
+              type: "string",
+              label: "Primary Color",
+              name: "color",
+              ui: {
+                component: CustomColorPickerInput,
+              },
+            },
+            {
+              name: "children",
+              label: "Seznam",
               type: "rich-text",
             },
           ],
