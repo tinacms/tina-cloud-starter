@@ -75,7 +75,7 @@ To get help with any TinaCMS challenges you may have:
 ### Typescript
 
 A good way to ensure your components match the shape of your data is to leverage the auto-generated TypeScript types.
-These are rebuilt when your `.tina` config changes.
+These are rebuilt when your `tina` config changes.
 
 ## LICENSE
 
