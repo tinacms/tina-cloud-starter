@@ -60,6 +60,11 @@ const config = defineConfig({
             name: "excerpt",
           },
           {
+            type: "rich-text",
+            label: "Exxerpt",
+            name: "excerpt",
+          },
+          {
             type: "reference",
             label: "Author",
             name: "author",
