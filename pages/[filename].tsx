@@ -3,9 +3,7 @@ import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
 import { client } from "../tina/__generated__/client";
 import { expandWithMetadata } from '@tinacms/preview-helpers'
-import {
-  useEditOpen,
-} from '@tinacms/preview-helpers/dist/react'
+import { useEditOpen } from '@tinacms/preview-helpers/dist/react'
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -27,7 +25,9 @@ export const getStaticProps = async ({ params }) => {
   let tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
-  tinaProps = await expandWithMetadata(tinaProps, client)
+  if (process.env.VERCEL_ENV === 'preview') {
+    tinaProps = await expandWithMetadata(tinaProps, client)
+  }
   return {
     props: {
       data: tinaProps.data,

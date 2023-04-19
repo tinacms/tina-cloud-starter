@@ -2,6 +2,8 @@ import { Post } from "../../components/posts/post";
 import { client } from "../../tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
+import { expandWithMetadata } from '@tinacms/preview-helpers'
+import { useEditOpen } from '@tinacms/preview-helpers/dist/react'
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -12,6 +14,7 @@ export default function BlogPostPage(
     variables: props.variables,
     data: props.data,
   });
+  useEditOpen('/admin')
   if (data && data.post) {
     return (
       <Layout rawData={data} data={data.global as any}>
@@ -27,9 +30,10 @@ export default function BlogPostPage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.blogPostQuery({
+  let tinaProps = await client.queries.blogPostQuery({
     relativePath: `${params.filename}.mdx`,
   });
+  tinaProps = await expandWithMetadata(tinaProps, client)
   return {
     props: {
       ...tinaProps,
