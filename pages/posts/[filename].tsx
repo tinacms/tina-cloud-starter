@@ -33,7 +33,9 @@ export const getStaticProps = async ({ params }) => {
   let tinaProps = await client.queries.blogPostQuery({
     relativePath: `${params.filename}.mdx`,
   });
-  tinaProps = await expandWithMetadata(tinaProps, client)
+  if (process.env.VERCEL_ENV === 'preview') {
+    tinaProps = await expandWithMetadata(tinaProps, client)
+  }
   return {
     props: {
       ...tinaProps,
