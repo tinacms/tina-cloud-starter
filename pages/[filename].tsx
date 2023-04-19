@@ -5,7 +5,6 @@ import { client } from "../tina/__generated__/client";
 import { expandWithMetadata } from '@tinacms/preview-helpers'
 import {
   useEditOpen,
-  useEditDemo,
 } from '@tinacms/preview-helpers/dist/react'
 
 export default function HomePage(
@@ -17,7 +16,6 @@ export default function HomePage(
     data: props.data,
   });
   useEditOpen('/admin')
-  useEditDemo()
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
