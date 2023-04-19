@@ -6,6 +6,8 @@ query pageQuery {
         id
         _values
         date
+        title
+        excerpt
         author {
           ... on Author {
             ...AuthorParts
