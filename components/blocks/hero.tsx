@@ -46,10 +46,11 @@ export const Hero = ({ data, parentField }) => {
             >
               <span
                 data-vercel-edit-info={previewField(data, 'headline')}
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${data.color === "primary"
-                  ? `from-white to-gray-100`
-                  : headlineColorClasses[theme.color]
-                  }`}
+                className={`text-blue-500`}
+              // className={`bg-clip-text text-transparent bg-gradient-to-r  ${data.color === "primary"
+              //   ? `from-white to-gray-100`
+              //   : headlineColorClasses[theme.color]
+              //   }`}
               >
                 {data.headline}
               </span>
