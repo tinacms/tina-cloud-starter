@@ -43,22 +43,24 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
 export const Features = ({ data, parentField }) => {
   return (
     <Section color={data.color}>
-      <Container
-        className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
-        size="large"
-      >
-        {data.items &&
-          data.items.map(function (block, i) {
-            return (
-              <Feature
-                tinaField={`${parentField}.items.${i}`}
-                featuresColor={data.color}
-                key={i}
-                data={block}
-              />
-            );
-          })}
-      </Container>
+      <div data-vercel-edit-info={previewField(data, 'items')}>
+        <Container
+          className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
+          size="large"
+        >
+          {data.items &&
+            data.items.map(function (block, i) {
+              return (
+                <Feature
+                  tinaField={`${parentField}.items.${i}`}
+                  featuresColor={data.color}
+                  key={i}
+                  data={block}
+                />
+              );
+            })}
+        </Container>
+      </div>
     </Section>
   );
 };
