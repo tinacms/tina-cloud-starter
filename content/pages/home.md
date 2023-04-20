@@ -1,17 +1,6 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - tagline: Here's some text above the other text
-    headline: This Big Text is Totally Awesome
-    text: >
-      Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan
-      libero, nec molestie urna dui a leo.
-    actions:
-      - label: Action Label
-        type: button
-        icon: true
-        link: /
-    _template: hero
   - headline: Welcome to the Tina Starter
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -67,6 +56,7 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
 
