@@ -3,11 +3,16 @@ import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
 import { client } from "../tina/__generated__/client";
 import { Layout } from "../components/layout";
+import { expandWithMetadata } from '@tinacms/preview-helpers'
+import { useEditOpen } from '@tinacms/preview-helpers/dist/react'
+import { useTina } from "tinacms/dist/react";
 
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  const posts = props.data.postConnection.edges;
+  const { data } = useTina(props)
+  const posts = data.postConnection.edges;
+  useEditOpen('/admin')
 
   return (
     <Layout>
@@ -21,7 +26,10 @@ export default function HomePage(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.pageQuery();
+  let tinaProps = await client.queries.pageQuery();
+  if (process.env.VERCEL_ENV === 'preview') {
+    tinaProps = await expandWithMetadata(tinaProps, client)
+  }
   return {
     props: {
       ...tinaProps,

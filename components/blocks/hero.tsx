@@ -5,6 +5,9 @@ import { Section } from "../util/section";
 import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
+import {
+  previewField,
+} from '@tinacms/preview-helpers/dist/react'
 
 export const Hero = ({ data, parentField }) => {
   const theme = useTheme();
@@ -30,6 +33,7 @@ export const Hero = ({ data, parentField }) => {
             <h2
               data-tinafield={`${parentField}.tagline`}
               className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
+              data-vercel-edit-info={previewField(data, 'tagline')}
             >
               {data.tagline}
               <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
@@ -41,11 +45,12 @@ export const Hero = ({ data, parentField }) => {
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses[theme.color]
-                }`}
+                data-vercel-edit-info={previewField(data, 'headline')}
+                className={`text-blue-500`}
+              // className={`bg-clip-text text-transparent bg-gradient-to-r  ${data.color === "primary"
+              //   ? `from-white to-gray-100`
+              //   : headlineColorClasses[theme.color]
+              //   }`}
               >
                 {data.headline}
               </span>
@@ -54,9 +59,8 @@ export const Hero = ({ data, parentField }) => {
           {data.text && (
             <div
               data-tinafield={`${parentField}.text`}
-              className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-              }`}
+              className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${data.color === "primary" ? `prose-primary` : `dark:prose-dark`
+                }`}
             >
               <TinaMarkdown content={data.text} />
             </div>
@@ -100,7 +104,7 @@ export const heroBlockSchema: TinaTemplate = {
     defaultItem: {
       tagline: "Here's some text above the other text",
       headline: "This Big Text is Totally Awesome",
-      text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.",
+      text: { type: "root", children: [{ type: 'p', children: [{ type: 'text', text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo." }], }] },
     },
   },
   fields: [
