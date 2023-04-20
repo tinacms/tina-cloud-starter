@@ -26,7 +26,7 @@ blocks:
     _template: hero
   - quote: >-
       There are only two hard things in Computer Science: cache invalidation and
-      naming things.
+      naming things. sd
     author: Phil Karlton
     color: primary
     _template: testimonial
@@ -56,5 +56,6 @@ blocks:
     color: tint
     _template: features
 ---
+
 
 
