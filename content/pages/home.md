@@ -24,6 +24,12 @@ blocks:
         unsplash.com/photos/75EFpyXu3Wg
     color: default
     _template: hero
+  - quote: >-
+      There are only two hard things in Computer Science: cache invalidation and
+      naming things. sd
+    author: Phil Karlton
+    color: primary
+    _template: testimonial
   - items:
       - icon:
           name: BiCodeBlock
@@ -50,4 +56,6 @@ blocks:
     color: tint
     _template: features
 ---
+
+
 
