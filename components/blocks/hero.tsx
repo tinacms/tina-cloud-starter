@@ -104,7 +104,7 @@ export const heroBlockSchema: TinaTemplate = {
     defaultItem: {
       tagline: "Here's some text above the other text",
       headline: "This Big Text is Totally Awesome",
-      text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.",
+      text: { type: "root", children: [{ type: 'p', children: [{ type: 'text', text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo." }], }] },
     },
   },
   fields: [
