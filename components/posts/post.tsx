@@ -19,6 +19,7 @@ import format from "date-fns/format";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
+import { previewField } from "@tinacms/preview-helpers/dist/react";
 
 const components: Components<{
   BlockQuote: {
@@ -137,6 +138,7 @@ export const Post = (props) => {
       <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
           data-tinafield="title"
+          data-vercel-edit-info={previewField(props, "title")}
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
