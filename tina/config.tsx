@@ -5,7 +5,6 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
-import { createPreviewHelper } from "@tinacms/preview-helpers";
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -29,11 +28,6 @@ const config = defineConfig({
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
-  },
-  cmsCallback: (cms) => {
-    cms.plugins.add(createPreviewHelper());
-
-    return cms;
   },
   schema: {
     collections: [

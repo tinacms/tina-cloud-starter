@@ -36,7 +36,7 @@ export const getStaticProps = async ({ params }) => {
   });
 
   if (process.env.VERCEL_ENV === "preview") {
-    tinaProps = await expandWithMetadata(tinaProps, client);
+    tinaProps = await expandWithMetadata(tinaProps, client, true);
   }
   return {
     props: {

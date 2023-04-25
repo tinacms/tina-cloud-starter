@@ -26,7 +26,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.md`,
   });
   if (process.env.VERCEL_ENV === "preview") {
-    tinaProps = await expandWithMetadata(tinaProps, client);
+    tinaProps = await expandWithMetadata(tinaProps, client, true);
   }
   return {
     props: {
