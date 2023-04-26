@@ -49,5 +49,20 @@ blocks:
           color, font, or icon set.
     color: tint
     _template: features
+  - quote: >-
+      There are only two hard things in Computer Science: cache invalidation and
+      naming things.
+    author: Phil Karlton
+    color: primary
+    _template: testimonial
+  - body: >
+      This project is set up to show you the basics of working with Tina. You're
+      looking at the landing page, which pulls content from
+      `content/pages/home.md`, components from components/blocks, and puts them
+      all together in `pages/[filename].tsx`, all based on a config
+      `tina/config.tsx`.
+    color: tint
+    _template: content
 ---
+
 
