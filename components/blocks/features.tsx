@@ -3,24 +3,35 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { iconSchema } from "../util/icon";
+import {
+  PageBlocksFeatures,
+  PageBlocksFeaturesItems,
+} from "../../tina/__generated__/types";
+import { tinaField } from "tinacms/dist/react";
 
-export const Feature = ({ featuresColor, data, tinaField }) => {
+export const Feature = ({
+  featuresColor,
+  data,
+}: {
+  featuresColor: string;
+  data: PageBlocksFeaturesItems;
+}) => {
   return (
     <div
-      data-tinafield={tinaField}
+      data-tinafield={tinaField(data)}
       className="flex-1 flex flex-col gap-6 text-center items-center lg:items-start lg:text-left max-w-xl mx-auto"
       style={{ flexBasis: "16rem" }}
     >
       {data.icon && (
         <Icon
-          tinaField={`${tinaField}.icon`}
+          data-tinafield={tinaField(data, "icon")}
           parentColor={featuresColor}
           data={{ size: "large", ...data.icon }}
         />
       )}
       {data.title && (
         <h3
-          data-tinafield={`${tinaField}.title`}
+          data-tinafield={tinaField(data, "title")}
           className="text-2xl font-semibold title-font"
         >
           {data.title}
@@ -28,18 +39,17 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
       )}
       {data.text && (
         <p
-          data-tinafield={`${tinaField}.text`}
+          data-tinafield={tinaField(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
           {data.text}
         </p>
       )}
-      {data.actions && <Actions actions={data.actions} />}
     </div>
   );
 };
 
-export const Features = ({ data, parentField }) => {
+export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
     <Section color={data.color}>
       <Container
@@ -48,14 +58,7 @@ export const Features = ({ data, parentField }) => {
       >
         {data.items &&
           data.items.map(function (block, i) {
-            return (
-              <Feature
-                tinaField={`${parentField}.items.${i}`}
-                featuresColor={data.color}
-                key={i}
-                data={block}
-              />
-            );
+            return <Feature featuresColor={data.color} key={i} data={block} />;
           })}
       </Container>
     </Section>
