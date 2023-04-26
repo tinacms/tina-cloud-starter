@@ -316,7 +316,7 @@ const config = defineConfig({
             required: true,
           },
           {
-            type: "string",
+            type: "image",
             label: "Avatar",
             name: "avatar",
           },
