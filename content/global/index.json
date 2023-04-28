@@ -1,11 +1,11 @@
 {
   "header": {
-    "name": "Tina Starter",
     "icon": {
-      "color": "orange",
-      "style": "float",
-      "name": "Tina"
+      "name": "BiAdjust",
+      "color": "purple",
+      "style": "circle"
     },
+    "name": "Tina Starter",
     "color": "default",
     "nav": [
       {
