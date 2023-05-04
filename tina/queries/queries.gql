@@ -4,8 +4,9 @@ query pageQuery {
     edges {
       node {
         id
-        _values
         date
+        title
+        excerpt
         author {
           ... on Author {
             ...AuthorParts
