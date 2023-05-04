@@ -1,10 +1,11 @@
+import { InferGetStaticPropsType } from "next";
 import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
-import { client } from "../.tina/__generated__/client";
+import { client } from "../tina/__generated__/client";
 
 export default function HomePage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     query: props.query,
@@ -40,6 +41,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
-  T extends (...args: any) => Promise<infer R> ? R : any;

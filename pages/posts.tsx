@@ -1,11 +1,12 @@
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
-import { client } from "../.tina/__generated__/client";
+import { client } from "../tina/__generated__/client";
 import { Layout } from "../components/layout";
+import { InferGetStaticPropsType } from "next";
 
 export default function HomePage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const posts = props.data.postConnection.edges;
 
@@ -29,5 +30,6 @@ export const getStaticProps = async () => {
   };
 };
 
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
-  T extends (...args: any) => Promise<infer R> ? R : any;
+export type PostsType = InferGetStaticPropsType<
+  typeof getStaticProps
+>["data"]["postConnection"]["edges"][number];
