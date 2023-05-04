@@ -5,8 +5,10 @@ import { Section } from "../util/section";
 import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
+import { PageBlocksHero } from "../../tina/__generated__/types";
+import { tinaField } from "tinacms/dist/react";
 
-export const Hero = ({ data, parentField }) => {
+export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
   const headlineColorClasses = {
     blue: "from-blue-400 to-blue-600",
@@ -28,7 +30,7 @@ export const Hero = ({ data, parentField }) => {
         <div className="row-start-2 lg:row-start-1 lg:col-span-3 text-center lg:text-left">
           {data.tagline && (
             <h2
-              data-tinafield={`${parentField}.tagline`}
+              data-tinafield={tinaField(data, "tagline")}
               className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
             >
               {data.tagline}
@@ -37,7 +39,7 @@ export const Hero = ({ data, parentField }) => {
           )}
           {data.headline && (
             <h3
-              data-tinafield={`${parentField}.headline`}
+              data-tinafield={tinaField(data, "headline")}
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
@@ -53,7 +55,7 @@ export const Hero = ({ data, parentField }) => {
           )}
           {data.text && (
             <div
-              data-tinafield={`${parentField}.text`}
+              data-tinafield={tinaField(data, "text")}
               className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
@@ -63,7 +65,6 @@ export const Hero = ({ data, parentField }) => {
           )}
           {data.actions && (
             <Actions
-              parentField={`${parentField}.actions`}
               className="justify-center lg:justify-start py-2"
               parentColor={data.color}
               actions={data.actions}
@@ -72,7 +73,7 @@ export const Hero = ({ data, parentField }) => {
         </div>
         {data.image && (
           <div
-            data-tinafield={`${parentField}.image`}
+            data-tinafield={tinaField(data, "image")}
             className="relative row-start-1 lg:col-span-2 flex justify-center"
           >
             <img
