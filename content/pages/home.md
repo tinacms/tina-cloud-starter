@@ -49,5 +49,13 @@ blocks:
           color, font, or icon set.
     color: tint
     _template: features
+  - quote: >-
+      There are only two hard things in Computer Science: cache invalidation and
+      naming things.
+    author: Phil Karlton
+    color: primary
+    _template: testimonial
 ---
+
+
 
