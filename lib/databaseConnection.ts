@@ -4,19 +4,15 @@ import { resolve } from "@tinacms/datalayer";
 import type { TinaClient } from "tinacms/dist/client";
 
 export async function databaseRequest({ query, variables }) {
-  const config = {
-    useRelativeMedia: true,
-  } as any;
-
-  const result = await resolve({
-    config,
+  return resolve({
+    config: {
+      useRelativeMedia: true,
+    },
     database,
     query,
     variables,
     verbose: true,
   });
-
-  return result;
 }
 
 export function getDatabaseConnection<GenQueries = Record<string, unknown>>({
