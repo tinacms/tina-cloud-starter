@@ -73,7 +73,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         </div>
         {data.image && (
           <div
-            data-tinafield={tinaField(data, "image")}
+            data-tinafield={tinaField(data.image, "src")}
             className="relative row-start-1 lg:col-span-2 flex justify-center"
           >
             <img
