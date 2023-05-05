@@ -1,9 +1,20 @@
-import database from "../tina/database";
-import { queries } from "../tina/__generated__/types";
+import database from "../.tina/database";
+import { queries } from "../.tina/__generated__/types";
 import { resolve } from "@tinacms/datalayer";
 import type { TinaClient } from "tinacms/dist/client";
+import { parse } from "graphql";
 
 export async function databaseRequest({ query, variables }) {
+  const queryNode = parse(query);
+  if (queryNode.definitions[0].kind === "OperationDefinition") {
+    if (queryNode.definitions[0].operation === "mutation") {
+      // Don't support mutations since this path is unauthenticated
+      return {
+        data: {},
+      };
+    }
+  }
+
   return resolve({
     config: {
       useRelativeMedia: true,
