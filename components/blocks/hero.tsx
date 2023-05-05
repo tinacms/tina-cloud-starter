@@ -5,7 +5,7 @@ import { Section } from "../util/section";
 import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
-import { PageBlocksHero } from "../../tina/__generated__/types";
+import { PageBlocksHero } from "../../.tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
