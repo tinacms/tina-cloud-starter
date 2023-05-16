@@ -3,18 +3,29 @@ import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
 import { dbConnection } from "../lib/databaseConnection";
-import { withSourceMaps } from "@tinacms/vercel-previews";
-import { useEditOpen } from "@tinacms/vercel-previews/dist/react";
+import { useVisualEditing } from "@tinacms/vercel-previews";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data } = useTina({
+  const { data: tinaData } = useTina(props);
+  const data = useVisualEditing({
+    data: tinaData,
     query: props.query,
     variables: props.variables,
-    data: props.data,
+    redirect: "/admin",
+    enabled: props.enableVisualEditing,
+    // stringEncoding: true,
+    stringEncoding: {
+      skipPaths: (path) => {
+        if ("page.blocks.0.headline" === path) {
+          return false;
+        }
+
+        return true;
+      },
+    },
   });
-  useEditOpen("/admin");
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
@@ -26,21 +37,12 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await dbConnection.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
+  const props = {
+    ...tinaProps,
+    enableVisualEditing: process.env.VERCEL_ENV === "preview",
+  };
   return {
-    props: JSON.parse(
-      JSON.stringify(
-        withSourceMaps(
-          {
-            data: tinaProps.data,
-            query: tinaProps.query,
-            variables: tinaProps.variables,
-          },
-          {
-            encodeStrings: false,
-          }
-        )
-      )
-    ),
+    props: JSON.parse(JSON.stringify(props)) as typeof props,
   };
 };
 

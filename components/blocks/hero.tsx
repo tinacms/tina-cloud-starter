@@ -7,7 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../.tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { vercelEditInfo } from "@tinacms/vercel-previews/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
