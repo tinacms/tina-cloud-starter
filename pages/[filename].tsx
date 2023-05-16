@@ -3,6 +3,8 @@ import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
 import { dbConnection } from "../lib/databaseConnection";
+import { withSourceMaps } from "@tinacms/vercel-previews";
+import { useEditOpen } from "@tinacms/vercel-previews/dist/react";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -12,6 +14,7 @@ export default function HomePage(
     variables: props.variables,
     data: props.data,
   });
+  useEditOpen("/admin");
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
@@ -24,12 +27,15 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.md`,
   });
   return {
-    props: JSON.parse(
-      JSON.stringify({
+    props: withSourceMaps(
+      {
         data: tinaProps.data,
         query: tinaProps.query,
         variables: tinaProps.variables,
-      })
+      },
+      {
+        encodeStrings: false,
+      }
     ),
   };
 };

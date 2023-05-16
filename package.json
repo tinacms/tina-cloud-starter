@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
-    "@tinacms/cli": "0.0.0-20230511192201",
+    "@tinacms/cli": "0.0.0-20230516000815",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
@@ -28,6 +28,7 @@
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
     "@tinacms/datalayer": "^1.2.11",
+    "@tinacms/vercel-previews": "0.0.0-20230516000815",
     "date-fns": "^2.23.0",
     "graphql": "15.8.0",
     "mongodb-level": "^0.0.2",
@@ -35,9 +36,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.2.0",
+    "react-textarea-autosize": "^8.4.1",
     "styled-jsx": "^3.2.5",
     "tailwindcss": "^3.2.4",
-    "tinacms": "0.0.0-20230511192201",
+    "tinacms": "0.0.0-20230516000815",
     "typescript": "^4.5.2"
   }
 }
