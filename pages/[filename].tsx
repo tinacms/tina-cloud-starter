@@ -1,31 +1,15 @@
+import React from "react";
 import { InferGetStaticPropsType } from "next";
 import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
-import { dbConnection } from "../lib/databaseConnection";
-import { useVisualEditing } from "@tinacms/vercel-previews";
+import { client } from "../.tina/__generated__/client";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data: tinaData } = useTina(props);
-  const data = useVisualEditing({
-    data: tinaData,
-    query: props.query,
-    variables: props.variables,
-    redirect: "/admin",
-    enabled: props.enableVisualEditing,
-    // stringEncoding: true,
-    stringEncoding: {
-      skipPaths: (path) => {
-        if ("page.blocks.0.headline" === path) {
-          return false;
-        }
+  const { data } = useTina(props);
 
-        return true;
-      },
-    },
-  });
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
@@ -34,7 +18,7 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await dbConnection.queries.contentQuery({
+  const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
   const props = {
@@ -47,10 +31,10 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await dbConnection.queries.pageConnection();
+  const pagesListData = await client.queries.pageConnection();
   return {
-    paths: pagesListData.data.pageConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
+    paths: pagesListData.data.pageConnection?.edges?.map((page) => ({
+      params: { filename: page?.node?._sys.filename },
     })),
     fallback: false,
   };
