@@ -7,18 +7,12 @@ import { ColorPickerInput } from "../components/fields/color";
 import { iconSchema } from "../components/util/icon";
 
 const config = defineConfig({
-  contentApiUrlOverride: "/api/gql",
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
     process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD!, // Netlify branch env
   token: process.env.TINA_TOKEN!,
-  admin: {
-    auth: {
-      useLocalAuth: true,
-    },
-  },
   media: {
     // If you wanted cloudinary do this
     // loadCustomStore: async () => {
