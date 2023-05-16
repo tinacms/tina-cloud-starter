@@ -27,15 +27,19 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.md`,
   });
   return {
-    props: withSourceMaps(
-      {
-        data: tinaProps.data,
-        query: tinaProps.query,
-        variables: tinaProps.variables,
-      },
-      {
-        encodeStrings: false,
-      }
+    props: JSON.parse(
+      JSON.stringify(
+        withSourceMaps(
+          {
+            data: tinaProps.data,
+            query: tinaProps.query,
+            variables: tinaProps.variables,
+          },
+          {
+            encodeStrings: false,
+          }
+        )
+      )
     ),
   };
 };
