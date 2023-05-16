@@ -7,6 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../.tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews/dist/react";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
@@ -40,6 +41,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.headline && (
             <h3
               data-tinafield={tinaField(data, "headline")}
+              data-vercel-edit-info={vercelEditInfo(data, "headline")}
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
