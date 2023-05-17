@@ -30,7 +30,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         <div className="row-start-2 md:row-start-1 md:col-span-3 text-center md:text-left">
           {data.tagline && (
             <h2
-              data-tinafield={tinaField(data, "tagline")}
+              data-tina-field={tinaField(data, "tagline")}
               className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
             >
               {data.tagline}
@@ -39,7 +39,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           )}
           {data.headline && (
             <h3
-              data-tinafield={tinaField(data, "headline")}
+              data-tina-field={tinaField(data, "headline")}
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
@@ -55,7 +55,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           )}
           {data.text && (
             <div
-              data-tinafield={tinaField(data, "text")}
+              data-tina-field={tinaField(data, "text")}
               className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
@@ -73,7 +73,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         </div>
         {data.image && (
           <div
-            data-tinafield={tinaField(data, "image")}
+            data-tina-field={tinaField(data.image, "src")}
             className="relative row-start-1 md:col-span-2 flex justify-center"
           >
             <img

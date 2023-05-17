@@ -2,7 +2,7 @@ import * as React from "react";
 import { GoCircleSlash } from "react-icons/go";
 import { Button, wrapFieldsWithMeta } from "tinacms";
 import { Popover, Transition } from "@headlessui/react";
-import { Icon, IconOptions } from "../util/icon";
+import { Icon, IconOptions } from "../../components/util/icon";
 import { BiChevronRight } from "react-icons/bi";
 
 const parseIconName = (name: string) => {
@@ -49,7 +49,10 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                 )}
               </Button>
             </Popover.Button>
-            <div className="absolute w-full min-w-[192px] max-w-2xl -bottom-2 left-0 translate-y-full">
+            <div
+              className="absolute w-full min-w-[192px] max-w-2xl -bottom-2 left-0 translate-y-full"
+              style={{ zIndex: 1000 }}
+            >
               <Transition
                 enter="transition duration-150 ease-out"
                 enterFrom="transform opacity-0 -translate-y-2"
