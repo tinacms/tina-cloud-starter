@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ColorPickerInput } from "../fields/color";
-import { IconPickerInput } from "../fields/icon";
+import { ColorPickerInput } from "../../tina/fields/color";
+import { IconPickerInput } from "../../tina/fields/icon";
 import { useTheme } from "../layout";
 import * as BoxIcons from "react-icons/bi";
 
