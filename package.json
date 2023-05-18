@@ -27,6 +27,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
+    "@tinacms/vercel-previews": "^0.0.1",
     "date-fns": "^2.23.0",
     "next": "^13.3.1",
     "react": "^18.2.0",
