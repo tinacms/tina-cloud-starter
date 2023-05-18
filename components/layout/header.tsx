@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
 import { Icon } from "../util/icon";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 import { GlobalHeader } from "../../tina/__generated__/types";
 
 export const Header = ({ data }: { data: GlobalHeader }) => {
@@ -73,7 +73,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
             >
               <Icon
-                tinaField={tinaField(data, "icon")}
+                tinaField={vercelEditInfo(data, "icon")}
                 parentColor={data.color}
                 data={{
                   name: data.icon.name,
@@ -81,7 +81,9 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   style: data.icon.style,
                 }}
               />
-              <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
+              <span data-vercel-edit-info={vercelEditInfo(data, "name")}>
+                {data.name}
+              </span>
             </Link>
           </h4>
           <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
@@ -99,7 +101,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                     }`}
                   >
                     <Link
-                      data-tina-field={tinaField(item, "label")}
+                      data-vercel-edit-info={vercelEditInfo(item, "label")}
                       href={`/${item.href}`}
                       className={`relative select-none	text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
                         activeItem ? `` : `opacity-70`
