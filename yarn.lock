@@ -2359,10 +2359,10 @@
     typescript "^4.6.4"
     zod "^3.14.3"
 
-"@tinacms/cli@1.5.13":
-  version "1.5.13"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.5.13.tgz#5ad24b2faac8780730735902af1a0f65212b20ee"
-  integrity sha512-Fq6Z9VSAybQsseCRdR8PpjUUz94Pljd3BcgZ3WFSwcFa+XD5y5x+TOCg57/vK4h+Sf/BHLxfc8HpDS76v30yEA==
+"@tinacms/cli@^1.5.14":
+  version "1.5.14"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.5.14.tgz#a182a47db5cf0bd9fbdbde0d758c56aa5099bdca"
+  integrity sha512-WV3hysrgjECrFLKljFoLbGx1zX5RoJpYcZhB2/mEk6z6wS4/0qpKPdFOTW0JM2sTXibiTd+FgVEBxR/mryQ4Ow==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -2379,8 +2379,8 @@
     "@tailwindcss/line-clamp" "^0.3.1"
     "@tailwindcss/typography" "^0.5.9"
     "@tinacms/app" "1.2.13"
-    "@tinacms/datalayer" "1.2.13"
-    "@tinacms/graphql" "1.4.13"
+    "@tinacms/datalayer" "1.2.14"
+    "@tinacms/graphql" "1.4.14"
     "@tinacms/metrics" "1.0.2"
     "@tinacms/schema-tools" "1.4.4"
     "@vitejs/plugin-react" "3.1.0"
@@ -2426,17 +2426,17 @@
     yup "^0.32.9"
     zod "^3.14.3"
 
-"@tinacms/datalayer@1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-1.2.13.tgz#aee64ffc2a74de7204efb195e4824ca36884d218"
-  integrity sha512-1peV1AsCY9N5R6+EOOhQ/obv7ez07+ejRIioBpaCwIHkQ/7qZRc2phQirK7CnBKVwVsGlEYhyCa5d+pNyPwIhQ==
+"@tinacms/datalayer@1.2.14":
+  version "1.2.14"
+  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-1.2.14.tgz#441867484c840ca0ca9fa763ba3c79050170d64d"
+  integrity sha512-81pJj1+P8jq1gwroa7CYVWGVjkJFLtMf0EKlO+DvVURhG0jA0FUtn5QRLsbD8LtYh/EaRB31rbUKqnAzaHPqGQ==
   dependencies:
-    "@tinacms/graphql" "1.4.13"
+    "@tinacms/graphql" "1.4.14"
 
-"@tinacms/graphql@1.4.13":
-  version "1.4.13"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-1.4.13.tgz#0921c63215a10e4ba78b9f244cb1375c3c15fd0c"
-  integrity sha512-XIQt5tA1EXIdVhdc3gsj2nel7Xl4bIoAVv9NlkwZJlCDWeAjDZic6Q3aKhYb6jOd7vWuyEFT5QIxw2AG/be5sA==
+"@tinacms/graphql@1.4.14":
+  version "1.4.14"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-1.4.14.tgz#5d019b88e302f61275c9a201c224ebbcc8eef622"
+  integrity sha512-+OHiuM1jFRRwC8ohPeLdbnM771CuH5k5JjTc7HSeSlks+Cegrng4GGDnaerziSYVpCCm8BdsFbpy32EX5a1+9A==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@iarna/toml" "^2.2.5"
@@ -9829,7 +9829,7 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-tinacms@1.5.6:
+tinacms@1.5.6, tinacms@^1.5.6:
   version "1.5.6"
   resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-1.5.6.tgz#d7284485cd60223fcfcc2a6c4f80cdf76d2755d1"
   integrity sha512-2qryA9LwkRyg+Dc7mMRvcGosHhk0jH6Xea0JmIrcdsjhMBMLDIs9DUag7NQNZkGqmI/QRuiUEgRt2WDfACVfEw==
