@@ -1,7 +1,7 @@
 import React from "react";
 import { InferGetStaticPropsType } from "next";
 import { Blocks } from "../components/blocks-renderer";
-import { useTina } from "tinacms/dist/react";
+import { useEditState, useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
 import { client } from "../tina/__generated__/client";
 import { useVisualEditing } from "@tinacms/vercel-previews";
@@ -9,16 +9,18 @@ import { useVisualEditing } from "@tinacms/vercel-previews";
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data: tinaData } = useTina(props);
-  const data = useVisualEditing({
-    data: tinaData,
-    // metadata is derived from the query and variables
-    query: props.query,
-    variables: props.variables,
-    redirect: "/admin",
-    enabled: true,
-    stringEncoding: true,
-  });
+  const { data } = useTina(props);
+  // const { edit: editMode } = useEditState();
+
+  // const data = useVisualEditing({
+  //   data: tinaData,
+  //   // metadata is derived from the query and variables
+  //   query: props.query,
+  //   variables: props.variables,
+  //   redirect: "/admin",
+  //   enabled: !editMode,
+  //   stringEncoding: true,
+  // });
 
   return (
     <Layout rawData={data} data={data.global as any}>
