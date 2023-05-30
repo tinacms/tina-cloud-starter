@@ -19,7 +19,7 @@ export default function HomePage(
     variables: props.variables,
     redirect: "/admin",
     enabled: !editMode,
-    stringEncoding: false,
+    stringEncoding: true,
   });
 
   return (
