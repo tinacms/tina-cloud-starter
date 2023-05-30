@@ -9,18 +9,18 @@ import { useVisualEditing } from "@tinacms/vercel-previews";
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data } = useTina(props);
-  // const { edit: editMode } = useEditState();
+  const { data: tinaData } = useTina(props);
+  const { edit: editMode } = useEditState();
 
-  // const data = useVisualEditing({
-  //   data: tinaData,
-  //   // metadata is derived from the query and variables
-  //   query: props.query,
-  //   variables: props.variables,
-  //   redirect: "/admin",
-  //   enabled: !editMode,
-  //   stringEncoding: true,
-  // });
+  const data = useVisualEditing({
+    data: tinaData,
+    // metadata is derived from the query and variables
+    query: props.query,
+    variables: props.variables,
+    redirect: "/admin",
+    enabled: !editMode,
+    stringEncoding: true,
+  });
 
   return (
     <Layout rawData={data} data={data.global as any}>
