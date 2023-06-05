@@ -58,13 +58,13 @@ const components: Components<{
 
     switch (props.format) {
       case "iso":
-        return <span>{dt.toISOString()}</span>;
+        return <span>{format(dt, "yyyy-MM-dd")}</span>;
       case "utc":
-        return <span>{dt.toUTCString()}</span>;
+        return <span>{format(dt, "eee, dd MMM yyyy HH:mm:ss OOOO")}</span>;
       case "local":
-        return <span>{dt.toLocaleDateString()}</span>;
+        return <span>{format(dt, "P")}</span>;
       default:
-        return <span>{dt.toLocaleDateString()}</span>;
+        return <span>{format(dt, "P")}</span>;
     }
   },
   NewsletterSignup: (props) => {
