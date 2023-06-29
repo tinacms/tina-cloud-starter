@@ -1,7 +1,7 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - headline: Welcome to the Tina Starter
+  - headline: Welcome to the Tina Starter!
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
@@ -35,7 +35,7 @@ blocks:
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
           name: BiLike
-          color: primary
+          color: purple
           style: float
         title: This Is a Feature
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
@@ -51,11 +51,13 @@ blocks:
     _template: features
   - quote: >-
       There are only two hard things in Computer Science: cache invalidation and
-      naming things.
-    author: Phil Karlton
-    color: primary
+      naming things.asdaasdfa
+    author: Phil Karltonasdfa
+    color: tint
     _template: testimonial
 ---
+
+
 
 
 
