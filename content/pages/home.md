@@ -35,7 +35,7 @@ blocks:
           Praesent ac faucibus risus, eu lacinia enim.
       - icon:
           name: BiLike
-          color: primary
+          color: purple
           style: float
         title: This Is a Feature
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
@@ -51,11 +51,12 @@ blocks:
     _template: features
   - quote: >-
       There are only two hard things in Computer Science: cache invalidation and
-      naming things.
-    author: Phil Karlton
-    color: primary
+      naming things.asdaasdfa
+    author: Phil Karltonasdfa
+    color: tint
     _template: testimonial
 ---
+
 
 
 
