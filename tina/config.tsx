@@ -13,6 +13,15 @@ const config = defineConfig({
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD!, // Netlify branch env
   token: process.env.TINA_TOKEN!,
+  ui: {
+    previewUrl: (context) => {
+      return {
+        url: `https://tina-cloud-starter-git-${decodeURIComponent(
+          context.branch
+        )}-tinacms.vercel.app/`,
+      };
+    },
+  },
   media: {
     // If you wanted cloudinary do this
     // loadCustomStore: async () => {
