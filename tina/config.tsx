@@ -16,7 +16,9 @@ const config = defineConfig({
   ui: {
     previewUrl: (context) => {
       return {
-        url: `https://tina-cloud-starter-git-${context.branch}-tinacms.vercel.app/`,
+        url: `https://tina-cloud-starter-git-${decodeURIComponent(
+          context.branch
+        )}-tinacms.vercel.app/`,
       };
     },
   },
