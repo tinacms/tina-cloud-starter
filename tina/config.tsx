@@ -5,14 +5,66 @@ import { heroBlockSchema } from "../components/blocks/hero";
 import { testimonialBlockSchema } from "../components/blocks/testimonial";
 import { ColorPickerInput } from "./fields/color";
 import { iconSchema } from "../components/util/icon";
+import Clerk from "@clerk/clerk-js";
+
+const clerkPubKey = process.env.TINA_PUBLIC_CLERK_PUBLIC_KEY;
+const clerk = new Clerk(clerkPubKey);
+
+/**
+ * For premium Clerk users, you can use restrictions
+ * https://clerk.com/docs/authentication/allowlist
+ */
+export const isUserAllowed = (emailAddress: string) => {
+  const allowList = ["jeffsee.55@gmail.com"];
+  if (allowList.includes(emailAddress)) {
+    return true;
+  }
+  return false;
+};
+
+// const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
+const isLocal = false;
 
 const config = defineConfig({
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
-  branch:
-    process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
-    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
-    process.env.HEAD!, // Netlify branch env
-  token: process.env.TINA_TOKEN!,
+  contentApiUrlOverride: "/api/graphql",
+  admin: {
+    auth: {
+      useLocalAuth: isLocal,
+      customAuth: !isLocal,
+      getToken: async () => {
+        await clerk.load();
+        if (clerk.session) {
+          return { id_token: await clerk.session.getToken() };
+        }
+      },
+      logout: async () => {
+        await clerk.load();
+        await clerk.session.remove();
+      },
+      authenticate: async () => {
+        clerk.openSignIn({
+          redirectUrl: "/admin/index.html", // This should be the Tina admin path
+          appearance: {
+            elements: {
+              // Tina's sign in modal is in the way without this
+              modalBackdrop: { zIndex: 20000 },
+            },
+          },
+        });
+      },
+      getUser: async () => {
+        await clerk.load();
+        if (clerk.user) {
+          if (isUserAllowed(clerk.user.primaryEmailAddress.emailAddress)) {
+            return true;
+          }
+          // Handle when a user is logged in outside of the org
+          clerk.session.end();
+        }
+        return false;
+      },
+    },
+  },
   media: {
     // If you wanted cloudinary do this
     // loadCustomStore: async () => {
