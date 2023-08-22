@@ -1,6 +1,5 @@
 import { Post } from "../../components/posts/post";
 import { client } from "../../tina/__generated__/client";
-import { useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
 import { InferGetStaticPropsType } from "next";
 
@@ -8,11 +7,7 @@ import { InferGetStaticPropsType } from "next";
 export default function BlogPostPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  });
+  const data = props.data;
   if (data && data.post) {
     return (
       <Layout rawData={data} data={data.global}>

@@ -20,7 +20,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
 import { PostType } from "../../pages/posts/[filename]";
-import { tinaField } from "tinacms/dist/react";
 
 const components: Components<{
   BlockQuote: {
@@ -138,7 +137,6 @@ export const Post = (props: PostType) => {
     <Section className="flex-1">
       <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
-          data-tina-field={tinaField(props, "title")}
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
@@ -149,24 +147,17 @@ export const Post = (props: PostType) => {
             {props.title}
           </span>
         </h2>
-        <div
-          data-tina-field={tinaField(props, "author")}
-          className="flex items-center justify-center mb-16"
-        >
+        <div className="flex items-center justify-center mb-16">
           {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
-                  data-tina-field={tinaField(props.author, "avatar")}
                   className="h-14 w-14 object-cover rounded-full shadow-sm"
                   src={props.author.avatar}
                   alt={props.author.name}
                 />
               </div>
-              <p
-                data-tina-field={tinaField(props.author, "name")}
-                className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white"
-              >
+              <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
                 {props.author.name}
               </p>
               <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
@@ -174,20 +165,14 @@ export const Post = (props: PostType) => {
               </span>
             </>
           )}
-          <p
-            data-tina-field={tinaField(props, "date")}
-            className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150"
-          >
+          <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
             {formattedDate}
           </p>
         </div>
       </Container>
       {props.heroImg && (
         <div className="px-4 w-full">
-          <div
-            data-tina-field={tinaField(props, "heroImg")}
-            className="relative max-w-4xl lg:max-w-5xl mx-auto"
-          >
+          <div className="relative max-w-4xl lg:max-w-5xl mx-auto">
             <img
               src={props.heroImg}
               className="absolute block rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
@@ -202,10 +187,7 @@ export const Post = (props: PostType) => {
         </div>
       )}
       <Container className={`flex-1 pt-4`} width="small" size="large">
-        <div
-          data-tina-field={tinaField(props, "_body")}
-          className="prose dark:prose-dark w-full max-w-none"
-        >
+        <div className="prose dark:prose-dark w-full max-w-none">
           <TinaMarkdown components={components} content={props._body} />
         </div>
       </Container>
