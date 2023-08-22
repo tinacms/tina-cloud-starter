@@ -37,9 +37,9 @@ const config = defineConfig({
         path: "content/posts",
         format: "mdx",
         ui: {
-          // router: ({ document }) => {
-          //   return `/posts/${document._sys.filename}`;
-          // },
+          router: ({ document }) => {
+            return `/posts/${document._sys.filename}`;
+          },
         },
         fields: [
           {
