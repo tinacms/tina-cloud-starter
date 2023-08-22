@@ -8,11 +8,7 @@ import { InferGetStaticPropsType } from "next";
 export default function BlogPostPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  });
+  const data = props.data;
   if (data && data.post) {
     return (
       <Layout rawData={data} data={data.global}>
