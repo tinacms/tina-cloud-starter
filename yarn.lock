@@ -2610,6 +2610,14 @@
     slate-react "^0.81.0"
     webfontloader "1.6.28"
 
+"@tinacms/vercel-previews@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tinacms/vercel-previews/-/vercel-previews-0.0.1.tgz#f595ab9c2b4e68faa9fd4b63c74c1bdce5409cdc"
+  integrity sha512-74hS/J2uZmKz06NluE4/0SZNsWwfhGT7TSE4QfGZi17NC10dCeTT1bHTekmAPW5a6glNUw0dJcau3LLNtIX9pg==
+  dependencies:
+    "@vercel/stega" "^0.0.4"
+    tinacms "1.5.6"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
@@ -3265,6 +3273,11 @@
   dependencies:
     immer "^9.0.6"
     react-tracked "^1.7.9"
+
+"@vercel/stega@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@vercel/stega/-/stega-0.0.4.tgz#1c44ec91d9eda78b4803b95502413d7120e80d51"
+  integrity sha512-4c9AibBOJ9oGvvev0f5QFbdcDPmOjkxdlrKb5Y70DnAc0ThtFujod8DRGA/RLFQ5lAvgRTdpvoczl8GhHuxFJQ==
 
 "@vitejs/plugin-react@3.1.0":
   version "3.1.0"
