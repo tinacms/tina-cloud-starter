@@ -2493,10 +2493,10 @@
     typescript "^4.6.4"
     zod "^3.14.3"
 
-"@tinacms/cli@^1.5.33":
-  version "1.5.33"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.5.33.tgz#0bdfbc51d960dede811d465f279c227381d812a1"
-  integrity sha512-KbniEEIeevyXcQ+RmdeTnICrHxjEbuDy+bGnMY+mZpw2resjK+biCDx0XwKswNg23LYYviqz5sfjIQb3XZu8fQ==
+"@tinacms/cli@^1.5.34":
+  version "1.5.34"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.5.34.tgz#605be5c5f17318f9dd150224ef87d3fca53ac02d"
+  integrity sha512-2v7WXgMHBdjlesA9ApSDHe3Gb5GxP9JqDt0II0WxFMryis/a33iGwX8ssXj9ZoYd0Z5e90z/v9jF1PwJtfwPfQ==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
