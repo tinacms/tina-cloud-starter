@@ -20,7 +20,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
 import { PostType } from "../../pages/posts/[filename]";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 const components: Components<{
   BlockQuote: {
@@ -138,7 +138,7 @@ export const Post = (props: PostType) => {
     <Section className="flex-1">
       <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
-          data-tina-field={tinaField(props, "title")}
+          data-vercel-edit-info={vercelEditInfo(props, "title")}
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
@@ -150,21 +150,21 @@ export const Post = (props: PostType) => {
           </span>
         </h2>
         <div
-          data-tina-field={tinaField(props, "author")}
+          data-vercel-edit-info={vercelEditInfo(props, "author")}
           className="flex items-center justify-center mb-16"
         >
           {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
-                  data-tina-field={tinaField(props.author, "avatar")}
+                  data-vercel-edit-info={vercelEditInfo(props.author, "avatar")}
                   className="h-14 w-14 object-cover rounded-full shadow-sm"
                   src={props.author.avatar}
                   alt={props.author.name}
                 />
               </div>
               <p
-                data-tina-field={tinaField(props.author, "name")}
+                data-vercel-edit-info={vercelEditInfo(props.author, "name")}
                 className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white"
               >
                 {props.author.name}
@@ -175,7 +175,7 @@ export const Post = (props: PostType) => {
             </>
           )}
           <p
-            data-tina-field={tinaField(props, "date")}
+            data-vercel-edit-info={vercelEditInfo(props, "date")}
             className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150"
           >
             {formattedDate}
@@ -185,7 +185,7 @@ export const Post = (props: PostType) => {
       {props.heroImg && (
         <div className="px-4 w-full">
           <div
-            data-tina-field={tinaField(props, "heroImg")}
+            data-vercel-edit-info={vercelEditInfo(props, "heroImg")}
             className="relative max-w-4xl lg:max-w-5xl mx-auto"
           >
             <img
@@ -203,7 +203,7 @@ export const Post = (props: PostType) => {
       )}
       <Container className={`flex-1 pt-4`} width="small" size="large">
         <div
-          data-tina-field={tinaField(props, "_body")}
+          data-vercel-edit-info={vercelEditInfo(props, "_body")}
           className="prose dark:prose-dark w-full max-w-none"
         >
           <TinaMarkdown components={components} content={props._body} />

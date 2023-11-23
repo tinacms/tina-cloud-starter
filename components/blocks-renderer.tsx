@@ -3,7 +3,7 @@ import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
 import { Testimonial } from "./blocks/testimonial";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   return (
@@ -11,7 +11,7 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
       {props.blocks
         ? props.blocks.map(function (block, i) {
             return (
-              <div key={i} data-tina-field={tinaField(block)}>
+              <div key={i} data-vercel-edit-info={vercelEditInfo(block)}>
                 <Block {...block} />
               </div>
             );

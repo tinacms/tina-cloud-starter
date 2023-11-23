@@ -6,7 +6,7 @@ import {
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 export const Feature = ({
   featuresColor,
@@ -17,20 +17,20 @@ export const Feature = ({
 }) => {
   return (
     <div
-      data-tina-field={tinaField(data)}
+      data-vercel-edit-info={vercelEditInfo(data)}
       className="flex-1 flex flex-col gap-6 text-center items-center lg:items-start lg:text-left max-w-xl mx-auto"
       style={{ flexBasis: "16rem" }}
     >
       {data.icon && (
         <Icon
-          tinaField={tinaField(data, "icon")}
+          tinaField={vercelEditInfo(data, "icon")}
           parentColor={featuresColor}
           data={{ size: "large", ...data.icon }}
         />
       )}
       {data.title && (
         <h3
-          data-tina-field={tinaField(data, "title")}
+          data-vercel-edit-info={vercelEditInfo(data, "title")}
           className="text-2xl font-semibold title-font"
         >
           {data.title}
@@ -38,7 +38,7 @@ export const Feature = ({
       )}
       {data.text && (
         <p
-          data-tina-field={tinaField(data, "text")}
+          data-vercel-edit-info={vercelEditInfo(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
           {data.text}

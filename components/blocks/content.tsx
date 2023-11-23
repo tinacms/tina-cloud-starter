@@ -4,7 +4,7 @@ import { Section } from "../util/section";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
@@ -13,7 +13,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         className={`prose prose-lg ${
           data.color === "primary" ? `prose-primary` : `dark:prose-dark`
         }`}
-        data-tina-field={tinaField(data, "body")}
+        data-vercel-edit-info={vercelEditInfo(data, "body")}
         size="large"
         width="medium"
       >
