@@ -9,7 +9,7 @@ blocks:
       all together in `pages/[filename].tsx`, all based on a config
       `tina/config.tsx`.
     actions:
-      - label: Get Started
+      - label: Current Openings
         type: button
         icon: true
         link: /posts
