@@ -29,7 +29,7 @@ blocks:
           name: BiCodeBlock
           color: red
           style: float
-        title: Amazing Feature
+        title: Culture
         text: >-
           Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
           Praesent ac faucibus risus, eu lacinia enim.
@@ -37,7 +37,7 @@ blocks:
           name: BiLike
           color: primary
           style: float
-        title: This Is a Feature
+        title: DE & I
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
           name: BiPalette
@@ -51,7 +51,7 @@ blocks:
     _template: features
   - quote: >-
       There are only two hard things in Computer Science: cache invalidation and
-      naming things.
+      naming things. And Off by One errors.
     author: Phil Karlton
     color: primary
     _template: testimonial
