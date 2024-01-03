@@ -37,7 +37,7 @@ blocks:
           name: BiLike
           color: primary
           style: float
-        title: This Is a Feature
+        title: DE & I
         text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
       - icon:
           name: BiPalette
