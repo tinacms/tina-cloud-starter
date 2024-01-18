@@ -11,6 +11,10 @@ const router = Router()
 const mediaHandler = createMediaHandler({
   // ...
   // See the next section for more details on what goes in the createMediaHandler
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  
   authorized: async (req, _res) => {
     try {
       if (process.env.NODE_ENV == 'development') {
