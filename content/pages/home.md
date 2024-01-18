@@ -18,7 +18,8 @@ blocks:
         icon: false
         link: /posts
     image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
+      src: >-
+        https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523392/samples/ecommerce/car-interior-design.jpg
       alt: >-
         Photo of palm trees at sunset by Adam Birkett -
         unsplash.com/photos/75EFpyXu3Wg
