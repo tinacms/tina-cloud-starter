@@ -1,7 +1,7 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - headline: Welcome to Your Careersite Starter
+  - headline: Welcome to Your Careersite Starter!
     text: >
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
@@ -19,7 +19,7 @@ blocks:
         link: /posts
     image:
       src: >-
-        https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523394/samples/imagecon-group.jpg
+        /uploadshttps://res.cloudinary.com/dlyvarr2p/image/upload/v1705523394/samples/imagecon-group.jpg
       alt: Shoes
     color: default
     _template: hero
