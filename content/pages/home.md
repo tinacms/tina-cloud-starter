@@ -6,7 +6,7 @@ blocks:
       ## **Importer and Exporter of Latex and Latex-related Products**
 
 
-      ![](https://res.cloudinary.com/dlyvarr2p/image/upload/v1705686994/vandelay_zwyigv.png)
+      ![](/uploadshttps://res.cloudinary.com/dlyvarr2p/image/upload/v1705686994/vandelay_zwyigv.png)
 
 
       This project is set up to show you the basics of working with Tina. You're
@@ -25,7 +25,7 @@ blocks:
         link: /posts
     image:
       src: >-
-        /uploadshttps://res.cloudinary.com/dlyvarr2p/image/upload/v1705523394/samples/imagecon-group.jpg
+        https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523418/cld-sample-5.jpg
       alt: Shoes
     color: default
     _template: hero
