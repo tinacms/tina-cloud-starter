@@ -1,8 +1,14 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - headline: Welcome to Your Careersite Starter
+  - headline: Welcome to Vandelay Industries Career Site
     text: >
+      ## **Importer and Exporter of Latex and Latex-related Products**
+
+
+      ![](https://res.cloudinary.com/dlyvarr2p/image/upload/v1705686994/vandelay_zwyigv.png)
+
+
       This project is set up to show you the basics of working with Tina. You're
       looking at the landing page, which pulls content from
       `content/pages/home.md`, components from components/blocks, and puts them
@@ -18,10 +24,9 @@ blocks:
         icon: false
         link: /posts
     image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
+      src: >-
+        /uploadshttps://res.cloudinary.com/dlyvarr2p/image/upload/v1705523394/samples/imagecon-group.jpg
+      alt: Shoes
     color: default
     _template: hero
   - items:

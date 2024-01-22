@@ -5,7 +5,7 @@
       "color": "orange",
       "style": "float"
     },
-    "name": "Career Site Starter",
+    "name": "Vandelay Industries (Career Site Starter)",
     "color": "default",
     "nav": [
       {
@@ -31,7 +31,7 @@
     }
   },
   "theme": {
-    "color": "blue",
+    "color": "teal",
     "font": "sans",
     "darkMode": "system"
   }
