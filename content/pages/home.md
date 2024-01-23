@@ -25,7 +25,7 @@ blocks:
         link: /posts
     image:
       src: >-
-        https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523418/cld-sample-5.jpg
+        https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523394/samples/imagecon-group.jpg
       alt: Shoes
     color: default
     _template: hero
