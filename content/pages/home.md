@@ -6,7 +6,7 @@ blocks:
       ## **Importer and Exporter of Latex and Latex-related Products**
 
 
-      ![](https://res.cloudinary.com/dlyvarr2p/image/upload/v1705686994/vandelay_zwyigv.png)
+      ![](https://res.cloudinary.com/dlyvarr2p/image/upload/v1705523383/samples/people/kitchen-bar.jpg)
 
 
       This project is set up to show you the basics of working with Tina. You're

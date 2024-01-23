@@ -26,5 +26,5 @@ const config = defineConfig({
     collections: [Post, Global, Author, Page],
   },
 });
-
+ 
 export default config;
