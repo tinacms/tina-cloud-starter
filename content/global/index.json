@@ -9,6 +9,10 @@
     "color": "default",
     "nav": [
       {
+        "href": "home",
+        "label": "Home"
+      },
+      {
         "href": "",
         "label": "Home"
       },
@@ -17,8 +21,8 @@
         "label": "About"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "my-New-Page",
+        "label": "DE&I"
       }
     ]
   },
