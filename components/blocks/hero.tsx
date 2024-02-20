@@ -7,6 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import Searchbar from "../jobs/jobs_searchbar";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
@@ -23,6 +24,9 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
   return (
     <Section color={data.color}>
+      <div className="max-w-md mx-auto mt-20">
+        <Searchbar />
+      </div>
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
