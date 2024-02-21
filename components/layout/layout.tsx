@@ -10,6 +10,7 @@ export const Layout = ({
   rawData = {},
   data = layoutData,
   children,
+  brandData
 }: {
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
@@ -49,7 +50,7 @@ export const Layout = ({
             data.theme.font === "sans" && "font-sans"
           }`}
         >
-          <Header data={data?.header} />
+          <Header brandData={brandData} data={data?.header} />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>

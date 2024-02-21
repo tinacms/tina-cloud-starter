@@ -9,9 +9,10 @@ export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const posts = props.data.postConnection.edges;
+  console.log(props.brandData)
 
   return (
-    <Layout>
+    <Layout brandData={props.brandData}>
       <Section className="flex-1">
         <Container size="large" width="small">
           <Posts data={posts} />
@@ -23,9 +24,14 @@ export default function HomePage(
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.pageQuery();
+  const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
+  const response = await fetch(`${apiUrl}/get_default_brand`);
+  const brandData = await response.json();
+  console.log(brandData)
   return {
     props: {
       ...tinaProps,
+      brandData: brandData
     },
   };
 };
