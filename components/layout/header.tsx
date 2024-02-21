@@ -7,7 +7,7 @@ import { Icon } from "../util/icon";
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 
-export const Header = ({ data }: { data: GlobalHeader }) => {
+export const Header = ({ data, rawData, brandData }: { data: GlobalHeader }) => {
   const router = useRouter();
   const theme = useTheme();
 
@@ -81,7 +81,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   style: data.icon.style,
                 }}
               />
-              <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
+              <span data-tina-field={tinaField(data, "name")}>{brandData?.company_name}</span>
             </Link>
           </h4>
           <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
