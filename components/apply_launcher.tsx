@@ -1,50 +1,20 @@
-import React, {  useEffect, useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
-const ApplyLauncherComponent = () => {
-
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
-        const jobId = 4;
-        const guid = "2fec6866-5d76-48e6-a140-c819e96863ff";
-        const response = await fetch(`${apiUrl}/job/${jobId}/get_apply_launcher/${guid}`);
-        const launcherData = await response.json();
-        if (launcherData?.error) {
-          setData({ error: launcherData.error });
-          return;
-        }
-        setData({
-          applyKey: launcherData?.apply_key,
-          jobId: launcherData?.job_id,
-          workflowType: launcherData?.workflow_type,
-          widgetOptions: launcherData?.widget_options
-        });
-      } catch (error) {
-        console.log(error);
-        setData(null);
-        return;
-      }
-    };
-
-    fetchData();
-  }, [data]);
+const ApplyLauncherComponent = ({ launcherData }) => {
 
   const handleClick = useCallback(() => {
-    if (data?.applyKey && global.CareerSite !== undefined) {
-      global.CareerSite.Apply.launchApplicationWorkflow(data?.applyKey, data?.jobId, data?.workflowType, data?.widgetOptions);
+    if (launcherData?.apply_key && global.CareerSite !== undefined) {
+      global.CareerSite.Apply.launchApplicationWorkflow(launcherData?.apply_key, parseInt(launcherData?.job_id, 10), launcherData?.workflow_type, launcherData?.widget_options);
     }
-  }, [data]);
+  }, [launcherData]);
 
-  if (data?.error) {
-    return <div>{data.error}</div>
+  if (launcherData?.error) {
+    return <div>{launcherData.error}</div>
   } 
   
-  if (data?.applyKey) {
+  if (launcherData?.apply_key) {
     return (
-      <button type="button" onClick={handleClick}>Launch</button>
+      <button type="button" className="rounded-md bg-green-700 p-2" onClick={handleClick}>Launch</button>
     );
   }
 

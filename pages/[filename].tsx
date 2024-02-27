@@ -1,6 +1,5 @@
 import React from "react";
 import { InferGetStaticPropsType } from "next";
-import Script from "next/script";
 import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
@@ -14,8 +13,6 @@ export default function HomePage(
   return (
     <Layout brandData={props.brandData} rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
-      {props?.scriptProps?.scripts?.webpack?.map(url => <Script key={url} src={url} strategy="beforeInteractive"/>)}
-      {props?.scriptProps?.scripts?.apply ? <Script src={props?.scriptProps?.scripts?.apply} strategy="beforeInteractive"/> : null} 
     </Layout>
   );
 }
@@ -27,10 +24,8 @@ export const getStaticProps = async ({ params }) => {
   const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
   const response = await fetch(`${apiUrl}/get_default_brand`);
   const brandData = await response.json();
-  //const scriptProps = await fetch();
   const props = {
     ...tinaProps,
-    //...scriptProps,
     enableVisualEditing: process.env.VERCEL_ENV === "preview",
     brandData: brandData,
   };
