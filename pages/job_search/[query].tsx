@@ -30,14 +30,9 @@ export async function getServerSideProps({req, res, resolvedUrl}) {
   let response = await fetch(`${apiUrl}/search_jobs?${query}`);
   jobs = await response.json();
 
-  //Getting Brand Data
-  response = await fetch(`${apiUrl}/get_default_brand`);
-  const brandData = await response.json();
-
   return {
     props: {
-        jobs: jobs,
-        brandData: brandData
+        jobs: jobs
     },
   };
 }
