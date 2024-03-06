@@ -43,14 +43,8 @@ export async function getServerSideProps({ params }) {
   let scriptData = await fetch(`${apiUrl}/get_apply_script_urls`);
   scriptData = await scriptData.json();
 
-  // Get brand data
-  let brandData;
-  brandData = await fetch(`${apiUrl}/get_default_brand`);
-  brandData = await brandData.json();
-
-  //Get launcher data
-  let launcherData;
-  try {
+   let launcherData;
+   try {
     launcherData = await fetch(`${apiUrl}/job/${jobId}/get_apply_launcher/${launcherId}`);
     launcherData = await launcherData.json();
   } catch(err) {
@@ -61,7 +55,6 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       job: job,
-      brandData: brandData,
       scripts: scriptData?.scripts,
       launcherData: launcherData,
       currentEnvironment: "qa" //process.env.NODE_ENV || "qa"
