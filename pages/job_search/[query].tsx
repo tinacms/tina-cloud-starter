@@ -24,10 +24,10 @@ export async function getServerSideProps({req, res, resolvedUrl}) {
   //Searching for Jobs
   const query = resolvedUrl.split('?')[1].replace(/ /g,"+")
   const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
+  const data_format = 'data_format=detail';
   let jobs = {};
-  let response = await fetch(`${apiUrl}/search_jobs?${query}`);
+  let response = await fetch(`${apiUrl}/search_jobs?${query}&${data_format}`);
   jobs = await response.json();
-
   return {
     props: {
         jobs: jobs
