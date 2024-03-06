@@ -21,13 +21,9 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
-  const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
-  const response = await fetch(`${apiUrl}/get_default_brand`);
-  const brandData = await response.json();
   const props = {
     ...tinaProps,
     enableVisualEditing: process.env.VERCEL_ENV === "preview",
-    brandData: brandData,
   };
   return {
     props: JSON.parse(JSON.stringify(props)) as typeof props,
