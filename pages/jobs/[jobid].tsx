@@ -6,9 +6,6 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 
 const JobsPage = ({ job, brandData, launcherData, ...props }) => {
-  const divStyle = {
-    padding: '10px'
-  };
   return (
     <Layout brandData={brandData}>
       <Section className="flex-1">
@@ -34,27 +31,31 @@ export default JobsPage;
 
 export async function getServerSideProps({ params }) {
   //Getting job details
-  let job = {};
+  let job;
   const jobId = params.jobid; // Extract the second parameter from the URL
   const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
   const launcherId = process.env.WORKFLOW_LAUNCHER_ID;
 
-  let response = await fetch(`${apiUrl}/job_details/${jobId}`);
-  job = await response.json();
-  //Getting Brand Data
-  response = await fetch(`${apiUrl}/get_default_brand`);
-  const brandData = await response.json();
+  job = await fetch(`${apiUrl}/job_details/${jobId}`);
+  job = await job.json();
 
+  //Get scripts
   let scriptData = await fetch(`${apiUrl}/get_apply_script_urls`);
   scriptData = await scriptData.json();
 
-   let launcherData;
-   try {
+  // Get brand data
+  let brandData;
+  brandData = await fetch(`${apiUrl}/get_default_brand`);
+  brandData = await brandData.json();
+
+  //Get launcher data
+  let launcherData;
+  try {
     launcherData = await fetch(`${apiUrl}/job/${jobId}/get_apply_launcher/${launcherId}`);
     launcherData = await launcherData.json();
-   } catch(err) {
+  } catch(err) {
     launcherData = { error: err?.message }
-   }
+  }
   
 
   return {

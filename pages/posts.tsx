@@ -27,7 +27,6 @@ export const getStaticProps = async () => {
   const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
   const response = await fetch(`${apiUrl}/get_default_brand`);
   const brandData = await response.json();
-  console.log(brandData)
   return {
     props: {
       ...tinaProps,
