@@ -3,7 +3,7 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksTestimonial } from "../../tina/__generated__/types";
-import { tinaField } from "tinacms/dist/react";
+import { vercelEditInfo } from "@tinacms/vercel-previews";
 
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
@@ -23,7 +23,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
               &ldquo;
             </span>
             <p
-              data-tina-field={tinaField(data, `quote`)}
+              data-vercel-edit-info={vercelEditInfo(data, `quote`)}
               className="relative opacity-95"
             >
               {data.quote}
@@ -45,7 +45,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
           </div>
           <footer className="text-center">
             <p
-              data-tina-field={tinaField(data, `author`)}
+              data-vercel-edit-info={vercelEditInfo(data, `author`)}
               className={`tracking-wide title-font font-bold text-lg ${
                 data.color === "primary"
                   ? `text-blue-200`
