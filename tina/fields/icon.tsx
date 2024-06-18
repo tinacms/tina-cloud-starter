@@ -1,9 +1,9 @@
 import * as React from "react";
-import { GoCircleSlash } from "react-icons/go";
-import { Button, wrapFieldsWithMeta } from "tinacms";
-import { Popover, Transition } from "@headlessui/react";
+import { Button, ChevronDownIcon, classNames, wrapFieldsWithMeta } from "tinacms";
 import { Icon, IconOptions } from "../../components/util/icon";
-import { BiChevronRight } from "react-icons/bi";
+import {BiChevronRight} from "react-icons/bi"
+import {GoCircleSlash} from "react-icons/go"
+import { Popover, Transition } from "@headlessui/react";
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
@@ -33,7 +33,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
       <Popover>
         {({ open }) => (
           <>
-            <Popover.Button as={"span"}>
+            <Popover.Button>
               <Button
                 className={`text-sm h-11 px-4 ${InputIcon ? "h-11" : "h-10"}`}
                 size="custom"

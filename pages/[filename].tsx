@@ -2,8 +2,8 @@ import React from "react";
 import { InferGetStaticPropsType } from "next";
 import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
-import { Layout } from "../components/layout";
 import { client } from "../tina/__generated__/client";
+import Layout from "../components/layout/layout";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -31,7 +31,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await client.queries.pageConnection();
+  const pagesListData = await client.queries.pageConnection(); 
   return {
     paths: pagesListData.data.pageConnection?.edges?.map((page) => ({
       params: { filename: page?.node?._sys.filename },
