@@ -25,7 +25,7 @@
     "postcss-nesting": "^12.1.5"
   },
   "dependencies": {
-    "@headlessui/react": "2.0.4",
+    "@headlessui/react": "^1.7.19",
     "@tailwindcss/typography": "^0.5.8",
     "date-fns": "^3.6.0",
     "next": "^14.2.4",
