@@ -3,8 +3,9 @@ import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
-import format from "date-fns/format";
+import {format} from "date-fns";
 import { PostsType } from "../../pages/posts";
+import Image from "next/image";
 
 export const Posts = ({ data }: { data: PostsType[] }) => {
   const theme = useTheme();
@@ -31,7 +32,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
         return (
           <Link
             key={post._sys.filename}
-            href={`/posts/` + post._sys.filename}
+            href={`/posts/` + post._sys.breadcrumbs.join("/")}
             className="group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
           >
             <h3
@@ -49,7 +50,9 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
             </div>
             <div className="flex items-center">
               <div className="flex-shrink-0 mr-2">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   className="h-10 w-10 object-cover rounded-full shadow-sm"
                   src={post?.author?.avatar}
                   alt={post?.author?.name}

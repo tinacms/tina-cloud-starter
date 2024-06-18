@@ -7,6 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import Image from "next/image";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
@@ -59,23 +60,27 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                 <div
                   data-tina-field={tinaField(data, "text")}
                   className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                    data.color === "primary" ? `prose-primary` : `dark:prose-dark`
+                    data.color === "primary"
+                      ? `prose-primary`
+                      : `dark:prose-dark`
                   }`}
                 >
                   <TinaMarkdown content={data.text} />
                 </div>
               )}
-             </div>
+            </div>
             {data.image && (
               <div
                 data-tina-field={tinaField(data.image, "src")}
                 className="relative flex-shrink-0 md:w-2/5 flex justify-center"
               >
-                <img
+                <Image
                   className="w-full h-auto max-w-full rounded-lg"
                   style={{ objectFit: "cover" }}
                   alt={data.image.alt}
                   src={data.image.src}
+                  width={500}
+                  height={500}
                 />
               </div>
             )}
