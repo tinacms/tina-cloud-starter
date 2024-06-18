@@ -15,12 +15,13 @@ import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { useTheme } from "../layout";
-import format from "date-fns/format";
+import {format} from "date-fns";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
-import { PostType } from "../../pages/posts/[filename]";
 import { tinaField } from "tinacms/dist/react";
+import Image from "next/image";
+import { PostType } from "../../pages/posts/[...filename]";
 
 const components: Components<{
   BlockQuote: {
@@ -107,7 +108,7 @@ const components: Components<{
   },
   img: (props) => (
     <span className="flex items-center justify-center">
-      <img src={props.url} alt={props.alt} />
+      <Image src={props.url} alt={props.alt} width={500} height={500} />
     </span>
   ),
 };
@@ -156,11 +157,13 @@ export const Post = (props: PostType) => {
           {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
-                <img
+                <Image
                   data-tina-field={tinaField(props.author, "avatar")}
                   className="h-14 w-14 object-cover rounded-full shadow-sm"
                   src={props.author.avatar}
                   alt={props.author.name}
+                  width={500}
+                  height={500}
                 />
               </div>
               <p
@@ -188,14 +191,19 @@ export const Post = (props: PostType) => {
             data-tina-field={tinaField(props, "heroImg")}
             className="relative max-w-4xl lg:max-w-5xl mx-auto"
           >
-            <img
-              src={props.heroImg}
-              className="absolute block rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
-              aria-hidden="true"
-            />
-            <img
+            <Image
               src={props.heroImg}
               alt={props.title}
+              className="absolute block rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+              aria-hidden="true"
+              width={500}
+              height={500}
+            />
+            <Image
+              src={props.heroImg}
+              alt={props.title}
+              width={500}
+              height={500}
               className="relative z-10 mb-14 block rounded-lg w-full h-auto opacity-100"
             />
           </div>
