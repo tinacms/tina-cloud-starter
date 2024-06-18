@@ -28,9 +28,14 @@ export default function BlogPostPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const relativePath = Array.isArray(params.filename)
+    ? `${params.filename.join("/")}.mdx`
+    : `${params.filename}.mdx`;
+
   const tinaProps = await client.queries.blogPostQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath,
   });
+
   return {
     props: {
       ...tinaProps,
@@ -47,9 +52,10 @@ export const getStaticProps = async ({ params }) => {
  */
 export const getStaticPaths = async () => {
   const postsListData = await client.queries.postConnection();
+
   return {
     paths: postsListData.data.postConnection.edges.map((post) => ({
-      params: { filename: post.node._sys.filename },
+      params: { filename: post.node._sys.filename.split("/") },
     })),
     fallback: "blocking",
   };
