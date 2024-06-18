@@ -1,5 +1,5 @@
 import { Hero } from "../components/blocks/hero";
-import { Layout } from "../components/layout";
+import  Layout  from "../components/layout";
 
 export default function FourOhFour() {
   return (
