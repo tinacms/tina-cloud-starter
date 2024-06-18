@@ -1,9 +1,9 @@
 import { Post } from "../../components/posts/post";
 import { client } from "../../tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
-import { Layout } from "../../components/layout";
-import { InferGetStaticPropsType } from "next";
 
+import { InferGetStaticPropsType } from "next";
+import Layout from "../../components/layout/layout";
 // Use the props returned by get static props
 export default function BlogPostPage(
   props: InferGetStaticPropsType<typeof getStaticProps>

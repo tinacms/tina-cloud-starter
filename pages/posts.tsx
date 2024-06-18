@@ -2,8 +2,8 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { Posts } from "../components/posts";
 import { client } from "../tina/__generated__/client";
-import { Layout } from "../components/layout";
 import { InferGetStaticPropsType } from "next";
+import Layout from "../components/layout/layout";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>

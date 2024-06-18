@@ -6,7 +6,9 @@ import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
 import { Global } from "../../tina/__generated__/types";
 
-export const Layout = ({
+
+
+export default function Layout({
   rawData = {},
   data = layoutData,
   children,
@@ -14,7 +16,7 @@ export const Layout = ({
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   children: React.ReactNode;
-}) => {
+}) {
   return (
     <>
       <Head>
