@@ -1,16 +1,15 @@
+"use client";
 import * as React from "react";
-import { Actions } from "../util/actions";
-import { Container } from "../util/container";
-import { Section } from "../util/section";
-import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import Image from "next/image";
+import { Section } from "../layout/section";
+import { Container } from "../layout/container";
+import { Actions } from "./actions";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
-  const theme = useTheme();
   const headlineColorClasses = {
     blue: "from-blue-400 to-blue-600",
     teal: "from-teal-400 to-teal-600",
@@ -47,7 +46,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
                     ? `from-white to-gray-100`
-                    : headlineColorClasses[theme.color]
+                    : headlineColorClasses["blue"]
                 }`}
               >
                 {data.headline}

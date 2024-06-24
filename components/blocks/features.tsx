@@ -1,12 +1,12 @@
-import { Section } from "../util/section";
-import { Container } from "../util/container";
-import { Icon } from "../util/icon";
-import { iconSchema } from "../util/icon";
+"use client";
 import {
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { Icon, iconSchema } from "../icon";
+import { Section } from "../layout/section";
+import { Container } from "../layout/container";
 
 export const Feature = ({
   featuresColor,

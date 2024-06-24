@@ -1,14 +1,19 @@
-import React from "react";
+"use client";
+import { format } from "date-fns";
 import Link from "next/link";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { BsArrowRight } from "react-icons/bs";
-import { useTheme } from "../layout";
-import {format} from "date-fns";
-import { PostsType } from "../../pages/posts";
 import Image from "next/image";
+import React from "react";
+import { useLayout } from "../../components/layout/layout-context";
+import { BsArrowRight } from "react-icons/bs";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { PostConnectionQuery } from "../../tina/__generated__/types";
 
-export const Posts = ({ data }: { data: PostsType[] }) => {
-  const theme = useTheme();
+export default function PostsClientPage({
+  data,
+}: {
+  data: PostConnectionQuery["postConnection"]["edges"];
+}) {
+  const { theme } = useLayout();
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
     teal: "group-hover:text-teal-600 dark:group-hover:text-teal-300",
@@ -22,7 +27,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
 
   return (
     <>
-      {data.map((postData) => {
+      {data?.map((postData) => {
         const post = postData.node;
         const date = new Date(post.date);
         let formattedDate = "";
@@ -77,4 +82,4 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
       })}
     </>
   );
-};
+}

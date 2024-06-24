@@ -1,8 +1,7 @@
+"use client";
 import * as React from "react";
-import { ColorPickerInput } from "../../tina/fields/color";
-import { IconPickerInput } from "../../tina/fields/icon";
-import { useTheme } from "../layout";
 import * as BoxIcons from "react-icons/bi";
+import { useLayout } from "./layout/layout-context";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -82,14 +81,13 @@ export const Icon = ({
   className = "",
   tinaField = "",
 }) => {
-  const theme = useTheme();
-  
+  const { theme } = useLayout();
+
   if (IconOptions[data.name] === null || IconOptions[data.name] === undefined) {
     return null;
   }
 
   const { name, color, size = "medium", style = "regular" } = data;
-
 
   const IconSVG = IconOptions[name];
 
@@ -140,7 +138,7 @@ export const iconSchema = {
       label: "Icon",
       name: "name",
       ui: {
-        component: IconPickerInput,
+        // component: IconPickerInput,
       },
     },
     {
@@ -148,7 +146,7 @@ export const iconSchema = {
       label: "Color",
       name: "color",
       ui: {
-        component: ColorPickerInput,
+        // component: ColorPickerInput,
       },
     },
     {
@@ -162,7 +160,7 @@ export const iconSchema = {
         },
         {
           label: "Float",
-          value: "float",
+          value: "regular",
         },
       ],
     },

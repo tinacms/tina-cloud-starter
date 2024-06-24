@@ -1,7 +1,8 @@
+"use client";
 import { Hero } from "../components/blocks/hero";
 import Layout from "../components/layout/layout";
 
-export default function FourOhFour() {
+export default function NotFound() {
   return (
     <Layout>
       <Hero

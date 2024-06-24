@@ -1,6 +1,6 @@
 import type { Collection } from "tinacms";
-import { iconSchema } from "../../components/util/icon";
 import { ColorPickerInput } from "../fields/color";
+import { iconSchema } from "../../components/icon";
 
 const Global: Collection = {
   label: "Global",
@@ -107,7 +107,6 @@ const Global: Collection = {
       type: "object",
       label: "Theme",
       name: "theme",
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       fields: [
         {

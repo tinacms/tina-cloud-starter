@@ -1,10 +1,10 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useTheme } from "..";
+import { useLayout } from "./layout/layout-context";
 
 export const RawRenderer = ({ rawData, parentColor }) => {
-  const theme = useTheme();
+  const { theme } = useLayout();
   const buttonColorClasses = {
     blue: "text-blue-500",
     teal: "text-teal-500",

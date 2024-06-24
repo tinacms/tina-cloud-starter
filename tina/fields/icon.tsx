@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Button, ChevronDownIcon, classNames, wrapFieldsWithMeta } from "tinacms";
-import { Icon, IconOptions } from "../../components/util/icon";
-import {BiChevronRight} from "react-icons/bi"
-import {GoCircleSlash} from "react-icons/go"
+import { Button, wrapFieldsWithMeta } from "tinacms";
+import { BiChevronRight } from "react-icons/bi";
+import { GoCircleSlash } from "react-icons/go";
 import { Popover, Transition } from "@headlessui/react";
+import { Icon, IconOptions } from "../../components/icon";
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
