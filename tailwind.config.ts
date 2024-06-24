@@ -101,8 +101,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        // nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
-        // lato: ["Lato", ...defaultTheme.fontFamily.sans],
+        nunito: ["var(--font-nunito)", ...fontFamily.sans],
+        lato: ["var(--font-lato)", ...fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {

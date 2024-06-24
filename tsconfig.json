@@ -31,8 +31,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".forestry/types.ts",
-    ".forestry/config.ts",
     ".next/types/**/*.ts"
   ]
 }

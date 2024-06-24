@@ -2,6 +2,8 @@
 import * as React from "react";
 import * as BoxIcons from "react-icons/bi";
 import { useLayout } from "./layout/layout-context";
+import { ColorPickerInput } from "../tina/fields/color";
+import { IconPickerInput } from "../tina/fields/icon";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -138,7 +140,7 @@ export const iconSchema = {
       label: "Icon",
       name: "name",
       ui: {
-        // component: IconPickerInput,
+        component: IconPickerInput,
       },
     },
     {
@@ -146,7 +148,7 @@ export const iconSchema = {
       label: "Color",
       name: "color",
       ui: {
-        // component: ColorPickerInput,
+        component: ColorPickerInput,
       },
     },
     {
@@ -160,7 +162,7 @@ export const iconSchema = {
         },
         {
           label: "Float",
-          value: "regular",
+          value: "float",
         },
       ],
     },
