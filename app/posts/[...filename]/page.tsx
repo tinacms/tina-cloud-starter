@@ -21,11 +21,9 @@ export default async function PostPage({
 
 export async function generateStaticParams() {
   const posts = await client.queries.postConnection();
-  return posts.data?.postConnection.edges.map((edge) => {
-    return {
-      params: {
-        filename: edge.node._sys.filename.split("/"),
-      },
-    };
-  });
+  const paths = posts.data?.postConnection.edges.map((edge) => ({
+    filename: edge.node._sys.breadcrumbs,
+  }));
+
+  return paths || [];
 }

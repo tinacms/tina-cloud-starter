@@ -21,11 +21,9 @@ export default async function Page({
 
 export async function generateStaticParams() {
   const pages = await client.queries.pageConnection();
-  return pages.data?.pageConnection.edges.map((edge) => {
-    return {
-      params: {
-        filename: edge.node._sys.filename.split("/"),
-      },
-    };
-  });
+  const paths = pages.data?.pageConnection.edges.map((edge) => ({
+    filename: edge.node._sys.breadcrumbs,
+  }));
+
+  return paths || [];
 }
