@@ -16,10 +16,7 @@ const LayoutContext = React.createContext<LayoutState | undefined>(undefined);
 
 export const useLayout = () => {
   const context = useContext(LayoutContext);
-  if (!context) {
-    throw new Error("useLayout must be used within a LayoutProvider");
-  }
-  return context;
+  return context || { theme: { color: "blue" } };
 };
 
 interface LayoutProviderProps {

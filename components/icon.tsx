@@ -1,9 +1,8 @@
 "use client";
-import * as React from "react";
 import * as BoxIcons from "react-icons/bi";
+// import { useLayout } from "./layout/layout-context";
+import React from "react";
 import { useLayout } from "./layout/layout-context";
-import { ColorPickerInput } from "../tina/fields/color";
-import { IconPickerInput } from "../tina/fields/icon";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -128,43 +127,4 @@ export const Icon = ({
       />
     );
   }
-};
-
-export const iconSchema = {
-  type: "object",
-  label: "Icon",
-  name: "icon",
-  fields: [
-    {
-      type: "string",
-      label: "Icon",
-      name: "name",
-      ui: {
-        component: IconPickerInput,
-      },
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      ui: {
-        component: ColorPickerInput,
-      },
-    },
-    {
-      name: "style",
-      label: "Style",
-      type: "string",
-      options: [
-        {
-          label: "Circle",
-          value: "circle",
-        },
-        {
-          label: "Float",
-          value: "float",
-        },
-      ],
-    },
-  ],
 };

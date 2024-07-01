@@ -1,14 +1,16 @@
-import * as React from "react";
+"use client";
+import React from "react";
 import { Button, wrapFieldsWithMeta } from "tinacms";
 import { BiChevronRight } from "react-icons/bi";
 import { GoCircleSlash } from "react-icons/go";
+import { Icon, IconOptions } from "../../components/icon";
 import {
   Popover,
   PopoverButton,
-  PopoverPanel,
   Transition,
+  PopoverPanel,
 } from "@headlessui/react";
-import { Icon, IconOptions } from "../../components/icon";
+import { ColorPickerInput } from "./color";
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
@@ -137,3 +139,42 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
     </div>
   );
 });
+
+export const iconSchema = {
+  type: "object",
+  label: "Icon",
+  name: "icon",
+  fields: [
+    {
+      type: "string",
+      label: "Icon",
+      name: "name",
+      ui: {
+        component: IconPickerInput,
+      },
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      ui: {
+        component: ColorPickerInput,
+      },
+    },
+    {
+      name: "style",
+      label: "Style",
+      type: "string",
+      options: [
+        {
+          label: "Circle",
+          value: "circle",
+        },
+        {
+          label: "Float",
+          value: "float",
+        },
+      ],
+    },
+  ],
+};
