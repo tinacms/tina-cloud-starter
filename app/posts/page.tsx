@@ -11,7 +11,7 @@ export default async function PostsPage() {
 
   return (
     <Layout rawPageData={posts.data}>
-      <PostsClientPage data={posts.data?.postConnection.edges || []} />
+      <PostsClientPage {...posts} />
     </Layout>
   );
 }

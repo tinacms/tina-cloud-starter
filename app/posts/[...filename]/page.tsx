@@ -8,21 +8,21 @@ export default async function PostPage({
 }: {
   params: { filename: string[] };
 }) {
-  const { data } = await client.queries.post({
+  const data = await client.queries.post({
     relativePath: `${params.filename.join("/")}.mdx`,
   });
 
   return (
     <Layout rawPageData={data}>
-      <PostClientPage {...data.post} />
+      <PostClientPage {...data} />
     </Layout>
   );
 }
 
 export async function generateStaticParams() {
-  const posts = await client.queries.postConnection();  
+  const posts = await client.queries.postConnection();
   const paths = posts.data?.postConnection.edges.map((edge) => ({
     filename: edge.node._sys.breadcrumbs,
-  }));  
+  }));
   return paths || [];
 }
