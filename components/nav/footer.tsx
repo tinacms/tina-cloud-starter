@@ -11,7 +11,7 @@ import { RawRenderer } from "../raw-renderer";
 
 export default function Footer() {
   const { theme, globalSettings, pageData } = useLayout();
-  const footer = globalSettings.footer;
+  const footer = globalSettings?.footer;
 
   const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
@@ -42,7 +42,7 @@ export default function Footer() {
   };
 
   const footerColorCss =
-    theme.darkMode === "primary"
+    theme?.darkMode === "primary"
       ? footerColor.primary[theme.color]
       : footerColor.default;
 
@@ -57,12 +57,12 @@ export default function Footer() {
             <Icon
               parentColor={footer.color}
               data={{
-                name: globalSettings.header.icon.name,
+                name: globalSettings?.header.icon.name,
                 color:
                   theme.color === "primary"
                     ? "primary"
-                    : globalSettings.header.icon.color,
-                style: globalSettings.header.icon.style,
+                    : globalSettings?.header.icon.color,
+                style: globalSettings?.header.icon.style,
               }}
               className="inline-block h-10 w-auto group-hover:text-orange-500"
             />
