@@ -33,6 +33,6 @@
   "theme": {
     "color": "blue",
     "font": "sans",
-    "darkMode": "system"
+    "darkMode": "light"
   }
 }
