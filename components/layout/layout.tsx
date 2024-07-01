@@ -1,67 +1,30 @@
-import React from "react";
-import Head from "next/head";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { Theme } from "./theme";
-import layoutData from "../../content/global/index.json";
-import { Global } from "../../tina/__generated__/types";
+import React, { PropsWithChildren } from "react";
+import { LayoutProvider } from "./layout-context";
+import client from "../../tina/__generated__/client";
+import Header from "../nav/header";
+import Footer from "../nav/footer";
+import { cn } from "../../lib/utils";
 
+type LayoutProps = PropsWithChildren & {
+  rawPageData?: any;
+};
 
+export default async function Layout({ children, rawPageData }: LayoutProps) {
+  const { data: globalData } = await client.queries.global({
+    relativePath: "index.json",
+  });
 
-export default function Layout({
-  rawData = {},
-  data = layoutData,
-  children,
-}: {
-  rawData?: object;
-  data?: Omit<Global, "id" | "_sys" | "_values">;
-  children: React.ReactNode;
-}) {
   return (
-    <>
-      <Head>
-        <title>Tina</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {data.theme.font === "nunito" && (
-          <>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
-              rel="stylesheet"
-            />
-          </>
+    <LayoutProvider globalSettings={globalData.global} pageData={rawPageData}>
+      <Header />
+      <main
+        className={cn(
+          "font-sans flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col"
         )}
-        {data.theme.font === "lato" && (
-          <>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
-              rel="stylesheet"
-            />
-          </>
-        )}
-      </Head>
-      <Theme data={data?.theme}>
-        <div
-          className={`min-h-screen flex flex-col ${
-            data.theme.font === "nunito" && "font-nunito"
-          } ${data.theme.font === "lato" && "font-lato"} ${
-            data.theme.font === "sans" && "font-sans"
-          }`}
-        >
-          <Header data={data?.header} />
-          <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
-            {children}
-          </div>
-          <Footer
-            rawData={rawData}
-            data={data?.footer}
-            icon={data?.header.icon}
-          />
-        </div>
-      </Theme>
-    </>
+      >
+        {children}
+      </main>
+      <Footer />
+    </LayoutProvider>
   );
 }
