@@ -7,11 +7,10 @@
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:build": "next build"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
     "@svgr/webpack": "^8.1.0",
     "@tinacms/cli": "^1.5.34",
     "@types/js-cookie": "^3.0.0",
@@ -19,21 +18,32 @@
     "@types/react": "^18.3.3",
     "@types/styled-components": "^5.1.15",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
     "postcss": "^8.3.11",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^12.1.5"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.19",
+    "@headlessui/react": "^2.1.1",
     "@tailwindcss/typography": "^0.5.8",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.1",
     "date-fns": "^3.6.0",
     "next": "^14.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next-themes": "^0.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "styled-jsx": "^5.1.1",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.2.4",
     "tinacms": "^1.6.4",
     "typescript": "^5.4.5"
+  },
+  "resolutions": {
+    "_#IMPORTANT": "The below resolutions are required due to tinacms being on react 17",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
