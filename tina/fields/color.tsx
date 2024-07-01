@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { wrapFieldsWithMeta } from "tinacms";
 
 export const colorOptions = [
@@ -33,6 +33,7 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
         {colorOptions.map((color) => {
           return (
             <button
+              key={color}
               className={`w-9 h-9 rounded-full shadow border ${
                 inputClasses[color]
               } ${
