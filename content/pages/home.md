@@ -2,15 +2,6 @@
 title: Tina Cloud Starter
 blocks:
   - headline: Welcome to the Tina Starter
-    text2: >
-      ## Developers
-
-
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      `content/pages/home.md`, components from components/blocks, and puts them
-      all together in `pages/[filename].tsx`, all based on a config
-      `tina/config.tsx`.
     text: >
       ## **Editors**
 
@@ -25,11 +16,20 @@ blocks:
       **Clicking 'Save' won't do anything in this demo** - but on your site it
       will save the changes immediately or send an approval request to your team
       for review.
+    text2: >
+      ## Developers
+
+
+      This project is set up to show you the basics of working with Tina. You're
+      looking at the landing page, which pulls content from
+      `content/pages/home.md`, components from components/blocks, and puts them
+      all together in `pages/[filename].tsx`, all based on a config
+      `tina/config.tsx`.
     actions:
       - label: Get Started
         type: button
         icon: true
-        link: /posts
+        link: /about
       - label: Read Blog
         type: link
         icon: false
@@ -73,3 +73,4 @@ blocks:
     color: primary
     _template: testimonial
 ---
+
