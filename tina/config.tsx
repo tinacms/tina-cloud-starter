@@ -29,7 +29,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Post, Global, Author, Page],
+    collections: [Page, Post, Author, Global],
   },
 });
 

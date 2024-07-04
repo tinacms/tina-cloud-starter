@@ -37,7 +37,7 @@ export default async function RootLayout({
   });
   const global = globalQuery.data.global;
 
-  const selectFont = (fontName) => {
+  const selectFont = (fontName: string) => {
     switch (fontName) {
       case "nunito":
         return `font-nunito ${nunito.variable}`;
