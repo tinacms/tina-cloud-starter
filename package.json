@@ -42,7 +42,6 @@
     "typescript": "^5.5.3"
   },
   "resolutions": {
-    "_#IMPORTANT": "The below resolutions are required due to tinacms being on react 17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
