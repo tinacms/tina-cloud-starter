@@ -14,7 +14,7 @@ The content is managed through Markdown and JSON files stored in your GitHub rep
 
 ## Requirements
 
-- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), Yarn installed for local development.
+- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), pnpm installed for local development.
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
 ## Local Development
@@ -22,13 +22,13 @@ The content is managed through Markdown and JSON files stored in your GitHub rep
 Install the project's dependencies:
 
 ```
-yarn install
+pnpm install
 ```
 
 Run the project locally:
 
 ```
-yarn dev
+pnpm dev
 ```
 
 ### Local URLs
@@ -51,7 +51,7 @@ NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
 Build the project:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## Getting Help
