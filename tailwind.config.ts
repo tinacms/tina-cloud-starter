@@ -228,4 +228,5 @@ module.exports = {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [require("@tailwindcss/typography")],
+  //
 };
