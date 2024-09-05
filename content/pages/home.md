@@ -1,7 +1,8 @@
 ---
 title: Tina Cloud Starter
 blocks:
-  - headline: All About Web2 & Web3
+  - tagline: The current state of technology.
+    headline: All About Web2 & Web3
     text: >
       ## A bit about me
 
