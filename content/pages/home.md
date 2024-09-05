@@ -47,8 +47,8 @@ blocks:
         icon: true
         link: /posts
     image:
-      src: ''
-      alt: ''
+      src: /uploads/dylan-burkey.jpg
+      alt: Dylan Burkey
     color: default
     _template: hero
   - body: |
