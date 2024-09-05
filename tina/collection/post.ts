@@ -6,7 +6,7 @@ const Post: Collection = {
   path: "content/posts",
   format: "mdx",
   ui: {
-    router: ({ document }) => {                  
+    router: ({ document }) => {
       return `/posts/${document._sys.breadcrumbs.join("/")}`;
     },
   },
@@ -111,6 +111,15 @@ const Post: Collection = {
         },
       ],
       isBody: true,
+    },
+    {
+      type: "string",
+      label: "Tags",
+      name: "tags",
+      list: true,
+      ui: {
+        component: "tags",
+      },
     },
   ],
 };
