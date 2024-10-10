@@ -52,7 +52,7 @@ blocks:
     color: default
     _template: hero
   - body: |
-      This is a test
+      This is a test again
     color: default
     _template: content
 ---
