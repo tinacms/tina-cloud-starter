@@ -19,7 +19,7 @@ blocks:
       \
 
       I put this together using Next.js and Tina (Headless CMS) as both a use
-      case and potentially a long term blog. 
+      case and potentially a long term blog.
     text2: >
       ## Next.js is overkill and slow!
 
@@ -39,7 +39,7 @@ blocks:
         * All browsers now support web components. Using native HTML, CSS and JS makes much more sense then congesting the main thread with unnecessary JS.
       * Nunjucks or any templating language + Node.js
         * Lightweight and fast. Again for the majority of sites this is a great solution. Includes, variables, functions and more. An easy and smart way to build out a site quickly.
-      * Astro 
+      * Astro
         * When you really need a framework for some potential heavy lifting and you care about user experience. Astro has you covered, it's ships with no JS, Astro Islands are an amazing step for JS frameworks.
     actions:
       - label: Read Blog
@@ -47,9 +47,13 @@ blocks:
         icon: true
         link: /posts
     image:
-      src: ''
-      alt: ''
+      src: /uploads/dylan-burkey.jpg
+      alt: Dylan Burkey
     color: default
     _template: hero
+  - body: |
+      This is a test
+    color: default
+    _template: content
 ---
 
