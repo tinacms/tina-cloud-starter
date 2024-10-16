@@ -2,6 +2,7 @@ import React from "react";
 import client from "../../tina/__generated__/client";
 import ClientPage from "./client-page";
 import Layout from "../../components/layout/layout";
+import ReRender from "../../lib/re-render";
 
 export default async function Page({
   params,
@@ -14,6 +15,7 @@ export default async function Page({
 
   return (
     <Layout rawPageData={data}>
+      <ReRender />
       <ClientPage {...data}></ClientPage>
     </Layout>
   );
