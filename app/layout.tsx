@@ -25,6 +25,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "DylanBurkey.box - Web3 Developer",
   description: "Senior Web Marketing Engineer with 24-years’ experience providing technical leadership on enterprise scale web applications.",
+  author: Dylan Burkey;
 };
 
 export default async function RootLayout({
