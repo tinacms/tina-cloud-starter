@@ -21,26 +21,20 @@ blocks:
       I put this together using Next.js and Tina (Headless CMS) as both a use
       case and potentially a long term blog.
     text2: >
-      ## Next.js is overkill and slow!
+      Web3 has changed the way we work online. Much like Web2, the excitment can
+      be felt by just about everyone who involved. 
 
 
-      When React was first released I wondered why the hell anyone would want to
-      use it. The framework made building high quality web applications far more
-      difficult then it needs to be. \
+      That is the major issue, its exciting to those of us involved. The
+      majority of Crypto holders or people in general have no idea what Web3 is,
+      how to start using it, and just when they get the hang of things a new
+      rollup or chain is dropped, \
 
       \
 
-      I still feel that way today. There are far better options such as:
-
-
-      * **HTML, CSS and JS**
-        * For the average site you really only need the basics. Yes you may have to copy and paste the header/footer across a few pages. This takes far less time then spinning up Next.js because its expected.
-      * Web Components
-        * All browsers now support web components. Using native HTML, CSS and JS makes much more sense then congesting the main thread with unnecessary JS.
-      * Nunjucks or any templating language + Node.js
-        * Lightweight and fast. Again for the majority of sites this is a great solution. Includes, variables, functions and more. An easy and smart way to build out a site quickly.
-      * Astro
-        * When you really need a framework for some potential heavy lifting and you care about user experience. Astro has you covered, it's ships with no JS, Astro Islands are an amazing step for JS frameworks.
+      Web3 is an absolute mess and has been from day one.. Developers need to
+      step up or Web3 will be something we remember as opposed to the
+      decentralized web that saved rhe world. 
     actions:
       - label: Read Blog
         type: button
