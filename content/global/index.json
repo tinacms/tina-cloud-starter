@@ -1,8 +1,8 @@
 {
   "header": {
     "icon": {
-      "name": "BiBadgeCheck",
-      "color": "orange",
+      "name": "BiSolidSlideshow",
+      "color": "green",
       "style": "float"
     },
     "name": "Dylan Burkey",
@@ -13,12 +13,12 @@
         "label": "Home"
       },
       {
-        "href": "about",
-        "label": "About"
-      },
-      {
         "href": "posts",
         "label": "Blog"
+      },
+      {
+        "href": "about",
+        "label": "About"
       }
     ]
   },
