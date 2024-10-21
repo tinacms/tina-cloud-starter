@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import { PostQuery } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { components } from "../../../components/mdx-components";
+import SeoFields from '../../../components/SeoFields';
 
 const titleColorClasses = {
   blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -23,6 +24,9 @@ const titleColorClasses = {
   yellow:
     "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
 };
+import SeoFields from '../../../components/SeoFields';
+
+// Removed duplicate PostClientPage declaration and export
 
 interface ClientPostProps {
   data: PostQuery;
@@ -36,7 +40,18 @@ export default function PostClientPage(props: ClientPostProps) {
   const { theme } = useLayout();
   const { data } = useTina({ ...props });
   const post = data.post;
+  onst PostClientPage = (props) => {
+    const { title, description, image, url } = props;
 
+    return (
+      <div>
+        <SeoFields title={title} description={description} image={image} url={url} />
+        {/* Other component code */}
+      </div>
+    );
+  };
+
+  export default PostClientPage;
   const date = new Date(post.date);
   let formattedDate = "";
   if (!isNaN(date.getTime())) {

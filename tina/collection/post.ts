@@ -102,6 +102,90 @@ const Post: Collection = {
               type: "rich-text",
             },
           ],
+          type: "rich-text",
+      label: "Excerpt",
+      name: "excerpt",
+    },
+    {
+      type: "reference",
+      label: "Author",
+      name: "author",
+      collections: ["author"],
+    },
+    {
+      type: "datetime",
+      label: "Posted Date",
+      name: "date",
+      ui: {
+        dateFormat: "MMMM DD YYYY",
+        timeFormat: "hh:mm A",
+      },
+    },
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "_body",
+      templates: [
+        {
+          name: "DateTime",
+          label: "Date & Time",
+          inline: true,
+          fields: [
+            {
+              name: "format",
+              label: "Format",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "SEO",
+      name: "seo",
+      fields: [
+        {
+          type: "text",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "text",
+          label: "Meta Description",
+          name: "metaDescription",
+        },
+        {
+          type: "text",
+          label: "Canonical URL",
+          name: "canonicalUrl",
+        },
+        {
+          type: "text",
+          label: "Open Graph Title",
+          name: "ogTitle",
+        },
+        {
+          type: "text",
+          label: "Open Graph Description",
+          name: "ogDescription",
+        },
+        {
+          type: "text",
+          label: "Open Graph Image",
+          name: "ogImage",
+        },
+        {
+          type: "text",
+          label: "Preload",
+          name: "preload",
+        },
+        {
+          type: "boolean",
+          label: "Web App Capable",
+          name: "webAppCapable",
+        },
+      ],
+
           ui: {
             defaultItem: {
               placeholder: "Enter your email",
