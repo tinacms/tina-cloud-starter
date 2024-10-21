@@ -1,7 +1,14 @@
 ---
 title: Project Development and Planning
 blocks:
-  - body: ''
+  - body: >
+      # Web3 Development Guidelines
+
+
+      The time has come to make Web3 a reality. Since its inception Web3 has
+      lacked developer support, knowledge and is built to impress. Users are not
+      part of Web3, they have become second hand citizens to the rush for money.
+    color: default
     _template: content
   - items:
       - icon:
