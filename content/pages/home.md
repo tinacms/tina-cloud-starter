@@ -22,7 +22,7 @@ blocks:
       case and potentially a long term blog.
     text2: >
       Web3 has changed the way we work online. Much like Web2, the excitment can
-      be felt by just about everyone who involved. 
+      be felt by just about everyone who involved.
 
 
       That is the major issue, its exciting to those of us involved. The
@@ -34,7 +34,7 @@ blocks:
 
       Web3 is an absolute mess and has been from day one.. Developers need to
       step up or Web3 will be something we remember as opposed to the
-      decentralized web that saved rhe world. 
+      decentralized web that saved rhe world.
     actions:
       - label: Read Blog
         type: button
@@ -46,8 +46,10 @@ blocks:
     color: default
     _template: hero
   - body: |
-      This is a test again
-    color: default
+      ### What is Web3 anyways?
+
+      is crypo, blockchain, what makes it so unique?
+    color: tint
     _template: content
 ---
 
