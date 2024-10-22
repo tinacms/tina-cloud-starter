@@ -64,7 +64,7 @@ export default function PostsClientPage(props: ClientPostProps) {
                 <Image
                   width={500}
                   height={500}
-                  className="h-10 w-10 object-cover rounded-full shadow-sm"
+                  className="h-10 w-10 object-contain rounded-full shadow-sm"
                   src={post?.author?.avatar}
                   alt={post?.author?.name}
                 />
