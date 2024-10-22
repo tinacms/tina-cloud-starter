@@ -30,5 +30,3 @@ blocks:
     _template: content
 ---
 
-
-

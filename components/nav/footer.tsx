@@ -87,7 +87,7 @@ export default function Footer() {
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
                 href={footer.social.twitter}
-                target="_blank noopener"
+                target="_blank"
               >
                 <FaTwitter
                   className={`${socialIconClasses} ${
@@ -117,7 +117,7 @@ export default function Footer() {
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
                 href={footer.social.github}
-                target="_blank noopener"
+                target="_blank"
               >
                 <FaGithub
                   className={`${socialIconClasses} ${

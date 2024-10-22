@@ -1,6 +1,5 @@
 import type { Collection } from "tinacms";
 
-
 const Post: Collection = {
   label: "Blog Posts",
   name: "post",
@@ -102,26 +101,26 @@ const Post: Collection = {
               label: "Disclaimer",
               type: "rich-text",
             },
-        ],
-        ui: {
-          defaultItem: {
-            placeholder: "Enter your email",
-            buttonText: "Notify Me",
+          ],
+          ui: {
+            defaultItem: {
+              placeholder: "Enter your email",
+              buttonText: "Notify Me",
+            },
           },
         },
-      },
-    ],
-    isBody: true,
-  },
-    {
-      type: "string",
-      label: "Tags",
-      name: "tags",
-      list: true,
-      ui: {
-        component: "tags",
-      },
-    }
+      ],
+      isBody: true,
+    },
+    // {
+    //   type: "string",
+    //   label: "Tags",
+    //   name: "tags",
+    //   list: true,
+    //   ui: {
+    //     component: "tags",
+    //   },
+    // },
   ],
 };
 

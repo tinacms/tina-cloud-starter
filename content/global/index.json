@@ -1,24 +1,24 @@
 {
   "header": {
     "icon": {
-      "name": "BiSolidSlideshow",
-      "color": "green",
+      "name": "BiBadgeCheck",
+      "color": "orange",
       "style": "float"
     },
     "name": "Dylan Burkey",
-    "color": "primary",
+    "color": "default",
     "nav": [
       {
-        "href": "home",
+        "href": "",
         "label": "Home"
       },
       {
-        "href": "home",
-        "label": "Home"
-      },
-      {
-        "href": "/about",
+        "href": "about",
         "label": "About"
+      },
+      {
+        "href": "posts",
+        "label": "Blog"
       }
     ]
   },
@@ -26,12 +26,12 @@
     "color": "default",
     "social": {
       "facebook": "/",
-      "twitter": "https;//twitter.com/dylanburkey",
+      "twitter": "/",
       "instagram": "/"
     }
   },
   "theme": {
-    "color": "teal",
+    "color": "blue",
     "font": "lato",
     "darkMode": "system"
   }

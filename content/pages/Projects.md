@@ -9,5 +9,3 @@ blocks:
     _template: content
 ---
 
-
-
