@@ -29,8 +29,10 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Page, Post, Author, Global],
-  },
-});
+    collections: [Page, Post, Author, Global, SEO],
+  // /Users/dylanburkey/Documents/projects/tina-cloud-starter-db/tina/collection/seo.tsx
+
+  }
+})
 
 export default config;
