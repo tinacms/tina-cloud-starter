@@ -1,6 +1,5 @@
 "use client";
 import { format } from "date-fns";
-import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { useLayout } from "../../components/layout/layout-context";

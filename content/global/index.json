@@ -22,6 +22,7 @@
       }
     ]
   },
+
   "footer": {
     "color": "default",
     "social": {
@@ -35,4 +36,5 @@
     "font": "lato",
     "darkMode": "system"
   }
+
 }

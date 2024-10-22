@@ -24,7 +24,6 @@ const titleColorClasses = {
   yellow:
     "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
 };
-import SeoFields from '../../../components/SeoFields';
 
 // Removed duplicate PostClientPage declaration and export
 

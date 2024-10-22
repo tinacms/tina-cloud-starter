@@ -29,7 +29,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Page, Post, Author, Global, SEO],
+    collections: [Page, Post, Author, Global],
   // /Users/dylanburkey/Documents/projects/tina-cloud-starter-db/tina/collection/seo.tsx
 
   }
