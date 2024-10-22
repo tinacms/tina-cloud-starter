@@ -18,7 +18,7 @@ blocks:
       day. How do you think someone entering Web3 for the first time is going to
       feel? It's overwhelming and confusing. In our effort to build and create
       exciting decentralized projects, we've forgotten the user. When the
-      project is more important then the user, stop and reevaluate. 
+      project is more important then the user, stop and reevaluate.
 
 
       Performance, UI/UX, Accessibility, Semantic HTML, and progressive
@@ -34,11 +34,11 @@ blocks:
       We need to get back to the basics. New HTML elements coupled with what is
       being coined CSS4 can do the majority of what you see across Web3 today.
       The need for a Next.js Web App is few and far between. A quick SSG using
-      "boring" HTML and CSS coupled with a templating engine and your set. 
+      "boring" HTML and CSS coupled with a templating engine and your set.
 
 
       Start using semantic and HTML and you will improve your performance,
-      accessibility, SEO and overall user experience. 
+      accessibility, SEO and overall user experience.
 
 
       ## Who is Dylan Burkey and why should you care?
