@@ -30,7 +30,9 @@ const config = defineConfig({
   },
   schema: {
     collections: [Page, Post, Author, Global],
-  },
-});
+  // /Users/dylanburkey/Documents/projects/tina-cloud-starter-db/tina/collection/seo.tsx
+
+  }
+})
 
 export default config;
