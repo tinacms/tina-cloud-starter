@@ -6,7 +6,7 @@
       "style": "float"
     },
     "name": "Dylan Burkey",
-    "color": "default",
+    "color": "primary",
     "nav": [
       {
         "href": "",
@@ -22,7 +22,6 @@
       }
     ]
   },
-
   "footer": {
     "color": "default",
     "social": {
@@ -36,5 +35,4 @@
     "font": "lato",
     "darkMode": "system"
   }
-
 }
