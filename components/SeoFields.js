@@ -1,16 +1,17 @@
-// components/SeoFields.js
-import React from 'react';
-import { useForm, usePlugin } from 'tinacms';
+import SeoFields from '../components/SeoFields';
 
-const SeoFields = () => {
-  const form = useForm();
-  const { registry } = usePlugin('formify');
-
+// Example usage in a component
+const MyComponent = () => {
   return (
-    <>
-      {registry.renderFields('seo', form.fields.seo)}
-    </>
+    <div>
+      <SeoFields
+        title="My Page Title"
+        description="This is a description for my page."
+        keywords="keyword1, keyword2"
+      />
+      {/* Other component code */}
+    </div>
   );
 };
 
-export default SeoFields;
+export default MyComponent;

@@ -113,15 +113,15 @@ const Post: Collection = {
     ],
     isBody: true,
   },
-    // {
-    //   type: "string",
-    //   label: "Tags",
-    //   name: "tags",
-    //   list: true,
-    //   ui: {
-    //     component: "tags",
-    //   },
-    // },
+    {
+      type: "string",
+      label: "Tags",
+      name: "tags",
+      list: true,
+      ui: {
+        component: "tags",
+      },
+    }
   ],
 };
 

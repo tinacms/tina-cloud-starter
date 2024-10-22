@@ -6,18 +6,18 @@
       "style": "float"
     },
     "name": "Dylan Burkey",
-    "color": "default",
+    "color": "primary",
     "nav": [
       {
-        "href": "",
+        "href": "home",
         "label": "Home"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "home",
+        "label": "Home"
       },
       {
-        "href": "about",
+        "href": "/about",
         "label": "About"
       }
     ]
@@ -31,7 +31,7 @@
     }
   },
   "theme": {
-    "color": "teal",
+    "color": "blue",
     "font": "lato",
     "darkMode": "system"
   }
