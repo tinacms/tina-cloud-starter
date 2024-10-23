@@ -20,21 +20,8 @@ blocks:
 
       I put this together using Next.js and Tina (Headless CMS) as both a use
       case and potentially a long term blog.
-    text2: >
-      Web3 has changed the way we work online. Much like Web2, the excitment can
-      be felt by just about everyone who involved. 
-
-
-      That is the major issue, its exciting to those of us involved. The
-      majority of Crypto holders or people in general have no idea what Web3 is,
-      how to start using it, and just when they get the hang of things a new
-      rollup or chain is dropped, \
-
-      \
-
-      Web3 is an absolute mess and has been from day one.. Developers need to
-      step up or Web3 will be something we remember as opposed to the
-      decentralized web that saved rhe world. 
+    text2: |
+      You should care
     actions:
       - label: Read Blog
         type: button
