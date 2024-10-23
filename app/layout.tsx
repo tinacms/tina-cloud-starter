@@ -23,8 +23,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Tina",
-  description: "Tina Cloud Starter",
+  title: "DylanBurkey.box - Web3 Developer",
+  description: "Senior Web Marketing Engineer with 24-years’ experience providing technical leadership on enterprise scale web applications.",
 };
 
 export default async function RootLayout({

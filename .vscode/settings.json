@@ -1,0 +1,58 @@
+{
+    // This is all that matters
+    "workbench.colorTheme": "Cobalt2",
+    // The Cursive font is operator Mono, it's $200 and you need to buy it to get the cursive. Dank Mono or Victor Mono are good alternatives
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 20,
+    "editor.letterSpacing": 0.5,
+    "files.trimTrailingWhitespace": true,
+    "editor.fontWeight": "600",
+    "prettier.eslintIntegration": true,
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 5,
+    "editor.cursorBlinking": "solid",
+    "editor.renderWhitespace": "all",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "italic font",
+        "scope": [
+          "comment",
+          "keyword",
+          "storage",
+          "keyword.control",
+          "keyword.control.from",
+          "keyword.control.flow",
+          "keyword.operator.new",
+          "keyword.control.import",
+          "keyword.control.export",
+          "keyword.control.default",
+          "keyword.control.trycatch",
+          "keyword.control.conditional",
+          "storage.type",
+          "storage.type.class",
+          "storage.modifier.tsx",
+          "storage.type.function",
+          "storage.modifier.async",
+          "variable.language",
+          "variable.language.this",
+          "variable.language.super",
+          "meta.class",
+          "meta.var.expr",
+          "constant.language.null",
+          "support.type.primitive",
+          "entity.name.method.js",
+          "entity.other.attribute-name",
+          "punctuation.definition.comment",
+          "text.html.basic entity.other.attribute-name",
+          "tag.decorator.js entity.name.tag.js",
+          "tag.decorator.js punctuation.definition.tag.js",
+          "source.js constant.other.object.key.js string.unquoted.label.js",
+        ],
+        "settings": {
+          "fontStyle": "italic",
+        }
+      },
+    ]
+  }
