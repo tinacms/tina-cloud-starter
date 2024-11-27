@@ -7,6 +7,7 @@ import {
 } from "tinacms/dist/rich-text";
 import Image from "next/image";
 import { Prism } from "tinacms/dist/rich-text/prism";
+import MermaidElement from "./mermaid-renderer";
 
 export const components: Components<{
   BlockQuote: {
@@ -31,7 +32,14 @@ export const components: Components<{
     return (
       <div>
         <blockquote>
-          <TinaMarkdown content={props.children} />
+          <TinaMarkdown 
+            content={props.children}
+            components={{
+              mermaid({ value }) {
+                return <MermaidElement value={value} />;
+              }
+            }}
+          />
           {props.authorName}
         </blockquote>
       </div>
@@ -58,7 +66,14 @@ export const components: Components<{
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="">
-            <TinaMarkdown content={props.children} />
+            <TinaMarkdown 
+              content={props.children}
+              components={{
+                mermaid({ value }) {
+                  return <MermaidElement value={value} />;
+                }
+              }}
+            />
           </div>
           <div className="mt-8 ">
             <form className="sm:flex">
@@ -84,7 +99,15 @@ export const components: Components<{
               </div>
             </form>
             <div className="mt-3 text-sm text-gray-500">
-              {props.disclaimer && <TinaMarkdown content={props.disclaimer} />}
+              {props.disclaimer && 
+                  <TinaMarkdown 
+                    content={props.disclaimer}
+                    components={{
+                      mermaid({ value }) {
+                        return <MermaidElement value={value} />;
+                      }
+                    }}
+                  />}
             </div>
           </div>
         </div>
