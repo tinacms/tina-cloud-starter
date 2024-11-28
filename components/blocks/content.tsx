@@ -7,6 +7,7 @@ import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import { Container } from "../layout/container";
 import { Section } from "../layout/section";
+import MermaidElement from "../mermaid-renderer";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
@@ -19,7 +20,14 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         size="large"
         width="medium"
       >
-        <TinaMarkdown content={data.body} />
+        <TinaMarkdown 
+          content={data.body}
+          components={{
+            mermaid({ value }) {
+              return <MermaidElement value={value} />;
+            }
+          }}
+        />
       </Container>
     </Section>
   );
