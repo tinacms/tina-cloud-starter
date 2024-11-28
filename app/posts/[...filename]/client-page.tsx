@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import { PostQuery } from "../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { components } from "../../../components/mdx-components";
+import MermaidElement from "../../../components/mermaid-renderer";
 
 const titleColorClasses = {
   blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -122,7 +123,15 @@ export default function PostClientPage(props: ClientPostProps) {
           data-tina-field={tinaField(post, "_body")}
           className="prose dark:prose-dark w-full max-w-none"
         >
-          <TinaMarkdown components={components} content={post._body} />
+          <TinaMarkdown 
+            content={post._body}
+            components={{
+              ...components,
+              mermaid({ value }) {
+                return <MermaidElement value={value} />;
+              }
+            }}
+          />
         </div>
       </Container>
     </Section>
