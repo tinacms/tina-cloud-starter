@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Section } from "../layout/section";
 import { Container } from "../layout/container";
 import { Actions } from "./actions";
+import MermaidElement from "../mermaid-renderer";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const headlineColorClasses = {
@@ -64,7 +65,14 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                       : `dark:prose-dark`
                   }`}
                 >
-                  <TinaMarkdown content={data.text} />
+                  <TinaMarkdown 
+                    content={data.text}
+                    components={{
+                      mermaid({ value }) {
+                        return <MermaidElement value={value} />;
+                      }
+                    }}
+                  />
                 </div>
               )}
             </div>
@@ -91,7 +99,14 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                 data.color === "primary" ? `prose-primary` : `dark:prose-dark`
               }`}
             >
-              <TinaMarkdown content={data.text2} />
+              <TinaMarkdown 
+                content={data.text2}
+                components={{
+                  mermaid({ value }) {
+                    return <MermaidElement value={value} />;
+                  }
+                }}
+              />
             </div>
           )}
           {data.actions && (
