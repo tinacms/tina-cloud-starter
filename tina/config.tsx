@@ -10,6 +10,7 @@ const config = defineConfig({
         frontendUrlOverride: 'http://localhost:3002',
         identityApiUrlOverride: 'https://brookj-dev-identity.tinajs.dev',
         contentApiUrlOverride: 'https://brookj-dev-content.tinajs.dev',
+        assetsApiUrlOverride: 'https://assets-api-local-brookj-dev.tinajs.dev',
     },
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
     branch:
