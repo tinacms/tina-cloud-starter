@@ -29,7 +29,7 @@ Install the project's dependencies:
 pnpm install
 ```
 
-Run the project locally (i.e. without TinaCloud):
+Run the project locally:
 
 ```
 pnpm dev
