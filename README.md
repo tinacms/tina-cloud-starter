@@ -4,7 +4,9 @@
 
 This Next.js starter is powered by [TinaCMS](https://app.tina.io) for you and your team to visually live edit the structured content of your website. ✨
 
-The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.
+The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.....
+
+
 
 ### Features
 
