@@ -16,7 +16,7 @@
     "@tinacms/cli": "^1.7.0",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.5.1",
-    "@types/react": "^18.3.4",
+    "@types/react": "19.0.2",
     "@types/styled-components": "^5.1.34",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.0.0",
@@ -28,6 +28,7 @@
   "dependencies": {
     "@headlessui/react": "^2.1.3",
     "@tailwindcss/typography": "^0.5.14",
+    "@types/react-dom": "19.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
