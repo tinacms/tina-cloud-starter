@@ -1,5 +1,4 @@
 "use client";
-import * as React from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";

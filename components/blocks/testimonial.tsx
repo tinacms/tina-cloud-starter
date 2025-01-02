@@ -1,4 +1,3 @@
-import React from "react";
 import type { Template } from "tinacms";
 import { PageBlocksTestimonial } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
