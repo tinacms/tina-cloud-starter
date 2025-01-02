@@ -3,11 +3,12 @@ import client from "../../../tina/__generated__/client";
 import Layout from "../../../components/layout/layout";
 import PostClientPage from "./client-page";
 
-export default async function PostPage({
-  params,
-}: {
-  params: { filename: string[] };
-}) {
+export default async function PostPage(
+  props: {
+    params: Promise<{ filename: string[] }>;
+  }
+) {
+  const params = await props.params;
   const data = await client.queries.post({
     relativePath: `${params.filename.join("/")}.mdx`,
   });
