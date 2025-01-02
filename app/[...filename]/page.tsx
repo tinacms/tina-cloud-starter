@@ -2,11 +2,12 @@ import client from "../../tina/__generated__/client";
 import ClientPage from "./client-page";
 import Layout from "../../components/layout/layout";
 
-export default async function Page({
-  params,
-}: {
-  params: { filename: string[] };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{ filename: string[] }>;
+  }
+) {
+  const params = await props.params;
   const data = await client.queries.page({
     relativePath: `${params.filename}.md`,
   });
