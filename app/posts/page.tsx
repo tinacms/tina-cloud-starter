@@ -3,7 +3,9 @@ import client from "../../tina/__generated__/client";
 import PostsClientPage from "./client-page";
 
 export default async function PostsPage() {
-  const posts = await client.queries.postConnection();
+  const posts = await client.queries.postConnection({
+    sort: 'date',
+  });
 
   if (!posts) {
     return null;
