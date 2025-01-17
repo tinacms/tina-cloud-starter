@@ -14,7 +14,7 @@ export default function MermaidElement({ value }) {
   return (
     <div contentEditable={false}>
       <div ref={mermaidRef}>
-        <pre className="mermaid">{value}</pre>
+        <pre className="mermaid" suppressHydrationWarning>{value}</pre>
       </div>
     </div>
   );
