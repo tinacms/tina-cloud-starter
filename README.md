@@ -42,6 +42,27 @@ pnpm dev
 - http://localhost:3000/exit-admin : log out of Tina Cloud
 - http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
 
+## Deployment
+
+### GitHub Pages
+
+This starter can be deployed to GitHub Pages. A GitHub Actions workflow is included that handles the build and deployment process. 
+
+To deploy to GitHub Pages:
+
+1. In your repository settings, ensure GitHub Pages is enabled and set to deploy from the `gh-pages` branch
+2. Push changes to your main branch - the workflow will automatically build and deploy the site
+
+> [!NOTE]
+> When deploying to GitHub Pages, you'll need to update your secrets in Settings | Secrets and variables | Actions to include:
+> - `NEXT_PUBLIC_TINA_CLIENT_ID`
+> - `TINA_TOKEN`
+>
+> You get these from your TinaCloud project - [read the docs](https://tina.io/docs/tina-cloud/deployment-options/github-pages)
+
+> [!IMPORTANT]
+> GitHub Pages does not support server side code, so this will run as a static site. If you don't want to deploy to GitHub pages, just delete `.github/workflows/build-and-deploy.yml`
+
 ### Building the Starter Locally (Using the hosted content API)
 
 Replace the `.env.example`, with `.env`
