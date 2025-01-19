@@ -1,7 +1,7 @@
 ---
-title: Tina Cloud Starter
+title: Tina Cloud Starters
 blocks:
-  - headline: Welcome to the Tina Starter
+  - headline: Welcome to the Tina Starters
     text: >
       ## **Editors**
 
