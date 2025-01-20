@@ -3,7 +3,7 @@ import { useTina } from "tinacms/dist/react";
 import { Blocks } from "../../components/blocks";
 import { PageQuery } from "../../tina/__generated__/types";
 
-interface ClientPageProps {
+export interface ClientPageProps {
   data: {
     page: PageQuery["page"];
   };
