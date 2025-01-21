@@ -1,10 +1,11 @@
-import "../styles.css";
 import React from "react";
-import { ThemeProvider } from "../components/theme-provider";
-import { Inter as FontSans, Lato, Nunito } from "next/font/google";
-import { cn } from "../lib/utils";
 import { Metadata } from "next";
-import client from "../tina/__generated__/client";
+import { Inter as FontSans, Lato, Nunito } from "next/font/google";
+import { cn } from "@/lib/utils";
+import client from "@/tina/__generated__/client";
+import { ThemeProvider } from "@/components/theme-provider";
+
+import "@/styles.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
