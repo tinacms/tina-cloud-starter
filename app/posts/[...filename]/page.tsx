@@ -30,9 +30,10 @@ export async function generateStaticParams() {
     allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
   }
 
-  return (
+  const params =
     allPosts.data?.postConnection.edges.map((edge) => ({
       filename: edge.node._sys.breadcrumbs,
-    })) || []
-  );
+    })) || [];
+
+  return params;
 }
