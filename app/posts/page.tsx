@@ -3,17 +3,24 @@ import client from "@/tina/__generated__/client";
 import PostsClientPage from "./client-page";
 
 export default async function PostsPage() {
-  const posts = await client.queries.postConnection({
-    sort: 'date',
+  let posts = await client.queries.postConnection({
+    sort: "date",
   });
+  const allPosts = posts;
 
-  if (!posts) {
-    return null;
+  while (posts.data?.postConnection.pageInfo.hasNextPage) {
+    posts = await client.queries.postConnection({
+      sort: "date",
+      after: posts.data.postConnection.pageInfo.endCursor,
+    });
+    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
   }
 
+  allPosts.data.postConnection.edges.reverse();
+
   return (
-    <Layout rawPageData={posts.data}>
-      <PostsClientPage {...posts} />
+    <Layout rawPageData={allPosts.data}>
+      <PostsClientPage {...allPosts} />
     </Layout>
   );
 }
