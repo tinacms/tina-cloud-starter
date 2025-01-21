@@ -20,9 +20,19 @@ export default async function PostPage({
 }
 
 export async function generateStaticParams() {
-  const posts = await client.queries.postConnection();
-  const paths = posts.data?.postConnection.edges.map((edge) => ({
-    filename: edge.node._sys.breadcrumbs,
-  }));
-  return paths || [];
+  let posts = await client.queries.postConnection();
+  const allPosts = posts;
+
+  while (posts.data?.postConnection.pageInfo.hasNextPage) {
+    posts = await client.queries.postConnection({
+      after: posts.data.postConnection.pageInfo.endCursor,
+    });
+    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
+  }
+
+  return (
+    allPosts.data?.postConnection.edges.map((edge) => ({
+      filename: edge.node._sys.breadcrumbs,
+    })) || []
+  );
 }
