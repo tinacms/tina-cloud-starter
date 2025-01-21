@@ -52,6 +52,12 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* these are also defined in next.config.js but github pages doesn't support response headers */}
+        {/* if you aren't deploying to github pages, feel free to delete these tags */}
+        <meta name="X-Frame-Options" content="SAMEORIGIN" />
+        <meta name="Content-Security-Policy" content="frame-ancestors 'self'" />
+      </head>
       <body
         className={cn("min-h-screen flex flex-col antialiased", fontVariable)}
       >
