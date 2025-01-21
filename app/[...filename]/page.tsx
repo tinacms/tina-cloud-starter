@@ -18,3 +18,23 @@ export default async function Page({
     </Layout>
   );
 }
+
+export async function generateStaticParams() {
+  let pages = await client.queries.pageConnection();
+  const allPages = pages;
+
+  while (pages.data.pageConnection.pageInfo.hasNextPage) {
+    pages = await client.queries.pageConnection({
+      after: pages.data.pageConnection.pageInfo.endCursor,
+    });
+    allPages.data.pageConnection.edges.push(...pages.data.pageConnection.edges);
+  }
+
+  return allPages.data.pageConnection.edges.map((edge) => {
+    return {
+      params: {
+        filename: edge.node._sys.breadcrumbs,
+      },
+    };
+  });
+}
