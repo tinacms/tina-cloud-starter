@@ -30,11 +30,10 @@ export async function generateStaticParams() {
     allPages.data.pageConnection.edges.push(...pages.data.pageConnection.edges);
   }
 
-  return allPages.data.pageConnection.edges.map((edge) => {
-    return {
-      params: {
-        filename: edge.node._sys.breadcrumbs,
-      },
-    };
-  });
+  const params = allPages.data?.pageConnection.edges.map((edge) => ({
+    filename: edge.node._sys.breadcrumbs,
+  })) || [];
+
+  // exclude the home page
+  return params.filter(p => !p.filename.every(x => x === "home"));
 }
