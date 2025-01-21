@@ -1,7 +1,7 @@
 "use client";
 import { useTina } from "tinacms/dist/react";
-import { Blocks } from "../../components/blocks";
-import { PageQuery } from "../../tina/__generated__/types";
+import { Blocks } from "@/components/blocks";
+import { PageQuery } from "@/tina/__generated__/types";
 
 export interface ClientPageProps {
   data: {

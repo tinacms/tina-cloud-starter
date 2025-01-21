@@ -1,17 +1,17 @@
 "use client";
-import { format } from "date-fns";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
-import { useLayout } from "../../components/layout/layout-context";
+import { format } from "date-fns";
+import { useTina } from "tinacms/dist/react";
 import { BsArrowRight } from "react-icons/bs";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   PostConnectionQuery,
   PostConnectionQueryVariables,
-} from "../../tina/__generated__/types";
-import { useTina } from "tinacms/dist/react";
-import MermaidElement from "../../components/mermaid-renderer";
+} from "@/tina/__generated__/types";
+import { useLayout } from "@/components/layout/layout-context";
+import MermaidElement from "@/components/mermaid-renderer";
 
 const titleColorClasses = {
   blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",

@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useLayout } from "../../../components/layout/layout-context";
-import { Section } from "../../../components/layout/section";
-import { Container } from "../../../components/layout/container";
-import { tinaField, useTina } from "tinacms/dist/react";
 import { format } from "date-fns";
-import { PostQuery } from "../../../tina/__generated__/types";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { components } from "../../../components/mdx-components";
-import MermaidElement from "../../../components/mermaid-renderer";
+import { PostQuery } from "@/tina/__generated__/types";
+import { useLayout } from "@/components/layout/layout-context";
+import { Section } from "@/components/layout/section";
+import { Container } from "@/components/layout/container";
+import { components } from "@/components/mdx-components";
+import MermaidElement from "@/components/mermaid-renderer";
 
 const titleColorClasses = {
   blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
