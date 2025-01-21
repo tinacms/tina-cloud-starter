@@ -51,7 +51,7 @@ export default async function RootLayout({
   const fontVariable = selectFont(global.theme.font);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         {/* these are also defined in next.config.js but github pages doesn't support response headers */}
         {/* if you aren't deploying to github pages, feel free to delete these tags */}
