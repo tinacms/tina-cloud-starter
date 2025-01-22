@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { Inter as FontSans, Lato, Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
 import client from "@/tina/__generated__/client";
-import { ThemeProvider } from "@/components/theme-provider";
 
 import "@/styles.css";
 
@@ -60,16 +59,10 @@ export default async function RootLayout({
         <meta name="Content-Security-Policy" content="frame-ancestors 'self'" />
       </head>
       <body
+        suppressHydrationWarning
         className={cn("min-h-screen flex flex-col antialiased", fontVariable)}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange
-          forcedTheme={global.theme.darkMode}
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
