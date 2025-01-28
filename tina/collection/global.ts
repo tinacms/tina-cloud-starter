@@ -96,8 +96,18 @@ const Global: Collection = {
             },
             {
               type: "string",
+              label: "LinkedIn",
+              name: "linkedIn",
+            },
+            {
+              type: "string",
               label: "Github",
               name: "github",
+            },
+            {
+              type: "string",
+              label: "Youtube",
+              name: "youtube",
             },
           ],
         },
