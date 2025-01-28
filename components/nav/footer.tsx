@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import { Container } from "../layout/container";
 import Link from "next/link";
 import { Icon } from "../icon";
-import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { useLayout } from "../layout/layout-context";
 import { RawRenderer } from "../raw-renderer";
@@ -89,7 +89,7 @@ export default function Footer() {
                 href={footer.social.twitter}
                 target="_blank"
               >
-                <FaTwitter
+                <FaXTwitter
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
                       footer.color === "primary" ? "primary" : theme.color
@@ -113,6 +113,21 @@ export default function Footer() {
                 />
               </a>
             )}
+            {footer.social && footer.social.linkedIn && (
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={footer.social.linkedIn}
+                target="_blank"
+              >
+                <FaLinkedin
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[
+                      footer.color === "primary" ? "primary" : theme.color
+                    ]
+                  }`}
+                />
+              </a>
+            )}
             {footer.social && footer.social.github && (
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
@@ -120,6 +135,21 @@ export default function Footer() {
                 target="_blank"
               >
                 <FaGithub
+                  className={`${socialIconClasses} ${
+                    socialIconColorClasses[
+                      footer.color === "primary" ? "primary" : theme.color
+                    ]
+                  }`}
+                />
+              </a>
+            )}
+            {footer.social && footer.social.youtube && (
+              <a
+                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                href={footer.social.youtube}
+                target="_blank"
+              >
+                <FaYoutube
                   className={`${socialIconClasses} ${
                     socialIconColorClasses[
                       footer.color === "primary" ? "primary" : theme.color

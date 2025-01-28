@@ -25,9 +25,12 @@
   "footer": {
     "color": "default",
     "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "facebook": "",
+      "twitter": "https://x.com/TinaCMS",
+      "instagram": "",
+      "linkedIn": "https://www.linkedin.com/company/tinacms",
+      "github": "https://github.com/tinacms/tinacms",
+      "youtube": "https://www.youtube.com/@TinaCMS"
     }
   },
   "theme": {
