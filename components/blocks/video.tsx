@@ -17,6 +17,8 @@ export const Video = ({ data }: { data: PageBlocksVideo }) => {
             width="100%"
             height="100%"
             style={{ margin: "auto" }}
+            playing={data.autoPlay}
+            loop={data.loop}
             controls={true}
             url={data.url}
           />
@@ -51,5 +53,15 @@ export const videoBlockSchema: Template = {
       label: "Url",
       name: "url",
     },
+    {
+      type: "boolean",
+      label: "Auto Play",
+      name: "autoPlay",
+    },
+    {
+      type: "boolean",
+      label: "Loop",
+      name: "loop",
+    }
   ],
 };

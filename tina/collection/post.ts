@@ -1,3 +1,4 @@
+import { videoBlockSchema } from "@/components/blocks/video";
 import type { Collection } from "tinacms";
 
 const Post: Collection = {
@@ -49,19 +50,6 @@ const Post: Collection = {
       name: "_body",
       templates: [
         {
-          name: "DateTime",
-          label: "Date & Time",
-          inline: true,
-          fields: [
-            {
-              name: "format",
-              label: "Format",
-              type: "string",
-              options: ["utc", "iso", "local"],
-            },
-          ],
-        },
-        {
           name: "BlockQuote",
           label: "Block Quote",
           fields: [
@@ -74,6 +62,19 @@ const Post: Collection = {
               name: "authorName",
               label: "Author",
               type: "string",
+            },
+          ],
+        },
+        {
+          name: "DateTime",
+          label: "Date & Time",
+          inline: true,
+          fields: [
+            {
+              name: "format",
+              label: "Format",
+              type: "string",
+              options: ["utc", "iso", "local"],
             },
           ],
         },
@@ -109,6 +110,7 @@ const Post: Collection = {
             },
           },
         },
+        videoBlockSchema,
       ],
       isBody: true,
     },
