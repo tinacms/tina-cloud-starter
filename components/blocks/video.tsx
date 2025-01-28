@@ -12,11 +12,15 @@ export const Video = ({ data }: { data: PageBlocksVideo }) => {
   return (
     <Section color={data.color}>
       <Container size="large">
-        <ReactPlayer
-          style={{ margin: "auto" }}
-          controls={true}
-          url={data.url}
-        />
+        <div className="aspect-video">
+          <ReactPlayer
+            width="100%"
+            height="100%"
+            style={{ margin: "auto" }}
+            controls={true}
+            url={data.url}
+          />
+        </div>
       </Container>
     </Section>
   );
