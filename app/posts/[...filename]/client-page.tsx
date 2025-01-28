@@ -9,7 +9,6 @@ import { useLayout } from "@/components/layout/layout-context";
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { components } from "@/components/mdx-components";
-import MermaidElement from "@/components/mermaid-renderer";
 
 const titleColorClasses = {
   blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -103,17 +102,19 @@ export default function PostClientPage(props: ClientPostProps) {
             <Image
               src={post.heroImg}
               alt={post.title}
-              className="absolute block rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+              className="absolute block mx-auto rounded-lg w-full h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
               aria-hidden="true"
               width={500}
               height={500}
+              style={{ maxHeight: "25vh" }}
             />
             <Image
               src={post.heroImg}
               alt={post.title}
               width={500}
               height={500}
-              className="relative z-10 mb-14 block rounded-lg w-full h-auto opacity-100"
+              className="relative z-10 mb-14 mx-auto block rounded-lg w-full h-auto opacity-100"
+              style={{ maxWidth: "25vh" }}
             />
           </div>
         </div>
@@ -123,13 +124,10 @@ export default function PostClientPage(props: ClientPostProps) {
           data-tina-field={tinaField(post, "_body")}
           className="prose dark:prose-dark w-full max-w-none"
         >
-          <TinaMarkdown 
+          <TinaMarkdown
             content={post._body}
             components={{
               ...components,
-              mermaid({ value }) {
-                return <MermaidElement value={value} />;
-              }
             }}
           />
         </div>

@@ -8,6 +8,8 @@ import {
 import Image from "next/image";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import MermaidElement from "./mermaid-renderer";
+import { Video } from "./blocks/video";
+import { PageBlocksVideo } from "@/tina/__generated__/types";
 
 export const components: Components<{
   BlockQuote: {
@@ -23,6 +25,7 @@ export const components: Components<{
     children: TinaMarkdownContent;
     disclaimer?: TinaMarkdownContent;
   };
+  video: PageBlocksVideo;
 }> = {
   code_block: (props) => <Prism {...props} />,
   BlockQuote: (props: {
@@ -119,4 +122,10 @@ export const components: Components<{
       <Image src={props.url} alt={props.alt} width={500} height={500} />
     </span>
   ),
+  mermaid({ value }) {
+    return <MermaidElement value={value} />;
+  },
+  video: (props) => {
+    return <Video data={props} />;
+  }
 };
