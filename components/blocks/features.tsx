@@ -8,6 +8,7 @@ import { Icon } from "../icon";
 import { Section } from "../layout/section";
 import { Container } from "../layout/container";
 import { iconSchema } from "../../tina/fields/icon";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Feature = ({
   featuresColor,
@@ -38,12 +39,12 @@ export const Feature = ({
         </h3>
       )}
       {data.text && (
-        <p
-          data-tina-field={tinaField(data, "text")}
-          className="text-base opacity-80 leading-relaxed"
-        >
-          {data.text}
-        </p>
+        <div className="prose text-base opacity-80 leading-relaxed">
+          <TinaMarkdown
+            data-tina-field={tinaField(data, "text")}
+            content={data.text}
+          />
+        </div>
       )}
     </div>
   );
@@ -108,12 +109,9 @@ export const featureBlockSchema = {
           name: "title",
         },
         {
-          type: "string",
+          type: "rich-text",
           label: "Text",
           name: "text",
-          ui: {
-            component: "textarea",
-          },
         },
       ],
     },
