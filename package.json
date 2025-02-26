@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@tinacms/cli": "^1.9.0",
+    "@tinacms/cli": "^1.9.1",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.13.4",
     "@types/react": "^18.3.18",
@@ -41,7 +41,7 @@
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "tinacms": "^2.7.0",
+    "tinacms": "^2.7.1",
     "usehooks-ts": "^3.1.1"
   }
 }
