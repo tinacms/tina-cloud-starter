@@ -4276,10 +4276,6 @@ packages:
     peerDependencies:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  graphql@15.10.1:
-    resolution: {integrity: sha512-BL/Xd/T9baO6NFzoMpiMD7YUZ62R6viR5tp/MULVEnbYJXZA//kRNW7J0j1w/wXArgL0sCxhDfK5dczSKn3+cg==}
-    engines: {node: '>= 10.x'}
-
   graphql@15.8.0:
     resolution: {integrity: sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==}
     engines: {node: '>= 10.x'}
@@ -6944,7 +6940,7 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@ardatan/relay-compiler@12.0.0(graphql@15.10.1)':
+  '@ardatan/relay-compiler@12.0.0(graphql@15.8.0)':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
@@ -6957,7 +6953,7 @@ snapshots:
       fb-watchman: 2.0.2
       fbjs: 3.0.5
       glob: 7.2.3
-      graphql: 15.10.1
+      graphql: 15.8.0
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
@@ -8164,103 +8160,103 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@graphql-codegen/core@2.6.8(graphql@15.10.1)':
+  '@graphql-codegen/core@2.6.8(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@15.10.1)
-      '@graphql-tools/schema': 9.0.19(graphql@15.10.1)
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@15.8.0)
+      '@graphql-tools/schema': 9.0.19(graphql@15.8.0)
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@3.1.2(graphql@15.10.1)':
+  '@graphql-codegen/plugin-helpers@3.1.2(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
-      graphql: 15.10.1
+      graphql: 15.8.0
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.10.1)':
+  '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
+      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
-      graphql: 15.10.1
+      graphql: 15.8.0
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.6.3
 
-  '@graphql-codegen/schema-ast@4.1.0(graphql@15.10.1)':
+  '@graphql-codegen/schema-ast@4.1.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.6.3
 
-  '@graphql-codegen/typescript-operations@4.5.0(graphql@15.10.1)':
+  '@graphql-codegen/typescript-operations@4.5.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-codegen/typescript': 4.1.4(graphql@15.10.1)
-      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.10.1)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/typescript': 4.1.4(graphql@15.8.0)
+      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.8.0)
       auto-bind: 4.0.0
-      graphql: 15.10.1
+      graphql: 15.8.0
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript@4.1.4(graphql@15.10.1)':
+  '@graphql-codegen/typescript@4.1.4(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-codegen/schema-ast': 4.1.0(graphql@15.10.1)
-      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.10.1)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/schema-ast': 4.1.0(graphql@15.8.0)
+      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.8.0)
       auto-bind: 4.0.0
-      graphql: 15.10.1
+      graphql: 15.8.0
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@4.1.2(graphql@15.10.1)':
+  '@graphql-codegen/visitor-plugin-common@4.1.2(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-tools/optimize': 2.0.0(graphql@15.10.1)
-      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.10.1)
-      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
+      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
-      graphql: 15.10.1
-      graphql-tag: 2.12.6(graphql@15.10.1)
+      graphql: 15.8.0
+      graphql-tag: 2.12.6(graphql@15.8.0)
       parse-filepath: 1.0.2
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@5.7.0(graphql@15.10.1)':
+  '@graphql-codegen/visitor-plugin-common@5.7.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-tools/optimize': 2.0.0(graphql@15.10.1)
-      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.10.1)
-      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
+      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
-      graphql: 15.10.1
-      graphql-tag: 2.12.6(graphql@15.10.1)
+      graphql: 15.8.0
+      graphql-tag: 2.12.6(graphql@15.8.0)
       parse-filepath: 1.0.2
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-inspector/core@4.2.2(graphql@15.10.1)':
+  '@graphql-inspector/core@4.2.2(graphql@15.8.0)':
     dependencies:
       dependency-graph: 0.11.0
-      graphql: 15.10.1
+      graphql: 15.8.0
       object-inspect: 1.12.3
       tslib: 2.5.0
 
@@ -8271,76 +8267,76 @@ snapshots:
       object-inspect: 1.13.2
       tslib: 2.6.2
 
-  '@graphql-tools/graphql-file-loader@7.5.17(graphql@15.10.1)':
+  '@graphql-tools/graphql-file-loader@7.5.17(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/import': 6.7.18(graphql@15.10.1)
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      '@graphql-tools/import': 6.7.18(graphql@15.8.0)
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
       globby: 11.1.0
-      graphql: 15.10.1
+      graphql: 15.8.0
       tslib: 2.8.1
       unixify: 1.0.0
 
-  '@graphql-tools/import@6.7.18(graphql@15.10.1)':
+  '@graphql-tools/import@6.7.18(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      graphql: 15.8.0
       resolve-from: 5.0.0
       tslib: 2.8.1
 
-  '@graphql-tools/load@7.8.14(graphql@15.10.1)':
+  '@graphql-tools/load@7.8.14(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/schema': 9.0.19(graphql@15.10.1)
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-tools/schema': 9.0.19(graphql@15.8.0)
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      graphql: 15.8.0
       p-limit: 3.1.0
       tslib: 2.8.1
 
-  '@graphql-tools/merge@8.4.2(graphql@15.10.1)':
+  '@graphql-tools/merge@8.4.2(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.8.1
 
-  '@graphql-tools/optimize@2.0.0(graphql@15.10.1)':
+  '@graphql-tools/optimize@2.0.0(graphql@15.8.0)':
     dependencies:
-      graphql: 15.10.1
+      graphql: 15.8.0
       tslib: 2.8.1
 
-  '@graphql-tools/relay-operation-optimizer@7.0.1(graphql@15.10.1)':
+  '@graphql-tools/relay-operation-optimizer@7.0.1(graphql@15.8.0)':
     dependencies:
-      '@ardatan/relay-compiler': 12.0.0(graphql@15.10.1)
-      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@ardatan/relay-compiler': 12.0.0(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-tools/schema@9.0.19(graphql@15.10.1)':
+  '@graphql-tools/schema@9.0.19(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/merge': 8.4.2(graphql@15.10.1)
-      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-tools/merge': 8.4.2(graphql@15.8.0)
+      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.8.1
       value-or-promise: 1.0.12
 
-  '@graphql-tools/utils@10.8.1(graphql@15.10.1)':
+  '@graphql-tools/utils@10.8.1(graphql@15.8.0)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@15.10.1)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
       cross-inspect: 1.0.1
       dset: 3.1.4
-      graphql: 15.10.1
+      graphql: 15.8.0
       tslib: 2.8.1
 
-  '@graphql-tools/utils@9.2.1(graphql@15.10.1)':
+  '@graphql-tools/utils@9.2.1(graphql@15.8.0)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@15.10.1)
-      graphql: 15.10.1
+      '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
+      graphql: 15.8.0
       tslib: 2.8.1
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@15.10.1)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@15.8.0)':
     dependencies:
-      graphql: 15.10.1
+      graphql: 15.8.0
 
   '@headlessui/react@1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -9174,14 +9170,14 @@ snapshots:
 
   '@tinacms/cli@1.9.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(scheduler@0.25.0)(sucrase@3.35.0)':
     dependencies:
-      '@graphql-codegen/core': 2.6.8(graphql@15.10.1)
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
-      '@graphql-codegen/typescript': 4.1.4(graphql@15.10.1)
-      '@graphql-codegen/typescript-operations': 4.5.0(graphql@15.10.1)
-      '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.10.1)
-      '@graphql-inspector/core': 4.2.2(graphql@15.10.1)
-      '@graphql-tools/graphql-file-loader': 7.5.17(graphql@15.10.1)
-      '@graphql-tools/load': 7.8.14(graphql@15.10.1)
+      '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/typescript': 4.1.4(graphql@15.8.0)
+      '@graphql-codegen/typescript-operations': 4.5.0(graphql@15.8.0)
+      '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.8.0)
+      '@graphql-inspector/core': 4.2.2(graphql@15.8.0)
+      '@graphql-tools/graphql-file-loader': 7.5.17(graphql@15.8.0)
+      '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
       '@svgr/core': 8.1.0(typescript@5.7.3)
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17)
@@ -9207,7 +9203,7 @@ snapshots:
       dotenv: 16.4.7
       esbuild: 0.24.2
       fs-extra: 11.3.0
-      graphql: 15.10.1
+      graphql: 15.8.0
       js-yaml: 4.1.0
       log4js: 6.9.1
       many-level: 2.0.0
@@ -11555,7 +11551,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.9.0(eslint@8.57.1)
       eslint-plugin-react: 7.35.0(eslint@8.57.1)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.1)
@@ -11579,7 +11575,7 @@ snapshots:
       enhanced-resolve: 5.17.1
       eslint: 8.57.1
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.6
       is-core-module: 2.15.0
@@ -11601,7 +11597,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -12094,17 +12090,10 @@ snapshots:
       nullthrows: 1.1.1
       vscode-languageserver-types: 3.17.5
 
-  graphql-tag@2.12.6(graphql@15.10.1):
-    dependencies:
-      graphql: 15.10.1
-      tslib: 2.8.1
-
   graphql-tag@2.12.6(graphql@15.8.0):
     dependencies:
       graphql: 15.8.0
       tslib: 2.8.1
-
-  graphql@15.10.1: {}
 
   graphql@15.8.0: {}
 
