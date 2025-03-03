@@ -1,9 +1,17 @@
-import type { Collection } from "tinacms";
+import type { Collection, Form, TinaCMS } from "tinacms";
 import { heroBlockSchema } from "@/components/blocks/hero";
 import { contentBlockSchema } from "@/components/blocks/content";
 import { testimonialBlockSchema } from "@/components/blocks/testimonial";
 import { featureBlockSchema } from "@/components/blocks/features";
 import { videoBlockSchema } from "@/components/blocks/video";
+import { revalidatePage } from "@/utils/revalidation";
+
+const buildPagePath = (filename: string) => {
+  if (filename === "home") {
+    return "/";
+  }
+  return `/${filename}`;
+};
 
 const Page: Collection = {
   label: "Pages",
@@ -11,11 +19,25 @@ const Page: Collection = {
   path: "content/pages",
   format: "mdx",
   ui: {
-    router: ({ document }) => {
-      if (document._sys.filename === "home") {
-        return `/`;
-      }
-      return `/${document._sys.filename}`;
+    router: ({ document }) =>
+      buildPagePath(document._sys.breadcrumbs.join("/")),
+    beforeSubmit: async ({
+      form,
+      values,
+    }: {
+      form: Form;
+      cms: TinaCMS;
+      values: Record<string, any>;
+    }) => {
+      const breadcrumb = form.relativePath
+        .replace(`${Page.path}/`, "")
+        .replace(`.${Page.format}`, "");
+      const path = buildPagePath(breadcrumb);
+
+      // Call the revalidation utility
+      await revalidatePage(path);
+
+      return values;
     },
   },
   fields: [
