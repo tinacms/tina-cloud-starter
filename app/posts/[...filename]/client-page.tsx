@@ -37,7 +37,7 @@ export default function PostClientPage(props: ClientPostProps) {
   const { data } = useTina({ ...props });
   const post = data.post;
 
-  const date = new Date(post.date);
+  const date = new Date(post.date!);
   let formattedDate = "";
   if (!isNaN(date.getTime())) {
     formattedDate = format(date, "MMM dd, yyyy");
@@ -52,7 +52,7 @@ export default function PostClientPage(props: ClientPostProps) {
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r ${
-              titleColorClasses[theme.color]
+              titleColorClasses[theme!.color!]
             }`}
           >
             {post.title}
@@ -64,16 +64,18 @@ export default function PostClientPage(props: ClientPostProps) {
         >
           {post.author && (
             <>
-              <div className="flex-shrink-0 mr-4">
-                <Image
-                  data-tina-field={tinaField(post.author, "avatar")}
-                  className="h-14 w-14 object-cover rounded-full shadow-sm"
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  width={500}
-                  height={500}
-                />
-              </div>
+              {post.author.avatar && (
+                <div className="flex-shrink-0 mr-4">
+                  <Image
+                    data-tina-field={tinaField(post.author, "avatar")}
+                    className="h-14 w-14 object-cover rounded-full shadow-sm"
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              )}
               <p
                 data-tina-field={tinaField(post.author, "name")}
                 className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white"
