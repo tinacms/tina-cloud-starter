@@ -7,14 +7,12 @@ export function middleware(request: NextRequest) {
   if (isEditingMode(request)) {
     console.log('Editing mode detected', request.url);
 
-    // Clone the response
+    // Prevent ISR caching (set no-store headers)
     const response = NextResponse.next();
-    
-    // Set cache control headers to prevent caching
     response.headers.set('Cache-Control', 'no-store, must-revalidate');
     response.headers.set('Pragma', 'no-cache');
     response.headers.set('Expires', '0');
-    
+
     return response;
   }
   
