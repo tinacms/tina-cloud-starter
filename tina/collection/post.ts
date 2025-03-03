@@ -1,5 +1,8 @@
+import type { Collection, Form, TinaCMS } from "tinacms";
 import { videoBlockSchema } from "@/components/blocks/video";
-import type { Collection } from "tinacms";
+import { revalidatePage } from "@/utils/revalidation";
+
+const buildPagePath = (filename: string) => `/posts/${filename}`;
 
 const Post: Collection = {
   label: "Blog Posts",
@@ -7,8 +10,25 @@ const Post: Collection = {
   path: "content/posts",
   format: "mdx",
   ui: {
-    router: ({ document }) => {                  
-      return `/posts/${document._sys.breadcrumbs.join("/")}`;
+    router: ({ document }) =>
+      buildPagePath(document._sys.breadcrumbs.join("/")),
+    beforeSubmit: async ({
+      form,
+      values,
+    }: {
+      form: Form;
+      cms: TinaCMS;
+      values: Record<string, any>;
+    }) => {
+      const breadcrumb = form.relativePath
+        .replace(`${Post.path}/`, "")
+        .replace(`.${Post.format}`, "");
+      const path = buildPagePath(breadcrumb);
+
+      // Call the revalidation utility
+      await revalidatePage([path, "/posts"]);
+
+      return values;
     },
   },
   fields: [
