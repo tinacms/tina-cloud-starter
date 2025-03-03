@@ -38,8 +38,8 @@ export default function Header() {
       className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
     >
       <Container size="custom" className="py-0 relative z-10 max-w-8xl">
-        <div className="flex items-center justify-between gap-6">
-          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
+        <div className="flex flex-wrap items-center justify-between lg:gap-6">
+          <h4 className="select-none text-lg font-bold tracking-tight lg:my-4 mt-4 transition duration-150 ease-out transform">
             <Link
               href="/"
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
