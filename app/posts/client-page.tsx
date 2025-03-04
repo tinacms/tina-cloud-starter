@@ -11,7 +11,7 @@ import {
   PostConnectionQueryVariables,
 } from "@/tina/__generated__/types";
 import { useLayout } from "@/components/layout/layout-context";
-import MermaidElement from "@/components/mermaid-renderer";
+import { mermaid } from "@/components/blocks/mermaid";
 
 const titleColorClasses = {
   blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
@@ -62,10 +62,7 @@ export default function PostsClientPage(props: ClientPostProps) {
               <TinaMarkdown
                 content={post.excerpt}
                 components={{
-                  mermaid(props) {
-                    if (!props?.value) return <></>;
-                    return <MermaidElement value={props.value} />;
-                  },
+                  mermaid,
                 }}
               />
             </div>
