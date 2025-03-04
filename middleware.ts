@@ -1,14 +1,23 @@
+import { draftMode } from 'next/headers'
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { isEditingMode } from './lib/tina-environment';
 
 export function middleware(request: NextRequest) {
-  // Check if we're in editing mode
-  if (isEditingMode(request)) {
-    console.log('Editing mode detected', request.url);
+  const { enable: enableDraftMode, disable: disableDraftMode, isEnabled: isDraftModeEnabled } = draftMode();
+  const shouldUseDraftMode = isEditingMode(request);
 
+  if (shouldUseDraftMode && !isDraftModeEnabled) {
+    enableDraftMode();
+  } else if (!shouldUseDraftMode && isDraftModeEnabled) {
+    disableDraftMode();
+  }
+
+  // Check if we're in editing mode
+  if (shouldUseDraftMode) {
     // Prevent ISR caching (set no-store headers)
     const response = NextResponse.next();
+    response.headers.set('x-tina-edit-mode', 'true');
     response.headers.set('Cache-Control', 'no-store, must-revalidate');
     response.headers.set('Pragma', 'no-cache');
     response.headers.set('Expires', '0');
