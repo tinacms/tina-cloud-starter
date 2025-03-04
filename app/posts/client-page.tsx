@@ -35,9 +35,9 @@ export default function PostsClientPage(props: ClientPostProps) {
 
   return (
     <>
-      {data?.postConnection.edges.map((postData) => {
-        const post = postData.node;
-        const date = new Date(post.date);
+      {data?.postConnection.edges!.map((postData) => {
+        const post = postData!.node!;
+        const date = new Date(post.date!);
         let formattedDate = "";
         if (!isNaN(date.getTime())) {
           formattedDate = format(date, "MMM dd, yyyy");
@@ -50,7 +50,7 @@ export default function PostsClientPage(props: ClientPostProps) {
           >
             <h3
               className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
-                titleColorClasses[theme.color]
+                titleColorClasses[theme!.color!]
               }`}
             >
               {post.title}{" "}
@@ -59,25 +59,28 @@ export default function PostsClientPage(props: ClientPostProps) {
               </span>
             </h3>
             <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
-              <TinaMarkdown 
+              <TinaMarkdown
                 content={post.excerpt}
                 components={{
-                  mermaid({ value }) {
-                    return <MermaidElement value={value} />;
-                  }
+                  mermaid(props) {
+                    if (!props?.value) return <></>;
+                    return <MermaidElement value={props.value} />;
+                  },
                 }}
               />
             </div>
             <div className="flex items-center">
-              <div className="flex-shrink-0 mr-2">
-                <Image
-                  width={500}
-                  height={500}
-                  className="h-10 w-10 object-cover rounded-full shadow-sm"
-                  src={post?.author?.avatar}
-                  alt={post?.author?.name}
-                />
-              </div>
+              {post!.author && post!.author.avatar && (
+                <div className="flex-shrink-0 mr-2">
+                  <Image
+                    width={500}
+                    height={500}
+                    className="h-10 w-10 object-cover rounded-full shadow-sm"
+                    src={post?.author?.avatar!}
+                    alt={post?.author?.name || ""}
+                  />
+                </div>
+              )}
               <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
                 {post?.author?.name}
               </p>
