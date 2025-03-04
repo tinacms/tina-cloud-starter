@@ -6,10 +6,10 @@ import PostClientPage from "./client-page";
 export default async function PostPage({
   params,
 }: {
-  params: { filename: string[] };
+  params: { urlSegments: string[] };
 }) {
   const data = await client.queries.post({
-    relativePath: `${params.filename.join("/")}.mdx`,
+    relativePath: `${params.urlSegments.join("/")}.mdx`,
   });
 
   return (
@@ -23,16 +23,25 @@ export async function generateStaticParams() {
   let posts = await client.queries.postConnection();
   const allPosts = posts;
 
+  if (!allPosts.data.postConnection.edges) {
+    return [];
+  }
+
   while (posts.data?.postConnection.pageInfo.hasNextPage) {
     posts = await client.queries.postConnection({
       after: posts.data.postConnection.pageInfo.endCursor,
     });
+
+    if (!posts.data.postConnection.edges) {
+      break;
+    }
+
     allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
   }
 
   const params =
     allPosts.data?.postConnection.edges.map((edge) => ({
-      filename: edge.node._sys.breadcrumbs,
+      urlSegments: edge?.node?._sys.breadcrumbs,
     })) || [];
 
   return params;
