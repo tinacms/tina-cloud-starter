@@ -9,6 +9,10 @@ import { Container } from "../layout/container";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const Video = ({ data }: { data: PageBlocksVideo }) => {
+  if (!data.url) {
+    return null;
+  }
+
   return (
     <Section color={data.color}>
       <Container size="large">
@@ -17,8 +21,8 @@ export const Video = ({ data }: { data: PageBlocksVideo }) => {
             width="100%"
             height="100%"
             style={{ margin: "auto" }}
-            playing={data.autoPlay}
-            loop={data.loop}
+            playing={!!data.autoPlay}
+            loop={!!data.loop}
             controls={true}
             url={data.url}
           />
@@ -62,6 +66,6 @@ export const videoBlockSchema: Template = {
       type: "boolean",
       label: "Loop",
       name: "loop",
-    }
+    },
   ],
 };
