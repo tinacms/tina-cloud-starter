@@ -8,6 +8,7 @@ export default async function Page({
 }: {
   params: { urlSegments: string[] };
 }) {
+  console.log('params', params);
   const data = await client.queries.page({
     relativePath: `${params.urlSegments.join("/")}.mdx`,
   });
