@@ -7,9 +7,9 @@ import {
 } from "tinacms/dist/rich-text";
 import Image from "next/image";
 import { Prism } from "tinacms/dist/rich-text/prism";
-import MermaidElement from "./mermaid-renderer";
 import { Video } from "./blocks/video";
 import { PageBlocksVideo } from "@/tina/__generated__/types";
+import { mermaid } from "./blocks/mermaid";
 
 export const components: Components<{
   BlockQuote: {
@@ -27,7 +27,12 @@ export const components: Components<{
   };
   video: PageBlocksVideo;
 }> = {
-  code_block: (props) => <Prism {...props} />,
+  code_block: (props) => {
+    if (!props) {
+      return <></>;
+    }
+    return <Prism lang={props.lang} value={props.value} />;
+  },
   BlockQuote: (props: {
     children: TinaMarkdownContent;
     authorName: string;
@@ -35,12 +40,10 @@ export const components: Components<{
     return (
       <div>
         <blockquote>
-          <TinaMarkdown 
+          <TinaMarkdown
             content={props.children}
             components={{
-              mermaid({ value }) {
-                return <MermaidElement value={value} />;
-              }
+              mermaid,
             }}
           />
           {props.authorName}
@@ -69,12 +72,10 @@ export const components: Components<{
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="">
-            <TinaMarkdown 
+            <TinaMarkdown
               content={props.children}
               components={{
-                mermaid({ value }) {
-                  return <MermaidElement value={value} />;
-                }
+                mermaid,
               }}
             />
           </div>
@@ -102,30 +103,32 @@ export const components: Components<{
               </div>
             </form>
             <div className="mt-3 text-sm text-gray-500">
-              {props.disclaimer && 
-                  <TinaMarkdown 
-                    content={props.disclaimer}
-                    components={{
-                      mermaid({ value }) {
-                        return <MermaidElement value={value} />;
-                      }
-                    }}
-                  />}
+              {props.disclaimer && (
+                <TinaMarkdown
+                  content={props.disclaimer}
+                  components={{
+                    mermaid,
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>
       </div>
     );
   },
-  img: (props) => (
-    <span className="flex items-center justify-center">
-      <Image src={props.url} alt={props.alt} width={500} height={500} />
-    </span>
-  ),
-  mermaid({ value }) {
-    return <MermaidElement value={value} />;
+  img: (props) => {
+    if (!props) {
+      return <></>;
+    }
+    return (
+      <span className="flex items-center justify-center">
+        <Image src={props.url} alt={props.alt || ""} width={500} height={500} />
+      </span>
+    );
   },
+  mermaid,
   video: (props) => {
     return <Video data={props} />;
-  }
+  },
 };

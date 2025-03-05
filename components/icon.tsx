@@ -98,9 +98,9 @@ export const Icon = ({
 
   const iconColor = color
     ? color === "primary"
-      ? theme.color
+      ? theme!.color
       : color
-    : theme.color;
+    : theme!.color;
 
   if (style == "circle") {
     return (
@@ -115,7 +115,7 @@ export const Icon = ({
     const iconColorClasses =
       iconColorClass[
         parentColor === "primary" &&
-        (iconColor === theme.color || iconColor === "primary")
+        (iconColor === theme!.color || iconColor === "primary")
           ? "white"
           : iconColor
       ].regular;

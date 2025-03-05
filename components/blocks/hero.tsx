@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Section } from "../layout/section";
 import { Container } from "../layout/container";
 import { Actions } from "./actions";
-import MermaidElement from "../mermaid-renderer";
+import { mermaid } from "./mermaid";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const headlineColorClasses = {
@@ -68,15 +68,13 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                   <TinaMarkdown 
                     content={data.text}
                     components={{
-                      mermaid({ value }) {
-                        return <MermaidElement value={value} />;
-                      }
+                      mermaid,
                     }}
                   />
                 </div>
               )}
             </div>
-            {data.image && (
+            {data.image?.src && (
               <div
                 data-tina-field={tinaField(data.image, "src")}
                 className="relative flex-shrink-0 md:w-2/5 flex justify-center"
@@ -84,7 +82,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                 <Image
                   className="w-full h-auto max-w-full rounded-lg"
                   style={{ objectFit: "cover" }}
-                  alt={data.image.alt}
+                  alt={data.image.alt || ''}
                   src={data.image.src}
                   width={500}
                   height={500}
@@ -102,9 +100,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               <TinaMarkdown 
                 content={data.text2}
                 components={{
-                  mermaid({ value }) {
-                    return <MermaidElement value={value} />;
-                  }
+                  mermaid,
                 }}
               />
             </div>
@@ -113,8 +109,8 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             <div className="mt-10">
               <Actions
                 className="justify-center md:justify-start py-2"
-                parentColor={data.color}
-                actions={data.actions}
+                parentColor={data.color!}
+                actions={data.actions.map(action => action!)}
               />
             </div>
           )}

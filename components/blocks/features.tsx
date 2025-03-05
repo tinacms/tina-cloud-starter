@@ -1,5 +1,6 @@
 "use client";
 import {
+  Maybe,
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
@@ -14,7 +15,7 @@ export const Feature = ({
   featuresColor,
   data,
 }: {
-  featuresColor: string;
+  featuresColor: string | Maybe<string> | undefined;
   data: PageBlocksFeaturesItems;
 }) => {
   return (
@@ -26,7 +27,7 @@ export const Feature = ({
       {data.icon && (
         <Icon
           tinaField={tinaField(data, "icon")}
-          parentColor={featuresColor}
+          parentColor={featuresColor!}
           data={{ size: "large", ...data.icon }}
         />
       )}
@@ -59,7 +60,7 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
       >
         {data.items &&
           data.items.map(function (block, i) {
-            return <Feature featuresColor={data.color} key={i} data={block} />;
+            return <Feature featuresColor={data.color} key={i} data={block!} />;
           })}
       </Container>
     </Section>

@@ -8,11 +8,20 @@ export default async function PostsPage() {
   });
   const allPosts = posts;
 
+  if (!allPosts.data.postConnection.edges) {
+    return [];
+  }
+
   while (posts.data?.postConnection.pageInfo.hasNextPage) {
     posts = await client.queries.postConnection({
       sort: "date",
       after: posts.data.postConnection.pageInfo.endCursor,
     });
+
+    if (!posts.data.postConnection.edges) {
+      break;
+    }
+
     allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
   }
 

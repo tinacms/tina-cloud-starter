@@ -1,7 +1,18 @@
 import React from "react";
 import { useLayout } from "../layout/layout-context";
+import { Maybe } from "@/tina/__generated__/types";
 
-export const Section = ({ children, color = "", className = "" }) => {
+interface SectionProps {
+  children: React.ReactNode;
+  color?: string | Maybe<string>;
+  className?: string;
+}
+
+export const Section = (props: SectionProps) => {
+  let { children, color, className } = props;
+  if (!color) {
+    color = "";
+  }
   const { theme } = useLayout();
   const sectionColor = {
     default:
@@ -24,7 +35,7 @@ export const Section = ({ children, color = "", className = "" }) => {
   };
   const sectionColorCss =
     color === "primary"
-      ? sectionColor.primary[theme.color]
+      ? sectionColor.primary[theme!.color!]
       : sectionColor[color]
       ? sectionColor[color]
       : sectionColor.default;
