@@ -1,17 +1,9 @@
-import { draftMode } from 'next/headers'
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { isEditingMode } from './lib/tina-environment';
 
 export function middleware(request: NextRequest) {
-  const { enable: enableDraftMode, disable: disableDraftMode, isEnabled: isDraftModeEnabled } = draftMode();
   const shouldUseDraftMode = isEditingMode(request);
-
-  if (shouldUseDraftMode && !isDraftModeEnabled) {
-    enableDraftMode();
-  } else if (!shouldUseDraftMode && isDraftModeEnabled) {
-    disableDraftMode();
-  }
 
   // Check if we're in editing mode
   if (shouldUseDraftMode) {
@@ -30,6 +22,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-// Apply middleware to app routes
+  // Apply middleware to app routes
   matcher: '/((?!admin|api|_next/static|_next/image|uploads|favicon.ico).*)',
 };
