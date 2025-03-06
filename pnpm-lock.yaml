@@ -51,24 +51,24 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       tinacms:
-        specifier: ^2.7.1
-        version: 2.7.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.7.3)
+        specifier: ^2.7.2
+        version: 2.7.2(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.8.2)
       usehooks-ts:
         specifier: ^3.1.1
         version: 3.1.1(react@18.3.1)
     devDependencies:
       '@svgr/webpack':
         specifier: ^8.1.0
-        version: 8.1.0(typescript@5.7.3)
+        version: 8.1.0(typescript@5.8.2)
       '@tinacms/cli':
-        specifier: ^1.9.1
-        version: 1.9.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(scheduler@0.25.0)(sucrase@3.35.0)
+        specifier: ^1.9.2
+        version: 1.9.2(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(scheduler@0.25.0)(sucrase@3.35.0)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
       '@types/node':
-        specifier: ^22.13.5
-        version: 22.13.5
+        specifier: ^22.13.9
+        version: 22.13.9
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.18
@@ -83,7 +83,7 @@ importers:
         version: 8.57.1
       eslint-config-next:
         specifier: 14.2.4
-        version: 14.2.4(eslint@8.57.1)(typescript@5.7.3)
+        version: 14.2.4(eslint@8.57.1)(typescript@5.8.2)
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -94,8 +94,8 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.5.3)
       typescript:
-        specifier: ^5.7.3
-        version: 5.7.3
+        specifier: ^5.8.2
+        version: 5.8.2
 
 packages:
 
@@ -2110,32 +2110,32 @@ packages:
   '@tanstack/virtual-core@3.8.4':
     resolution: {integrity: sha512-iO5Ujgw3O1yIxWDe9FgUPNkGjyT657b1WNX52u+Wv1DyBFEpdCdGkuVaky0M3hHFqNWjAmHWTn4wgj9rTr7ZQg==}
 
-  '@tinacms/app@2.2.1':
-    resolution: {integrity: sha512-J8rXBIbBMIF/7I/b/4NxeuzYDD+3YORoKe7yPqWdLxacsl1WAkFl13c4IwrCz8zHKfL44ttuslpaVhOFCfpimg==}
+  '@tinacms/app@2.2.2':
+    resolution: {integrity: sha512-v4XNv7ltfsCATm97jpp/hAsVQXwNqs2gfTVuH1yfmD7eKLYHpPizf2RnAgby30buh5tDqKDcVJuM6levzGjMcQ==}
 
-  '@tinacms/cli@1.9.1':
-    resolution: {integrity: sha512-B4tzXAQ57Rlc37tKKhTKXWe36ddlYg6cvfPDlpzP+T8lI3iOLM35Phc8Pk03CJxpgCF1TvIJCdwYi5cWGvkZ1Q==}
+  '@tinacms/cli@1.9.2':
+    resolution: {integrity: sha512-dZPxAOlbJ4iPxAI6EAKtp+6UgZWmJ+wq8p8Gt6XRUlLvOAU+l4JeZAOit7zdY39kITfsD1YHuVvLkLLNBQLa3g==}
     hasBin: true
 
-  '@tinacms/graphql@1.5.13':
-    resolution: {integrity: sha512-0z3CN3R6AcIMN9USyHgQ3ds4Jhb1rOKmZUazChzJBJa0LiHJOZl76YITYoMtmNJ4mbF2Vn9scHpQrar4FKIb3w==}
+  '@tinacms/graphql@1.5.14':
+    resolution: {integrity: sha512-x8IA0Jga0cfLpCpcg4bP8BmAC7Q0mkEOj0aXDlYGcp5dFKBi8A7n0ep71J4FCzPITWSNzwzzHUI1LoArV9UG6Q==}
 
-  '@tinacms/mdx@1.6.0':
-    resolution: {integrity: sha512-xiJj5dVvt3ro8bbQCiL2eqQS8G8kSTEME9UVkY60B3ugxyznybrOnbJGuen1Yl06V7mFpbhAkUNDekMnQ3NBWw==}
+  '@tinacms/mdx@1.6.1':
+    resolution: {integrity: sha512-F7fA1DCs2ZqrirQ/9ZEzOQ6ZakjvGFsMf9zJNWUWFyvvB0e/h1xgLhBh19jNK3PU6QW7v3jO4l3v90fBGCopLA==}
 
   '@tinacms/metrics@1.0.9':
     resolution: {integrity: sha512-Jjy1s2RidFchw15X4Jfy9IbGfGQpAPSX+Dtsby7TvuwSaPpNKYNCfmRJHn5BWSE7TEjZaaRTcJ5kDQDPWNnBMA==}
     peerDependencies:
       fs-extra: ^9.0.1
 
-  '@tinacms/schema-tools@1.7.1':
-    resolution: {integrity: sha512-aTGosUSnB63cUsZQxt3gHcGiLO+U+vN0jYj8fuKUceXFAYICBXdAp4luvpForANja187cs9PyOZeB7e5BJDjQw==}
+  '@tinacms/schema-tools@1.7.2':
+    resolution: {integrity: sha512-xo6lycoEmjfk9XgcvdBg6kIKKu+pu9NumPHdSB5Fr6Ti9HBLMru0tRjRdOikCZqG+4DeEyTunUHPl6oMWR9feQ==}
     peerDependencies:
       react: '>=16.14.0'
       yup: ^0.32.0
 
-  '@tinacms/search@1.0.40':
-    resolution: {integrity: sha512-ZknY3cMI2Q9Cv8yZTnUd7Yu6a0fbgcQ/2ThbCjlVbFOvo85Thf2F6ivOs/RKEeP6nurz028Ak72QypDyBeBzSA==}
+  '@tinacms/search@1.0.41':
+    resolution: {integrity: sha512-g2GIvezAMIktAZAf07kYjWWRm7r6qQXb81K2XBwN+GfH7KslteoAF+yKUYG5rk+Uv2y+5UaRhUqftMg0PIVYew==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -2288,8 +2288,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@22.13.5':
-    resolution: {integrity: sha512-+lTU0PxZXn0Dr1NBtC7Y8cR21AJr87dLLU953CWA6pMxxv/UDc7jYAY90upcrie1nRcD6XNG5HOYEDtgW5TxAg==}
+  '@types/node@22.13.9':
+    resolution: {integrity: sha512-acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==}
 
   '@types/prismjs@1.26.4':
     resolution: {integrity: sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==}
@@ -4275,6 +4275,10 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+
+  graphql@15.10.1:
+    resolution: {integrity: sha512-BL/Xd/T9baO6NFzoMpiMD7YUZ62R6viR5tp/MULVEnbYJXZA//kRNW7J0j1w/wXArgL0sCxhDfK5dczSKn3+cg==}
+    engines: {node: '>= 10.x'}
 
   graphql@15.8.0:
     resolution: {integrity: sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==}
@@ -6392,8 +6396,8 @@ packages:
     resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==}
     engines: {node: '>=10'}
 
-  tinacms@2.7.1:
-    resolution: {integrity: sha512-z5n06FV2XyKxDUKoldQ+B+fPQRGC3Rs7QBFGKb25mtB4fRTDABzGbmAnBc0LfA1Ztvb3VhOfFDryJz5xy3m3EQ==}
+  tinacms@2.7.2:
+    resolution: {integrity: sha512-rpoeK6wEyzgjUvo74+y31CAD6++zRdXCp4WzomOWTXr6t3OP2YJ2yczhkTJB1zq6cDIUe90sd5cYpPWqwuLzyQ==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -6531,8 +6535,8 @@ packages:
     peerDependencies:
       typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -6940,7 +6944,7 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@ardatan/relay-compiler@12.0.0(graphql@15.8.0)':
+  '@ardatan/relay-compiler@12.0.0(graphql@15.10.1)':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
@@ -6953,7 +6957,7 @@ snapshots:
       fb-watchman: 2.0.2
       fbjs: 3.0.5
       glob: 7.2.3
-      graphql: 15.8.0
+      graphql: 15.10.1
       immutable: 3.7.6
       invariant: 2.2.4
       nullthrows: 1.1.1
@@ -8125,9 +8129,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@graphiql/react@0.18.0(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@graphiql/react@0.18.0(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@graphiql/toolkit': 0.8.4(@types/node@22.13.5)(graphql@15.8.0)
+      '@graphiql/toolkit': 0.8.4(@types/node@22.13.9)(graphql@15.8.0)
       '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog': 1.1.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dropdown-menu': 2.1.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8152,111 +8156,111 @@ snapshots:
       - '@types/react-dom'
       - graphql-ws
 
-  '@graphiql/toolkit@0.8.4(@types/node@22.13.5)(graphql@15.8.0)':
+  '@graphiql/toolkit@0.8.4(@types/node@22.13.9)(graphql@15.8.0)':
     dependencies:
       '@n1ru4l/push-pull-async-iterable-iterator': 3.2.0
       graphql: 15.8.0
-      meros: 1.3.0(@types/node@22.13.5)
+      meros: 1.3.0(@types/node@22.13.9)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@graphql-codegen/core@2.6.8(graphql@15.8.0)':
+  '@graphql-codegen/core@2.6.8(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@15.8.0)
-      '@graphql-tools/schema': 9.0.19(graphql@15.8.0)
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-codegen/plugin-helpers': 3.1.2(graphql@15.10.1)
+      '@graphql-tools/schema': 9.0.19(graphql@15.10.1)
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@3.1.2(graphql@15.8.0)':
+  '@graphql-codegen/plugin-helpers@3.1.2(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
       change-case-all: 1.0.15
       common-tags: 1.8.2
-      graphql: 15.8.0
+      graphql: 15.10.1
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.8.0)':
+  '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
       change-case-all: 1.0.15
       common-tags: 1.8.2
-      graphql: 15.8.0
+      graphql: 15.10.1
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.6.3
 
-  '@graphql-codegen/schema-ast@4.1.0(graphql@15.8.0)':
+  '@graphql-codegen/schema-ast@4.1.0(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.6.3
 
-  '@graphql-codegen/typescript-operations@4.5.0(graphql@15.8.0)':
+  '@graphql-codegen/typescript-operations@4.5.0(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-codegen/typescript': 4.1.4(graphql@15.8.0)
-      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-codegen/typescript': 4.1.4(graphql@15.10.1)
+      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.10.1)
       auto-bind: 4.0.0
-      graphql: 15.8.0
+      graphql: 15.10.1
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript@4.1.4(graphql@15.8.0)':
+  '@graphql-codegen/typescript@4.1.4(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-codegen/schema-ast': 4.1.0(graphql@15.8.0)
-      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-codegen/schema-ast': 4.1.0(graphql@15.10.1)
+      '@graphql-codegen/visitor-plugin-common': 5.7.0(graphql@15.10.1)
       auto-bind: 4.0.0
-      graphql: 15.8.0
+      graphql: 15.10.1
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@4.1.2(graphql@15.8.0)':
+  '@graphql-codegen/visitor-plugin-common@4.1.2(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
-      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-tools/optimize': 2.0.0(graphql@15.10.1)
+      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.10.1)
+      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
-      graphql: 15.8.0
-      graphql-tag: 2.12.6(graphql@15.8.0)
+      graphql: 15.10.1
+      graphql-tag: 2.12.6(graphql@15.10.1)
       parse-filepath: 1.0.2
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@5.7.0(graphql@15.8.0)':
+  '@graphql-codegen/visitor-plugin-common@5.7.0(graphql@15.10.1)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
-      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-tools/optimize': 2.0.0(graphql@15.10.1)
+      '@graphql-tools/relay-operation-optimizer': 7.0.1(graphql@15.10.1)
+      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
-      graphql: 15.8.0
-      graphql-tag: 2.12.6(graphql@15.8.0)
+      graphql: 15.10.1
+      graphql-tag: 2.12.6(graphql@15.10.1)
       parse-filepath: 1.0.2
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-inspector/core@4.2.2(graphql@15.8.0)':
+  '@graphql-inspector/core@4.2.2(graphql@15.10.1)':
     dependencies:
       dependency-graph: 0.11.0
-      graphql: 15.8.0
+      graphql: 15.10.1
       object-inspect: 1.12.3
       tslib: 2.5.0
 
@@ -8267,76 +8271,76 @@ snapshots:
       object-inspect: 1.13.2
       tslib: 2.6.2
 
-  '@graphql-tools/graphql-file-loader@7.5.17(graphql@15.8.0)':
+  '@graphql-tools/graphql-file-loader@7.5.17(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/import': 6.7.18(graphql@15.8.0)
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
+      '@graphql-tools/import': 6.7.18(graphql@15.10.1)
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
       globby: 11.1.0
-      graphql: 15.8.0
+      graphql: 15.10.1
       tslib: 2.8.1
       unixify: 1.0.0
 
-  '@graphql-tools/import@6.7.18(graphql@15.8.0)':
+  '@graphql-tools/import@6.7.18(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      graphql: 15.10.1
       resolve-from: 5.0.0
       tslib: 2.8.1
 
-  '@graphql-tools/load@7.8.14(graphql@15.8.0)':
+  '@graphql-tools/load@7.8.14(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/schema': 9.0.19(graphql@15.8.0)
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-tools/schema': 9.0.19(graphql@15.10.1)
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      graphql: 15.10.1
       p-limit: 3.1.0
       tslib: 2.8.1
 
-  '@graphql-tools/merge@8.4.2(graphql@15.8.0)':
+  '@graphql-tools/merge@8.4.2(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.8.1
 
-  '@graphql-tools/optimize@2.0.0(graphql@15.8.0)':
+  '@graphql-tools/optimize@2.0.0(graphql@15.10.1)':
     dependencies:
-      graphql: 15.8.0
+      graphql: 15.10.1
       tslib: 2.8.1
 
-  '@graphql-tools/relay-operation-optimizer@7.0.1(graphql@15.8.0)':
+  '@graphql-tools/relay-operation-optimizer@7.0.1(graphql@15.10.1)':
     dependencies:
-      '@ardatan/relay-compiler': 12.0.0(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@ardatan/relay-compiler': 12.0.0(graphql@15.10.1)
+      '@graphql-tools/utils': 10.8.1(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@graphql-tools/schema@9.0.19(graphql@15.8.0)':
+  '@graphql-tools/schema@9.0.19(graphql@15.10.1)':
     dependencies:
-      '@graphql-tools/merge': 8.4.2(graphql@15.8.0)
-      '@graphql-tools/utils': 9.2.1(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-tools/merge': 8.4.2(graphql@15.10.1)
+      '@graphql-tools/utils': 9.2.1(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.8.1
       value-or-promise: 1.0.12
 
-  '@graphql-tools/utils@10.8.1(graphql@15.8.0)':
+  '@graphql-tools/utils@10.8.1(graphql@15.10.1)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@15.10.1)
       cross-inspect: 1.0.1
       dset: 3.1.4
-      graphql: 15.8.0
+      graphql: 15.10.1
       tslib: 2.8.1
 
-  '@graphql-tools/utils@9.2.1(graphql@15.8.0)':
+  '@graphql-tools/utils@9.2.1(graphql@15.10.1)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
-      graphql: 15.8.0
+      '@graphql-typed-document-node/core': 3.2.0(graphql@15.10.1)
+      graphql: 15.10.1
       tslib: 2.8.1
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@15.8.0)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@15.10.1)':
     dependencies:
-      graphql: 15.8.0
+      graphql: 15.10.1
 
   '@headlessui/react@1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -9053,12 +9057,12 @@ snapshots:
       '@svgr/babel-plugin-transform-react-native-svg': 8.1.0(@babel/core@7.25.2)
       '@svgr/babel-plugin-transform-svg-component': 8.0.0(@babel/core@7.25.2)
 
-  '@svgr/core@8.1.0(typescript@5.7.3)':
+  '@svgr/core@8.1.0(typescript@5.8.2)':
     dependencies:
       '@babel/core': 7.25.2
       '@svgr/babel-preset': 8.1.0(@babel/core@7.25.2)
       camelcase: 6.3.0
-      cosmiconfig: 8.3.6(typescript@5.7.3)
+      cosmiconfig: 8.3.6(typescript@5.8.2)
       snake-case: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -9069,35 +9073,35 @@ snapshots:
       '@babel/types': 7.25.2
       entities: 4.5.0
 
-  '@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@5.7.3))':
+  '@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@5.8.2))':
     dependencies:
       '@babel/core': 7.25.2
       '@svgr/babel-preset': 8.1.0(@babel/core@7.25.2)
-      '@svgr/core': 8.1.0(typescript@5.7.3)
+      '@svgr/core': 8.1.0(typescript@5.8.2)
       '@svgr/hast-util-to-babel-ast': 8.0.0
       svg-parser: 2.0.4
     transitivePeerDependencies:
       - supports-color
 
-  '@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@5.7.3))(typescript@5.7.3)':
+  '@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@5.8.2))(typescript@5.8.2)':
     dependencies:
-      '@svgr/core': 8.1.0(typescript@5.7.3)
-      cosmiconfig: 8.3.6(typescript@5.7.3)
+      '@svgr/core': 8.1.0(typescript@5.8.2)
+      cosmiconfig: 8.3.6(typescript@5.8.2)
       deepmerge: 4.3.1
       svgo: 3.3.2
     transitivePeerDependencies:
       - typescript
 
-  '@svgr/webpack@8.1.0(typescript@5.7.3)':
+  '@svgr/webpack@8.1.0(typescript@5.8.2)':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-constant-elements': 7.25.1(@babel/core@7.25.2)
       '@babel/preset-env': 7.25.3(@babel/core@7.25.2)
       '@babel/preset-react': 7.24.7(@babel/core@7.25.2)
       '@babel/preset-typescript': 7.24.7(@babel/core@7.25.2)
-      '@svgr/core': 8.1.0(typescript@5.7.3)
-      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.7.3))
-      '@svgr/plugin-svgo': 8.1.0(@svgr/core@8.1.0(typescript@5.7.3))(typescript@5.7.3)
+      '@svgr/core': 8.1.0(typescript@5.8.2)
+      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.8.2))
+      '@svgr/plugin-svgo': 8.1.0(@svgr/core@8.1.0(typescript@5.8.2))(typescript@5.8.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -9137,22 +9141,22 @@ snapshots:
 
   '@tanstack/virtual-core@3.8.4': {}
 
-  '@tinacms/app@2.2.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(scheduler@0.25.0)(sucrase@3.35.0)(yup@1.6.1)':
+  '@tinacms/app@2.2.2(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(scheduler@0.25.0)(sucrase@3.35.0)(yup@1.6.1)':
     dependencies:
-      '@graphiql/toolkit': 0.8.4(@types/node@22.13.5)(graphql@15.8.0)
+      '@graphiql/toolkit': 0.8.4(@types/node@22.13.9)(graphql@15.8.0)
       '@headlessui/react': 2.1.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@heroicons/react': 1.0.6(react@18.3.1)
       '@monaco-editor/react': 4.4.5(monaco-editor@0.31.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tinacms/mdx': 1.6.0(react@18.3.1)(typescript@5.7.3)(yup@1.6.1)
+      '@tinacms/mdx': 1.6.1(react@18.3.1)(typescript@5.8.2)(yup@1.6.1)
       final-form: 4.20.10
-      graphiql: 3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      graphiql: 3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       graphql: 15.8.0
       monaco-editor: 0.31.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-router-dom: 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      tinacms: 2.7.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.7.3)
-      typescript: 5.7.3
+      tinacms: 2.7.2(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.8.2)
+      typescript: 5.8.2
       zod: 3.24.2
     transitivePeerDependencies:
       - '@codemirror/language'
@@ -9168,27 +9172,27 @@ snapshots:
       - supports-color
       - yup
 
-  '@tinacms/cli@1.9.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(scheduler@0.25.0)(sucrase@3.35.0)':
+  '@tinacms/cli@1.9.2(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(scheduler@0.25.0)(sucrase@3.35.0)':
     dependencies:
-      '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-codegen/typescript': 4.1.4(graphql@15.8.0)
-      '@graphql-codegen/typescript-operations': 4.5.0(graphql@15.8.0)
-      '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.8.0)
-      '@graphql-inspector/core': 4.2.2(graphql@15.8.0)
-      '@graphql-tools/graphql-file-loader': 7.5.17(graphql@15.8.0)
-      '@graphql-tools/load': 7.8.14(graphql@15.8.0)
+      '@graphql-codegen/core': 2.6.8(graphql@15.10.1)
+      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.10.1)
+      '@graphql-codegen/typescript': 4.1.4(graphql@15.10.1)
+      '@graphql-codegen/typescript-operations': 4.5.0(graphql@15.10.1)
+      '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.10.1)
+      '@graphql-inspector/core': 4.2.2(graphql@15.10.1)
+      '@graphql-tools/graphql-file-loader': 7.5.17(graphql@15.10.1)
+      '@graphql-tools/load': 7.8.14(graphql@15.10.1)
       '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
-      '@svgr/core': 8.1.0(typescript@5.7.3)
+      '@svgr/core': 8.1.0(typescript@5.8.2)
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17)
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17)
       '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17)
-      '@tinacms/app': 2.2.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(scheduler@0.25.0)(sucrase@3.35.0)(yup@1.6.1)
-      '@tinacms/graphql': 1.5.13(react@18.3.1)(typescript@5.7.3)
+      '@tinacms/app': 2.2.2(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(scheduler@0.25.0)(sucrase@3.35.0)(yup@1.6.1)
+      '@tinacms/graphql': 1.5.14(react@18.3.1)(typescript@5.8.2)
       '@tinacms/metrics': 1.0.9(fs-extra@11.3.0)
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@1.6.1)
-      '@tinacms/search': 1.0.40(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.7.3)(yup@1.6.1)
-      '@vitejs/plugin-react': 3.1.0(vite@4.5.9(@types/node@22.13.5))
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@1.6.1)
+      '@tinacms/search': 1.0.41(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.8.2)(yup@1.6.1)
+      '@vitejs/plugin-react': 3.1.0(vite@4.5.9(@types/node@22.13.9))
       altair-express-middleware: 7.3.6
       async-lock: 1.4.1
       auto-bind: 4.0.0
@@ -9203,7 +9207,7 @@ snapshots:
       dotenv: 16.4.7
       esbuild: 0.24.2
       fs-extra: 11.3.0
-      graphql: 15.8.0
+      graphql: 15.10.1
       js-yaml: 4.1.0
       log4js: 6.9.1
       many-level: 2.0.0
@@ -9215,10 +9219,10 @@ snapshots:
       prompts: 2.4.2
       readable-stream: 4.7.0
       tailwindcss: 3.4.17
-      tinacms: 2.7.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.7.3)
+      tinacms: 2.7.2(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.8.2)
       typanion: 3.13.0
-      typescript: 5.7.3
-      vite: 4.5.9(@types/node@22.13.5)
+      typescript: 5.8.2
+      vite: 4.5.9(@types/node@22.13.9)
       yup: 1.6.1
       zod: 3.24.2
     transitivePeerDependencies:
@@ -9245,11 +9249,11 @@ snapshots:
       - terser
       - ts-node
 
-  '@tinacms/graphql@1.5.13(react@18.3.1)(typescript@5.7.3)':
+  '@tinacms/graphql@1.5.14(react@18.3.1)(typescript@5.8.2)':
     dependencies:
       '@iarna/toml': 2.2.5
-      '@tinacms/mdx': 1.6.0(react@18.3.1)(typescript@5.7.3)(yup@0.32.11)
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@0.32.11)
+      '@tinacms/mdx': 1.6.1(react@18.3.1)(typescript@5.8.2)(yup@0.32.11)
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@0.32.11)
       abstract-level: 1.0.4
       date-fns: 2.30.0
       fast-glob: 3.3.3
@@ -9275,9 +9279,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tinacms/mdx@1.6.0(react@18.3.1)(typescript@5.7.3)(yup@0.32.11)':
+  '@tinacms/mdx@1.6.1(react@18.3.1)(typescript@5.8.2)(yup@0.32.11)':
     dependencies:
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@0.32.11)
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@0.32.11)
       acorn: 8.8.2
       ccount: 2.0.1
       estree-util-is-identifier-name: 2.1.0
@@ -9301,7 +9305,7 @@ snapshots:
       remark-gfm: 2.0.0
       remark-mdx: 2.3.0
       stringify-entities: 4.0.3
-      typedoc: 0.26.11(typescript@5.7.3)
+      typedoc: 0.26.11(typescript@5.8.2)
       unist-util-source: 4.0.2
       unist-util-stringify-position: 3.0.3
       unist-util-visit: 4.1.2
@@ -9313,9 +9317,9 @@ snapshots:
       - typescript
       - yup
 
-  '@tinacms/mdx@1.6.0(react@18.3.1)(typescript@5.7.3)(yup@1.6.1)':
+  '@tinacms/mdx@1.6.1(react@18.3.1)(typescript@5.8.2)(yup@1.6.1)':
     dependencies:
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@1.6.1)
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@1.6.1)
       acorn: 8.8.2
       ccount: 2.0.1
       estree-util-is-identifier-name: 2.1.0
@@ -9339,7 +9343,7 @@ snapshots:
       remark-gfm: 2.0.0
       remark-mdx: 2.3.0
       stringify-entities: 4.0.3
-      typedoc: 0.26.11(typescript@5.7.3)
+      typedoc: 0.26.11(typescript@5.8.2)
       unist-util-source: 4.0.2
       unist-util-stringify-position: 3.0.3
       unist-util-visit: 4.1.2
@@ -9358,7 +9362,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@tinacms/schema-tools@1.7.1(react@18.3.1)(yup@0.32.11)':
+  '@tinacms/schema-tools@1.7.2(react@18.3.1)(yup@0.32.11)':
     dependencies:
       picomatch-browser: 2.2.6
       react: 18.3.1
@@ -9366,7 +9370,7 @@ snapshots:
       yup: 0.32.11
       zod: 3.24.2
 
-  '@tinacms/schema-tools@1.7.1(react@18.3.1)(yup@1.6.1)':
+  '@tinacms/schema-tools@1.7.2(react@18.3.1)(yup@1.6.1)':
     dependencies:
       picomatch-browser: 2.2.6
       react: 18.3.1
@@ -9374,10 +9378,10 @@ snapshots:
       yup: 1.6.1
       zod: 3.24.2
 
-  '@tinacms/search@1.0.40(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.7.3)(yup@1.6.1)':
+  '@tinacms/search@1.0.41(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.8.2)(yup@1.6.1)':
     dependencies:
-      '@tinacms/graphql': 1.5.13(react@18.3.1)(typescript@5.7.3)
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@1.6.1)
+      '@tinacms/graphql': 1.5.14(react@18.3.1)(typescript@5.8.2)
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@1.6.1)
       memory-level: 1.0.0
       search-index: 4.0.0(abstract-level@1.0.4)
       sqlite-level: 1.2.1(sucrase@3.35.0)
@@ -9566,7 +9570,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@22.13.5':
+  '@types/node@22.13.9':
     dependencies:
       undici-types: 6.20.0
 
@@ -9603,16 +9607,16 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3)':
+  '@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2)':
     dependencies:
       '@typescript-eslint/scope-manager': 7.2.0
       '@typescript-eslint/types': 7.2.0
-      '@typescript-eslint/typescript-estree': 7.2.0(typescript@5.7.3)
+      '@typescript-eslint/typescript-estree': 7.2.0(typescript@5.8.2)
       '@typescript-eslint/visitor-keys': 7.2.0
       debug: 4.3.6
       eslint: 8.57.1
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
@@ -9623,7 +9627,7 @@ snapshots:
 
   '@typescript-eslint/types@7.2.0': {}
 
-  '@typescript-eslint/typescript-estree@7.2.0(typescript@5.7.3)':
+  '@typescript-eslint/typescript-estree@7.2.0(typescript@5.8.2)':
     dependencies:
       '@typescript-eslint/types': 7.2.0
       '@typescript-eslint/visitor-keys': 7.2.0
@@ -9632,9 +9636,9 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.3
       semver: 7.6.3
-      ts-api-utils: 1.3.0(typescript@5.7.3)
+      ts-api-utils: 1.3.0(typescript@5.8.2)
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
@@ -10294,14 +10298,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@3.1.0(vite@4.5.9(@types/node@22.13.5))':
+  '@vitejs/plugin-react@3.1.0(vite@4.5.9(@types/node@22.13.9))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.25.2)
       magic-string: 0.27.0
       react-refresh: 0.14.2
-      vite: 4.5.9(@types/node@22.13.5)
+      vite: 4.5.9(@types/node@22.13.9)
     transitivePeerDependencies:
       - supports-color
 
@@ -10903,14 +10907,14 @@ snapshots:
     dependencies:
       layout-base: 2.0.1
 
-  cosmiconfig@8.3.6(typescript@5.7.3):
+  cosmiconfig@8.3.6(typescript@5.8.2):
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   crc-32@1.2.2: {}
 
@@ -11543,20 +11547,20 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-next@14.2.4(eslint@8.57.1)(typescript@5.7.3):
+  eslint-config-next@14.2.4(eslint@8.57.1)(typescript@5.8.2):
     dependencies:
       '@next/eslint-plugin-next': 14.2.4
       '@rushstack/eslint-patch': 1.10.4
-      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.8.2)
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.9.0(eslint@8.57.1)
       eslint-plugin-react: 7.35.0(eslint@8.57.1)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.1)
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - supports-color
@@ -11569,13 +11573,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       debug: 4.3.6
       enhanced-resolve: 5.17.1
       eslint: 8.57.1
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.6
       is-core-module: 2.15.0
@@ -11586,18 +11590,18 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
-      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.8.2)
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.1):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -11607,7 +11611,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.15.0
       is-glob: 4.0.3
@@ -11618,7 +11622,7 @@ snapshots:
       semver: 6.3.1
       tsconfig-paths: 3.15.0
     optionalDependencies:
-      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.7.3)
+      '@typescript-eslint/parser': 7.2.0(eslint@8.57.1)(typescript@5.8.2)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -12067,10 +12071,10 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphiql@3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  graphiql@3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@graphiql/react': 0.18.0(@codemirror/language@6.0.0)(@types/node@22.13.5)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@graphiql/toolkit': 0.8.4(@types/node@22.13.5)(graphql@15.8.0)
+      '@graphiql/react': 0.18.0(@codemirror/language@6.0.0)(@types/node@22.13.9)(@types/react@18.3.18)(graphql@15.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@graphiql/toolkit': 0.8.4(@types/node@22.13.9)(graphql@15.8.0)
       graphql: 15.8.0
       graphql-language-service: 5.2.2(graphql@15.8.0)
       markdown-it: 12.3.2
@@ -12090,10 +12094,17 @@ snapshots:
       nullthrows: 1.1.1
       vscode-languageserver-types: 3.17.5
 
+  graphql-tag@2.12.6(graphql@15.10.1):
+    dependencies:
+      graphql: 15.10.1
+      tslib: 2.8.1
+
   graphql-tag@2.12.6(graphql@15.8.0):
     dependencies:
       graphql: 15.8.0
       tslib: 2.8.1
+
+  graphql@15.10.1: {}
 
   graphql@15.8.0: {}
 
@@ -12953,9 +12964,9 @@ snapshots:
       stylis: 4.3.4
       uuid: 9.0.1
 
-  meros@1.3.0(@types/node@22.13.5):
+  meros@1.3.0(@types/node@22.13.9):
     optionalDependencies:
-      '@types/node': 22.13.5
+      '@types/node': 22.13.9
 
   methods@1.1.2: {}
 
@@ -14627,7 +14638,7 @@ snapshots:
 
   throttle-debounce@3.0.1: {}
 
-  tinacms@2.7.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.7.3):
+  tinacms@2.7.2(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(sucrase@3.35.0)(typescript@5.8.2):
     dependencies:
       '@ariakit/react': 0.4.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/dom': 1.6.13
@@ -14645,9 +14656,9 @@ snapshots:
       '@radix-ui/react-toolbar': 1.1.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-tooltip': 1.1.8(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-hook/window-size': 3.1.1(react@18.3.1)
-      '@tinacms/mdx': 1.6.0(react@18.3.1)(typescript@5.7.3)(yup@1.6.1)
-      '@tinacms/schema-tools': 1.7.1(react@18.3.1)(yup@1.6.1)
-      '@tinacms/search': 1.0.40(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.7.3)(yup@1.6.1)
+      '@tinacms/mdx': 1.6.1(react@18.3.1)(typescript@5.8.2)(yup@1.6.1)
+      '@tinacms/schema-tools': 1.7.2(react@18.3.1)(yup@1.6.1)
+      '@tinacms/search': 1.0.41(abstract-level@1.0.4)(react@18.3.1)(sucrase@3.35.0)(typescript@5.8.2)(yup@1.6.1)
       '@udecode/cn': 33.0.0(@types/react@18.3.18)(class-variance-authority@0.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwind-merge@2.6.0)
       '@udecode/plate': 36.5.9(@types/react@18.3.18)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(slate-history@0.100.0(slate@0.103.0))(slate-hyperscript@0.100.0(slate@0.103.0))(slate-react@0.107.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.103.0))(slate@0.103.0)
       '@udecode/plate-autoformat': 36.5.6(@udecode/plate-common@36.5.9(@types/react@18.3.18)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.25.0)(slate-history@0.100.0(slate@0.103.0))(slate-hyperscript@0.100.0(slate@0.103.0))(slate-react@0.107.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.103.0))(slate@0.103.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate-history@0.100.0(slate@0.103.0))(slate-hyperscript@0.100.0(slate@0.103.0))(slate-react@0.107.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(slate@0.103.0))(slate@0.103.0)
@@ -14752,9 +14763,9 @@ snapshots:
 
   trough@2.2.0: {}
 
-  ts-api-utils@1.3.0(typescript@5.7.3):
+  ts-api-utils@1.3.0(typescript@5.8.2):
     dependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   ts-dedent@2.2.0: {}
 
@@ -14830,16 +14841,16 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typedoc@0.26.11(typescript@5.7.3):
+  typedoc@0.26.11(typescript@5.8.2):
     dependencies:
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
       shiki: 1.22.0
-      typescript: 5.7.3
+      typescript: 5.8.2
       yaml: 2.5.1
 
-  typescript@5.7.3: {}
+  typescript@5.8.2: {}
 
   ua-parser-js@1.0.38: {}
 
@@ -15084,13 +15095,13 @@ snapshots:
       '@types/unist': 3.0.2
       vfile-message: 4.0.2
 
-  vite@4.5.9(@types/node@22.13.5):
+  vite@4.5.9(@types/node@22.13.9):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.5.3
       rollup: 3.29.4
     optionalDependencies:
-      '@types/node': 22.13.5
+      '@types/node': 22.13.9
       fsevents: 2.3.3
 
   vscode-jsonrpc@8.2.0: {}
