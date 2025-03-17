@@ -59,7 +59,7 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
       >
         {data.items &&
           data.items.map(function (block, i) {
-            return <Feature featuresColor={data.color} key={i} data={block} />;
+            return <Feature featuresColor={data.color!} key={i} data={block!} />;
           })}
       </Container>
     </Section>
