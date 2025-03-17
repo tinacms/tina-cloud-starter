@@ -12,10 +12,11 @@ const Page: Collection = {
   format: "mdx",
   ui: {
     router: ({ document }) => {
-      if (document._sys.filename === "home") {
-        return `/`;
+      const filepath = document._sys.breadcrumbs.join("/");
+      if (filepath === "home") {
+        return "/";
       }
-      return undefined;
+      return `/${filepath}`;
     },
   },
   fields: [
@@ -44,7 +45,7 @@ const Page: Collection = {
         testimonialBlockSchema,
         videoBlockSchema,
       ],
-    },
+    }
   ],
 };
 
