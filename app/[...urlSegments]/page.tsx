@@ -10,8 +10,9 @@ export default async function Page({
 }: {
   params: { urlSegments: string[] };
 }) {
+  const filepath = (await params).urlSegments.join('/');
   const data = await client.queries.page({
-    relativePath: `${params.urlSegments.join('/')}.mdx`,
+    relativePath: `${filepath}.mdx`,
   });
 
   return (
