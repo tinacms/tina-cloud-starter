@@ -44,16 +44,16 @@ export default function PostClientPage(props: ClientPostProps) {
     <Section className='flex-1'>
       <Container width='small' className={`flex-1 pb-2`} size='large'>
         <h2 data-tina-field={tinaField(post, 'title')} className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}>
-          <span className={`bg-clip-text text-transparent bg-gradient-to-r ${titleColorClasses[theme!.color!]}`}>{post.title}</span>
+          <span className={`bg-clip-text text-transparent bg-linear-to-r ${titleColorClasses[theme!.color!]}`}>{post.title}</span>
         </h2>
         <div data-tina-field={tinaField(post, 'author')} className='flex items-center justify-center mb-16'>
           {post.author && (
             <>
               {post.author.avatar && (
-                <div className='flex-shrink-0 mr-4'>
+                <div className='shrink-0 mr-4'>
                   <Image
                     data-tina-field={tinaField(post.author, 'avatar')}
-                    className='h-14 w-14 object-cover rounded-full shadow-sm'
+                    className='h-14 w-14 object-cover rounded-full shadow-xs'
                     src={post.author.avatar}
                     alt={post.author.name}
                     width={500}

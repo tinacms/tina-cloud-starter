@@ -38,7 +38,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               className={`w-full relative mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
+                className={`bg-clip-text text-transparent bg-linear-to-r  ${
                   data.color === 'primary' ? `from-white to-gray-100` : headlineColorClasses['blue']
                 }`}
               >
@@ -63,7 +63,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               )}
             </div>
             {data.image?.src && (
-              <div data-tina-field={tinaField(data.image, 'src')} className='relative flex-shrink-0 md:w-2/5 flex justify-center'>
+              <div data-tina-field={tinaField(data.image, 'src')} className='relative shrink-0 md:w-2/5 flex justify-center'>
                 <Image
                   className='w-full h-auto max-w-full rounded-lg'
                   style={{ objectFit: 'cover' }}

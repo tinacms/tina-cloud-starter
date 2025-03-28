@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <div
-      className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
+      className={`relative overflow-hidden bg-linear-to-b ${headerColorCss}`}
     >
       <Container size="custom" className="py-0 relative z-10 max-w-8xl">
         <div className="flex flex-wrap items-center justify-between lg:gap-6">
@@ -62,7 +62,7 @@ export default function Header() {
         </div>
         <div
           className={cn(
-            `absolute h-1 bg-gradient-to-r from-transparent`,
+            `absolute h-1 bg-linear-to-r from-transparent`,
             theme!.darkMode === "primary"
               ? `via-white`
               : `via-black dark:via-white`,

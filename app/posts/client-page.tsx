@@ -44,7 +44,7 @@ export default function PostsClientPage(props: ClientPostProps) {
           <Link
             key={post.id}
             href={`/posts/` + post._sys.breadcrumbs.join('/')}
-            className='group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800'
+            className='group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-xs transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800'
           >
             <h3
               className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
@@ -66,11 +66,11 @@ export default function PostsClientPage(props: ClientPostProps) {
             </div>
             <div className='flex items-center'>
               {post!.author && post!.author.avatar && (
-                <div className='flex-shrink-0 mr-2'>
+                <div className='shrink-0 mr-2'>
                   <Image
                     width={500}
                     height={500}
-                    className='h-10 w-10 object-cover rounded-full shadow-sm'
+                    className='h-10 w-10 object-cover rounded-full shadow-xs'
                     src={post?.author?.avatar}
                     alt={post?.author?.name}
                   />

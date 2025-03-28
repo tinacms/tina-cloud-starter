@@ -42,7 +42,7 @@ export default function Footer() {
       : footerColor.default;
 
   return (
-    <footer className={cn(`bg-gradient-to-br`, footerColorCss)}>
+    <footer className={cn(`bg-linear-to-br`, footerColorCss)}>
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
         <div
           className={cn(
-            `absolute h-1 bg-gradient-to-r from-transparent`,
+            `absolute h-1 bg-linear-to-r from-transparent`,
             theme!.darkMode === "primary"
               ? `via-white`
               : `via-black dark:via-white`,

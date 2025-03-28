@@ -67,11 +67,11 @@ const iconColorClass: {
 };
 
 const iconSizeClass = {
-  xs: "w-6 h-6 flex-shrink-0",
-  small: "w-8 h-8 flex-shrink-0",
-  medium: "w-12 h-12 flex-shrink-0",
-  large: "w-14 h-14 flex-shrink-0",
-  xl: "w-16 h-16 flex-shrink-0",
+  xs: "w-6 h-6 shrink-0",
+  small: "w-8 h-8 shrink-0",
+  medium: "w-12 h-12 shrink-0",
+  large: "w-14 h-14 shrink-0",
+  xl: "w-16 h-16 shrink-0",
   custom: "",
 };
 
@@ -106,7 +106,7 @@ export const Icon = ({
     return (
       <div
         data-tina-field={tinaField}
-        className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
+        className={`relative z-10 inline-flex items-center justify-center shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
       >
         <IconSVG className="w-2/3 h-2/3" />
       </div>
