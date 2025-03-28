@@ -45,7 +45,7 @@ const Page: Collection = {
         testimonialBlockSchema,
         videoBlockSchema,
       ],
-    }
+    },
   ],
 };
 
