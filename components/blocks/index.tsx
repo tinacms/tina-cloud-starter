@@ -7,17 +7,16 @@ import { Testimonial } from "./testimonial";
 import { Video } from "./video";
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
+  if (!props.blocks) return null;
   return (
     <>
-      {props.blocks
-        ? props.blocks.map(function (block, i) {
-            return (
-              <div key={i} data-tina-field={tinaField(block)}>
-                <Block {...block} />
-              </div>
-            );
-          })
-        : null}
+      {props.blocks.map(function (block, i) {
+        return (
+          <div key={i} data-tina-field={tinaField(block)}>
+            <Block {...block} />
+          </div>
+        );
+      })}
     </>
   );
 };

@@ -1,102 +1,55 @@
 'use client';
 import * as React from 'react';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
-import type { Template } from 'tinacms';
-import { PageBlocksHero } from '../../tina/__generated__/types';
-import { tinaField } from 'tinacms/dist/react';
 import Image from 'next/image';
+import Link from 'next/link';
+import type { Template } from 'tinacms';
+import { tinaField } from 'tinacms/dist/react';
+import { PageBlocksHero } from '../../tina/__generated__/types';
+import { Button } from '../ui/button';
+import { iconSchema } from '@/tina/fields/icon';
+import { Icon } from '../icon';
 import { Section } from '../layout/section';
-import { Container } from '../layout/container';
-import { Actions } from './actions';
-import { mermaid } from './mermaid';
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
-  const headlineColorClasses = {
-    blue: 'from-blue-400 to-blue-600',
-    teal: 'from-teal-400 to-teal-600',
-    green: 'from-green-400 to-green-600',
-    red: 'from-red-400 to-red-600',
-    pink: 'from-pink-400 to-pink-600',
-    purple: 'from-purple-400 to-purple-600',
-    orange: 'from-orange-300 to-orange-600',
-    yellow: 'from-yellow-400 to-yellow-600',
-  };
-
   return (
-    <Section color={data.color}>
-      <Container size='large' className='grid grid-cols-1 md:grid-cols-5 gap-14 items-start justify-center'>
-        <div className='row-start-2 md:row-start-1 md:col-span-5 text-center md:text-left'>
-          {data.tagline && (
-            <h2 data-tina-field={tinaField(data, 'tagline')} className='relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20'>
-              {data.tagline}
-              <span className='absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7'></span>
-            </h2>
-          )}
-          {data.headline && (
-            <h3
-              data-tina-field={tinaField(data, 'headline')}
-              className={`w-full relative mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
-            >
-              <span
-                className={`bg-clip-text text-transparent bg-linear-to-r  ${
-                  data.color === 'primary' ? `from-white to-gray-100` : headlineColorClasses['blue']
-                }`}
-              >
-                {data.headline}
-              </span>
-            </h3>
-          )}
-          <div className='flex flex-col md:flex-row gap-6'>
-            <div className='flex flex-col md:w-3/5'>
-              {data.text && (
-                <div
-                  data-tina-field={tinaField(data, 'text')}
-                  className={`prose prose-lg mx-auto md:mx-0 mb-10 ${data.color === 'primary' ? `prose-primary` : `dark:prose-dark`}`}
-                >
-                  <TinaMarkdown
-                    content={data.text}
-                    components={{
-                      mermaid,
-                    }}
-                  />
-                </div>
-              )}
-            </div>
-            {data.image?.src && (
-              <div data-tina-field={tinaField(data.image, 'src')} className='relative shrink-0 md:w-2/5 flex justify-center'>
-                <Image
-                  className='w-full h-auto max-w-full rounded-lg'
-                  style={{ objectFit: 'cover' }}
-                  alt={data.image.alt || ''}
-                  src={data.image.src}
-                  width={500}
-                  height={500}
-                />
-              </div>
-            )}
-          </div>
-          {data.text2 && (
-            <div
-              data-tina-field={tinaField(data, 'text2')}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${data.color === 'primary' ? `prose-primary` : `dark:prose-dark`}`}
-            >
-              <TinaMarkdown
-                content={data.text2}
-                components={{
-                  mermaid,
-                }}
-              />
-            </div>
-          )}
+    <Section>
+      <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
+        <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
+          {data.headline && (<h1 data-tina-field={tinaField(data, 'headline')} className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">{data.headline}</h1>)}
+          {data.tagline && (<p data-tina-field={tinaField(data, 'tagline')} className="mt-8 max-w-2xl text-pretty text-lg">{data.tagline}</p>)}
+
           {data.actions && (
-            <div className='mt-10'>
-              <Actions className='justify-center md:justify-start py-2' parentColor={data.color!} actions={data.actions.map((x) => x!)} />
+            <div className='mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start'>
+              {data.actions.map(action => (
+                <Button
+                  data-tina-field={tinaField(action)}
+                  key={action!.label}
+                  asChild
+                  size="lg"
+                  variant={action!.type === 'link' ? 'ghost' : 'default'}
+                  className="px-5 text-base">
+                  <Link href={action!.link!}>
+                    {action?.icon && (<Icon data={action?.icon} />)}
+                    <span className="text-nowrap">{action!.label}</span>
+                  </Link>
+                </Button>
+              ))}
             </div>
           )}
         </div>
-      </Container>
+        {data.image?.src && (
+          <Image
+            data-tina-field={tinaField(data.image, 'src')}
+            className="-z-10 order-first ml-auto h-56 w-full object-cover sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-96 lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten"
+            alt={data.image.alt || ''}
+            src={data.image.src}
+            height={4000}
+            width={3000}
+          />
+        )}
+      </div>
     </Section>
-  );
+  )
 };
 
 export const heroBlockSchema: Template = {
@@ -113,23 +66,13 @@ export const heroBlockSchema: Template = {
   fields: [
     {
       type: 'string',
-      label: 'Tagline',
-      name: 'tagline',
-    },
-    {
-      type: 'string',
       label: 'Headline',
       name: 'headline',
     },
     {
-      label: 'Text-1',
-      name: 'text',
-      type: 'rich-text',
-    },
-    {
-      type: 'rich-text',
-      label: 'Text-2',
-      name: 'text2',
+      type: 'string',
+      label: 'Tagline',
+      name: 'tagline',
     },
     {
       label: 'Actions',
@@ -160,11 +103,7 @@ export const heroBlockSchema: Template = {
             { label: 'Link', value: 'link' },
           ],
         },
-        {
-          label: 'Icon',
-          name: 'icon',
-          type: 'boolean',
-        },
+        iconSchema as any,
         {
           label: 'Link',
           name: 'link',
@@ -187,16 +126,6 @@ export const heroBlockSchema: Template = {
           label: 'Alt Text',
           type: 'string',
         },
-      ],
-    },
-    {
-      type: 'string',
-      label: 'Color',
-      name: 'color',
-      options: [
-        { label: 'Default', value: 'default' },
-        { label: 'Tint', value: 'tint' },
-        { label: 'Primary', value: 'primary' },
       ],
     },
   ],
