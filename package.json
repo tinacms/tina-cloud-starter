@@ -27,21 +27,26 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.17",
     "@tailwindcss/typography": "^0.5.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
+    "lucide-react": "^0.484.0",
     "mermaid": "^11.4.1",
+    "motion": "^12.6.2",
     "next": "15.2.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^5.5.0",
     "react-player": "^2.16.0",
+    "react-use-measure": "^2.1.7",
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.17",
     "tinacms": "^2.7.2",
+    "tw-animate-css": "^1.2.4",
     "usehooks-ts": "^3.1.1"
   }
 }

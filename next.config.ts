@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: 'assets.tina.io',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+      }
     ],
   },
   async headers() {

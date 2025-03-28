@@ -2,74 +2,83 @@
 
 import React from "react";
 import Link from "next/link";
-import { Container } from "../layout/container";
-import { cn } from "../../lib/utils";
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../icon";
-import NavItems from "./nav-items";
 import { useLayout } from "../layout/layout-context";
-
-const headerColor = {
-  default:
-    "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
-  primary: {
-    blue: "text-white from-blue-300 to-blue-500",
-    teal: "text-white from-teal-400 to-teal-500",
-    green: "text-white from-green-400 to-green-500",
-    red: "text-white from-red-400 to-red-500",
-    pink: "text-white from-pink-400 to-pink-500",
-    purple: "text-white from-purple-400 to-purple-500",
-    orange: "text-white from-orange-400 to-orange-500",
-    yellow: "text-white from-yellow-400 to-yellow-500",
-  },
-};
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const { globalSettings, theme } = useLayout();
   const header = globalSettings!.header!;
 
-  const headerColorCss =
-    header.color === "primary"
-      ? headerColor.primary[theme!.color!]
-      : headerColor.default;
-
+  const [menuState, setMenuState] = React.useState(false)
   return (
-    <div
-      className={`relative overflow-hidden bg-linear-to-b ${headerColorCss}`}
-    >
-      <Container size="custom" className="py-0 relative z-10 max-w-8xl">
-        <div className="flex flex-wrap items-center justify-between lg:gap-6">
-          <h4 className="select-none text-lg font-bold tracking-tight lg:my-4 mt-4 transition duration-150 ease-out transform">
-            <Link
-              href="/"
-              className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
-            >
-              <Icon
-                tinaField={tinaField(header, "icon")}
-                parentColor={header.color!}
-                data={{
-                  name: header.icon!.name,
-                  color: header.icon!.color,
-                  style: header.icon!.style,
-                }}
-              />{" "}
-              <span data-tina-field={tinaField(header, "name")}>
-                {header.name}
-              </span>
-            </Link>
-          </h4>
-          <NavItems navs={header.nav} />
+    <header>
+      <nav
+        data-state={menuState && 'active'}
+        className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
+        <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            <div className="flex w-full items-center justify-between gap-12">
+              <Link
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2">
+                <Icon
+                  tinaField={tinaField(header, "icon")}
+                  parentColor={header.color!}
+                  data={{
+                    name: header.icon!.name,
+                    color: header.icon!.color,
+                    style: header.icon!.style,
+                  }}
+                />{" "}
+                <span data-tina-field={tinaField(header, "name")}>
+                  {header.name}
+                </span>
+              </Link>
+
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              </button>
+
+              <div className="hidden lg:block">
+                <ul className="flex gap-8 text-sm">
+                  {header.nav!.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item!.href!}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                        <span>{item!.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
+                  {header.nav!.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item!.href!}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                        <span>{item!.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div
-          className={cn(
-            `absolute h-1 bg-linear-to-r from-transparent`,
-            theme!.darkMode === "primary"
-              ? `via-white`
-              : `via-black dark:via-white`,
-            "to-transparent bottom-0 left-4 right-4 -z-1 opacity-5"
-          )}
-        />
-      </Container>
-    </div>
-  );
+      </nav>
+    </header>
+  )
 }
