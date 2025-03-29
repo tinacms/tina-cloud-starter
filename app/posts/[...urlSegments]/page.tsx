@@ -1,17 +1,17 @@
-import React from 'react';
-import client from '@/tina/__generated__/client';
-import Layout from '@/components/layout/layout';
-import PostClientPage from './client-page';
+import React from "react";
+import client from "@/tina/__generated__/client";
+import Layout from "@/components/layout/layout";
+import PostClientPage from "./client-page";
 
 export const revalidate = 300;
 
 export default async function PostPage({
   params,
 }: {
-  params: { urlSegments: string[] };
+  params: Promise<{ urlSegments: string[] }>;
 }) {
   const data = await client.queries.post({
-    relativePath: `${params.urlSegments.join('/')}.mdx`,
+    relativePath: `${(await params).urlSegments.join("/")}.mdx`,
   });
 
   return (

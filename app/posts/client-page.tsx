@@ -8,7 +8,6 @@ import { BsArrowRight } from 'react-icons/bs';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { PostConnectionQuery, PostConnectionQueryVariables } from '@/tina/__generated__/types';
 import { useLayout } from '@/components/layout/layout-context';
-import MermaidElement from '@/components/mermaid-renderer';
 import { mermaid } from '@/components/blocks/mermaid';
 
 const titleColorClasses = {
