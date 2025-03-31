@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../icon";
 import { useLayout } from "../layout/layout-context";
 import { Menu, X } from "lucide-react";
@@ -25,7 +24,6 @@ export default function Header() {
                 aria-label="home"
                 className="flex items-center space-x-2">
                 <Icon
-                  tinaField={tinaField(header, "icon")}
                   parentColor={header.color!}
                   data={{
                     name: header.icon!.name,
@@ -33,7 +31,7 @@ export default function Header() {
                     style: header.icon!.style,
                   }}
                 />{" "}
-                <span data-tina-field={tinaField(header, "name")}>
+                <span>
                   {header.name}
                 </span>
               </Link>
