@@ -4,6 +4,7 @@ import { contentBlockSchema } from "@/components/blocks/content";
 import { testimonialBlockSchema } from "@/components/blocks/testimonial";
 import { featureBlockSchema } from "@/components/blocks/features";
 import { videoBlockSchema } from "@/components/blocks/video";
+import { calloutBlockSchema } from "@/components/blocks/callout";
 
 const Page: Collection = {
   label: "Pages",
@@ -39,7 +40,7 @@ const Page: Collection = {
       },
       templates: [
         heroBlockSchema,
-        //@ts-ignore
+        calloutBlockSchema,
         featureBlockSchema,
         contentBlockSchema,
         testimonialBlockSchema,
