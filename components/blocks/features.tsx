@@ -3,6 +3,7 @@ import {
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
+import type { Template } from 'tinacms';
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../icon";
 import { Section } from "../layout/section";
@@ -76,7 +77,7 @@ const defaultFeature = {
   },
 };
 
-export const featureBlockSchema = {
+export const featureBlockSchema: Template = {
   name: "features",
   label: "Features",
   ui: {
