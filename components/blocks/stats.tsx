@@ -14,7 +14,7 @@ export const Stats = ({ data }: { data: PageBlocksStats }) => {
 
                 <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
                     {data.stats?.map((stat) => (
-                        <div className="space-y-4">
+                        <div key={stat?.type} className="space-y-4">
                             <div className="text-5xl font-bold"  data-tina-field={tinaField(stat, 'stat')}>{stat!.stat}</div>
                             <p  data-tina-field={tinaField(stat, 'type')}>{stat!.type}</p>
                         </div>
