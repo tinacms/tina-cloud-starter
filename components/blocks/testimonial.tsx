@@ -1,12 +1,32 @@
 import React from "react";
 import type { Template } from "tinacms";
-import { PageBlocksTestimonial } from "../../tina/__generated__/types";
+import { PageBlocksTestimonial, PageBlocksTestimonialTestimonials } from "../../tina/__generated__/types";
 import { Section } from "../layout/section";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card, CardContent } from "../ui/card";
 import { tinaField } from "tinacms/dist/react";
 
-const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
+export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
+  return (
+    <Section>
+      <div className="py-16 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
+            <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
+          </div>
+          <div className="mt-8 [column-width:300px] [column-gap:1.5rem] md:mt-12">
+            {data.testimonials?.map((testimonial, index) => (
+              <TestimonialCard key={index} testimonial={testimonial!} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+const TestimonialCard = ({ testimonial }: { testimonial: PageBlocksTestimonialTestimonials }) => {
   return (
     <Card className="mb-6 break-inside-avoid">
       <CardContent className="grid grid-cols-[auto_1fr] gap-3 pt-6">
@@ -28,26 +48,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
         </div>
       </CardContent>
     </Card>
-  );
-};
-
-export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
-  return (
-    <Section>
-      <div className="py-16 md:py-32">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
-            <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
-          </div>
-          <div className="mt-8 [column-width:300px] [column-gap:1.5rem] md:mt-12">
-            {data.testimonials?.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </Section>
   );
 };
 
