@@ -5,6 +5,7 @@ import { testimonialBlockSchema } from "@/components/blocks/testimonial";
 import { featureBlockSchema } from "@/components/blocks/features";
 import { videoBlockSchema } from "@/components/blocks/video";
 import { calloutBlockSchema } from "@/components/blocks/callout";
+import { statsBlockSchema } from "@/components/blocks/stats";
 
 const Page: Collection = {
   label: "Pages",
@@ -42,6 +43,7 @@ const Page: Collection = {
         heroBlockSchema,
         calloutBlockSchema,
         featureBlockSchema,
+        statsBlockSchema,
         contentBlockSchema,
         testimonialBlockSchema,
         videoBlockSchema,
