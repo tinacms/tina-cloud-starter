@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { cn } from "../../lib/utils";
-import { Container } from "../layout/container";
 import Link from "next/link";
 import { Icon } from "../icon";
 import {
@@ -43,7 +42,6 @@ export default function Footer() {
 
   return (
     <footer className={cn(`bg-linear-to-br`, footerColorCss)}>
-      <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link
             href="/"
@@ -125,7 +123,6 @@ export default function Footer() {
             "to-transparent bottom-0 left-4 right-4 -z-1 opacity-5"
           )}
         />
-      </Container>
     </footer>
   );
 }

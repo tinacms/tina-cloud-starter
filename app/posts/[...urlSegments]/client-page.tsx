@@ -7,7 +7,6 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { PostQuery } from '@/tina/__generated__/types';
 import { useLayout } from '@/components/layout/layout-context';
 import { Section } from '@/components/layout/section';
-import { Container } from '@/components/layout/container';
 import { components } from '@/components/mdx-components';
 
 const titleColorClasses = {
@@ -41,43 +40,41 @@ export default function PostClientPage(props: ClientPostProps) {
   }
 
   return (
-    <Section className='flex-1'>
-      <Container width='small' className={`flex-1 pb-2`} size='large'>
-        <h2 data-tina-field={tinaField(post, 'title')} className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}>
-          <span className={`bg-clip-text text-transparent bg-linear-to-r ${titleColorClasses[theme!.color!]}`}>{post.title}</span>
-        </h2>
-        <div data-tina-field={tinaField(post, 'author')} className='flex items-center justify-center mb-16'>
-          {post.author && (
-            <>
-              {post.author.avatar && (
-                <div className='shrink-0 mr-4'>
-                  <Image
-                    data-tina-field={tinaField(post.author, 'avatar')}
-                    className='h-14 w-14 object-cover rounded-full shadow-xs'
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    width={500}
-                    height={500}
-                  />
-                </div>
-              )}
-              <p
-                data-tina-field={tinaField(post.author, 'name')}
-                className='text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white'
-              >
-                {post.author.name}
-              </p>
-              <span className='font-bold text-gray-200 dark:text-gray-500 mx-2'>—</span>
-            </>
-          )}
-          <p
-            data-tina-field={tinaField(post, 'date')}
-            className='text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150'
-          >
-            {formattedDate}
-          </p>
-        </div>
-      </Container>
+    <Section>
+      <h2 data-tina-field={tinaField(post, 'title')} className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}>
+        <span className={`bg-clip-text text-transparent bg-linear-to-r ${titleColorClasses[theme!.color!]}`}>{post.title}</span>
+      </h2>
+      <div data-tina-field={tinaField(post, 'author')} className='flex items-center justify-center mb-16'>
+        {post.author && (
+          <>
+            {post.author.avatar && (
+              <div className='shrink-0 mr-4'>
+                <Image
+                  data-tina-field={tinaField(post.author, 'avatar')}
+                  className='h-14 w-14 object-cover rounded-full shadow-xs'
+                  src={post.author.avatar}
+                  alt={post.author.name}
+                  width={500}
+                  height={500}
+                />
+              </div>
+            )}
+            <p
+              data-tina-field={tinaField(post.author, 'name')}
+              className='text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white'
+            >
+              {post.author.name}
+            </p>
+            <span className='font-bold text-gray-200 dark:text-gray-500 mx-2'>—</span>
+          </>
+        )}
+        <p
+          data-tina-field={tinaField(post, 'date')}
+          className='text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150'
+        >
+          {formattedDate}
+        </p>
+      </div>
       {post.heroImg && (
         <div className='px-4 w-full'>
           <div data-tina-field={tinaField(post, 'heroImg')} className='relative max-w-4xl lg:max-w-5xl mx-auto'>
@@ -101,16 +98,14 @@ export default function PostClientPage(props: ClientPostProps) {
           </div>
         </div>
       )}
-      <Container className={`flex-1 pt-4`} width='small' size='large'>
-        <div data-tina-field={tinaField(post, '_body')} className='prose dark:prose-dark w-full max-w-none'>
-          <TinaMarkdown
-            content={post._body}
-            components={{
-              ...components,
-            }}
-          />
-        </div>
-      </Container>
+      <div data-tina-field={tinaField(post, '_body')} className='prose dark:prose-dark w-full max-w-none'>
+        <TinaMarkdown
+          content={post._body}
+          components={{
+            ...components,
+          }}
+        />
+      </div>
     </Section>
   );
 }
