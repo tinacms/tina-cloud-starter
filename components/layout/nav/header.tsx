@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { Icon } from "../icon";
-import { useLayout } from "../layout/layout-context";
+import { Icon } from "../../icon";
+import { useLayout } from "../layout-context";
 import { Menu, X } from "lucide-react";
 
-export default function Header() {
+export const Header = () => {
   const { globalSettings, theme } = useLayout();
   const header = globalSettings!.header!;
 
