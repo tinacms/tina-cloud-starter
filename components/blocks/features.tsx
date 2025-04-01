@@ -1,20 +1,16 @@
 "use client";
 import {
-  Page,
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
 import type { Template } from 'tinacms';
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../icon";
-import { Section } from "../layout/section";
-import { Container } from "../layout/container";
 import { iconSchema } from "../../tina/fields/icon";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Card, CardContent, CardHeader } from "../ui/card";
 
 export const Features = ({ data }: { data: PageBlocksFeatures }) => {
-  console.log('data', data);
   return (
     <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
       <div className="@container mx-auto max-w-5xl px-6">
