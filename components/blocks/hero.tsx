@@ -97,7 +97,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
       {data.image && data.image.src && (
         <AnimatedGroup
           variants={transitionVariants}>
-          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full">
             <div
               aria-hidden
               className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
@@ -105,7 +105,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
               <Image
                 data-tina-field={tinaField(data.image, 'src')}
-                className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border"
+                className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border max-w-full h-auto"
                 alt={data.image.alt || ''}
                 src={data.image.src}
                 height={4000}

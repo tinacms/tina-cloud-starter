@@ -9,18 +9,14 @@ import { tinaField } from "tinacms/dist/react";
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
     <Section>
-      <div className="py-16 md:py-32">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
-            <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
-          </div>
-          <div className="mt-8 [column-width:300px] [column-gap:1.5rem] md:mt-12">
-            {data.testimonials?.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial!} />
-            ))}
-          </div>
-        </div>
+      <div className="text-center">
+        <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
+        <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
+      </div>
+      <div className="mt-8 [column-width:300px] [column-gap:1.5rem] md:mt-12">
+        {data.testimonials?.map((testimonial, index) => (
+          <TestimonialCard key={index} testimonial={testimonial!} />
+        ))}
       </div>
     </Section>
   );

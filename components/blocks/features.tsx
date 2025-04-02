@@ -5,15 +5,15 @@ import {
 } from "../../tina/__generated__/types";
 import type { Template } from 'tinacms';
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Icon } from "../icon";
 import { iconSchema } from "../../tina/fields/icon";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Card, CardContent, CardHeader } from "../ui/card";
-import { describe } from "node:test";
+import { Section } from "../layout/section";
 
 export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
-    <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
+    <Section className="bg-zinc-50 dark:bg-transparent">
       <div className="@container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 data-tina-field={tinaField(data, 'title')} className="text-balance text-4xl font-semibold lg:text-5xl">{data.title}</h2>
@@ -26,7 +26,7 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
             })}
         </Card>
       </div>
-    </section>
+    </Section>
   )
 }
 
@@ -59,7 +59,7 @@ export const Feature: React.FC<PageBlocksFeaturesItems> = (data) => {
         </h3>
       </CardHeader>
 
-      <CardContent className="text-sm">
+      <CardContent className="text-sm pb-8">
         <TinaMarkdown
           data-tina-field={tinaField(data, "text")}
           content={data.text}
