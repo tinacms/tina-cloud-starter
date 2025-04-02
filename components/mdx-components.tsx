@@ -36,12 +36,7 @@ export const components: Components<{
     return (
       <div>
         <blockquote>
-          <TinaMarkdown
-            content={props.children}
-            components={{
-              mermaid,
-            }}
-          />
+          <TinaMarkdown content={props.children} />
           {props.authorName}
         </blockquote>
       </div>
@@ -68,12 +63,7 @@ export const components: Components<{
       <div className='bg-white'>
         <div className='max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8'>
           <div className=''>
-            <TinaMarkdown
-              content={props.children}
-              components={{
-                mermaid,
-              }}
-            />
+            <TinaMarkdown content={props.children} />
           </div>
           <div className='mt-8 '>
             <form className='sm:flex'>
@@ -100,12 +90,7 @@ export const components: Components<{
             </form>
             <div className='mt-3 text-sm text-gray-500'>
               {props.disclaimer && (
-                <TinaMarkdown
-                  content={props.disclaimer}
-                  components={{
-                    mermaid,
-                  }}
-                />
+                <TinaMarkdown content={props.disclaimer} />
               )}
             </div>
           </div>

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import client from "@/tina/__generated__/client";
 
 import "@/styles.css";
+import { TailwindIndicator } from "@/components/ui/breakpoint-indicator";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -60,9 +61,10 @@ export default async function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={cn("min-h-screen flex flex-col antialiased", fontVariable)}
+        className={cn("antialiased", fontVariable)}
       >
         {children}
+        <TailwindIndicator />
       </body>
     </html>
   );

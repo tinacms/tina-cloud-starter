@@ -3,7 +3,6 @@ import { LayoutProvider } from "./layout-context";
 import client from "../../tina/__generated__/client";
 import { Header } from "./nav/header";
 import { Footer } from "./nav/footer";
-import { TailwindIndicator } from "../ui/breakpoint-indicator";
 
 type LayoutProps = PropsWithChildren & {
   rawPageData?: any;
@@ -21,7 +20,6 @@ export default async function Layout({ children, rawPageData }: LayoutProps) {
         {children}
       </main>
       <Footer />
-      <TailwindIndicator />
     </LayoutProvider>
   );
 }
