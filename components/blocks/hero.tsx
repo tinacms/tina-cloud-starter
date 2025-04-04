@@ -4,13 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
-import { PageBlocksHero } from '../../tina/__generated__/types';
+import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/types';
 import { Button } from '../ui/button';
 import { iconSchema } from '@/tina/fields/icon';
 import { Icon } from '../icon';
 import { Section } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
+import HeroVideoDialog from '../magicui/hero-video-dialog';
 const transitionVariants = {
   container: {
     visible: {
@@ -94,23 +95,17 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         </AnimatedGroup>
       </div>
 
-      {data.image && data.image.src && (
+      {data.image && (
         <AnimatedGroup
           variants={transitionVariants}>
-          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full">
+          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full"
+            data-tina-field={tinaField(data, 'image')}>
             <div
               aria-hidden
-              className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
+              className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35% pointer-events-none"
             />
             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-              <Image
-                data-tina-field={tinaField(data.image, 'src')}
-                className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border max-w-full h-auto"
-                alt={data.image.alt || ''}
-                src={data.image.src}
-                height={4000}
-                width={3000}
-              />
+              <ImageBlock image={data.image} />
             </div>
           </div>
         </AnimatedGroup>
@@ -118,6 +113,47 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     </Section>
   )
 };
+
+const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
+
+  if (image.videoUrl) {
+
+    let videoId = '';
+    if (image.videoUrl) {
+      const embedPrefix = '/embed/';
+      const idx = image.videoUrl.indexOf(embedPrefix);
+      if (idx !== -1) {
+        videoId = image.videoUrl.substring(idx + embedPrefix.length).split('?')[0];
+      }
+    }
+    const thumbnailSrc = image.src
+      ? image.src!
+      : videoId
+        ? `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+        : '';
+
+    return (
+      <HeroVideoDialog
+        animationStyle="top-in-bottom-out"
+        videoSrc={image.videoUrl}
+        thumbnailSrc={thumbnailSrc}
+        thumbnailAlt="Hero Video"
+      />
+    )
+  }
+
+  if (image.src) {
+    return (
+      <Image
+        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border max-w-full h-auto"
+        alt={image!.alt || ''}
+        src={image!.src!}
+        height={4000}
+        width={3000}
+      />
+    )
+  }
+}
 
 export const heroBlockSchema: Template = {
   name: 'hero',
@@ -193,6 +229,12 @@ export const heroBlockSchema: Template = {
           label: 'Alt Text',
           type: 'string',
         },
+        {
+          name: 'videoUrl',
+          label: 'Video URL',
+          type: 'string',
+          description: 'If using a YouTube video, make sure to use the embed version of the video URL',
+        }
       ],
     },
   ],
