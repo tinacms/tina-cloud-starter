@@ -14,7 +14,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@svgr/webpack": "^8.1.0",
-    "@tinacms/cli": "^1.9.3",
+    "@tinacms/cli": "^1.9.5",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.13.10",
     "@types/react": "^18.3.18",
