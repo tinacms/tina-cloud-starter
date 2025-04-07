@@ -40,7 +40,7 @@
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "tinacms": "^2.7.3",
+    "tinacms": "^2.7.5",
     "usehooks-ts": "^3.1.1"
   }
 }
