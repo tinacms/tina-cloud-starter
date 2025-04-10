@@ -11,7 +11,7 @@ import { Icon } from '../icon';
 import { Section } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
-import HeroVideoDialog from '../magicui/hero-video-dialog';
+import HeroVideoDialog from '../ui/hero-video-dialog';
 const transitionVariants = {
   container: {
     visible: {
@@ -134,7 +134,6 @@ const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
 
     return (
       <HeroVideoDialog
-        animationStyle="top-in-bottom-out"
         videoSrc={image.videoUrl}
         thumbnailSrc={thumbnailSrc}
         thumbnailAlt="Hero Video"
