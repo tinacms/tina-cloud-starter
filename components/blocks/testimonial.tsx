@@ -5,10 +5,11 @@ import { Section } from "../layout/section";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card, CardContent } from "../ui/card";
 import { tinaField } from "tinacms/dist/react";
+import { sectionBlockSchemaField } from '../layout/section';
 
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
-    <Section>
+    <Section background={data.background!}>
       <div className="text-center">
         <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
         <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
@@ -63,6 +64,7 @@ export const testimonialBlockSchema: Template = {
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: "string",
       label: "Title",
@@ -108,8 +110,13 @@ export const testimonialBlockSchema: Template = {
         },
         {
           type: "string",
-          label: "Role",
-          name: "role",
+          label: "Color",
+          name: "color",
+          options: [
+            { label: "Default", value: "default" },
+            { label: "Tint", value: "tint" },
+            { label: "Primary", value: "primary" },
+          ],
         },
         {
           type: "image",

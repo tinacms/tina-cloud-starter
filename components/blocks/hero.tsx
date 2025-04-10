@@ -8,7 +8,7 @@ import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/ty
 import { Button } from '../ui/button';
 import { iconSchema } from '@/tina/fields/icon';
 import { Icon } from '../icon';
-import { Section } from '../layout/section';
+import { Section, sectionBlockSchemaField } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
 import HeroVideoDialog from '../ui/hero-video-dialog';
@@ -43,7 +43,7 @@ const transitionVariants = {
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
   return (
-    <Section>
+    <Section background={data.background!} className="pb-0 mb-6">
       <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
         {data.headline && (
@@ -52,7 +52,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               preset="fade-in-blur"
               speedSegment={0.3}
               as="h1"
-              className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+              className="mt-8 text-balance text-6xl md:text-7xl xl:text-[5.25rem]">
               {data.headline!}
             </TextEffect>
           </div>
@@ -166,6 +166,7 @@ export const heroBlockSchema: Template = {
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: 'string',
       label: 'Headline',

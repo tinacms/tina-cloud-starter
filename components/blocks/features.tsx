@@ -10,10 +10,11 @@ import { Icon } from "../icon";
 import { iconSchema } from "../../tina/fields/icon";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Section } from "../layout/section";
+import { sectionBlockSchemaField } from '../layout/section';
 
 export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
-    <Section className="bg-zinc-50 dark:bg-transparent">
+    <Section background={data.background!}>
       <div className="@container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 data-tina-field={tinaField(data, 'title')} className="text-balance text-4xl font-semibold lg:text-5xl">{data.title}</h2>
@@ -91,6 +92,7 @@ export const featureBlockSchema: Template = {
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: "string",
       label: "Title",

@@ -7,23 +7,20 @@ import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import { Section } from "../layout/section";
 import { mermaid } from "./mermaid";
+import { sectionBlockSchemaField } from '../layout/section';
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
-    <Section>
-      <div
-        className={`prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
-        data-tina-field={tinaField(data, "body")}
-      >
-        <TinaMarkdown 
-          content={data.body}
-          components={{
-            mermaid,
-          }}
-        />
-      </div>
+    <Section background={data.background!}
+      className="prose prose-lg"
+      data-tina-field={tinaField(data, "body")}
+    >
+      <TinaMarkdown
+        content={data.body}
+        components={{
+          mermaid,
+        }}
+      />
     </Section>
   );
 };
@@ -38,6 +35,7 @@ export const contentBlockSchema: Template = {
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: "rich-text",
       label: "Body",
