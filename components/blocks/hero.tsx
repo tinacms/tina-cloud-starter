@@ -12,6 +12,7 @@ import { Section, sectionBlockSchemaField } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
 import HeroVideoDialog from '../ui/hero-video-dialog';
+import { cn } from '@/lib/utils';
 const transitionVariants = {
   container: {
     visible: {
@@ -42,8 +43,19 @@ const transitionVariants = {
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
+  // Extract the background style logic into a more readable format
+  let gradientStyle: React.CSSProperties | undefined = undefined;
+  if (data.background) {
+    const colorName = data.background.replace(/\/\d{1,2}$/, '').split('-').slice(1).join('-');
+    const opacity = data.background.match(/\/(\d{1,3})$/)?.[1] || '100';
+
+    gradientStyle = {
+      '--tw-gradient-to': `color-mix(in oklab, var(--color-${colorName}) ${opacity}%, transparent)`,
+    };
+  }
+
   return (
-    <Section background={data.background!} className="pb-0 mb-6">
+    <Section background={data.background!}>
       <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
         {data.headline && (
@@ -102,7 +114,8 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             data-tina-field={tinaField(data, 'image')}>
             <div
               aria-hidden
-              className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35% pointer-events-none"
+              className="bg-linear-to-b absolute inset-0 z-10 from-transparent from-35% pointer-events-none"
+              style={gradientStyle}
             />
             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
               <ImageBlock image={data.image} />
