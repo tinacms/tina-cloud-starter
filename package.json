@@ -14,7 +14,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@svgr/webpack": "^8.1.0",
-    "@tinacms/cli": "react-19-support",
+    "@tinacms/cli": "^1.9.5",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.12",
@@ -46,7 +46,7 @@
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.17",
-    "tinacms": "react-19-support",
+    "tinacms": "^2.7.5",
     "tw-animate-css": "^1.2.4",
     "usehooks-ts": "^3.1.1"
   },
