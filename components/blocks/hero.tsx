@@ -51,7 +51,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
     gradientStyle = {
       '--tw-gradient-to': `color-mix(in oklab, var(--color-${colorName}) ${opacity}%, transparent)`,
-    };
+    } as React.CSSProperties;
   }
 
   return (
