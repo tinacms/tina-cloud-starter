@@ -1,103 +1,171 @@
 'use client';
 import * as React from 'react';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
-import type { Template } from 'tinacms';
-import { PageBlocksHero } from '../../tina/__generated__/types';
-import { tinaField } from 'tinacms/dist/react';
 import Image from 'next/image';
-import { Section } from '../layout/section';
-import { Container } from '../layout/container';
-import { Actions } from './actions';
-import { mermaid } from './mermaid';
+import Link from 'next/link';
+import type { Template } from 'tinacms';
+import { tinaField } from 'tinacms/dist/react';
+import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/types';
+import { Button } from '../ui/button';
+import { iconSchema } from '@/tina/fields/icon';
+import { Icon } from '../icon';
+import { Section, sectionBlockSchemaField } from '../layout/section';
+import { AnimatedGroup } from '../motion-primitives/animated-group';
+import { TextEffect } from '../motion-primitives/text-effect';
+import HeroVideoDialog from '../ui/hero-video-dialog';
+import { cn } from '@/lib/utils';
+const transitionVariants = {
+  container: {
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.75,
+      },
+    },
+  },
+  item: {
+    hidden: {
+      opacity: 0,
+      filter: 'blur(12px)',
+      y: 12,
+    },
+    visible: {
+      opacity: 1,
+      filter: 'blur(0px)',
+      y: 0,
+      transition: {
+        type: 'spring',
+        bounce: 0.3,
+        duration: 1.5,
+      },
+    },
+  },
+}
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
-  const headlineColorClasses = {
-    blue: 'from-blue-400 to-blue-600',
-    teal: 'from-teal-400 to-teal-600',
-    green: 'from-green-400 to-green-600',
-    red: 'from-red-400 to-red-600',
-    pink: 'from-pink-400 to-pink-600',
-    purple: 'from-purple-400 to-purple-600',
-    orange: 'from-orange-300 to-orange-600',
-    yellow: 'from-yellow-400 to-yellow-600',
-  };
+
+  // Extract the background style logic into a more readable format
+  let gradientStyle: React.CSSProperties | undefined = undefined;
+  if (data.background) {
+    const colorName = data.background.replace(/\/\d{1,2}$/, '').split('-').slice(1).join('-');
+    const opacity = data.background.match(/\/(\d{1,3})$/)?.[1] || '100';
+
+    gradientStyle = {
+      '--tw-gradient-to': `color-mix(in oklab, var(--color-${colorName}) ${opacity}%, transparent)`,
+    } as React.CSSProperties;
+  }
 
   return (
-    <Section color={data.color}>
-      <Container size='large' className='grid grid-cols-1 md:grid-cols-5 gap-14 items-start justify-center'>
-        <div className='row-start-2 md:row-start-1 md:col-span-5 text-center md:text-left'>
-          {data.tagline && (
-            <h2 data-tina-field={tinaField(data, 'tagline')} className='relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20'>
-              {data.tagline}
-              <span className='absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7'></span>
-            </h2>
-          )}
-          {data.headline && (
-            <h3
-              data-tina-field={tinaField(data, 'headline')}
-              className={`w-full relative mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
-            >
-              <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === 'primary' ? `from-white to-gray-100` : headlineColorClasses['blue']
-                }`}
-              >
-                {data.headline}
-              </span>
-            </h3>
-          )}
-          <div className='flex flex-col md:flex-row gap-6'>
-            <div className='flex flex-col md:w-3/5'>
-              {data.text && (
-                <div
-                  data-tina-field={tinaField(data, 'text')}
-                  className={`prose prose-lg mx-auto md:mx-0 mb-10 ${data.color === 'primary' ? `prose-primary` : `dark:prose-dark`}`}
-                >
-                  <TinaMarkdown
-                    content={data.text}
-                    components={{
-                      mermaid,
-                    }}
-                  />
-                </div>
-              )}
-            </div>
-            {data.image?.src && (
-              <div data-tina-field={tinaField(data.image, 'src')} className='relative flex-shrink-0 md:w-2/5 flex justify-center'>
-                <Image
-                  className='w-full h-auto max-w-full rounded-lg'
-                  style={{ objectFit: 'cover' }}
-                  alt={data.image.alt || ''}
-                  src={data.image.src}
-                  width={500}
-                  height={500}
-                />
-              </div>
-            )}
+    <Section background={data.background!}>
+      <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
+
+        {data.headline && (
+          <div data-tina-field={tinaField(data, 'headline')}>
+            <TextEffect
+              preset="fade-in-blur"
+              speedSegment={0.3}
+              as="h1"
+              className="mt-8 text-balance text-6xl md:text-7xl xl:text-[5.25rem]">
+              {data.headline!}
+            </TextEffect>
           </div>
-          {data.text2 && (
+        )}
+        {data.tagline && (
+          <div data-tina-field={tinaField(data, 'tagline')}>
+            <TextEffect
+              per="line"
+              preset="fade-in-blur"
+              speedSegment={0.3}
+              delay={0.5}
+              as="p"
+              className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+              {data.tagline!}
+            </TextEffect>
+          </div>
+        )}
+
+        <AnimatedGroup
+          variants={transitionVariants}
+          className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+
+          {data.actions && data.actions.map(action => (
             <div
-              data-tina-field={tinaField(data, 'text2')}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${data.color === 'primary' ? `prose-primary` : `dark:prose-dark`}`}
-            >
-              <TinaMarkdown
-                content={data.text2}
-                components={{
-                  mermaid,
-                }}
-              />
+              key={action!.label}
+              data-tina-field={tinaField(action)}
+              className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+              <Button
+                asChild
+                size="lg"
+                variant={action!.type === 'link' ? 'ghost' : 'default'}
+                className="rounded-xl px-5 text-base">
+                <Link href={action!.link!}>
+                  {action?.icon && (<Icon data={action?.icon} />)}
+                  <span className="text-nowrap">{action!.label}</span>
+                </Link>
+              </Button>
             </div>
-          )}
-          {data.actions && (
-            <div className='mt-10'>
-              <Actions className='justify-center md:justify-start py-2' parentColor={data.color!} actions={data.actions.map((x) => x!)} />
+          ))}
+        </AnimatedGroup>
+      </div>
+
+      {data.image && (
+        <AnimatedGroup
+          variants={transitionVariants}>
+          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full"
+            data-tina-field={tinaField(data, 'image')}>
+            <div
+              aria-hidden
+              className="bg-linear-to-b absolute inset-0 z-10 from-transparent from-35% pointer-events-none"
+              style={gradientStyle}
+            />
+            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+              <ImageBlock image={data.image} />
             </div>
-          )}
-        </div>
-      </Container>
+          </div>
+        </AnimatedGroup>
+      )}
     </Section>
-  );
+  )
 };
+
+const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
+
+  if (image.videoUrl) {
+
+    let videoId = '';
+    if (image.videoUrl) {
+      const embedPrefix = '/embed/';
+      const idx = image.videoUrl.indexOf(embedPrefix);
+      if (idx !== -1) {
+        videoId = image.videoUrl.substring(idx + embedPrefix.length).split('?')[0];
+      }
+    }
+    const thumbnailSrc = image.src
+      ? image.src!
+      : videoId
+        ? `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+        : '';
+
+    return (
+      <HeroVideoDialog
+        videoSrc={image.videoUrl}
+        thumbnailSrc={thumbnailSrc}
+        thumbnailAlt="Hero Video"
+      />
+    )
+  }
+
+  if (image.src) {
+    return (
+      <Image
+        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border max-w-full h-auto"
+        alt={image!.alt || ''}
+        src={image!.src!}
+        height={4000}
+        width={3000}
+      />
+    )
+  }
+}
 
 export const heroBlockSchema: Template = {
   name: 'hero',
@@ -111,25 +179,16 @@ export const heroBlockSchema: Template = {
     },
   },
   fields: [
-    {
-      type: 'string',
-      label: 'Tagline',
-      name: 'tagline',
-    },
+    sectionBlockSchemaField as any,
     {
       type: 'string',
       label: 'Headline',
       name: 'headline',
     },
     {
-      label: 'Text-1',
-      name: 'text',
-      type: 'rich-text',
-    },
-    {
-      type: 'rich-text',
-      label: 'Text-2',
-      name: 'text2',
+      type: 'string',
+      label: 'Tagline',
+      name: 'tagline',
     },
     {
       label: 'Actions',
@@ -160,11 +219,7 @@ export const heroBlockSchema: Template = {
             { label: 'Link', value: 'link' },
           ],
         },
-        {
-          label: 'Icon',
-          name: 'icon',
-          type: 'boolean',
-        },
+        iconSchema as any,
         {
           label: 'Link',
           name: 'link',
@@ -187,16 +242,12 @@ export const heroBlockSchema: Template = {
           label: 'Alt Text',
           type: 'string',
         },
-      ],
-    },
-    {
-      type: 'string',
-      label: 'Color',
-      name: 'color',
-      options: [
-        { label: 'Default', value: 'default' },
-        { label: 'Tint', value: 'tint' },
-        { label: 'Primary', value: 'primary' },
+        {
+          name: 'videoUrl',
+          label: 'Video URL',
+          type: 'string',
+          description: 'If using a YouTube video, make sure to use the embed version of the video URL',
+        }
       ],
     },
   ],

@@ -8,10 +8,12 @@ export const revalidate = 300;
 export default async function PostPage({
   params,
 }: {
-  params: { urlSegments: string[] };
+  params: Promise<{ urlSegments: string[] }>;
 }) {
+  const resolvedParams = await params;
+  const filepath = resolvedParams.urlSegments.join('/');
   const data = await client.queries.post({
-    relativePath: `${params.urlSegments.join('/')}.mdx`,
+    relativePath: `${filepath}.mdx`,
   });
 
   return (

@@ -9,13 +9,13 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Node 18 sample
+    name: Build sample
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version-file: .nvmrc
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm

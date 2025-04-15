@@ -28,6 +28,9 @@ const Post: Collection = {
       type: "rich-text",
       label: "Excerpt",
       name: "excerpt",
+      overrides: {
+        toolbar: ["bold", "italic", "link"],
+      }
     },
     {
       type: "reference",
@@ -57,6 +60,9 @@ const Post: Collection = {
               name: "children",
               label: "Quote",
               type: "rich-text",
+              overrides: {
+                toolbar: ["bold", "italic", "link"],
+              }
             },
             {
               name: "authorName",
@@ -101,6 +107,9 @@ const Post: Collection = {
               name: "disclaimer",
               label: "Disclaimer",
               type: "rich-text",
+              overrides: {
+                toolbar: ["bold", "italic", "link"],
+              }
             },
           ],
           ui: {
