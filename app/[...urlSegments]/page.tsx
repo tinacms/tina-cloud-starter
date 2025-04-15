@@ -1,6 +1,7 @@
 import React from 'react';
 import client from '@/tina/__generated__/client';
 import Layout from '@/components/layout/layout';
+import { Section } from '@/components/layout/section';
 import ClientPage from './client-page';
 
 export const revalidate = 300;
@@ -8,15 +9,19 @@ export const revalidate = 300;
 export default async function Page({
   params,
 }: {
-  params: { urlSegments: string[] };
+  params: Promise<{ urlSegments: string[] }>;
 }) {
+  const resolvedParams = await params;
+  const filepath = resolvedParams.urlSegments.join('/');
   const data = await client.queries.page({
-    relativePath: `${params.urlSegments.join('/')}.mdx`,
+    relativePath: `${filepath}.mdx`,
   });
 
   return (
     <Layout rawPageData={data}>
-      <ClientPage {...data} />
+      <Section>
+        <ClientPage {...data} />
+      </Section>
     </Layout>
   );
 }
