@@ -9,29 +9,46 @@
     "color": "default",
     "nav": [
       {
-        "href": "",
+        "href": "/",
         "label": "Home"
       },
       {
-        "href": "about",
+        "href": "/about",
         "label": "About"
       },
       {
-        "href": "posts",
+        "href": "/posts",
         "label": "Blog"
       }
     ]
   },
   "footer": {
-    "color": "default",
-    "social": {
-      "facebook": "",
-      "twitter": "https://x.com/TinaCMS",
-      "instagram": "",
-      "linkedIn": "https://www.linkedin.com/company/tinacms",
-      "github": "https://github.com/tinacms/tinacms",
-      "youtube": "https://www.youtube.com/@TinaCMS"
-    }
+    "social": [
+      {
+        "icon": {
+          "name": "FaLinkedin"
+        },
+        "url": "https://www.linkedin.com/company/tinacms"
+      },
+      {
+        "icon": {
+          "name": "FaGithub"
+        },
+        "url": "https://github.com/tinacms/tinacms"
+      },
+      {
+        "icon": {
+          "name": "FaYoutube"
+        },
+        "url": "https://www.youtube.com/@TinaCMS"
+      },
+      {
+        "icon": {
+          "name": "FaXTwitter"
+        },
+        "url": "https://x.com/TinaCMS"
+      }
+    ]
   },
   "theme": {
     "color": "blue",
