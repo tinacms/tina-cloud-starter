@@ -9,9 +9,10 @@ export const revalidate = 300;
 export default async function Page({
   params,
 }: {
-  params: { urlSegments: string[] };
+  params: Promise<{ urlSegments: string[] }>;
 }) {
-  const filepath = (await params).urlSegments.join('/');
+  const resolvedParams = await params;
+  const filepath = resolvedParams.urlSegments.join('/');
   const data = await client.queries.page({
     relativePath: `${filepath}.mdx`,
   });
