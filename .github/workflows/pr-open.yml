@@ -9,7 +9,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Node 18 sample
+    name: Build sample
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
