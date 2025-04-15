@@ -1,5 +1,5 @@
 'use client';
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { tinaField, useTina } from 'tinacms/dist/react';
