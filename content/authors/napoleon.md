@@ -1,7 +1,5 @@
 ---
 name: Napoleon
-avatar: /uploads/llama-2.avif
+avatar: /uploads/authors/napoleon.png
 ---
-
-
 
