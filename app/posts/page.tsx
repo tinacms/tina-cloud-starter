@@ -7,6 +7,7 @@ export const revalidate = 300;
 export default async function PostsPage() {
   let posts = await client.queries.postConnection({
     sort: 'date',
+    last: 1
   });
   const allPosts = posts;
 
@@ -14,20 +15,18 @@ export default async function PostsPage() {
     return [];
   }
 
-  while (posts.data?.postConnection.pageInfo.hasNextPage) {
+  while (posts.data?.postConnection.pageInfo.hasPreviousPage) {
     posts = await client.queries.postConnection({
       sort: 'date',
-      after: posts.data.postConnection.pageInfo.endCursor,
+      before: posts.data.postConnection.pageInfo.endCursor,
     });
 
     if (!posts.data.postConnection.edges) {
       break;
     }
 
-    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges);
+    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges.reverse());
   }
-
-  allPosts.data.postConnection.edges.reverse();
 
   return (
     <Layout rawPageData={allPosts.data}>

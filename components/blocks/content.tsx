@@ -8,6 +8,7 @@ import { tinaField } from "tinacms/dist/react";
 import { Section } from "../layout/section";
 import { mermaid } from "./mermaid";
 import { sectionBlockSchemaField } from '../layout/section';
+import { scriptCopyBlockSchema, ScriptCopyBtn } from "../magicui/script-copy-btn";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
@@ -19,6 +20,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         content={data.body}
         components={{
           mermaid,
+          scriptCopyBlock: (props: any) => <ScriptCopyBtn {...props} />,
         }}
       />
     </Section>
@@ -40,6 +42,9 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Body",
       name: "body",
+      templates: [
+        scriptCopyBlockSchema,
+      ],
     }
   ],
 };

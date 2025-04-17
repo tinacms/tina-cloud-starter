@@ -1,4 +1,5 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import client from '@/tina/__generated__/client';
 import Layout from '@/components/layout/layout';
 import { Section } from '@/components/layout/section';
@@ -13,9 +14,15 @@ export default async function Page({
 }) {
   const resolvedParams = await params;
   const filepath = resolvedParams.urlSegments.join('/');
-  const data = await client.queries.page({
-    relativePath: `${filepath}.mdx`,
-  });
+
+  let data;
+  try {
+    data = await client.queries.page({
+      relativePath: `${filepath}.mdx`,
+    });
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <Layout rawPageData={data}>
