@@ -30,7 +30,7 @@ export default function PostsClientPage(props: ClientPostProps) {
       id: post.id,
       published: formattedDate,
       title: post.title,
-      tags: [],
+      tags: post.tags?.map((tag) => tag?.tag?.name) || [],
       url: `/posts/${post._sys.breadcrumbs.join('/')}`,
       excerpt: post.excerpt,
       heroImg: post.heroImg,
