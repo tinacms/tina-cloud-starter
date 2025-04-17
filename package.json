@@ -43,6 +43,7 @@
     "react-icons": "^5.5.0",
     "react-player": "^2.16.0",
     "react-use-measure": "^2.1.7",
+    "shiki": "^3.2.2",
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.17",
