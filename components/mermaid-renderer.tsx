@@ -1,22 +1,23 @@
-import { useRef, useEffect } from 'react';
-import mermaid from 'mermaid';
+import { useIntersectionObserver } from "usehooks-ts";
+import mermaid from "mermaid";
 
 export default function MermaidElement({ value }) {
-  const mermaidRef = useRef(null);
-
-  useEffect(() => {
-    if (mermaidRef.current) {
-      mermaid.initialize({ startOnLoad: true });
-      mermaid.run();
-    }
-  }, []);
+  const { ref } = useIntersectionObserver({
+    threshold: 0.01,
+    freezeOnceVisible: true,
+    onChange(isIntersecting, entry) {
+      if (isIntersecting) {
+        mermaid.initialize({ startOnLoad: false });
+        mermaid.run({ nodes: [entry.target as HTMLElement] });
+      }
+    },
+  });
 
   return (
     <div contentEditable={false}>
-      <div ref={mermaidRef}>
-        <pre className="mermaid">{value}</pre>
-      </div>
+      <pre ref={ref} suppressHydrationWarning>
+        {value}
+      </pre>
     </div>
   );
 }
-

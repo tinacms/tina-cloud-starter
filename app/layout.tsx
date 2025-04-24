@@ -1,10 +1,12 @@
-import "../styles.css";
 import React from "react";
-import { ThemeProvider } from "../components/theme-provider";
-import { Inter as FontSans, Lato, Nunito } from "next/font/google";
-import { cn } from "../lib/utils";
 import { Metadata } from "next";
-import client from "../tina/__generated__/client";
+import { Inter as FontSans, Lato, Nunito } from "next/font/google";
+import { cn } from "@/lib/utils";
+import { VideoDialogProvider } from "@/components/ui/VideoDialogContext";
+import VideoDialog from "@/components/ui/VideoDialog";
+
+import "@/styles.css";
+import { TailwindIndicator } from "@/components/ui/breakpoint-indicator";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,42 +29,19 @@ export const metadata: Metadata = {
   description: "Tina Cloud Starter",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const globalQuery = await client.queries.global({
-    relativePath: "index.json",
-  });
-  const global = globalQuery.data.global;
-
-  const selectFont = (fontName: string) => {
-    switch (fontName) {
-      case "nunito":
-        return `font-nunito ${nunito.variable}`;
-      case "lato":
-        return `font-lato ${lato.variable}`;
-      case "sans":
-      default:
-        return `font-sans ${fontSans.variable} `;
-    }
-  };
-  const fontVariable = selectFont(global.theme.font);
-
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn("min-h-screen flex flex-col antialiased", fontVariable)}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange
-          forcedTheme={global.theme.darkMode}
-        >
+    <html lang="en" className={cn(fontSans.variable, nunito.variable, lato.variable)}>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <VideoDialogProvider>
           {children}
-        </ThemeProvider>
+          <VideoDialog />
+        </VideoDialogProvider>
+        <TailwindIndicator />
       </body>
     </html>
   );

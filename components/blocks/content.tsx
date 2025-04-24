@@ -5,30 +5,24 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { Container } from "../layout/container";
 import { Section } from "../layout/section";
-import MermaidElement from "../mermaid-renderer";
+import { mermaid } from "./mermaid";
+import { sectionBlockSchemaField } from '../layout/section';
+import { scriptCopyBlockSchema, ScriptCopyBtn } from "../magicui/script-copy-btn";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
-    <Section color={data.color}>
-      <Container
-        className={`prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
-        data-tina-field={tinaField(data, "body")}
-        size="large"
-        width="medium"
-      >
-        <TinaMarkdown 
-          content={data.body}
-          components={{
-            mermaid({ value }) {
-              return <MermaidElement value={value} />;
-            }
-          }}
-        />
-      </Container>
+    <Section background={data.background!}
+      className="prose prose-lg"
+      data-tina-field={tinaField(data, "body")}
+    >
+      <TinaMarkdown
+        content={data.body}
+        components={{
+          mermaid,
+          scriptCopyBlock: (props: any) => <ScriptCopyBtn {...props} />,
+        }}
+      />
     </Section>
   );
 };
@@ -43,20 +37,14 @@ export const contentBlockSchema: Template = {
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: "rich-text",
       label: "Body",
       name: "body",
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
+      templates: [
+        scriptCopyBlockSchema,
       ],
-    },
+    }
   ],
 };

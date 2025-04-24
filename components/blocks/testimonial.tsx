@@ -1,62 +1,49 @@
 import type { Template } from "tinacms";
-import { PageBlocksTestimonial } from "../../tina/__generated__/types";
-import { tinaField } from "tinacms/dist/react";
+import { PageBlocksTestimonial, PageBlocksTestimonialTestimonials } from "../../tina/__generated__/types";
 import { Section } from "../layout/section";
-import { Container } from "../layout/container";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Card, CardContent } from "../ui/card";
+import { tinaField } from "tinacms/dist/react";
+import { sectionBlockSchemaField } from '../layout/section';
 
 export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   return (
-    <Section color={data.color}>
-      <Container size="large">
-        <blockquote>
-          <div
-            className={`relative z-10 max-w-3xl mx-auto text-4xl lg:text-5xl font-bold tracking-normal text-center title-font ${
-              data.color === "primary"
-                ? `text-white`
-                : `text-gray-700 dark:text-gray-50`
-            }`}
-          >
-            <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-2	-left-4 leading-4 -z-1`}
-            >
-              &ldquo;
-            </span>
-            <p
-              data-tina-field={tinaField(data, `quote`)}
-              className="relative opacity-95"
-            >
-              {data.quote}
-            </p>
-            <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-3	-right-4 leading-4 -z-1`}
-            >
-              &rdquo;
-            </span>
-          </div>
-          <div className={`my-8 flex-grow-0`}>
-            <span
-              className={`block mx-auto h-0.5 w-1/6 ${
-                data.color === "primary"
-                  ? `bg-blue-600`
-                  : `bg-gray-200 dark:bg-gray-700`
-              }`}
-            ></span>
-          </div>
-          <footer className="text-center">
-            <p
-              data-tina-field={tinaField(data, `author`)}
-              className={`tracking-wide title-font font-bold text-lg ${
-                data.color === "primary"
-                  ? `text-blue-200`
-                  : `text-blue-500 dark:text-blue-300`
-              }`}
-            >
-              {data.author}
-            </p>
-          </footer>
-        </blockquote>
-      </Container>
+    <Section background={data.background!}>
+      <div className="text-center">
+        <h2 className="text-title text-3xl font-semibold" data-tina-field={tinaField(data, 'title')}>{data.title}</h2>
+        <p className="text-body mt-6" data-tina-field={tinaField(data, 'description')}>{data.description}</p>
+      </div>
+      <div className="mt-8 [column-width:300px] [column-gap:1.5rem] md:mt-12">
+        {data.testimonials?.map((testimonial, index) => (
+          <TestimonialCard key={index} testimonial={testimonial!} />
+        ))}
+      </div>
     </Section>
+  );
+};
+
+const TestimonialCard = ({ testimonial }: { testimonial: PageBlocksTestimonialTestimonials }) => {
+  return (
+    <Card className="mb-6 break-inside-avoid">
+      <CardContent className="grid grid-cols-[auto_1fr] gap-3 pt-6">
+        <Avatar className="size-9" data-tina-field={tinaField(testimonial, 'avatar')}>
+          {testimonial.avatar && (
+            <AvatarImage alt={testimonial.author!} src={testimonial.avatar} loading="lazy" width="120" height="120" />
+          )}
+          <AvatarFallback>{testimonial.author!.split(" ").map((word) => word[0]).join("")}</AvatarFallback>
+        </Avatar>
+
+        <div>
+          <h3 className="font-medium" data-tina-field={tinaField(testimonial, 'author')}>{testimonial.author}</h3>
+
+          <span className="text-muted-foreground block text-sm tracking-wide" data-tina-field={tinaField(testimonial, 'role')}>{testimonial.role}</span>
+
+          <blockquote className="mt-3" data-tina-field={tinaField(testimonial, 'quote')}>
+            <p className="text-gray-700 dark:text-gray-300">{testimonial.quote}</p>
+          </blockquote>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -66,34 +53,70 @@ export const testimonialBlockSchema: Template = {
   ui: {
     previewSrc: "/blocks/testimonial.png",
     defaultItem: {
-      quote:
-        "There are only two hard things in Computer Science: cache invalidation and naming things.",
-      author: "Phil Karlton",
-      color: "primary",
+      testimonials: [
+        {
+          quote:
+            "There are only two hard things in Computer Science: cache invalidation and naming things.",
+          author: "Phil Karlton",
+        },
+      ],
     },
   },
   fields: [
+    sectionBlockSchemaField as any,
     {
       type: "string",
+      label: "Title",
+      name: "title",
+    },
+    {
+      type: "string",
+      label: "Description",
+      name: "description",
       ui: {
         component: "textarea",
       },
-      label: "Quote",
-      name: "quote",
     },
     {
-      type: "string",
-      label: "Author",
-      name: "author",
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
+      type: "object",
+      list: true,
+      label: "Testimonials",
+      name: "testimonials",
+      ui: {
+        defaultItem: {
+          quote: "There are only two hard things in Computer Science: cache invalidation and naming things.",
+          author: "Phil Karlton",
+        },
+        itemProps: (item) => {
+          return {
+            label: `${item.quote} - ${item.author}`,
+          };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          ui: {
+            component: "textarea",
+          },
+          label: "Quote",
+          name: "quote",
+        },
+        {
+          type: "string",
+          label: "Author",
+          name: "author",
+        },
+        {
+          type: "string",
+          label: "Role",
+          name: "role",
+        },
+        {
+          type: "image",
+          label: "Avatar",
+          name: "avatar",
+        }
       ],
     },
   ],
