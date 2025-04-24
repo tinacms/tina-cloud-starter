@@ -1,4 +1,3 @@
-import React from "react";
 import type { Template } from "tinacms";
 import { PageBlocksTestimonial, PageBlocksTestimonialTestimonials } from "../../tina/__generated__/types";
 import { Section } from "../layout/section";
