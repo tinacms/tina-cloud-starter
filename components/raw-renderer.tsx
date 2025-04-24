@@ -35,8 +35,8 @@ export const RawRenderer = ({ rawData, parentColor }) => {
       <button
         type="button"
         onClick={openModal}
-        className={`z-10 relative flex items-center px-5 py-2 mx-3 my-2 font-semibold text-sm transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-none whitespace-nowrap opacity-80 hover:opacity-100 shadow-md ${
-          buttonColorClasses[theme.color]
+        className={`z-10 relative flex items-center px-5 py-2 mx-3 my-2 font-semibold text-sm transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-hidden whitespace-nowrap opacity-80 hover:opacity-100 shadow-md ${
+          buttonColorClasses[theme!.color!]
         }`}
       >
         View Raw Data
@@ -65,7 +65,7 @@ export const RawRenderer = ({ rawData, parentColor }) => {
               leaveTo="opacity-0"
             >
               <div className="">
-                <DialogPanel className="fixed inset-0 bg-gradient-to-br from-gray-800 to-gray-1000 opacity-80" />
+                <DialogPanel className="fixed inset-0 bg-linear-to-br from-gray-800 to-gray-1000 opacity-80" />
               </div>
             </TransitionChild>
 

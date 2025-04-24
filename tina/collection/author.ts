@@ -17,6 +17,8 @@ const Author: Collection = {
       type: "image",
       label: "Avatar",
       name: "avatar",
+      // @ts-ignore
+      uploadDir: () => "authors",
     },
   ],
 };

@@ -1,5 +1,13 @@
 "use client";
 import * as BoxIcons from "react-icons/bi";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaLinkedin,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
+import { AiFillInstagram } from "react-icons/ai";
 import React from "react";
 import { useLayout } from "./layout/layout-context";
 
@@ -23,6 +31,12 @@ export const IconOptions = {
     </svg>
   ),
   ...BoxIcons,
+  FaFacebookF,
+  FaGithub,
+  FaLinkedin,
+  FaXTwitter,
+  FaYoutube,
+  AiFillInstagram,
 };
 
 const iconColorClass: {
@@ -67,11 +81,11 @@ const iconColorClass: {
 };
 
 const iconSizeClass = {
-  xs: "w-6 h-6 flex-shrink-0",
-  small: "w-8 h-8 flex-shrink-0",
-  medium: "w-12 h-12 flex-shrink-0",
-  large: "w-14 h-14 flex-shrink-0",
-  xl: "w-16 h-16 flex-shrink-0",
+  xs: "w-6 h-6 shrink-0",
+  small: "w-8 h-8 shrink-0",
+  medium: "w-12 h-12 shrink-0",
+  large: "w-14 h-14 shrink-0",
+  xl: "w-16 h-16 shrink-0",
   custom: "",
 };
 
@@ -98,15 +112,15 @@ export const Icon = ({
 
   const iconColor = color
     ? color === "primary"
-      ? theme.color
+      ? theme!.color
       : color
-    : theme.color;
+    : theme!.color;
 
   if (style == "circle") {
     return (
       <div
-        data-tina-field={tinaField}
-        className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
+        {...(tinaField ? { "data-tina-field": tinaField } : {})} // only render data-tina-field if it exists
+        className={`relative z-10 inline-flex items-center justify-center shrink-0 ${iconSizeClasses} rounded-full ${iconColorClass[iconColor].circle} ${className}`}
       >
         <IconSVG className="w-2/3 h-2/3" />
       </div>
@@ -115,13 +129,13 @@ export const Icon = ({
     const iconColorClasses =
       iconColorClass[
         parentColor === "primary" &&
-        (iconColor === theme.color || iconColor === "primary")
+          (iconColor === theme!.color || iconColor === "primary")
           ? "white"
-          : iconColor
+          : iconColor!
       ].regular;
     return (
       <IconSVG
-        data-tina-field={tinaField}
+        {...(tinaField ? { "data-tina-field": tinaField } : {})} // only render data-tina-field if it exists
         className={`${iconSizeClasses} ${iconColorClasses} ${className}`}
       />
     );

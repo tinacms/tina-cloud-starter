@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 import { ColorPickerInput } from "../fields/color";
 import { iconSchema } from "../fields/icon";
+import { icon } from "mermaid/dist/rendering-util/rendering-elements/shapes/icon.js";
 
 const Global: Collection = {
   label: "Global",
@@ -66,38 +67,21 @@ const Global: Collection = {
       name: "footer",
       fields: [
         {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
-        },
-        {
           type: "object",
           label: "Social Links",
           name: "social",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.icon?.name || 'undefined' };
+            },
+          },
           fields: [
+            iconSchema as any,
             {
               type: "string",
-              label: "Facebook",
-              name: "facebook",
-            },
-            {
-              type: "string",
-              label: "Twitter",
-              name: "twitter",
-            },
-            {
-              type: "string",
-              label: "Instagram",
-              name: "instagram",
-            },
-            {
-              type: "string",
-              label: "Github",
-              name: "github",
+              label: "Url",
+              name: "url",
             },
           ],
         },
