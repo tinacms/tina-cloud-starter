@@ -48,7 +48,7 @@
     "styled-jsx": "^5.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.17",
-    "tinacms": "^2.7.5",
+    "tinacms": "^2.7.7",
     "tw-animate-css": "^1.2.4",
     "usehooks-ts": "^3.1.1"
   }
