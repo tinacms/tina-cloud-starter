@@ -1,0 +1,8 @@
+autoRunScripts: true
+
+onlyBuiltDependencies:
+  - "@biomejs/biome"
+  - "@tailwindcss/oxide"
+  - better-sqlite3
+  - esbuild
+  - sharp
