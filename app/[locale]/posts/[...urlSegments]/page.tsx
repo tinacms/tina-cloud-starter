@@ -24,9 +24,15 @@ export default async function PostPage({
   setRequestLocale(locale);
 
   const filepath = `${locale}/${urlSegments.join('/')}`;
-  const data = await client.queries.post({
-    relativePath: `${filepath}.mdx`,
-  });
+
+  let data;
+  try {
+    data = await client.queries.post({
+      relativePath: `${filepath}.mdx`,
+    });
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <Layout rawPageData={data}>
