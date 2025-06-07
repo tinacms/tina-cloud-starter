@@ -47,23 +47,20 @@ export default async function PostsPage({
     );
   }
 
-  // Filter posts client side to only include those from the current locale
-  // TODO: This is a temporary solution to filter posts client side.
-  // We should find a better solution to filter posts server side.
+  // Filter posts by locale based on the breadcrumbs (first segment is the locale)
+  const filteredEdges = allPosts.data.postConnection.edges.filter((edge) => {
+    // Check if the first breadcrumb matches the current locale
+    return edge?.node?._sys.breadcrumbs[0] === locale;
+  });
+
+  // Create a filtered version of the posts data
   const filteredPosts = {
     ...allPosts,
     data: {
       ...allPosts.data,
       postConnection: {
         ...allPosts.data.postConnection,
-        edges:
-          allPosts.data.postConnection.edges?.filter((edge) =>
-            edge?.node?._sys.relativePath.startsWith(`${locale}/`)
-          ) || null,
-        totalCount:
-          allPosts.data.postConnection.edges?.filter((edge) =>
-            edge?.node?._sys.relativePath.startsWith(`${locale}/`)
-          ).length || 0,
+        edges: filteredEdges,
       },
     },
   };

@@ -2,16 +2,28 @@ import React from 'react';
 import client from '@/tina/__generated__/client';
 import Layout from '@/components/layout/layout';
 import PostClientPage from './client-page';
+import { hasLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 export const revalidate = 300;
 
 export default async function PostPage({
   params,
 }: {
-  params: Promise<{ urlSegments: string[] }>;
+  params: Promise<{ locale: string; urlSegments: string[] }>;
 }) {
   const resolvedParams = await params;
-  const filepath = resolvedParams.urlSegments.join('/');
+  const { locale, urlSegments } = resolvedParams;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const filepath = `${locale}/${urlSegments.join('/')}`;
   const data = await client.queries.post({
     relativePath: `${filepath}.mdx`,
   });
@@ -45,7 +57,7 @@ export async function generateStaticParams() {
 
   const params =
     allPosts.data?.postConnection.edges.map((edge) => ({
-      urlSegments: edge?.node?._sys.breadcrumbs,
+      urlSegments: edge?.node?._sys.breadcrumbs.slice(1),
     })) || [];
 
   return params;
