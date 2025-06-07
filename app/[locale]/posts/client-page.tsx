@@ -4,7 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
-import { PostConnectionQuery, PostConnectionQueryVariables } from '@/tina/__generated__/types';
+import {
+  PostConnectionQuery,
+  PostConnectionQueryVariables,
+} from '@/tina/__generated__/types';
 import ErrorBoundary from '@/components/error-boundary';
 import { ArrowRight, UserRound } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -26,19 +29,21 @@ export default function PostsClientPage(props: ClientPostProps) {
       formattedDate = format(date, 'MMM dd, yyyy');
     }
 
+    const breadcrumbsWithoutLocale = post._sys.breadcrumbs.slice(1);
+
     return {
       id: post.id,
       published: formattedDate,
       title: post.title,
       tags: post.tags?.map((tag) => tag?.tag?.name) || [],
-      url: `/posts/${post._sys.breadcrumbs.join('/')}`,
+      url: `/posts/${breadcrumbsWithoutLocale.join('/')}`,
       excerpt: post.excerpt,
       heroImg: post.heroImg,
       author: {
         name: post.author?.name || 'Anonymous',
         avatar: post.author?.avatar,
-      }
-    }
+      },
+    };
   });
 
   return (
@@ -50,7 +55,8 @@ export default function PostsClientPage(props: ClientPostProps) {
               Blog Posts
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
-              Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.
+              Discover the latest insights and tutorials about modern web
+              development, UI design, and component-driven architecture.
             </p>
           </div>
 
@@ -64,14 +70,13 @@ export default function PostsClientPage(props: ClientPostProps) {
                   <div className="sm:col-span-5">
                     <div className="mb-4 md:mb-6">
                       <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-muted-foreground md:gap-5 lg:gap-6">
-                        {post.tags?.map((tag) => <span key={tag}>{tag}</span>)}
+                        {post.tags?.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
-                      <Link
-                        href={post.url}
-                        className="hover:underline"
-                      >
+                      <Link href={post.url} className="hover:underline">
                         {post.title}
                       </Link>
                     </h3>
@@ -88,10 +93,17 @@ export default function PostsClientPage(props: ClientPostProps) {
                           />
                         )}
                         <AvatarFallback>
-                          <UserRound size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+                          <UserRound
+                            size={16}
+                            strokeWidth={2}
+                            className="opacity-60"
+                            aria-hidden="true"
+                          />
                         </AvatarFallback>
                       </Avatar>
-                      <span className="text-muted-foreground">{post.author.name}</span>
+                      <span className="text-muted-foreground">
+                        {post.author.name}
+                      </span>
                       <span className="text-muted-foreground">•</span>
                       <span className="text-muted-foreground">
                         {post.published}
