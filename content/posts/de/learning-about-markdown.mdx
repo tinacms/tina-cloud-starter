@@ -1,142 +1,140 @@
 ---
-title: Learning about Markdown
+title: Markdown kennen lernen
 heroImg: /uploads/posts/learning-about-markdown.png
 excerpt: >
-  DEUTSCH Join me on my journey as I dive into the world of Markdown! In this post, I'll
-  share what I've learned about using headers, emphasis, lists, images, links,
-  blockquotes, inline code, syntax highlighting, tables, and even diagrams. It's
-  a fun and powerful way to style text on the web, and I can't wait to show you
-  what's possible.
+  Begleite mich auf meiner Reise, während ich in die Welt von Markdown eintauche! In diesem Beitrag
+  teile ich, was ich über die Verwendung von Überschriften, Hervorhebungen, Listen, Bildern, Links,
+  Blockzitaten, Inline-Code, Syntax-Highlighting, Tabellen und sogar Diagrammen gelernt habe. Es ist
+  eine unterhaltsame und mächtige Art, Text im Web zu gestalten, und ich kann es kaum erwarten, dir zu zeigen,
+  was möglich ist.
 author: content/authors/napoleon.md
 date: 2025-01-12T13:00:00.000Z
 tags:
   - tag: content/tags/markdown.mdx
 ---
 
-DEUTSCH
+Hier ist eine Demo, wie alles aussieht.
 
-Here's a demo of how everything looks.
+Das folgende Markdown-Cheatsheet ist adaptiert von: [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
 
-The following markdown cheatsheet is adapted from: [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
+# Was ist Markdown?
 
-# What is Markdown?
+Markdown ist eine Möglichkeit, Text im Web zu gestalten. Du kontrollierst die Anzeige des Dokuments; Wörter als fett oder kursiv zu formatieren, Bilder hinzuzufügen und Listen zu erstellen sind nur einige der Dinge, die wir mit Markdown tun können. Größtenteils ist Markdown nur normaler Text mit ein paar nicht-alphabetischen Zeichen, wie `#` oder `*`.
 
-Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like `#` or `*`.
+# Syntax-Leitfaden
 
-# Syntax guide
+Hier ist eine Übersicht der Markdown-Syntax, die du überall auf GitHub.com oder in deinen eigenen Textdateien verwenden kannst.
 
-Here’s an overview of Markdown syntax that you can use anywhere on GitHub.com or in your own text files.
-
-## Headers
+## Überschriften
 
 ```markdown
-# This is a h1 tag
+# Das ist ein h1-Tag
 
-## This is a h2 tag
+## Das ist ein h2-Tag
 
-#### This is a h4 tag
+#### Das ist ein h4-Tag
 ```
 
-# This is a h1 tag
+# Das ist ein h1-Tag
 
-## This is a h2 tag
+## Das ist ein h2-Tag
 
-#### This is a h4 tag
+#### Das ist ein h4-Tag
 
-## Emphasis
+## Hervorhebung
 
 ```markdown
-_This text will be italic_
+_Dieser Text wird kursiv sein_
 
-**This text will be bold**
+**Dieser Text wird fett sein**
 
-_You **can** combine them_
+_Du **kannst** sie kombinieren_
 ```
 
-_This text will be italic_
+_Dieser Text wird kursiv sein_
 
-**This text will be bold**
+**Dieser Text wird fett sein**
 
-_You **can** combine them_
+_Du **kannst** sie kombinieren_
 
-## Lists
+## Listen
 
-### Unordered
+### Ungeordnet
 
 ```markdown
-- Item 1
-- Item 2
-  - Item 2a
-  - Item 2b
+- Element 1
+- Element 2
+  - Element 2a
+  - Element 2b
 ```
 
-- Item 1
-- Item 2
-  - Item 2a
-  - Item 2b
+- Element 1
+- Element 2
+  - Element 2a
+  - Element 2b
 
-### Ordered
+### Geordnet
 
 ```markdown
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+1. Element 1
+1. Element 2
+1. Element 3
+   1. Element 3a
+   1. Element 3b
 ```
 
-1. Item 1
-2. Item 2
-3. Item 3
-   1. Item 3a
-   2. Item 3b
+1. Element 1
+2. Element 2
+3. Element 3
+   1. Element 3a
+   2. Element 3b
 
-## Images
+## Bilder
 
 ```markdown
-![A llama](/uploads/llama-6.avif)
+![Ein Lama](/uploads/llama-6.avif)
 Format: ![Alt Text](url)
 ```
 
-![A llama](/uploads/llama-6.avif)
+![Ein Lama](/uploads/llama-6.avif)
 
 ## Links
 
 ```markdown
-http://tina.io - automatic!
+http://tina.io - automatisch!
 [TinaCMS](http://tina.io)
 ```
 
-[http://tina.io](http://tina.io) - automatic!
+[http://tina.io](http://tina.io) - automatisch!
 [TinaCMS](http://tina.io)
 
-## Blockquotes
+## Blockzitate
 
 ```markdown
-As Napoleon said about the liger:
+Wie Napoleon über den Liger sagte:
 
-> It’s pretty much my favorite animal.
-> It’s like a lion and a tiger mixed… bred for its skills in magic.
+> Es ist so ziemlich mein Lieblingstier.
+> Es ist wie eine Mischung aus Löwe und Tiger… gezüchtet für seine Fähigkeiten in der Magie.
 ```
 
-As Napoleon said about the liger:
+Wie Napoleon über den Liger sagte:
 
-> It’s pretty much my favorite animal.
-> It’s like a lion and a tiger mixed… bred for its skills in magic.
+> Es ist so ziemlich mein Lieblingstier.
+> Es ist wie eine Mischung aus Löwe und Tiger… gezüchtet für seine Fähigkeiten in der Magie.
 
-## Inline code
+## Inline-Code
 
 ```markdown
-I think you should use an
-`<addr>` element here instead.
+Ich denke, du solltest hier stattdessen ein
+`<addr>`-Element verwenden.
 ```
 
-I think you should use an
-`<addr>` element here instead.
+Ich denke, du solltest hier stattdessen ein
+`<addr>`-Element verwenden.
 
-## Syntax highlighting
+## Syntax-Highlighting
 
-Here’s an example of how you can use syntax highlighting with [GitHub Flavored Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/):
+Hier ist ein Beispiel, wie du Syntax-Highlighting mit [GitHub Flavored Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/) verwenden kannst:
 
 ````markdown
 ```js:fancyAlert.js
@@ -148,7 +146,7 @@ function fancyAlert(arg) {
 ```
 ````
 
-And here's how it looks - nicely colored with styled code titles!
+Und so sieht es aus - schön gefärbt mit gestylten Code-Titeln!
 
 ```js:fancyAlert.js
 function fancyAlert(arg) {
@@ -158,33 +156,33 @@ function fancyAlert(arg) {
 }
 ```
 
-## Tables
+## Tabellen
 
-You can create tables by assembling a list of words and dividing them with hyphens `-` (for the first row), and then separating each column with a pipe `|`:
+Du kannst Tabellen erstellen, indem du eine Liste von Wörtern zusammenstellst und sie mit Bindestrichen `-` (für die erste Zeile) trennst und dann jede Spalte mit einem Pipe `|` trennst:
 
 ```markdown
-| First Header                | Second Header                |
+| Erste Überschrift           | Zweite Überschrift           |
 | --------------------------- | ---------------------------- |
-| Content from cell 1         | Content from cell 2          |
-| Content in the first column | Content in the second column |
+| Inhalt aus Zelle 1          | Inhalt aus Zelle 2           |
+| Inhalt in der ersten Spalte | Inhalt in der zweiten Spalte |
 ```
 
-| First Header                | Second Header                |
+| Erste Überschrift           | Zweite Überschrift           |
 | --------------------------- | ---------------------------- |
-| Content from cell 1         | Content from cell 2          |
-| Content in the first column | Content in the second column |
+| Inhalt aus Zelle 1          | Inhalt aus Zelle 2           |
+| Inhalt in der ersten Spalte | Inhalt in der zweiten Spalte |
 
-## Diagrams
+## Diagramme
 
-You can use Mermaid diagrams to visualize flows, sequences, and other chart types directly in Markdown. Here’s an example of a Mermaid flowchart:
+Du kannst Mermaid-Diagramme verwenden, um Flüsse, Sequenzen und andere Diagrammtypen direkt in Markdown zu visualisieren. Hier ist ein Beispiel eines Mermaid-Flussdiagramms:
 
 ```mermaid
 graph TD
-    A[Start] --> B{Decision}
-    B -->|Yes| C[Do Something]
-    B -->|No| D[Do Something Else]
-    C --> E[End]
+    A[Start] --> B{Entscheidung}
+    B -->|Ja| C[Mache etwas]
+    B -->|Nein| D[Mache etwas anderes]
+    C --> E[Ende]
     D --> E
 ```
 
-Rendered, this would create a flowchart where decisions lead to different paths. Mermaid also supports sequence diagrams, Gantt charts, class diagrams, and more. For the full range of possibilities, check out the Mermaid documentation: [https://mermaid-js.github.io/mermaid/](https://mermaid-js.github.io/mermaid/)
+Gerendert würde dies ein Flussdiagramm erstellen, bei dem Entscheidungen zu verschiedenen Pfaden führen. Mermaid unterstützt auch Sequenzdiagramme, Gantt-Charts, Klassendiagramme und mehr. Für die vollständige Palette der Möglichkeiten, schau dir die Mermaid-Dokumentation an: [https://mermaid-js.github.io/mermaid/](https://mermaid-js.github.io/mermaid/)

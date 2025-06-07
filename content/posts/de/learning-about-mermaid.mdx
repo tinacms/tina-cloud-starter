@@ -1,60 +1,58 @@
 ---
-title: Learning about Mermaid
+title: Mermaid kennen lernen
 heroImg: /uploads/posts/learning-about-mermaid.png
 excerpt: >
-  DEUTSCH Join me on my journey as I explore the powerful features of Mermaid for
-  creating diagrams and visualizations in markdown. Perfect for enhancing your
-  blog posts and documentation with clear, interactive graphics.
+  Begleite mich auf meiner Reise, während ich die mächtigen Funktionen von Mermaid für
+  die Erstellung von Diagrammen und Visualisierungen in Markdown erkunde. Perfekt, um deine
+  Blog-Beiträge und Dokumentation mit klaren, interaktiven Grafiken zu verbessern.
 author: content/authors/pedro.md
 date: 2025-01-13T07:00:00.000Z
 tags:
   - tag: content/tags/mermaid.mdx
 ---
 
-DEUTSCH
+TinaCMS wurde entwickelt, um Content-Ersteller mit einer intuitiven und flexiblen Bearbeitungserfahrung zu stärken, und unsere Markdown-Unterstützung ist keine Ausnahme. Ob du einen einfachen Blog oder eine komplexe Dokumentationsseite verwaltest, TinaCMS integriert Markdown nahtlos und kombiniert die Kraft strukturierter Inhalte mit der Einfachheit der Echtzeit-Bearbeitung. Von Überschriften und Links bis hin zu Bildern und benutzerdefinierter Syntax, TinaCMS sorgt dafür, dass deine Markdown-Dateien einfach zu verwalten und anzupassen sind, während du die vollständige Kontrolle über deine Inhalte behältst.
 
-TinaCMS is designed to empower content creators with an intuitive and flexible editing experience, and our markdown support is no exception. Whether you're managing a simple blog or a complex documentation site, TinaCMS seamlessly integrates markdown, combining the power of structured content with the ease of real-time editing. From headings and links to images and custom syntax, TinaCMS ensures your markdown files are easy to manage and customize while maintaining complete control over your content.
+## Flussdiagramme
 
-## Flowcharts
-
-Use a flowchart to visualize processes, decision trees, or workflows. It’s ideal for simplifying complex systems or explaining logic visually.
+Verwende ein Flussdiagramm, um Prozesse, Entscheidungsbäume oder Arbeitsabläufe zu visualisieren. Es ist ideal, um komplexe Systeme zu vereinfachen oder Logik visuell zu erklären.
 
 ```mermaid
 flowchart TD
-    A(Napoleon's Aspirations) --> B{Skills Needed?}
-    B -->|"Nunchuck Skills"| C[Nunchucks Training]
-    B -->|Computer Hacking Skills| D[Hacking Practice]
-    B -->|Bow Hunting Skills| E[Archery Club]
-    C --> F[Become a Martial Arts Master]
-    D --> G[Create the Ultimate Chat Program]
-    E --> H[Win a Hunting Trophy]
-    F --> I{Impress Girls?}
+    A(Napoleon's Aspirationen) --> B{Benötigte Fähigkeiten?}
+    B -->|"Nunchaku-Fähigkeiten"| C[Nunchaku-Training]
+    B -->|Computer-Hacking-Fähigkeiten| D[Hacking-Praxis]
+    B -->|Bogenjagd-Fähigkeiten| E[Bogenschützen-Club]
+    C --> F[Werde ein Kampfkunst-Meister]
+    D --> G[Erstelle das ultimative Chat-Programm]
+    E --> H[Gewinne eine Jagd-Trophäe]
+    F --> I{Mädchen beeindrucken?}
     G --> I
     H --> I
-    I -->|Yes| J[Date Deb]
-    I -->|No| K[Draw Ligers]
-    K --> L[Become Awesome Anyway]
+    I -->|Ja| J[Date mit Deb]
+    I -->|Nein| K[Zeichne Liger]
+    K --> L[Werde trotzdem großartig]
 ```
 
-## Sequence Diagram
+## Sequenzdiagramm
 
-Use a sequence diagram to illustrate interactions between components or systems over time, particularly for APIs, workflows, or system interactions.
+Verwende ein Sequenzdiagramm, um Interaktionen zwischen Komponenten oder Systemen über die Zeit zu veranschaulichen, besonders für APIs, Arbeitsabläufe oder Systeminteraktionen.
 
 ```mermaid
 sequenceDiagram
     participant Frodo
     participant Sam
     participant Ring
-    Frodo->>Sam: "We need to destroy it."
-    Sam->>Ring: Carries the burden
-    Ring-->>Sam: "It's too heavy!"
-    Sam-->>Frodo: "I can't carry it, but I can carry you!"
-    Frodo-->>Ring: Throws it into Mount Doom
+    Frodo->>Sam: "Wir müssen ihn zerstören."
+    Sam->>Ring: Trägt die Last
+    Ring-->>Sam: "Es ist zu schwer!"
+    Sam-->>Frodo: "Ich kann ihn nicht tragen, aber ich kann dich tragen!"
+    Frodo-->>Ring: Wirft ihn in den Schicksalsberg
 ```
 
-## Class Diagram
+## Klassendiagramm
 
-Use a class diagram for object-oriented system design, showing the structure of classes, attributes, and their relationships.
+Verwende ein Klassendiagramm für objektorientiertes Systemdesign, das die Struktur von Klassen, Attributen und ihren Beziehungen zeigt.
 
 ```mermaid
 classDiagram
@@ -71,23 +69,23 @@ classDiagram
     Jedi <|-- Sith
 ```
 
-## State Diagram
+## Zustandsdiagramm
 
-Use a state diagram to represent different states of a system or object and transitions between those states.
+Verwende ein Zustandsdiagramm, um verschiedene Zustände eines Systems oder Objekts und Übergänge zwischen diesen Zuständen darzustellen.
 
 ```mermaid
 stateDiagram-v2
     [*] --> TheShire
-    TheShire --> Rivendell: Begin the journey
-    Rivendell --> Moria: Pass through the mines
-    Moria --> Gondor: Battle forces of evil
-    Gondor --> Mordor: Approach Mount Doom
-    Mordor --> [*]: Mission complete
+    TheShire --> Rivendell: Beginne die Reise
+    Rivendell --> Moria: Durchquere die Minen
+    Moria --> Gondor: Kämpfe gegen die Mächte des Bösen
+    Gondor --> Mordor: Nähere dich dem Schicksalsberg
+    Mordor --> [*]: Mission abgeschlossen
 ```
 
-## Entity Relationship Diagram
+## Entity-Relationship-Diagramm
 
-Use an ER diagram to model database structures, showing entities, attributes, and relationships.
+Verwende ein ER-Diagramm, um Datenbankstrukturen zu modellieren und Entitäten, Attribute und Beziehungen zu zeigen.
 
 ```mermaid
 erDiagram
@@ -109,45 +107,45 @@ erDiagram
 
 ## User Journey
 
-Use a user journey diagram to track user interactions with your product or service and identify pain points or areas for improvement.
+Verwende ein User-Journey-Diagramm, um Benutzerinteraktionen mit deinem Produkt oder Service zu verfolgen und Schmerzpunkte oder Verbesserungsbereiche zu identifizieren.
 
 ```mermaid
 journey
     title Star Wars User Journey
-    section Discover
-      Learn the Force: 5: Luke
-      Train with Yoda: 4: Luke
-    section Conflict
-      Face Vader: 5: Luke
-      Resist the Dark Side: 5: Luke
+    section Entdecken
+      Lerne die Macht: 5: Luke
+      Trainiere mit Yoda: 4: Luke
+    section Konflikt
+      Stelle dich Vader: 5: Luke
+      Widerstehe der dunklen Seite: 5: Luke
     section Triumph
-      Redeem Vader: 4: Luke
-      Save the Galaxy: 5: Luke
+      Erlöse Vader: 4: Luke
+      Rette die Galaxie: 5: Luke
 ```
 
-## Gantt Chart
+## Gantt-Diagramm
 
-Use a Gantt chart to visualize timelines and project schedules, tracking progress and dependencies.
+Verwende ein Gantt-Diagramm, um Zeitpläne und Projektpläne zu visualisieren, Fortschritte und Abhängigkeiten zu verfolgen.
 
 ```mermaid
 gantt
-    title Build the Death Star
+    title Baue den Todesstern
     dateFormat  YYYY-MM-DD
-    section Planning
-    Acquire Funds        :done, a1, 2025-01-01, 2025-01-15
-    Blueprints Approval  :active, a2, 2025-01-16, 2025-01-30
-    section Construction
-    Build Core Structure :b1, 2025-02-01, 2025-03-31
-    Install Laser Cannon :b2, 2025-04-01, 2025-06-30
+    section Planung
+    Mittel beschaffen       :done, a1, 2025-01-01, 2025-01-15
+    Bauplan-Genehmigung     :active, a2, 2025-01-16, 2025-01-30
+    section Konstruktion
+    Baue Kernstruktur      :b1, 2025-02-01, 2025-03-31
+    Installiere Laserkanone :b2, 2025-04-01, 2025-06-30
 ```
 
-## Pie Chart
+## Kreisdiagramm
 
-Use a pie chart to represent data proportions visually, such as resource allocation or survey results.
+Verwende ein Kreisdiagramm, um Datenproportionen visuell darzustellen, wie Ressourcenverteilung oder Umfrageergebnisse.
 
 ```mermaid
 pie
-    title Avengers Assemble
+    title Avengers versammeln sich
     "Iron Man" : 25
     "Thor" : 20
     "Hulk" : 15
@@ -155,37 +153,37 @@ pie
     "Black Widow" : 10
 ```
 
-## Quadrant Chart
+## Quadranten-Diagramm
 
-Use a quadrant chart to prioritize tasks or visualize elements across two dimensions.
+Verwende ein Quadranten-Diagramm, um Aufgaben zu priorisieren oder Elemente entlang zweier Dimensionen zu visualisieren.
 
 ```mermaid
 quadrantChart
-    title Reach and engagement of campaigns
-    x-axis Low Reach --> High Reach
-    y-axis Low Engagement --> High Engagement
-    quadrant-1 We should expand
-    quadrant-2 Need to promote
-    quadrant-3 Re-evaluate
-    quadrant-4 May be improved
-    Campaign A: [0.3, 0.6]
-    Campaign B: [0.45, 0.23]
-    Campaign C: [0.57, 0.69]
-    Campaign D: [0.78, 0.34]
-    Campaign E: [0.40, 0.34]
-    Campaign F: [0.35, 0.78]
+    title Reichweite und Engagement von Kampagnen
+    x-axis Geringe Reichweite --> Hohe Reichweite
+    y-axis Geringes Engagement --> Hohes Engagement
+    quadrant-1 Wir sollten expandieren
+    quadrant-2 Muss beworben werden
+    quadrant-3 Neu bewerten
+    quadrant-4 Kann verbessert werden
+    Kampagne A: [0.3, 0.6]
+    Kampagne B: [0.45, 0.23]
+    Kampagne C: [0.57, 0.69]
+    Kampagne D: [0.78, 0.34]
+    Kampagne E: [0.40, 0.34]
+    Kampagne F: [0.35, 0.78]
 ```
 
-## Requirement Diagram
+## Requirements-Diagramm
 
-Use a requirement diagram to track project requirements and their relationships.
+Verwende ein Requirements-Diagramm, um Projektanforderungen und ihre Beziehungen zu verfolgen.
 
 ```mermaid
     requirementDiagram
 
     requirement test_req {
     id: 1
-    text: the test text.
+    text: der Test-Text.
     risk: high
     verifymethod: test
     }
@@ -197,9 +195,9 @@ Use a requirement diagram to track project requirements and their relationships.
     test_entity - satisfies -> test_req
 ```
 
-## Gitgraph (Git) Diagram
+## Gitgraph (Git) Diagramm
 
-Use a Gitgraph diagram to visualize Git workflows and branching strategies.
+Verwende ein Gitgraph-Diagramm, um Git-Workflows und Branching-Strategien zu visualisieren.
 
 ```mermaid
 gitGraph
@@ -215,45 +213,45 @@ gitGraph
     merge hotfix
 ```
 
-## C4 Diagram
+## C4-Diagramm
 
-Use a C4 diagram for software architecture, showing system contexts, containers, components, and code.
+Verwende ein C4-Diagramm für Software-Architektur, das Systemkontexte, Container, Komponenten und Code zeigt.
 
 ```mermaid
     C4Context
-      title System Context diagram for Internet Banking System
+      title System Context Diagramm für Internet Banking System
       Enterprise_Boundary(b0, "BankBoundary0") {
-        Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
-        Person(customerB, "Banking Customer B")
-        Person_Ext(customerC, "Banking Customer C", "desc")
+        Person(customerA, "Bank-Kunde A", "Ein Kunde der Bank mit persönlichen Bankkonten.")
+        Person(customerB, "Bank-Kunde B")
+        Person_Ext(customerC, "Bank-Kunde C", "desc")
 
-        Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
+        Person(customerD, "Bank-Kunde D", "Ein Kunde der Bank, <br/> mit persönlichen Bankkonten.")
 
-        System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+        System(SystemAA, "Internet Banking System", "Ermöglicht es Kunden, Informationen über ihre Bankkonten einzusehen und Zahlungen zu tätigen.")
 
         Enterprise_Boundary(b1, "BankBoundary") {
 
-          SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+          SystemDb_Ext(SystemE, "Mainframe Banking System", "Speichert alle wichtigen Bankinformationen über Kunden, Konten, Transaktionen, etc.")
 
           System_Boundary(b2, "BankBoundary2") {
             System(SystemA, "Banking System A")
-            System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts. next line.")
+            System(SystemB, "Banking System B", "Ein System der Bank mit persönlichen Bankkonten. nächste Zeile.")
           }
 
-          System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-          SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
+          System_Ext(SystemC, "E-Mail-System", "Das interne Microsoft Exchange E-Mail-System.")
+          SystemDb(SystemD, "Banking System D Datenbank", "Ein System der Bank mit persönlichen Bankkonten.")
 
           Boundary(b3, "BankBoundary3", "boundary") {
-            SystemQueue(SystemF, "Banking System F Queue", "A system of the bank.")
-            SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
+            SystemQueue(SystemF, "Banking System F Queue", "Ein System der Bank.")
+            SystemQueue_Ext(SystemG, "Banking System G Queue", "Ein System der Bank mit persönlichen Bankkonten.")
           }
         }
       }
 
-      BiRel(customerA, SystemAA, "Uses")
-      BiRel(SystemAA, SystemE, "Uses")
-      Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
-      Rel(SystemC, customerA, "Sends e-mails to")
+      BiRel(customerA, SystemAA, "Verwendet")
+      BiRel(SystemAA, SystemE, "Verwendet")
+      Rel(SystemAA, SystemC, "Sendet E-Mails", "SMTP")
+      Rel(SystemC, customerA, "Sendet E-Mails an")
 
       UpdateElementStyle(customerA, $fontColor="red", $bgColor="grey", $borderColor="red")
       UpdateRelStyle(customerA, SystemAA, $textColor="blue", $lineColor="blue", $offsetX="5")
@@ -266,45 +264,45 @@ Use a C4 diagram for software architecture, showing system contexts, containers,
 
 ## Mindmaps
 
-Use a mindmap to brainstorm ideas or visually organize information hierarchically.
+Verwende eine Mindmap, um Ideen zu sammeln oder Informationen hierarchisch visuell zu organisieren.
 
 ```mermaid
 mindmap
   root((mindmap))
-    Origins
-      Long history
+    Ursprünge
+      Lange Geschichte
       ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
+      Popularisierung
+        Britischer populärpsychologischer Autor Tony Buzan
+    Forschung
+      Über Wirksamkeit<br/>und Eigenschaften
+      Über automatische Erstellung
+        Verwendungen
+            Kreative Techniken
+            Strategische Planung
+            Argument-Mapping
+    Werkzeuge
+      Stift und Papier
       Mermaid
 ```
 
 ## Timeline
 
-Use a timeline to show events chronologically, such as milestones or historical data.
+Verwende eine Timeline, um Ereignisse chronologisch zu zeigen, wie Meilensteine oder historische Daten.
 
 ```mermaid
 timeline
     title Harry Potter Timeline
-    1991 : Harry starts Hogwarts
-    1992 : Chamber of Secrets opened
-    1993 : Sirius Black escapes Azkaban
-    1994 : Triwizard Tournament
-    1998 : Battle of Hogwarts
+    1991 : Harry beginnt in Hogwarts
+    1992 : Kammer des Schreckens geöffnet
+    1993 : Sirius Black entkommt aus Askaban
+    1994 : Trimagisches Turnier
+    1998 : Schlacht von Hogwarts
 ```
 
-## Sankey Diagram
+## Sankey-Diagramm
 
-Use a Sankey diagram to show the flow of resources, energy, or data between stages.
+Verwende ein Sankey-Diagramm, um den Fluss von Ressourcen, Energie oder Daten zwischen Stufen zu zeigen.
 
 ```mermaid
 ---
@@ -384,24 +382,24 @@ Wave,Electricity grid,19.013
 Wind,Electricity grid,289.366
 ```
 
-## XY Chart
+## XY-Diagramm
 
-Use an XY chart to compare data points across two dimensions, such as performance vs. cost.
+Verwende ein XY-Diagramm, um Datenpunkte entlang zweier Dimensionen zu vergleichen, wie Leistung vs. Kosten.
 
 ```mermaid
 xychart-beta
-    title "Sales Revenue"
-    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-    y-axis "Revenue (in $)" 4000 --> 11000
+    title "Verkaufserlös"
+    x-axis [jan, feb, mär, apr, mai, jun, jul, aug, sep, okt, nov, dez]
+    y-axis "Erlös (in $)" 4000 --> 11000
     bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
     line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 
 ```
 
-## Packet Diagram
+## Packet-Diagramm
 
-When to use:
-Use a packet diagram to describe network communications and data flows.
+Wann verwenden:
+Verwende ein Packet-Diagramm, um Netzwerkkommunikation und Datenflüsse zu beschreiben.
 
 ```mermaid
 packet-beta
@@ -426,29 +424,29 @@ packet-beta
 
 ## Kanban
 
-Use a Kanban board to visualize work items and their statuses in workflows.
+Verwende ein Kanban-Board, um Arbeitselemente und ihre Status in Arbeitsabläufen zu visualisieren.
 
 ```mermaid
 kanban
   Todo
-    [Create Documentation]
-    docs[Create Blog about the new diagram]
-  [In progress]
-    id6[Create renderer so that it works in all cases. We also add som extra text here for testing purposes. And some more just for the extra flare.]
-  id9[Ready for deploy]
-    id8[Design grammar]@{ assigned: 'knsv' }
-  id10[Ready for test]
-    id4[Create parsing tests]@{ ticket: MC-2038, assigned: 'K.Sveidqvist', priority: 'High' }
-    id66[last item]@{ priority: 'Very Low', assigned: 'knsv' }
+    [Dokumentation erstellen]
+    docs[Blog über das neue Diagramm erstellen]
+  [In Bearbeitung]
+    id6[Renderer erstellen, damit er in allen Fällen funktioniert. Wir fügen auch etwas zusätzlichen Text zum Testen hinzu. Und noch etwas mehr für den extra Glanz.]
+  id9[Bereit für Deployment]
+    id8[Grammatik entwerfen]@{ assigned: 'knsv' }
+  id10[Bereit für Test]
+    id4[Parsing-Tests erstellen]@{ ticket: MC-2038, assigned: 'K.Sveidqvist', priority: 'High' }
+    id66[letztes Element]@{ priority: 'Very Low', assigned: 'knsv' }
 ```
 
-## Architecture Diagram
+## Architektur-Diagramm
 
-Use an architecture diagram to represent high-level system components and their interactions.
+Verwende ein Architektur-Diagramm, um hochrangige Systemkomponenten und ihre Interaktionen darzustellen.
 
 ```mermaid
 flowchart LR
-    User --> StarkServer[Iron Man's AI Server]
-    StarkServer --> Database[Mission Logs]
+    User --> StarkServer[Iron Mans AI-Server]
+    StarkServer --> Database[Missions-Logs]
     StarkServer --> AIModel[Jarvis AI]
 ```

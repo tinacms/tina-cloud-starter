@@ -1,19 +1,17 @@
 ---
-title: Learning about components
+title: Über Komponenten lernen
 heroImg: /uploads/posts/learning-about-components.png
 excerpt: >
-  DEUTSCH Markdown is simple, but sometimes you need more than just text. Learn how to
-  enhance your content with dynamic components like interactive elements, custom
-  queries, and styled callouts.
+  Markdown ist einfach, aber manchmal braucht man mehr als nur Text. Erfahren Sie, wie Sie
+  Ihren Inhalt mit dynamischen Komponenten wie interaktiven Elementen, benutzerdefinierten
+  Abfragen und gestalteten Callouts erweitern können.
 author: content/authors/napoleon.md
 date: 2021-07-15T07:00:00.000Z
 ---
 
-DEUTSCH
+## Markdown, Aber Besser
 
-## Markdown, But Better
-
-Hello, the current date is <DateTime format="local" />. Markdown is great for writing content, but what if you need something more interactive? What if you want to pull in dynamic data, display formatted callouts, or collect user input? That's where components come in.
+Hallo, das aktuelle Datum ist <DateTime format="local" />. Markdown ist großartig zum Schreiben von Inhalten, aber was ist, wenn Sie etwas Interaktiveres benötigen? Was ist, wenn Sie dynamische Daten abrufen, formatierte Callouts anzeigen oder Benutzereingaben sammeln möchten? Hier kommen Komponenten ins Spiel.
 
 ---
 
@@ -25,40 +23,41 @@ query MyQuery($relativePath: String!) {
 }
 ```
 
-> With components, your Markdown content isn't just static text—it becomes a dynamic experience. You can fetch data, format content beautifully, and even build interactive elements directly inside your posts.
+> Mit Komponenten ist Ihr Markdown-Inhalt nicht nur statischer Text—er wird zu einer dynamischen Erfahrung. Sie können Daten abrufen, Inhalte schön formatieren und sogar interaktive Elemente direkt in Ihre Beiträge einbauen.
 
-![Enhancing Markdown with Components](/uploads/unsplash-75EFpyXu3Wg.jpg)
+![Markdown mit Komponenten erweitern](/uploads/unsplash-75EFpyXu3Wg.jpg)
 
-Let's break down a few examples of how components can improve your Markdown-based content.
+Lassen Sie uns einige Beispiele aufschlüsseln, wie Komponenten Ihre Markdown-basierten Inhalte verbessern können.
 
 <NewsletterSignup
-  placeholder="Enter your email"
-  buttonText="Notify Me"
+  placeholder="Geben Sie Ihre E-Mail ein"
+  buttonText="Benachrichtigen Sie mich"
   disclaimer={<>
-    We care about the protection of your data. Read our [Privacy Policy](http://example.com).
+    Wir kümmern uns um den Schutz Ihrer Daten. Lesen Sie unsere [Datenschutzrichtlinie](http://example.com).
   </>}
 >
-  ## Stay Updated!
+  ## Bleiben Sie auf dem Laufenden!
 
-Want to learn more about using components? Sign up to get the latest tips and tricks straight to your inbox.
+Möchten Sie mehr über die Verwendung von Komponenten erfahren? Melden Sie sich an, um die neuesten Tipps und Tricks direkt in Ihr Postfach zu bekommen.
 
 </NewsletterSignup>
 
-## Why Use Components in Markdown?
+## Warum Komponenten in Markdown verwenden?
 
-- **Keep Content Dynamic** - Pull in real-time data instead of static text.
-- **Improve Readability** - Use structured callouts, buttons, and forms.
-- **Enhance User Interaction** - Let users take action directly in the content.
+- **Inhalt dynamisch halten** - Echtzeitdaten statt statischen Text abrufen.
+- **Lesbarkeit verbessern** - Strukturierte Callouts, Buttons und Formulare verwenden.
+- **Benutzerinteraktion erweitern** - Benutzer können direkt im Inhalt handeln.
 
-## More Ways to Use Components
+## Weitere Möglichkeiten, Komponenten zu verwenden
 
-1. **Embed GraphQL Queries** - Fetch and display content dynamically.
-2. **Use Styled Callouts** - Highlight key points with visually distinct elements.
-3. **Create Interactive Forms** - Let users sign up, submit data, or engage with your content.
+1. **GraphQL-Abfragen einbetten** - Inhalte dynamisch abrufen und anzeigen.
+2. **Gestaltete Callouts verwenden** - Wichtige Punkte mit visuell unterschiedlichen Elementen hervorheben.
+3. **Interaktive Formulare erstellen** - Benutzer können sich anmelden, Daten übermitteln oder mit Ihren Inhalten interagieren.
 
 ---
 
 <BlockQuote authorName="Uncle Rico AI">
-  Back in '82, I could code Markdown blindfolded. If I had these components back
-  then, I'd be running the biggest blog on the internet, no doubt.
+  Damals in '82 konnte ich Markdown mit verbundenen Augen programmieren. Wenn
+  ich diese Komponenten damals gehabt hätte, würde ich den größten Blog im
+  Internet betreiben, ohne Zweifel.
 </BlockQuote>
