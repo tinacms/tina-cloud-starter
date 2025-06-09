@@ -73,14 +73,14 @@ app / [locale] / posts / [...urlSegments] / page.tsx;
 - Created routing configuration to define supported locales and default locale.
 
 ```ts
-import { defineRouting } from 'next-intl/routing';
+import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ['en', 'de'],
+  locales: ["en", "de"],
 
   // Used when no locale matches
-  defaultLocale: 'en',
+  defaultLocale: "en",
 });
 ```
 
@@ -90,8 +90,8 @@ export const routing = defineRouting({
 - Added navigation utilities to facilitate locale-aware navigation.
 
 ```ts
-import { createNavigation } from 'next-intl/navigation';
-import { routing } from './routing';
+import { createNavigation } from "next-intl/navigation";
+import { routing } from "./routing";
 
 // Lightweight wrappers around Next.js' navigation
 // APIs that consider the routing configuration
@@ -105,8 +105,8 @@ export const { Link, redirect, usePathname, useRouter, getPathname } =
   In **middleware.ts** add admin:
 
 ```ts
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
 export default createMiddleware(routing);
 
@@ -116,7 +116,7 @@ export const config = {
   // - … the ones containing a dot (e.g. `favicon.ico`)
 
   // - … `/admin` paths (for Tina CMS)
-  matcher: '/((?!api|trpc|_next|_vercel|admin|.*\\..*).*)',
+  matcher: "/((?!api|trpc|_next|_vercel|admin|.*\\..*).*)",
 };
 ```
 
@@ -127,9 +127,9 @@ export const config = {
 - Implemented request configuration to manage locale and message loading based on user requests.
 
 ```ts
-import { getRequestConfig } from 'next-intl/server';
-import { hasLocale } from 'next-intl';
-import { routing } from './routing';
+import { getRequestConfig } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { routing } from "./routing";
 
 export default getRequestConfig(async ({ requestLocale }) => {
   // Typically corresponds to the `[locale]` segment
@@ -508,6 +508,135 @@ import { getLocale } from 'next-intl/server';
       }
     ]
 ```
+
+### Add a Locale Switcher
+
+- Add language switcher with flag icons (🇩🇪/🇺🇸) before site name
+- Place language switcher and site name at bottom of mobile menu
+- Integrate with existing next-intl setup
+- Example site: https://next-intl-example-app-router.vercel.app
+- Based on https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/
+
+**components/layout/nav/LocaleSwitcher.tsx**
+
+```ts
+import { useLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
+import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
+
+export default function LocaleSwitcher() {
+  const t = useTranslations("LocaleSwitcher");
+  const locale = useLocale();
+
+  return (
+    <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
+      {routing.locales.map((cur) => (
+        <option key={cur} value={cur}>
+          {t("locale", { locale: cur })}
+        </option>
+      ))}
+    </LocaleSwitcherSelect>
+  );
+}
+```
+
+**components/layout/nav/LocaleSwitcherSelect.tsx**
+
+```ts
+"use client";
+
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
+import { ChangeEvent, ReactNode, useTransition } from "react";
+
+type Props = {
+  children: ReactNode;
+  defaultValue: string;
+  label: string;
+};
+
+export default function LocaleSwitcherSelect({
+  children,
+  defaultValue,
+  label,
+}: Props) {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+  const params = useParams();
+
+  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
+    const nextLocale = event.target.value;
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error
+        { pathname, params },
+        { locale: nextLocale }
+      );
+    });
+  }
+
+  return (
+    <label className="relative text-sm text-muted-foreground">
+      <p className="sr-only">{label}</p>
+      <select
+        className="inline-flex appearance-none bg-transparent py-2 pl-2 pr-6 outline-none cursor-pointer"
+        defaultValue={defaultValue}
+        disabled={isPending}
+        onChange={onSelectChange}
+      >
+        {children}
+      </select>
+      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
+    </label>
+  );
+}
+```
+
+**components/layout/nav/header.tsx**
+
+```ts
+import LocaleSwitcher from "./LocaleSwitcher";
+...
+  {/* Right side: Language Switcher + Site Name */}
+  <div className="hidden lg:flex items-center gap-4 h-full">
+    <LocaleSwitcher />
+    <span className="text-sm font-medium text-muted-foreground">
+      |
+    </span>
+    <span className="text-sm font-medium">
+      {header.name}
+    </span>
+  </div>
+...
+  {/* Mobile Language Switcher & Site Name */}
+  <div className="flex items-center justify-between pt-4 border-t">
+    <LocaleSwitcher />
+    <span className="text-sm font-medium">
+      {header.name}
+    </span>
+  </div>
+```
+
+**messages/de.json**
+
+```
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+  },
+```
+
+**messages/en.json**
+
+```
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+  },
+```
+
+---
 
 ---
 
