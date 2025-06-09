@@ -3,5 +3,9 @@
       "title": "Seite nicht gefunden",
       "description": "Verloren, diese Seite ist. In einem anderen System könnte sie sein.",
       "link": "Zurück zur Startseite"
+    },
+    "LocaleSwitcher": {
+      "label": "Sprache ändern",
+      "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
     }
   }
