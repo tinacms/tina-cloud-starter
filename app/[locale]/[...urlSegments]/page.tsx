@@ -22,12 +22,6 @@ export default async function Page({
     notFound();
   }
 
-  // Skip blog posts routes - they should be handled by app/[locale]/posts
-  if (urlSegments[1] === 'posts') {
-    console.log('posts route skipped: ', urlSegments[1]);
-    notFound();
-  }
-
   // Enable static rendering
   setRequestLocale(locale);
 

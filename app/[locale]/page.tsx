@@ -18,14 +18,12 @@ export default async function Home({
     data = await client.queries.page({
       relativePath: `${locale}/home.mdx`,
     });
-    console.log("Locale specific home: ", data);
   } catch (error) {
     // Fallback to non-locale specific home
     try {
       data = await client.queries.page({
         relativePath: `home.mdx`,
       });
-      console.log("Fallback to non-locale specific home: ", data);
     } catch (fallbackError) {
       throw error; // Re-throw original error
     }
