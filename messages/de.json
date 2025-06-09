@@ -7,5 +7,9 @@
     "LocaleSwitcher": {
       "label": "Sprache ändern",
       "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+    },
+    "PostsList": {
+      "title": "Blog Beiträge",
+      "description": "Entdecken Sie die neuesten Erkenntnisse und Tutorials zu moderner Webentwicklung, UI-Design und Komponenten-basierten Architekturen."
     }
   }

@@ -13,6 +13,7 @@ import { ArrowRight, UserRound } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Section } from '@/components/layout/section';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useTranslations } from 'next-intl';
 
 interface ClientPostProps {
   data: PostConnectionQuery;
@@ -21,6 +22,7 @@ interface ClientPostProps {
 }
 
 export default function PostsClientPage(props: ClientPostProps) {
+  const t = useTranslations('PostsList');
   const posts = props.data?.postConnection.edges!.map((postData) => {
     const post = postData!.node!;
     const date = new Date(post.date!);
@@ -52,11 +54,10 @@ export default function PostsClientPage(props: ClientPostProps) {
         <div className="container flex flex-col items-center gap-16">
           <div className="text-center">
             <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
-              Blog Posts
+              {t('title')}
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
-              Discover the latest insights and tutorials about modern web
-              development, UI design, and component-driven architecture.
+                {t('description')}
             </p>
           </div>
 
