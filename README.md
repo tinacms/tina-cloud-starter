@@ -202,14 +202,12 @@ export default async function Home({
     data = await client.queries.page({
       relativePath: `${locale}/home.mdx`,
     });
-    console.log("Locale specific home: ", data);
   } catch (error) {
     // Fallback to non-locale specific home
     try {
       data = await client.queries.page({
         relativePath: `home.mdx`,
       });
-      console.log("Fallback to non-locale specific home: ", data);
     } catch (fallbackError) {
       throw error; // Re-throw original error
     }
@@ -255,12 +253,6 @@ import { setRequestLocale } from 'next-intl/server';
 
   // Validate locale
   if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  // Skip blog posts routes - they should be handled by app/[locale]/posts
-  if (urlSegments[1] === 'posts') {
-    console.log('posts route skipped: ', urlSegments[1]);
     notFound();
   }
 
