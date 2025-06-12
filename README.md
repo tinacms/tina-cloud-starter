@@ -1,7 +1,10 @@
-# Tina CMS Cloud Starter based Internationalized Site
+# Internationalized (i18n) version of Tina CMS Cloud Starter 
+## including language switcher and live editing
+
+### Instructions for next-intl
 
 - [App Router setup with i18n routing – Internationalization \(i18n\) for Next.js](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing)
-- Follow the 8 steps in the article adapted to the existing Tina CMS code
+- Follow the 8 steps in the documentation adapted to the existing Tina CMS code
 
 ### Install next-intl
 
