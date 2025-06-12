@@ -1,17 +1,21 @@
-# Tina CMS Cloud Starter based Internationalized Site
+# Internationalized (i18n) version of Tina CMS Cloud Starter 
+**including language switcher and live editing**
+
+## Instructions for next-intl integration
 
 - [App Router setup with i18n routing – Internationalization \(i18n\) for Next.js](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing)
-- Follow the 8 steps in the article adapted to the existing Tina CMS code
+- Follow the 8 steps from the next-intl documentation adapted to the existing Tina CMS code
+- Implement i18n support for pages, blog posts, navigation and locale switcher
 
-### Install next-intl
+### Install next-intl, add related files, reorganize files under `app/[locale]`
 
 ```
 pnpm install next-intl
 ```
 
-### 1. messages/en.json and de.json
+#### 1. Add `messages/en.json` and `de.json`
 
-- translations for the NotFound page
+- Translations for the NotFound page
 
 ```json
 {
@@ -23,14 +27,10 @@ pnpm install next-intl
 }
 ```
 
-### 2. next.config.ts
+#### 2. Modify `next.config.ts`
 
-#### decouple TinaCMS config from Next.js config dependency to prevent errors during TinaCMS build
-
-- Hardcode basePath as empty string (was always defaulting to this anyway)
+- Decouple TinaCMS config from Next.js config dependency to prevent errors during TinaCMS build
 - Enable next-intl plugin wrapper in next.config.ts without compatibility issues
-
-**next.config.ts**
 
 ```ts
 import createNextIntlPlugin from 'next-intl/plugin';
@@ -39,8 +39,9 @@ const withNextIntl = createNextIntlPlugin();
 export default withNextIntl(nextConfig);
 ```
 
-- Remove next.config import from tina/config.tsx to resolve import conflicts
-  Hardcode basePath as empty string **tina/config.tsx**
+#### Modify tina/config.tsx
+- Remove `import nextConfig from '../next.config'` to resolve conflicts
+- Hardcode basePath as empty string 
 
 ```ts
 ...
@@ -48,7 +49,7 @@ outputFolder: "admin", // within the public folder
 basePath: "", // Hardcoded - was always empty anyway! Changed due to error with next-intl.
 ```
 
-### Reorganize all pages and blog posts under app/[locale]
+#### Reorganize all pages and blog posts under `app/[locale]`
 
 ```ts
 app / [locale] / layout.tsx;
@@ -64,11 +65,11 @@ app / [locale] / posts / [...urlSegments] / client - page.tsx;
 app / [locale] / posts / [...urlSegments] / page.tsx;
 ```
 
-### Add internationalization middleware and routing configuration
+### Add internationalization middleware, routing configuration and adapt layout
 
-### 3. i18n/routing.ts
+#### 3. Add `i18n/routing.ts`
 
-- no changes
+- No changes
 - To share the configuration between navigation and middleware
 - Created routing configuration to define supported locales and default locale.
 
@@ -84,9 +85,9 @@ export const routing = defineRouting({
 });
 ```
 
-### 4. i18n/navigation.ts
+#### 4. Add `i18n/navigation.ts`
 
-- no changes
+- No changes
 - Added navigation utilities to facilitate locale-aware navigation.
 
 ```ts
@@ -99,10 +100,9 @@ export const { Link, redirect, usePathname, useRouter, getPathname } =
   createNavigation(routing);
 ```
 
-### 5. middleware.ts
+#### 5. Add `middleware.ts`
 
-- Introduced middleware for handling internationalization using next-intl.
-  In **middleware.ts** add admin:
+- Add `admin` to the exclusions
 
 ```ts
 import createMiddleware from "next-intl/middleware";
@@ -120,11 +120,10 @@ export const config = {
 };
 ```
 
-### 6. i18n/request.ts
+#### 6. Add `i18n/request.ts`
 
-- no changes
-- used to provide messages based on the user’s locale
-- Implemented request configuration to manage locale and message loading based on user requests.
+- No changes
+- Used to provide messages based on the user’s locale
 
 ```ts
 import { getRequestConfig } from "next-intl/server";
@@ -145,7 +144,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 });
 ```
 
-### 7. app/[locale]/layout.tsx
+#### 7. Modify `app/[locale]/layout.tsx`
 
 - Updated RootLayout to validate incoming locale
 
@@ -180,11 +179,11 @@ export default async function RootLayout({
         </VideoDialogProvider>
 ```
 
-### Implement internationalization support for home and about pages, as well as not found page
+### Implement internationalization support for pages
 
 - Modified Home and Page components to support locale-specific content retrieval with fallback mechanisms.
 
-### 8. support locale-specific content retrieval
+#### 8. Support locale-specific content retrieval
 
 **app/[locale]/page.tsx**
 
@@ -214,7 +213,7 @@ export default async function Home({
   }
 ```
 
-**app/[locale]/not-found.tsx**
+#### Modify `app/[locale]/not-found.tsx`
 
 - Enhanced NotFound component to utilize translations for dynamic content.
 
@@ -237,7 +236,7 @@ export default function NotFound() {
 
 ```
 
-### app/[locale]/[...urlSegments]/page.tsx
+#### Modify `app/[locale]/[...urlSegments]/page.tsx`
 
 - Integrated locale handling in URL segments.
 
@@ -278,12 +277,12 @@ import { setRequestLocale } from 'next-intl/server';
     }
 ```
 
-### Moved/translated text from content/pages/ to en/ and de/
+#### Moved and translated text from `content/pages/` to `/pages/locale/`
 
-**content/pages/en/home.mdx**
-**content/pages/en/about.mdx**
-**content/pages/de/home.mdx**
-**content/pages/de/about.mdx**
+- content/pages/en/home.mdx
+- content/pages/en/about.mdx
+- content/pages/de/home.mdx
+- content/pages/de/about.mdx
 
 ```yaml
 ---
@@ -291,9 +290,9 @@ blocks:
 ... (translated content)
 ```
 
-### Moved/translated text from posts/ to en/ and de/
+### Implement internationalization support for Blog Posts
 
-- Internationalized example blog posts
+#### Moved and translated posts from `content/posts/` to `/posts/locale/`
 
 ```ts
 content / posts / de / june / learning - about - tinacloud.mdx;
@@ -315,9 +314,8 @@ content / posts / en / learning - to - blog.mdx;
 
 - Add server-side filtering in posts page to show only locale-specific content
 - Filter posts by checking first breadcrumb segment against current locale
-- Update individual post page to handle locale parameter properly
 
-### Posts list: app/[locale]/posts/page.tsx
+#### Posts list: modify `app/[locale]/posts/page.tsx`
 
 - Filter posts list by locale
 
@@ -372,9 +370,9 @@ allPosts.data.postConnection.edges.push(
 ...
 ```
 
-### app/[locale]/posts/client-page.tsx
+#### Modify `app/[locale]/posts/client-page.tsx`
 
-Added `breadcrumbsWithoutLocale` to prevent duplicate locale in route: domain/de/posts/de/article
+- Added `breadcrumbsWithoutLocale` to prevent duplicate locale in route such as: `domain/de/posts/de/article`
 
 ```ts
 ...
@@ -387,9 +385,10 @@ Added `breadcrumbsWithoutLocale` to prevent duplicate locale in route: domain/de
 ...
 ```
 
-### Individual posts: app/[locale]/posts/[...urlSegments]/page.tsx
+#### Individual posts: modify `app/[locale]/posts/[...urlSegments]/page.tsx`
 
-- filepath with locale before article name: `content/posts/de/learning-to-blog.mdx`
+- Update individual post page to handle locale parameter properly
+- Filepath with locale before article name: `content/posts/de/learning-to-blog.mdx`
 
 ```ts
 ...
@@ -423,15 +422,16 @@ import { notFound } from 'next/navigation';
   urlSegments: edge?.node?._sys.breadcrumbs.slice(1),
 ```
 
-### Add internationalization support to Layout component with menu items sourced from global/index.json
+### Internationalize Navigation and Menu
 
-- first move and translate files into `content/global/de/index.json` and `content/global/en/index.json`
+- Add internationalization support to Layout component with menu items sourced from `global/index.json`
+- Translate and move files into `content/global/de/index.json` and `content/global/en/index.json`
 
-### components/layout/layout.tsx
+#### Modify `components/layout/layout.tsx`
 
 - Import getLocale from next-intl/server to detect current locale
 - Implement try-catch pattern to load locale-specific global content first
-- Add fallback to non-locale specific content for backward compatibility
+- Add fallback to non-locale specific content
 
 ```ts
 ...
@@ -480,9 +480,9 @@ import { getLocale } from 'next-intl/server';
 ...
 ```
 
-### content/global/de/index.json
+#### Add `content/global/de/index.json`
 
-- translated from content/global/en/index.json
+- Translated from content/global/en/index.json
 
 ```json
     "nav": [
@@ -506,10 +506,9 @@ import { getLocale } from 'next-intl/server';
 - Add language switcher with flag icons (🇩🇪/🇺🇸) before site name
 - Place language switcher and site name at bottom of mobile menu
 - Integrate with existing next-intl setup
-- Example site: https://next-intl-example-app-router.vercel.app
 - Based on https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/
 
-**components/layout/nav/LocaleSwitcher.tsx**
+#### Add `components/layout/nav/LocaleSwitcher.tsx`
 
 ```ts
 import { useLocale, useTranslations } from "next-intl";
@@ -532,7 +531,7 @@ export default function LocaleSwitcher() {
 }
 ```
 
-**components/layout/nav/LocaleSwitcherSelect.tsx**
+#### Add `components/layout/nav/LocaleSwitcherSelect.tsx`
 
 ```ts
 "use client";
@@ -585,7 +584,7 @@ export default function LocaleSwitcherSelect({
 }
 ```
 
-**components/layout/nav/header.tsx**
+#### Modify `components/layout/nav/header.tsx`
 
 ```ts
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -610,7 +609,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
   </div>
 ```
 
-**messages/de.json**
+#### Add `messages/de.json`
 
 ```
   "LocaleSwitcher": {
@@ -619,7 +618,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
   },
 ```
 
-**messages/en.json**
+#### Add `messages/en.json`
 
 ```
   "LocaleSwitcher": {
@@ -723,9 +722,7 @@ and is least likely to cause issues.
 
 ---
 
-# Tina Starter 🦙
-
-![tina-cloud-starter-demo](https://user-images.githubusercontent.com/103008/130587027-995ccc45-a852-4f90-b658-13e8e0517339.gif)
+# Tina Starter Readme 🦙
 
 This Next.js starter is powered by [TinaCMS](https://app.tina.io) for you and your team to visually live edit the structured content of your website. ✨
 
