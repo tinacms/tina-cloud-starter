@@ -6,3 +6,15 @@ onlyBuiltDependencies:
   - better-sqlite3
   - esbuild
   - sharp
+
+overrides:
+  #"yup": "0.32.11"
+  "yup": "1.6.1"
+  #"fs-extra": "9.1.0"
+  "fs-extra": "11.3.0"
+  "typescript": "5.8.3"
+
+peerDependencyRules:
+  allowedVersions:
+    react: "19"
+    react-dom: "19"

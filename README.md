@@ -628,6 +628,97 @@ import LocaleSwitcher from "./LocaleSwitcher";
   },
 ```
 
+## Update React 18.3 → 19.1
+
+Theoretically this should work without issues:
+- https://tina.io/blog/react-19-support
+
+### 1. Update TinaCMS first
+
+```
+pnpm add tinacms@latest @tinacms/cli@latest
+```
+
+### 2. Update React and related packages
+
+```
+pnpm add react@latest react-dom@latest @types/react@latest @types/react-dom@latest
+```
+
+- This causes numerous dependency warnings, for example:
+
+```
+ WARN  Issues with peer dependencies found
+├─┬ tinacms 2.7.8
+│ └─┬ @tinacms/mdx 1.6.3
+│   ├─┬ @tinacms/schema-tools 1.7.4
+│   │ └── ✕ unmet peer yup@^0.32.0: found 1.6.1
+│   └─┬ typedoc 0.26.11
+│     └── ✕ unmet peer typescript@5.6.3: found 5.8.3
+├─┬ @tinacms/cli 1.9.8
+│ └─┬ @tinacms/metrics 1.0.9
+│   └── ✕ unmet peer fs-extra@^9.0.1: found 11.3.0
+└─┬ next-intl 4.1.0
+  └── ✕ unmet peer typescript@5.6.3: found 5.8.3
+```
+
+### 3. Add the pnpm configuration
+
+- To override dependency versions and ignore React version warnings
+- Add this to `pnpm-workspace.yaml`:
+
+```yaml
+  #"yup": "0.32.11"
+  "yup": "1.6.1"
+  #"fs-extra": "9.1.0"
+  "fs-extra": "11.3.0"
+  "typescript": "5.8.3"
+
+peerDependencyRules:
+  allowedVersions:
+    react: "19"
+    react-dom: "19"
+```
+
+### 4. Add these to package.json
+
+Pin to the latest versions
+
+```
+json{
+  "dependencies": {
+    "yup": "^1.6.1",
+    "fs-extra": "^11.3.0",
+  }
+}
+```
+
+Alternatively pin to the old versions
+
+```
+json{
+  "dependencies": {
+    "yup": "0.32.11",
+    "fs-extra": "9.1.0",
+  }
+}
+```
+
+### 4. Clean install
+
+```sh
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+#### Note
+
+Some packages apparently required the older versions previously,
+therefore running these with the newer versions will need more testing.
+
+Moving typescript from 5.6.3 to 5.8.3 is only a minor version increase,
+and is least likely to cause issues.
+
 ---
 
 ---
@@ -658,13 +749,13 @@ Install the project's dependencies:
 > [!NOTE]  
 > [Do you know the best package manager for Node.js?](https://www.ssw.com.au/rules/best-package-manager-for-node/) Using the right package manager can greatly enhance your development workflow. We recommend using pnpm for its speed and efficient handling of dependencies. Learn more about why pnpm might be the best choice for your projects by checking out this rule from SSW.
 
-```
+```sh
 pnpm install
 ```
 
 Run the project locally:
 
-```
+```sh
 pnpm dev
 ```
 
