@@ -1,3 +1,5 @@
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/tina-cloud-starter-intl?name=Vercel)
+
 # Internationalized (i18n) version of Tina CMS Cloud Starter 
 **including language switcher and live editing**
 
