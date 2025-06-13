@@ -13,7 +13,9 @@ import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
 import HeroVideoDialog from '../ui/hero-video-dialog';
 import { cn } from '@/lib/utils';
-const transitionVariants = {
+import { Variants } from 'motion/react';
+
+const transitionVariants: { container: Variants; item: Variants } = {
   container: {
     visible: {
       transition: {
@@ -33,7 +35,7 @@ const transitionVariants = {
       filter: 'blur(0px)',
       y: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         bounce: 0.3,
         duration: 1.5,
       },

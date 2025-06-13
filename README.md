@@ -631,6 +631,8 @@ import LocaleSwitcher from "./LocaleSwitcher";
 
 Theoretically this should work without issues:
 - https://tina.io/blog/react-19-support
+- https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+- Codemods are not required
 
 ### 1. Update TinaCMS first
 
@@ -667,9 +669,7 @@ pnpm add react@latest react-dom@latest @types/react@latest @types/react-dom@late
 - Add this to `pnpm-workspace.yaml`:
 
 ```yaml
-  #"yup": "0.32.11"
   "yup": "1.6.1"
-  #"fs-extra": "9.1.0"
   "fs-extra": "11.3.0"
   "typescript": "5.8.3"
 
@@ -686,34 +686,24 @@ Pin to the latest versions
 ```
 json{
   "dependencies": {
-    "yup": "^1.6.1",
     "fs-extra": "^11.3.0",
+    "yup": "^1.6.1"
   }
 }
 ```
 
-Alternatively pin to the old versions
-
-```
-json{
-  "dependencies": {
-    "yup": "0.32.11",
-    "fs-extra": "9.1.0",
-  }
-}
-```
-
-### 4. Clean install
+### 4. Clean install and test build
 
 ```sh
 rm -rf node_modules pnpm-lock.yaml
 pnpm install
+pnpm build
 ```
 
 #### Note
 
 Some packages apparently required the older versions previously,
-therefore running these with the newer versions will need more testing.
+therefore running these with the newer versions may need more testing.
 
 Moving typescript from 5.6.3 to 5.8.3 is only a minor version increase,
 and is least likely to cause issues.
