@@ -1,0 +1,18 @@
+autoRunScripts: true
+
+onlyBuiltDependencies:
+  - "@biomejs/biome"
+  - "@tailwindcss/oxide"
+  - better-sqlite3
+  - esbuild
+  - sharp
+
+overrides:
+  "yup": "1.6.1"
+  "fs-extra": "11.3.0"
+  "typescript": "5.8.3"
+
+peerDependencyRules:
+  allowedVersions:
+    react: "19"
+    react-dom: "19"

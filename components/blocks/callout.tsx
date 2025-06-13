@@ -6,8 +6,9 @@ import { PageBlocksCallout } from "@/tina/__generated__/types";
 import { ArrowRight } from "lucide-react";
 import { AnimatedGroup } from "../motion-primitives/animated-group";
 import { Section, sectionBlockSchemaField } from '../layout/section';
+import { Variants } from 'motion/react';
 
-const transitionVariants = {
+const transitionVariants: { item: Variants } = {
     item: {
         hidden: {
             opacity: 0,
@@ -19,7 +20,7 @@ const transitionVariants = {
             filter: 'blur(0px)',
             y: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 bounce: 0.3,
                 duration: 1.5,
             },

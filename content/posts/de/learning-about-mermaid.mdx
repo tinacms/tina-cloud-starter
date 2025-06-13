@@ -1,0 +1,452 @@
+---
+title: Mermaid kennen lernen
+heroImg: /uploads/posts/learning-about-mermaid.png
+excerpt: >
+  Begleite mich auf meiner Reise, während ich die mächtigen Funktionen von Mermaid für
+  die Erstellung von Diagrammen und Visualisierungen in Markdown erkunde. Perfekt, um deine
+  Blog-Beiträge und Dokumentation mit klaren, interaktiven Grafiken zu verbessern.
+author: content/authors/pedro.md
+date: 2025-01-13T07:00:00.000Z
+tags:
+  - tag: content/tags/mermaid.mdx
+---
+
+TinaCMS wurde entwickelt, um Content-Ersteller mit einer intuitiven und flexiblen Bearbeitungserfahrung zu stärken, und unsere Markdown-Unterstützung ist keine Ausnahme. Ob du einen einfachen Blog oder eine komplexe Dokumentationsseite verwaltest, TinaCMS integriert Markdown nahtlos und kombiniert die Kraft strukturierter Inhalte mit der Einfachheit der Echtzeit-Bearbeitung. Von Überschriften und Links bis hin zu Bildern und benutzerdefinierter Syntax, TinaCMS sorgt dafür, dass deine Markdown-Dateien einfach zu verwalten und anzupassen sind, während du die vollständige Kontrolle über deine Inhalte behältst.
+
+## Flussdiagramme
+
+Verwende ein Flussdiagramm, um Prozesse, Entscheidungsbäume oder Arbeitsabläufe zu visualisieren. Es ist ideal, um komplexe Systeme zu vereinfachen oder Logik visuell zu erklären.
+
+```mermaid
+flowchart TD
+    A(Napoleon's Aspirationen) --> B{Benötigte Fähigkeiten?}
+    B -->|"Nunchaku-Fähigkeiten"| C[Nunchaku-Training]
+    B -->|Computer-Hacking-Fähigkeiten| D[Hacking-Praxis]
+    B -->|Bogenjagd-Fähigkeiten| E[Bogenschützen-Club]
+    C --> F[Werde ein Kampfkunst-Meister]
+    D --> G[Erstelle das ultimative Chat-Programm]
+    E --> H[Gewinne eine Jagd-Trophäe]
+    F --> I{Mädchen beeindrucken?}
+    G --> I
+    H --> I
+    I -->|Ja| J[Date mit Deb]
+    I -->|Nein| K[Zeichne Liger]
+    K --> L[Werde trotzdem großartig]
+```
+
+## Sequenzdiagramm
+
+Verwende ein Sequenzdiagramm, um Interaktionen zwischen Komponenten oder Systemen über die Zeit zu veranschaulichen, besonders für APIs, Arbeitsabläufe oder Systeminteraktionen.
+
+```mermaid
+sequenceDiagram
+    participant Frodo
+    participant Sam
+    participant Ring
+    Frodo->>Sam: "Wir müssen ihn zerstören."
+    Sam->>Ring: Trägt die Last
+    Ring-->>Sam: "Es ist zu schwer!"
+    Sam-->>Frodo: "Ich kann ihn nicht tragen, aber ich kann dich tragen!"
+    Frodo-->>Ring: Wirft ihn in den Schicksalsberg
+```
+
+## Klassendiagramm
+
+Verwende ein Klassendiagramm für objektorientiertes Systemdesign, das die Struktur von Klassen, Attributen und ihren Beziehungen zeigt.
+
+```mermaid
+classDiagram
+    class Jedi {
+        +String name
+        +String lightsaberColor
+        +useForce()
+    }
+    class Sith {
+        +String name
+        +String lightsaberColor
+        +useDarkSide()
+    }
+    Jedi <|-- Sith
+```
+
+## Zustandsdiagramm
+
+Verwende ein Zustandsdiagramm, um verschiedene Zustände eines Systems oder Objekts und Übergänge zwischen diesen Zuständen darzustellen.
+
+```mermaid
+stateDiagram-v2
+    [*] --> TheShire
+    TheShire --> Rivendell: Beginne die Reise
+    Rivendell --> Moria: Durchquere die Minen
+    Moria --> Gondor: Kämpfe gegen die Mächte des Bösen
+    Gondor --> Mordor: Nähere dich dem Schicksalsberg
+    Mordor --> [*]: Mission abgeschlossen
+```
+
+## Entity-Relationship-Diagramm
+
+Verwende ein ER-Diagramm, um Datenbankstrukturen zu modellieren und Entitäten, Attribute und Beziehungen zu zeigen.
+
+```mermaid
+erDiagram
+    AVENGER ||--o{ MISSION : participates
+    MISSION ||--|{ ENEMY : targets
+    AVENGER {
+        string name
+        string superPower
+    }
+    MISSION {
+        int id
+        string location
+    }
+    ENEMY {
+        string name
+        string weakness
+    }
+```
+
+## User Journey
+
+Verwende ein User-Journey-Diagramm, um Benutzerinteraktionen mit deinem Produkt oder Service zu verfolgen und Schmerzpunkte oder Verbesserungsbereiche zu identifizieren.
+
+```mermaid
+journey
+    title Star Wars User Journey
+    section Entdecken
+      Lerne die Macht: 5: Luke
+      Trainiere mit Yoda: 4: Luke
+    section Konflikt
+      Stelle dich Vader: 5: Luke
+      Widerstehe der dunklen Seite: 5: Luke
+    section Triumph
+      Erlöse Vader: 4: Luke
+      Rette die Galaxie: 5: Luke
+```
+
+## Gantt-Diagramm
+
+Verwende ein Gantt-Diagramm, um Zeitpläne und Projektpläne zu visualisieren, Fortschritte und Abhängigkeiten zu verfolgen.
+
+```mermaid
+gantt
+    title Baue den Todesstern
+    dateFormat  YYYY-MM-DD
+    section Planung
+    Mittel beschaffen       :done, a1, 2025-01-01, 2025-01-15
+    Bauplan-Genehmigung     :active, a2, 2025-01-16, 2025-01-30
+    section Konstruktion
+    Baue Kernstruktur      :b1, 2025-02-01, 2025-03-31
+    Installiere Laserkanone :b2, 2025-04-01, 2025-06-30
+```
+
+## Kreisdiagramm
+
+Verwende ein Kreisdiagramm, um Datenproportionen visuell darzustellen, wie Ressourcenverteilung oder Umfrageergebnisse.
+
+```mermaid
+pie
+    title Avengers versammeln sich
+    "Iron Man" : 25
+    "Thor" : 20
+    "Hulk" : 15
+    "Captain America" : 30
+    "Black Widow" : 10
+```
+
+## Quadranten-Diagramm
+
+Verwende ein Quadranten-Diagramm, um Aufgaben zu priorisieren oder Elemente entlang zweier Dimensionen zu visualisieren.
+
+```mermaid
+quadrantChart
+    title Reichweite und Engagement von Kampagnen
+    x-axis Geringe Reichweite --> Hohe Reichweite
+    y-axis Geringes Engagement --> Hohes Engagement
+    quadrant-1 Wir sollten expandieren
+    quadrant-2 Muss beworben werden
+    quadrant-3 Neu bewerten
+    quadrant-4 Kann verbessert werden
+    Kampagne A: [0.3, 0.6]
+    Kampagne B: [0.45, 0.23]
+    Kampagne C: [0.57, 0.69]
+    Kampagne D: [0.78, 0.34]
+    Kampagne E: [0.40, 0.34]
+    Kampagne F: [0.35, 0.78]
+```
+
+## Requirements-Diagramm
+
+Verwende ein Requirements-Diagramm, um Projektanforderungen und ihre Beziehungen zu verfolgen.
+
+```mermaid
+    requirementDiagram
+
+    requirement test_req {
+    id: 1
+    text: der test text.
+    risk: high
+    verifymethod: test
+    }
+
+    element test_entity {
+    type: simulation
+    }
+
+    test_entity - satisfies -> test_req
+```
+
+## Gitgraph (Git) Diagramm
+
+Verwende ein Gitgraph-Diagramm, um Git-Workflows und Branching-Strategien zu visualisieren.
+
+```mermaid
+gitGraph
+    commit
+    branch feature
+    checkout feature
+    commit
+    branch hotfix
+    checkout hotfix
+    commit
+    checkout main
+    merge feature
+    merge hotfix
+```
+
+## C4-Diagramm
+
+Verwende ein C4-Diagramm für Software-Architektur, das Systemkontexte, Container, Komponenten und Code zeigt.
+
+```mermaid
+    C4Context
+      title System Context Diagramm für Internet Banking System
+      Enterprise_Boundary(b0, "BankBoundary0") {
+        Person(customerA, "Bank-Kunde A", "Ein Kunde der Bank mit persönlichen Bankkonten.")
+        Person(customerB, "Bank-Kunde B")
+        Person_Ext(customerC, "Bank-Kunde C", "desc")
+
+        Person(customerD, "Bank-Kunde D", "Ein Kunde der Bank, <br/> mit persönlichen Bankkonten.")
+
+        System(SystemAA, "Internet Banking System", "Ermöglicht es Kunden, Informationen über ihre Bankkonten einzusehen und Zahlungen zu tätigen.")
+
+        Enterprise_Boundary(b1, "BankBoundary") {
+
+          SystemDb_Ext(SystemE, "Mainframe Banking System", "Speichert alle wichtigen Bankinformationen über Kunden, Konten, Transaktionen, etc.")
+
+          System_Boundary(b2, "BankBoundary2") {
+            System(SystemA, "Banking System A")
+            System(SystemB, "Banking System B", "Ein System der Bank mit persönlichen Bankkonten. nächste Zeile.")
+          }
+
+          System_Ext(SystemC, "E-Mail-System", "Das interne Microsoft Exchange E-Mail-System.")
+          SystemDb(SystemD, "Banking System D Datenbank", "Ein System der Bank mit persönlichen Bankkonten.")
+
+          Boundary(b3, "BankBoundary3", "boundary") {
+            SystemQueue(SystemF, "Banking System F Queue", "Ein System der Bank.")
+            SystemQueue_Ext(SystemG, "Banking System G Queue", "Ein System der Bank mit persönlichen Bankkonten.")
+          }
+        }
+      }
+
+      BiRel(customerA, SystemAA, "Verwendet")
+      BiRel(SystemAA, SystemE, "Verwendet")
+      Rel(SystemAA, SystemC, "Sendet E-Mails", "SMTP")
+      Rel(SystemC, customerA, "Sendet E-Mails an")
+
+      UpdateElementStyle(customerA, $fontColor="red", $bgColor="grey", $borderColor="red")
+      UpdateRelStyle(customerA, SystemAA, $textColor="blue", $lineColor="blue", $offsetX="5")
+      UpdateRelStyle(SystemAA, SystemE, $textColor="blue", $lineColor="blue", $offsetY="-10")
+      UpdateRelStyle(SystemAA, SystemC, $textColor="blue", $lineColor="blue", $offsetY="-40", $offsetX="-50")
+      UpdateRelStyle(SystemC, customerA, $textColor="red", $lineColor="red", $offsetX="-50", $offsetY="20")
+
+      UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+## Mindmaps
+
+Verwende eine Mindmap, um Ideen zu sammeln oder Informationen hierarchisch visuell zu organisieren.
+
+```mermaid
+mindmap
+  root((mindmap))
+    Ursprünge
+      Lange Geschichte
+      ::icon(fa fa-book)
+      Popularisierung
+        Britischer populärpsychologischer Autor Tony Buzan
+    Forschung
+      Über Wirksamkeit<br/>und Eigenschaften
+      Über automatische Erstellung
+        Verwendungen
+            Kreative Techniken
+            Strategische Planung
+            Argument-Mapping
+    Werkzeuge
+      Stift und Papier
+      Mermaid
+```
+
+## Timeline
+
+Verwende eine Timeline, um Ereignisse chronologisch zu zeigen, wie Meilensteine oder historische Daten.
+
+```mermaid
+timeline
+    title Harry Potter Timeline
+    1991 : Harry beginnt in Hogwarts
+    1992 : Kammer des Schreckens geöffnet
+    1993 : Sirius Black entkommt aus Askaban
+    1994 : Trimagisches Turnier
+    1998 : Schlacht von Hogwarts
+```
+
+## Sankey-Diagramm
+
+Verwende ein Sankey-Diagramm, um den Fluss von Ressourcen, Energie oder Daten zwischen Stufen zu zeigen.
+
+```mermaid
+---
+config:
+  sankey:
+    showValues: false
+---
+sankey-beta
+
+Agricultural 'waste',Bio-conversion,124.729
+Bio-conversion,Liquid,0.597
+Bio-conversion,Losses,26.862
+Bio-conversion,Solid,280.322
+Bio-conversion,Gas,81.144
+Biofuel imports,Liquid,35
+Biomass imports,Solid,35
+Coal imports,Coal,11.606
+Coal reserves,Coal,63.965
+Coal,Solid,75.571
+District heating,Industry,10.639
+District heating,Heating and cooling - commercial,22.505
+District heating,Heating and cooling - homes,46.184
+Electricity grid,Over generation / exports,104.453
+Electricity grid,Heating and cooling - homes,113.726
+Electricity grid,H2 conversion,27.14
+Electricity grid,Industry,342.165
+Electricity grid,Road transport,37.797
+Electricity grid,Agriculture,4.412
+Electricity grid,Heating and cooling - commercial,40.858
+Electricity grid,Losses,56.691
+Electricity grid,Rail transport,7.863
+Electricity grid,Lighting & appliances - commercial,90.008
+Electricity grid,Lighting & appliances - homes,93.494
+Gas imports,Ngas,40.719
+Gas reserves,Ngas,82.233
+Gas,Heating and cooling - commercial,0.129
+Gas,Losses,1.401
+Gas,Thermal generation,151.891
+Gas,Agriculture,2.096
+Gas,Industry,48.58
+Geothermal,Electricity grid,7.013
+H2 conversion,H2,20.897
+H2 conversion,Losses,6.242
+H2,Road transport,20.897
+Hydro,Electricity grid,6.995
+Liquid,Industry,121.066
+Liquid,International shipping,128.69
+Liquid,Road transport,135.835
+Liquid,Domestic aviation,14.458
+Liquid,International aviation,206.267
+Liquid,Agriculture,3.64
+Liquid,National navigation,33.218
+Liquid,Rail transport,4.413
+Marine algae,Bio-conversion,4.375
+Ngas,Gas,122.952
+Nuclear,Thermal generation,839.978
+Oil imports,Oil,504.287
+Oil reserves,Oil,107.703
+Oil,Liquid,611.99
+Other waste,Solid,56.587
+Other waste,Bio-conversion,77.81
+Pumped heat,Heating and cooling - homes,193.026
+Pumped heat,Heating and cooling - commercial,70.672
+Solar PV,Electricity grid,59.901
+Solar Thermal,Heating and cooling - homes,19.263
+Solar,Solar Thermal,19.263
+Solar,Solar PV,59.901
+Solid,Agriculture,0.882
+Solid,Thermal generation,400.12
+Solid,Industry,46.477
+Thermal generation,Electricity grid,525.531
+Thermal generation,Losses,787.129
+Thermal generation,District heating,79.329
+Tidal,Electricity grid,9.452
+UK land based bioenergy,Bio-conversion,182.01
+Wave,Electricity grid,19.013
+Wind,Electricity grid,289.366
+```
+
+## XY-Diagramm
+
+Verwende ein XY-Diagramm, um Datenpunkte entlang zweier Dimensionen zu vergleichen, wie Leistung vs. Kosten.
+
+```mermaid
+xychart-beta
+    title "Verkaufserlös"
+    x-axis [jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, dez]
+    y-axis "Erlös (in $)" 4000 --> 11000
+    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+
+```
+
+## Packet-Diagramm
+
+Wann verwenden:
+Verwende ein Packet-Diagramm, um Netzwerkkommunikation und Datenflüsse zu beschreiben.
+
+```mermaid
+packet-beta
+0-15: "Source Port"
+16-31: "Destination Port"
+32-63: "Sequence Number"
+64-95: "Acknowledgment Number"
+96-99: "Data Offset"
+100-105: "Reserved"
+106: "URG"
+107: "ACK"
+108: "PSH"
+109: "RST"
+110: "SYN"
+111: "FIN"
+112-127: "Window"
+128-143: "Checksum"
+144-159: "Urgent Pointer"
+160-191: "(Options and Padding)"
+192-255: "Data (variable length)"
+```
+
+## Kanban
+
+Verwende ein Kanban-Board, um Arbeitselemente und ihre Status in Arbeitsabläufen zu visualisieren.
+
+```mermaid
+kanban
+  Todo
+    [Dokumentation erstellen]
+    docs[Blog über das neue Diagramm erstellen]
+  [In Bearbeitung]
+    id6[Renderer erstellen, damit er in allen Fällen funktioniert. Wir fügen auch etwas zusätzlichen Text zum Testen hinzu. Und noch etwas mehr für den extra Glanz.]
+  id9[Bereit für Deployment]
+    id8[Grammatik entwerfen]@{ assigned: 'knsv' }
+  id10[Bereit für Test]
+    id4[Parsing-Tests erstellen]@{ ticket: MC-2038, assigned: 'K.Sveidqvist', priority: 'High' }
+    id66[letztes Element]@{ priority: 'Very Low', assigned: 'knsv' }
+```
+
+## Architektur-Diagramm
+
+Verwende ein Architektur-Diagramm, um hochrangige Systemkomponenten und ihre Interaktionen darzustellen.
+
+```mermaid
+flowchart LR
+    User --> StarkServer[Iron Mans AI-Server]
+    StarkServer --> Database[Missions-Logs]
+    StarkServer --> AIModel[Jarvis AI]
+```
