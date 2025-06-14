@@ -11,11 +11,16 @@ import { sectionBlockSchemaField } from '../layout/section';
 import { scriptCopyBlockSchema, ScriptCopyBtn } from "../magicui/script-copy-btn";
 
 export const ImageContent = ({ data }: { data: PageBlocksImageContent }) => {
+  const isImageRight = data.imagePosition === "Right";
+  
   return (
     <Section background={data.background!} className="py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        {/* Image Section - Left Side */}
-        <div className="order-2 lg:order-1" data-tina-field={tinaField(data, "image")}>
+        {/* Image Section */}
+        <div 
+          className={`order-2 ${isImageRight ? 'lg:order-2' : 'lg:order-1'}`}
+          data-tina-field={tinaField(data, "image")}
+        >
           {data.image?.src && (
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg">
               <Image
@@ -29,9 +34,9 @@ export const ImageContent = ({ data }: { data: PageBlocksImageContent }) => {
           )}
         </div>
         
-        {/* Content Section - Right Side */}
+        {/* Content Section */}
         <div 
-          className="order-1 lg:order-2 prose prose-lg max-w-none"
+          className={`order-1 ${isImageRight ? 'lg:order-1' : 'lg:order-2'} prose prose-lg max-w-none`}
           data-tina-field={tinaField(data, "body")}
         >
           <TinaMarkdown
@@ -58,10 +63,20 @@ export const imageContentBlockSchema: Template = {
         src: "",
         alt: "Image description",
       },
+      imagePosition: "Left",
     },
   },
   fields: [
     sectionBlockSchemaField as any,
+    {
+      type: "string",
+      label: "Image Position",
+      name: "imagePosition",
+      options: [
+        { label: "Left", value: "Left" },
+        { label: "Right", value: "Right" },
+      ],
+    },
     {
       type: "object",
       label: "Image",
