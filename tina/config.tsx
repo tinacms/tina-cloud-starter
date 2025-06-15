@@ -13,6 +13,10 @@ const config = defineConfig({
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD!, // Netlify branch env
   token: process.env.TINA_TOKEN!,
+  cmsCallback: (cms) => {
+    cms.flags.set('branch-switcher', true)
+    return cms
+  },
   media: {
     // If you wanted cloudinary do this
     // loadCustomStore: async () => {
