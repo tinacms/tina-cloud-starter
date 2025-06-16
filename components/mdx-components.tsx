@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Prism } from 'tinacms/dist/rich-text/prism';
 import { Video } from './blocks/video';
 import { PageBlocksVideo } from '@/tina/__generated__/types';
-import { mermaid } from './blocks/mermaid';
+import { Mermaid } from './blocks/mermaid';
 
 export const components: Components<{
   BlockQuote: {
@@ -88,11 +88,7 @@ export const components: Components<{
                 </button>
               </div>
             </form>
-            <div className='mt-3 text-sm text-gray-500'>
-              {props.disclaimer && (
-                <TinaMarkdown content={props.disclaimer} />
-              )}
-            </div>
+            <div className='mt-3 text-sm text-gray-500'>{props.disclaimer && <TinaMarkdown content={props.disclaimer} />}</div>
           </div>
         </div>
       </div>
@@ -108,7 +104,7 @@ export const components: Components<{
       </span>
     );
   },
-  mermaid,
+  mermaid: (props: any) => <Mermaid {...props} />,
   video: (props) => {
     return <Video data={props} />;
   },
