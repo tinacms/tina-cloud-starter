@@ -1,0 +1,156 @@
+---
+description: 
+globs: *.tsx
+alwaysApply: false
+---
+# TinaCMS Starter Application - Code Structure Overview
+
+This document provides a comprehensive overview of the TinaCMS starter application codebase, including its structure, architecture, and key components.
+
+NOTE: This has not yet been updated to include internationalization.
+
+## 1. Project Structure
+
+### Top-Level Directories
+
+- **app/**: Contains the Next.js application pages and routing structure using the App Router
+- **components/**: Reusable React components organized by functionality
+- **content/**: Stores the website content as Markdown/MDX files managed by TinaCMS
+- **lib/**: Utility functions and shared code
+- **public/**: Static assets like images and fonts
+- **tina/**: TinaCMS configuration, schema definitions, and generated files
+- **node_modules/**: External dependencies
+- **.next/**: Next.js build output (generated)
+
+### Key Configuration Files
+
+- **package.json**: Project dependencies and scripts
+- **next.config.ts**: Next.js configuration
+- **tsconfig.json**: TypeScript configuration
+- **biome.json**: Biome linting configuration
+- **tailwind.config.js**: Tailwind CSS configuration
+- **postcss.config.js**: PostCSS configuration
+
+## 2. Application Architecture
+
+The application follows a modern React architecture using Next.js 15 with the App Router pattern. It integrates TinaCMS as a headless CMS to manage content stored as Markdown/MDX files.
+
+### Key Components and Their Interactions
+
+1. **Next.js App Router**: Handles routing and server-side rendering
+2. **TinaCMS**: Provides content management capabilities and a visual editing interface
+3. **React Components**: Render the UI based on content from TinaCMS
+4. **MDX Content**: Structured content with embedded components
+
+The application uses a component-based architecture where:
+- Content is stored as MDX files in the `content/` directory
+- TinaCMS provides a schema for content structure in the `tina/collection/` directory
+- React components in the `components/` directory render the content
+- Next.js handles routing and server-side rendering
+
+## 3. Main Application Entry Point
+
+The main entry point is `app/layout.tsx`, which defines the root layout for the entire application. The primary page component is `app/page.tsx`, which renders the home page.
+
+The application uses Next.js App Router with the following key files:
+- `app/layout.tsx`: Root layout component that wraps all pages
+- `app/page.tsx`: Home page component
+- `app/[...urlSegments]/page.tsx`: Dynamic routing for all other pages
+
+## 4. Primary Page Components
+
+Page components are defined in:
+- `app/page.tsx`: Home page
+- `app/[...urlSegments]/page.tsx`: Dynamic page routing for all other pages
+- `@/components/client-page`: Client-side component that uses the useTina hook to enable TinaCMS live editing
+
+The application uses a pattern where:
+1. Server components fetch data from TinaCMS
+2. Data is passed to client components for rendering
+3. Client components use the TinaCMS client to handle content editing
+
+## 5. Content Management
+
+### Content Storage
+
+Content is stored as MDX files in the `content/` directory, organized into subdirectories:
+- `content/pages/`: Page content
+- `content/posts/`: Blog posts
+- `content/authors/`: Author information
+- `content/tags/`: Content tags
+- `content/global/`: Global site settings
+
+### Content Schema
+
+TinaCMS schemas define the structure of content in the `tina/collection/` directory:
+- `tina/collection/page.tsx`: Page schema
+- `tina/collection/post.tsx`: Blog post schema
+- `tina/collection/author.tsx`: Author schema
+- `tina/collection/tag.tsx`: Tag schema
+- `tina/collection/global.tsx`: Global settings schema
+
+## 6. Configuration Files
+
+Key configuration files that control application behavior:
+
+- **tina/config.tsx**: Main TinaCMS configuration
+- **next.config.ts**: Next.js configuration
+- **tailwind.config.js**: Tailwind CSS styling configuration
+- **.env.example**: Example environment variables (needs to be copied to .env for local development)
+
+## 7. TinaCMS and Application Content Relationship
+
+TinaCMS serves as the content management system for the application with the following relationships:
+
+1. **Content Definition**: TinaCMS schemas in `tina/collection/` define the structure of content
+2. **Content Storage**: Content is stored as MDX files in the `content/` directory
+3. **Content Editing**: TinaCMS provides a visual editor for content
+4. **Content Rendering**: React components render content based on TinaCMS schemas
+
+The workflow is:
+1. Content is edited through the TinaCMS interface
+2. Changes are saved to MDX files in the `content/` directory
+3. Next.js renders the content using React components
+4. The application uses the TinaCMS client to fetch content at build time or runtime
+
+## 8. Block-Based Content System
+
+The application uses a block-based content system where pages are composed of reusable blocks:
+
+- Blocks are defined in `components/blocks/`
+- Each block type has its own component (Hero, Content, Features, etc.)
+- Pages can include multiple blocks in any order
+- TinaCMS schemas define the available blocks and their properties
+
+The `components/blocks/index.tsx` file serves as the entry point for rendering blocks based on their type.
+
+## 9. Styling
+
+The application uses Tailwind CSS for styling with:
+- Utility classes for most styling
+- Component-based design
+- Custom theme configuration in `tailwind.config.js`
+- Additional CSS in `styles.css`
+
+## 10. Build and Deployment
+
+The application uses the following build process:
+1. TinaCMS generates type definitions and client code
+2. Next.js builds the application
+3. The application can be deployed to various platforms
+
+Key scripts in `package.json`:
+- `dev`: Runs TinaCMS and Next.js in development mode
+- `build`: Builds TinaCMS and Next.js for production
+- `start`: Starts the production server
+
+## 11. Internationalization
+- Internationalized (i18n) version of Tina CMS Cloud Starter
+- `next-intl` based
+- including language switcher
+- path based translated documents `/en/` and `/de/`
+- translated messages `messages/de.json` and `messages/en.json`
+
+## Conclusion
+
+The TinaCMS starter application demonstrates a modern approach to building content-managed websites using Next.js and TinaCMS. The architecture separates content from presentation, allowing for flexible content management while maintaining developer control over the UI.
