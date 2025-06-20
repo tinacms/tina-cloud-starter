@@ -4,24 +4,44 @@ import client from '@/tina/__generated__/client';
 import Layout from '@/components/layout/layout';
 import { Section } from '@/components/layout/section';
 import ClientPage from './client-page';
+import { hasLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { setRequestLocale } from 'next-intl/server';
 
 export const revalidate = 300;
 
 export default async function Page({
   params,
 }: {
-  params: Promise<{ urlSegments: string[] }>;
+  params: Promise<{ locale: string; urlSegments: string[] }>;
 }) {
-  const resolvedParams = await params;
-  const filepath = resolvedParams.urlSegments.join('/');
+  const { locale, urlSegments } = await params;
+
+  // Validate locale
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
+  const filepath = urlSegments.join('/');
 
   let data;
   try {
+    // Try locale-specific content first
     data = await client.queries.page({
-      relativePath: `${filepath}.mdx`,
+      relativePath: `${locale}/${filepath}.mdx`,
     });
   } catch (error) {
-    notFound();
+    // Fallback to non-locale specific content
+    try {
+      data = await client.queries.page({
+        relativePath: `${filepath}.mdx`,
+      });
+    } catch (fallbackError) {
+      notFound();
+    }
   }
 
   return (

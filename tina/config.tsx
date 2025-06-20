@@ -1,5 +1,4 @@
 import { defineConfig } from "tinacms";
-import nextConfig from '../next.config'
 
 import Post from "./collection/post";
 import Global from "./collection/global";
@@ -14,6 +13,10 @@ const config = defineConfig({
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD!, // Netlify branch env
   token: process.env.TINA_TOKEN!,
+  cmsCallback: (cms) => {
+    cms.flags.set('branch-switcher', true)
+    return cms
+  },
   media: {
     // If you wanted cloudinary do this
     // loadCustomStore: async () => {
@@ -29,7 +32,7 @@ const config = defineConfig({
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
-    basePath: nextConfig.basePath?.replace(/^\//, '') || '', // The base path of the app (could be /blog)
+    basePath: "", // Hardcoded - was always empty anyway! Changed due to error with next-intl.
   },
   schema: {
     collections: [Page, Post, Author, Tag, Global],

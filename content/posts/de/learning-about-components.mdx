@@ -1,0 +1,63 @@
+---
+title: Über Komponenten lernen
+heroImg: /uploads/posts/learning-about-components.png
+excerpt: >
+  Markdown ist einfach, aber manchmal braucht man mehr als nur Text. Erfahren Sie, wie Sie
+  Ihren Inhalt mit dynamischen Komponenten wie interaktiven Elementen, benutzerdefinierten
+  Abfragen und gestalteten Callouts erweitern können.
+author: content/authors/napoleon.md
+date: 2021-07-15T07:00:00.000Z
+---
+
+## Markdown, Aber Besser
+
+Hallo, das aktuelle Datum ist <DateTime format="local" />. Markdown ist großartig zum Schreiben von Inhalten, aber was ist, wenn Sie etwas Interaktiveres benötigen? Was ist, wenn Sie dynamische Daten abrufen, formatierte Callouts anzeigen oder Benutzereingaben sammeln möchten? Hier kommen Komponenten ins Spiel.
+
+---
+
+```graphql
+query MyQuery($relativePath: String!) {
+  page(relativePath: $relativePath) {
+    title
+  }
+}
+```
+
+> Mit Komponenten ist Ihr Markdown-Inhalt nicht nur statischer Text—er wird zu einer dynamischen Erfahrung. Sie können Daten abrufen, Inhalte schön formatieren und sogar interaktive Elemente direkt in Ihre Beiträge einbauen.
+
+![Markdown mit Komponenten erweitern](/uploads/unsplash-75EFpyXu3Wg.jpg)
+
+Lassen Sie uns einige Beispiele aufschlüsseln, wie Komponenten Ihre Markdown-basierten Inhalte verbessern können.
+
+<NewsletterSignup
+  placeholder="Geben Sie Ihre E-Mail ein"
+  buttonText="Benachrichtigen Sie mich"
+  disclaimer={<>
+    Wir kümmern uns um den Schutz Ihrer Daten. Lesen Sie unsere [Datenschutzrichtlinie](http://example.com).
+  </>}
+>
+  ## Bleiben Sie auf dem Laufenden!
+
+Möchten Sie mehr über die Verwendung von Komponenten erfahren? Melden Sie sich an, um die neuesten Tipps und Tricks direkt in Ihr Postfach zu bekommen.
+
+</NewsletterSignup>
+
+## Warum Komponenten in Markdown verwenden?
+
+- **Inhalt dynamisch halten** - Echtzeitdaten statt statischen Text abrufen.
+- **Lesbarkeit verbessern** - Strukturierte Callouts, Buttons und Formulare verwenden.
+- **Benutzerinteraktion erweitern** - Benutzer können direkt im Inhalt handeln.
+
+## Weitere Möglichkeiten, Komponenten zu verwenden
+
+1. **GraphQL-Abfragen einbetten** - Inhalte dynamisch abrufen und anzeigen.
+2. **Gestaltete Callouts verwenden** - Wichtige Punkte mit visuell unterschiedlichen Elementen hervorheben.
+3. **Interaktive Formulare erstellen** - Benutzer können sich anmelden, Daten übermitteln oder mit Ihren Inhalten interagieren.
+
+---
+
+<BlockQuote authorName="Uncle Rico AI">
+  Damals in '82 konnte ich Markdown mit verbundenen Augen programmieren. Wenn
+  ich diese Komponenten damals gehabt hätte, würde ich den größten Blog im
+  Internet betreiben, ohne Zweifel.
+</BlockQuote>
