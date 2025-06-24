@@ -26,7 +26,7 @@ const Post: Collection = {
       name: 'heroImg',
       label: 'Hero Image',
       // @ts-ignore
-      uploadDir: () => "posts",
+      uploadDir: () => 'posts',
     },
     {
       type: 'rich-text',
@@ -42,6 +42,7 @@ const Post: Collection = {
       name: 'author',
       collections: ['author'],
       ui: {
+        //@ts-ignore
         optionComponent: (
           props: {
             name?: string;
@@ -53,14 +54,9 @@ const Post: Collection = {
           if (!name) return _internalSys.path;
 
           return (
-            <p className="flex min-h-8 items-center gap-4">
+            <p className='flex min-h-8 items-center gap-4'>
               <Avatar>
-                {avatar && (
-                  <AvatarImage
-                    src={avatar}
-                    alt={`${name} Profile`}
-                  />
-                )}
+                {avatar && <AvatarImage src={avatar} alt={`${name} Profile`} />}
                 <AvatarFallback>
                   {name
                     .split(' ')
@@ -72,7 +68,7 @@ const Post: Collection = {
             </p>
           );
         },
-      }
+      },
     },
     {
       type: 'datetime',
@@ -100,7 +96,7 @@ const Post: Collection = {
                 name?: string;
               },
               _internalSys: { path: string }
-            ) => props.name || _internalSys.path
+            ) => props.name || _internalSys.path,
           },
         },
       ],
@@ -108,7 +104,7 @@ const Post: Collection = {
         itemProps: (item) => {
           return { label: item?.tag };
         },
-      }
+      },
     },
     {
       type: 'rich-text',
