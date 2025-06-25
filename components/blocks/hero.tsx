@@ -1,17 +1,18 @@
 'use client';
-import * as React from 'react';
+import { iconSchema } from '@/tina/fields/icon';
 import Image from 'next/image';
 import Link from 'next/link';
+import * as React from 'react';
 import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
 import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/types';
-import { Button } from '../ui/button';
-import { iconSchema } from '@/tina/fields/icon';
 import { Icon } from '../icon';
 import { Section, sectionBlockSchemaField } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
+import { Button } from '../ui/button';
 import HeroVideoDialog from '../ui/hero-video-dialog';
+import { Transition } from 'motion/react';
 const transitionVariants = {
   container: {
     visible: {
@@ -35,7 +36,7 @@ const transitionVariants = {
         type: 'spring',
         bounce: 0.3,
         duration: 1.5,
-      },
+      } as Transition,
     },
   },
 };
