@@ -27,6 +27,11 @@ export const components: Components<{
     if (!props) {
       return <></>;
     }
+    
+    if (props.lang === 'mermaid') {
+      return <Mermaid value={props.value} />
+    }
+
     return <Prism lang={props.lang} value={props.value} />;
   },
   BlockQuote: (props: {
