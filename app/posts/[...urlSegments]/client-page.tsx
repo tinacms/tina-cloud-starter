@@ -111,21 +111,6 @@ export default function PostClientPage(props: ClientPostProps) {
             content={post._body}
             components={{
               ...components,
-              code_block: (props: any) => {
-                if (!props) {
-                  return <></>;
-                }
-                
-                if (props.lang === 'mermaid') {
-                  return <Mermaid value={props.value} />
-                }
-
-                return (
-                  <pre style={{ background: '#f5f5f5', padding: '1rem', overflowX: 'auto' }}>
-                    <code>{props.value}</code>
-                  </pre>
-                )
-              },
             }}
           />
         </div>
