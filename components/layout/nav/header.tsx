@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Icon } from "../../icon";
 import { useLayout } from "../layout-context";
 import { Menu, X } from "lucide-react";
-import LocaleSwitcher from "./LocaleSwitcher";
+import LocaleSwitcher from "./loacle-switcher";
 
 export const Header = () => {
   const { globalSettings, theme } = useLayout();
