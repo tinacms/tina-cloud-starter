@@ -508,7 +508,8 @@ import { getLocale } from 'next-intl/server';
 - Add language switcher with flag icons (🇩🇪/🇺🇸) before site name
 - Place language switcher and site name at bottom of mobile menu
 - Integrate with existing next-intl setup
-- Based on https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/
+- Initially based on https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/
+- Changed to use Shadcn component
 
 #### Add `components/layout/nav/LocaleSwitcher.tsx`
 
@@ -709,6 +710,11 @@ therefore running these with the newer versions may need more testing.
 
 Moving typescript from 5.6.3 to 5.8.3 is only a minor version increase,
 and is least likely to cause issues.
+
+### 5. Known i18n Issues
+
+- this has only received limited testing - known issues will be listed in the Issues section
+- if you find an internationalization bug please report it [here](https://github.com/liawagner/tina-cloud-starter-intl/issues).
 
 ---
 
