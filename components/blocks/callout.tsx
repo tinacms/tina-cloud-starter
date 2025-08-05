@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Template } from 'tinacms';
 import { tinaField } from "tinacms/dist/react";
 import { PageBlocksCallout } from "@/tina/__generated__/types";

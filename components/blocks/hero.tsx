@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
 import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/types';

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
 import { iconSchema } from '@/tina/fields/icon';
