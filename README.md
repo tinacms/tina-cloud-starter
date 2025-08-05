@@ -508,25 +508,33 @@ import { getLocale } from 'next-intl/server';
 - Add language switcher with flag icons (🇩🇪/🇺🇸) before site name
 - Place language switcher and site name at bottom of mobile menu
 - Integrate with existing next-intl setup
-- Initially based on https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/
-- Changed to use Shadcn component
+- Originally based on [this example](https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/)
+- Changed to use Shadcn [select component](https://ui.shadcn.com/docs/components/select)
 
-#### Add `components/layout/nav/LocaleSwitcher.tsx`
+#### Add Shadcn Select Component
+
+```
+pnpm dlx shadcn@latest add select
+```
+
+- installed in components/ui/select.tsx
+
+#### Add `components/layout/nav/locale-switcher.tsx`
 
 ```ts
-import { useLocale, useTranslations } from "next-intl";
-import { routing } from "@/i18n/routing";
-import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
+import {useLocale, useTranslations} from 'next-intl';
+import {routing} from '@/i18n/routing';
+import LocaleSwitcherSelect from './locale-switcher-select';
 
 export default function LocaleSwitcher() {
-  const t = useTranslations("LocaleSwitcher");
+  const t = useTranslations('LocaleSwitcher');
   const locale = useLocale();
 
   return (
-    <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
+    <LocaleSwitcherSelect defaultValue={locale} label={t('label')}>
       {routing.locales.map((cur) => (
         <option key={cur} value={cur}>
-          {t("locale", { locale: cur })}
+          {t('locale', {locale: cur})}
         </option>
       ))}
     </LocaleSwitcherSelect>
@@ -534,14 +542,21 @@ export default function LocaleSwitcher() {
 }
 ```
 
-#### Add `components/layout/nav/LocaleSwitcherSelect.tsx`
+#### Add `components/layout/nav/locale-switcher-select.tsx`
 
 ```ts
-"use client";
+'use client';
 
-import { useRouter, usePathname } from "@/i18n/navigation";
-import { useParams } from "next/navigation";
-import { ChangeEvent, ReactNode, useTransition } from "react";
+import { useRouter, usePathname } from '@/i18n/navigation';
+import { useParams } from 'next/navigation';
+import { ReactNode, useTransition } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 type Props = {
   children: ReactNode;
@@ -559,8 +574,7 @@ export default function LocaleSwitcherSelect({
   const pathname = usePathname();
   const params = useParams();
 
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value;
+  function onValueChange(nextLocale: string) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error
@@ -570,19 +584,34 @@ export default function LocaleSwitcherSelect({
     });
   }
 
+  // Extract options from children (option elements)
+  const options = Array.isArray(children) ? children : [children];
+
   return (
-    <label className="relative text-sm text-muted-foreground">
-      <p className="sr-only">{label}</p>
-      <select
-        className="inline-flex appearance-none bg-transparent py-2 pl-2 pr-6 outline-none cursor-pointer"
+    <div className="relative">
+      <span className="sr-only">{label}</span>
+      <Select
         defaultValue={defaultValue}
         disabled={isPending}
-        onChange={onSelectChange}
+        onValueChange={onValueChange}
       >
-        {children}
-      </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
-    </label>
+        <SelectTrigger className="w-fit text-sm text-muted-foreground border-none shadow-none bg-transparent">
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((option: any) => {
+            if (option?.props) {
+              return (
+                <SelectItem key={option.props.value} value={option.props.value}>
+                  {option.props.children}
+                </SelectItem>
+              );
+            }
+            return null;
+          })}
+        </SelectContent>
+      </Select>
+    </div>
   );
 }
 ```
@@ -590,26 +619,19 @@ export default function LocaleSwitcherSelect({
 #### Modify `components/layout/nav/header.tsx`
 
 ```ts
-import LocaleSwitcher from "./LocaleSwitcher";
+"use client";
+
+import React from "react";
+import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import { Icon } from "../../icon";
+import { useLayout } from "../layout-context";
+import { Menu, X } from "lucide-react";
+import LocaleSwitcher from "./locale-switcher";
+
+export const Header = () => {
+  const { globalSettings, theme } = useLayout();
 ...
-  {/* Right side: Language Switcher + Site Name */}
-  <div className="hidden lg:flex items-center gap-4 h-full">
-    <LocaleSwitcher />
-    <span className="text-sm font-medium text-muted-foreground">
-      |
-    </span>
-    <span className="text-sm font-medium">
-      {header.name}
-    </span>
-  </div>
-...
-  {/* Mobile Language Switcher & Site Name */}
-  <div className="flex items-center justify-between pt-4 border-t">
-    <LocaleSwitcher />
-    <span className="text-sm font-medium">
-      {header.name}
-    </span>
-  </div>
 ```
 
 #### Add `messages/de.json`
@@ -629,6 +651,42 @@ import LocaleSwitcher from "./LocaleSwitcher";
     "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
   },
 ```
+
+### Internationalize all links
+
+Replaced `next/link` with `@/i18n/navigation` Link component across all navigation and content components to ensure locale-aware routing.
+
+  1. Automatic Locale Resolution: next-intl Link automatically prefixes URLs with current locale
+  2. Cookie Persistence: User's language preference maintained across navigation
+  3. Zero Configuration Changes: Global config hrefs remain locale-neutral (/about, /posts)
+  4. Drop-in Replacement: No JSX or component structure changes required
+  5. Backward Compatible: All existing functionality preserved
+
+#### Changes Made
+
+All changes follow the same pattern:
+
+```
+  // replace
+  import Link from 'next/link';
+
+  // with  
+  import { Link } from '@/i18n/navigation';
+```
+
+#### Files Updated:
+
+Navigation
+  - components/layout/nav/header.tsx - Main navigation menu
+  - components/layout/nav/footer.tsx - Footer home link
+
+Content Blocks
+  - components/blocks/call-to-action.tsx - CTA action links
+  - components/blocks/callout.tsx - Callout links
+  - components/blocks/hero.tsx - Hero action links
+
+Posts
+  - app/[locale]/posts/client-page.tsx - Post navigation links
 
 ## Update React 18.3 → 19.1
 
@@ -711,10 +769,10 @@ therefore running these with the newer versions may need more testing.
 Moving typescript from 5.6.3 to 5.8.3 is only a minor version increase,
 and is least likely to cause issues.
 
-### 5. Known i18n Issues
 
-- this has only received limited testing - known issues will be listed in the Issues section
-- if you find an internationalization bug please report it [here](https://github.com/liawagner/tina-cloud-starter-intl/issues).
+## i18n Issues
+
+- if you find an internationalization bug please report it [here](https://github.com/liawagner/tina-cloud-starter-intl/issues)
 
 ---
 

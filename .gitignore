@@ -29,6 +29,8 @@ yarn-error.log*
 
 .tina/__generated__
 
+# dev
 BACKUP/
 CLAUDE.md
+docs/dev/
 
