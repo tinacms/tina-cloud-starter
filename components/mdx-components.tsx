@@ -1,11 +1,15 @@
 import { format } from 'date-fns';
 import React from 'react';
-import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
+import {
+  Components,
+  TinaMarkdown,
+  TinaMarkdownContent,
+} from 'tinacms/dist/rich-text';
 import Image from 'next/image';
 import { Prism } from 'tinacms/dist/rich-text/prism';
 import { Video } from './blocks/video';
 import { PageBlocksVideo } from '@/tina/__generated__/types';
-import { mermaid } from './blocks/mermaid';
+import { Mermaid } from './blocks/mermaid';
 
 export const components: Components<{
   BlockQuote: {
@@ -60,38 +64,36 @@ export const components: Components<{
   },
   NewsletterSignup: (props) => {
     return (
-      <div className='bg-white'>
-        <div className='max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8'>
-          <div className=''>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          <div className="">
             <TinaMarkdown content={props.children} />
           </div>
-          <div className='mt-8 '>
-            <form className='sm:flex'>
-              <label htmlFor='email-address' className='sr-only'>
+          <div className="mt-8 ">
+            <form className="sm:flex">
+              <label htmlFor="email-address" className="sr-only">
                 Email address
               </label>
               <input
-                id='email-address'
-                name='email-address'
-                type='email'
-                autoComplete='email'
+                id="email-address"
+                name="email-address"
+                type="email"
+                autoComplete="email"
                 required
-                className='w-full px-5 py-3 border border-gray-300 shadow-xs placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md'
+                className="w-full px-5 py-3 border border-gray-300 shadow-xs placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
                 placeholder={props.placeholder}
               />
-              <div className='mt-3 rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:shrink-0'>
+              <div className="mt-3 rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:shrink-0">
                 <button
-                  type='submit'
-                  className='w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-teal-500'
+                  type="submit"
+                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 >
                   {props.buttonText}
                 </button>
               </div>
             </form>
-            <div className='mt-3 text-sm text-gray-500'>
-              {props.disclaimer && (
-                <TinaMarkdown content={props.disclaimer} />
-              )}
+            <div className="mt-3 text-sm text-gray-500">
+              {props.disclaimer && <TinaMarkdown content={props.disclaimer} />}
             </div>
           </div>
         </div>
@@ -103,12 +105,13 @@ export const components: Components<{
       return <></>;
     }
     return (
-      <span className='flex items-center justify-center'>
+      <span className="flex items-center justify-center">
         <Image src={props.url} alt={props.alt || ''} width={500} height={500} />
       </span>
     );
   },
-  mermaid,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mermaid: (props: any) => <Mermaid {...props} />,
   video: (props) => {
     return <Video data={props} />;
   },

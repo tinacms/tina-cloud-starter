@@ -33,12 +33,14 @@ export default async function Page({
     data = await client.queries.page({
       relativePath: `${locale}/${filepath}.mdx`,
     });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     // Fallback to non-locale specific content
     try {
       data = await client.queries.page({
         relativePath: `${filepath}.mdx`,
       });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (fallbackError) {
       notFound();
     }

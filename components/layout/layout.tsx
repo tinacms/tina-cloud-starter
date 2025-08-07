@@ -6,10 +6,15 @@ import { Footer } from './nav/footer';
 import { getLocale } from 'next-intl/server';
 
 type LayoutProps = PropsWithChildren & {
-  rawPageData?: any;
+  rawPageData?: object;
 };
 
 export default async function Layout({ children, rawPageData }: LayoutProps) {
+  if (!rawPageData) {
+    // Handle missing rawPageData case
+    return null;
+  }
+
   // Get the current locale
   const locale = await getLocale();
 
@@ -43,6 +48,7 @@ export default async function Layout({ children, rawPageData }: LayoutProps) {
           },
         }
       );
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (fallbackError) {
       throw error; // Re-throw original error
     }

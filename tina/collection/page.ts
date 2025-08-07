@@ -16,11 +16,10 @@ const Page: Collection = {
   format: 'mdx',
   ui: {
     router: ({ document }) => {
-      const filepath = document._sys.breadcrumbs.join('/');
-      if (filepath === 'home') {
-        return '/';
-      }
-      return `/${filepath}`;
+      // Custom router to prevent double locale
+      const locale = document._sys.breadcrumbs[0];
+      const path = document._sys.breadcrumbs.slice(1).join('/');
+      return `${locale}/${path}`;
     },
   },
   fields: [

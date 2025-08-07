@@ -10,7 +10,10 @@ const Post: Collection = {
   format: 'mdx',
   ui: {
     router: ({ document }) => {
-      return `/posts/${document._sys.breadcrumbs.join('/')}`;
+      // Custom router to prevent double locale
+      const locale = document._sys.breadcrumbs[0];
+      const path = document._sys.breadcrumbs.slice(1).join('/');
+      return `${locale}/posts/${path}`;
     },
   },
   fields: [
@@ -25,8 +28,8 @@ const Post: Collection = {
       type: 'image',
       name: 'heroImg',
       label: 'Hero Image',
-      // @ts-ignore
-      uploadDir: () => "posts",
+      // @ts-expect-error FIXME: type mismatch
+      uploadDir: () => 'posts',
     },
     {
       type: 'rich-text',
@@ -42,6 +45,7 @@ const Post: Collection = {
       name: 'author',
       collections: ['author'],
       ui: {
+        // @ts-expect-error FIXME: type mismatch
         optionComponent: (
           props: {
             name?: string;
@@ -55,12 +59,7 @@ const Post: Collection = {
           return (
             <p className="flex min-h-8 items-center gap-4">
               <Avatar>
-                {avatar && (
-                  <AvatarImage
-                    src={avatar}
-                    alt={`${name} Profile`}
-                  />
-                )}
+                {avatar && <AvatarImage src={avatar} alt={`${name} Profile`} />}
                 <AvatarFallback>
                   {name
                     .split(' ')
@@ -72,7 +71,7 @@ const Post: Collection = {
             </p>
           );
         },
-      }
+      },
     },
     {
       type: 'datetime',
@@ -100,7 +99,7 @@ const Post: Collection = {
                 name?: string;
               },
               _internalSys: { path: string }
-            ) => props.name || _internalSys.path
+            ) => props.name || _internalSys.path,
           },
         },
       ],
@@ -108,7 +107,7 @@ const Post: Collection = {
         itemProps: (item) => {
           return { label: item?.tag };
         },
-      }
+      },
     },
     {
       type: 'rich-text',

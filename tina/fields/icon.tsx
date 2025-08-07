@@ -1,28 +1,28 @@
-"use client";
-import React from "react";
-import { Button, wrapFieldsWithMeta } from "tinacms";
-import { BiChevronRight } from "react-icons/bi";
-import { GoCircleSlash } from "react-icons/go";
-import { Icon, IconOptions } from "../../components/icon";
+'use client';
+import React, { ChangeEvent } from 'react';
+import { Button, wrapFieldsWithMeta } from 'tinacms';
+import { BiChevronRight } from 'react-icons/bi';
+import { GoCircleSlash } from 'react-icons/go';
+import { Icon, IconOptions } from '../../components/icon';
 import {
   Popover,
   PopoverButton,
   Transition,
   PopoverPanel,
-} from "@headlessui/react";
-import { ColorPickerInput } from "./color";
+} from '@headlessui/react';
+import { ColorPickerInput } from './color';
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
   if (splitName.length > 1) {
-    return splitName.slice(1).join(" ");
+    return splitName.slice(1).join(' ');
   } else {
     return name;
   }
 };
 
 export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
-  const [filter, setFilter] = React.useState("");
+  const [filter, setFilter] = React.useState('');
   const filteredBlocks = React.useMemo(() => {
     return Object.keys(IconOptions).filter((name) => {
       return name.toLowerCase().includes(filter.toLowerCase());
@@ -31,8 +31,12 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
 
   const inputLabel = Object.keys(IconOptions).includes(input.value)
     ? parseIconName(input.value)
-    : "Select Icon";
-  const InputIcon = IconOptions[input.value] ? IconOptions[input.value] : null;
+    : 'Select Icon';
+
+  const InputIcon =
+    input.value && input.value in IconOptions
+      ? IconOptions[input.value as keyof typeof IconOptions]
+      : null;
 
   return (
     <div className="relative z-[1000]">
@@ -42,10 +46,10 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
           <>
             <PopoverButton>
               <Button
-                className={`text-sm h-11 px-4 ${InputIcon ? "h-11" : "h-10"}`}
+                className={`text-sm h-11 px-4 ${InputIcon ? 'h-11' : 'h-10'}`}
                 size="custom"
                 rounded="full"
-                variant={open ? "secondary" : "white"}
+                variant={open ? 'secondary' : 'white'}
               >
                 {InputIcon && (
                   <InputIcon className="w-7 mr-1 h-auto fill-current text-blue-500" />
@@ -75,12 +79,14 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                         <input
                           type="text"
                           className="bg-white text-sm rounded-sm border border-gray-100 shadow-inner py-1.5 px-2.5 w-full block placeholder-gray-200"
-                          onClick={(event: any) => {
+                          onClick={(
+                            event: React.MouseEvent<HTMLInputElement>
+                          ) => {
                             event.stopPropagation();
                             event.preventDefault();
                           }}
                           value={filter}
-                          onChange={(event: any) => {
+                          onChange={(event: ChangeEvent<HTMLInputElement>) => {
                             setFilter(event.target.value);
                           }}
                           placeholder="Filter..."
@@ -95,10 +101,10 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                         <div className="w-full grid grid-cols-6 auto-rows-auto p-2 overflow-y-auto">
                           <button
                             className="relative rounded-lg text-center text-xs py-2 px-3 flex-1 outline-none transition-all ease-out duration-150 hover:text-blue-500 focus:text-blue-500 focus:bg-gray-50 hover:bg-gray-50"
-                            key={"clear-input"}
+                            key={'clear-input'}
                             onClick={() => {
-                              input.onChange("");
-                              setFilter("");
+                              input.onChange('');
+                              setFilter('');
                               close();
                             }}
                           >
@@ -111,15 +117,15 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                                 key={name}
                                 onClick={() => {
                                   input.onChange(name);
-                                  setFilter("");
+                                  setFilter('');
                                   close();
                                 }}
                               >
                                 <Icon
                                   data={{
                                     name: name,
-                                    size: "custom",
-                                    color: "blue",
+                                    size: 'custom',
+                                    color: 'blue',
                                   }}
                                   className="w-7 h-auto"
                                 />
@@ -141,38 +147,38 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
 });
 
 export const iconSchema = {
-  type: "object",
-  label: "Icon",
-  name: "icon",
+  type: 'object',
+  label: 'Icon',
+  name: 'icon',
   fields: [
     {
-      type: "string",
-      label: "Icon",
-      name: "name",
+      type: 'string',
+      label: 'Icon',
+      name: 'name',
       ui: {
         component: IconPickerInput,
       },
     },
     {
-      type: "string",
-      label: "Color",
-      name: "color",
+      type: 'string',
+      label: 'Color',
+      name: 'color',
       ui: {
         component: ColorPickerInput,
       },
     },
     {
-      name: "style",
-      label: "Style",
-      type: "string",
+      name: 'style',
+      label: 'Style',
+      type: 'string',
       options: [
         {
-          label: "Circle",
-          value: "circle",
+          label: 'Circle',
+          value: 'circle',
         },
         {
-          label: "Float",
-          value: "float",
+          label: 'Float',
+          value: 'float',
         },
       ],
     },

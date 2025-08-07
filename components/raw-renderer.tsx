@@ -1,24 +1,25 @@
-import React from "react";
-import { Fragment, useState } from "react";
+import React from 'react';
+import { Fragment, useState } from 'react';
 import {
   Dialog,
   Transition,
   TransitionChild,
   DialogPanel,
-} from "@headlessui/react";
-import { useLayout } from "./layout/layout-context";
+} from '@headlessui/react';
+import { useLayout } from './layout/layout-context';
 
+//@ts-expect-error FIXME: later
 export const RawRenderer = ({ rawData, parentColor }) => {
   const { theme } = useLayout();
   const buttonColorClasses = {
-    blue: "text-blue-500",
-    teal: "text-teal-500",
-    green: "text-green-500",
-    red: "text-red-500",
-    pink: "text-pink-500",
-    purple: "text-purple-500",
-    orange: "text-orange-500",
-    yellow: "text-yellow-600",
+    blue: 'text-blue-500',
+    teal: 'text-teal-500',
+    green: 'text-green-500',
+    red: 'text-red-500',
+    pink: 'text-pink-500',
+    purple: 'text-purple-500',
+    orange: 'text-orange-500',
+    yellow: 'text-yellow-600',
   };
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,13 +37,14 @@ export const RawRenderer = ({ rawData, parentColor }) => {
         type="button"
         onClick={openModal}
         className={`z-10 relative flex items-center px-5 py-2 mx-3 my-2 font-semibold text-sm transition duration-150 ease-out rounded transform focus:shadow-outline focus:outline-hidden whitespace-nowrap opacity-80 hover:opacity-100 shadow-md ${
+          //@ts-expect-error  FIXME: later
           buttonColorClasses[theme!.color!]
         }`}
       >
         View Raw Data
         <span
           className={`absolute w-full h-full left-0 top-0 rounded -z-1 ${
-            parentColor === "primary"
+            parentColor === 'primary'
               ? `bg-white opacity-80`
               : `bg-current opacity-15`
           }`}

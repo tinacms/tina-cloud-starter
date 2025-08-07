@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import { Play } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useVideoDialog } from "./VideoDialogContext";
+import { Play } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { useVideoDialog } from './VideoDialogContext';
+import Image from 'next/image';
 
 interface HeroVideoProps {
   videoSrc: string;
@@ -14,18 +15,18 @@ interface HeroVideoProps {
 export default function HeroVideoDialog({
   videoSrc,
   thumbnailSrc,
-  thumbnailAlt = "Video thumbnail",
+  thumbnailAlt = 'Video thumbnail',
   className,
 }: HeroVideoProps) {
   const { openVideo } = useVideoDialog();
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn('relative', className)}>
       <div
         className="group relative cursor-pointer"
         onClick={() => openVideo(videoSrc)}
       >
-        <img
+        <Image
           src={thumbnailSrc}
           alt={thumbnailAlt}
           width={1920}
@@ -41,7 +42,7 @@ export default function HeroVideoDialog({
                 className="size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
                 style={{
                   filter:
-                    "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+                    'drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))',
                 }}
               />
             </div>

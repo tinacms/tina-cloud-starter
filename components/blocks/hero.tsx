@@ -1,21 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
-import * as React from 'react';
+import { iconSchema } from '@/tina/fields/icon';
 import Image from 'next/image';
 import Link from 'next/link';
+import * as React from 'react';
 import type { Template } from 'tinacms';
 import { tinaField } from 'tinacms/dist/react';
-import { PageBlocksHero, PageBlocksHeroImage } from '../../tina/__generated__/types';
-import { Button } from '../ui/button';
-import { iconSchema } from '@/tina/fields/icon';
+import {
+  PageBlocksHero,
+  PageBlocksHeroImage,
+} from '../../tina/__generated__/types';
 import { Icon } from '../icon';
 import { Section, sectionBlockSchemaField } from '../layout/section';
 import { AnimatedGroup } from '../motion-primitives/animated-group';
 import { TextEffect } from '../motion-primitives/text-effect';
+import { Button } from '../ui/button';
 import HeroVideoDialog from '../ui/hero-video-dialog';
-import { cn } from '@/lib/utils';
-import { Variants } from 'motion/react';
-
-const transitionVariants: { container: Variants; item: Variants } = {
+import { Transition } from 'motion/react';
+const transitionVariants = {
   container: {
     visible: {
       transition: {
@@ -35,20 +37,23 @@ const transitionVariants: { container: Variants; item: Variants } = {
       filter: 'blur(0px)',
       y: 0,
       transition: {
-        type: 'spring' as const,
+        type: 'spring',
         bounce: 0.3,
         duration: 1.5,
-      },
+      } as Transition,
     },
   },
-}
+};
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
-
   // Extract the background style logic into a more readable format
   let gradientStyle: React.CSSProperties | undefined = undefined;
   if (data.background) {
-    const colorName = data.background.replace(/\/\d{1,2}$/, '').split('-').slice(1).join('-');
+    const colorName = data.background
+      .replace(/\/\d{1,2}$/, '')
+      .split('-')
+      .slice(1)
+      .join('-');
     const opacity = data.background.match(/\/(\d{1,3})$/)?.[1] || '100';
 
     gradientStyle = {
@@ -59,14 +64,14 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
   return (
     <Section background={data.background!}>
       <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-
         {data.headline && (
           <div data-tina-field={tinaField(data, 'headline')}>
             <TextEffect
               preset="fade-in-blur"
               speedSegment={0.3}
               as="h1"
-              className="mt-8 text-balance text-6xl md:text-7xl xl:text-[5.25rem]">
+              className="mt-8 text-balance text-6xl md:text-7xl xl:text-[5.25rem]"
+            >
               {data.headline!}
             </TextEffect>
           </div>
@@ -79,7 +84,8 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               speedSegment={0.3}
               delay={0.5}
               as="p"
-              className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+              className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+            >
               {data.tagline!}
             </TextEffect>
           </div>
@@ -87,33 +93,37 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
         <AnimatedGroup
           variants={transitionVariants}
-          className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-
-          {data.actions && data.actions.map(action => (
-            <div
-              key={action!.label}
-              data-tina-field={tinaField(action)}
-              className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-              <Button
-                asChild
-                size="lg"
-                variant={action!.type === 'link' ? 'ghost' : 'default'}
-                className="rounded-xl px-5 text-base">
-                <Link href={action!.link!}>
-                  {action?.icon && (<Icon data={action?.icon} />)}
-                  <span className="text-nowrap">{action!.label}</span>
-                </Link>
-              </Button>
-            </div>
-          ))}
+          className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+        >
+          {data.actions &&
+            data.actions.map((action) => (
+              <div
+                key={action!.label}
+                data-tina-field={tinaField(action)}
+                className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  variant={action!.type === 'link' ? 'ghost' : 'default'}
+                  className="rounded-xl px-5 text-base"
+                >
+                  <Link href={action!.link!}>
+                    {action?.icon && <Icon data={action?.icon} />}
+                    <span className="text-nowrap">{action!.label}</span>
+                  </Link>
+                </Button>
+              </div>
+            ))}
         </AnimatedGroup>
       </div>
 
       {data.image && (
-        <AnimatedGroup
-          variants={transitionVariants}>
-          <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full"
-            data-tina-field={tinaField(data, 'image')}>
+        <AnimatedGroup variants={transitionVariants}>
+          <div
+            className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 max-w-full"
+            data-tina-field={tinaField(data, 'image')}
+          >
             <div
               aria-hidden
               className="bg-linear-to-b absolute inset-0 z-10 from-transparent from-35% pointer-events-none"
@@ -126,26 +136,26 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         </AnimatedGroup>
       )}
     </Section>
-  )
+  );
 };
 
 const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
-
   if (image.videoUrl) {
-
     let videoId = '';
     if (image.videoUrl) {
       const embedPrefix = '/embed/';
       const idx = image.videoUrl.indexOf(embedPrefix);
       if (idx !== -1) {
-        videoId = image.videoUrl.substring(idx + embedPrefix.length).split('?')[0];
+        videoId = image.videoUrl
+          .substring(idx + embedPrefix.length)
+          .split('?')[0];
       }
     }
-    const thumbnailSrc = image.src
-      ? image.src!
+    const thumbnailSrc: string = image.src
+      ? image.src
       : videoId
-        ? `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
-        : '';
+      ? `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+      : '';
 
     return (
       <HeroVideoDialog
@@ -153,7 +163,7 @@ const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
         thumbnailSrc={thumbnailSrc}
         thumbnailAlt="Hero Video"
       />
-    )
+    );
   }
 
   if (image.src) {
@@ -165,9 +175,9 @@ const ImageBlock = ({ image }: { image: PageBlocksHeroImage }) => {
         height={4000}
         width={3000}
       />
-    )
+    );
   }
-}
+};
 
 export const heroBlockSchema: Template = {
   name: 'hero',
@@ -248,8 +258,9 @@ export const heroBlockSchema: Template = {
           name: 'videoUrl',
           label: 'Video URL',
           type: 'string',
-          description: 'If using a YouTube video, make sure to use the embed version of the video URL',
-        }
+          description:
+            'If using a YouTube video, make sure to use the embed version of the video URL',
+        },
       ],
     },
   ],

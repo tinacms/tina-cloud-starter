@@ -1,13 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
-interface NotFoundProps {
-  title?: string;
-  description?: string;
-}
-
-export function Illustration(props: React.ComponentPropsWithoutRef<"svg">) {
+export function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 145" {...props}>
       <path
@@ -19,18 +14,18 @@ export function Illustration(props: React.ComponentPropsWithoutRef<"svg">) {
 }
 
 export default function NotFound() {
-  const t = useTranslations("NotFound");
+  const t = useTranslations('NotFound');
   return (
     <div className="relative text-center z-[1] pt-52">
       <h1 className="mt-4 text-balance text-5xl font-semibold tracking-tight text-primary sm:text-7xl">
-        {t("title")}
+        {t('title')}
       </h1>
       <p className="mt-6 text-pretty text-lg font-medium text-muted-foreground sm:text-xl/8">
-        {t("description")}
+        {t('description')}
       </p>
       <div className="mt-10 mx-auto">
         <Button asChild>
-          <Link href="/">{t("link")}</Link>
+          <Link href="/">{t('link')}</Link>
         </Button>
       </div>
     </div>

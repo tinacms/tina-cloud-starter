@@ -57,7 +57,7 @@ export default function PostsClientPage(props: ClientPostProps) {
               {t('title')}
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
-                {t('description')}
+              {t('description')}
             </p>
           </div>
 

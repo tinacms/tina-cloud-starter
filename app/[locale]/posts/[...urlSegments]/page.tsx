@@ -30,6 +30,7 @@ export default async function PostPage({
     data = await client.queries.post({
       relativePath: `${filepath}.mdx`,
     });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
   }

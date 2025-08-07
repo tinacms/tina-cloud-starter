@@ -1,34 +1,35 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Icon } from "../../icon";
-import { useLayout } from "../layout-context";
-import { Menu, X } from "lucide-react";
-import LocaleSwitcher from "./LocaleSwitcher";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Icon } from '../../icon';
+import { useLayout } from '../layout-context';
+import { Menu, X } from 'lucide-react';
+import LocaleSwitcher from './locale-switcher';
 
 export const Header = () => {
-  const { globalSettings, theme } = useLayout();
+  const { globalSettings } = useLayout();
   const header = globalSettings!.header!;
 
-  const [menuState, setMenuState] = React.useState(false)
+  const [menuState, setMenuState] = React.useState(false);
   return (
     <header>
       <nav
         data-state={menuState && 'active'}
-        className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl h-16">
+        className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl h-16"
+      >
         <div className="mx-auto max-w-6xl px-6 h-full">
           <div className="relative flex items-center justify-between h-full">
-            
             {/* Left side: Logo + Navigation */}
             <div className="flex items-center gap-8 h-full">
               {/* Logo */}
               <Link
                 href="/"
                 aria-label="home"
-                className="flex items-center h-full py-2">
-                {header.icon!.name === "LIA" ? (
+                className="flex items-center h-full py-2"
+              >
+                {header.icon!.name === 'LIA' ? (
                   <Image
                     src="/images/lia-logo.png"
                     alt="Light in Asia Logo"
@@ -56,7 +57,8 @@ export const Header = () => {
                     <li key={index} className="h-full flex items-center">
                       <Link
                         href={item!.href!}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150 h-full flex items-center">
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150 h-full flex items-center"
+                      >
                         <span>{item!.label}</span>
                       </Link>
                     </li>
@@ -71,16 +73,15 @@ export const Header = () => {
               <span className="text-sm font-medium text-muted-foreground">
                 |
               </span>
-              <span className="text-sm font-medium">
-                {header.name}
-              </span>
+              <span className="text-sm font-medium">{header.name}</span>
             </div>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setMenuState(!menuState)}
               aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-              className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden h-12 w-12 flex items-center justify-center">
+              className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden h-12 w-12 flex items-center justify-center"
+            >
               <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
               <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
             </button>
@@ -94,19 +95,18 @@ export const Header = () => {
                     <li key={index}>
                       <Link
                         href={item!.href!}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      >
                         <span>{item!.label}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
-                
+
                 {/* Mobile Language Switcher & Site Name */}
                 <div className="flex items-center justify-between pt-4 border-t">
                   <LocaleSwitcher />
-                  <span className="text-sm font-medium">
-                    {header.name}
-                  </span>
+                  <span className="text-sm font-medium">{header.name}</span>
                 </div>
               </div>
             </div>
@@ -114,5 +114,5 @@ export const Header = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
