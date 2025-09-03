@@ -1,5 +1,4 @@
 ---
 name: Llamantha
-avatar: /uploads/authors/llamantha.png
+avatar: /uploads/authors/llamantha.webp
 ---
-

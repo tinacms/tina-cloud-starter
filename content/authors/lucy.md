@@ -1,5 +1,4 @@
 ---
 name: Lucy
-avatar: /uploads/authors/lucy.png
+avatar: /uploads/authors/lucy.webp
 ---
-
