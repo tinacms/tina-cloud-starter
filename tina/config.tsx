@@ -33,13 +33,6 @@ const config = defineConfig({
   },
   schema: {
     collections: [Page, Post, Author, Tag, Global],
-    ui: {
-      router: ({document}) => {
-        if (document._sys.filename == "Hello-World") {
-        return "/";
-        }
-      },
-    },
   },
     search: {
     tina: {
