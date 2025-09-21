@@ -33,6 +33,21 @@ const config = defineConfig({
   },
   schema: {
     collections: [Page, Post, Author, Tag, Global],
+    ui: {
+      router: ({document}) => {
+        if (document._sys.filename == "Hello-World") {
+        return "/";
+        }
+      },
+    },
+  },
+    search: {
+    tina: {
+      indexerToken: '0f54dcea453c514a9b78789e9553543e5dba2a7c',
+      stopwordLanguages: ['eng'],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
   },
 });
 
