@@ -27,8 +27,8 @@
     ]
   },
   "theme": {
-    "color": "blue",
-    "font": "sans",
-    "darkMode": "light"
+    "color": "green",
+    "font": "nunito",
+    "darkMode": "dark"
   }
 }
