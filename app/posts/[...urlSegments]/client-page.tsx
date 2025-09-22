@@ -9,7 +9,7 @@ import { useLayout } from '@/components/layout/layout-context';
 import { Section } from '@/components/layout/section';
 import { components } from '@/components/mdx-components';
 import ErrorBoundary from '@/components/error-boundary';
-import { useEditState } from 'tinacms/dist/edit-state'
+import { useEditState } from 'tinacms/dist/edit-state';
 
 const titleColorClasses = {
   blue: 'from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500',
