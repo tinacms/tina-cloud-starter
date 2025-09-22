@@ -9,7 +9,6 @@ import { useLayout } from '@/components/layout/layout-context';
 import { Section } from '@/components/layout/section';
 import { components } from '@/components/mdx-components';
 import ErrorBoundary from '@/components/error-boundary';
-import { useEditState } from 'tinacms/dist/edit-state';
 
 const titleColorClasses = {
   blue: 'from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500',
@@ -42,8 +41,6 @@ export default function PostClientPage(props: ClientPostProps) {
   }
 
   const titleColour = titleColorClasses[theme!.color! as keyof typeof titleColorClasses];
-
-    const { edit, setEdit } = useEditState()
 
   return (
     <ErrorBoundary>
@@ -115,13 +112,6 @@ export default function PostClientPage(props: ClientPostProps) {
               ...components,
             }}
           />
-          <button
-              onClick={() => {
-                setEdit((editState) => !editState)
-              }}
-            >
-              {edit ? 'exit exit mode' : 'Enter edit mode'}
-          </button>
         </div>
       </Section>
     </ErrorBoundary>
