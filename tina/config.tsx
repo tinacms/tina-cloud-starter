@@ -34,14 +34,6 @@ const config = defineConfig({
   schema: {
     collections: [Page, Post, Author, Tag, Global],
   },
-    search: {
-    tina: {
-      indexerToken: '0f54dcea453c514a9b78789e9553543e5dba2a7c',
-      stopwordLanguages: ['eng'],
-    },
-    indexBatchSize: 100,
-    maxSearchIndexFieldLength: 100,
-  },
 });
 
 export default config;
