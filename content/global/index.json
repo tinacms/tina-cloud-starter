@@ -19,6 +19,10 @@
       {
         "href": "/posts/First-post",
         "label": "About"
+      },
+      {
+        "href": "https://archiem.top",
+        "label": "Main Site"
       }
     ]
   },
