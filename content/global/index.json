@@ -13,12 +13,12 @@
         "label": "Home"
       },
       {
-        "href": "/about",
-        "label": "About"
-      },
-      {
         "href": "/posts",
         "label": "Blog"
+      },
+      {
+        "href": "/posts/First-post",
+        "label": "About"
       }
     ]
   },
