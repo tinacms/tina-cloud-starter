@@ -9,6 +9,7 @@ import { useLayout } from '@/components/layout/layout-context';
 import { Section } from '@/components/layout/section';
 import { components } from '@/components/mdx-components';
 import ErrorBoundary from '@/components/error-boundary';
+import { MyEditButton } from '@components/edit-button.tsx';
 
 const titleColorClasses = {
   blue: 'from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500',
@@ -112,6 +113,7 @@ export default function PostClientPage(props: ClientPostProps) {
               ...components,
             }}
           />
+          <MyEditButton/>
         </div>
       </Section>
     </ErrorBoundary>
