@@ -9,7 +9,7 @@ const MyEditButton = () => {
         setEdit((editState) => !editState)
       }}
     >
-      {edit ? 'exit exit mode' : 'Enter edit mode'}
+      {edit ? 'Exit edit mode' : 'Enter this post'}
     </button>
   )
 }
