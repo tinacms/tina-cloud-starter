@@ -164,7 +164,11 @@ export const heroBlockSchema: Template = {
         defaultItem: {
           label: 'Action Label',
           type: 'button',
-          icon: true,
+          icon: {
+              name: "Tina",
+              color: "white",
+              style: "float",
+          },
           link: '/',
         },
         itemProps: (item) => ({ label: item.label }),
