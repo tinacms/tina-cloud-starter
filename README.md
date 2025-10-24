@@ -1,3 +1,6 @@
+> ⚠️ **This repository has moved!**  
+> The new location is: [tinacms/tina-nextjs-starter](https://github.com/tinacms/tina-nextjs-starter)
+
 # Tina Starter 🦙
 
 ![tina-cloud-starter-demo](https://user-images.githubusercontent.com/103008/130587027-995ccc45-a852-4f90-b658-13e8e0517339.gif)
